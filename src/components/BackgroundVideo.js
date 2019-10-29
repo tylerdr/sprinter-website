@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import Image from './Image'
-
 import './BackgroundVideo.css'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BackgroundVideo extends Component {
 //   _isMounted = false;
@@ -81,7 +80,7 @@ class BackgroundVideo extends Component {
         )}
         {this.state.mobileWidth && (
           <Fragment>
-            <Image background src={poster} alt="Background poster" />
+            <PreviewCompatibleImage background src={poster} alt="Background poster" />
             {videoTitle && <h3 className="Poster--videoTitle">{videoTitle}</h3>}
           </Fragment>
         )}

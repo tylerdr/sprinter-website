@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
-import Img from 'gatsby-image'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import BackgroundVideo from '../components/BackgroundVideo'
 export const IndexPageTemplate = ({
   image,
   title,
@@ -14,13 +14,13 @@ export const IndexPageTemplate = ({
   <div>
     <div
       className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
+       style={{
+         backgroundImage: `url(${
+           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+         })`,
+         backgroundPosition: `top left`,
+         backgroundAttachment: `fixed`,
+       }}
     >
       <div
         style={{
@@ -71,9 +71,7 @@ export const IndexPageTemplate = ({
                     <h1 className="visionStatement">{main.visionStatement}</h1>
                   </div>
                   <div className="homeImage">
-                    <Img 
-                    fluid={main.image1.image.childImageSharp.fluid}
-                    alt={main.image1.alt}/>
+                  <PreviewCompatibleImage imageInfo={main.image1} />
                   </div>
                   <div className="tile">
                     <h1 className="missionStatement">{main.missionStatement}</h1>
@@ -98,6 +96,11 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div> */}
+                <div className = "BackgroundVideo-section">
+                <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                    {main.video.videoFile && <source src={main.video.videoFile} type="video/mp4" />}
+                </BackgroundVideo>
+                </div> 
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
