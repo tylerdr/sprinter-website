@@ -97,9 +97,9 @@ export const IndexPageTemplate = ({
                   </div>
                 </div> */}
                 <div className = "BackgroundVideo-section">
-                <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                {/* <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
                     {main.video.videoFile && <source src={main.video.videoFile} type="video/mp4" />}
-                </BackgroundVideo>
+                </BackgroundVideo> */}
                 </div> 
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
@@ -177,10 +177,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-          }
-          video {
-            videoFile
-            videoTitle
           }
         }
       }
