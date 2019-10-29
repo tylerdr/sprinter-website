@@ -1,30 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
-
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import BackgroundVideo from '../components/BackgroundVideo'
 export const IndexPageTemplate = ({
   image,
   title,
-  heading,
   subheading,
-  mainpitch,
-  description,
-  intro,
+  main
 }) => (
   <div>
     <div
       className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
+       style={{
+         backgroundImage: `url(${
+           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+         })`,
+         backgroundPosition: `top left`,
+         backgroundAttachment: `fixed`,
+       }}
     >
       <div
         style={{
@@ -72,28 +68,39 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content">
                   <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                    <h1 className="visionStatement">{main.visionStatement}</h1>
+                  </div>
+                  <div className="homeImage">
+                  <PreviewCompatibleImage imageInfo={main.image1} />
                   </div>
                   <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                    <h1 className="missionStatement">{main.missionStatement}</h1>
                   </div>
+                  {/* <div className="tile">
+                    <h3 className="subtitle">{mainpitch.description}</h3>
+                  </div> */}
                 </div>
-                <div className="columns">
+                {/* <div className="columns">
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
                       {heading}
                     </h3>
                     <p>{description}</p>
                   </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
+                </div> */}
+                {/* <Features gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
                       See all products
                     </Link>
                   </div>
-                </div>
+                </div> */}
+                <div className = "BackgroundVideo-section">
+                {/* <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                    {main.video.videoFile && <source src={main.video.videoFile} type="video/mp4" />}
+                </BackgroundVideo> */}
+                </div> 
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
@@ -119,11 +126,6 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
 }
 
 const IndexPage = ({ data }) => {
@@ -134,11 +136,8 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        main={frontmatter.main}
       />
     </Layout>
   )
@@ -166,26 +165,19 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
         subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
+        main {
+          missionStatement
+          visionStatement
+          image1 {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
-          heading
-          description
         }
       }
     }

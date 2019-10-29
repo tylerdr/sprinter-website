@@ -10,7 +10,8 @@ export default {
             background: '#222',
             primary: '#0cf',
             secondary: '#90c',
-        },
+          },
+      },
     },
-  }
+    borderRadius: '5px'
 }
