@@ -18,7 +18,7 @@ main:
     technology to have the most positive impact.
   video:
     videoFile: /img/the_story_behind_the_name-2-.mp4
-    videoTitle: '''                  '''
+    videoTitle: testing
   visionStatement: >-
     We envision a world where work and life are seamlessly intertwined through
     the freeing power of modern technology.
