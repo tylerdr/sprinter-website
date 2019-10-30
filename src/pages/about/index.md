@@ -6,12 +6,12 @@ subtitle: >-
   bettering individual lives through technology.
 headerImage: /img/sprintaboutfeatimage.jpg
 what:
-  body: '## We use technology to make businesses better.'
+  body: We use technology to make businesses better.
   header: What We Do
   image: /img/sprinteraboutimage.jpg
 how:
   body: >-
-    ## We do it by consulting first, and creating second.Unlike many software
+    We do it by consulting first, and creating second.Unlike many software
     companies, we begin our process with the customer instead of the product.
     This allows us to focus our efforts on your business when designing the
     software, not the general market.
@@ -19,7 +19,7 @@ how:
   image: /img/sprinteraboutimage2.jpg
 why:
   body: >-
-    ## We do it because we believe technology is the key to unlocking human
+    We do it because we believe technology is the key to unlocking human
     potential.
   header: Why We Do It
   image: /img/sprinteraboutimage3.jpg
