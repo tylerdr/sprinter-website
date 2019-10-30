@@ -11,7 +11,10 @@ export const AboutPageTemplate = ({
   headerImage,
   what,
   how,
-  why
+  why,
+  imageA,
+  imageB,
+  imageC
  }) => {
 
 
@@ -79,7 +82,7 @@ export const AboutPageTemplate = ({
                     {what.body}
                   </div>
                   <div>
-                    <PreviewCompatibleImage imageInfo={what.image}/>
+                    <PreviewCompatibleImage imageInfo={imageA}/>
                   </div>
                   <div className="tile">
                     <h1>{how.header}</h1>
@@ -88,7 +91,7 @@ export const AboutPageTemplate = ({
                     {how.body}
                   </div>
                   <div>
-                    <PreviewCompatibleImage imageInfo={how.image}/>
+                    <PreviewCompatibleImage imageInfo={imageB}/>
                   </div>
                   <div className="tile">
                     <h1>{why.header}</h1>
@@ -97,7 +100,7 @@ export const AboutPageTemplate = ({
                     {why.body}
                   </div>
                   <div>
-                    <PreviewCompatibleImage imageInfo={why.image}/>
+                    <PreviewCompatibleImage imageInfo={imageC}/>
                   </div>
                   {/* <div className="tile">
                     <h1 className="visionStatement">{main.visionStatement}</h1>
@@ -155,7 +158,10 @@ const AboutPage = ({ data }) => {
         headerImage={frontmatter.headerImage}
         what={frontmatter.what}
         how={frontmatter.how}
-        why={frontmatter.why}/>
+        why={frontmatter.why}
+        imageA={frontmatter.imageA}
+        imageB={frontmatter.imageB}
+        imageC={frontmatter.imageC}/>
     </Layout>
   )
 }
@@ -178,26 +184,34 @@ export const aboutPageQuery = graphql`
         title
         subtitle
         headerImage {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
-        }
         what {
-          body
-          header
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              body
+              header
             }
-          }
-        }
         how {
-          body
-          header
+              body
+              header
+            }
+        why {
+              body
+              header
+            }
+        imageA {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+        }
+        imageB {
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
@@ -206,9 +220,7 @@ export const aboutPageQuery = graphql`
             }
           }
         }
-        why {
-          body
-          header
+        imageC {
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
