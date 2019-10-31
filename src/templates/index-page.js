@@ -30,14 +30,12 @@ export const IndexPageTemplate = ({
           justifyContent: 'space-around',
           alignItems: 'left',
           flexDirection: 'column',
+          width: '75%'
         }}
       >
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
@@ -48,9 +46,6 @@ export const IndexPageTemplate = ({
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
@@ -96,11 +91,10 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div> */}
-                <div className = "BackgroundVideo-section">
-                {/* <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
-                    {main.video.videoFile && <source src={main.video.videoFile} type="video/mp4" />}
-                </BackgroundVideo> */}
-                </div> 
+                { <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                    {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
+                    {console.log(main.video)}
+                </BackgroundVideo> }
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
@@ -169,6 +163,12 @@ export const pageQuery = graphql`
         main {
           missionStatement
           visionStatement
+          video {
+            videoFile {
+              publicURL
+            }
+            videoTitle
+          }
           image1 {
             image {
               childImageSharp {

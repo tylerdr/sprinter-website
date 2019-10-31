@@ -1,7 +1,34 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About our values
+templateKey: about-page
+title: About Us
+subtitle: >-
+  We are a global team of problem solvers unified by the shared goal of
+  bettering individual lives through technology.
+headerImage: /img/sprintaboutfeatimage.jpg
+what:
+  body: We use technology to make businesses better.
+  header: What We Do
+imageA:
+  alt: what
+  image: /img/sprinteraboutimage.jpg
+how:
+  body: >-
+    We do it by consulting first, and creating second.Unlike many software
+    companies, we begin our process with the customer instead of the product.
+    This allows us to focus our efforts on your business when designing the
+    software, not the general market.
+  header: How We Do It
+imageB:
+  alt: how
+  image: /img/sprinteraboutimage2.jpg
+why:
+  body: >-
+    We do it because we believe technology is the key to unlocking human
+    potential.
+  header: Why We Do It
+imageC:
+  alt: why
+  image: /img/sprinteraboutimage3.jpg
 ---
 ### Shade-grown coffee
 Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.

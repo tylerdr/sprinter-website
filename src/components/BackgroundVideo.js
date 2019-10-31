@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import './BackgroundVideo.css'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BackgroundVideo extends Component {
@@ -74,15 +73,9 @@ class BackgroundVideo extends Component {
               {children}
             </video>
             {videoTitle && (
-              <div className="BackgroundVideo--videoTitle">{videoTitle}</div>
+              <div className="BackgroundVideo--videoTitle"></div>
             )}
           </div>
-        )}
-        {this.state.mobileWidth && (
-          <Fragment>
-            <PreviewCompatibleImage background src={poster} alt="Background poster" />
-            {videoTitle && <h3 className="Poster--videoTitle">{videoTitle}</h3>}
-          </Fragment>
         )}
       </Fragment>
     )
