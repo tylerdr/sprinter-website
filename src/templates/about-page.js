@@ -73,22 +73,32 @@ export const AboutPageTemplate = ({
                   <div className="tile about-header about">
                     <h1>{what.header}</h1>
                   </div>
-                  <div className="tile about-content about">
-                    <h3>{what.body}</h3>
-                  </div>
-                  <div className="about">
-                    <PreviewCompatibleImage imageInfo={imageA}/>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="about">
+                        <PreviewCompatibleImage imageInfo={imageA}/>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="tile about-content about">
+                        <h3>{what.body}</h3>
+                      </div>
+                    </div>
                   </div>
                   <div className="tile about-header about">
                     <h1>{how.header}</h1>
                   </div>
                   <div className="tile about">
-                    <div className="flex-children about-content flex-body">
-                    <h3>{how.body}</h3>
-                    </div>
-                    <div className="flex-children flex-image">
-                    <PreviewCompatibleImage imageInfo={imageB}/>
-                    </div>
+                      <div className="columns">
+                        <div className="column">
+                          <div className=" about-content ">
+                            <h3>{how.body}</h3>
+                          </div>
+                        </div>
+                        <div className="column">
+                        <PreviewCompatibleImage imageInfo={imageB}/>
+                        </div>
+                      </div>
                   </div>
                   <div className="tile about-header about">
                     <h1>{why.header}</h1>
