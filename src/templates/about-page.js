@@ -26,7 +26,7 @@ export const AboutPageTemplate = ({
           backgroundImage: `url(${
             !!headerImage.childImageSharp ? headerImage.childImageSharp.fluid.src : headerImage
           })`,
-          backgroundPosition: `top left`,
+          backgroundPosition: `bottom`,
           backgroundAttachment: `fixed`,
         }}
     >
@@ -38,14 +38,12 @@ export const AboutPageTemplate = ({
           justifyContent: 'space-around',
           alignItems: 'left',
           flexDirection: 'column',
+          width: '75%'
         }}
       >
-        <h1
+        <h1 
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
@@ -56,9 +54,6 @@ export const AboutPageTemplate = ({
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
@@ -75,29 +70,31 @@ export const AboutPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="content">
-                  <div className="tile">
+                  <div className="tile about-header">
                     <h1>{what.header}</h1>
                   </div>
-                  <div className="tile">
-                    {what.body}
+                  <div className="tile about-content">
+                    <h3>{what.body}</h3>
                   </div>
                   <div>
                     <PreviewCompatibleImage imageInfo={imageA}/>
                   </div>
-                  <div className="tile">
+                  <div className="tile about-header">
                     <h1>{how.header}</h1>
                   </div>
                   <div className="tile">
-                    {how.body}
-                  </div>
-                  <div>
+                    <div className="flex-children about-content">
+                    <h3>{how.body}</h3>
+                    </div>
+                    <div className="flex-children">
                     <PreviewCompatibleImage imageInfo={imageB}/>
+                    </div>
                   </div>
-                  <div className="tile">
+                  <div className="tile about-header">
                     <h1>{why.header}</h1>
                   </div>
-                  <div className="tile">
-                    {why.body}
+                  <div className="tile about-content">
+                    <h3>{why.body}</h3>
                   </div>
                   <div>
                     <PreviewCompatibleImage imageInfo={imageC}/>
