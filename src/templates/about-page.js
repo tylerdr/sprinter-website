@@ -70,33 +70,33 @@ export const AboutPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="content">
-                  <div className="tile about-header">
+                  <div className="tile about-header about">
                     <h1>{what.header}</h1>
                   </div>
-                  <div className="tile about-content">
+                  <div className="tile about-content about">
                     <h3>{what.body}</h3>
                   </div>
-                  <div>
+                  <div className="about">
                     <PreviewCompatibleImage imageInfo={imageA}/>
                   </div>
-                  <div className="tile about-header">
+                  <div className="tile about-header about">
                     <h1>{how.header}</h1>
                   </div>
-                  <div className="tile">
-                    <div className="flex-children about-content">
+                  <div className="tile about">
+                    <div className="flex-children about-content flex-body">
                     <h3>{how.body}</h3>
                     </div>
-                    <div className="flex-children">
+                    <div className="flex-children flex-image">
                     <PreviewCompatibleImage imageInfo={imageB}/>
                     </div>
                   </div>
-                  <div className="tile about-header">
+                  <div className="tile about-header about">
                     <h1>{why.header}</h1>
                   </div>
-                  <div className="tile about-content">
+                  <div className="tile about-content about">
                     <h3>{why.body}</h3>
                   </div>
-                  <div>
+                  <div className="about">
                     <PreviewCompatibleImage imageInfo={imageC}/>
                   </div>
                   {/* <div className="tile">
