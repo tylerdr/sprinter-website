@@ -1,12 +1,12 @@
 ---
 templateKey: index-page
 title: Sprinter Consulting
-image: /img/pattern-building.jpg
+image: /img/lightbulb.jpg
 subheading: Discovering Tomorrow's Technology Today
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee
-    image: /img/trippy-tech.jpg
+    image: /img/white-lamp.jpg
   missionStatement: >-
     Our mission is to unlock human potential by leveraging the power of
     technology to have the most positive impact.
