@@ -67,14 +67,14 @@ export const AboutPageTemplate = ({
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-full">
               <div className="content">
                 <div className="content">
                   <div className="tile about-header about">
                     <h1>{what.header}</h1>
                   </div>
                   <div className="columns">
-                    <div className="column">
+                    <div className={"column " + (imageA.widthOptions)}>
                       <div className="about">
                         <PreviewCompatibleImage imageInfo={imageA}/>
                       </div>
@@ -91,12 +91,12 @@ export const AboutPageTemplate = ({
                   <div className="tile about">
                       <div className="columns">
                         <div className="column">
-                          <div className=" about-content ">
+                          <div className="about-content">
                             <h3>{how.body}</h3>
                           </div>
                         </div>
-                        <div className="column">
-                        <PreviewCompatibleImage imageInfo={imageB}/>
+                        <div className={"column " + (imageB.widthOptions)}>
+                            <PreviewCompatibleImage imageInfo={imageB}/>
                         </div>
                       </div>
                   </div>
@@ -106,8 +106,10 @@ export const AboutPageTemplate = ({
                   <div className="tile about-content about">
                     <h3>{why.body}</h3>
                   </div>
-                  <div className="about">
-                    <PreviewCompatibleImage imageInfo={imageC}/>
+                  <div className={"column " + (imageA.widthOptions)}>
+                    <div className="about">
+                      <PreviewCompatibleImage imageInfo={imageC}/>
+                    </div>
                   </div>
                   {/* <div className="tile">
                     <h1 className="visionStatement">{main.visionStatement}</h1>
@@ -210,6 +212,7 @@ export const aboutPageQuery = graphql`
               header
             }
         imageA {
+              widthOptions
               image {
                 childImageSharp {
                   fluid(maxWidth: 2048, quality: 100) {
@@ -219,6 +222,7 @@ export const aboutPageQuery = graphql`
               }
         }
         imageB {
+          widthOptions
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
@@ -228,6 +232,7 @@ export const aboutPageQuery = graphql`
           }
         }
         imageC {
+          widthOptions
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {

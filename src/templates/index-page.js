@@ -62,13 +62,13 @@ export const IndexPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="content">
-                  <div className="tile">
+                  <div className="tile about-content about">
                     <h1 className="visionStatement">{main.visionStatement}</h1>
                   </div>
                   <div className="homeImage">
                   <PreviewCompatibleImage imageInfo={main.image1} />
                   </div>
-                  <div className="tile">
+                  <div className="tile about-content about">
                     <h1 className="missionStatement">{main.missionStatement}</h1>
                   </div>
                   {/* <div className="tile">
