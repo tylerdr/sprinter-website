@@ -62,13 +62,13 @@ export const IndexPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="content">
-                  <div className="tile about-content about">
+                  <div className="tile text-body-content content-margins">
                     <h1 className="visionStatement">{main.visionStatement}</h1>
                   </div>
-                  <div className="homeImage">
+                  <div className="homeImage content-margins">
                   <PreviewCompatibleImage imageInfo={main.image1} />
                   </div>
-                  <div className="tile about-content about">
+                  <div className="tile text-body-content content-margins">
                     <h1 className="missionStatement">{main.missionStatement}</h1>
                   </div>
                   {/* <div className="tile">
@@ -91,12 +91,14 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div> */}
+                <div className="content-margins">
                 { <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
                     {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     {console.log(main.video)}
                 </BackgroundVideo> }
+                </div>
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
+                  <h3 className="has-text-weight-semibold is-size-2 text-header-content content-margins">
                     Latest stories
                   </h3>
                   <BlogRoll />

@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
+
 export const AboutPageTemplate = ({ 
   title,
   subtitle,
@@ -70,28 +71,28 @@ export const AboutPageTemplate = ({
             <div className="column is-full">
               <div className="content">
                 <div className="content">
-                  <div className="tile about-header about">
+                  <div className="tile text-header-content content-margins">
                     <h1>{what.header}</h1>
                   </div>
                   <div className="columns">
                     <div className={"column " + (imageA.widthOptions)}>
-                      <div className="about">
+                      <div className="content-margins">
                         <PreviewCompatibleImage imageInfo={imageA}/>
                       </div>
                     </div>
                     <div className="column">
-                      <div className="tile about-content about">
+                      <div className="tile text-body-content content-margins">
                         <h3>{what.body}</h3>
                       </div>
                     </div>
                   </div>
-                  <div className="tile about-header about">
+                  <div className="tile text-header-content content-margins">
                     <h1>{how.header}</h1>
                   </div>
-                  <div className="tile about">
+                  <div className="tile content-margins">
                       <div className="columns">
                         <div className="column">
-                          <div className="about-content">
+                          <div className="text-body-content">
                             <h3>{how.body}</h3>
                           </div>
                         </div>
@@ -100,14 +101,14 @@ export const AboutPageTemplate = ({
                         </div>
                       </div>
                   </div>
-                  <div className="tile about-header about">
+                  <div className="tile text-header-content content-margins">
                     <h1>{why.header}</h1>
                   </div>
-                  <div className="tile about-content about">
+                  <div className="tile text-body-content content-margins">
                     <h3>{why.body}</h3>
                   </div>
-                  <div className={"column " + (imageA.widthOptions)}>
-                    <div className="about">
+                  <div className={"column " + (imageC.widthOptions)}>
+                    <div className="content-margins">
                       <PreviewCompatibleImage imageInfo={imageC}/>
                     </div>
                   </div>

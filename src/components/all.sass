@@ -4,6 +4,7 @@
 // Kaldi logo brand color: #FD461E
 $sprinter-blue: #3072f9
 $sprinter-blue-invert: #fff
+$sprinter-white: #ffffff
 
 $primary: $sprinter-blue
 $primary-invert: $sprinter-blue-invert
@@ -43,19 +44,32 @@ $black: #2b2523
   align-items: center
 
 
-.about-content 
+
+
+
+
+
+.text-body-content
   padding: 20px 20px
   border-left: solid 7.5px $primary
   background-color: white
   border-radius: 5px
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+
+        
 
 
-.about-header
+.text-header-content
   font-size: 1.5em
   font-family: PT
 
-.about
+.content-margins
   margin: 1.2em 0em .5em 0em
+
+
+
+
+
 
 .full-width-image
     width: 100vw
@@ -72,14 +86,14 @@ $black: #2b2523
     font-size: 18px
     font-size: 1rem
     line-height: 1.25
-    background-color: #fff
+    background-color: $sprinter-white
     border-radius: .25rem
     text-decoration: none
     font-weight: 700
-    color: #CC3700
+    color: $sprinter-blue
     text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
+    -webkit-box-shadow: inset 0 0 0 2px $sprinter-blue
+    box-shadow: inset 0 0 0 2px $sprinter-blue
     -webkit-transition: all .15s ease
     transition: all .15s ease
 
@@ -129,7 +143,12 @@ $menu-label-color: $white-ter
 
 // blog roll
 .blog-list-item.is-featured
-  background-color: #d6400033;
+  background-color: $sprinter-white
+.blog-list-item
+  background-color: $sprinter-white
+  font-color: $sprinter-blue
+.has-text-primary
+  color: $sprinter-blue !important
 .blog-list-item header
   display: flex;
   margin-bottom: 1em;
