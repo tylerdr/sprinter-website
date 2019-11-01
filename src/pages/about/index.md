@@ -11,6 +11,7 @@ what:
 imageA:
   alt: what
   image: /img/sprinteraboutimage.jpg
+  widthOptions: is-4
 how:
   body: >-
     We do it by consulting first, and creating second.Unlike many software
@@ -21,6 +22,7 @@ how:
 imageB:
   alt: how
   image: /img/sprinteraboutimage2.jpg
+  widthOptions: is-4
 why:
   body: >-
     We do it because we believe technology is the key to unlocking human
@@ -29,6 +31,7 @@ why:
 imageC:
   alt: why
   image: /img/sprinteraboutimage3.jpg
+  widthOptions: is-12
 ---
 ### Shade-grown coffee
 Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
