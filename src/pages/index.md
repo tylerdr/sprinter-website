@@ -6,7 +6,7 @@ subheading: Discovering Tomorrow's Technology Today
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee
-    image: /img/products-grid3.jpg
+    image: /img/consulting-2.jpg
   image2:
     alt: A green cup of a coffee on a wooden table
     image: /img/products-grid2.jpg
