@@ -22,7 +22,7 @@ how:
 imageB:
   alt: how
   image: /img/sprinteraboutimage2.jpg
-  widthOptions: is-4
+  widthOptions: is-7
 why:
   body: >-
     We do it because we believe technology is the key to unlocking human
