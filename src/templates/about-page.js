@@ -84,6 +84,12 @@ export const AboutPageTemplate = ({
                       <div className="tile text-body-content content-margins">
                         <h3>{what.tagline}</h3>
                       </div>
+                      <div className="tile text-body-content content-margins">
+                        <h3>{what.content1}</h3>
+                      </div>
+                      <div className="tile text-body-content content-margins">
+                        <h3>{what.content2}</h3>
+                      </div>
                     </div>
                   </div>
                   <div className="tile text-header-content content-margins">
@@ -95,7 +101,13 @@ export const AboutPageTemplate = ({
                           <div className="text-body-content">
                             <h3>{how.tagline}</h3>
                           </div>
-                        </div>
+                          <div className="tile text-body-content content-margins">
+                            <h3>{how.content1}</h3>
+                          </div>
+                           <div className="tile text-body-content content-margins">
+                            <h3>{how.content2}</h3>
+                          </div>
+                    </div>
                         <div className={"column " + (imageB.widthOptions)}>
                             <PreviewCompatibleImage imageInfo={imageB}/>
                         </div>
@@ -106,6 +118,12 @@ export const AboutPageTemplate = ({
                   </div>
                   <div className="tile text-body-content content-margins">
                     <h3>{why.tagline}</h3>
+                  </div>
+                  <div className="tile text-body-content content-margins">
+                      <h3>{why.content1}</h3>
+                  </div>
+                  <div className="tile text-body-content content-margins">
+                      <h3>{why.content2}</h3>
                   </div>
                   <div className={"column " + (imageC.widthOptions)}>
                     <div className="content-margins">
