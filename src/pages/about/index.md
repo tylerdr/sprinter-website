@@ -6,14 +6,26 @@ subtitle: >-
   bettering individual lives through technology.
 headerImage: /img/sprintaboutfeatimage.jpg
 what:
-  content1: filler
-  content2: filler
+  content1: >-
+    As the technology evolves, so do we, but more importantly so does your
+    business. 
+
+    Because today's tech world is rapidly becoming more advanced & complex,
+    we've handcrafted tools that make it easier to navigate the modern
+    technological landscape.
+  content2: >-
+    Our focus is on implementing new technology that saves your company both
+    time and money. Through harnessing the power of modern software, we provide
+    you with the expertise needed to maximize technology's potential and meet
+    your goals.
   header: What We Do
-  tagline: filler
+  tagline: >-
+    We empower businesses to become more efficient by automating their current
+    systems and  solving complex problems with simple tech-based solutions. 
 imageA:
   alt: what
-  image: /img/sprinteraboutimage.jpg
-  widthOptions: is-4
+  image: /img/sprinteraboutimage2.jpg
+  widthOptions: is-6
 how:
   content1: filler
   content2: filler
