@@ -82,7 +82,7 @@ export const AboutPageTemplate = ({
                     </div>
                     <div className="column">
                       <div className="tile text-body-content content-margins">
-                        <h3>{what.body}</h3>
+                        <h3>{what.tagline}</h3>
                       </div>
                     </div>
                   </div>
@@ -93,7 +93,7 @@ export const AboutPageTemplate = ({
                       <div className="columns">
                         <div className="column">
                           <div className="text-body-content">
-                            <h3>{how.body}</h3>
+                            <h3>{how.tagline}</h3>
                           </div>
                         </div>
                         <div className={"column " + (imageB.widthOptions)}>
@@ -105,7 +105,7 @@ export const AboutPageTemplate = ({
                     <h1>{why.header}</h1>
                   </div>
                   <div className="tile text-body-content content-margins">
-                    <h3>{why.body}</h3>
+                    <h3>{why.tagline}</h3>
                   </div>
                   <div className={"column " + (imageC.widthOptions)}>
                     <div className="content-margins">
@@ -201,15 +201,21 @@ export const aboutPageQuery = graphql`
             }
           }
         what {
-              body
+              tagline
+              content1
+              content2
               header
             }
         how {
-              body
+              tagline
+              content1
+              content2
               header
             }
         why {
-              body
+              tagline
+              content1
+              content2
               header
             }
         imageA {
