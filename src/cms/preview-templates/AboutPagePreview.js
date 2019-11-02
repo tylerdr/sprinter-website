@@ -14,11 +14,9 @@ const AboutPagePreview = ({ entry }) => {
           what={data.what}
           how={data.how}
           why={data.why}
-          coreValues={data.coreValues}
           imageA={data.imageA}
           imageB={data.imageB}
           imageC={data.imageC}
-          imageD={data.imageD}
         />
     )
     } else {
