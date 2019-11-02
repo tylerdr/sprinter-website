@@ -55,9 +55,18 @@ why:
   content2: filler
   header: Why We Do It
   tagline: filler
+coreValues:
+  content1: filler
+  content2: filler
+  header: Core Values
+  tagline: filler
 imageC:
   alt: why
   image: /img/man-on-rock.jpg
   widthOptions: is-6
+imageD:
+  alt: filler
+  image: /img/alvin-kamara-2.jpg
+  widthOptions: is-12
 ---
 
