@@ -50,7 +50,9 @@ collections:
           - {label: How, name: how, widget: object, fields: [{label: Header, name: header, widget: text}, {label: Tagline, name: tagline, widget: text}, {label: content1, name: content1, widget: text}, {label: content2, name: content2, widget: text}]}
           - {label: ImageB, name: imageB, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
           - {label: Why, name: why, widget: object, fields: [{label: Header, name: header, widget: text}, {label: Tagline, name: tagline, widget: text}, {label: content1, name: content1, widget: text}, {label: content2, name: content2, widget: text}]}
+          - {label: Core Values, name: coreValues, widget: object, fields: [{label: Header, name: header, widget: text}, {label: Tagline, name: tagline, widget: text}, {label: content1, name: content1, widget: text}, {label: content2, name: content2, widget: text}]}
           - {label: ImageC, name: imageC, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
+           - {label: ImageD, name: imageD, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
