@@ -51,22 +51,21 @@ imageB:
   image: /img/consulting-2.jpg
   widthOptions: is-6
 why:
-  content1: filler
-  content2: filler
+  content1: >-
+    We offer your business 3 benefits through the power of 1. 
+
+    We deliver you more time, money, and freedom by implementing effective
+    modern technology into your current workflow.  
+  content2: >-
+    We believe a happier professional equals a happier person and that happier
+    people make a better world. 
   header: Why We Do It
-  tagline: filler
-coreValues:
-  content1: filler
-  content2: filler
-  header: Core Values
-  tagline: filler
+  tagline: >-
+    We do it because we believe technology is the key to unlocking human
+    potential. 
 imageC:
   alt: why
   image: /img/man-on-rock.jpg
   widthOptions: is-6
-imageD:
-  alt: filler
-  image: /img/alvin-kamara-2.jpg
-  widthOptions: is-12
 ---
 
