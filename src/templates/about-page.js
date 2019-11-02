@@ -15,7 +15,9 @@ export const AboutPageTemplate = ({
   why,
   imageA,
   imageB,
-  imageC
+  imageC,
+  imageD,
+  coreValues
  }) => {
 
 
@@ -130,6 +132,27 @@ export const AboutPageTemplate = ({
                       <PreviewCompatibleImage imageInfo={imageC}/>
                     </div>
                   </div>
+                  <div className="tile text-header-content content-margins">
+                    <h1>{coreValues.header}</h1>
+                  </div>
+                  <div className="columns">
+                    <div className={"column " + (imageD.widthOptions)}>
+                      <div className="content-margins">
+                        <PreviewCompatibleImage imageInfo={imageD}/>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="tile text-body-content content-margins">
+                        <h3>{coreValues.tagline}</h3>
+                      </div>
+                      <div className="tile text-body-content content-margins">
+                        <h3>{coreValues.content1}</h3>
+                      </div>
+                      <div className="tile text-body-content content-margins">
+                        <h3>{coreValues.content2}</h3>
+                      </div>
+                    </div>
+                  </div>
                   {/* <div className="tile">
                     <h1 className="visionStatement">{main.visionStatement}</h1>
                   </div>
@@ -189,7 +212,8 @@ const AboutPage = ({ data }) => {
         why={frontmatter.why}
         imageA={frontmatter.imageA}
         imageB={frontmatter.imageB}
-        imageC={frontmatter.imageC}/>
+        imageC={frontmatter.imageC}
+        imageD={frontmatter.imageD}/>
     </Layout>
   )
 }
@@ -236,6 +260,12 @@ export const aboutPageQuery = graphql`
               content2
               header
             }
+        coreValues {
+              tagline
+              content1
+              content2
+              header
+            }
         imageA {
               widthOptions
               image {
@@ -255,8 +285,18 @@ export const aboutPageQuery = graphql`
               }
             }
           }
-        }
+    }
         imageC {
+          widthOptions
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        imageD {
           widthOptions
           image {
             childImageSharp {
