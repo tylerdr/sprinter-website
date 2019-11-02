@@ -63,9 +63,18 @@ why:
   tagline: >-
     We do it because we believe technology is the key to unlocking human
     potential. 
+coreValues:
+  content1: filler
+  content2: filler
+  header: filler
+  tagline: filler
 imageC:
   alt: why
   image: /img/man-on-rock.jpg
   widthOptions: is-6
+imageD:
+  alt: filler
+  image: /img/alvin-kamara-2.jpg
+  widthOptions: is-10
 ---
 
