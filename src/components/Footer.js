@@ -1,77 +1,65 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { Link } from 'gatsby'
-
 import logo from '../img/logo.svg'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'
+import InstagramFeed from './InstagramFeed'
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
+      <div>
+      <InstagramFeed count="8"/>
+      <footer className="footer">
+        <div className="has-text-centered">
           <img
             src={logo}
-            alt="Kaldi"
+            alt="Sprinter"
             style={{ width: '14em', height: '10em' }}
           />
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
+        <div className="has-text-centered">
+          <div className="container">
             <div className="columns">
               <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
+                <div className="tile">
+                      <Link to="/" className="navbar-item"
+                      sx={{
+                        color: "text",
+                      }}>
                         Home
                       </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
+                </div>
+                <div className="tile">
+                      <Link className="navbar-item" to="/about"
+                      sx={{
+                        color: "text",
+                      }}>
                         About
                       </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
+                </div>
               </div>
               <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
+                <div className="tile">
+                      <Link className="navbar-item" to="/blog"
+                      sx={{
+                        color: "text",
+                      }}>
                         Latest Stories
                       </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
+                </div>
+                <div className="tile">
+                      <Link className="navbar-item" to="/contact"
+                      sx={{
+                        color: "text",
+                      }}>
                         Contact
                       </Link>
-                    </li>
-                  </ul>
-                </section>
+                </div>
               </div>
               <div className="column is-4 social">
                 <a title="facebook" href="https://facebook.com">
@@ -81,7 +69,7 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="twitter" href="https://twitter.com">
+                <a title="twitter" href="https://twitter.com/Sprinter_HQ">
                   <img
                     className="fas fa-lg"
                     src={twitter}
@@ -89,7 +77,7 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="instagram" href="https://instagram.com">
+                <a title="instagram" href="https://instagram.com/sprinterconsulting">
                   <img
                     src={instagram}
                     alt="Instagram"
@@ -105,9 +93,13 @@ const Footer = class extends React.Component {
                 </a>
               </div>
             </div>
+            <div className="content has-text-centered">
+            © Copyright {new Date().getFullYear()} All rights reserved.
+             </div>
           </div>
         </div>
       </footer>
+      </div>
     )
   }
 }
