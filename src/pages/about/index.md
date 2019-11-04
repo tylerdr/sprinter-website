@@ -26,7 +26,7 @@ what:
 imageA:
   alt: what
   image: /img/sprinteraboutimage2.jpg
-  widthOptions: is-6
+  widthOptions: is-7
 how:
   content1: >-
     The reason many software solutions fail is largely due to the lack of
@@ -71,7 +71,7 @@ coreValues:
 imageC:
   alt: why
   image: /img/man-on-rock.jpg
-  widthOptions: is-6
+  widthOptions: is-4
 imageD:
   alt: filler
   image: /img/alvin-kamara-2.jpg
