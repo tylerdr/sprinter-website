@@ -76,12 +76,7 @@ export const AboutPageTemplate = ({
                   <div className="tile text-header-content content-margins">
                     <h1>{what.header}</h1>
                   </div>
-                  <div className="columns">
-                    <div className={"column " + (imageA.widthOptions)}>
-                      <div className="content-margins">
-                        <PreviewCompatibleImage imageInfo={imageA}/>
-                      </div>
-                    </div>
+                  <div className="columns is-vcentered">
                     <div className="column">
                       <div className="tile text-body-content content-margins">
                         <h3>{what.tagline}</h3>
@@ -89,47 +84,54 @@ export const AboutPageTemplate = ({
                       <div className="tile text-body-content content-margins">
                         <h3>{what.content1}</h3>
                       </div>
-                      <div className="tile text-body-content content-margins">
-                        <h3>{what.content2}</h3>
+                    </div>
+                    <div className={"column " + (imageA.widthOptions)}>
+                      <div className="content-margins">
+                        <PreviewCompatibleImage imageInfo={imageA}/>
                       </div>
                     </div>
+                  </div>
+                  <div className="tile text-body-content content-margins">
+                        <h3>{what.content2}</h3>
                   </div>
                   <div className="tile text-header-content content-margins">
                     <h1>{how.header}</h1>
                   </div>
-                  <div className="tile content-margins">
-                      <div className="columns">
-                        <div className="column">
-                          <div className="text-body-content">
+                      <div className="tile text-body-content">
                             <h3>{how.tagline}</h3>
-                          </div>
+                      </div>
+                      <div className="columns is-vcentered">
+                        <div className={"column content-margins " + (imageB.widthOptions)}>
+                            <PreviewCompatibleImage imageInfo={imageB}/>
+                        </div>
+                        <div className="column">
                           <div className="tile text-body-content content-margins">
                             <h3>{how.content1}</h3>
                           </div>
-                           <div className="tile text-body-content content-margins">
+                          <div className="tile text-body-content content-margins">
                             <h3>{how.content2}</h3>
                           </div>
-                    </div>
-                        <div className={"column " + (imageB.widthOptions)}>
-                            <PreviewCompatibleImage imageInfo={imageB}/>
                         </div>
                       </div>
-                  </div>
-                  <div className="tile text-header-content content-margins">
-                    <h1>{why.header}</h1>
-                  </div>
-                  <div className="tile text-body-content content-margins">
-                    <h3>{why.tagline}</h3>
-                  </div>
-                  <div className="tile text-body-content content-margins">
-                      <h3>{why.content1}</h3>
-                  </div>
-                  <div className="tile text-body-content content-margins">
-                      <h3>{why.content2}</h3>
-                  </div>
-                  <div className={"column " + (imageC.widthOptions)}>
-                    <div className="content-margins">
-                      <PreviewCompatibleImage imageInfo={imageC}/>
+                  <div className="columns is-vcentered">
+                    <div className="column">
+                        <div className="tile text-header-content content-margins">
+                          <h1>{why.header}</h1>
+                        </div>
+                        <div className="tile text-body-content content-margins">
+                          <h3>{why.tagline}</h3>
+                        </div>
+                        <div className="tile text-body-content content-margins">
+                            <h3>{why.content1}</h3>
+                        </div>
+                        <div className="tile text-body-content content-margins">
+                            <h3>{why.content2}</h3>
+                        </div>
+                    </div>
+                    <div className={"column " + (imageC.widthOptions)}>
+                        <div className="content-margins">
+                          <PreviewCompatibleImage imageInfo={imageC}/>
+                        </div>
                     </div>
                   </div>
                   <div className="tile text-header-content content-margins">

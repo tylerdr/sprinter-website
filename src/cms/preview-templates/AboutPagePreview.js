@@ -18,7 +18,7 @@ const AboutPagePreview = ({ entry }) => {
           imageA={data.imageA}
           imageB={data.imageB}
           imageC={data.imageC}
-          imageDa={data.imageD}
+          imageD={data.imageD}
         />
     )
     } else {
