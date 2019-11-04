@@ -1,4 +1,6 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -68,89 +70,269 @@ export const AboutPageTemplate = ({
     </div>
     <section className="section section--gradient">
       <div className="container">
-        <div className="section">
           <div className="columns">
             <div className="column is-full">
-              <div className="content">
-                <div className="content">
-                  <div className="tile text-header-content content-margins">
-                    <h1>{what.header}</h1>
+                  <div className="tile"
+                  sx={{
+                    fontFamily: "heading",
+                    fontSize: 6,
+                    margin: 3,
+                    fontWeight: "heading",
+                  }}>
+                    {what.header}
                   </div>
                   <div className="columns is-vcentered">
                     <div className="column">
-                      <div className="tile text-body-content content-margins">
-                        <h3>{what.tagline}</h3>
+                      <div className="tile"
+                      sx={{
+                        backgroundColor: "primary",
+                        borderLeft: "body",
+                        borderLeftColor: "secondary",
+                        fontFamily: "body",
+                        fontSize: 4,
+                        padding: 3,
+                        margin: 3,
+                        fontWeight: "body",
+                        borderRadius: "body",
+                        boxShadow: "body",
+                      }}>
+                        {what.tagline}
                       </div>
-                      <div className="tile text-body-content content-margins">
-                        <h3>{what.content1}</h3>
+                      <div className="tile"
+                      sx={{
+                        backgroundColor: "primary",
+                        borderLeft: "body",
+                        borderLeftColor: "secondary",
+                        fontFamily: "body",
+                        fontSize: 4,
+                        padding: 3,
+                        margin: 3,
+                        fontWeight: "body",
+                        borderRadius: "body",
+                        boxShadow: "body",
+                      }}>
+                        {what.content1}
                       </div>
                     </div>
                     <div className={"column " + (imageA.widthOptions)}>
-                      <div className="content-margins">
+                      <div
+                      sx={{
+                        margin: 3,
+                      }}>
                         <PreviewCompatibleImage imageInfo={imageA}/>
                       </div>
                     </div>
                   </div>
-                  <div className="tile text-body-content content-margins">
-                        <h3>{what.content2}</h3>
+                  <div className="tile"
+                  sx={{
+                    backgroundColor: "primary",
+                    borderLeft: "body",
+                    borderLeftColor: "secondary",
+                    fontFamily: "body",
+                    fontSize: 4,
+                    padding: 3,
+                    margin: 3,
+                    fontWeight: "body",
+                    borderRadius: "body",
+                    boxShadow: "body",
+                  }}>
+                        {what.content2}
                   </div>
-                  <div className="tile text-header-content content-margins">
-                    <h1>{how.header}</h1>
+                  <div className="tile "
+                  sx={{
+                    fontFamily: "heading",
+                    fontSize: 6,
+                    fontWeight: "heading",
+                    margin: 3,
+                    marginTop: 6,
+                  }}>
+                    {how.header}
                   </div>
-                      <div className="tile text-body-content">
-                            <h3>{how.tagline}</h3>
+                      <div className="tile"
+                      sx={{
+                        backgroundColor: "primary",
+                        borderLeft: "body",
+                        borderLeftColor: "secondary",
+                        fontFamily: "body",
+                        fontSize: 4,
+                        padding: 3,
+                        fontWeight: "body",
+                        borderRadius: "body",
+                        boxShadow: "body",
+                        margin: 3,
+                      }}>
+                            {how.tagline}
                       </div>
                       <div className="columns is-vcentered">
-                        <div className={"column content-margins " + (imageB.widthOptions)}>
+                        <div className={"column  " + (imageB.widthOptions)}
+                        sx={{
+                          margin: 3,
+                        }}>
                             <PreviewCompatibleImage imageInfo={imageB}/>
                         </div>
                         <div className="column">
-                          <div className="tile text-body-content content-margins">
-                            <h3>{how.content1}</h3>
-                          </div>
-                          <div className="tile text-body-content content-margins">
-                            <h3>{how.content2}</h3>
+                          <div className="tile"
+                          sx={{
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
+                            fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
+                          }}>
+                            {how.content1}
                           </div>
                         </div>
                       </div>
+                      <div className="tile"
+                          sx={{
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
+                            fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
+                          }}>
+                            {how.content2}
+                      </div>
                   <div className="columns is-vcentered">
                     <div className="column">
-                        <div className="tile text-header-content content-margins">
-                          <h1>{why.header}</h1>
+                        <div className="tile"
+                        sx={{
+                          fontFamily: "heading",
+                          fontSize: 6,
+                          fontWeight: "heading",
+                          margin: 3,
+                          marginTop: 3,
+                        }}>
+                          {why.header}
                         </div>
-                        <div className="tile text-body-content content-margins">
-                          <h3>{why.tagline}</h3>
+                        <div className="tile"
+                        sx={{
+                          backgroundColor: "primary",
+                          borderLeft: "body",
+                          borderLeftColor: "secondary",
+                          fontFamily: "body",
+                          fontSize: 4,
+                          padding: 3,
+                          fontWeight: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                          margin: 3,
+                        }}>
+                          {why.tagline}
                         </div>
-                        <div className="tile text-body-content content-margins">
-                            <h3>{why.content1}</h3>
+                        <div className="tile"
+                        sx={{
+                          backgroundColor: "primary",
+                          borderLeft: "body",
+                          borderLeftColor: "secondary",
+                          fontFamily: "body",
+                          fontSize: 4,
+                          padding: 3,
+                          fontWeight: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                          margin: 3,
+                        }}>
+                            {why.content1}
                         </div>
-                        <div className="tile text-body-content content-margins">
-                            <h3>{why.content2}</h3>
+                        <div className="tile "
+                        sx={{
+                          backgroundColor: "primary",
+                          borderLeft: "body",
+                          borderLeftColor: "secondary",
+                          fontFamily: "body",
+                          fontSize: 4,
+                          padding: 3,
+                          fontWeight: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                          margin: 3,
+                        }}>
+                            {why.content2}
                         </div>
                     </div>
                     <div className={"column " + (imageC.widthOptions)}>
-                        <div className="content-margins">
+                        <div className=""
+                        sx={{
+                          margin: 3,
+                        }}>
                           <PreviewCompatibleImage imageInfo={imageC}/>
                         </div>
                     </div>
                   </div>
-                  <div className="tile text-header-content content-margins">
-                    <h1>{coreValues.header}</h1>
+                  <div className="tile"
+                  sx={{
+                    fontFamily: "heading",
+                    fontSize: 6,
+                    fontWeight: "heading",
+                    margin: 3,
+                    marginTop: 3,
+                  }}>
+                    {coreValues.header}
                   </div>
-                  <div className="tile content-margins">
+                  <div className="tile">
                       <div className="columns">
                         <div className="column">
-                          <div className="text-body-content">
-                            <h3>{coreValues.tagline}</h3>
+                          <div
+                          sx={{
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
+                            fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
+                          }}>
+                            {coreValues.tagline}
                           </div>
-                          <div className="tile text-body-content content-margins">
-                            <h3>{coreValues.content1}</h3>
+                          <div className="tile"
+                          sx={{
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
+                            fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
+                          }}>
+                            {coreValues.content1}
                           </div>
-                           <div className="tile text-body-content content-margins">
-                            <h3>{coreValues.content2}</h3>
+                           <div className="tile "
+                           sx={{
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
+                            fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
+                          }}>
+                            {coreValues.content2}
                           </div>
                     </div>
-                        <div className={"column " + (imageD.widthOptions)}>
+                        <div className={"column " + (imageD.widthOptions)}
+                        sx={{
+                          margin: 3,
+                        }}>
                             <PreviewCompatibleImage imageInfo={imageD}/>
                         </div>
                       </div>
@@ -165,7 +347,7 @@ export const AboutPageTemplate = ({
                     <h1 className="missionStatement">{main.missionStatement}</h1>
                   </div> */}
                   {/* <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                    <h3 className="subtitle">{mainpitch.description}
                   </div> */}
                 </div>
                 {/* <div className="columns">
@@ -186,9 +368,6 @@ export const AboutPageTemplate = ({
                 </div> */}
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     </section>
   </div>
   )

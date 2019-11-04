@@ -1,4 +1,6 @@
 import React from 'react'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -57,48 +59,60 @@ export const IndexPageTemplate = ({
     </div>
     <section className="section section--gradient">
       <div className="container">
-        <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="content">
-                  <div className="tile text-body-content content-margins">
-                    <h1 className="visionStatement">{main.visionStatement}</h1>
+                  <div className="tile"
+                  sx={{
+                    backgroundColor: "primary",
+                    borderLeft: "body",
+                    borderLeftColor: "secondary",
+                    padding: 3,
+                    margin: 3,
+                    marginTop: 4,
+                    marginBottom: 4,
+                    borderRadius: "body",
+                    boxShadow: "body",
+                    fontSize: 5,
+                    fontWeight: "heading",
+                  }}>
+                    {main.visionStatement}
                   </div>
-                  <div className="homeImage content-margins">
+                  <div className="homeImage"
+                  sx={{
+                    margin: 3,
+                  }}>
                   <PreviewCompatibleImage imageInfo={main.image1} />
                   </div>
-                  <div className="tile text-body-content content-margins">
-                    <h1 className="missionStatement">{main.missionStatement}</h1>
+                  <div className="tile"
+                  sx={{
+                    backgroundColor: "primary",
+                    borderLeft: "body",
+                    borderLeftColor: "secondary",
+                    padding: 3,
+                    margin: 3,
+                    marginTop: 4,
+                    marginBottom: 4,
+                    borderRadius: "body",
+                    boxShadow: "body",
+                    fontSize: 5,
+                    fontWeight: "heading",
+                  }}>
+                   {main.missionStatement}
                   </div>
-                  {/* <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div> */}
                 </div>
-                {/* <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div> */}
-                {/* <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div> */}
-                <div className="content-margins">
+                <div                 
+                sx={{
+                  margin: 3,
+                }}>
                 { <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
                     {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     {console.log(main.video)}
                 </BackgroundVideo> }
                 </div>
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2 text-header-content content-margins">
+                  <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
                   </h3>
                   <BlogRoll />
@@ -112,7 +126,6 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-      </div>
     </section>
   </div>
 )
