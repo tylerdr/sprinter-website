@@ -112,12 +112,27 @@ export const IndexPageTemplate = ({
                 </BackgroundVideo> }
                 </div>
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
+                  <p className="has-text-weight-semibold is-size-2"
+                  sx={{
+                    color: "text",
+                    fontWeight: "heading",
+                    fontFamily: "body",
+                    fontSize: 4,
+                  }}>
                     Latest stories
-                  </h3>
+                  </p>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
+                    <Link className="btn" to="/blog"
+                    sx={{
+                      border: "2px solid",
+                      backgroundColor: "primary",
+                      fontWeight: "heading",
+                      color: "text",
+                      borderRadius: "body",
+                      borderColor: "secondary",
+                      cursor: "pointer",                      
+                    }}>
                       Read more
                     </Link>
                   </div>

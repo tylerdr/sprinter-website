@@ -11,11 +11,14 @@ const ThemeSwitcher = () => {
         position: "absolute",
         top: 11,
         right: 53,
+        border: "2px solid",
         backgroundColor: "primary",
+        fontWeight: "heading",
         color: "text",
-        border: 0,
+        borderRadius: "body",
         px: 3,
         py: 2,
+        borderColor: "secondary",
         cursor: "pointer"
       }}
       onClick={() => setColorMode(nextColorMode)}

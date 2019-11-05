@@ -1,6 +1,8 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 function encode(data) {
   return Object.keys(data)
@@ -38,8 +40,11 @@ export default class Index extends React.Component {
       <Layout>
         <section className="section">
           <div className="container">
-            <div className="content">
-              <h1>Contact</h1>
+            <div className="content"
+            sx={{
+              marginTop: 2,
+            }}>
+              Contact
               <form
                 name="contact"
                 method="post"
@@ -57,7 +62,10 @@ export default class Index extends React.Component {
                   </label>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'name'}>
+                  <label className="label" htmlFor={'name'}
+                  sx={{
+                    color: "text"
+                  }}>
                     Your name
                   </label>
                   <div className="control">
@@ -72,7 +80,10 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'email'}>
+                  <label className="label" htmlFor={'email'}
+                  sx={{
+                    color: 'text',
+                  }}>
                     Email
                   </label>
                   <div className="control">
@@ -87,7 +98,10 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'message'}>
+                  <label className="label" htmlFor={'message'}
+                  sx={{
+                    color: 'text',
+                  }}>
                     Message
                   </label>
                   <div className="control">

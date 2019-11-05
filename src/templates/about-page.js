@@ -270,34 +270,33 @@ export const AboutPageTemplate = ({
                         </div>
                     </div>
                   </div>
-                  <div className="tile"
+                  <div className="tile "
                   sx={{
                     fontFamily: "heading",
                     fontSize: 6,
                     fontWeight: "heading",
                     margin: 3,
-                    marginTop: 3,
+                    marginTop: 6,
                   }}>
                     {coreValues.header}
                   </div>
-                  <div className="tile">
-                      <div className="columns">
-                        <div className="column">
-                          <div
-                          sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
-                            fontFamily: "body",
-                            fontSize: 4,
-                            padding: 3,
-                            fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
-                            margin: 3,
-                          }}>
+                      <div className="tile"
+                      sx={{
+                        backgroundColor: "primary",
+                        borderLeft: "body",
+                        borderLeftColor: "secondary",
+                        fontFamily: "body",
+                        fontSize: 4,
+                        padding: 3,
+                        fontWeight: "body",
+                        borderRadius: "body",
+                        boxShadow: "body",
+                        margin: 3,
+                      }}>
                             {coreValues.tagline}
-                          </div>
+                      </div>
+                      <div className="columns is-vcentered">
+                        <div className="column">
                           <div className="tile"
                           sx={{
                             backgroundColor: "primary",
@@ -313,8 +312,16 @@ export const AboutPageTemplate = ({
                           }}>
                             {coreValues.content1}
                           </div>
-                           <div className="tile "
-                           sx={{
+                        </div>
+                        <div className={"column  " + (imageD.widthOptions)}
+                        sx={{
+                          margin: 3,
+                        }}>
+                            <PreviewCompatibleImage imageInfo={imageD}/>
+                        </div>
+                      </div>
+                      <div className="tile"
+                          sx={{
                             backgroundColor: "primary",
                             borderLeft: "body",
                             borderLeftColor: "secondary",
@@ -327,45 +334,8 @@ export const AboutPageTemplate = ({
                             margin: 3,
                           }}>
                             {coreValues.content2}
-                          </div>
-                    </div>
-                        <div className={"column " + (imageD.widthOptions)}
-                        sx={{
-                          margin: 3,
-                        }}>
-                            <PreviewCompatibleImage imageInfo={imageD}/>
-                        </div>
                       </div>
-                  </div>
-                  {/* <div className="tile">
-                    <h1 className="visionStatement">{main.visionStatement}</h1>
-                  </div>
-                  <div className="homeImage">
-                  <PreviewCompatibleImage imageInfo={main.image1} />
-                  </div>
-                  <div className="tile">
-                    <h1 className="missionStatement">{main.missionStatement}</h1>
-                  </div> */}
-                  {/* <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}
-                  </div> */}
                 </div>
-                {/* <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div> */}
-                {/* <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div> */}
               </div>
             </div>
     </section>

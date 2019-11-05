@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import ThemeSwitcher from './theme-switcher'
+
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -33,10 +36,19 @@ const Navbar = class extends React.Component {
     )
   }
 
+
+
+
   render() {
     return (
       <nav
         className="navbar is-transparent"
+        style={{
+          position: "fixed"
+        }}
+        sx={{
+          backgroundColor: "background",
+        }}
         role="navigation"
         aria-label="main-navigation"
       >
@@ -61,19 +73,44 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/">
+            <Link className={`navbar-item ${
+                window.location.href.includes('about') ||
+                window.location.href.includes('contact') ||
+                window.location.href.includes('blog') ? '' : 'clicked' }`}
+              sx={{
+                fontWeight: "heading",
+                color: "text",
+              }}>
                 Home
               </Link>
-              <Link className="navbar-item" to="/about">
+              <Link className={`navbar-item ${
+                window.location.href.includes('about') ? 'clicked' : '' }`}
+               to="/about"
+              sx={{
+                fontWeight: "heading",
+                color: "text",
+              }}>
                 About
               </Link>
               {/* <Link className="navbar-item" to="/products">
                 Our Services
               </Link> */}
-              <Link className="navbar-item" to="/blog">
+              <Link className={`navbar-item ${
+                window.location.href.includes('blog') ? 'clicked' : '' }`}
+              to="/blog"
+              sx={{
+                fontWeight: "heading",
+                color: "text",
+              }}>
                 Blog
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <Link className={`navbar-item ${
+                window.location.href.includes('contact') ? 'clicked' : '' }`}
+              to="/contact"
+              sx={{
+                fontWeight: "heading",
+                color: "text",
+              }}>
                 Contact
               </Link>
               {/* <Link className="navbar-item" to="/contact/examples">

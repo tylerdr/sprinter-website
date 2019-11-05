@@ -14,6 +14,8 @@ $black: #2b2523
 .navbar .navbar-menu
   box-shadow:none !important
 
+
+
 .content .taglist
   list-style: none
   margin-bottom: 0
@@ -60,16 +62,10 @@ $black: #2b2523
     font-size: 18px
     font-size: 1rem
     line-height: 1.25
-    background-color: $sprinter-white
     border-radius: .25rem
     text-decoration: none
     font-weight: 700
-    color: $sprinter-blue
     text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px $sprinter-blue
-    box-shadow: inset 0 0 0 2px $sprinter-blue
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
 
 .margin-top-0
   margin-top: 0 !important
@@ -79,6 +75,7 @@ $black: #2b2523
 .navbar
   position: fixed 
   width: 100% 
+  padding-bottom: 15px
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
@@ -86,6 +83,11 @@ $black: #2b2523
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
+a.navbar-item.clicked
+    color: $primary
+    border-bottom: 3px solid
+    border-bottom-color: $primary
+    padding-bottom: 0px
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
@@ -119,11 +121,6 @@ $menu-label-color: $white-ter
     display: inline
 
 // blog roll
-.blog-list-item.is-featured
-  background-color: $sprinter-white
-.blog-list-item
-  background-color: $sprinter-white
-  font-color: $sprinter-blue
 .has-text-primary
   color: $sprinter-blue !important
 .blog-list-item header

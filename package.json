@@ -33,6 +33,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-social-icons": "^4.1.0",
     "theme-ui": "^0.2.46",
     "uuid": "^3.2.1"
   },

@@ -8,7 +8,7 @@ export default {
         modes: {
           dark: {
             text: '#fff',
-            background: '#222',
+            background: '#3A3A3A',
             primary: '#827e7e',
             secondary: '#3072f9',
           },
