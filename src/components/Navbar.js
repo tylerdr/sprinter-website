@@ -5,6 +5,7 @@ import logo from '../img/logo.svg'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import ThemeSwitcher from './theme-switcher'
+import { Location } from '@reach/router';
 
 
 const Navbar = class extends React.Component {
@@ -13,9 +14,15 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      currentPath: false,
     }
-  }
+  } 
 
+
+  componentDidMount = () =>
+    this.setState({ currentPath: this.props.location.pathname })
+
+ 
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
@@ -35,8 +42,6 @@ const Navbar = class extends React.Component {
       }
     )
   }
-
-
 
 
   render() {
@@ -74,9 +79,9 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start has-text-centered">
             <Link className={`navbar-item ${
-                window.location.href.includes('about') ||
-                window.location.href.includes('contact') ||
-                window.location.href.includes('blog') ? '' : 'clicked' }`}
+                this.props.location.pathname.includes('about') ||
+                this.props.location.pathname.includes('contact') ||
+                this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
               sx={{
                 fontWeight: "heading",
                 color: "text",
@@ -84,7 +89,7 @@ const Navbar = class extends React.Component {
                 Home
               </Link>
               <Link className={`navbar-item ${
-                window.location.href.includes('about') ? 'clicked' : '' }`}
+                this.props.location.pathname.includes('about') ? 'clicked' : '' }`}
                to="/about"
               sx={{
                 fontWeight: "heading",
@@ -96,7 +101,7 @@ const Navbar = class extends React.Component {
                 Our Services
               </Link> */}
               <Link className={`navbar-item ${
-                window.location.href.includes('blog') ? 'clicked' : '' }`}
+                this.props.location.pathname.includes('blog') ? 'clicked' : '' }`}
               to="/blog"
               sx={{
                 fontWeight: "heading",
@@ -105,7 +110,7 @@ const Navbar = class extends React.Component {
                 Blog
               </Link>
               <Link className={`navbar-item ${
-                window.location.href.includes('contact') ? 'clicked' : '' }`}
+                this.props.location.pathname.includes('contact') ? 'clicked' : '' }`}
               to="/contact"
               sx={{
                 fontWeight: "heading",
@@ -129,4 +134,6 @@ const Navbar = class extends React.Component {
   }
 }
 
-export default Navbar
+export default () => (
+<Location>{route => <Navbar {...route} />}</Location>
+)
