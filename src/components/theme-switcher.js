@@ -12,7 +12,7 @@ const ThemeSwitcher = () => {
         top: 11,
         right: 53,
         backgroundColor: "primary",
-        color: "background",
+        color: "text",
         border: 0,
         px: 3,
         py: 2,
