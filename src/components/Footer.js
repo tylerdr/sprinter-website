@@ -8,6 +8,7 @@ import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'
 import InstagramFeed from './InstagramFeed'
+import GoogleMap from './GoogleMap'
 
 const Footer = class extends React.Component {
   render() {
@@ -15,17 +16,17 @@ const Footer = class extends React.Component {
       <div>
       <InstagramFeed count="8"/>
       <footer className="footer">
-        <div className="has-text-centered">
-          <img
-            src={logo}
-            alt="Sprinter"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
+        {/*<div className="has-text-centered">*/}
+        {/*  <img*/}
+        {/*    src={logo}*/}
+        {/*    alt="Sprinter"*/}
+        {/*    style={{ width: '14em', height: '10em' }}*/}
+        {/*  />*/}
+        {/*</div>*/}
         <div className="has-text-centered">
           <div className="container">
-            <div className="columns">
-              <div className="column is-4">
+            <div className="columns is-vcentered">
+              <div className="column">
                 <div className="tile">
                       <Link to="/" className="navbar-item"
                       sx={{
@@ -42,8 +43,6 @@ const Footer = class extends React.Component {
                         About
                       </Link>
                 </div>
-              </div>
-              <div className="column is-4">
                 <div className="tile">
                       <Link className="navbar-item" to="/blog"
                       sx={{
@@ -60,38 +59,46 @@ const Footer = class extends React.Component {
                         Contact
                       </Link>
                 </div>
+
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com/Sprinter_HQ">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com/sprinterconsulting">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+              <div className="column is-7">
+                <GoogleMap />
               </div>
+              <div className="column">
+                Where we've worked description
+              </div>
+            </div>
+            <div className="social">
+
+              <a title="facebook" href="https://facebook.com">
+                <img
+                  src={facebook}
+                  alt="Facebook"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+              <a title="twitter" href="https://twitter.com/Sprinter_HQ">
+                <img
+                  className="fas fa-lg"
+                  src={twitter}
+                  alt="Twitter"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+              <a title="instagram" href="https://instagram.com/sprinterconsulting">
+                <img
+                  src={instagram}
+                  alt="Instagram"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+              <a title="vimeo" href="https://vimeo.com">
+                <img
+                  src={vimeo}
+                  alt="Vimeo"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
             </div>
             <div className="content has-text-centered">
             © Copyright {new Date().getFullYear()} All rights reserved.
