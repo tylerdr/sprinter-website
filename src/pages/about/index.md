@@ -102,6 +102,6 @@ imageC:
 imageD:
   alt: filler
   image: /img/computers1.jpg
-  widthOptions: is-10
+  widthOptions: is-7
 ---
 
