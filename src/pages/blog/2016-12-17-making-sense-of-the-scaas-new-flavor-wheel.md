@@ -1,33 +1,28 @@
 ---
 templateKey: blog-post
-title: Making sense of the SCAA’s new Flavor Wheel
+title: Who We Are
 date: 2016-12-17T15:04:10.000Z
+description: The Sprinter Consulting Story
 featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+featuredimage: /img/map-and-money.jpg
 tags:
-  - flavor
-  - tasting
+  - blog
+  - article
 ---
-![flavor wheel](/img/flavor_wheel.jpg)
+![flavor wheel](/img/map-and-money.jpg)
 
-The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
+# **Chapter 1:**
 
-While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
+> Like many eager college graduates, our CEO quickly landed a corporate job but shortly after became disenfranchised with the mundane and tedious work. Out of his frustrations with dated processes, insufficient software, and unreasonable hours, he quit his day job in order to pursue technology consulting.
 
-## What the updates mean to you
+# **Chapter 2:** 
 
-The Specialty Coffee Association of America (SCAA), founded in 1982, is a non-profit trade organization for the specialty coffee industry. With members located in more than 40 countries, SCAA represents every segment of the specialty coffee industry, including:
+> After giving up his comfortable position at a well-known enterprise, he embarked on a journey to positively impact the corporate world. However, he was going to do it his way. Instead of creating a product, and then fishing for a potential customer like most software developers, he decided to work backwards through consulting first, and creating second.
 
-* producers
-* roasters
-* importers/exporters
-* retailers
-* manufacturers
-* baristas
+## _By approaching the business directly and finding out their specific needs before designing the technology, Sprinter Consulting became the first of its kind._
 
-For over 30 years, SCAA has been dedicated to creating a vibrant specialty coffee community by recognizing, developing and promoting specialty coffee. SCAA sets and maintains quality standards for the industry, conducts market research, and provides education, training, resources, and business services for its members.
+# **Chapter 3:**
 
-Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue.
+> After having some success, Sprinter's CEO realized that through technology, he could pretty much work anywhere. This drove him into creating software that allowed more people to do the same thing. By focusing on ways to make businesses more efficient, he began freeing many professionals from the chains of their office cubicles.
 
-The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.
+# Sprinter now currently works with several businesses to cut out the clutter in order to focus on the work that matters.
