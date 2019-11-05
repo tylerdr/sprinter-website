@@ -52,7 +52,7 @@ imageB:
   widthOptions: is-6
 why:
   content1: >-
-    We offer your business 3 benefits through the power of 1. 
+    We offer your business three benefits through the power of one. 
 
     We deliver you more time, money, and freedom by implementing effective
     modern technology into your current workflow.  
@@ -97,7 +97,7 @@ coreValues:
     covering every possible approach in order to discover the best one. 
 imageC:
   alt: why
-  image: /img/man-on-rock.jpg
+  image: /img/sprinteraboutimage3.jpg
   widthOptions: is-4
 imageD:
   alt: filler
