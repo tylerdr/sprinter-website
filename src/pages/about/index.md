@@ -38,8 +38,8 @@ how:
   content2: >-
     After consulting, we begin mapping a custom plan to implement technology and
     software based on your business's current needs. This process is what offers
-    your company only the most advanced and effective technology solutions that
-    you won't find elsewhere. 
+    your company only the most advanced and effective technological solutions
+    that you won't find elsewhere. 
   header: How We Do It
   tagline: >-
     Our team is a unique blend of creatives, engineers, and developers who are
