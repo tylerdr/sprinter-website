@@ -1,12 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 export const HTMLContent = ({ content, className }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+  <div className={className} dangerouslySetInnerHTML={{ __html: content }} 
+  sx={{
+    color: "secondary",
+  }} />
 )
 
 const Content = ({ content, className }) => (
-  <div className={className}>{content}</div>
+  <div className={className}>{content}
+  </div>
 )
 
 Content.propTypes = {

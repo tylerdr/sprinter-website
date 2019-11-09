@@ -97,20 +97,6 @@ export const AboutPageTemplate = ({
                         boxShadow: "body",
                       }}>
                         {what.tagline}
-                      </div>
-                      <div className="tile"
-                      sx={{
-                        backgroundColor: "primary",
-                        borderLeft: "body",
-                        borderLeftColor: "secondary",
-                        fontFamily: "body",
-                        fontSize: 4,
-                        padding: 3,
-                        margin: 3,
-                        fontWeight: "body",
-                        borderRadius: "body",
-                        boxShadow: "body",
-                      }}>
                         {what.content1}
                       </div>
                     </div>

@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 export const BlogPostTemplate = ({
   content,
@@ -20,13 +22,22 @@ export const BlogPostTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+        <div className="columns"
+        sx={{
+          marginTop: 4,
+        }}>
+          <div className="column is-10 is-offset-1"
+          sx={{
+            color: "text",
+          }}>
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
             <p>{description}</p>
-            <PostContent content={content} />
+            <PostContent className="markdown" content={content} 
+            sx={{
+              color: "text",
+            }}/>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
