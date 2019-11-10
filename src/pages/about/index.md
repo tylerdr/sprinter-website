@@ -44,8 +44,8 @@ how:
   tagline: >-
     Our team is a unique blend of creatives, engineers, and developers who are
     knowledgeable in both business operations as well as software development.
-    This hybrid is what allows us to bridge the gap between your company's
-    current struggles and the technology that will resolve them. 
+    This hybrid is what helps us bridge the gap between your company's current
+    struggles and the technology that will resolve them. 
 imageB:
   alt: how
   image: /img/consulting-2.jpg
@@ -55,14 +55,23 @@ why:
     We offer your business three benefits through the power of one. 
 
     We deliver you more time, money, and freedom by implementing effective
-    modern technology into your current workflow.  
+    modern technology into your current workflow. 
+
+    Because automation is the future direction of all industries, we take the
+    time to study your current processes so that we can help implement better
+    ones together. 
   content2: >-
     We believe a happier professional equals a happier person and that happier
-    people make a better world. 
+    people make a better world. Our mission is to design software that allows
+    employees to focus their time on the important tasks by minimizing busy work
+    through advanced and available technology that cuts out the clutter. 
   header: Why We Do It
   tagline: >-
     We do it because we believe technology is the key to unlocking human
-    potential. 
+    potential. Through pairing capable workers with modern software, we increase
+    not only overall productivity within your company but also create a
+    healthier work environment that allows individuals to maximize their value
+    by expressing new and exciting ideas. 
 coreValues:
   content1: >-
     People over Profit: “We never make decisions based solely on financial gain,
@@ -86,10 +95,10 @@ coreValues:
   tagline: >
     We are a team of expert generalists who believe in first principles. 
 
-    We take pride in our ability and curiosity to master and collect expertise
-    different industries, skills, and arts. This emphasis on collective
-    knowledge produces a powerful collaboration between designers, engineers,
-    and developers that your business won't find elsewhere. 
+    This means we take pride in our ability and curiosity to master and collect
+    expertise in various industries, skills, and arts. Our emphasis on
+    collective knowledge produces a powerful collaboration between designers,
+    engineers, and developers that your business won't find elsewhere. 
 
     A first principle is a basic truth that cannot be deduced any further. We
     use this ideology throughout our consulting process to dismiss dogma and
@@ -97,7 +106,7 @@ coreValues:
     covering every possible approach in order to discover the best one. 
 imageC:
   alt: why
-  image: /img/sprinteraboutimage3.jpg
+  image: /img/man-and-mountain.jpg
   widthOptions: is-4
 imageD:
   alt: filler
