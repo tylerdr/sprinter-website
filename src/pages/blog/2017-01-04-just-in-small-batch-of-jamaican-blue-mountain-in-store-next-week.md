@@ -13,7 +13,7 @@ tags:
 ---
 ![](/img/human-connection.jpg)
 
-As the tides of tech belly up to shore and gracefully erode the sandcastles of business enterprise, we can see clearly what the present is and catch only a glimmer of what the future will be. That future will be molded in the hands of innovations, foreign destinations, and freedoms not yet fully graspable. The reality we are currently living in is not what excites us but the one we are creating does. 
+As the tides of tech belly up to shore and gracefully erode the sandcastles of traditional business operations, we can see clearly what the present is and catch only a glimmer of what the future will be. That future will be molded in the palms of new innovations, foreign destinations, and freedoms not yet fully graspable. The digital age we are currently living in is what excites us at Sprinter because of the infinite possibilities that are packaged in the power of modern technology. 
 
 We envision a world where laptops replace desktops, hikes at sunrise substitute for morning traffic, and vacation spots become the new office cubicles. We envision a world where professional attire is subjective and alarm clocks are obsolete. We are designing a world that doesn’t search for financial gain, but one that focuses on finding ways to help people. We will create this world by leveraging the power of technology to grant individuals the freedom they deserve.
 
