@@ -126,27 +126,11 @@ coreValuesTest:
     We believe that through pairing great technology with capable workers, we
     are able to enhance individual performance and in return, enable them to
     contribute the pinnacle of their worth to your business
-  header1: >-
-    ## _**People over Profit**_ 
-
-
-    We never make decisions based solely on financial gain, instead we take into
-    account all of the ways in which a proposition or new idea may impact our
-    employees as well as current and future clients
-  header2: >-
-    ## _**Work-Life Balance**_
-
-
-    One of the key components for any type of organizational success starts with
-    happy employees. That’s why from the beginning of any new client
-    relationship, Sprinter makes sure to address the ways in which we can help
-    workers maximize efficiency, and add more value to the business
-  header3: >-
-    ## _**Unlocking Human Potential**_
-
-
-    We believe that through pairing great technology with capable workers, we
-    are able to enhance individual performance and in return, enable them to
-    contribute the pinnacle of their worth to your business
+  header1: |
+    People Over Profit
+  header2: |
+    Work-Life Balance
+  header3: |
+    Unlocking Human Potential
 ---
 
