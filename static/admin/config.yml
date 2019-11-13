@@ -53,6 +53,7 @@ collections:
           - {label: Core Values, name: coreValues, widget: object, fields: [{label: Header, name: header, widget: text}, {label: Tagline, name: tagline, widget: text}, {label: content1, name: content1, widget: text}, {label: content2, name: content2, widget: text}]}
           - {label: ImageC, name: imageC, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
           - {label: ImageD, name: imageD, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
+          - {label: CoreValuesTest, name: coreValuesTest, widget: object, fields:[{label: Header1, name: header1, widget: markup}, {label: Body1, name: body1, widget: markup}, {label: Header2, name: header2, widget: markup}, {label: Body2, name: body2, widget: markup}, {label: Header3, name: header3, widget: markup}, {label: Body3, name: body3, widget: markup}]}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
