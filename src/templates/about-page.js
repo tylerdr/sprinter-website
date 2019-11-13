@@ -19,9 +19,13 @@ export const AboutPageTemplate = ({
   imageA,
   imageB,
   imageC,
-  imageD
+  imageD,
+  coreValuesTest,
+  content,
+  contentComponent  
  }) => {
 
+  const ValueContent = contentComponent || Content
 
   return (
     <div>
@@ -321,6 +325,65 @@ export const AboutPageTemplate = ({
                           }}>
                             {coreValues.content2}
                       </div>
+                      <div
+                          sx={{
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
+                            padding: 3,
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
+                          }}>
+                          <div
+                          sx={{
+                            fontSize: 5,
+                            fontWeight: "heading",
+                            fontFamily: "body",
+                            marginBottom: 3,
+                            fontStyle: "italic",
+                          }}>
+                          {coreValuesTest.header1}</div>
+                          <div
+                          sx={{
+                            fontSize: 4,
+                            fontWeight: "body",
+                            fontFamily: "body",
+                          }}>
+                          {coreValuesTest.body1}</div>
+                          <div
+                          sx={{
+                            fontSize: 5,
+                            fontWeight: "heading",
+                            fontFamily: "body",
+                            margin: 3,
+                            fontStyle: "italic",
+                          }}>
+                          {coreValuesTest.header2}</div>
+                          <div
+                          sx={{
+                            fontSize: 4,
+                            fontWeight: "body",
+                            fontFamily: "body",
+                          }}>
+                          {coreValuesTest.body2}</div>
+                          <div
+                          sx={{
+                            fontSize: 5,
+                            fontWeight: "heading",
+                            fontFamily: "body",
+                            margin: 3,
+                            fontStyle: "italic",
+                          }}>
+                          {coreValuesTest.header3}</div>
+                          <div
+                          sx={{
+                            fontSize: 4,
+                            fontWeight: "body",
+                            fontFamily: "body",
+                          }}>
+                          {coreValuesTest.body3}</div>
+                      </div>
                 </div>
               </div>
             </div>
@@ -351,7 +414,8 @@ const AboutPage = ({ data }) => {
         imageA={frontmatter.imageA}
         imageB={frontmatter.imageB}
         imageC={frontmatter.imageC}
-        imageD={frontmatter.imageD}/>
+        imageD={frontmatter.imageD}
+        coreValuesTest={frontmatter.coreValuesTest}/>
     </Layout>
   )
 }
@@ -404,6 +468,14 @@ export const aboutPageQuery = graphql`
               content2
               header
             }
+        coreValuesTest {
+              header1
+              header2
+              header3
+              body1
+              body2
+              body3
+        }
         imageA {
               widthOptions
               image {
