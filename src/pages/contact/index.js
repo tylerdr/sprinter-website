@@ -39,13 +39,55 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        <div
+      className="full-width-image margin-top-0"
+        style={{
+          backgroundImage: `url(https://images.search.yahoo.com/search/images;_ylt=AwrEzdsxFc9dN7IAjqVXNyoA;_ylu=X3oDMTE0Y2FtY3BmBGNvbG8DYmYxBHBvcwMxBHZ0aWQDQTA2MDdfMQRzZWMDcGl2cw--?p=alvin+kamara&fr2=piv-web&fr=tightropetb#id=0&iurl=https%3A%2F%2Fcdn-s3.si.com%2Fs3fs-public%2Fstyles%2Fmarquee_large_2x%2Fpublic%2F2018%2F12%2F05%2Falvin_kamara_breakout_of_the_year_0.jpg%3Fitok%3DaEVh_Bdv&action=click)`,
+          backgroundPosition: `bottom`,
+          backgroundAttachment: `fixed`,
+        }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          width: '75%'
+        }}
+      >
+        <h1 
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white',
+            lineHeight: '1',
+            padding: '0.25em',
+          }}
+        >
+        Contact Us
+        </h1>
+        <h3
+          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          style={{
+            color: 'white',
+            lineHeight: '1',
+            padding: '0.25em',
+          }}
+        >
+        We know your time is valuable. That's why we promise to respond promptly to any questions you may have concerning our process. Reach out today and discover the infinite ways we can work together to make your business better.
+        </h3>
+      </div>
+    </div>
         <section className="section">
           <div className="container">
             <div className="content"
             sx={{
               marginTop: 2,
+              fontSize: 4,
             }}>
-              Contact
+              <h3>Contact Form</h3>
               <div class="columns">
                 <div className='contactInformation column'
                 sx={{

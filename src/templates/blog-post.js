@@ -33,7 +33,7 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
+            <h3>{description}</h3>
             <PostContent className="markdown" content={content} 
             sx={{
               color: "text",
