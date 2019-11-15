@@ -106,7 +106,7 @@ coreValues:
     covering every possible approach in order to discover the best one. 
 imageC:
   alt: why
-  image: /img/airplane-window.jpg
+  image: /img/workhard-anywhere.png
   widthOptions: is-4
 imageD:
   alt: filler
