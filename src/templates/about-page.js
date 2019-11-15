@@ -193,82 +193,15 @@ export const AboutPageTemplate = ({
                           }}>
                             {how.content2}
                       </div>
-                  <div className="columns is-vcentered">
-                    <div className="column">
-                        <div className="tile"
-                        sx={{
-                          fontFamily: "heading",
-                          fontSize: 6,
-                          fontWeight: "heading",
-                          margin: 3,
-                          marginTop: 3,
-                        }}>
-                          {why.header}
-                        </div>
-                        <div className="tile"
-                        sx={{
-                          backgroundColor: "primary",
-                          borderLeft: "body",
-                          borderLeftColor: "secondary",
-                          fontFamily: "body",
-                          fontSize: 4,
-                          padding: 3,
-                          fontWeight: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                          margin: 3,
-                        }}>
-                          {why.tagline}
-                        </div>
-                        <div className="tile"
-                        sx={{
-                          backgroundColor: "primary",
-                          borderLeft: "body",
-                          borderLeftColor: "secondary",
-                          fontFamily: "body",
-                          fontSize: 4,
-                          padding: 3,
-                          fontWeight: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                          margin: 3,
-                        }}>
-                            {why.content1}
-                        </div>
-                        <div className="tile "
-                        sx={{
-                          backgroundColor: "primary",
-                          borderLeft: "body",
-                          borderLeftColor: "secondary",
-                          fontFamily: "body",
-                          fontSize: 4,
-                          padding: 3,
-                          fontWeight: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                          margin: 3,
-                        }}>
-                            {why.content2}
-                        </div>
-                    </div>
-                    <div className={"column " + (imageC.widthOptions)}>
-                        <div className=""
-                        sx={{
-                          margin: 3,
-                        }}>
-                          <PreviewCompatibleImage imageInfo={imageC}/>
-                        </div>
-                    </div>
-                  </div>
-                  <div className="tile "
-                  sx={{
-                    fontFamily: "heading",
-                    fontSize: 6,
-                    fontWeight: "heading",
-                    margin: 3,
-                    marginTop: 6,
+                      <div className="tile "
+                      sx={{
+                        fontFamily: "heading",
+                        fontSize: 6,
+                        fontWeight: "heading",
+                        margin: 3,
+                        marginTop: 6,
                   }}>
-                    {coreValues.header}
+                    {why.header}
                   </div>
                       <div className="tile"
                       sx={{
@@ -283,7 +216,7 @@ export const AboutPageTemplate = ({
                         boxShadow: "body",
                         margin: 3,
                       }}>
-                            {coreValues.tagline}
+                            {why.tagline}
                       </div>
                       <div className="columns is-vcentered">
                         <div className="column">
@@ -300,14 +233,14 @@ export const AboutPageTemplate = ({
                             boxShadow: "body",
                             margin: 3,
                           }}>
-                            {coreValues.content1}
+                            {why.content1}
                           </div>
                         </div>
-                        <div className={"column  " + (imageD.widthOptions)}
+                        <div className={"column  " + (imageC.widthOptions)}
                         sx={{
                           margin: 3,
                         }}>
-                            <PreviewCompatibleImage imageInfo={imageD}/>
+                            <PreviewCompatibleImage imageInfo={imageC}/>
                         </div>
                       </div>
                       <div className="tile"
@@ -323,24 +256,38 @@ export const AboutPageTemplate = ({
                             boxShadow: "body",
                             margin: 3,
                           }}>
-                            {coreValues.content2}
+                            {why.content2}
                       </div>
+                  <div className="tile "
+                  sx={{
+                    fontFamily: "heading",
+                    fontSize: 6,
+                    fontWeight: "heading",
+                    margin: 3,
+                    marginTop: 6,
+                  }}>
+                    {coreValues.header}
+                  </div>
                       <div
-                          sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
-                            padding: 3,
-                            borderRadius: "body",
-                            boxShadow: "body",
-                            margin: 3,
-                          }}>
+                      sx={{
+                        backgroundColor: "primary",
+                        borderLeft: "body",
+                        borderLeftColor: "secondary",
+                        fontFamily: "body",
+                        fontSize: 4,
+                        padding: 3,
+                        fontWeight: "body",
+                        borderRadius: "body",
+                        boxShadow: "body",
+                        margin: 3,
+                      }}>
+                            {coreValues.tagline}
                           <div
                           sx={{
                             fontSize: 5,
+                            margin: 3,
                             fontWeight: "heading",
                             fontFamily: "body",
-                            marginBottom: 3,
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header1}</div>

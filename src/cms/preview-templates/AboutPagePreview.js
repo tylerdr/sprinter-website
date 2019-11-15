@@ -19,6 +19,7 @@ const AboutPagePreview = ({ entry }) => {
           imageB={data.imageB}
           imageC={data.imageC}
           imageD={data.imageD}
+          coreValuesTest={data.coreValuesTest}
         />
     )
     } else {
