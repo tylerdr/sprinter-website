@@ -5,6 +5,7 @@ import { MapPin, Smartphone, Mail } from 'react-feather'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
+
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -15,7 +16,7 @@ export default class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = { isValidated: false }
-  }gat
+  }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
@@ -42,7 +43,7 @@ export default class Index extends React.Component {
         <div
       className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url(https://images.search.yahoo.com/search/images;_ylt=AwrEzdsxFc9dN7IAjqVXNyoA;_ylu=X3oDMTE0Y2FtY3BmBGNvbG8DYmYxBHBvcwMxBHZ0aWQDQTA2MDdfMQRzZWMDcGl2cw--?p=alvin+kamara&fr2=piv-web&fr=tightropetb#id=0&iurl=https%3A%2F%2Fcdn-s3.si.com%2Fs3fs-public%2Fstyles%2Fmarquee_large_2x%2Fpublic%2F2018%2F12%2F05%2Falvin_kamara_breakout_of_the_year_0.jpg%3Fitok%3DaEVh_Bdv&action=click)`,
+          backgroundImage: `url('/img/computers1.jpg')`,
           backgroundPosition: `bottom`,
           backgroundAttachment: `fixed`,
         }}
@@ -244,3 +245,4 @@ export default class Index extends React.Component {
     )
   }
 }
+
