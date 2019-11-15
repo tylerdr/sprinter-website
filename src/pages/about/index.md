@@ -107,7 +107,7 @@ coreValues:
 imageC:
   alt: why
   image: /img/workhard-anywhere.png
-  widthOptions: is-7
+  widthOptions: is-10
 imageD:
   alt: filler
   image: /img/computers1.jpg
