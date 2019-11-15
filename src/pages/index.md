@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Sprinter Consulting
-image: /img/export-63.jpg
+image: /img/cpmputer-home.jpg
 subheading: Discovering Tomorrow's Technology Today
 main:
   image1:
