@@ -6,7 +6,7 @@ subheading: Discovering Tomorrow's Technology Today
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee
-    image: /img/cool-mirror-2.jpg
+    image: /img/sc-logo.jpg
   missionStatement: >-
     Our mission is to unlock human potential by leveraging the power of
     technology to have the most positive impact.
