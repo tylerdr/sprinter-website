@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Sprinter Consulting
-image: /img/blue-mountains.jpg
+image: /img/blue-mirror.jpg
 subheading: Discovering Tomorrow's Technology Today
 main:
   image1:
