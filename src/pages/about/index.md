@@ -4,7 +4,7 @@ title: About Us
 subtitle: >-
   We are a global team of problem solvers unified by the shared goal of
   bettering individual lives through technology.
-headerImage: /img/break.jpg
+headerImage: /img/blue-mirror.jpg
 what:
   content1: >-
     As the technology evolves, so do we, but more importantly so does your
