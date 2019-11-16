@@ -2,9 +2,9 @@
 templateKey: about-page
 title: About Us
 subtitle: >-
-  We are a global team of problem solvers unified by the shared goal of
+  We are a global team of elite problem solvers unified by the shared goal of
   bettering individual lives through technology.
-headerImage: /img/blue-mirror.jpg
+headerImage: /img/stars.jpg
 what:
   content1: >-
     As the technology evolves, so do we, but more importantly so does your
