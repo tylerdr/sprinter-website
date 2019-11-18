@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
+import Helmet from 'react-helmet'
 import { MapPin, Smartphone, Mail } from 'react-feather'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
@@ -43,7 +44,7 @@ export default class Index extends React.Component {
         <div
       className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url('/img/computers1.jpg')`,
+          backgroundImage: `url('/img/contact-us-2-3-.jpg')`,
           backgroundPosition: `bottom`,
           backgroundAttachment: `fixed`,
         }}
@@ -88,12 +89,13 @@ export default class Index extends React.Component {
               marginTop: 2,
               fontSize: 4,
             }}>
-              <h3>Contact Form</h3>
               <div class="columns">
-                <div className='contactInformation column'
-                sx={{
-                  padding: 6,
-                }}>
+                <div className='contactInformation column'>
+                  <h3
+                  sx={{
+                    margin: 4,
+                    marginTop: 0,
+                  }}>Contact Form</h3>
                     <a
                       className="tile"
                       sx={{
@@ -109,7 +111,12 @@ export default class Index extends React.Component {
                       sx={{
                       marginRight: 3,
                       }}
-                      /> 9005 Overlook Blvd
+                      /> 
+                    <p 
+                    sx={{
+                      fontSize: 2,
+                    }}>9005 Overlook Blvd
+                    </p>
                     </a>
                     <a className="tile"
                     sx={{
@@ -119,7 +126,13 @@ export default class Index extends React.Component {
                       sx={{
                       marginRight: 3,
                       }}
-                      /> +1 000 000 0000
+                      />
+                      <p
+                      sx={{
+                        fontSize: 2,
+                      }}>
+                       +1 000 000 0000
+                       </p>
                     </a>
                     <a className="tile"
                     sx={{
@@ -129,10 +142,19 @@ export default class Index extends React.Component {
                       sx={{
                       marginRight: 3,
                       }}
-                        /> example@example.com
+                        />
+                        <p 
+                        sx={{
+                          fontSize: 2,
+                        }}>
+                          example@example.com
+                        </p>
                     </a>
                 </div>
                 <div className="column">
+                <Helmet>
+                  <script src="https://www.google.com/recaptcha/api.js" />
+                </Helmet>
                     <form
                       name="contact"
                       method="post"
@@ -194,13 +216,14 @@ export default class Index extends React.Component {
                         </label>
                         <div className="control">
                           <select 
-                          className="select"
+                          className="input"
                           type={'enquiry'}
                           name={'enquiry'}
                           onChange={this.handleChange}
                           id={'enquiry'}
-                          required={false}>
-                            <option disabled>
+                          defaultValue="Select One"
+                          required={true}>
+                            <option disabled hidden>
                               Select One
                             </option>
                             <option>Need to know more</option>
@@ -226,15 +249,18 @@ export default class Index extends React.Component {
                           />
                         </div>
                       </div>
-                      <div className="field">
-                        <button className="button is-link" type="submit">
-                          Send
-                        </button>
-                      </div>
                       <div
                       className="g-recaptcha"
                       data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA"
                       />
+                      <div className="field">
+                        <button className="button is-link" type="submit"
+                        sx={{
+                          marginTop: 2,
+                        }}>
+                          Send
+                        </button>
+                      </div>
                     </form>
                     </div>
             </div>

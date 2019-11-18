@@ -79,24 +79,6 @@ export const IndexPageTemplate = ({
                   }}>
                     {main.visionStatement}
                   </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>  
-                  <div className="homeImage"
-                  sx={{
-                    margin: 3,
-                  }}>
-                  <PreviewCompatibleImage imageInfo={main.image1} />
-                  </div>
- <section className="section section--gradient">
-      <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
                   <div className="tile"
                   sx={{
                     backgroundColor: "primary",

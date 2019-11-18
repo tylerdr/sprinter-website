@@ -34,4 +34,9 @@ export default {
   borders: {
     body: "solid 7.5px"
   },
+  styles: {
+    a:{
+          color: "secondary"
+    },
+  },
 }
