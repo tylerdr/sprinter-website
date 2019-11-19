@@ -44,7 +44,7 @@ export default class Index extends React.Component {
         <div
       className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url('/img/contact-us-2-3-.jpg')`,
+          backgroundImage: `url('/img/newportri-2-.jpg')`,
           backgroundPosition: `bottom`,
           backgroundAttachment: `fixed`,
         }}

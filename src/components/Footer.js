@@ -22,16 +22,19 @@ const Footer = class extends React.Component {
         {/*    style={{ width: '14em', height: '10em' }}*/}
         {/*  />*/}
         {/*</div>*/}
-        <div className="has-text-centered">
-          <div className="container">
-            <div className="columns is-vcentered">
+        <div>
+            <div className="columns is-vcentered" 
+            sx={{
+              marginRight: 4,
+              marginLeft: 4,
+            }}>
               <div className="column">
                 <div className="tile"
                 sx={{
                   color: "text",
-                  fontSize: 5,
+                  fontSize: 4,
                 }}>
-                  Any Questions?
+                  For questions, call us at 1-000-000-000 or email us at example@example.com.
                 </div>
               </div>
               <div className="column is-7">
@@ -41,7 +44,7 @@ const Footer = class extends React.Component {
                 Where we've worked description
               </div>
             </div>
-            <div className="social-bar" >
+            <div className="social-bar has-text-centered" >
             <SocialIcon url="https://instagram.com/sprinterconsulting/" 
             sx={{
               margin: 1,
@@ -63,7 +66,6 @@ const Footer = class extends React.Component {
             © Copyright {new Date().getFullYear()} All rights reserved.
              </div>
           </div>
-        </div>
       </footer>
       </div>
     )

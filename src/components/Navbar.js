@@ -67,6 +67,9 @@ const Navbar = class extends React.Component {
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
+              sx={{
+                color: "text",
+              }}
             >
               <span />
               <span />
@@ -76,6 +79,9 @@ const Navbar = class extends React.Component {
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
+            sx={{
+              backgroundColor: "background",
+            }}
           >
             <div className="navbar-start has-text-centered">
             <Link className={`navbar-item ${
@@ -85,6 +91,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "heading",
                 color: "text",
+                backgroundColor: "background",
               }}>
                 Home
               </Link>
@@ -94,6 +101,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "heading",
                 color: "text",
+                backgroundColor: "background",
               }}>
                 About
               </Link>
@@ -106,6 +114,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "heading",
                 color: "text",
+                backgroundColor: "background",
               }}>
                 Blog
               </Link>
@@ -115,6 +124,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "heading",
                 color: "text",
+                backgroundColor: "background",
               }}>
                 Contact
               </Link>
