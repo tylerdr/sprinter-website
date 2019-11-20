@@ -56,11 +56,9 @@ why:
     recipient of the software and its developers. Our unique set of expertise
     offers your business three benefits through the power of one. We deliver you
     more time, money, and freedom through implementing effective modern
-    technology into your current workflow. We don't solely believe that
-    automation is the way of the future, but we do believe it is the way to your
-    company's future. That's why we take the time to study the way your business
-    operates. Through getting to know the ins and outs of your processes, we can
-    help implement more effective ones together. 
+    technology into your current workflow. Through taking the time to study how
+    your business operates, we are able to recommend only the best software
+    solutions that help meet your current needs. 
   content2: >-
     We believe a happier professional equals a happier person and that happier
     people make a better world. Our mission is to design software that allows
