@@ -52,14 +52,15 @@ imageB:
   widthOptions: is-6
 why:
   content1: >-
-    We offer your business three benefits through the power of one. 
-
-    We deliver you more time, money, and freedom by implementing effective
-    modern technology into your current workflow. 
-
-    Because automation is the future direction of all industries, we take the
-    time to study your current processes so that we can help implement better
-    ones together. 
+    Sprinter is the first of its kind, serving as the missing link between the
+    recipient of the software and its developers. Our unique set of expertise
+    offers your business three benefits through the power of one. We deliver you
+    more time, money, and freedom through implementing effective modern
+    technology into your current workflow. We don't solely believe that
+    automation is the way of the future, but we do believe it is the way to your
+    company's future. That's why we take the time to study the way your business
+    operates. Through getting to know the ins and outs of your processes, we can
+    help implement more effective ones together. 
   content2: >-
     We believe a happier professional equals a happier person and that happier
     people make a better world. Our mission is to design software that allows
