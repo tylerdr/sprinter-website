@@ -16,12 +16,12 @@ what:
   content2: >-
     Our focus is on implementing new technology that saves your company both
     time and money. Through harnessing the power of modern software, we provide
-    you with the expertise needed to maximize technology's potential and meet
-    your goals.
+    you with the expertise needed to maximize technology's positive potential
+    within your company. 
   header: What We Do
   tagline: >-
     We empower businesses to become more efficient through automating their
-    current systems and  solving complex problems with simple tech-based
+    current systems and solving complex problems with simple tech-based
     solutions. 
 imageA:
   alt: what
@@ -36,10 +36,10 @@ how:
     meet your future goals. With only your specific needs in mind, we are able
     to design a detailed course of action tailored to fit your company.
   content2: >-
-    After consulting, we begin mapping a custom plan to implement technology and
-    software based on your business's current needs. This process is what offers
-    your company only the most advanced and effective technological solutions
-    that you won't find elsewhere. 
+    After consulting, we begin mapping a custom plan to implement software based
+    on your business's current needs. This process is what offers your company
+    only the most advanced and effective technological solutions that you won't
+    find elsewhere. 
   header: How We Do It
   tagline: >-
     Our team is a unique blend of creatives, engineers, and developers who are
@@ -63,14 +63,14 @@ why:
     We believe a happier professional equals a happier person and that happier
     people make a better world. Our mission is to design software that allows
     employees to focus their time on the important tasks by minimizing busy work
-    through advanced and available technology that cuts out the clutter. 
+    with advanced and available technology that cuts out the clutter. 
   header: Why We Do It
   tagline: >-
     We do it because we believe technology is the key to unlocking human
     potential. Through pairing capable workers with modern software, we increase
-    not only overall productivity within your company but also create a
-    healthier work environment that allows individuals to maximize their value
-    by expressing new and exciting ideas. 
+    not only overall productivity but also create a healthier work environment
+    that allows individuals to achieve optimal value by expressing new and
+    exciting ideas. 
 coreValues:
   content1: >-
     People over Profit: “We never make decisions based solely on financial gain,
@@ -84,7 +84,8 @@ coreValues:
     Work-Life Balance: “One of the key components for any type of organizational
     success starts with happy employees. That’s why from the beginning of any
     new client relationship, Sprinter makes sure to address the ways in which we
-    can help workers maximize efficiency, and add more value to the business.”
+    can help workers contribute more overall value within the company by
+    discovering ways to maximize their efficiency."
 
     Unlocking Human Potential: “We believe that through pairing great technology
     with capable workers, we are able to enhance individual performance and in
@@ -113,18 +114,19 @@ imageD:
   widthOptions: is-7
 coreValuesTest:
   body1: >-
-    We never make decisions based solely on financial gain, instead we take into
-    account all of the ways in which a proposition or new idea may impact our
-    employees as well as current and future clients
+    "We never make decisions based solely on financial gain, instead we take
+    into account all of the ways in which a proposition or new idea may impact
+    our employees as well as current and future clients."
   body2: >-
-    One of the key components for any type of organizational success starts with
-    happy employees. That’s why from the beginning of any new client
+    “One of the key components for any type of organizational success starts
+    with happy employees. That’s why from the beginning of any new client
     relationship, Sprinter makes sure to address the ways in which we can help
-    workers maximize efficiency, and add more value to the business
+    workers contribute more overall value within the company by discovering ways
+    to maximize their efficiency."
   body3: >-
-    We believe that through pairing great technology with capable workers, we
+    "We believe that through pairing great technology with capable workers, we
     are able to enhance individual performance and in return, enable them to
-    contribute the pinnacle of their worth to your business
+    contribute the pinnacle of their worth to your business."
   header1: |
     People Over Profit
   header2: |
