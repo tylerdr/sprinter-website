@@ -8,8 +8,8 @@ main:
     alt: A close-up of a paper filter filled with ground coffee
     image: /img/sc-logo.jpg
   missionStatement: >+
-    Our mission is to unlock human potential with empowering software that best
-    meets our clients' current and future needs. 
+    Our mission is to unlock human potential by designing dynamic software
+    solutions that best meet our clients' current and future needs. 
 
 
   video:
