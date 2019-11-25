@@ -9,8 +9,8 @@ main:
     image: /img/sc-logo.jpg
   missionStatement: >+
 
-    “Our mission is to unlock human potential by leveraging technology’s power
-    to have the most positive impact.” 
+    Our mission is to unlock human potential by leveraging technology’s power to
+    have the most positive impact.
 
   video:
     videoFile: /img/the_story_behind_the_name-2-.mp4
