@@ -41,7 +41,19 @@ const Footer = class extends React.Component {
                 <GoogleMap />
               </div>
               <div className="column">
-                Where we've worked description
+                <p
+                sx={{
+                        backgroundColor: "primary",
+                        borderLeft: "body",
+                        borderLeftColor: "secondary",
+                        fontFamily: "body",
+                        fontSize: 3,
+                        padding: 3,
+                        margin: 3,
+                        fontWeight: "body",
+                        borderRadius: "body",
+                        boxShadow: "body",
+                }}>Our passion for technology combined with our love of travel has allowed us to work in some of the most beautiful places in the world. The map to the left pinpoints all of our temporary offices where we’ve opened our laptops while enjoying breathtaking cities, scenery and culture.</p>
               </div>
             </div>
             <div className="social-bar has-text-centered" >
