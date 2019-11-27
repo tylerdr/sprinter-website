@@ -161,7 +161,7 @@ export default class Index extends React.Component {
                       action="/contact/thanks/"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
-                      netlify-recaptcha="true"
+                      data-netlify-recaptcha="true"
                       onSubmit={this.handleSubmit}
                     >
                       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -252,9 +252,16 @@ export default class Index extends React.Component {
                           />
                         </div>
                       </div>
+                      <label className="Form--Label Form-Checkbox">
+                        <input
+                          className="Form--Input Form--Textarea Form--CheckboxInput"
+                          name="newsletter"
+                          type="checkbox"
+                        />
+                        <span>Get Updates (only the important stuff we promise)</span>
+                      </label>
                       <div
                         className="g-recaptcha"
-                        data-sitekey="6LekDb4UAAAAAK2fWolYytmkAxFYkzRdPaf76z-9"
                         data-netlify-recaptcha="true"
                       />
                       <div className="field">
