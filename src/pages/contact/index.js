@@ -224,12 +224,14 @@ export default class Index extends React.Component {
                           id={'enquiry'}
                           defaultValue="Select One"
                           required={true}>
-                            <option disabled hidden>
-                              Select One
-                            </option>
-                            <option>Need to know more</option>
-                            <option>Want to say hello!</option>
-                            <option>Found a bug</option>
+                          <option disabled hidden>
+                            Type of Enquiry
+                          </option>
+                          <option>I would love to receive your posts in my email</option>
+                          <option>Digital Transformation scares me, can you help?</option>
+                          <option>I want to know more about working from anywhere</option>
+                          <option>I found a bug on your site... embarrassing</option>
+                          <option>Just want to say hello</option>
                           </select>
                         </div>
                       </div>
@@ -251,8 +253,9 @@ export default class Index extends React.Component {
                         </div>
                       </div>
                       <div
-                      className="g-recaptcha"
-                      data-sitekey="6LekDb4UAAAAAK2fWolYytmkAxFYkzRdPaf76z-9"
+                        className="g-recaptcha"
+                        data-sitekey="6LekDb4UAAAAAK2fWolYytmkAxFYkzRdPaf76z-9"
+                        data-netlify-recaptcha="true"
                       />
                       <div className="field">
                         <button className="button is-link" type="submit"
