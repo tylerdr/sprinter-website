@@ -161,7 +161,7 @@ export default class Index extends React.Component {
                       action="/contact/thanks/"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
-                      data-netlify-recaptcha="true"
+                      // data-netlify-recaptcha="true"
                       onSubmit={this.handleSubmit}
                     >
                       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -224,13 +224,12 @@ export default class Index extends React.Component {
                           id={'enquiry'}
                           defaultValue="Select One"
                           required={true}>
-                          <option disabled hidden>
+                          <option disabled>
                             Type of Enquiry
                           </option>
                           <option>I would love to receive your posts in my email</option>
                           <option>Digital Transformation scares me, can you help?</option>
                           <option>I want to know more about working from anywhere</option>
-                          <option>I found a bug on your site... embarrassing</option>
                           <option>Just want to say hello</option>
                           </select>
                         </div>
@@ -252,18 +251,20 @@ export default class Index extends React.Component {
                           />
                         </div>
                       </div>
-                      <label className="Form--Label Form-Checkbox">
-                        <input
-                          className="Form--Input Form--Textarea Form--CheckboxInput"
-                          name="newsletter"
-                          type="checkbox"
-                        />
-                        <span>Get Updates (only the important stuff we promise)</span>
-                      </label>
-                      <div
+                      <div className="field">
+                        <label>
+                          <input
+                            name="newsletter"
+                            type="checkbox"
+                          />
+                          <span>Get Updates (only the important stuff we promise)</span>
+                        </label>
+                      </div>
+                      {/* <div
                         className="g-recaptcha"
+                        data-sitekey="6LekDb4UAAAAAK2fWolYytmkAxFYkzRdPaf76z-9"
                         data-netlify-recaptcha="true"
-                      />
+                      /> */}
                       <div className="field">
                         <button className="button is-link" type="submit"
                         sx={{
