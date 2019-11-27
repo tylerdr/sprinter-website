@@ -224,8 +224,8 @@ export default class Index extends React.Component {
                           id={'enquiry'}
                           defaultValue="Select One"
                           required={true}>
-                          <option disabled>
-                            Type of Enquiry
+                          <option>
+                            Select One
                           </option>
                           <option>I would love to receive your posts in my email</option>
                           <option>Digital Transformation scares me, can you help?</option>
@@ -256,6 +256,8 @@ export default class Index extends React.Component {
                           <input
                             name="newsletter"
                             type="checkbox"
+                            className="checkbox"
+                            onChange={this.handleChange}
                           />
                           <span>Get Updates (only the important stuff we promise)</span>
                         </label>
