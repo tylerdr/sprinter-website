@@ -161,6 +161,7 @@ export default class Index extends React.Component {
                       action="/contact/thanks/"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
+                      netlify-recaptcha="true"
                       onSubmit={this.handleSubmit}
                     >
                       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -251,7 +252,7 @@ export default class Index extends React.Component {
                       </div>
                       <div
                       className="g-recaptcha"
-                      data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA"
+                      data-sitekey="6LekDb4UAAAAAK2fWolYytmkAxFYkzRdPaf76z-9"
                       />
                       <div className="field">
                         <button className="button is-link" type="submit"
