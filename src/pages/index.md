@@ -13,6 +13,7 @@ main:
     have the most positive impact.
 
   video:
+    poster: /img/capture.png
     videoFile: /img/the_story_behind_the_name-2-.mp4
     videoTitle: testing
   visionStatement: >-
