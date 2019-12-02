@@ -20,6 +20,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Podcast", name: "podcast", widget: object, fields: [{label: Podcast Link, name: podcastLink, widget: file}, {label: Podcast Title, name: podcastTitle, widget: text}]}
 
   - name: "pages"
     label: "Pages"

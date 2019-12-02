@@ -101,9 +101,9 @@ export default class Index extends React.Component {
                       sx={{
                         margin: 4,
                       }}
-                      // href={`https://www.google.com.au/maps/search/${encodeURI(
-                      //   address
-                      // )}`}
+                      href={`https://www.google.com.au/maps/search/${encodeURI(
+                       "9005 Overlook Blvd"
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -119,6 +119,7 @@ export default class Index extends React.Component {
                     </p>
                     </a>
                     <a className="tile"
+                    href={`tel:${"+1-615-957-5603"}`}
                     sx={{
                       margin: 4,
                     }}>
@@ -131,10 +132,11 @@ export default class Index extends React.Component {
                       sx={{
                         fontSize: 2,
                       }}>
-                       +1 000 000 0000
+                       +1-615-957-5603
                        </p>
                     </a>
                     <a className="tile"
+                    href={`mailto:${"tyler@sprinterconsulting.com"}`}
                     sx={{
                       margin: 4,
                     }}>
@@ -147,7 +149,7 @@ export default class Index extends React.Component {
                         sx={{
                           fontSize: 2,
                         }}>
-                          example@example.com
+                          tyler@sprinterconsulting.com
                         </p>
                     </a>
                 </div>

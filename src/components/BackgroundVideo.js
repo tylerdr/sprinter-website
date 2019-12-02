@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BackgroundVideo extends Component {
-//   _isMounted = false;
-// // sad
-// //   state = {
-// //     isLoading: true
-// //   }
+   _isMounted = false;
+  sad
+    state = {
+      isLoading: true
+    }
 
   constructor(props) {
     super(props)
@@ -15,12 +15,12 @@ class BackgroundVideo extends Component {
   }
   state = {
     playing: false,
-    mobileWidth: false
-    // loading: true
+    mobileWidth: false,
+    loading: true
   }
 
   updateDimensions() {
-    this.setState({ mobileWidth: window.innerWidth <= 900 })
+    this.setState({ mobileWidth: window.innerWidth <= 900 ? true : false })
   }
 
   handelPlay() {
@@ -32,23 +32,22 @@ class BackgroundVideo extends Component {
   }
 
   componentDidMount() {
-    // this._isMounted = true;
+    this._isMounted = true;
     this.updateDimensions()
     window.addEventListener('resize', () => this.updateDimensions())
-      // {
-      //   if (this._isMounted) {
-      //     this.setState({ isLoading: false })
-      //   }
-      //   return this.updateDimensions();
-      // }
-    // )
+       {
+         if (this._isMounted) {
+           this.setState({ isLoading: false })
+         }
+         return this.updateDimensions();
+       }  
     ReactDOM.findDOMNode(this.ref.current).addEventListener('playing', e =>
       this.handelPlay(e)
     )
   }
 
   componentWillUnmount() {
-    // this._isMounted = false;
+    this._isMounted = false;
     window.removeEventListener('resize', this.updateDimensions)
   }
 
@@ -57,6 +56,27 @@ class BackgroundVideo extends Component {
     return (
       <Fragment>
         {!this.state.mobileWidth && (
+          <div className={`BackgroundVideo`}>
+            <video
+              ref={this.ref}
+              poster={poster}
+              className={`BackgroundVideo--video ${
+                this.state.playing ? 'playing' : ''
+              } `}
+              playsInline
+              autoPlay
+              muted
+              loop
+              preload="auto"
+            >
+              {children}
+            </video>
+            {videoTitle && (
+              <div className="BackgroundVideo--videoTitle"></div>
+            )}
+          </div>
+        )}
+        {!!this.state.mobileWidth && (
           <div className={`BackgroundVideo`}>
             <video
               ref={this.ref}

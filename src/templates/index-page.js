@@ -83,9 +83,8 @@ export const IndexPageTemplate = ({
                     sx={{
                       margin: 3,
                     }}>
-                    { <BackgroundVideo videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                    { <BackgroundVideo videoTitle={main.video.videoTitle} poster={!!main.video.poster.childImageSharp ? main.video.poster.childImageSharp.fluid.src : main.video.poster }>
                         {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
-                        {console.log(main.video)}
                     </BackgroundVideo> }
                   </div>
                   <div className="tile"
@@ -191,7 +190,14 @@ export const pageQuery = graphql`
             videoFile {
               publicURL
             }
-            videoTitle
+            videoTitle 
+            poster {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           image1 {
             image {
