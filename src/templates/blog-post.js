@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import ReactPlayer from 'react-player'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
@@ -15,6 +16,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  podcast,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -34,6 +36,12 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <h3>{description}</h3>
+              <div>
+                <ReactPlayer 
+                url={podcast.podcastLink.publicURL} 
+                playing='true' 
+                controls='true'/>
+              </div>
             <PostContent className="markdown" content={content} 
             sx={{
               color: "text",
@@ -74,6 +82,7 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        podcast={post.frontmatter.podcast}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -108,6 +117,12 @@ export const pageQuery = graphql`
         title
         description
         tags
+        podcast {
+          podcastLink {
+            publicURL
+          }
+          podcastTitle
+        }
       }
     }
   }
