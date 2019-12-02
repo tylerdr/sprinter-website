@@ -36,12 +36,14 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <h3>{description}</h3>
+            {podcast && (
               <div>
                 <ReactPlayer 
                 url={podcast.podcastLink.publicURL} 
                 playing='true' 
                 controls='true'/>
               </div>
+            )}
             <PostContent className="markdown" content={content} 
             sx={{
               color: "text",
