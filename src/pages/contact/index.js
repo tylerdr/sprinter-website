@@ -217,20 +217,20 @@ export default class Index extends React.Component {
                         </label>
                         <div className="control">
                           <select 
-                          className="input"
-                          type={'enquiry'}
-                          name={'enquiry'}
-                          onChange={this.handleChange}
-                          id={'enquiry'}
-                          defaultValue="Select One"
-                          required={true}>
-                          <option>
-                            Select One
-                          </option>
-                          <option>I would love to receive your posts in my email</option>
-                          <option>Digital Transformation scares me, can you help?</option>
-                          <option>I want to know more about working from anywhere</option>
-                          <option>Just want to say hello</option>
+                            className="input"
+                            type={'enquiry'}
+                            name={'enquiry'}
+                            onChange={this.handleChange}
+                            id={'enquiry'}
+                            defaultValue="Select One"
+                            required={true}>
+                            <option disabled>
+                              Select One
+                            </option>
+                            <option>I would love to receive your posts in my email</option>
+                            <option>Digital Transformation scares me, can you help?</option>
+                            <option>I want to know more about working from anywhere</option>
+                            <option>Just want to say hello</option>
                           </select>
                         </div>
                       </div>
@@ -252,15 +252,21 @@ export default class Index extends React.Component {
                         </div>
                       </div>
                       <div className="field">
-                        <label>
+                        <label className="label" htmlFor={'newsletter'}
+                          sx={{
+                            color: 'text',
+                          }}>
+                          Get Updates (only the important stuff we promise)
+                          </label>
+                          <div className="control">
                           <input
-                            name="newsletter"
-                            type="checkbox"
+                            name={'newsletter'}
+                            type={'checkbox'}
                             className="checkbox"
                             onChange={this.handleChange}
+                            id={'newsletter'}
                           />
-                          <span>Get Updates (only the important stuff we promise)</span>
-                        </label>
+                          </div>
                       </div>
                       {/* <div
                         className="g-recaptcha"
