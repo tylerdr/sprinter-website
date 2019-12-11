@@ -56,7 +56,7 @@ class BlogRoll extends React.Component {
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                  {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Keep Reading →</p>}
                   </Link>
                 </p>
               </article>
@@ -94,6 +94,12 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
+                podcast {
+                  podcastLink {
+                    publicURL
+                  }
+                  podcastTitle
+                }
                 featuredpost
                 featuredimage {
                   childImageSharp {

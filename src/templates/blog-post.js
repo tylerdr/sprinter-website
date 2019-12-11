@@ -8,6 +8,7 @@ import Content, { HTMLContent } from '../components/Content'
 import ReactPlayer from 'react-player'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const BlogPostTemplate = ({
   content,
@@ -17,6 +18,7 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   podcast,
+  featuredimage,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -38,10 +40,19 @@ export const BlogPostTemplate = ({
             <h3>{description}</h3>
             {podcast && (
               <div>
+                <div>
+                <PreviewCompatibleImage imageInfo={featuredimage}/>
+                </div>
                 <ReactPlayer 
                 url={podcast.podcastLink.publicURL} 
                 playing='true' 
-                controls='true'/>
+                controls='true'
+                height='20px'
+                width='100%'
+                sx={{
+                  margin: 3, 
+                }}/>
+                
               </div>
             )}
             <PostContent className="markdown" content={content} 
@@ -85,6 +96,7 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         podcast={post.frontmatter.podcast}
+        featuredimage={post.frontmatter.featuredimage}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -119,6 +131,13 @@ export const pageQuery = graphql`
         title
         description
         tags
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         podcast {
           podcastLink {
             publicURL
