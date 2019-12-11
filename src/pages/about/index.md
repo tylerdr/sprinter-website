@@ -62,15 +62,16 @@ why:
   content2: >-
     We believe a happier professional equals a happier person and that happier
     people make a better world. Our mission is to design software that allows
-    employees to focus their time on the important tasks by minimizing busy work
-    with advanced and available technology that cuts out the clutter. 
+    employees to focus their time on the important tasks. This is achieved
+    through strategically minimizing busy work with advanced and available
+    technology that helps cuts out the clutter. 
   header: Why We Do It
   tagline: >-
     We do it because we believe technology is the key to unlocking human
-    potential. Through pairing capable workers with modern software, we increase
-    not only overall productivity but also create a healthier work environment
-    that allows individuals to achieve optimal value by expressing new and
-    exciting ideas. 
+    potential. Through pairing capable workers with modern software, your
+    company will notice an increase in overall productivity, a healthier work
+    environment, and employees achieving their optimal value within the
+    business. 
 coreValues:
   content1: >-
     People over Profit: “We never make decisions based solely on financial gain,
