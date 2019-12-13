@@ -253,14 +253,7 @@ export default class Index extends React.Component {
                           />
                         </div>
                       </div>
-                      <div className="field">
-                        <label className="label" htmlFor={'newsletter'}
-                          sx={{
-                            color: 'text',
-                          }}>
-                          Get Updates (only the important stuff we promise)
-                          </label>
-                          <div className="control">
+                      <div className="field newsletter control">
                           <input
                             name={'newsletter'}
                             type={'checkbox'}
@@ -268,7 +261,18 @@ export default class Index extends React.Component {
                             onChange={this.handleChange}
                             id={'newsletter'}
                           />
-                          </div>
+                          <span
+                          sx={{
+                            marginLeft: 2,
+                          }}
+                          >
+                            <label className="label" htmlFor={'newsletter'}
+                              sx={{
+                                color: 'text',
+                              }}>
+                              Get Updates (only the important stuff we promise)
+                            </label>
+                          </span>
                       </div>
                       {/* <div
                         className="g-recaptcha"

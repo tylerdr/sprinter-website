@@ -75,7 +75,8 @@ export const IndexPageTemplate = ({
                     borderRadius: "body",
                     boxShadow: "body",
                     fontSize: 5,
-                    fontWeight: "heading",
+                    fontWeight: "body",
+                    fontFamily: "body",
                   }}>
                     {main.visionStatement}
                   </div>
@@ -94,12 +95,13 @@ export const IndexPageTemplate = ({
                     borderLeftColor: "secondary",
                     padding: 3,
                     margin: 3,
+                    fontFamily: "body",
                     marginTop: 4,
                     marginBottom: 4,
                     borderRadius: "body",
                     boxShadow: "body",
                     fontSize: 5,
-                    fontWeight: "heading",
+                    fontWeight: "body",
                   }}>
                    {main.missionStatement}
                   </div>
