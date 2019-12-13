@@ -52,26 +52,26 @@ imageB:
   widthOptions: is-6
 why:
   content1: >-
-    Sprinter is the first of its kind, serving as the missing link between the
-    recipient of the software and its developers. Our unique set of expertise
-    offers your business three benefits through the power of one. We deliver you
-    more time, money, and freedom through implementing effective modern
-    technology into your current workflow. Through taking the time to study how
-    your business operates, we are able to recommend only the best software
-    solutions that help meet your current needs. 
+    Through pairing capable workers with modern software, your company will
+    notice an increase in overall productivity, a healthier work environment,
+    and employees achieving their optimal value within the business. Sprinter is
+    the first of its kind, serving as the missing link between the recipient of
+    the software and its developers. Our unique set of expertise offers your
+    business three benefits through the power of one. We deliver you more time,
+    money, and freedom through implementing effective modern technology into
+    your current workflow. Through taking the time to study how your business
+    operates, we are able to recommend only the best software solutions that
+    help meet your current needs. 
   content2: >-
-    We believe a happier professional equals a happier person and that happier
-    people make a better world. Our mission is to design software that allows
-    employees to focus their time on the important tasks. This is achieved
-    through strategically minimizing busy work with advanced and available
-    technology that helps cuts out the clutter. 
+    Our mission is to design software that allows employees to focus their time
+    on the important tasks. This is achieved through strategically minimizing
+    busy work with advanced and available technology that helps cuts out the
+    clutter. 
   header: Why We Do It
   tagline: >-
     We do it because we believe technology is the key to unlocking human
-    potential. Through pairing capable workers with modern software, your
-    company will notice an increase in overall productivity, a healthier work
-    environment, and employees achieving their optimal value within the
-    business. 
+    potential and that a happier person and that happier people make a better
+    world. 
 coreValues:
   content1: >-
     People over Profit: “We never make decisions based solely on financial gain,
