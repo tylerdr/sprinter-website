@@ -9,24 +9,16 @@ what:
   content1: >+
     Sprinter is more than a technology consultant, we are a team of problem
     solvers. We collaborate with advanced developers who have mastered ways to
-    resolve ongoing issues that are negatively impacting businesses. We are
-    composed of unique problem solvers that approach your needs from an
-    unconventional but effective perspective. Because we possess expertise in a
-    broad array of different fields, we are able to dissect issues from an
-    open-minded angle that optimizes success. We use technology to make
-    businesses better. As the technology evolves, so do we, but more importantly
-    so does your business. We train in sprints to help your business run the
-    marathon. Through bridging the gap between your company and a team of
-    outsourced developers, we are able to deliver the perfect product for your
-    specific needs. Our understanding of both the software world as well as the
-    engineering industry, ensures your business reaches maximum success. Because
-    today's tech world is rapidly becoming more advanced & complex, we've
-    handcrafted tools that make it easier to navigate the modern technological
-    landscape. We help companies automate their workflow in various ways by
-    implementing modern software. Essentially, Sprinter is a one stop shop that
-    solves problems through approaching the issue from original and effective
-    angles. This unique perspective allows us to dissect complex problems
-    through a clear lens, offering your business the most appropriate solution. 
+    resolve ongoing issues that are negatively impacting businesses. We use
+    technology to make businesses better. As the technology evolves, so do we,
+    but more importantly so does your business. We train in sprints to help your
+    business run the marathon. Through bridging the gap between your company and
+    a team of outsourced developers, we are able to deliver the perfect product
+    for your specific needs. Our understanding of both the software world as
+    well as the engineering industry, ensures your business reaches maximum
+    success. Because today's tech world is rapidly becoming more advanced &
+    complex, we've handcrafted tools that make it easier to navigate the modern
+    technological landscape.
 
   content2: >-
     Sprinter is the first of its kind, serving as the missing link between the
@@ -38,7 +30,12 @@ what:
     ensure your business is ready for it. Our focus is on implementing new
     technology that saves your company both time and money. Through harnessing
     the power of modern software, we provide you with the expertise needed to
-    maximize technology's positive potential within your company. 
+    maximize technology's positive potential within your company.  We help
+    companies automate their workflow in various ways by implementing modern
+    software. Essentially, Sprinter is a one stop shop that solves problems
+    through approaching the issue from original and effective angles. This
+    unique perspective allows us to dissect complex problems through a clear
+    lens, offering your business the most appropriate solution. 
   header: What We Do
   tagline: >-
     We empower businesses to become more efficient through automating their
@@ -50,19 +47,22 @@ imageA:
   widthOptions: is-7
 how:
   content1: >-
-    Do you feel like your business is lacking something, but don’t specifically
-    know what? Do you recognize that your company could be better, but don’t
-    know how? These are two questions that our team of highly-skilled experts
-    are trained to answer. We are a tech-based consulting firm of elite problem
-    solvers with the sole mission of improving your business. Through feasible
-    modern technology, we are able to implement solutions that positively impact
-    your overall workflow. The reason many software solutions fail is largely
-    due to the lack of communication between the developer and the client. We've
-    solved this issue through our method of consulting before and during the
-    development process. This type of transparency is what ensures success when
-    working together to meet your future goals. With only your specific needs in
-    mind, we are able to design a detailed course of action tailored to fit your
-    company.
+    We are composed of unique problem solvers that approach your needs from an
+    unconventional but effective perspective. Because we possess expertise in a
+    broad array of different fields, we are able to dissect issues from an
+    open-minded angle that optimizes success. Do you feel like your business is
+    lacking something, but don’t specifically know what? Do you recognize that
+    your company could be better, but don’t know how? These are two questions
+    that our team of highly-skilled experts are trained to answer. We are a
+    tech-based consulting firm of elite problem solvers with the sole mission of
+    improving your business. Through feasible modern technology, we are able to
+    implement solutions that positively impact your overall workflow. The reason
+    many software solutions fail is largely due to the lack of communication
+    between the developer and the client. We've solved this issue through our
+    method of consulting before and during the development process. This type of
+    transparency is what ensures success when working together to meet your
+    future goals. With only your specific needs in mind, we are able to design a
+    detailed course of action tailored to fit your company.
   content2: >
     Our entire process starts with a simple conversation. This is rooted in our
     belief that developing a relationship with our clients is just as important
