@@ -89,6 +89,17 @@ export const AboutPageTemplate = ({
                     <div className="column">
                       <div className="tile"
                       sx={{
+                        fontFamily: "body",
+                        fontSize: 3,
+                        padding: 3,
+                        margin: 3,
+                        fontWeight: "body",
+                      }}>
+                        {what.tagline}
+                        {what.content1}
+                      </div>
+                      <div className="tile"
+                      sx={{
                         backgroundColor: "primary",
                         borderLeft: "body",
                         borderLeftColor: "secondary",
@@ -100,8 +111,7 @@ export const AboutPageTemplate = ({
                         borderRadius: "body",
                         boxShadow: "body",
                       }}>
-                        {what.tagline}
-                        {what.content1}
+                        "{what.tagline}"
                       </div>
                     </div>
                     <div className={"column " + (imageA.widthOptions)}>
@@ -115,16 +125,11 @@ export const AboutPageTemplate = ({
                   </div>
                   <div className="tile"
                   sx={{
-                    backgroundColor: "primary",
-                    borderLeft: "body",
-                    borderLeftColor: "secondary",
                     fontFamily: "body",
-                    fontSize: 4,
+                    fontSize: 3,
                     padding: 3,
                     margin: 3,
                     fontWeight: "body",
-                    borderRadius: "body",
-                    boxShadow: "body",
                   }}>
                         {what.content2}
                   </div>
@@ -140,15 +145,10 @@ export const AboutPageTemplate = ({
                   </div>
                       <div className="tile"
                       sx={{
-                        backgroundColor: "primary",
-                        borderLeft: "body",
-                        borderLeftColor: "secondary",
                         fontFamily: "body",
-                        fontSize: 4,
+                        fontSize: 3,
                         padding: 3,
                         fontWeight: "body",
-                        borderRadius: "body",
-                        boxShadow: "body",
                         margin: 3,
                       }}>
                             {how.tagline}
@@ -163,15 +163,10 @@ export const AboutPageTemplate = ({
                         <div className="column">
                           <div className="tile"
                           sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
+                            fontSize: 3,
                             padding: 3,
                             fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
                             margin: 3,
                           }}>
                             {how.content1}
@@ -180,15 +175,10 @@ export const AboutPageTemplate = ({
                       </div>
                       <div className="tile"
                           sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
+                            fontSize: 3,
                             padding: 3,
                             fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
                             margin: 3,
                           }}>
                             {how.content2}
@@ -205,15 +195,10 @@ export const AboutPageTemplate = ({
                   </div>
                       <div className="tile"
                       sx={{
-                        backgroundColor: "primary",
-                        borderLeft: "body",
-                        borderLeftColor: "secondary",
                         fontFamily: "body",
-                        fontSize: 4,
+                        fontSize: 3,
                         padding: 3,
                         fontWeight: "body",
-                        borderRadius: "body",
-                        boxShadow: "body",
                         margin: 3,
                       }}>
                             {why.tagline}
@@ -222,15 +207,10 @@ export const AboutPageTemplate = ({
                         <div className="column">
                           <div className="tile"
                           sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
+                            fontSize: 3,
                             padding: 3,
                             fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
                             margin: 3,
                           }}>
                             {why.content1}
@@ -245,15 +225,10 @@ export const AboutPageTemplate = ({
                       </div>
                       <div className="tile"
                           sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
+                            fontSize: 3,
                             padding: 3,
                             fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
                             margin: 3,
                           }}>
                             {why.content2}
@@ -270,18 +245,14 @@ export const AboutPageTemplate = ({
                   </div>
                       <div
                       sx={{
-                        backgroundColor: "primary",
-                        borderLeft: "body",
-                        borderLeftColor: "secondary",
                         fontFamily: "body",
-                        fontSize: 4,
+                        fontSize: 3,
                         padding: 3,
                         fontWeight: "body",
-                        borderRadius: "body",
-                        boxShadow: "body",
                         margin: 3,
                       }}>
                             {coreValues.tagline}
+                      </div>
                           <div
                           sx={{
                             fontSize: 5,
@@ -293,9 +264,16 @@ export const AboutPageTemplate = ({
                           {coreValuesTest.header1}</div>
                           <div
                           sx={{
-                            fontSize: 4,
-                            fontWeight: "body",
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
                             fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
                           }}>
                           {coreValuesTest.body1}</div>
                           <div
@@ -309,9 +287,16 @@ export const AboutPageTemplate = ({
                           {coreValuesTest.header2}</div>
                           <div
                           sx={{
-                            fontSize: 4,
-                            fontWeight: "body",
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
                             fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
                           }}>
                           {coreValuesTest.body2}</div>
                           <div
@@ -325,14 +310,20 @@ export const AboutPageTemplate = ({
                           {coreValuesTest.header3}</div>
                           <div
                           sx={{
-                            fontSize: 4,
-                            fontWeight: "body",
+                            backgroundColor: "primary",
+                            borderLeft: "body",
+                            borderLeftColor: "secondary",
                             fontFamily: "body",
+                            fontSize: 4,
+                            padding: 3,
+                            fontWeight: "body",
+                            borderRadius: "body",
+                            boxShadow: "body",
+                            margin: 3,
                           }}>
                           {coreValuesTest.body3}</div>
                       </div>
                 </div>
-              </div>
             </div>
     </section>
   </div>
