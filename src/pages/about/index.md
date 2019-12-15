@@ -44,7 +44,7 @@ what:
 imageA:
   alt: what
   image: /img/sprinteraboutimage2.jpg
-  widthOptions: is-7
+  widthOptions: is-6
 how:
   content1: >-
     We are composed of unique problem solvers that approach your needs from an
