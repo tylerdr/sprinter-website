@@ -7,35 +7,31 @@ subtitle: >-
 headerImage: /img/stars.jpg
 what:
   content1: >+
-    Sprinter is more than a technology consultant, we are a team of problem
-    solvers. We collaborate with advanced developers who have mastered ways to
-    resolve ongoing issues that are negatively impacting businesses. We use
-    technology to make businesses better. As the technology evolves, so do we,
-    but more importantly so does your business. We train in sprints to help your
-    business run the marathon. Through bridging the gap between your company and
-    a team of outsourced developers, we are able to deliver the perfect product
-    for your specific needs. Our understanding of both the software world as
-    well as the engineering industry, ensures your business reaches maximum
-    success. Because today's tech world is rapidly becoming more advanced &
-    complex, we've handcrafted tools that make it easier to navigate the modern
-    technological landscape.
+    As the technology evolves, so do we, but more importantly so does your
+    business. Through bridging the gap between your company and a team of
+    outsourced developers, we are able to deliver the perfect product for your
+    specific needs. Our understanding of both the software world as well as the
+    engineering industry, ensures your business reaches maximum success. Because
+    today's tech world is rapidly becoming more advanced & complex, we've
+    handcrafted tools that make it easier to navigate the modern technological
+    landscape.
 
   content2: >-
-    Sprinter is the first of its kind, serving as the missing link between the
-    recipient of the software and its developers. Before Sprinter, most
-    businesses looking to update their systems were forced to choose between one
-    size fits all software options that fail miserably due to lack of
-    communication. Sprinter has solved this problem through their consulting
-    before creating method. Industry 4.0 is here to stay, it's our goal to
-    ensure your business is ready for it. Our focus is on implementing new
-    technology that saves your company both time and money. Through harnessing
-    the power of modern software, we provide you with the expertise needed to
-    maximize technology's positive potential within your company.  We help
-    companies automate their workflow in various ways by implementing modern
-    software. Essentially, Sprinter is a one stop shop that solves problems
-    through approaching the issue from original and effective angles. This
-    unique perspective allows us to dissect complex problems through a clear
-    lens, offering your business the most appropriate solution. 
+    We use technology to make businesses better. Sprinter is the first of its
+    kind, serving as the missing link between the recipient of the software and
+    its developers. Before Sprinter, most businesses looking to update their
+    systems were forced to choose between one size fits all software options
+    that fail miserably due to lack of communication. Sprinter has solved this
+    problem through their consulting before creating method. Industry 4.0 is
+    here to stay, it's our goal to ensure your business is ready for it. Our
+    focus is on implementing new technology that saves your company both time
+    and money. Through harnessing the power of modern software, we provide you
+    with the expertise needed to maximize technology's positive potential within
+    your company.  We help companies automate their workflow in various ways by
+    implementing modern software. Essentially, Sprinter is a one stop shop that
+    solves problems through approaching the issue from original and effective
+    angles. This unique perspective allows us to dissect complex problems
+    through a clear lens, offering your business the most appropriate solution. 
   header: What We Do
   tagline: >-
     We empower businesses to become more efficient through automating their
@@ -64,9 +60,10 @@ how:
     future goals. With only your specific needs in mind, we are able to design a
     detailed course of action tailored to fit your company.
   content2: >
-    Our entire process starts with a simple conversation. This is rooted in our
-    belief that developing a relationship with our clients is just as important
-    as developing the software. That’s why we conduct a mandatory consultation
+    We train in sprints to help your business run the marathon. Our entire
+    process starts with a simple conversation. This is rooted in our belief that
+    developing a relationship with our clients is just as important as
+    developing the software. That’s why we conduct a mandatory consultation
     before creating or offering any tech-based solutions. This method of
     consulting before creating is what separates us from our competitors and
     ensures you receive only the best results. After consulting, we begin
