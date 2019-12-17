@@ -95,7 +95,6 @@ export const AboutPageTemplate = ({
                         margin: 3,
                         fontWeight: "body",
                       }}>
-                        {what.tagline}
                         {what.content1}
                       </div>
                       <div className="tile"
@@ -132,6 +131,7 @@ export const AboutPageTemplate = ({
                     fontWeight: "body",
                   }}>
                         {what.content2}
+                        {what.content3}
                   </div>
                   <div className="tile "
                   sx={{
@@ -151,7 +151,7 @@ export const AboutPageTemplate = ({
                         fontWeight: "body",
                         margin: 3,
                       }}>
-                            {how.tagline}
+                            {how.content1}
                       </div>
                       <div className="columns is-vcentered">
                         <div className={"column  " + (imageB.widthOptions)}
@@ -169,8 +169,24 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             margin: 3,
                           }}>
-                            {how.content1}
+                            {how.content2}
                           </div>
+                          <div className="tile"
+                            sx={{
+                              backgroundColor: "primary",
+                              borderLeft: "body",
+                              borderLeftColor: "secondary",
+                              fontFamily: "body",
+                              fontSize: 4,
+                              padding: 3,
+                              margin: 3,
+                              marginBottom: 5,
+                              fontWeight: "body",
+                              borderRadius: "body",
+                              boxShadow: "body",
+                            }}>
+                          {how.tagline} 
+                        </div>
                         </div>
                       </div>
                       <div className="tile"
@@ -181,7 +197,7 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             margin: 3,
                           }}>
-                            {how.content2}
+                            {how.content3}
                       </div>
                       <div className="tile "
                       sx={{
@@ -201,10 +217,26 @@ export const AboutPageTemplate = ({
                         fontWeight: "body",
                         margin: 3,
                       }}>
-                            {why.tagline}
+                            {why.content1}
                       </div>
                       <div className="columns is-vcentered">
                         <div className="column">
+                        <div
+                        sx={{
+                          backgroundColor: "primary",
+                          borderLeft: "body",
+                          borderLeftColor: "secondary",
+                          fontFamily: "body",
+                          fontSize: 4,
+                          padding: 3,
+                          margin: 3,
+                          marginBottom: 5,
+                          fontWeight: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                        }}>
+                         {why.tagline} 
+                        </div>
                           <div className="tile"
                           sx={{
                             fontFamily: "body",
@@ -213,7 +245,7 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             margin: 3,
                           }}>
-                            {why.content1}
+                            {why.content2}
                           </div>
                         </div>
                         <div className={"column  " + (imageC.widthOptions)}
@@ -231,7 +263,7 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             margin: 3,
                           }}>
-                            {why.content2}
+                            {why.content3}
                       </div>
                   <div className="tile "
                   sx={{
@@ -386,18 +418,21 @@ export const aboutPageQuery = graphql`
               tagline
               content1
               content2
+              content3
               header
             }
         how {
               tagline
               content1
               content2
+              content3
               header
             }
         why {
               tagline
               content1
               content2
+              content3
               header
             }
         coreValues {
