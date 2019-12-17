@@ -6,8 +6,8 @@ export default () => (
     <section className="section">
       <div className="container">
         <div className="content">
-          <h1>Thank you!</h1>
-          <p>This is a custom thank you page for form submissions</p>
+          <h3>Thank you for reaching out. We know your time is valuable and appreciate every second that went into your message. We will be sure to respond as promptly as possible. 
+-Sprinter</h3>
         </div>
       </div>
     </section>

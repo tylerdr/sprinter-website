@@ -40,9 +40,6 @@ export const BlogPostTemplate = ({
             <h3>{description}</h3>
             {podcast && (
               <div>
-                <div>
-                <PreviewCompatibleImage imageInfo={featuredimage}/>
-                </div>
                 <ReactPlayer 
                 url={podcast.podcastLink.publicURL} 
                 playing='true' 
