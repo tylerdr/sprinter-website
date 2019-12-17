@@ -8,30 +8,30 @@ headerImage: /img/stars.jpg
 what:
   content1: >+
     As the technology evolves, so do we, but more importantly so does your
-    business. Through bridging the gap between your company and a team of
-    outsourced developers, we are able to deliver the perfect product for your
-    specific needs. Our understanding of both the software world as well as the
-    engineering industry, ensures your business reaches maximum success. Because
-    today's tech world is rapidly becoming more advanced & complex, we've
-    handcrafted tools that make it easier to navigate the modern technological
-    landscape.
+    business. Through bridging the gap between your company and our team of
+    outsourced developers, we are able to deliver the perfect product molded to
+    fit your specific needs. Our understanding of both the software world as
+    well as the engineering industry, is what ensures our collaboration reaches
+    maximum success. Because today's tech world is rapidly becoming more
+    advanced & complex, we've handcrafted tools that make it easier to navigate
+    the modern technological landscape. We use technology to make businesses
+    better.
 
   content2: >-
-    We use technology to make businesses better. Sprinter is the first of its
-    kind, serving as the missing link between the recipient of the software and
-    its developers. Before Sprinter, most businesses looking to update their
-    systems were forced to choose between one size fits all software options
-    that fail miserably due to lack of communication. Sprinter has solved this
-    problem through their consulting before creating method. Industry 4.0 is
-    here to stay, it's our goal to ensure your business is ready for it. Our
-    focus is on implementing new technology that saves your company both time
-    and money. Through harnessing the power of modern software, we provide you
-    with the expertise needed to maximize technology's positive potential within
-    your company.  We help companies automate their workflow in various ways by
-    implementing modern software. Essentially, Sprinter is a one stop shop that
-    solves problems through approaching the issue from original and effective
-    angles. This unique perspective allows us to dissect complex problems
-    through a clear lens, offering your business the most appropriate solution. 
+    Sprinter is the first of its kind, serving as the missing link between the
+    recipient of the software and its developers. Before Sprinter, most
+    businesses looking to update their systems were forced to choose between one
+    size fits all software options that fail miserably due to lack of
+    communication. We've solved this problem through our consulting before
+    creating method. Industry 4.0 is here to stay and it's our goal to ensure
+    your business is ready for it. Our focus is on implementing new technology
+    that saves you both time and money. Through harnessing the power of modern
+    software, we provide you with the expertise needed to maximize technology's
+    positive potential within your company.   Essentially, Sprinter is a one
+    stop shop that solves problems through approaching the issue from original
+    and effective angles. This unique perspective allows us to dissect complex
+    problems through a clear lens, offering your business the most appropriate
+    solution. 
   header: What We Do
   tagline: >-
     We empower businesses to become more efficient through automating their
@@ -40,7 +40,7 @@ what:
 imageA:
   alt: what
   image: /img/sprinteraboutimage2.jpg
-  widthOptions: is-4
+  widthOptions: is-6
 how:
   content1: >-
     We are composed of unique problem solvers that approach your needs from an
