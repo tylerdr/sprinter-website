@@ -43,19 +43,23 @@ imageA:
   widthOptions: is-6
 how:
   content1: >-
-    We are composed of unique problem solvers that approach your needs from an
-    unconventional but effective perspective. Because we possess expertise in a
-    broad array of different fields, we are able to dissect issues from an
-    open-minded angle that optimizes success. Do you feel like your business is
-    lacking something, but don’t specifically know what? Do you recognize that
-    your company could be better, but don’t know how? These are two questions
-    that our team of highly-skilled experts are trained to answer. We are a
-    tech-based consulting firm of elite problem solvers with the sole mission of
-    improving your business. Through feasible modern technology, we are able to
-    implement solutions that positively impact your overall workflow. The reason
-    many software solutions fail is largely due to the lack of communication
-    between the developer and the client. We've solved this issue through our
-    method of consulting before and during the development process. This type of
+    Our team is a unique blend of creatives, engineers, and developers who are
+    knowledgeable in both business operations as well as software development.
+    This hybrid is what helps us bridge the gap between your company's current
+    struggles and the technology that will resolve them. We are composed of
+    unique problem solvers that approach your needs from an unconventional but
+    effective perspective. Because we possess expertise in a broad array of
+    different fields, we are able to dissect issues from an open-minded angle
+    that optimizes success. Do you feel like your business is lacking something,
+    but don’t specifically know what? Do you recognize that your company could
+    be better, but don’t know how? These are two questions that our team of
+    highly-skilled experts are trained to answer. We are a tech-based consulting
+    firm of elite problem solvers with the sole mission of improving your
+    business. Through feasible modern technology, we are able to implement
+    solutions that positively impact your overall workflow. The reason many
+    software solutions fail is largely due to the lack of communication between
+    the developer and the client. We've solved this issue through our method of
+    consulting before and during the development process. This type of
     transparency is what ensures success when working together to meet your
     future goals. With only your specific needs in mind, we are able to design a
     detailed course of action tailored to fit your company.
@@ -79,17 +83,17 @@ how:
   tagline: >-
     Our team is a unique blend of creatives, engineers, and developers who are
     knowledgeable in both business operations as well as software development.
-    This hybrid is what helps us bridge the gap between your company's current
-    struggles and the technology that will resolve them. 
 imageB:
   alt: how
   image: /img/consulting-2.jpg
   widthOptions: is-6
 why:
   content1: >-
-    Like many successful companies, we believe maintaining a stellar Why is just
-    as important as the work we do. By centering our business around our core
-    beliefs, we are able to focus attention towards your company's specific
+    We do it because we believe technology is the key to unlocking human
+    potential and that a happier person and that happier people make a better
+    world. Like many successful companies, we believe maintaining a stellar Why
+    is just as important as the work we do. By centering our business around our
+    core beliefs, we are able to focus attention towards your company's specific
     needs. Through pairing capable workers with modern software, your company
     will notice an increase in overall productivity, a healthier work
     environment, and employees achieving their optimal value within the
