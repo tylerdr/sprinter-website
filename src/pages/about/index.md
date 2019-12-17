@@ -7,17 +7,20 @@ subtitle: >-
 headerImage: /img/stars.jpg
 what:
   content1: >+
-    As the technology evolves, so do we, but more importantly so does your
-    business. Through bridging the gap between your company and our team of
+    We empower businesses to become more efficient through automating their
+    current systems and solving complex problems with simple tech-based
+    solutions. As the technology evolves, so do we, but more importantly so does
+    your business. Through bridging the gap between your company and our team of
     outsourced developers, we are able to deliver the perfect product molded to
-    fit your specific needs. Our understanding of both the software world as
-    well as the engineering industry, is what ensures our collaboration reaches
-    maximum success. Because today's tech world is rapidly becoming more
-    advanced & complex, we've handcrafted tools that make it easier to navigate
-    the modern technological landscape. We use technology to make businesses
-    better.
+    fit your specific needs. 
 
   content2: >-
+    Our understanding of both the software world as well as the engineering
+    industry, is what ensures our collaboration reaches maximum success. Because
+    today's tech world is rapidly becoming more advanced & complex, we've
+    handcrafted tools that make it easier to navigate the modern technological
+    landscape. We use technology to make businesses better.
+  content3: >-
     Sprinter is the first of its kind, serving as the missing link between the
     recipient of the software and its developers. Before Sprinter, most
     businesses looking to update their systems were forced to choose between one
@@ -50,20 +53,22 @@ how:
     unique problem solvers that approach your needs from an unconventional but
     effective perspective. Because we possess expertise in a broad array of
     different fields, we are able to dissect issues from an open-minded angle
-    that optimizes success. Do you feel like your business is lacking something,
-    but don’t specifically know what? Do you recognize that your company could
-    be better, but don’t know how? These are two questions that our team of
-    highly-skilled experts are trained to answer. We are a tech-based consulting
-    firm of elite problem solvers with the sole mission of improving your
-    business. Through feasible modern technology, we are able to implement
-    solutions that positively impact your overall workflow. The reason many
-    software solutions fail is largely due to the lack of communication between
-    the developer and the client. We've solved this issue through our method of
-    consulting before and during the development process. This type of
-    transparency is what ensures success when working together to meet your
-    future goals. With only your specific needs in mind, we are able to design a
-    detailed course of action tailored to fit your company.
-  content2: >
+    that optimizes success. 
+  content2: >-
+    Do you feel like your business is lacking something, but don’t specifically
+    know what? Do you recognize that your company could be better, but don’t
+    know how? These are two questions that our team of highly-skilled experts
+    are trained to answer. We are a tech-based consulting firm of elite problem
+    solvers with the sole mission of improving your business. Through feasible
+    modern technology, we are able to implement solutions that positively impact
+    your overall workflow. The reason many software solutions fail is largely
+    due to the lack of communication between the developer and the client. We've
+    solved this issue through our method of consulting before and during the
+    development process. This type of transparency is what ensures success when
+    working together to meet your future goals. With only your specific needs in
+    mind, we are able to design a detailed course of action tailored to fit your
+    company.
+  content3: >
     We train in sprints to help your business run the marathon. Our entire
     process starts with a simple conversation. This is rooted in our belief that
     developing a relationship with our clients is just as important as
@@ -97,14 +102,16 @@ why:
     needs. Through pairing capable workers with modern software, your company
     will notice an increase in overall productivity, a healthier work
     environment, and employees achieving their optimal value within the
-    business. Sprinter is the first of its kind, serving as the missing link
-    between the recipient of the software and its developers. Our unique set of
-    expertise offers your business three benefits through the power of one. We
-    deliver you more time, money, and freedom through implementing effective
-    modern technology into your current workflow. Through taking the time to
-    study how your business operates, we are able to recommend only the best
-    software solutions that help meet your current needs. 
+    business. 
   content2: >-
+    Sprinter is the first of its kind, serving as the missing link between the
+    recipient of the software and its developers. Our unique set of expertise
+    offers your business three benefits through the power of one. We deliver you
+    more time, money, and freedom through implementing effective modern
+    technology into your current workflow. Through taking the time to study how
+    your business operates, we are able to recommend only the best software
+    solutions that help meet your current needs. 
+  content3: >-
     We are an up & coming tech service that offers businesses a refreshing
     perspective in decluttering their systems through automation. Sprinter
     specializes in technology consulting, process improvement, and personalized
