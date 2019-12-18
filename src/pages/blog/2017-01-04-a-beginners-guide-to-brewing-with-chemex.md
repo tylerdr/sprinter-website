@@ -8,7 +8,7 @@ description: >
   with the customer, clearly defining the problem, collaboratively ideating
   solutions, and prototyping and testing those solutions.”
 featuredpost: false
-featuredimage: /img/trippy-tech.jpg
+featuredimage: /img/computers1.jpg
 tags:
   - blogs
   - articles
