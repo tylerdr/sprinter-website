@@ -11,7 +11,7 @@ import '../gatsby-plugin-theme-ui/index.js'
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
-
+CMS.registerPreviewStyle('../gatsby-plugin-theme-ui/index.js')
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
