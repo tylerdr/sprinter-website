@@ -7,28 +7,29 @@ subtitle: >-
 headerImage: /img/stars.jpg
 what:
   content1: >+
-    As the technology evolves, so do we, but more importantly so does your
-    business. Sprinter is the first of its kind, serving as the missing link
-    between the recipient of the software and its developers. Our consulting
-    process focuses on bridging the gap between your company's current struggles
-    and the technology that will resolve them.
+    We are an up & coming tech service that offers businesses a refreshing
+    perspective in decluttering their systems through automation. As the
+    technology evolves, so do we, but more importantly so does your business. We
+    are here to bridge the gap between your company's current struggles and the
+    technology that will resolve them. Our understanding of both software
+    development as well as business operations is what ensures our collaboration
+    reaches maximum success. 
 
   content2: >-
-    Our understanding of both the software world as well as the engineering
-    industry, is what ensures our collaboration reaches maximum success. Because
-    today's tech world is rapidly becoming more advanced & complex, we've
-    handcrafted tools that make it easier to navigate the modern technological
-    landscape. 
+    Because today's tech world is rapidly becoming more advanced & complex,
+    we've handcrafted tools that make it easier to navigate the modern
+    technological landscape. We empower businesses to become more efficient by
+    automating their current systems and solving complex problems with simple
+    tech-based solutions. Through harnessing the power of modern software, we
+    provide you with the expertise needed to maximize technology's positive
+    potential within your company. 
   content3: >-
     Before Sprinter, most businesses looking to update their systems were forced
     to choose between one size fits all software options that fail miserably due
     to lack of communication. We've solved this problem through our consulting
     before and during the development process. Our focus is on implementing new
-    technology that saves you both time and money. Through harnessing the power
-    of modern software, we provide you with the expertise needed to maximize
-    technology's positive potential within your company. Our unique perspective
-    allows us to dissect complex problems through a clear lens, offering your
-    business the most appropriate solution. 
+    technology that saves you both time and money. 
+  content4: ''
   header: What We Do
   tagline: >-
     We empower businesses to become more efficient by automating their current
@@ -39,33 +40,29 @@ imageA:
   widthOptions: is-6
 how:
   content1: >-
-    We are composed of unique problem solvers that approach your needs from an
-    unconventional but effective perspective. Because we possess expertise in a
-    broad array of different fields, we are able to dissect issues from an
-    open-minded angle that optimizes success. 
+    Because we possess expertise in a broad array of different fields, we are
+    able to dissect issues from an open-minded angle that optimizes success.
+    Evolving with the technology is what we prioritize at Sprinter. Recognizing
+    the fact that new technology can be both scary and sexy, we use our
+    resources to acquaint your business with the power of modern software.
   content2: >-
     Do you feel like your business is lacking something, but don’t specifically
     know what? Do you recognize that your company could be better, but don’t
     know how? These are two questions that our team of highly-skilled experts
     are trained to answer. With only your specific needs in mind, we are able to
     design a detailed course of action tailored to fit your company.
-  content3: >
-    We train in sprints to help your business run the marathon. Our entire
-    process starts with a simple conversation. This is rooted in our belief that
-    developing a relationship with our clients is just as important as
-    developing the software. That’s why we conduct a mandatory consultation
-    before creating or offering any tech-based solutions. This method of
-    consulting before creating is what separates us from our competitors and
-    ensures you receive only the best results. Evolving with the technology is
-    what we prioritize at Sprinter. We believe many businesses are tapping into
-    only a small portion of their potential. This is due to the lack of
-    knowledge on new and available technology. Recognizing the fact that new
-    technology can be both scary and sexy, we use our resources to acquaint your
-    business with the power of modern software.
+  content3: >-
+    Our team is a unique blend of creatives, engineers, and developers who are
+    knowledgeable in both business operations as well as software development.
+    The entire process starts with a simple conversation. This is rooted in our
+    belief that developing a relationship with our clients is just as important
+    as developing the software. We believe many businesses are tapping into only
+    a small portion of their potential. This is due to their lack of knowledge
+    on new and available technology. 
   header: How We Do It
   tagline: >-
     Our team is a unique blend of creatives, engineers, and developers who are
-    knowledgeable in both business operations as well as software development.
+    knowledgeable in both business operations as well as software development. 
 imageB:
   alt: how
   image: /img/consulting-2.jpg
@@ -87,15 +84,12 @@ why:
     recommend only the best software solutions that help meet your current
     needs. 
   content3: >-
-    We are an up & coming tech service that offers businesses a refreshing
-    perspective in decluttering their systems through automation. Sprinter
-    specializes in technology consulting, process improvement, and personalized
-    software development. The power of modern technology is not limited to only
-    big name corporations and well-known brands, it is for the little guy as
-    well. We recognize that every business has their own unique set of hurdles
-    and challenges, that’s why we mold the software around what you need at any
-    given time. Our mission is to design software that allows employees to focus
-    their time on the important tasks. 
+    We do it because we believe technology is the key to unlocking human
+    potential. We specialize in technology consulting, process improvement, and
+    personalized software development. Sprinter recognizes that every business
+    has their own unique set of hurdles and challenges, that’s why we mold the
+    software around what you need at any given time. Our mission is to design
+    software that allows employees to focus their time on the important tasks. 
   header: Why We Do It
   tagline: >-
     We do it because we believe technology is the key to unlocking human
