@@ -7,13 +7,13 @@ subtitle: >-
 headerImage: /img/stars.jpg
 what:
   content1: >+
-    We are an up & coming tech service that offers businesses a refreshing
-    perspective in decluttering their systems through automation. As the
-    technology evolves, so do we, but more importantly so does your business. We
-    are here to bridge the gap between your company's current struggles and the
-    technology that will resolve them. Our understanding of both software
-    development as well as business operations is what ensures our collaboration
-    reaches maximum success. 
+    We are a technology company that offers businesses a refreshing perspective
+    in decluttering their systems through automation. As the technology evolves,
+    so do we, but more importantly so does your business. We are here to bridge
+    the gap between your company's current struggles and the technology that
+    will resolve them. Our understanding of both software development as well as
+    business operations is what ensures our collaboration reaches maximum
+    success. 
 
   content2: >-
     Because today's tech world is rapidly becoming more advanced & complex,
