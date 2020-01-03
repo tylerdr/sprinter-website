@@ -7,33 +7,24 @@ subtitle: >-
 headerImage: /img/stars.jpg
 what:
   content1: >+
-    We are a technology company that offers businesses a refreshing perspective
-    in decluttering their systems through automation. As the technology evolves,
-    so do we, but more importantly so does your business. We are here to bridge
-    the gap between your company's current struggles and the technology that
-    will resolve them. Our understanding of both software development as well as
-    business operations is what ensures our collaboration reaches maximum
-    success. 
+    Our understanding of both software development as well as business
+    operations is what ensures our collaboration reaches maximum success. 
 
   content2: >-
     Because today's tech world is rapidly becoming more advanced & complex,
     we've handcrafted tools that make it easier to navigate the modern
-    technological landscape. We empower businesses to become more efficient by
-    automating their current systems and solving complex problems with simple
-    tech-based solutions. Through harnessing the power of modern software, we
-    provide you with the expertise needed to maximize technology's positive
-    potential within your company. 
-  content3: >-
-    Before Sprinter, most businesses looking to update their systems were forced
-    to choose between one size fits all software options that fail miserably due
-    to lack of communication. We've solved this problem through our consulting
-    before and during the development process. Our focus is on implementing new
-    technology that saves you both time and money. 
+    technological landscape. 
+  content3: ''
   content4: ''
   header: What We Do
   tagline: >-
     We empower businesses to become more efficient by automating their current
-    systems and solving complex problems with simple tech-based solutions. 
+    systems and solving complex problems with simple tech-based solutions.
+    Through harnessing the power of modern software, we provide you with the
+    expertise needed to maximize technology's positive potential within your
+    company. As the technology evolves, so do we, but more importantly so does
+    your business. We are here to bridge the gap between your company's current
+    struggles and the technology that will resolve them
 imageA:
   alt: what
   image: /img/sprinteraboutimage2.jpg
