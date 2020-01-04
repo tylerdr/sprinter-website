@@ -4,6 +4,7 @@ title: 'Digital Nomads: The New Comanches of the Tech Age'
 date: 2019-12-22T18:22:46.619Z
 description: |
   “The mass of men lead lives of quiet desperation." -Henry David Thoreau
+featuredpost: true
 featuredimage: /img/airplane-window.jpg
 tags:
   - blog
@@ -24,7 +25,7 @@ Could I really work from anywhere in the world? Why doesn’t everybody do this?
 
 
 
-Why do graduates usher so quickly into cubicles and 9-5’s when this extraordinary lifestyle is quite literally at hand? 
+Why do graduates usher themselves so quickly into cubicles and 9-5’s when this extraordinary lifestyle is quite literally at hand? 
 
 
 
@@ -58,15 +59,21 @@ Two lesser-known definitions of the word Freedom: “the state of being physical
 
 
 
-Today’s digital nomads travel the world sustaining themselves through their laptops and local wifi networks. It’s not always a glamorous lifestyle but it’s one of great freedom. 
+Today’s digital nomads travel the world sustaining themselves on local wifi networks. It’s not always a glamorous lifestyle but it’s one of great freedom. 
 
 
 
-No office cubicle, no 9-5, and nobody telling you how to spend your day. They live life on their own terms through cultivating unique skill sets such as writing, coding, and designing (alongside many more) that allow them the freedom to work anywhere in the world. 
+No office cubicle, no 9-5, and nobody telling you how to spend your day. They live life on their own terms through cultivating unique skills such as writing, coding, and designing (alongside many more) that allow them the freedom to work anywhere in the world. 
 
 
 
-This abundantly free lifestyle can be compared to the Comanches’ way of living. They roamed the great plains with only a spear in hand hunting down wild game before falling asleep beneath the stars. 
+This abundantly free lifestyle can be compared to the Comanches’ way of living. They roamed the great plains with only a spear in hand hunting down wild game before falling asleep beneath the stars. Similarly, many digital nomads explore the globe with only the clothes on their backs and a laptop that offers streams of revenue at their fingertips. 
+
+
+
+Are you a pioneer? Somebody looking to settle and accumulate wealth.
+
+Or a Comanche? Somebody who is free in every sense of the word. 
 
 
 
