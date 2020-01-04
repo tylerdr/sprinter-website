@@ -82,7 +82,7 @@ why:
   header: Why We Do It
   tagline: >-
     We do it because we believe technology is the key to unlocking human
-    potential.
+    potential and improving lives. 
 coreValues:
   content1: >-
     People over Profit: “We never make decisions based solely on financial gain,
