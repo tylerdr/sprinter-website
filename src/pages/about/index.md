@@ -7,22 +7,32 @@ subtitle: >-
 headerImage: /img/stars.jpg
 what:
   content1: >-
-    We empower businesses to become more efficient by automating their current
-    systems and solving complex problems with simple tech-based solutions.
-    Through harnessing the power of modern software, we provide you with the
-    expertise needed to maximize technology's positive potential within your
-    company.
+    We are a technology consulting firm that offers a refreshing take on
+    decluttering operating systems through automation. As the technology
+    evolves, so do we, but more importantly so does your business. We are here
+    to bridge the gap between your company's current struggles and the
+    technology that will resolve them. Our vast understanding of both software
+    development as well as business operations is what ensures our collaboration
+    reaches maximum success. 
   content2: >-
     Because today's tech world is rapidly becoming more advanced & complex,
     we've handcrafted tools that make it easier to navigate the modern
-    technological landscape. We are here to bridge the gap between your
-    company's current struggles and the software that will resolve them.
+    technological landscape. We empower businesses to become more efficient by
+    automating their current systems and solving complex problems with simple
+    tech-based solutions. Through harnessing the power of modern software, we
+    provide you with the expertise needed to maximize technology's potential
+    within your company. Before Sprinter, most businesses looking to update
+    their systems were forced to choose between one-size-fits all software
+    options that fail miserably due to lack of communication. We've solved this
+    problem through our consulting before and during the development process.
+    Our focus is on implementing new technology that save you both time and
+    money. 
   content3: ''
   content4: ''
   header: What We Do
   tagline: >-
-    As the technology evolves, so do we, but more importantly so does your
-    business. 
+    We empower businesses to become more efficient by automating their current
+    systems and solving complex problems with simple tech-based solutions.
 imageA:
   alt: what
   image: /img/sprinteraboutimage2.jpg
