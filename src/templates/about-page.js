@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-
+import { Slide } from 'react-slideshow-image'
 
 export const AboutPageTemplate = ({ 
   title,
@@ -25,8 +25,16 @@ export const AboutPageTemplate = ({
   contentComponent  
  }) => {
 
-  const ValueContent = contentComponent || Content
-
+    const ValueContent = contentComponent || Content
+    const properties = {
+      transitionDuration: 500,
+      indicators: true,
+      arrows: true,
+      autoplay: false,
+      onChange: (oldIndex, newIndex) => {
+        console.log(`slide transition from ${oldIndex} to ${newIndex}`);
+      }
+    }
   return (
     <div>
     <div
@@ -358,7 +366,37 @@ export const AboutPageTemplate = ({
                 </div>
             </div>
     </section>
-  </div>
+                <div>
+                  <div>
+                      <div className="slide-container">
+                              <Slide {...properties}>
+                                <div className="each-slide">
+                                  <div style={{'backgroundImage': `url(${imageA})`}}>
+                                    <span>{what.content1}</span>
+                                  </div>
+                                </div>
+                                <div className="each-slide">
+                                  <div style={{'backgroundImage': `url(${imageB})`}}>
+                                    <span>{what.content2}</span>
+                                  </div>
+                                </div>
+                                <div className="each-slide">
+                                  <div style={{'backgroundImage': `url(${imageC})`}}>
+                                    <span>{what.tagline}</span>
+                                  </div>
+                                </div>
+                              </Slide>
+                        </div>
+                    </div>
+                    <div
+                        sx={{
+                          margin: 3,
+                        }}>
+                            <PreviewCompatibleImage imageInfo={imageC}/>
+                    </div>
+              </div>
+            
+   </div> 
   )
 }
 
