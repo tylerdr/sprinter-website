@@ -23,7 +23,6 @@ export const AboutPageTemplate = ({
   what,
   how,
   why,
-  coreValues,
   imageA,
   imageB,
   imageC,
@@ -242,33 +241,6 @@ export const AboutPageTemplate = ({
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
-                  <div className="tile "
-                  sx={{
-                    fontFamily: "heading",
-                    fontSize: 6,
-                    fontWeight: "heading",
-                  }}>
-                    {coreValues.header}
-                  </div>
-                      <div
-                      sx={{
-                        fontFamily: "body",
-                        fontSize: 3,
-                        padding: 3,
-                        fontWeight: "body",
-                        margin: 3,
-                      }}>
-                            {coreValues.tagline}
-                      </div>
-                          <div
-                          sx={{
-                            fontSize: 5,
-                            margin: 3,
-                            fontWeight: "heading",
-                            fontFamily: "body",
-                            fontStyle: "italic",
-                          }}>
-                          {coreValuesTest.header1}</div>
                           <div
                           sx={{
                             backgroundColor: "primary",
@@ -356,7 +328,6 @@ const AboutPage = ({ data }) => {
         what={frontmatter.what}
         how={frontmatter.how}
         why={frontmatter.why}
-        coreValues={frontmatter.coreValues}
         imageA={frontmatter.imageA}
         imageB={frontmatter.imageB}
         imageC={frontmatter.imageC}
@@ -432,12 +403,6 @@ export const aboutPageQuery = graphql`
               slide2
               slide3
         } 
-        coreValues {
-              tagline
-              content1
-              content2
-              header
-            }
         coreValuesTest {
               header1
               header2
