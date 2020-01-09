@@ -241,6 +241,22 @@ export const AboutPageTemplate = ({
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
+                <div className="tile"
+                  sx={{
+                    fontFamily: "heading",
+                    fontSize: 6,
+                    fontWeight: "heading",
+                  }}>
+                    {coreValuesTest.mainHeader}
+                  </div>
+                  <div className="tile"
+                  sx={{
+                    fontFamily: "body",
+                    fontSize: 3,
+                    fontWeight: "body",
+                  }}>
+                    {coreValuesTest.tagline}
+                  </div>
                     <div
                           sx={{
                             fontSize: 5,
@@ -413,6 +429,8 @@ export const aboutPageQuery = graphql`
               slide3
         } 
         coreValuesTest {
+              mainHeader
+              tagline
               header1
               header2
               header3
