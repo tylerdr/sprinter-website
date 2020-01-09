@@ -30,7 +30,10 @@ export const AboutPageTemplate = ({
   imageD,
   coreValuesTest,
   content,
-  contentComponent  
+  contentComponent,
+  whatSlide,
+  howSlide,
+  whySlide  
  }) => {
   const settings = {
     dots: true,
@@ -102,198 +105,148 @@ export const AboutPageTemplate = ({
                   sx={{
                     fontFamily: "heading",
                     fontSize: 6,
-                    margin: 3,
                     fontWeight: "heading",
                   }}>
-                    {what.header}
+                    {whatSlide.header}
                   </div>
-                  <div className="columns is-vcentered">
-                    <div className="column">
-                      <div className="tile"
-                      sx={{
-                        fontFamily: "body",
-                        fontSize: 3,
-                        padding: 3,
-                        margin: 3,
-                        fontWeight: "body",
-                      }}>
-                        {what.content1}
-                      </div>
-                      <div className="tile"
-                      sx={{
-                        backgroundColor: "primary",
-                        borderLeft: "body",
-                        borderLeftColor: "secondary",
-                        fontFamily: "body",
-                        fontSize: 4,
-                        padding: 3,
-                        margin: 3,
-                        fontWeight: "body",
-                        borderRadius: "body",
-                        boxShadow: "body",
-                      }}>
-                        "{what.tagline}"
-                      </div>
+                  <div className="columns slider-row">
+                  <div className="column" sx={{maxWidth: '600px'}}>
+                    <div className="slider-holder">
+                      <Slider {...settings} sx={{height: '90%'}}>
+                        <div className="each-slide">
+                          <div
+                          sx={{
+                            fontFamily: "body",
+                            fontSize: 3,
+                            fontWeight: "body",
+                          }}>
+                            {whatSlide.slide1}
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                          <div
+                          sx={{
+                            fontFamily: "body",
+                            fontSize: 3,
+                            fontWeight: "body",
+                          }}>
+                            {whatSlide.slide2}
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                          <div
+                          sx={{
+                            fontFamily: "body",
+                            fontSize: 3,
+                            fontWeight: "body",
+                          }}>
+                            {whatSlide.slide3}
+                          </div>
+                        </div>
+                      </Slider>
                     </div>
-                    <div className={"column " + (imageA.widthOptions)}>
-                      <div
-                      sx={{
-                        margin: 3,
-                      }}>
-                        <PreviewCompatibleImage imageInfo={imageA}/>
-                      </div>
-                    </div>
                   </div>
-                  <div className="tile"
-                  sx={{
-                    fontFamily: "body",
-                    fontSize: 3,
-                    padding: 3,
-                    margin: 3,
-                    fontWeight: "body",
-                  }}>
-                        {what.content2}
-                        {what.content3}
-                  </div>
+                     <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageA}/></div>
+                </div>
                   <div className="tile "
                   sx={{
                     fontFamily: "heading",
                     fontSize: 6,
                     fontWeight: "heading",
-                    margin: 3,
-                    marginTop: 6,
                   }}>
-                    {how.header}
+                    {howSlide.header}
                   </div>
-                      <div className="tile"
-                      sx={{
-                        fontFamily: "body",
-                        fontSize: 3,
-                        padding: 3,
-                        fontWeight: "body",
-                        margin: 3,
-                      }}>
-                            {how.content1}
-                      </div>
-                      <div className="columns is-vcentered">
-                        <div className={"column  " + (imageB.widthOptions)}
-                        sx={{
-                          margin: 3,
-                        }}>
-                            <PreviewCompatibleImage imageInfo={imageB}/>
-                        </div>
-                        <div className="column">
-                          <div className="tile"
+                  <div className="columns slider-row">
+                  <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageB}/></div>
+                  <div className="column" sx={{maxWidth: '600px'}}>
+                    <div className="slider-holder">
+                      <Slider {...settings} sx={{height: '90%'}}>
+                        <div className="each-slide">
+                          <div
                           sx={{
                             fontFamily: "body",
                             fontSize: 3,
-                            padding: 3,
                             fontWeight: "body",
-                            margin: 3,
                           }}>
-                            {how.content2}
+                            {howSlide.slide1}
                           </div>
-                          <div className="tile"
-                            sx={{
-                              backgroundColor: "primary",
-                              borderLeft: "body",
-                              borderLeftColor: "secondary",
-                              fontFamily: "body",
-                              fontSize: 4,
-                              padding: 3,
-                              margin: 3,
-                              marginBottom: 5,
-                              fontWeight: "body",
-                              borderRadius: "body",
-                              boxShadow: "body",
-                            }}>
-                          {how.tagline} 
                         </div>
-                        </div>
-                      </div>
-                      <div className="tile"
+                        <div className="each-slide">
+                          <div
                           sx={{
                             fontFamily: "body",
                             fontSize: 3,
-                            padding: 3,
                             fontWeight: "body",
-                            margin: 3,
                           }}>
-                            {how.content3}
-                      </div>
-                      <div className="tile "
+                            {howSlide.slide2}
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                          <div
+                          sx={{
+                            fontFamily: "body",
+                            fontSize: 3,
+                            fontWeight: "body",
+                          }}>
+                            {howSlide.slide3}
+                          </div>
+                        </div>
+                      </Slider>
+                    </div>
+                  </div>
+                </div>
+                  <div className="tile "
                       sx={{
                         fontFamily: "heading",
                         fontSize: 6,
                         fontWeight: "heading",
-                        margin: 3,
-                        marginTop: 6,
                   }}>
-                    {why.header}
+                    {whySlide.header}
                   </div>
-                      <div className="tile"
-                      sx={{
-                        fontFamily: "body",
-                        fontSize: 3,
-                        padding: 3,
-                        fontWeight: "body",
-                        margin: 3,
-                      }}>
-                            {why.content1}
-                      </div>
-                      <div className="columns is-vcentered">
-                        <div className="column">
-                        <div
-                        sx={{
-                          backgroundColor: "primary",
-                          borderLeft: "body",
-                          borderLeftColor: "secondary",
-                          fontFamily: "body",
-                          fontSize: 4,
-                          padding: 3,
-                          margin: 3,
-                          marginBottom: 5,
-                          fontWeight: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                        }}>
-                         {why.tagline} 
-                        </div>
-                          <div className="tile"
+                  <div className="columns slider-row">
+                  <div className="column" sx={{maxWidth: '600px'}}>
+                    <div className="slider-holder">
+                      <Slider {...settings} sx={{height: '90%'}}>
+                        <div className="each-slide">
+                          <div
                           sx={{
                             fontFamily: "body",
                             fontSize: 3,
-                            padding: 3,
                             fontWeight: "body",
-                            margin: 3,
                           }}>
-                            {why.content2}
+                            {whySlide.slide1}
                           </div>
                         </div>
-                        <div className={"column  " + (imageC.widthOptions)}
-                        sx={{
-                          margin: 3,
-                        }}>
-                            <PreviewCompatibleImage imageInfo={imageC}/>
-                        </div>
-                      </div>
-                      <div className="tile"
+                        <div className="each-slide">
+                          <div
                           sx={{
                             fontFamily: "body",
                             fontSize: 3,
-                            padding: 3,
                             fontWeight: "body",
-                            margin: 3,
                           }}>
-                            {why.content3}
-                      </div>
+                            {whySlide.slide2}
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                          <div
+                          sx={{
+                            fontFamily: "body",
+                            fontSize: 3,
+                            fontWeight: "body",
+                          }}>
+                            {whySlide.slide3}
+                          </div>
+                        </div>
+                      </Slider>
+                    </div>
+                  </div>
+                     <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
+                </div>
                   <div className="tile "
                   sx={{
                     fontFamily: "heading",
                     fontSize: 6,
                     fontWeight: "heading",
-                    margin: 3,
-                    marginTop: 6,
                   }}>
                     {coreValues.header}
                   </div>
@@ -378,37 +331,6 @@ export const AboutPageTemplate = ({
                           {coreValuesTest.body3}</div>
                       </div>
                 </div>
-                <div className="columns slider-row">
-
-
-                  <div className="column" sx={{maxWidth: '600px'}}>
-                    <div className="slider-holder">
-                      <Slider {...settings} sx={{height: '90%'}}>
-                        {/* {slides.map((slide, index) => <div key={index}>
-                          <h2>{slide.title}</h2>
-                          <div>{slide.description}</div>
-                        </div>)} */}
-                        <div className="each-slide">
-                          <div>
-                            {what.content1}
-                          </div>
-                        </div>
-                        <div className="each-slide">
-                          <div>
-                            {what.content2}
-                          </div>
-                        </div>
-                        <div className="each-slide">
-                          <div>
-                            {what.tagline}
-                          </div>
-                        </div>
-
-                      </Slider>
-                    </div>
-                  </div>
-                  <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
-                </div>
             </div>
     </section>              
             
@@ -439,7 +361,10 @@ const AboutPage = ({ data }) => {
         imageB={frontmatter.imageB}
         imageC={frontmatter.imageC}
         imageD={frontmatter.imageD}
-        coreValuesTest={frontmatter.coreValuesTest}/>
+        coreValuesTest={frontmatter.coreValuesTest}
+        whatSlide={frontmatter.whatSlide}
+        howSlide={frontmatter.howSlide}
+        whySlide={frontmatter.whySlide}/>
     </Layout>
   )
 }
@@ -489,6 +414,24 @@ export const aboutPageQuery = graphql`
               content3
               header
             }
+        whatSlide {
+              header
+              slide1
+              slide2
+              slide3
+        }
+        howSlide {
+              header
+              slide1
+              slide2
+              slide3
+        }
+        whySlide {
+              header
+              slide1
+              slide2
+              slide3
+        } 
         coreValues {
               tagline
               content1
