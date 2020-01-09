@@ -241,6 +241,15 @@ export const AboutPageTemplate = ({
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
+                    <div
+                          sx={{
+                            fontSize: 5,
+                            fontWeight: "heading",
+                            fontFamily: "body",
+                            margin: 3,
+                            fontStyle: "italic",
+                          }}>
+                          {coreValuesTest.header1}</div>
                           <div
                           sx={{
                             backgroundColor: "primary",
