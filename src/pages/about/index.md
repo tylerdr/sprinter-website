@@ -122,6 +122,17 @@ coreValuesTest:
     Work-Life Balance
   header3: |
     Unlocking Human Potential
+  mainHeader: Our Core Values
+  tagline: >-
+    We are a team of expert generalists who believe in first principles. This
+    means we take pride in our ability and curiosity to master and collect
+    expertise in various industries, skills, and arts. Our emphasis on
+    collective knowledge produces a powerful collaboration between designers,
+    engineers, and developers that your business won't find elsewhere. A first
+    principle is a basic truth that cannot be deduced any further. We use this
+    ideology throughout our consulting process to dismiss dogma and create
+    solutions instead of assuming them. This method ensures we are covering
+    every possible approach in order to discover the best one.
 whatSlide:
   header: What We Do
   slide1: >-
