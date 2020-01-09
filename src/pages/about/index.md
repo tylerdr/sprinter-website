@@ -159,78 +159,48 @@ whatSlide:
 howSlide:
   header: How We Do It
   slide1: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    Because we possess expertise in a broad array of different fields, we are
+    able to dissect issues from an open-minded angle that optimizes success.
+    Evolving with the technology is what we prioritize at Sprinter. Recognizing
+    the fact that new technology can be both scary and sexy, we use our
+    resources to acquaint your business with the power of modern software.
   slide2: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    Do you feel like your business is lacking something, but don’t specifically
+    know what? Do you recognize that your company could be better, but don’t
+    know how? These are two questions that our team of highly-skilled experts
+    are trained to answer. With only your specific needs in mind, we are able to
+    design a detailed course of action tailored to fit your company.
   slide3: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    Our team is a unique blend of creatives, engineers, and developers who are
+    knowledgeable in both business operations as well as software development.
+    The entire process starts with a simple conversation. This is rooted in our
+    belief that developing a relationship with our clients is just as important
+    as developing the software. We believe many businesses are tapping into only
+    a small portion of their potential. This is due to their lack of knowledge
+    on new and available technology. 
 whySlide:
   header: Why We Do It
   slide1: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    Like many successful companies, we believe maintaining a stellar Why is just
+    as important as the work we do. By centering our business around our core
+    beliefs, we are able to focus our attention towards your company's specific
+    needs. Through pairing capable workers with modern software, your company
+    will notice an increase in overall productivity, a healthier work
+    environment, and employees achieving their optimal value within the
+    business. 
   slide2: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    Our unique set of expertise offers your business three benefits through the
+    power of one. We deliver you more time, money, and freedom through
+    implementing effective modern technology into your current workflow. Through
+    taking the time to study how your business operates, we are able to
+    recommend only the best software solutions that help meet your current
+    needs. 
   slide3: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    We do it because we believe technology is the key to unlocking human
+    potential. We specialize in technology consulting, process improvement, and
+    personalized software development. Sprinter recognizes that every business
+    has their own unique set of hurdles and challenges, that’s why we mold the
+    software around what you need at any given time. Our mission is to design
+    software that allows employees to focus their time on the important tasks.
 ---
 
