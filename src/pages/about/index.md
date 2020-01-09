@@ -140,25 +140,18 @@ whatSlide:
     systems and solving complex problems with simple tech-based solutions. We
     are a technology consulting firm that offers a refreshing take on
     decluttering operating systems through automation. As the technology
-    evolves, so do we, but more importantly so does your business. 
-  slide2: >-
-    We are here to bridge the gap between your company's current struggles and
-    the technology that will resolve them. Our vast understanding of both
-    software development as well as business operations is what ensures our
-    collaboration reaches maximum success. Because today's tech world is rapidly
-    becoming more advanced & complex, we've handcrafted tools that make it
-    easier to navigate the modern technological landscape. 
-  slide3: >-
-    Through harnessing the power of modern software, we provide you with the
-    expertise needed to maximize technology's potential within your company.
-    Before Sprinter, most businesses looking to update their systems were forced
-    to choose between one-size-fits all software options that fail miserably due
-    to lack of communication. We've solved this problem through our consulting
-    before and during the development process. Our focus is on implementing new
-    technology that save you both time and money. 
+    evolves, so do we, but more importantly so does your business. We are here
+    to bridge the gap between your company's current struggles and the
+    technology that will resolve them. Our vast understanding of both software
+    development as well as business operations is what ensures our collaboration
+    reaches maximum success.
+  slide2: ' Because today''s tech world is rapidly becoming more advanced & complex, we''ve handcrafted tools that make it easier to navigate the modern technological landscape. Through harnessing the power of modern software, we provide you with the expertise needed to maximize technology''s potential within your company. Before Sprinter, most businesses looking to update their systems were forced to choose between one-size-fits all software options that fail miserably due to lack of communication. We''ve solved this problem through our consulting before and during the development process. Our focus is on implementing new technology that save you both time and money. '
+  slide3: ''
 howSlide:
   header: How We Do It
   slide1: >-
+    Our team is a unique blend of creatives, engineers, and developers who are
+    knowledgeable in both business operations as well as software development.
     Because we possess expertise in a broad array of different fields, we are
     able to dissect issues from an open-minded angle that optimizes success.
     Evolving with the technology is what we prioritize at Sprinter. Recognizing
@@ -169,23 +162,22 @@ howSlide:
     know what? Do you recognize that your company could be better, but don’t
     know how? These are two questions that our team of highly-skilled experts
     are trained to answer. With only your specific needs in mind, we are able to
-    design a detailed course of action tailored to fit your company.
-  slide3: >-
-    Our team is a unique blend of creatives, engineers, and developers who are
-    knowledgeable in both business operations as well as software development.
-    The entire process starts with a simple conversation. This is rooted in our
-    belief that developing a relationship with our clients is just as important
-    as developing the software. We believe many businesses are tapping into only
-    a small portion of their potential. This is due to their lack of knowledge
-    on new and available technology. 
+    design a detailed course of action tailored to fit your company.The entire
+    process starts with a simple conversation. This is rooted in our belief that
+    developing a relationship with our clients is just as important as
+    developing the software. We believe many businesses are tapping into only a
+    small portion of their potential. This is due to their lack of knowledge on
+    new and available technology. 
+  slide3: ''
 whySlide:
   header: Why We Do It
   slide1: >-
-    Like many successful companies, we believe maintaining a stellar Why is just
-    as important as the work we do. By centering our business around our core
-    beliefs, we are able to focus our attention towards your company's specific
-    needs. Through pairing capable workers with modern software, your company
-    will notice an increase in overall productivity, a healthier work
+    We do it because we believe technology is the key to unlocking human
+    potential. Like many successful companies, we believe maintaining a stellar
+    Why is just as important as the work we do. By centering our business around
+    our core beliefs, we are able to focus our attention towards your company's
+    specific needs. Through pairing capable workers with modern software, your
+    company will notice an increase in overall productivity, a healthier work
     environment, and employees achieving their optimal value within the
     business. 
   slide2: >-
@@ -194,13 +186,11 @@ whySlide:
     implementing effective modern technology into your current workflow. Through
     taking the time to study how your business operates, we are able to
     recommend only the best software solutions that help meet your current
-    needs. 
-  slide3: >-
-    We do it because we believe technology is the key to unlocking human
-    potential. We specialize in technology consulting, process improvement, and
+    needs. We specialize in technology consulting, process improvement, and
     personalized software development. Sprinter recognizes that every business
     has their own unique set of hurdles and challenges, that’s why we mold the
     software around what you need at any given time. Our mission is to design
     software that allows employees to focus their time on the important tasks.
+  slide3: ''
 ---
 
