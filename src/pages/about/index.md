@@ -93,39 +93,6 @@ why:
   tagline: >-
     We do it because we believe technology is the key to unlocking human
     potential and improving lives. 
-coreValues:
-  content1: >-
-    People over Profit: “We never make decisions based solely on financial gain,
-    instead we take into account all of the ways in which a proposition or new
-    idea may impact our employees as well as current and future clients.”
-
-    Human-Centered: “Sprinter is rooted in empathy, this means that every person
-    we do business with knows that they are our priority, and that we will do
-    everything we can to help them achieve their goals.”
-  content2: >-
-    Work-Life Balance: “One of the key components for any type of organizational
-    success starts with happy employees. That’s why from the beginning of any
-    new client relationship, Sprinter makes sure to address the ways in which we
-    can help workers contribute more overall value within the company by
-    discovering ways to maximize their efficiency."
-
-    Unlocking Human Potential: “We believe that through pairing great technology
-    with capable workers, we are able to enhance individual performance and in
-    return, enable them to contribute the pinnacle of their worth to your
-    business.”
-  header: Core Values
-  tagline: >
-    We are a team of expert generalists who believe in first principles. 
-
-    This means we take pride in our ability and curiosity to master and collect
-    expertise in various industries, skills, and arts. Our emphasis on
-    collective knowledge produces a powerful collaboration between designers,
-    engineers, and developers that your business won't find elsewhere. 
-
-    A first principle is a basic truth that cannot be deduced any further. We
-    use this ideology throughout our consulting process to dismiss dogma and
-    create solutions instead of assuming them. This method ensures we are
-    covering every possible approach in order to discover the best one. 
 imageC:
   alt: why
   image: /img/workhard-anywhere.png
@@ -158,41 +125,26 @@ coreValuesTest:
 whatSlide:
   header: What We Do
   slide1: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    We empower businesses to become more efficient by automating their current
+    systems and solving complex problems with simple tech-based solutions. We
+    are a technology consulting firm that offers a refreshing take on
+    decluttering operating systems through automation. As the technology
+    evolves, so do we, but more importantly so does your business. 
   slide2: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    We are here to bridge the gap between your company's current struggles and
+    the technology that will resolve them. Our vast understanding of both
+    software development as well as business operations is what ensures our
+    collaboration reaches maximum success. Because today's tech world is rapidly
+    becoming more advanced & complex, we've handcrafted tools that make it
+    easier to navigate the modern technological landscape. 
   slide3: >-
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
+    Through harnessing the power of modern software, we provide you with the
+    expertise needed to maximize technology's potential within your company.
+    Before Sprinter, most businesses looking to update their systems were forced
+    to choose between one-size-fits all software options that fail miserably due
+    to lack of communication. We've solved this problem through our consulting
+    before and during the development process. Our focus is on implementing new
+    technology that save you both time and money. 
 howSlide:
   header: How We Do It
   slide1: >-
