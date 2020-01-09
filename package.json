@@ -1,7 +1,7 @@
 {
   "name": "sprinter-site",
   "description": "Sprinter Website",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Zach Slessman",
   "dependencies": {
     "@emotion/core": "^10.0.22",
