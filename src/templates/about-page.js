@@ -6,7 +6,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import { Slide } from 'react-slideshow-image'
+// import { Slide } from 'react-slideshow-image'
+
+// import Slider from 'react-animated-slider';
+// import 'react-animated-slider/build/horizontal.css';
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 export const AboutPageTemplate = ({ 
   title,
@@ -24,17 +32,23 @@ export const AboutPageTemplate = ({
   content,
   contentComponent  
  }) => {
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
     const ValueContent = contentComponent || Content
-    const properties = {
-      transitionDuration: 500,
-      indicators: true,
-      arrows: true,
-      autoplay: false,
-      onChange: (oldIndex, newIndex) => {
-        console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-      }
-    }
+    // const properties = {
+    //   transitionDuration: 500,
+    //   indicators: true,
+    //   arrows: true,
+    //   autoplay: false,
+    //   onChange: (oldIndex, newIndex) => {
+    //     console.log(`slide transition from ${oldIndex} to ${newIndex}`);
+    //   }
+    // }
   return (
     <div>
     <div
@@ -364,37 +378,39 @@ export const AboutPageTemplate = ({
                           {coreValuesTest.body3}</div>
                       </div>
                 </div>
-            </div>
-    </section>
-                <div>
-                  <div>
-                      <div className="slide-container">
-                              <Slide {...properties}>
-                                <div className="each-slide">
-                                  <div style={{'backgroundImage': `url(${imageA})`}}>
-                                    <span>{what.content1}</span>
-                                  </div>
-                                </div>
-                                <div className="each-slide">
-                                  <div style={{'backgroundImage': `url(${imageB})`}}>
-                                    <span>{what.content2}</span>
-                                  </div>
-                                </div>
-                                <div className="each-slide">
-                                  <div style={{'backgroundImage': `url(${imageC})`}}>
-                                    <span>{what.tagline}</span>
-                                  </div>
-                                </div>
-                              </Slide>
+                <div className="columns slider-row">
+
+
+                  <div className="column" sx={{maxWidth: '600px'}}>
+                    <div className="slider-holder">
+                      <Slider {...settings} sx={{height: '90%'}}>
+                        {/* {slides.map((slide, index) => <div key={index}>
+                          <h2>{slide.title}</h2>
+                          <div>{slide.description}</div>
+                        </div>)} */}
+                        <div className="each-slide">
+                          <div>
+                            {what.content1}
+                          </div>
                         </div>
+                        <div className="each-slide">
+                          <div>
+                            {what.content2}
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                          <div>
+                            {what.tagline}
+                          </div>
+                        </div>
+
+                      </Slider>
                     </div>
-                    <div
-                        sx={{
-                          margin: 3,
-                        }}>
-                            <PreviewCompatibleImage imageInfo={imageC}/>
-                    </div>
-              </div>
+                  </div>
+                  <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
+                </div>
+            </div>
+    </section>              
             
    </div> 
   )
