@@ -42,15 +42,6 @@ export const AboutPageTemplate = ({
     slidesToScroll: 1
   };
     const ValueContent = contentComponent || Content
-    // const properties = {
-    //   transitionDuration: 500,
-    //   indicators: true,
-    //   arrows: true,
-    //   autoplay: false,
-    //   onChange: (oldIndex, newIndex) => {
-    //     console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-    //   }
-    // }
   return (
     <div>
     <div
@@ -100,18 +91,19 @@ export const AboutPageTemplate = ({
       <div className="container">
           <div className="columns">
             <div className="column is-full">
-                  <div className="tile"
-                  sx={{
-                    fontFamily: "heading",
-                    fontSize: 6,
-                    fontWeight: "heading",
-                  }}>
-                    {whatSlide.header}
-                  </div>
+                <div className="about-section">
                   <div className="columns slider-row">
                   <div className="column" sx={{maxWidth: '600px'}}>
                     <div className="slider-holder">
-                      <Slider {...settings} sx={{height: '90%'}}>
+                    <div className="tile"
+                    sx={{
+                      fontFamily: "heading",
+                      fontSize: 6,
+                      fontWeight: "heading",
+                    }}>
+                      {whatSlide.header}
+                    </div>
+                      <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
                           <div
                           sx={{
@@ -147,19 +139,21 @@ export const AboutPageTemplate = ({
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageA}/></div>
                 </div>
-                  <div className="tile "
-                  sx={{
-                    fontFamily: "heading",
-                    fontSize: 6,
-                    fontWeight: "heading",
-                  }}>
-                    {howSlide.header}
-                  </div>
+                </div>
+                <div className="about-section">
                   <div className="columns slider-row">
                   <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageB}/></div>
                   <div className="column" sx={{maxWidth: '600px'}}>
                     <div className="slider-holder">
-                      <Slider {...settings} sx={{height: '90%'}}>
+                      <div className="tile "
+                      sx={{
+                        fontFamily: "heading",
+                        fontSize: 6,
+                        fontWeight: "heading",
+                      }}>
+                        {howSlide.header}
+                      </div>
+                      <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
                           <div
                           sx={{
@@ -194,18 +188,20 @@ export const AboutPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                  <div className="tile "
-                      sx={{
-                        fontFamily: "heading",
-                        fontSize: 6,
-                        fontWeight: "heading",
-                  }}>
-                    {whySlide.header}
-                  </div>
+                </div>
+                <div className="about-section">
                   <div className="columns slider-row">
-                  <div className="column" sx={{maxWidth: '600px'}}>
+                  <div className="column" sx={{maxWidth: '800px'}}>
                     <div className="slider-holder">
-                      <Slider {...settings} sx={{height: '90%'}}>
+                    <div className="tile "
+                        sx={{
+                          fontFamily: "heading",
+                          fontSize: 6,
+                          fontWeight: "heading",
+                    }}>
+                      {whySlide.header}
+                    </div>
+                      <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
                           <div
                           sx={{
@@ -241,6 +237,8 @@ export const AboutPageTemplate = ({
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
+                </div>
+                <div className="about-section">
                 <div className="tile"
                   sx={{
                     fontFamily: "heading",
@@ -326,6 +324,7 @@ export const AboutPageTemplate = ({
                             margin: 3,
                           }}>
                           {coreValuesTest.body3}</div>
+                      </div>
                       </div>
                 </div>
             </div>
