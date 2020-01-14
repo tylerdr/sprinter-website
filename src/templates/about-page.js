@@ -6,11 +6,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-// import { Slide } from 'react-slideshow-image'
-
-// import Slider from 'react-animated-slider';
-// import 'react-animated-slider/build/horizontal.css';
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -260,7 +255,7 @@ export const AboutPageTemplate = ({
                             fontSize: 5,
                             fontWeight: "heading",
                             fontFamily: "body",
-                            margin: 3,
+                            marginTop: 3,
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header1}</div>
@@ -275,7 +270,7 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             borderRadius: "body",
                             boxShadow: "body",
-                            margin: 3,
+                            marginTop: 3,
                           }}>
                           {coreValuesTest.body1}</div>
                           <div
@@ -283,7 +278,7 @@ export const AboutPageTemplate = ({
                             fontSize: 5,
                             fontWeight: "heading",
                             fontFamily: "body",
-                            margin: 3,
+                            marginTop: 3,
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header2}</div>
@@ -298,7 +293,7 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             borderRadius: "body",
                             boxShadow: "body",
-                            margin: 3,
+                            marginTop: 3,
                           }}>
                           {coreValuesTest.body2}</div>
                           <div
@@ -306,7 +301,7 @@ export const AboutPageTemplate = ({
                             fontSize: 5,
                             fontWeight: "heading",
                             fontFamily: "body",
-                            margin: 3,
+                            marginTop: 3,
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header3}</div>
@@ -321,7 +316,7 @@ export const AboutPageTemplate = ({
                             fontWeight: "body",
                             borderRadius: "body",
                             boxShadow: "body",
-                            margin: 3,
+                            marginTop: 3,
                           }}>
                           {coreValuesTest.body3}</div>
                       </div>
