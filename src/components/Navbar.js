@@ -134,7 +134,7 @@ const Navbar = class extends React.Component {
             </div>
             <div className="navbar-end has-text-centered">
                 <span className="icon">
-                  <ThemeSwitcher></ThemeSwitcher>
+                  <ThemeSwitcher className="button"></ThemeSwitcher>
                 </span>
             </div>
           </div>

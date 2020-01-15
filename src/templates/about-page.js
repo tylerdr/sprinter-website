@@ -35,8 +35,7 @@ export const AboutPageTemplate = ({
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true
+    slidesToScroll: 1
   };
 
   const SliderWrap = styled.div`
