@@ -9,6 +9,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from 'styled-components'
 
 
 export const AboutPageTemplate = ({ 
@@ -34,9 +35,30 @@ export const AboutPageTemplate = ({
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    adaptiveHeight: true
   };
-    const ValueContent = contentComponent || Content
+
+  const SliderWrap = styled.div`
+    .slick-slider {
+        .slick-next,
+        .slick-prev,
+        .slick-prev:before,
+        .slick-next:before,
+        .slick-prev:hover,
+        .slick-prev:focus,
+        .slick-next:hover,
+        .slick-next:focus {
+          color: #3072f9!important;
+        }
+        .slick-dots li button:before,
+        .slick-dots li.slick-active button:before {
+          font-size: 7.5px!important;
+          color: #3072f9!important;
+        }
+    }`
+
+  const ValueContent = contentComponent || Content
   return (
     <div>
     <div
@@ -98,7 +120,8 @@ export const AboutPageTemplate = ({
                     }}>
                       {whatSlide.header}
                     </div>
-                      <Slider {...settings} sx={{height: '90%'}} className="tile">
+                    <SliderWrap>
+                      <Slider {...settings} sx={{height: '90%'}} id="what-id" className="tile">
                         <div className="each-slide">
                           <div
                           sx={{
@@ -130,6 +153,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                       </Slider>
+                      </SliderWrap>
                     </div>
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageA}/></div>
@@ -148,6 +172,7 @@ export const AboutPageTemplate = ({
                       }}>
                         {howSlide.header}
                       </div>
+                      <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
                           <div
@@ -180,6 +205,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                       </Slider>
+                      </SliderWrap>
                     </div>
                   </div>
                 </div>
@@ -196,6 +222,7 @@ export const AboutPageTemplate = ({
                     }}>
                       {whySlide.header}
                     </div>
+                    <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
                           <div
@@ -228,6 +255,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                       </Slider>
+                      </SliderWrap>
                     </div>
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>

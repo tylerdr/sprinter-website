@@ -38,6 +38,7 @@
     "react-slick": "^0.25.2",
     "react-social-icons": "^4.1.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.0.0",
     "theme-ui": "^0.2.46",
     "uuid": "^3.2.1"
   },
