@@ -121,7 +121,13 @@ export const AboutPageTemplate = ({
                     </div>
                     <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} id="what-id" className="tile">
-                        <div className="each-slide">
+                        <div className="each-slide"
+                        sx={{
+                          backgroundColor: "primary",
+                          fontFamily: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                        }}>
                           <div
                           sx={{
                             fontFamily: "body",
@@ -131,7 +137,13 @@ export const AboutPageTemplate = ({
                             {whatSlide.slide1}
                           </div>
                         </div>
-                        <div className="each-slide">
+                        <div className="each-slide"
+                        sx={{
+                          backgroundColor: "primary",
+                          fontFamily: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                        }}>
                           <div
                           sx={{
                             fontFamily: "body",
@@ -141,7 +153,13 @@ export const AboutPageTemplate = ({
                             {whatSlide.slide2}
                           </div>
                         </div>
-                        <div className="each-slide">
+                        <div className="each-slide"
+                        sx={{
+                          backgroundColor: "primary",
+                          fontFamily: "body",
+                          borderRadius: "body",
+                          boxShadow: "body",
+                        }}>
                           <div
                           sx={{
                             fontFamily: "body",
