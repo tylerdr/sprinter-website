@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import './all.sass'
-import logo from '../img/sprinter-favicon.png'
+
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
@@ -19,24 +19,24 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={logo}
+          href={`${withPrefix('/')}img/sprinter-favicon.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={logo}
+          href={`${withPrefix('/')}img/sprinter-favicon.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={logo}
+          href={`${withPrefix('/')}img/sprinter-favicon.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={logo}
+          href={`${withPrefix('/')}img/sprinter-favicon.png`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
