@@ -132,7 +132,7 @@ export default class Index extends React.Component {
                       sx={{
                         fontSize: 2,
                       }}>
-                       +1-615-957-5603
+                       +1-615-601-0782
                        </p>
                     </a>
                     <a className="tile"
@@ -149,7 +149,7 @@ export default class Index extends React.Component {
                         sx={{
                           fontSize: 2,
                         }}>
-                          tyler@sprinterconsulting.com
+                          hello@sprinterconsulting.com
                         </p>
                     </a>
                 </div>

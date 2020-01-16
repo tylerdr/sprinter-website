@@ -108,7 +108,7 @@ export const AboutPageTemplate = ({
           <div className="columns">
             <div className="column is-full">
                 <div className="about-section">
-                  <div className="columns slider-row">
+                  <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{maxWidth: '600px'}}>
                     <div className="slider-holder">
                     <div className="tile"
@@ -177,7 +177,7 @@ export const AboutPageTemplate = ({
                 </div>
                 </div>
                 <div className="about-section">
-                  <div className="columns slider-row">
+                  <div className="columns slider-row  is-vcentered">
                   <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageB}/></div>
                   <div className="column" sx={{maxWidth: '600px'}}>
                     <div className="slider-holder">
@@ -228,7 +228,7 @@ export const AboutPageTemplate = ({
                 </div>
                 </div>
                 <div className="about-section">
-                  <div className="columns slider-row">
+                  <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{maxWidth: '800px'}}>
                     <div className="slider-holder">
                     <div className="tile "

@@ -118,16 +118,17 @@ export const IndexPageTemplate = ({
                   </p>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog"
-                    sx={{
-                      border: "2px solid",
-                      backgroundColor: "primary",
-                      fontWeight: "heading",
-                      color: "text",
-                      borderRadius: "body",
-                      borderColor: "secondary",
-                      cursor: "pointer",                      
-                    }}>
+                    <Link className="button" to="/blog"
+                    // sx={{
+                    //   border: "2px solid",
+                    //   backgroundColor: "primary",
+                    //   fontWeight: "heading",
+                    //   color: "text",
+                    //   borderRadius: "body",
+                    //   borderColor: "secondary",
+                    //   cursor: "pointer",                      
+                    // }}
+                    >
                       Read more
                     </Link>
                   </div>

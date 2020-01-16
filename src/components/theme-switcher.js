@@ -6,21 +6,21 @@ const ThemeSwitcher = () => {
   const [colorMode, setColorMode] = useColorMode();
   const nextColorMode = colorMode === "light" ? "dark" : "light";
   return (
-    <button
-      sx={{
-        position: "absolute",
-        top: 11,
-        right: 53,
-        border: "2px solid",
-        backgroundColor: "primary",
-        fontWeight: "heading",
-        color: "text",
-        borderRadius: "body",
-        px: 3,
-        py: 2,
-        borderColor: "secondary",
-        cursor: "pointer"
-      }}
+    <button className="button"
+       sx={{
+       position: "absolute",
+       top: 2,
+       right: 53,
+      //  border: "2px solid",
+      //  backgroundColor: "primary",
+      //  fontWeight: "heading",
+      //  color: "text",
+      //  borderRadius: "body",
+      //  px: 3,
+      //  py: 2,
+      //  borderColor: "secondary",
+      //  cursor: "pointer"
+     }}
       onClick={() => setColorMode(nextColorMode)}
     >
     {makeStandardCase(nextColorMode)}
