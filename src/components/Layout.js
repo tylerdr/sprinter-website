@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import './all.sass'
-import icon from 'gatsby-plugin-manifest'
+//import icon from 'gatsby-plugin-manifest'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
@@ -19,28 +19,28 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          // href={`${withPrefix('/')}img/sprinter-favicon.png`}
-          href={icon}
+          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          //href={icon}
         />
         <link
           rel="icon"
           type="image/png"
-          // href={`${withPrefix('/')}img/sprinter-favicon.png`}
-          href={icon}
+          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          //href={icon}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          // href={`${withPrefix('/')}img/sprinter-favicon.png`}
-          href={icon}
+          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          //href={icon}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          // href={`${withPrefix('/')}img/sprinter-favicon.png`}
-          href={icon}
+          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+          //href={icon}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />

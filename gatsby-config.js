@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/img/sprinter-favicon.png`, // This path is relative to the root of the site.
+        //icon: `static/img/sprinter-favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
