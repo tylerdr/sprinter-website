@@ -109,8 +109,6 @@ export const AboutPageTemplate = ({
                 sx={{
                   marginTop: 3,
                   marginBottom: 5,
-                  borderBottom: "section",
-                  borderBottomColor: "primary", 
                 }}>
                   <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{maxWidth: '600px'}}>
@@ -261,7 +259,7 @@ export const AboutPageTemplate = ({
                               marginBottom: 3,
                               marginTop: 3,
                             }}>
-                            {blockquotes.a}
+                            {blockquotes.c}
                             </blockquote>
                       </div>
                 <div className="about-section"
@@ -314,6 +312,24 @@ export const AboutPageTemplate = ({
                         </div>
                       </Slider>
                       </SliderWrap>
+                      <div className="tile blockquote">
+                            <blockquote
+                            sx={{
+                              backgroundColor: "primary",
+                              borderLeft: "body",
+                              borderLeftColor: "secondary",
+                              fontFamily: "body",
+                              fontSize: 3,
+                              padding: 4,
+                              fontWeight: "body",
+                              borderRadius: "body",
+                              boxShadow: "body",
+                              marginBottom: 3,
+                              marginTop: 5,
+                            }}>
+                            {blockquotes.b}
+                            </blockquote>
+                      </div>
                     </div>
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
