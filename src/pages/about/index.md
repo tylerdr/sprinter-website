@@ -7,11 +7,11 @@ subtitle: >-
 headerImage: /img/stars.jpg
 imageA:
   alt: what
-  image: /img/sprinteraboutimage2.jpg
+  image: /img/code.jpg
   widthOptions: is-6
 imageB:
   alt: how
-  image: /img/consulting-2.jpg
+  image: /img/consulting-1.jpg
   widthOptions: is-6
 imageC:
   alt: why
