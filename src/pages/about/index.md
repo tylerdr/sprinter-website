@@ -127,16 +127,14 @@ whySlide:
     minimizing daily monotonous work.
 blockquotes:
   a: >-
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer
+    As the technology evolves, so do we, but more importantly so does your
+    business.
   b: >-
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer
+    With only your specific needs in mind, we are able to design a detailed
+    course of action tailored to fit your company.
   c: >-
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer
+    Sprinter recognizes that every business has their own unique set of hurdles
+    and challenges, that’s why we mold the software around what you need at any
+    given time.
 ---
 
