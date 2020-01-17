@@ -2,7 +2,7 @@
 templateKey: index-page
 title: Sprinter Consulting
 image: /img/circuit-board.jpg
-subheading: Discovering Tomorrow's Technology Today
+subheading: Delivering Tomorrow's Technology Today
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee
