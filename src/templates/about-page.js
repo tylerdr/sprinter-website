@@ -9,16 +9,13 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 
 export const AboutPageTemplate = ({ 
   title,
   subtitle,
   headerImage,
-  what,
-  how,
-  why,
   imageA,
   imageB,
   imageC,
@@ -28,7 +25,8 @@ export const AboutPageTemplate = ({
   contentComponent,
   whatSlide,
   howSlide,
-  whySlide  
+  whySlide,
+  blockquotes  
  }) => {
   const settings = {
     dots: true,
@@ -107,7 +105,13 @@ export const AboutPageTemplate = ({
       <div className="container">
           <div className="columns">
             <div className="column is-full">
-                <div className="about-section">
+                <div className="about-section"
+                sx={{
+                  marginTop: 3,
+                  marginBottom: 5,
+                  borderBottom: "section",
+                  borderBottomColor: "primary", 
+                }}>
                   <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{maxWidth: '600px'}}>
                     <div className="slider-holder">
@@ -121,13 +125,7 @@ export const AboutPageTemplate = ({
                     </div>
                     <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} id="what-id" className="tile">
-                        <div className="each-slide"
-                        sx={{
-                          backgroundColor: "primary",
-                          fontFamily: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                        }}>
+                        <div className="each-slide">
                           <div
                           sx={{
                             fontFamily: "body",
@@ -137,13 +135,7 @@ export const AboutPageTemplate = ({
                             {whatSlide.slide1}
                           </div>
                         </div>
-                        <div className="each-slide"
-                        sx={{
-                          backgroundColor: "primary",
-                          fontFamily: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                        }}>
+                        <div className="each-slide">
                           <div
                           sx={{
                             fontFamily: "body",
@@ -153,13 +145,7 @@ export const AboutPageTemplate = ({
                             {whatSlide.slide2}
                           </div>
                         </div>
-                        <div className="each-slide"
-                        sx={{
-                          backgroundColor: "primary",
-                          fontFamily: "body",
-                          borderRadius: "body",
-                          boxShadow: "body",
-                        }}>
+                        <div className="each-slide">
                           <div
                           sx={{
                             fontFamily: "body",
@@ -173,12 +159,45 @@ export const AboutPageTemplate = ({
                       </SliderWrap>
                     </div>
                   </div>
-                     <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageA}/></div>
+                     <div className="column" sx={{minWidth: '200px'}}>
+                       <div
+                       sx={{
+                         marginTop: 4,
+                         marginBottom: 4,
+                       }}><PreviewCompatibleImage imageInfo={imageA}/></div>
+                       <div className="tile blockquote">
+                            <blockquote
+                            sx={{
+                              backgroundColor: "primary",
+                              borderLeft: "body",
+                              borderLeftColor: "secondary",
+                              fontFamily: "body",
+                              fontSize: 3,
+                              padding: 3,
+                              fontWeight: "body",
+                              borderRadius: "body",
+                              boxShadow: "body",
+                              marginTop: 3,
+                              marginBottom: 3,
+                            }}>
+                            {blockquotes.a}
+                            </blockquote>
+                      </div>
+                    </div>
                 </div>
                 </div>
-                <div className="about-section">
+                <div className="about-section"
+                sx={{
+                  marginTop: 5,
+                  marginBottom: 5, 
+                }}>
                   <div className="columns slider-row  is-vcentered">
-                  <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageB}/></div>
+                  <div className="column" 
+                  sx={{
+                    marginTop: 4,
+                    }}>
+                      <PreviewCompatibleImage imageInfo={imageB}/>
+                  </div>
                   <div className="column" sx={{maxWidth: '600px'}}>
                     <div className="slider-holder">
                       <div className="tile "
@@ -222,12 +241,34 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                       </Slider>
-                      </SliderWrap>
+                      </SliderWrap>                 
                     </div>
                   </div>
                 </div>
                 </div>
-                <div className="about-section">
+                <div className="tile blockquote">
+                            <blockquote
+                            sx={{
+                              backgroundColor: "primary",
+                              borderLeft: "body",
+                              borderLeftColor: "secondary",
+                              fontFamily: "body",
+                              fontSize: 3,
+                              padding: 4,
+                              fontWeight: "body",
+                              borderRadius: "body",
+                              boxShadow: "body",
+                              marginBottom: 3,
+                              marginTop: 3,
+                            }}>
+                            {blockquotes.a}
+                            </blockquote>
+                      </div>
+                <div className="about-section"
+                sx={{
+                  marginTop: 5,
+                  marginBottom: 5, 
+                }}>
                   <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{maxWidth: '800px'}}>
                     <div className="slider-holder">
@@ -278,7 +319,11 @@ export const AboutPageTemplate = ({
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
                 </div>
-                <div className="about-section">
+                <div className="about-section"
+                sx={{
+                  marginTop: 5,
+                  marginBottom: 5, 
+                }}>
                 <div className="tile"
                   sx={{
                     fontFamily: "heading",
@@ -304,20 +349,22 @@ export const AboutPageTemplate = ({
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header1}</div>
-                          <div
+                          <div>
+                          <blockquote
                           sx={{
                             backgroundColor: "primary",
                             borderLeft: "body",
                             borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
-                            padding: 3,
+                            fontSize: 3,
+                            padding: 4,
                             fontWeight: "body",
                             borderRadius: "body",
                             boxShadow: "body",
+                            marginBottom: 3,
                             marginTop: 3,
-                          }}>
-                          {coreValuesTest.body1}</div>
+                          }}>{coreValuesTest.body1}</blockquote>
+                          </div>
                           <div
                           sx={{
                             fontSize: 5,
@@ -327,20 +374,22 @@ export const AboutPageTemplate = ({
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header2}</div>
-                          <div
+                          <div>
+                          <blockquote
                           sx={{
                             backgroundColor: "primary",
                             borderLeft: "body",
                             borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
-                            padding: 3,
+                            fontSize: 3,
+                            padding: 4,
                             fontWeight: "body",
                             borderRadius: "body",
                             boxShadow: "body",
+                            marginBottom: 3,
                             marginTop: 3,
-                          }}>
-                          {coreValuesTest.body2}</div>
+                          }}>{coreValuesTest.body2}</blockquote>
+                          </div>
                           <div
                           sx={{
                             fontSize: 5,
@@ -350,20 +399,22 @@ export const AboutPageTemplate = ({
                             fontStyle: "italic",
                           }}>
                           {coreValuesTest.header3}</div>
-                          <div
+                          <div>
+                          <blockquote
                           sx={{
                             backgroundColor: "primary",
                             borderLeft: "body",
                             borderLeftColor: "secondary",
                             fontFamily: "body",
-                            fontSize: 4,
-                            padding: 3,
+                            fontSize: 3,
+                            padding: 4,
                             fontWeight: "body",
                             borderRadius: "body",
                             boxShadow: "body",
+                            marginBottom: 3,
                             marginTop: 3,
-                          }}>
-                          {coreValuesTest.body3}</div>
+                          }}>{coreValuesTest.body3}</blockquote>
+                          </div>
                       </div>
                       </div>
                 </div>
@@ -389,9 +440,6 @@ const AboutPage = ({ data }) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
         headerImage={frontmatter.headerImage}
-        what={frontmatter.what}
-        how={frontmatter.how}
-        why={frontmatter.why}
         imageA={frontmatter.imageA}
         imageB={frontmatter.imageB}
         imageC={frontmatter.imageC}
@@ -399,7 +447,8 @@ const AboutPage = ({ data }) => {
         coreValuesTest={frontmatter.coreValuesTest}
         whatSlide={frontmatter.whatSlide}
         howSlide={frontmatter.howSlide}
-        whySlide={frontmatter.whySlide}/>
+        whySlide={frontmatter.whySlide}
+        blockquotes={frontmatter.blockquotes}/>
     </Layout>
   )
 }
@@ -428,27 +477,6 @@ export const aboutPageQuery = graphql`
               }
             }
           }
-        what {
-              tagline
-              content1
-              content2
-              content3
-              header
-            }
-        how {
-              tagline
-              content1
-              content2
-              content3
-              header
-            }
-        why {
-              tagline
-              content1
-              content2
-              content3
-              header
-            }
         whatSlide {
               header
               slide1
@@ -476,6 +504,11 @@ export const aboutPageQuery = graphql`
               body1
               body2
               body3
+        }
+        blockquotes {
+              a
+              b
+              c
         }
         imageA {
               widthOptions
