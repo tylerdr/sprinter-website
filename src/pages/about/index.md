@@ -23,19 +23,19 @@ imageD:
   widthOptions: is-7
 coreValuesTest:
   body1: >-
-    "We never make decisions based solely on financial gain, instead we take
-    into account all of the ways in which a proposition or new idea may impact
-    our employees as well as current and future clients."
+    We never make decisions based solely on financial gain, instead we take into
+    account all of the ways in which a proposition or new idea may impact our
+    employees as well as current and future clients.
   body2: >-
-    “One of the key components for any type of organizational success starts
-    with happy employees. That’s why from the beginning of any new client
+    One of the key components for any type of organizational success starts with
+    happy employees. That’s why from the beginning of any new client
     relationship, Sprinter makes sure to address the ways in which we can help
     workers contribute more overall value within the company by discovering ways
-    to maximize their efficiency."
+    to maximize their efficiency.
   body3: >-
-    "We believe that through pairing great technology with capable workers, we
+    We believe that through pairing great technology with capable workers, we
     are able to enhance individual performance and in return, enable them to
-    contribute the pinnacle of their worth to your business."
+    contribute the pinnacle of their worth to your business.
   header1: |
     People Over Profit
   header2: |
