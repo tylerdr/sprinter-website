@@ -7,7 +7,7 @@ subtitle: >-
 headerImage: /img/stars.jpg
 imageA:
   alt: what
-  image: /img/trippy-tech.jpg
+  image: /img/trippy-tech.png
   widthOptions: is-6
 imageB:
   alt: how
