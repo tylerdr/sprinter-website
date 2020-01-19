@@ -7,7 +7,7 @@ subtitle: >-
 headerImage: /img/stars.jpg
 imageA:
   alt: what
-  image: /img/colorful-code1.png
+  image: /img/colorful-code.jpg
   widthOptions: is-6
 imageB:
   alt: how
