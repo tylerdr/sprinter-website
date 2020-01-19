@@ -7,7 +7,7 @@ subtitle: >-
 headerImage: /img/stars.jpg
 imageA:
   alt: what
-  image: /img/code.jpg
+  image: /img/computer-processor.jpg
   widthOptions: is-6
 imageB:
   alt: how
@@ -15,7 +15,7 @@ imageB:
   widthOptions: is-6
 imageC:
   alt: why
-  image: /img/workhard-anywhere.png
+  image: /img/workhard-anywhere1.png
   widthOptions: is-6
 imageD:
   alt: filler
