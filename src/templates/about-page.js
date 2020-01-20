@@ -107,11 +107,11 @@ export const AboutPageTemplate = ({
             <div className="column is-full">
                 <div className="about-section"
                 sx={{
-                  marginTop: 3,
-                  marginBottom: 5,
+                  marginBottom: 3,
+                  paddingBottom: 4,
                 }}>
                   <div className="columns slider-row is-vcentered">
-                  <div className="column" sx={{maxWidth: '600px'}}>
+                  <div className="column" sx={{maxWidth: '684px'}}>
                     <div className="slider-holder">
                     <div className="tile"
                     sx={{
@@ -186,8 +186,9 @@ export const AboutPageTemplate = ({
                 </div>
                 <div className="about-section"
                 sx={{
-                  marginTop: 5,
-                  marginBottom: 5, 
+                  marginTop: 3,
+                  marginBottom: 3,
+                  paddingBottom: 4, 
                 }}>
                   <div className="columns slider-row  is-vcentered">
                   <div className="column" 
@@ -196,7 +197,7 @@ export const AboutPageTemplate = ({
                     }}>
                       <PreviewCompatibleImage imageInfo={imageB}/>
                   </div>
-                  <div className="column" sx={{maxWidth: '600px'}}>
+                  <div className="column" sx={{maxWidth: '684px'}}>
                     <div className="slider-holder">
                       <div className="tile "
                       sx={{
@@ -243,7 +244,6 @@ export const AboutPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                </div>
                 <div className="tile blockquote">
                             <blockquote
                             sx={{
@@ -261,14 +261,16 @@ export const AboutPageTemplate = ({
                             }}>
                             {blockquotes.c}
                             </blockquote>
-                      </div>
+                    </div>
+                </div>
                 <div className="about-section"
                 sx={{
-                  marginTop: 5,
-                  marginBottom: 5, 
+                  marginTop: 3,
+                  marginBottom: 3,
+                  paddingBottom: 4, 
                 }}>
                   <div className="columns slider-row is-vcentered">
-                  <div className="column" sx={{maxWidth: '800px'}}>
+                  <div className="column" sx={{maxWidth: '684px'}}>
                     <div className="slider-holder">
                     <div className="tile "
                         sx={{
@@ -312,7 +314,8 @@ export const AboutPageTemplate = ({
                         </div>
                       </Slider>
                       </SliderWrap>
-                      <div className="tile blockquote">
+                      </div>
+                      <div className="blockquote">
                             <blockquote
                             sx={{
                               backgroundColor: "primary",
@@ -326,18 +329,18 @@ export const AboutPageTemplate = ({
                               boxShadow: "body",
                               marginBottom: 3,
                               marginTop: 5,
+                              width: "100%",
                             }}>
                             {blockquotes.b}
                             </blockquote>
                       </div>
-                    </div>
                   </div>
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
                 </div>
                 <div className="about-section"
                 sx={{
-                  marginTop: 5,
+                  marginTop: 3,
                   marginBottom: 5, 
                 }}>
                 <div className="tile"
