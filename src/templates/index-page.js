@@ -42,6 +42,10 @@ export const IndexPageTemplate = ({
             lineHeight: '1',
             padding: '0.25em',
           }}
+          sx={{
+            fontWeight: "thin",
+            fontFamily: "heading",
+          }}
         >
           {title}
         </h1>
@@ -51,6 +55,10 @@ export const IndexPageTemplate = ({
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+          }}
+          sx={{
+            fontWeight: "body",
+            fontFamily: "body",
           }}
         >
           {subheading}
@@ -77,7 +85,7 @@ export const IndexPageTemplate = ({
                     textAlign: "center",
                     fontSize: 5,
                     fontWeight: "thin",
-                    fontFamily: "body",
+                    fontFamily: "heading",
                   }}>
                     {main.visionStatement}
                   </div>
@@ -96,7 +104,7 @@ export const IndexPageTemplate = ({
                     // borderLeftColor: "secondary",
                     padding: 3,
                     margin: 3,
-                    fontFamily: "body",
+                    fontFamily: "heading",
                     marginTop: 4,
                     marginBottom: 4,
                     textAlign: "center",
@@ -113,7 +121,7 @@ export const IndexPageTemplate = ({
                   sx={{
                     color: "text",
                     fontWeight: "heading",
-                    fontFamily: "body",
+                    fontFamily: "heading",
                     fontSize: 4,
                   }}>
                     Latest stories

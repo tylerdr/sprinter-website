@@ -1,3 +1,4 @@
+
 export default {
     initialColorMode: 'light',
     colors: {
@@ -22,7 +23,7 @@ export default {
     body: 400,
     heading: 700,
     bold: 700,
-    thin: 100
+    thin: 100,
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],

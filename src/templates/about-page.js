@@ -101,7 +101,7 @@ export const AboutPageTemplate = ({
             padding: '0.25em',
           }}
           sx={{
-            fontWeight: "thin",
+            fontWeight: "body",
             fontFamily: "heading",
           }}
         >
@@ -125,7 +125,7 @@ export const AboutPageTemplate = ({
                     sx={{
                       fontFamily: "heading",
                       fontSize: 6,
-                      fontWeight: "thin",
+                      fontWeight: 100,
                     }}>
                       {whatSlide.header}
                     </div>
