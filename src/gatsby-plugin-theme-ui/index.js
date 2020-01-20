@@ -15,13 +15,14 @@ export default {
       },
     },
   fonts: {
-    heading: "PT",
-    body: "sans-serif",
+    heading: "'Roboto', sans-serif",
+    body: "'Roboto', sans-serif",
   },
   fontWeights: {
     body: 400,
     heading: 700,
     bold: 700,
+    thin: 100
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -32,6 +33,6 @@ export default {
     body: "0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)",
   },
   borders: {
-    body: "solid 7.5px"
+    body: "solid 7.5px",
   },
 }

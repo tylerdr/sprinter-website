@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({
         }}
       >
         <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
@@ -46,7 +46,7 @@ export const IndexPageTemplate = ({
           {title}
         </h1>
         <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
@@ -65,17 +65,18 @@ export const IndexPageTemplate = ({
                 <div className="content">
                   <div className="tile"
                   sx={{
-                    backgroundColor: "primary",
-                    borderLeft: "body",
-                    borderLeftColor: "secondary",
+                    // backgroundColor: "primary",
+                    // borderLeft: "body",
+                    // borderLeftColor: "secondary",
                     padding: 3,
                     margin: 3,
                     marginTop: 4,
                     marginBottom: 4,
-                    borderRadius: "body",
-                    boxShadow: "body",
+                    // borderRadius: "body",
+                    // boxShadow: "body",
+                    textAlign: "center",
                     fontSize: 5,
-                    fontWeight: "body",
+                    fontWeight: "thin",
                     fontFamily: "body",
                   }}>
                     {main.visionStatement}
@@ -90,18 +91,19 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className="tile"
                   sx={{
-                    backgroundColor: "primary",
-                    borderLeft: "body",
-                    borderLeftColor: "secondary",
+                    // backgroundColor: "primary",
+                    // borderLeft: "body",
+                    // borderLeftColor: "secondary",
                     padding: 3,
                     margin: 3,
                     fontFamily: "body",
                     marginTop: 4,
                     marginBottom: 4,
-                    borderRadius: "body",
-                    boxShadow: "body",
+                    textAlign: "center",
+                    // borderRadius: "body",
+                    // boxShadow: "body",
                     fontSize: 5,
-                    fontWeight: "body",
+                    fontWeight: "thin",
                   }}>
                    {main.missionStatement}
                   </div>
@@ -128,6 +130,9 @@ export const IndexPageTemplate = ({
                     //   borderColor: "secondary",
                     //   cursor: "pointer",                      
                     // }}
+                    sx={{
+                      fontFamily: "heading",
+                    }}
                     >
                       Read more
                     </Link>

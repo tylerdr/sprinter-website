@@ -37,16 +37,18 @@ class BlogRoll extends React.Component {
                   ) : null}
                   <p className="post-meta">
                     <Link
-                      className="title is-size-4"
+                      className="is-size-4"
                       to={post.fields.slug}
                       sx={{
                         color: "text",
+                        fontFamily: "heading",
+                        fontWeight: "heading",
                       }}
                     >
                       {post.frontmatter.title}
                     </Link>
                     <span></span>
-                    <span className="subtitle is-size-5 is-block">
+                    <span className="is-size-5 is-block">
                       {post.frontmatter.date}
                     </span>
                   </p>
@@ -55,7 +57,8 @@ class BlogRoll extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <Link className="button" to={post.fields.slug}>
+                  <Link className="button" to={post.fields.slug}
+                  sx={{fontFamily: "body", fontWeight: "body"}}>
                   {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Keep Reading →</p>}
                   </Link>
                 </p>

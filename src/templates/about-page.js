@@ -80,21 +80,29 @@ export const AboutPageTemplate = ({
         }}
       >
         <h1 
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
           }}
+          sx={{
+            fontFamily: "heading",
+            fontWeight: "thin",
+          }}
         >
           {title}
         </h1>
         <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+          }}
+          sx={{
+            fontWeight: "thin",
+            fontFamily: "heading",
           }}
         >
           {subtitle}
@@ -117,7 +125,7 @@ export const AboutPageTemplate = ({
                     sx={{
                       fontFamily: "heading",
                       fontSize: 6,
-                      fontWeight: "heading",
+                      fontWeight: "thin",
                     }}>
                       {whatSlide.header}
                     </div>
@@ -203,7 +211,7 @@ export const AboutPageTemplate = ({
                       sx={{
                         fontFamily: "heading",
                         fontSize: 6,
-                        fontWeight: "heading",
+                        fontWeight: "thin",
                       }}>
                         {howSlide.header}
                       </div>
@@ -276,7 +284,7 @@ export const AboutPageTemplate = ({
                         sx={{
                           fontFamily: "heading",
                           fontSize: 6,
-                          fontWeight: "heading",
+                          fontWeight: "thin",
                     }}>
                       {whySlide.header}
                     </div>
@@ -338,104 +346,53 @@ export const AboutPageTemplate = ({
                      <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
                 </div>
-                <div className="about-section"
-                sx={{
-                  marginTop: 3,
-                  marginBottom: 5, 
-                }}>
-                <div className="tile"
+                  <div className="about-section"
                   sx={{
-                    fontFamily: "heading",
-                    fontSize: 6,
-                    fontWeight: "heading",
+                    marginTop: 3,
+                    marginBottom: 5, 
                   }}>
-                    {coreValuesTest.mainHeader}
-                  </div>
-                  <div className="tile"
-                  sx={{
-                    fontFamily: "body",
-                    fontSize: 3,
-                    fontWeight: "body",
-                  }}>
-                    {coreValuesTest.tagline}
-                  </div>
-                    <div
-                          sx={{
-                            fontSize: 5,
-                            fontWeight: "heading",
-                            fontFamily: "body",
-                            marginTop: 3,
-                            fontStyle: "italic",
-                          }}>
-                          {coreValuesTest.header1}</div>
-                          <div>
-                          <blockquote
-                          sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
-                            fontFamily: "body",
-                            fontSize: 3,
-                            padding: 4,
-                            fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
-                            marginBottom: 3,
-                            marginTop: 3,
-                          }}>{coreValuesTest.body1}</blockquote>
-                          </div>
-                          <div
-                          sx={{
-                            fontSize: 5,
-                            fontWeight: "heading",
-                            fontFamily: "body",
-                            marginTop: 3,
-                            fontStyle: "italic",
-                          }}>
-                          {coreValuesTest.header2}</div>
-                          <div>
-                          <blockquote
-                          sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
-                            fontFamily: "body",
-                            fontSize: 3,
-                            padding: 4,
-                            fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
-                            marginBottom: 3,
-                            marginTop: 3,
-                          }}>{coreValuesTest.body2}</blockquote>
-                          </div>
-                          <div
-                          sx={{
-                            fontSize: 5,
-                            fontWeight: "heading",
-                            fontFamily: "body",
-                            marginTop: 3,
-                            fontStyle: "italic",
-                          }}>
-                          {coreValuesTest.header3}</div>
-                          <div>
-                          <blockquote
-                          sx={{
-                            backgroundColor: "primary",
-                            borderLeft: "body",
-                            borderLeftColor: "secondary",
-                            fontFamily: "body",
-                            fontSize: 3,
-                            padding: 4,
-                            fontWeight: "body",
-                            borderRadius: "body",
-                            boxShadow: "body",
-                            marginBottom: 3,
-                            marginTop: 3,
-                          }}>{coreValuesTest.body3}</blockquote>
-                          </div>
+                    <div className="tile"
+                      sx={{
+                        fontFamily: "heading",
+                        fontSize: 6,
+                        fontWeight: "thin",
+                      }}>
+                        {coreValuesTest.mainHeader}
                       </div>
+                      <div className="tile"
+                      sx={{
+                        fontFamily: "body",
+                        fontSize: 3,
+                        fontWeight: "body",
+                      }}>
+                        {coreValuesTest.tagline}
                       </div>
+                      <div>
+                      <SliderWrap>
+                      <Slider {...settings} sx={{height: '90%', marginTop: 4, padding: 4}} className="tile">
+                        <div className="each-slide">
+                          <div>
+                            <div className="tile" sx={{fontSize: 5, fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
+                            <div className="tile" sx={{fontSize: 3, fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body1}</div>
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                        <div>
+                            <div className="tile" sx={{fontSize: 5, fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
+                            <div className="tile" sx={{fontSize: 3, fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body2}</div>
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                        <div>
+                            <div className="tile" sx={{fontSize: 5, fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
+                            <div className="tile" sx={{fontSize: 3, fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body3}</div>
+                          </div>
+                        </div>
+                      </Slider>
+                      </SliderWrap>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
     </section>              
