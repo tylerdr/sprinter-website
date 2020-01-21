@@ -3,7 +3,6 @@ import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
 import Helmet from 'react-helmet'
 import { MapPin, Smartphone, Mail } from 'react-feather'
-import './contact.css'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
@@ -19,6 +18,7 @@ export default class Index extends React.Component {
     super(props)
     this.state = { isValidated: false }
   }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -42,10 +42,9 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <div
-      className="full-width-image margin-top-0 contact-header"
+      className="full-width-image margin-top-0"
         style={{
-          //backgroundImage: `url('/img/newportri-2-.jpg')`,
-          
+          backgroundImage: `url('/img/newportri-2-.jpg')`,
           backgroundPosition: `bottom`,
           backgroundAttachment: `fixed`,
         }}
