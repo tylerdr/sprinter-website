@@ -21,7 +21,7 @@ export default {
   },
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 100,
     bold: 700,
     thin: 100,
   },

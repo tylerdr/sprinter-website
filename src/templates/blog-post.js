@@ -8,6 +8,7 @@ import Content, { HTMLContent } from '../components/Content'
 import ReactPlayer from 'react-player'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import styled, { withTheme } from 'styled-components'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const BlogPostTemplate = ({
@@ -22,7 +23,7 @@ export const BlogPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
 
-  return (
+return (
     <section className="section">
       {helmet || ''}
       <div className="container content">

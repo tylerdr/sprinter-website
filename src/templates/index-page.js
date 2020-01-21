@@ -84,7 +84,7 @@ export const IndexPageTemplate = ({
                     // boxShadow: "body",
                     textAlign: "center",
                     fontSize: 5,
-                    fontWeight: "thin",
+                    fontWeight: "body",
                     fontFamily: "heading",
                   }}>
                     {main.visionStatement}
@@ -111,13 +111,13 @@ export const IndexPageTemplate = ({
                     // borderRadius: "body",
                     // boxShadow: "body",
                     fontSize: 5,
-                    fontWeight: "thin",
+                    fontWeight: "body",
                   }}>
                    {main.missionStatement}
                   </div>
                 </div>
                 <div className="column is-12">
-                  <p className="has-text-weight-semibold is-size-2"
+                  <p className="is-size-2"
                   sx={{
                     color: "text",
                     fontWeight: "heading",
