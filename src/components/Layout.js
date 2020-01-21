@@ -19,27 +19,27 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/sprinter-favicon.png`}
+          href={`${withPrefix('/')}img/sprinter-favicon.ico`}
           //href={icon}
         />
         <link
           rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/sprinter-favicon.png`}
+          type="image/ico"
+          href={`${withPrefix('/')}img/sprinter-favicon.ico`}
           //href={icon}
           sizes="32x32"
         />
         <link
           rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/sprinter-favicon.png`}
+          type="image/ico"
+          href={`${withPrefix('/')}img/sprinter-favicon.ico`}
           //href={icon}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+          href={`${withPrefix('/')}img/sprinter-favicon.ico`}
           //href={icon}
           color="#ff4400"
         />
