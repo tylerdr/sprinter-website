@@ -61,21 +61,29 @@ export default class Index extends React.Component {
         }}
       >
         <h1 
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
           }}
+          sx={{
+            fontFamily: 'heading',
+            fontWeight: 'heading',
+          }}
         >
         Contact Us
         </h1>
         <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+          }}
+          sx={{
+            fontWeight: "body",
+            fontFamily: "body",
           }}
         >
         We know your time is valuable. That's why we promise to respond promptly to any questions you may have concerning our process. Reach out today and discover the infinite ways we can work together to make your business better.
@@ -95,6 +103,8 @@ export default class Index extends React.Component {
                   sx={{
                     margin: 4,
                     marginTop: 0,
+                    fontWeight: "body",
+                    fontFamily: "heading",
                   }}>Contact Form</h3>
                     <a
                       className="tile"
@@ -115,6 +125,8 @@ export default class Index extends React.Component {
                     <p 
                     sx={{
                       fontSize: 2,
+                      fontWeight: "body",
+                      fontFamily: "body",
                     }}>9005 Overlook Blvd
                     </p>
                     </a>
@@ -131,6 +143,8 @@ export default class Index extends React.Component {
                       <p
                       sx={{
                         fontSize: 2,
+                        fontWeight: "body",
+                        fontFamily: "body",
                       }}>
                        +1-615-601-0782
                        </p>
@@ -148,6 +162,8 @@ export default class Index extends React.Component {
                         <p 
                         sx={{
                           fontSize: 2,
+                          fontWeight: "body",
+                          fontFamily: "body",
                         }}>
                           hello@sprinterconsulting.com
                         </p>
@@ -177,7 +193,9 @@ export default class Index extends React.Component {
                       <div className="field">
                         <label className="label" htmlFor={'name'}
                         sx={{
-                          color: "text"
+                          color: "text",
+                          fontWeight: "body",
+                          fontFamily: "body",
                         }}>
                           Your name
                         </label>
@@ -196,6 +214,8 @@ export default class Index extends React.Component {
                         <label className="label" htmlFor={'email'}
                         sx={{
                           color: 'text',
+                          fontWeight: "body",
+                          fontFamily: "body",
                         }}>
                           Email
                         </label>
@@ -214,6 +234,8 @@ export default class Index extends React.Component {
                         <label className="label" htmlFor={'enquiry'}
                         sx={{
                           color: 'text',
+                          fontWeight: "body",
+                          fontFamily: "body",
                         }}>
                           Type of Enquiry
                         </label>
@@ -240,6 +262,8 @@ export default class Index extends React.Component {
                         <label className="label" htmlFor={'message'}
                         sx={{
                           color: 'text',
+                          fontWeight: "body",
+                          fontFamily: "body",
                         }}>
                           Message
                         </label>
@@ -269,6 +293,8 @@ export default class Index extends React.Component {
                             <label className="label" htmlFor={'newsletter'}
                               sx={{
                                 color: 'text',
+                                fontWeight: "body",
+                                fontFamily: "body",
                               }}>
                               Get Updates (only the important stuff we promise)
                             </label>
@@ -283,6 +309,8 @@ export default class Index extends React.Component {
                         <button className="button is-link" type="submit"
                         sx={{
                           marginTop: 2,
+                          fontWeight: "body",
+                          fontFamily: "body",
                         }}>
                           Send
                         </button>

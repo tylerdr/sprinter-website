@@ -102,7 +102,7 @@ export const AboutPageTemplate = ({
           }}
           sx={{
             fontWeight: "body",
-            fontFamily: "heading",
+            fontFamily: "body",
           }}
         >
           {subtitle}
@@ -119,7 +119,7 @@ export const AboutPageTemplate = ({
                   paddingBottom: 4,
                 }}>
                   <div className="columns slider-row is-vcentered">
-                  <div className="column" sx={{maxWidth: '684px'}}>
+                  <div className="column" sx={{minWidth: '50%'}}>
                     <div className="slider-holder">
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                     sx={{
@@ -161,7 +161,7 @@ export const AboutPageTemplate = ({
                       </SliderWrap>
                     </div>
                   </div>
-                     <div className="column" sx={{minWidth: '200px'}}>
+                     <div className="column" sx={{minWidth: '50%'}}>
                        <div
                        sx={{
                          marginTop: 4,
@@ -255,7 +255,7 @@ export const AboutPageTemplate = ({
                               borderRadius: "body",
                               boxShadow: "body",
                               marginBottom: 3,
-                              marginTop: 3,
+                              marginTop: 5,
                             }}>
                             {blockquotes.c}
                             </blockquote>
@@ -351,28 +351,32 @@ export const AboutPageTemplate = ({
                         {coreValuesTest.tagline}
                       </div>
                       <div>
+                      <div className="slider-row">
+                      <div className="slider-holder">
                       <SliderWrap>
-                      <Slider {...settings} sx={{height: '90%', marginTop: 4, padding: 4}} className="tile">
-                        <div className="each-slide">
+                        <Slider {...settings} sx={{height: '90%', marginTop: 4,}} className="tile">
+                          <div className="each-slide">
+                            <div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
+                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body1}</div>
+                            </div>
+                          </div>
+                          <div className="each-slide">
                           <div>
-                            <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
-                            <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body1}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
+                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body2}</div>
+                            </div>
                           </div>
-                        </div>
-                        <div className="each-slide">
-                        <div>
-                            <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
-                            <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body2}</div>
+                          <div className="each-slide">
+                          <div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
+                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body3}</div>
+                            </div>
                           </div>
-                        </div>
-                        <div className="each-slide">
-                        <div>
-                            <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
-                            <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body3}</div>
-                          </div>
-                        </div>
-                      </Slider>
+                        </Slider>
                       </SliderWrap>
+                      </div>
+                      </div>
                       </div>
                     </div>
                   </div>
