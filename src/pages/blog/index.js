@@ -3,15 +3,15 @@ import React from 'react'
 import { jsx } from "theme-ui"
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll'
+import './index.css'
 
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
         <div
-          className="full-width-image-container margin-top-0"
+          className="full-width-image-container margin-top-0 blog-header"
           style={{
-            backgroundImage: `url('/img/typerwriter2.jfif')`,
             alignItems: 'left',
           }}
         >
