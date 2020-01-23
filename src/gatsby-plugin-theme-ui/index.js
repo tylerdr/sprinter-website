@@ -3,8 +3,8 @@ export default {
     initialColorMode: 'light',
     colors: {
         text: '#000',
-        background: '#d8e8f8',
-        primary: 'white',
+        background: '#d9dbde',
+        primary: '#f7f7f6',
         secondary: '#3072f9',
         modes: {
           dark: {
