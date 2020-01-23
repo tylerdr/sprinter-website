@@ -89,7 +89,7 @@ const Navbar = class extends React.Component {
                 this.props.location.pathname.includes('contact') ||
                 this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
               sx={{
-                fontWeight: "heading",
+                fontWeight: "body",
                 color: "text",
                 backgroundColor: "background",
               }}>
@@ -99,7 +99,7 @@ const Navbar = class extends React.Component {
                 this.props.location.pathname.includes('about') ? 'clicked' : '' }`}
                to="/about"
               sx={{
-                fontWeight: "heading",
+                fontWeight: "body",
                 color: "text",
                 backgroundColor: "background",
               }}>
@@ -112,7 +112,7 @@ const Navbar = class extends React.Component {
                 this.props.location.pathname.includes('blog') ? 'clicked' : '' }`}
               to="/blog"
               sx={{
-                fontWeight: "heading",
+                fontWeight: "body",
                 color: "text",
                 backgroundColor: "background",
               }}>
@@ -122,7 +122,7 @@ const Navbar = class extends React.Component {
                 this.props.location.pathname.includes('contact') ? 'clicked' : '' }`}
               to="/contact"
               sx={{
-                fontWeight: "heading",
+                fontWeight: "body",
                 color: "text",
                 backgroundColor: "background",
               }}>

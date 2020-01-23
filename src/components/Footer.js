@@ -37,20 +37,20 @@ const Footer = class extends React.Component {
                   For questions, call us at 1-000-000-000 or email us at example@example.com.
                 </div>
               </div> */}
-              <div className="tile is-7"
+              {/* <div className="tile is-7"
               sx={{margin:"auto"}}>
                 <GoogleMap />
-              </div>
-              <div className="tile is-7" sx={{margin:"auto"}}>
+              </div> */}
+              {/* <div className="tile is-7" sx={{margin:"auto"}}>
                 <p
-                sx={{
-                        fontFamily: "body",
-                        fontSize: 3,
-                        padding: 3,
-                        margin: 3,
-                        fontWeight: "body",
-                }}>Our passion for technology combined with our love of travel has allowed us to work in some of the most beautiful places in the world. The map to the left pinpoints all of our temporary offices where we’ve opened our laptops while enjoying breathtaking cities, scenery and culture.</p>
-              </div>
+                // sx={{
+                //         fontFamily: "body",
+                //         fontSize: 3,
+                //         padding: 3,
+                //         margin: 3,
+                //         fontWeight: "body",
+                // }}>Our passion for technology combined with our love of travel has allowed us to work in some of the most beautiful places in the world. The map to the left pinpoints all of our temporary offices where we’ve opened our laptops while enjoying breathtaking cities, scenery and culture.</p>
+              </div> */}
             {/* </div> */}
             <div className="social-bar has-text-centered" >
             <SocialIcon url="https://instagram.com/sprinterconsulting/" 

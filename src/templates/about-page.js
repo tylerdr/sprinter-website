@@ -194,13 +194,14 @@ export const AboutPageTemplate = ({
                   paddingBottom: 4, 
                 }}>
                   <div className="columns slider-row  is-vcentered">
-                  <div className="column" 
+                  <div className="column " 
                   sx={{
                     marginTop: 4,
+                    minWidth: '50%',
                     }}>
                       <PreviewCompatibleImage imageInfo={imageB}/>
                   </div>
-                  <div className="column" sx={{maxWidth: '684px'}}>
+                  <div className="column" sx={{minWidth: '50%'}}>
                     <div className="slider-holder">
                       <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
@@ -268,7 +269,7 @@ export const AboutPageTemplate = ({
                   paddingBottom: 4, 
                 }}>
                   <div className="columns slider-row is-vcentered">
-                  <div className="column" sx={{maxWidth: '684px'}}>
+                  <div className="column" sx={{minWidth: '50%'}}>
                     <div className="slider-holder">
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                         sx={{
@@ -328,7 +329,7 @@ export const AboutPageTemplate = ({
                             </blockquote>
                       </div>
                   </div>
-                     <div className="column" sx={{minWidth: '200px'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
+                     <div className="column" sx={{minWidth: '50%'}}><PreviewCompatibleImage imageInfo={imageC}/></div>
                 </div>
                 </div>
                   <div className="about-section"

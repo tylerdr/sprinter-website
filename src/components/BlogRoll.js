@@ -42,7 +42,7 @@ class BlogRoll extends React.Component {
                       sx={{
                         color: "text",
                         fontFamily: "heading",
-                        fontWeight: "heading",
+                        fontWeight: "body",
                       }}
                     >
                       {post.frontmatter.title}

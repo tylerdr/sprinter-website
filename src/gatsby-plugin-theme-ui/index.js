@@ -3,14 +3,14 @@ export default {
     initialColorMode: 'light',
     colors: {
         text: '#000',
-        background: '#F5F5F5',
+        background: '#d8e8f8',
         primary: 'white',
         secondary: '#3072f9',
         modes: {
           dark: {
             text: '#fff',
-            background: '#3A3A3A',
-            primary: '#827e7e',
+            background: '#2a365d',
+            primary: '#899db3',
             secondary: '#3072f9',
           },
       },
