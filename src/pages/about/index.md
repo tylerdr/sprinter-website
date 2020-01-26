@@ -83,8 +83,12 @@ howSlide:
     Do you feel like your business is lacking something, but don’t specifically
     know what? Do you recognize that your company could be better, but don’t
     know how? These are two questions that our team of highly-skilled experts
-    are trained to answer. With only your specific needs in mind, we are able to
-    design a detailed course of action tailored to fit your company. 
+    are trained to answer. We are a tech-based consulting firm of elite problem
+    solvers with the sole mission of improving your business. Through accessing
+    feasible modern technology, we are able to implement software solutions that
+    positively impact your overall workflow. By steering our focus toward your
+    specific struggles, we begin designing a detailed course of action tailored
+    to fit your company.
   slide2: >-
     Our team is a unique blend of creatives, engineers, and developers who are
     knowledgeable in both business operations as well as software development.
@@ -98,42 +102,44 @@ howSlide:
     belief that developing a relationship with our clients is just as important
     as developing the software. We believe many businesses are tapping into only
     a small portion of their potential. Our goal is to introduce new and
-    available technology that bridges the gap between your current struggles and
-    the technology that will resolve them. 
+    available technology that solves problems while optimizing overall workflow.
+    We are result-oriented and will do whatever it takes to ensure the growth of
+    your company.
 whySlide:
   header: Why We Do It
-  slide1: >-
+  slide1: >
     We do it because we believe technology is the key to unlocking human
     potential. Maintaining a clear "why" is just as important to us as the work
     we do. By centering our business around our core beliefs, we are able to
     focus our attention toward your company's specific needs. Through pairing
     capable workers with modern software, your company will notice an increase
     in overall productivity, a healthier work environment, and employees
-    achieving their optimal value within the business. 
-  slide2: >-
-    Our unique set of expertise offers your business three benefits through the
-    power of one. We deliver you more time, money, and freedom through
-    implementing effective modern technology into your current workflow. Through
-    taking the time to study how your business operates, we are able to
-    recommend only the best software solutions that help you meet your future
-    goals. 
-  slide3: >-
+    achieving their optimal value within the business. In bettering your
+    business, we are in return bettering the lives of the people who work there.
+    That is why we put our heart and soul into what we do, and take great pride
+    in the results we are able to achieve.
+  slide2: >+
     We specialize in technology consulting, process improvement, and
-    personalized software development. Sprinter recognizes that every business
-    has their own unique set of hurdles and challenges, that’s why we mold the
-    software around what you need at any given time. Our mission is to design
-    software that allows employees to focus their time on the important tasks by
-    minimizing daily monotonous work.
+    personalized software development. This unique set of expertise offers your
+    business three benefits through the power of one. We deliver you more time,
+    money, and freedom through implementing effective modern technology into
+    your current workflow. By taking the time to study how your business
+    operates, we are able to recommend only the best software solutions that
+    help you meet your future goals.
+
+  slide3: >-
+    Sprinter recognizes that every business has their own unique set of hurdles
+    and challenges, that’s why we mold the software around what you need at any
+    given time. Our mission is to design software that allows employees to focus
+    their time on the important tasks by minimizing daily monotonous work. We’re
+    here to deliver you the technological edge that your business needs.
 blockquotes:
   a: >-
     As the technology evolves, so do we, but more importantly so does your
     business.
-  b: >-
+  b: ' Sprinter recognizes that every business has their own unique set of hurdles and challenges, that’s why we mold the software around what you need at any given time.'
+  c: >-
     With only your specific needs in mind, we are able to design a detailed
     course of action tailored to fit your company.
-  c: >-
-    Sprinter recognizes that every business has their own unique set of hurdles
-    and challenges, that’s why we mold the software around what you need at any
-    given time.
 ---
 
