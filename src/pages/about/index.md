@@ -113,10 +113,7 @@ whySlide:
     focus our attention toward your company's specific needs. Through pairing
     capable workers with modern software, your company will notice an increase
     in overall productivity, a healthier work environment, and employees
-    achieving their optimal value within the business. In bettering your
-    business, we are in return bettering the lives of the people who work there.
-    That is why we put our heart and soul into what we do, and take great pride
-    in the results we are able to achieve.
+    achieving their optimal value within the business. 
   slide2: >+
     We specialize in technology consulting, process improvement, and
     personalized software development. This unique set of expertise offers your
@@ -136,9 +133,12 @@ blockquotes:
   a: >-
     As the technology evolves, so do we, but more importantly so does your
     business.
-  b: ' Sprinter recognizes that every business has their own unique set of hurdles and challenges, that’s why we mold the software around what you need at any given time.'
-  c: >-
+  b: >-
     With only your specific needs in mind, we are able to design a detailed
-    course of action tailored to fit your company.
+    course of action tailored to fit your company. 
+  c: >-
+    Sprinter recognizes that every business has their own unique set of hurdles
+    and challenges, that’s why we mold the software around what you need at any
+    given time.
 ---
 
