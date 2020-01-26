@@ -64,12 +64,13 @@ whatSlide:
     the gap between your company's current struggles and the technology that
     will resolve them.
   slide2: >-
-    Our vast understanding of both software development as well as business
-    operations, is what ensures our collaboration reaches maximum success.
-    Because today's tech world is rapidly becoming more advanced & complex,
-    we've handcrafted tools that make it easier to navigate the modern
-    technological landscape. Through harnessing the power of modern software, we
-    are able to optimize technology's potential within your current systems. 
+    We use technology to make businesses better. Our vast understanding of both
+    software development as well as business operations, is what ensures our
+    collaboration reaches maximum success. Because today's tech world is rapidly
+    becoming more advanced & complex, we've handcrafted tools that make it
+    easier to navigate the modern technological landscape. Through harnessing
+    the power of modern software, we are able to optimize technology's potential
+    within your current systems. 
   slide3: >-
     Before Sprinter, most businesses looking to update their systems were forced
     to choose between "off the shelf" software options that fail miserably due
@@ -83,12 +84,10 @@ howSlide:
     Do you feel like your business is lacking something, but don’t specifically
     know what? Do you recognize that your company could be better, but don’t
     know how? These are two questions that our team of highly-skilled experts
-    are trained to answer. We are a tech-based consulting firm of elite problem
-    solvers with the sole mission of improving your business. Through accessing
-    feasible modern technology, we are able to implement software solutions that
-    positively impact your overall workflow. By steering our focus toward your
-    specific struggles, we begin designing a detailed course of action tailored
-    to fit your company.
+    are trained to answer. Through accessing feasible modern technology, we are
+    able to implement software solutions that positively impact your overall
+    workflow. By steering our focus toward your specific struggles, we begin
+    designing a detailed course of action tailored to fit your company.
   slide2: >-
     Our team is a unique blend of creatives, engineers, and developers who are
     knowledgeable in both business operations as well as software development.
