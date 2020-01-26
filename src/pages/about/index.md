@@ -69,18 +69,23 @@ whatSlide:
     Because today's tech world is rapidly becoming more advanced & complex,
     we've handcrafted tools that make it easier to navigate the modern
     technological landscape. Through harnessing the power of modern software, we
-    provide you with the expertise needed to optimize technology's potential
-    within your company. 
+    are able to optimize technology's potential within your current systems. 
   slide3: >-
     Before Sprinter, most businesses looking to update their systems were forced
     to choose between "off the shelf" software options that fail miserably due
     to lack of communication. We've solved this problem through our consulting
     before and during the development process. Our focus is and always will be
-    directed toward implementing new technology that save you both time and
+    directed toward implementing new technology that saves you both time and
     money. 
 howSlide:
   header: How We Do It
   slide1: >-
+    Do you feel like your business is lacking something, but don’t specifically
+    know what? Do you recognize that your company could be better, but don’t
+    know how? These are two questions that our team of highly-skilled experts
+    are trained to answer. With only your specific needs in mind, we are able to
+    design a detailed course of action tailored to fit your company. 
+  slide2: >-
     Our team is a unique blend of creatives, engineers, and developers who are
     knowledgeable in both business operations as well as software development.
     Because we possess expertise in a broad array of different fields, we are
@@ -88,36 +93,30 @@ howSlide:
     Evolving with the technology is what we prioritize at Sprinter. Recognizing
     the fact that new technology can be both scary and sexy, we use our
     resources to acquaint your business with the power of modern software.
-  slide2: >-
-    Do you feel like your business is lacking something, but don’t specifically
-    know what? Do you recognize that your company could be better, but don’t
-    know how? These are two questions that our team of highly-skilled experts
-    are trained to answer. With only your specific needs in mind, we are able to
-    design a detailed course of action tailored to fit your company.
   slide3: >-
-    The entire process starts with a simple conversation. This is rooted in our
+    Our entire process starts with a simple conversation. This is rooted in our
     belief that developing a relationship with our clients is just as important
     as developing the software. We believe many businesses are tapping into only
-    a small portion of their potential. This is due to their lack of knowledge
-    on new and available technology. Our goal is to introduce your company to
-    the infinite potential that modern software encompasses. 
+    a small portion of their potential. Our goal is to introduce new and
+    available technology that bridges the gap between your current struggles and
+    the technology that will resolve them. 
 whySlide:
   header: Why We Do It
   slide1: >-
     We do it because we believe technology is the key to unlocking human
-    potential. Maintaining a clear "why" within our company is just as important
-    to us as the work we do. By centering our business around our core beliefs,
-    we are able to focus our attention towards your company's specific needs.
-    Through pairing capable workers with modern software, your company will
-    notice an increase in overall productivity, a healthier work environment,
-    and employees achieving their optimal value within the business. 
+    potential. Maintaining a clear "why" is just as important to us as the work
+    we do. By centering our business around our core beliefs, we are able to
+    focus our attention toward your company's specific needs. Through pairing
+    capable workers with modern software, your company will notice an increase
+    in overall productivity, a healthier work environment, and employees
+    achieving their optimal value within the business. 
   slide2: >-
     Our unique set of expertise offers your business three benefits through the
     power of one. We deliver you more time, money, and freedom through
     implementing effective modern technology into your current workflow. Through
     taking the time to study how your business operates, we are able to
-    recommend only the best software solutions that help meet your current
-    needs. 
+    recommend only the best software solutions that help you meet your future
+    goals. 
   slide3: >-
     We specialize in technology consulting, process improvement, and
     personalized software development. Sprinter recognizes that every business
