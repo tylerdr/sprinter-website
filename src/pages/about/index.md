@@ -64,13 +64,12 @@ whatSlide:
     the gap between your company's current struggles and the technology that
     will resolve them.
   slide2: >-
-    We use technology to make businesses better. Our vast understanding of both
-    software development as well as business operations, is what ensures our
-    collaboration reaches maximum success. Because today's tech world is rapidly
-    becoming more advanced & complex, we've handcrafted tools that make it
-    easier to navigate the modern technological landscape. Through harnessing
-    the power of modern software, we are able to optimize technology's potential
-    within your current systems. 
+    Our vast understanding of both software development as well as business
+    operations, is what ensures our collaboration reaches maximum success.
+    Because today's tech world is rapidly becoming more advanced & complex,
+    we've handcrafted tools that make it easier to navigate the modern
+    technological landscape. Through harnessing the power of modern software, we
+    are able to optimize technology's potential within your current systems. 
   slide3: >-
     Before Sprinter, most businesses looking to update their systems were forced
     to choose between "off the shelf" software options that fail miserably due
