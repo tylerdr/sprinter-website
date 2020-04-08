@@ -170,16 +170,12 @@ export const AboutPageTemplate = ({
                        <div className="tile blockquote">
                             <blockquote className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
                             sx={{
-                              backgroundColor: "primary",
+                              backgroundColor: "otherbackground",
                               borderLeft: "body",
                               borderLeftColor: "secondary",
                               fontFamily: "body",
-                              padding: 3,
                               fontWeight: "body",
                               borderRadius: "body",
-                              boxShadow: "body",
-                              marginTop: 3,
-                              marginBottom: 3,
                             }}>
                             {blockquotes.a}
                             </blockquote>
@@ -247,16 +243,12 @@ export const AboutPageTemplate = ({
                 <div className="tile blockquote">
                             <blockquote className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
                             sx={{
-                              backgroundColor: "primary",
+                              backgroundColor: "otherbackground",
                               borderLeft: "body",
                               borderLeftColor: "secondary",
                               fontFamily: "body",
-                              padding: 4,
                               fontWeight: "body",
                               borderRadius: "body",
-                              boxShadow: "body",
-                              marginBottom: 3,
-                              marginTop: 5,
                             }}>
                             {blockquotes.c}
                             </blockquote>
@@ -313,16 +305,12 @@ export const AboutPageTemplate = ({
                       <div className="blockquote">
                             <blockquote className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
                             sx={{
-                              backgroundColor: "primary",
+                              backgroundColor: "otherbackground",
                               borderLeft: "body",
                               borderLeftColor: "secondary",
                               fontFamily: "body",
-                              padding: 4,
                               fontWeight: "body",
                               borderRadius: "body",
-                              boxShadow: "body",
-                              marginBottom: 3,
-                              marginTop: 5,
                               width: "100%",
                             }}>
                             {blockquotes.b}

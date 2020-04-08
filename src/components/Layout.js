@@ -41,7 +41,7 @@ const TemplateWrapper = ({ children }) => {
           rel="mask-icon"
           href={`${withPrefix('/')}img/sprinter-favicon.ico`}
           //href={icon}
-          color="#ff4400"
+          color="#000"
         />
         <meta name="theme-color" content="#fff" />
 

@@ -52,7 +52,7 @@ const Navbar = class extends React.Component {
           position: "fixed"
         }}
         sx={{
-          backgroundColor: "background",
+          backgroundColor: "navbar",
         }}
         role="navigation"
         aria-label="main-navigation"
@@ -79,9 +79,9 @@ const Navbar = class extends React.Component {
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
-            sx={{
-              backgroundColor: "background",
-            }}
+            // sx={{
+            //   backgroundColor: "navbar",
+            // }}
           >
             <div className="navbar-start has-text-centered">
             <Link className={`navbar-item ${
@@ -91,7 +91,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "body",
                 color: "text",
-                backgroundColor: "background",
+                // backgroundColor: "navbar",
               }}>
                 Home
               </Link>
@@ -101,7 +101,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "body",
                 color: "text",
-                backgroundColor: "background",
+                // backgroundColor: "navbar",
               }}>
                 About
               </Link>
@@ -114,7 +114,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "body",
                 color: "text",
-                backgroundColor: "background",
+                // backgroundColor: "navbar",
               }}>
                 Blog
               </Link>
@@ -124,7 +124,7 @@ const Navbar = class extends React.Component {
               sx={{
                 fontWeight: "body",
                 color: "text",
-                backgroundColor: "background",
+                // backgroundColor: "navbar",
               }}>
                 Contact
               </Link>

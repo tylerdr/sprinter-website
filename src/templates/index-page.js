@@ -73,15 +73,10 @@ export const IndexPageTemplate = ({
                 <div className="content">
                   <div className="tile"
                   sx={{
-                    // backgroundColor: "primary",
-                    // borderLeft: "body",
-                    // borderLeftColor: "secondary",
                     padding: 3,
                     margin: 3,
                     marginTop: 4,
                     marginBottom: 4,
-                    // borderRadius: "body",
-                    // boxShadow: "body",
                     textAlign: "center",
                     fontSize: 5,
                     fontWeight: "body",
@@ -99,45 +94,39 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className="tile"
                   sx={{
-                    // backgroundColor: "primary",
-                    // borderLeft: "body",
-                    // borderLeftColor: "secondary",
                     padding: 3,
                     margin: 3,
                     fontFamily: "heading",
                     marginTop: 4,
                     marginBottom: 4,
                     textAlign: "center",
-                    // borderRadius: "body",
-                    // boxShadow: "body",
                     fontSize: 5,
                     fontWeight: "body",
                   }}>
                    {main.missionStatement}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "otherbackground"
+      }}
+    >
+      <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
                 <div className="column is-12">
-                  <p className="is-size-2"
-                  sx={{
-                    color: "text",
-                    fontWeight: "heading",
-                    fontFamily: "heading",
-                    fontSize: 4,
-                  }}>
+                  <h4 className="is-size-2">
                     Latest stories
-                  </p>
+                  </h4>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="button" to="/blog"
-                    // sx={{
-                    //   border: "2px solid",
-                    //   backgroundColor: "primary",
-                    //   fontWeight: "heading",
-                    //   color: "text",
-                    //   borderRadius: "body",
-                    //   borderColor: "secondary",
-                    //   cursor: "pointer",                      
-                    // }}
                     sx={{
                       fontFamily: "heading",
                     }}
@@ -146,10 +135,10 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
-              </div>
+                </div>
+                </div>
             </div>
           </div>
-        </div>
     </section>
   </div>
 )

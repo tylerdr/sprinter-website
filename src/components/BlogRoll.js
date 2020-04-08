@@ -1,7 +1,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import PropTypes from 'prop-types'
+import PropTypes, { nominalTypeHack } from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
@@ -15,15 +15,17 @@ class BlogRoll extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
-              <article
-              sx={{
-                backgroundColor: "primary",
-                color: "text",
-              }}
-                className={`blog-list-item tile is-child box  ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
+              <Link to={post.fields.slug}>
+                <article
+                  sx={{
+                    height: "100%",
+                    backgroundColor: "background",
+                    color: "text",
+                  }}
+                  className={`blog-list-item tile is-child box  ${
+                    post.frontmatter.featuredpost ? 'is-featured' : ''
+                  }`}
+                >
                 <header>
                   {post.frontmatter.featuredimage ? (
                     <div className="featured-thumbnail">
@@ -57,12 +59,19 @@ class BlogRoll extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <Link className="button" to={post.fields.slug}
-                  sx={{fontFamily: "body", fontWeight: "body"}}>
+                  <span className="float-right show-on-hover"
+                  sx={{
+                    fontFamily: "body", 
+                    fontWeight: "body",
+                    display: "none",
+                    color: "secondary",
+                    textAlign: "end"
+                    }}>
                   {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Keep Reading →</p>}
-                  </Link>
+                  </span>
                 </p>
               </article>
+              </Link>
             </div>
           ))}
       </div>

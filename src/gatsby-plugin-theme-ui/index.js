@@ -3,15 +3,19 @@ export default {
     initialColorMode: 'light',
     colors: {
         text: '#000',
-        background: '#d9dbde',
-        primary: '#f7f7f6',
+        background: '#fff',
+        otherbackground: '#f5f5f5',
+        primary: '#d9dbde',
         secondary: '#3072f9',
+        navbar: 'rgba(255,255,255,.8)',
         modes: {
           dark: {
             text: '#fff',
-            background: '#2a365d',
+            background: '#262c30',
+            otherbackground: '#525252',
             primary: '#899db3',
             secondary: '#3072f9',
+            navbar: 'rgba(38, 44, 48, .9)'
           },
       },
     },

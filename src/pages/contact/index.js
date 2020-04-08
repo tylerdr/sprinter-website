@@ -146,11 +146,11 @@ export default class Index extends React.Component {
                         fontWeight: "body",
                         fontFamily: "body",
                       }}>
-                       +1-615-601-0782
+                       +1 (615) 601-0782
                        </p>
                     </a>
                     <a className="tile"
-                    href={`mailto:${"tyler@sprinterconsulting.com"}`}
+                    href={`mailto:${"hello@sprinterconsulting.com"}`}
                     sx={{
                       margin: 4,
                     }}>
