@@ -84,14 +84,68 @@ export const IndexPageTemplate = ({
                   }}>
                     {main.visionStatement}
                   </div>
-                  <div                 
+                    <div className="columns is-multiline" 
+                    sx={{
+                      margin: 3,
+                      marginTop: 4,
+                      marginBottom: 4,
+                    }}>
+                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                      sx={{
+                        fontFamily: "heading",
+                        fontWeight: 100,
+                      }}>
+                        Services
+                      </div>
+                      <div className="column is-6">
+                        <div className="tile box"
+                          sx={{
+                            backgroundColor: "otherbackground",
+                            color: "text"
+                          }}>
+                         <div className="tile is-size-4">Product Management</div>
+                          <div className="tile is-size-5">content</div>
+                        </div>
+                      </div>
+                      <div className="column is-6">
+                        <div className="tile box"
+                          sx={{
+                            backgroundColor: "otherbackground",
+                            color: "text"
+                          }}>
+                          <div className="tile is-size-4">header</div>
+                          <div className="tile is-size-5">content</div>
+                        </div>
+                      </div>
+                      <div className="column is-6">
+                        <div className="tile box"
+                          sx={{
+                            backgroundColor: "otherbackground",
+                            color: "text"
+                          }}>
+                          <div className="tile is-size-4">header</div>
+                          <div className="tile is-size-5">content</div>
+                        </div>
+                      </div>
+                      <div className="column is-6">
+                        <div className="tile box"
+                          sx={{
+                            backgroundColor: "otherbackground",
+                            color: "text"
+                          }}>
+                          <div className="tile is-size-4">header</div>
+                          <div className="tile is-size-5">content</div>
+                        </div>
+                      </div>
+                    </div>
+                  {/* <div                 
                     sx={{
                       margin: 3,
                     }}>
                     { <BackgroundVideo videoTitle={main.video.videoTitle} poster={!!main.video.poster.childImageSharp ? main.video.poster.childImageSharp.fluid.src : main.video.poster }>
                         {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     </BackgroundVideo> }
-                  </div>
+                  </div> */}
                   <div className="tile"
                   sx={{
                     padding: 3,
@@ -121,9 +175,14 @@ export const IndexPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="column is-12">
-                  <h4 className="is-size-2">
+                  <div className="column is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                    sx={{
+                    fontFamily: "heading",
+                    fontWeight: 100,
+                    }}
+                  >
                     Latest stories
-                  </h4>
+                  </div>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="button" to="/blog"
