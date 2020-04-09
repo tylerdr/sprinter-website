@@ -19,5 +19,15 @@ main:
   visionStatement: >-
     We envision a world where life, work, and travel are seamlessly intertwined
     through the freeing power of modern technology.
+services:
+  serviceFourContent: Content 4
+  serviceFourTitle: Header 4
+  serviceOneContent: Content 1
+  serviceOneTitle: Product Managment
+  serviceThreeContent: Content 3
+  serviceThreeTitle: |
+    Header 3
+  serviceTwoContent: Content 2
+  serviceTwoTitle: Header 2
 ---
 
