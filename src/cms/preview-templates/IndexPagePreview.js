@@ -11,7 +11,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         title={data.title}
         subheading={data.subheading}
         main={data.main || {}}
-        services={data.services || {}}
       />
     )
   } else {
