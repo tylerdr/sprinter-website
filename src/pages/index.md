@@ -12,6 +12,14 @@ main:
     Our mission is to unlock human potential by leveraging technology’s power to
     have the most positive impact.
 
+  serviceFourContent: Content4
+  serviceFourTitle: Header4
+  serviceOneContent: Content1
+  serviceOneTitle: Product Management
+  serviceThreeContent: Content3
+  serviceThreeTitle: Header3
+  serviceTwoContent: Content2
+  serviceTwoTitle: Header2
   video:
     poster: /img/capture.png
     videoFile: /img/the_story_behind_the_name-2-.mp4
@@ -19,15 +27,5 @@ main:
   visionStatement: >-
     We envision a world where life, work, and travel are seamlessly intertwined
     through the freeing power of modern technology.
-services:
-  serviceFourContent: Content 4
-  serviceFourTitle: Header 4
-  serviceOneContent: Content 1
-  serviceOneTitle: Product Managment
-  serviceThreeContent: Content 3
-  serviceThreeTitle: |
-    Header 3
-  serviceTwoContent: Content 2
-  serviceTwoTitle: Header 2
 ---
 
