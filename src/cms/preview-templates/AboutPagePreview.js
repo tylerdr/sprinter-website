@@ -4,7 +4,6 @@ import { AboutPageTemplate } from '../../templates/about-page'
 
 const AboutPagePreview = ({ entry }) => { 
   const data = entry.getIn(['data']).toJS()
-  console.log(data,'data')
   if (data) {
     return (
         <AboutPageTemplate
@@ -36,20 +35,3 @@ AboutPagePreview.propTypes = {
 }
 
 export default AboutPagePreview
-
-
-{/* <Layout>
-<AboutPageTemplate
-  title={frontmatter.title}
-  subtitle={frontmatter.subtitle}
-  headerImage={frontmatter.headerImage}
-  imageA={frontmatter.imageA}
-  imageB={frontmatter.imageB}
-  imageC={frontmatter.imageC}
-  imageD={frontmatter.imageD}
-  coreValuesTest={frontmatter.coreValuesTest}
-  whatSlide={frontmatter.whatSlide}
-  howSlide={frontmatter.howSlide}
-  whySlide={frontmatter.whySlide}
-  blockquotes={frontmatter.blockquotes}/>
-</Layout> */}
