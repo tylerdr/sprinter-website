@@ -8,18 +8,18 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 class ServiceRoll extends React.Component {
   render() {
     const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { edges: services } = data.allMarkdownRemark
     console.log(data, "DATA")
     return (
       <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
+        {services &&
+          services.map(({ node: post }) => (
             <div className="column is-6" key={post.id}>
               <Link to={post.fields.slug}>
                 <article
                   sx={{
                     height: "100%",
-                    backgroundColor: "background",
+                    backgroundColor: "otherbackground",
                     color: "text",
                     transition: "0.3s",
                   }}
@@ -51,13 +51,10 @@ class ServiceRoll extends React.Component {
                       {post.frontmatter.title}
                     </Link>
                     <span></span>
-                    <span className="is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
                   </p>
                 </header>
                 <p>
-                  {post.excerpt}
+                  {post.frontmatter.description}
                   <br />
                   <br />
                 </p>
@@ -105,6 +102,7 @@ export default () => (
               }
               frontmatter {
                 title
+                description
                 templateKey
                 featuredpost
                 featuredimage {
