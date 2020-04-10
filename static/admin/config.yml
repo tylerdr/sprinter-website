@@ -22,6 +22,19 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Podcast", name: "podcast", widget: object, fields: [{label: Podcast Link, name: podcastLink, widget: file, required: false}, {label: Podcast Title, name: podcastTitle, widget: text, required: false}]}
 
+  - name: "service"
+    label: "Service"
+    folder: "src/pages/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "service-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "pages"
     label: "Pages"
     files:
