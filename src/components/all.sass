@@ -14,6 +14,7 @@ $black: #2b2523
 
 .navbar .navbar-menu
   box-shadow:none !important
+  background-color: transparent !important
 
 
 .content .taglist
@@ -88,6 +89,7 @@ $black: #2b2523
 a.navbar-item.clicked
     color: $primary
     border-bottom: 2px solid $primary
+
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
@@ -149,6 +151,9 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
++desktop
+  .navbar-brand .navbar-item
+    position: absolute !important
 
 
 .content h1, .content h2, .content h3, .content h4 
@@ -204,5 +209,6 @@ a:hover
 
 article:hover 
   box-shadow: 0 0.5em 1em 1em rgba(10, 10, 10, 0.1)
+  opacity: 0.85
   .show-on-hover
-    display: inherit
+    color: #3072f9

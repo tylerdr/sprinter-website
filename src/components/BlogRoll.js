@@ -14,13 +14,14 @@ class BlogRoll extends React.Component {
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
+            <div className="column is-6" key={post.id}>
               <Link to={post.fields.slug}>
                 <article
                   sx={{
                     height: "100%",
                     backgroundColor: "background",
                     color: "text",
+                    transition: "0.3s",
                   }}
                   className={`blog-list-item tile is-child box  ${
                     post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -39,7 +40,7 @@ class BlogRoll extends React.Component {
                   ) : null}
                   <p className="post-meta">
                     <Link
-                      className="is-size-4"
+                      className="is-size-4 show-on-hover"
                       to={post.fields.slug}
                       sx={{
                         color: "text",
@@ -59,17 +60,17 @@ class BlogRoll extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <span className="float-right show-on-hover"
+                </p>
+                <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 
                     fontWeight: "body",
-                    display: "none",
-                    color: "secondary",
-                    textAlign: "end"
+                    //display: "none",
+                    color: "transparent",
+                    textAlign: "end",
                     }}>
                   {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Keep Reading →</p>}
                   </span>
-                </p>
               </article>
               </Link>
             </div>

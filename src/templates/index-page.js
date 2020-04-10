@@ -113,7 +113,7 @@ export const IndexPageTemplate = ({
                             backgroundColor: "otherbackground",
                             color: "text"
                           }}>
-                          <div className="tile is-size-4">header</div>
+                          <div className="tile is-size-4">Custom Software Development</div>
                           <div className="tile is-size-5">content</div>
                         </div>
                       </div>
@@ -123,7 +123,7 @@ export const IndexPageTemplate = ({
                             backgroundColor: "otherbackground",
                             color: "text"
                           }}>
-                          <div className="tile is-size-4">header</div>
+                          <div className="tile is-size-4">Digital Transformation Consulting</div>
                           <div className="tile is-size-5">content</div>
                         </div>
                       </div>

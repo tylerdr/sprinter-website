@@ -58,7 +58,7 @@ const Navbar = class extends React.Component {
         aria-label="main-navigation"
       >
         <div className="container">
-          <div className="navbar-brand">
+          <div className="navbar-brand" >
             <Link to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Sprinter" style={{ width: '136px' }} />
             </Link>
@@ -79,21 +79,20 @@ const Navbar = class extends React.Component {
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
-            // sx={{
-            //   backgroundColor: "navbar",
-            // }}
+            sx={{
+              //backgroundColor: "background",
+            }}
           >
-            <div className="navbar-start has-text-centered">
-            <Link className={`navbar-item ${
-                this.props.location.pathname.includes('about') ||
-                this.props.location.pathname.includes('contact') ||
-                this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
+            <div className="navbar-start has-text-centered" sx={{margin: "auto"}}>
+              <Link className={`navbar-item ${
+                this.props.location.pathname.includes('products') ? 'clicked' : '' }`}
+               to="/products"
               sx={{
                 fontWeight: "body",
                 color: "text",
                 // backgroundColor: "navbar",
               }}>
-                Home
+                Services
               </Link>
               <Link className={`navbar-item ${
                 this.props.location.pathname.includes('about') ? 'clicked' : '' }`}
@@ -132,7 +131,7 @@ const Navbar = class extends React.Component {
                 Form Examples
               </Link> */}
             </div>
-            <div className="navbar-end has-text-centered">
+            <div className="navbar-end has-text-centered" sx={{marginLeft: 0}}>
                 <span className="icon">
                   <ThemeSwitcher className="button"></ThemeSwitcher>
                 </span>
