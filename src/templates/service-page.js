@@ -15,10 +15,8 @@ export const ServicePageTemplate = ({
   content,
   contentComponent,
   description,
-  tags,
   title,
   helmet,
-  podcast,
   featuredimage,
 }) => {
   const PostContent = contentComponent || Content
@@ -68,7 +66,6 @@ const ServicePage = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        podcast={post.frontmatter.podcast}
         featuredimage={post.frontmatter.featuredimage}
         helmet={
           <Helmet titleTemplate="%s | Blog">
@@ -79,7 +76,6 @@ const ServicePage = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>

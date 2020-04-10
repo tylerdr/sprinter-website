@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
+import ServiceRoll from '../components/ServiceRoll'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import BackgroundVideo from '../components/BackgroundVideo'
 export const IndexPageTemplate = ({
@@ -97,7 +98,8 @@ export const IndexPageTemplate = ({
                       }}>
                         Services
                       </div>
-                      <div className="column is-6">
+                      <ServiceRoll/>
+                      {/* <div className="column is-6">
                         <div className="tile box"
                           sx={{
                             backgroundColor: "otherbackground",
@@ -136,7 +138,7 @@ export const IndexPageTemplate = ({
                           <div className="tile is-size-4">header</div>
                           <div className="tile is-size-5">content</div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   {/* <div                 
                     sx={{
