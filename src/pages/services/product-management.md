@@ -6,7 +6,7 @@ description: >-
   content of a page when looking at its layout. 
 featuredpost: true
 featuredimage: /img/you-x-ventures-oalh2mojuuk-unsplash.jpg
-icon: /img/noun_management_666397-1-.png
+icon: /img/noun_businessmen_666353-2-.png
 ---
 
 
