@@ -134,9 +134,9 @@ $menu-label-color: $white-ter
 
 // service roll
 .service-list-item header
-  display: flex !important
+  display: flex 
 .service-list-item .featured-thumbnail
-  flex-basis: 55%
+  flex-basis: 50%
   margin: 0 1.5em 0 0
 
 @import "~bulma"
@@ -146,6 +146,8 @@ $menu-label-color: $white-ter
 +tablet-only
   .blog-list-item .featured-thumbnail
     flex-basis: 50%;
+  .service-list-item .featured-thumbnail
+    flex-basis: 50%;
 
 +mobile
   .blog-list-item header
@@ -154,6 +156,12 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+  .service-list-item header
+    display: block
+  .service-list-item .featured-thumbnail
+    text-align: center;
+    max-width: 50%
+    margin: 0 0 1em;  
 +desktop
   .navbar-brand .navbar-item
     position: absolute !important
