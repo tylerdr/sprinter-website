@@ -23,7 +23,7 @@ class ServiceRoll extends React.Component {
                     color: "text",
                     transition: "0.3s",
                   }}
-                  className={`blog-list-item tile is-child box  ${
+                  className={`service-list-item tile is-child box  ${
                     post.frontmatter.featuredpost ? 'is-featured' : ''
                   }`}
                 >
@@ -32,7 +32,7 @@ class ServiceRoll extends React.Component {
                     <div className="featured-thumbnail">
                       <PreviewCompatibleImage
                         imageInfo={{
-                          image: post.frontmatter.featuredimage,
+                          image: post.frontmatter.icon,
                           alt: `featured image thumbnail for post ${post.title}`,
                         }}
                       />
@@ -50,14 +50,15 @@ class ServiceRoll extends React.Component {
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <span></span>
+                    <br></br>
+                    <span>{post.frontmatter.description}</span>
                   </p>
                 </header>
-                <p>
+                {/* <p>
                   {post.frontmatter.description}
                   <br />
                   <br />
-                </p>
+                </p> */}
                 <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 
@@ -106,6 +107,13 @@ export default () => (
                 templateKey
                 featuredpost
                 featuredimage {
+                  childImageSharp {
+                    fluid(maxWidth: 120, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                icon {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {
                       ...GatsbyImageSharpFluid
