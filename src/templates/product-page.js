@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import ServiceRoll from '../components/ServiceRoll'
 import TechStack from '../components/TechStack'
 import Testimonials from '../components/Testimonials'
@@ -55,6 +57,7 @@ export const ProductPageTemplate = ({
           }}
         >
           {title}
+        </h1>
           <h3
           className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
@@ -68,7 +71,6 @@ export const ProductPageTemplate = ({
           }}
         >
         </h3>
-        </h1>
       </div>
     </div>
     <section className="section section--gradient">

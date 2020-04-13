@@ -66,7 +66,7 @@ class ServiceRoll extends React.Component {
                     color: "transparent",
                     textAlign: "end",
                     }}>
-                  {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Keep Reading →</p>}
+                  {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Learn More →</p>}
                   </span>
               </article>
               </Link>
