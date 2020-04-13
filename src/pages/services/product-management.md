@@ -1,10 +1,12 @@
 ---
 templateKey: service-page
 title: Product Management
-description: "It is a long established fact that a reader will be distracted by
-  the readable content of a page when looking at its layout. "
+description: >-
+  It is a long established fact that a reader will be distracted by the readable
+  content of a page when looking at its layout. 
 featuredpost: true
 featuredimage: /img/you-x-ventures-oalh2mojuuk-unsplash.jpg
+icon: /img/noun_management_666397-1-.png
 ---
 
 
