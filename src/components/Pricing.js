@@ -10,7 +10,7 @@ const Pricing = ({ data }) => (
             {price.plan}
           </h4>
           <h2 className="is-size-1 has-text-weight-bold has-text-primary has-text-centered">
-            ${price.price}
+            {price.price}
           </h2>
           <p className="has-text-weight-semibold">{price.description}</p>
           <ul>

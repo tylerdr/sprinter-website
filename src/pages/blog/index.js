@@ -10,7 +10,7 @@ export default class BlogIndexPage extends React.Component {
       <Layout>
         <section 
           sx={{
-            backgroundColor: "otherbackground"
+            backgroundColor: "background"
           }}
           >
           <div

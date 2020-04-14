@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
+    const postLinks= posts.map(post => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
           <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
@@ -61,11 +61,29 @@ export const tagPageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt(pruneLength: 400)
+          id
           fields {
             slug
           }
           frontmatter {
             title
+            templateKey
+            date(formatString: "MMMM DD, YYYY")
+            podcast {
+              podcastLink {
+                publicURL
+              }
+              podcastTitle
+            }
+            featuredpost
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 120, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
