@@ -9,7 +9,7 @@ class ServiceRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: services } = data.allMarkdownRemark
-    console.log(data, "DATA")
+    console.log(services, "EDGES")
     return (
       <div className="columns is-multiline">
         {services &&

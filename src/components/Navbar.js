@@ -84,9 +84,21 @@ const Navbar = class extends React.Component {
             }}
           >
             <div className="navbar-start has-text-centered" sx={{margin: "auto"}}>
+            <Link className={`navbar-item ${
+                this.props.location.pathname.includes('about') ||
+                this.props.location.pathname.includes('services') ||
+                this.props.location.pathname.includes('contact') ||
+                this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
+                sx={{
+                  fontWeight: "body",
+                  color: "text",
+                  // backgroundColor: "navbar",
+                }}>
+                  Home
+                </Link>
               <Link className={`navbar-item ${
-                this.props.location.pathname.includes('products') ? 'clicked' : '' }`}
-               to="/products"
+                this.props.location.pathname.includes('services') ? 'clicked' : '' }`}
+               to="/services"
               sx={{
                 fontWeight: "body",
                 color: "text",
@@ -104,7 +116,7 @@ const Navbar = class extends React.Component {
               }}>
                 About
               </Link>
-              {/* <Link className="navbar-item" to="/products">
+              {/* <Link className="navbar-item" to="/services">
                 Our Services
               </Link> */}
               <Link className={`navbar-item ${

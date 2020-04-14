@@ -6,13 +6,15 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
 import ServiceRoll from '../components/ServiceRoll'
+import Testimonials from '../components/Testimonials'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import BackgroundVideo from '../components/BackgroundVideo'
 export const IndexPageTemplate = ({
   image,
   title,
   subheading,
-  main
+  main,
+  testimonialsFrontmatter
 }) => (
   <div>
     <div
@@ -72,7 +74,7 @@ export const IndexPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="content">
-                  <div className="tile"
+                  {/* <div className="tile"
                   sx={{
                     padding: 3,
                     margin: 3,
@@ -84,7 +86,7 @@ export const IndexPageTemplate = ({
                     fontFamily: "heading",
                   }}>
                     {main.visionStatement}
-                  </div>
+                  </div> */}
                     <div className="columns is-multiline" 
                     sx={{
                       margin: 3,
@@ -99,46 +101,6 @@ export const IndexPageTemplate = ({
                         Services
                       </div>
                       <ServiceRoll/>
-                      {/* <div className="column is-6">
-                        <div className="tile box"
-                          sx={{
-                            backgroundColor: "otherbackground",
-                            color: "text"
-                          }}>
-                         <div className="tile is-size-4">Product Management</div>
-                          <div className="tile is-size-5">content</div>
-                        </div>
-                      </div>
-                      <div className="column is-6">
-                        <div className="tile box"
-                          sx={{
-                            backgroundColor: "otherbackground",
-                            color: "text"
-                          }}>
-                          <div className="tile is-size-4">Custom Software Development</div>
-                          <div className="tile is-size-5">content</div>
-                        </div>
-                      </div>
-                      <div className="column is-6">
-                        <div className="tile box"
-                          sx={{
-                            backgroundColor: "otherbackground",
-                            color: "text"
-                          }}>
-                          <div className="tile is-size-4">Digital Transformation Consulting</div>
-                          <div className="tile is-size-5">content</div>
-                        </div>
-                      </div>
-                      <div className="column is-6">
-                        <div className="tile box"
-                          sx={{
-                            backgroundColor: "otherbackground",
-                            color: "text"
-                          }}>
-                          <div className="tile is-size-4">header</div>
-                          <div className="tile is-size-5">content</div>
-                        </div>
-                      </div> */}
                     </div>
                   {/* <div                 
                     sx={{
@@ -148,7 +110,7 @@ export const IndexPageTemplate = ({
                         {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     </BackgroundVideo> }
                   </div> */}
-                  <div className="tile"
+                  {/* <div className="tile"
                   sx={{
                     padding: 3,
                     margin: 3,
@@ -160,7 +122,7 @@ export const IndexPageTemplate = ({
                     fontWeight: "body",
                   }}>
                    {main.missionStatement}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -168,9 +130,37 @@ export const IndexPageTemplate = ({
         </div>
     </section>
     <section className="section section--gradient"
-      sx={{
-        backgroundColor: "otherbackground"
-      }}
+          sx={{
+            backgroundColor: "otherbackground"
+          }}>
+      <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                <div className="content">
+
+                    <div className="columns is-multiline" 
+                    sx={{
+                      margin: 3,
+                      marginTop: 4,
+                      marginBottom: 4,
+                    }}>
+                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                      sx={{
+                        fontFamily: "heading",
+                        fontWeight: 100,
+                      }}>
+                        Testimonials
+                      </div>
+                      <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section className="section section--gradient"
     >
       <div className="container">
           <div className="columns">
@@ -212,8 +202,10 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
+  console.log(data, "This Data")
   const { frontmatter } = data.markdownRemark
-
+  const { nodes } = data.allMarkdownRemark
+  console.log(nodes, "NODES")
   return (
     <Layout>
       <IndexPageTemplate
@@ -221,6 +213,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         main={frontmatter.main}
+        testimonialsFrontmatter={nodes[0].frontmatter}
       />
     </Layout>
   )
@@ -231,13 +224,30 @@ IndexPage.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
     }),
+    // allMarkdownRemark: PropTypes.shape({
+    //   frontmatter: PropTypes.array,
+    // })
   }),
 }
 
 export default IndexPage
 
 export const pageQuery = graphql`
+
   query IndexPageTemplate {
+      __typename
+    allMarkdownRemark (
+      filter: { frontmatter: { templateKey: { eq: "product-page" } } }
+    ) {
+      nodes {
+        frontmatter {
+          testimonials {
+            author
+            quote
+          }
+        }
+      }
+    }
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
