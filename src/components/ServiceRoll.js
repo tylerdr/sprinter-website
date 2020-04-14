@@ -30,12 +30,12 @@ class ServiceRoll extends React.Component {
                 <header>
                   {post.frontmatter.featuredimage ? (
                     <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
+                      {/* <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.icon,
                           alt: `featured image thumbnail for post ${post.title}`,
                         }}
-                      />
+                      /> */}
                     </div>
                   ) : null}
                   <p className="post-meta">
@@ -119,6 +119,7 @@ export default () => (
                       ...GatsbyImageSharpFluid
                     }
                   }
+                  publicURL
                 }
               }
             }

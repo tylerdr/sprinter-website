@@ -10,6 +10,8 @@ import TechStack from '../components/TechStack'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import '../components/Accordion.css'
+
 
 export const ProductPageTemplate = ({
   image,
@@ -134,7 +136,9 @@ export const ProductPageTemplate = ({
               <h2 className="has-text-weight-semibold is-size-2">
                 Technologies We Use
               </h2>
+              <div>
               <TechStack/>
+              </div>
             </div>
           </div>
         </div>
