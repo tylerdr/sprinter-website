@@ -67,9 +67,6 @@ class Image extends React.Component {
       alt = '',
       lazy = true
     } = this.props
-
-    console.log(this.props);
-
     const isUploadcare = this.checkIsUploadcare(src),
       fullImage = !isUploadcare || !lazy
 

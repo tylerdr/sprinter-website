@@ -3,6 +3,10 @@ import { Helmet } from "react-helmet"
 import ChevronDown from 'react-feather/dist/icons/chevron-down'
 import './Accordion.css'
 
+let colorMode = 'light';
+if (typeof window !== 'undefined' && window.localStorage) {
+    colorMode = localStorage.getItem('theme-ui-color-mode') || 'light';
+}
 export default class TechStack extends Component {
     handleClick = event => event.target.classList.toggle('active')
     render() {
@@ -14,7 +18,7 @@ export default class TechStack extends Component {
                 <div className="column is-12">
                     <div className="Accordion">
                         <div 
-                        className="Accordion--item"
+                        className="Accordion--item active"
                         onClick={this.handleClick}
                         >
                         <h2>
@@ -22,7 +26,7 @@ export default class TechStack extends Component {
                             <ChevronDown />
                         </h2>
                         <div className='description'>
-                            <a frameborder='0' data-theme='dark' data-layers='1' data-stack-embed='true' href='https://embed.stackshare.io/stacks/embed/f2bf411874c7dca75be20ffdbd6446'></a>
+                            <a data-theme={colorMode} data-layers='1' data-stack-embed='true' href='https://embed.stackshare.io/stacks/embed/f2bf411874c7dca75be20ffdbd6446'></a>
                         </div>
                     </div>
                 </div>

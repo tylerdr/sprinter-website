@@ -168,6 +168,7 @@ export default class Index extends React.Component {
                           hello@sprinterconsulting.com
                         </p>
                     </a>
+                    <iframe src="https://sprinter.substack.com/embed" width="480" height="320" frameborder="0" scrolling="no"></iframe>
                 </div>
                 <div className="column">
                 <Helmet>
