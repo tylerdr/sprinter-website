@@ -1,6 +1,6 @@
 ---
 heading: How We Help
-path: /products
+path: /services
 templateKey: product-page
 title: Our Services
 image: /img/jumbotron.jpg

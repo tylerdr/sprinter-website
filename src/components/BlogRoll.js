@@ -19,7 +19,7 @@ class BlogRoll extends React.Component {
                 <article
                   sx={{
                     height: "100%",
-                    backgroundColor: "background",
+                    backgroundColor: "otherbackground",
                     color: "text",
                     transition: "0.3s",
                   }}
@@ -65,7 +65,6 @@ class BlogRoll extends React.Component {
                   sx={{
                     fontFamily: "body", 
                     fontWeight: "body",
-                    //display: "none",
                     color: "transparent",
                     textAlign: "end",
                     }}>
