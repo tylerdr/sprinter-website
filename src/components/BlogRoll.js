@@ -2,14 +2,22 @@ import React from 'react'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import PropTypes, { nominalTypeHack } from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { useBlogRollData } from '../hooks/BlogRollQuery'
 
-class BlogRoll extends React.Component {
-  render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
-    console.log(data, "DATA")
+const BlogRoll = ( { tag }) => {
+    let { edges: posts } = useBlogRollData()
+    if (tag){
+      let taggedPosts = []
+      console.log(tag, "THIS TAG")
+      posts.forEach((item) => {
+        if (item.node.frontmatter.tags.indexOf(tag) > -1) 
+          taggedPosts.push(item)
+      })
+      console.log(taggedPosts, "TAGGED")
+      posts = taggedPosts
+    }
     return (
       <div className="columns is-multiline">
         {posts &&
@@ -77,7 +85,6 @@ class BlogRoll extends React.Component {
       </div>
     )
   }
-}
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({
@@ -87,45 +94,5 @@ BlogRoll.propTypes = {
   }),
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 400)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date(formatString: "MMMM DD, YYYY")
-                podcast {
-                  podcastLink {
-                    publicURL
-                  }
-                  podcastTitle
-                }
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
-  />
-)
+export default BlogRoll 
+
