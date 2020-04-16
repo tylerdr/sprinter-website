@@ -2,22 +2,24 @@ import React from 'react'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import './Animations.css'
+import Typing from 'react-typing-animation';
 
 export class SlidingHeader extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            activeimgClass: "img-2"
+            activeimgClass: "img-1",
+            title: "Our Services"
         }
     }
     getNextState = () => {
         console.log(this.state)
         if (this.state.activeimgClass === 'img-1') 
-          return { activeimgClass: 'img-2' };
+          return { activeimgClass: 'img-2', title: 'Product Management' };
         if (this.state.activeimgClass === 'img-2')
-          return { activeimgClass: 'img-3' };
+          return { activeimgClass: 'img-3', title: 'Custom Software Product Development' };
         if (this.state.activeimgClass === 'img-3')
-            return { activeimgClass: 'img-1'}
+            return { activeimgClass: 'img-1', title: 'Our Services'}
       }
     componentDidMount () {
         this.timer = setInterval(
@@ -72,9 +74,9 @@ export class SlidingHeader extends React.Component {
                             fontWeight: "heading",
                         }}
                         >
-                        {this.props.title}
+                        {this.state.title}
                         </h1>
-                        <h3
+                        {/* <h3
                         className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                         style={{
                             color: 'white',
@@ -86,7 +88,7 @@ export class SlidingHeader extends React.Component {
                             fontFamily: "body",
                         }}
                         >
-                        </h3>
+                        </h3> */}
                         </div>
                     </div>
                     <div 
@@ -118,9 +120,9 @@ export class SlidingHeader extends React.Component {
                             fontWeight: "heading",
                         }}
                         >
-                        {this.props.title}
+                        {this.state.title}
                         </h1>
-                        <h3
+                        {/* <h3
                         className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                         style={{
                             color: 'white',
@@ -132,7 +134,7 @@ export class SlidingHeader extends React.Component {
                             fontFamily: "body",
                         }}
                         >
-                        </h3>
+                        </h3> */}
                         </div>
                     </div>
                     <div 
@@ -164,9 +166,9 @@ export class SlidingHeader extends React.Component {
                             fontWeight: "heading",
                         }}
                         >
-                        {this.props.title}
+                        {this.state.title}
                         </h1>
-                        <h3
+                        {/* <h3
                         className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                         style={{
                             color: 'white',
@@ -178,7 +180,7 @@ export class SlidingHeader extends React.Component {
                             fontFamily: "body",
                         }}
                         >
-                        </h3>
+                        </h3> */}
                         </div>
                     </div>
                         
