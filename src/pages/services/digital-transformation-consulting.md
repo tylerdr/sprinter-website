@@ -1,10 +1,11 @@
 ---
 templateKey: service-page
 title: Digital Transformation Consulting
-description: "It is a long established fact that a reader will be distracted by
-  the readable content of a page when looking at its layout. "
+description: >-
+  It is a long established fact that a reader will be distracted by the readable
+  content of a page when looking at its layout. 
 featuredpost: true
 featuredimage: /img/blue-mirror.jpg
-icon: /img/noun-consulting.svg
+icon: /img/noun_consulting_1276580-1-.svg
 ---
 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
