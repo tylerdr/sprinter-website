@@ -39,10 +39,13 @@
 }
 
 .img-2 {
-    background-image: url('../../static/img/coffee.png')
+    background-image: url('../../static/img/product-management.jpg')
 }
 .img-3 {
-    background-image: url('../../static/img/code.jpg')
+    background-image: url('../../static/img/custom-sw-development-service.jpg')
+}
+.img-4 {
+    background-image: url('../../static/img/consulting-service.jpg')
 }
 .header{
     position: absolute;
@@ -54,6 +57,4 @@
   .header.active {
     opacity: 1
   }
-  .header-container {
-      position: relative;
-  }
+ 
