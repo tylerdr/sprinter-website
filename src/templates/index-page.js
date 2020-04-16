@@ -39,7 +39,7 @@ export const IndexPageTemplate = ({
           width: '75%'
         }}
       >
-        <Typing speed={10}>
+        <Typing speed={14}>
         <h1
           className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
@@ -54,7 +54,7 @@ export const IndexPageTemplate = ({
         >
           {title}
         </h1>
-        <Typing.Speed ms={1}/>
+        <Typing.Speed ms={7}/>
         <h3
           className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
@@ -67,7 +67,11 @@ export const IndexPageTemplate = ({
             fontFamily: "body",
           }}
         >
-          {subheading}
+          <span>Discovering</span>
+          <Typing.Backspace count={11}/>
+          <span>Developing</span>
+          <Typing.Backspace count={10}/>
+          <span>Delivering</span>&nbsp;Tommorow's Technology Today
         </h3>
         </Typing>   
       </div>

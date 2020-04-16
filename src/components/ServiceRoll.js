@@ -52,14 +52,14 @@ class ServiceRoll extends React.Component {
                       {post.frontmatter.title}
                     </Link>
                     <br></br>
-                    <span>{post.frontmatter.description}</span>
+                    <span
+                    sx={{
+                      color: "text",
+                      fontFamily:"body",
+                      fontWeight:"body"
+                    }}>{post.frontmatter.description}</span>
                   </p>
                 </header>
-                {/* <p>
-                  {post.frontmatter.description}
-                  <br />
-                  <br />
-                </p> */}
                 <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 

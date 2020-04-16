@@ -59,12 +59,21 @@ const BlogRoll = ( { tag }) => {
                       {post.frontmatter.title}
                     </Link>
                     <span></span>
-                    <span className="is-size-5 is-block">
+                    <span className="is-size-5 is-block"
+                    sx={{
+                      color: "text",
+                      fontFamily:"body",
+                      fontWeight:"body"
+                    }}>
                       {post.frontmatter.date}
                     </span>
                   </p>
                 </header>
-                <p>
+                <p
+                sx={{
+                  fontFamily:"body",
+                  fontWeight:"body"
+                }}>
                   {post.excerpt}
                   <br />
                   <br />
