@@ -71,7 +71,7 @@ collections:
           - {label: HowSlide, name: howSlide, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Slide1, name: slide1, widget: text, required: false}, {label: Slide2, name: slide2, widget: text, required: false}, {label: Slide3, name: slide3, widget: text, required: false}, {label: Slide4, name: slide4, widget: text, required: false}, {label: Slide5, name: slide5, widget: text, required: false}]}
           - {label: WhySlide, name: whySlide, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Slide1, name: slide1, widget: text, required: false}, {label: Slide2, name: slide2, widget: text, required: false}, {label: Slide3, name: slide3, widget: text, required: false}, {label: Slide4, name: slide4, widget: text, required: false}, {label: Slide5, name: slide5, widget: text, required: false}]}
           - {label: Blockquotes, name: blockquotes, widget: object, fields: [{label: A, name: a, widget: text, required: false}, {label: B, name: b, widget: text, required: false}, {label: C, name: c, widget: text, required: false}]}
-      - file: "src/pages/products/index.md"
+      - file: "src/pages/services/index.md"
         label: "Products Page"
         name: "products"
         fields:
