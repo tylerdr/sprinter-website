@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 import PropTypes, { nominalTypeHack } from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import './Animations.css'
 class ServiceRoll extends React.Component {
   render() {
     const { data } = this.props
@@ -29,7 +30,7 @@ class ServiceRoll extends React.Component {
                 <header>
                   {post.frontmatter.icon ? (
                     <div className="featured-thumbnail">
-                      
+                      <img src={post.frontmatter.icon.publicURL}/>
                       {/* <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.icon,

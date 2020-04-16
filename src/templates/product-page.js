@@ -11,6 +11,9 @@ import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import '../components/Accordion.css'
+import { v4 } from 'uuid'
+import '../components/Animations.css'
+import { SlidingHeader } from '../components/SlidingHeader'
 
 
 export const ProductPageTemplate = ({
@@ -23,58 +26,11 @@ export const ProductPageTemplate = ({
   testimonials,
   fullImage,
   pricing,
-}) => (
-  <div className="content">
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `bottom`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-          width: '75%'
-        }}
-      >
-        <h1 
-          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-          sx={{
-            fontFamily: "heading",
-            fontWeight: 100,
-          }}
-        >
-          {title}
-        </h1>
-          <h3
-          className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-          sx={{
-            fontWeight: "body",
-            fontFamily: "body",
-          }}
-        >
-        </h3>
-      </div>
-    </div>
+}) => {
+
+  return(
+<div>
+    <SlidingHeader title={title}/> 
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -136,7 +92,16 @@ export const ProductPageTemplate = ({
                   </div>
                 </div>
               </div>
-              <Testimonials testimonials={testimonials} />
+              <div>
+              {testimonials.map(testimonial => (
+                <article key={v4()} className="message">
+                  <div className="message-body">
+                    {testimonial.quote}
+                    <br />
+                    <cite> – {testimonial.author}</cite>
+                    </div>
+                    </article>))}
+                </div>
               <div
                 className="full-width-image-container"
                 style={{
@@ -164,7 +129,7 @@ export const ProductPageTemplate = ({
       </div>
     </section>
   </div>
-)
+)}
 
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
