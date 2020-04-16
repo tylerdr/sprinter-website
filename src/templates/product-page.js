@@ -55,7 +55,7 @@ export const ProductPageTemplate = ({
           }}
           sx={{
             fontFamily: "heading",
-            fontWeight: "thin",
+            fontWeight: 100,
           }}
         >
           {title}
@@ -80,20 +80,39 @@ export const ProductPageTemplate = ({
         <div className="section">
           <div className="columns">
             <div className="column is-7 is-offset-1">
-              <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-              <p>{description}</p>
+              <div className="is-size-2"
+              sx={{
+                fontWeight: "heading",
+                fontFamily: "heading"
+              }}>{heading}</div>
+              <div
+                sx={{
+                  fontWeight: "body",
+                  fontFamily: "body"
+                }}>
+                  {description}
+                </div>
             </div>
           </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <ServiceRoll/>
-              {/* <Features gridItems={intro.blurbs} /> */}
               <div className="columns">
                 <div className="column is-7">
-                  <h3 className="has-text-weight-semibold is-size-3">
+                  <div className="is-size-3"
+                    sx={{
+                      fontWeight: "heading",
+                      fontFamily: "heading"
+                    }}>
                     {main.heading}
-                  </h3>
-                  <p>{main.description}</p>
+                  </div>
+                  <div
+                    sx={{
+                      fontWeight: "body",
+                      fontFamily: "body"
+                    }}>
+                    {main.description}
+                  </div>
                 </div>
               </div>
               <div className="tile is-ancestor">
@@ -128,12 +147,12 @@ export const ProductPageTemplate = ({
                   })`,
                 }}
               />
-              <h2 className="has-text-weight-semibold is-size-2">
+              <h2 className="is-size-2">
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
               <Pricing data={pricing.plans} />
-              <h2 className="has-text-weight-semibold is-size-2">
+              <h2 className="is-size-2">
                 Technologies We Use
               </h2>
               <div>

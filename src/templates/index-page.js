@@ -9,6 +9,7 @@ import ServiceRoll from '../components/ServiceRoll'
 import Testimonials from '../components/Testimonials'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import BackgroundVideo from '../components/BackgroundVideo'
+import Typing from 'react-typing-animation';
 export const IndexPageTemplate = ({
   image,
   title,
@@ -38,6 +39,7 @@ export const IndexPageTemplate = ({
           width: '75%'
         }}
       >
+        <Typing speed={10}>
         <h1
           className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
@@ -46,12 +48,13 @@ export const IndexPageTemplate = ({
             padding: '0.25em',
           }}
           sx={{
-            fontWeight: "thin",
+            fontWeight: "heading",
             fontFamily: "heading",
           }}
         >
           {title}
         </h1>
+        <Typing.Speed ms={1}/>
         <h3
           className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
@@ -66,63 +69,26 @@ export const IndexPageTemplate = ({
         >
           {subheading}
         </h3>
+        </Typing>   
       </div>
     </div>
-    <section className="section section--gradient">
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "background"
+      }}>
       <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-                  {/* <div className="tile"
-                  sx={{
-                    padding: 3,
-                    margin: 3,
-                    marginTop: 4,
-                    marginBottom: 4,
-                    textAlign: "center",
-                    fontSize: 5,
-                    fontWeight: "body",
-                    fontFamily: "heading",
-                  }}>
-                    {main.visionStatement}
-                  </div> */}
-                    <div className="columns is-multiline" 
-                    sx={{
-                      margin: 3,
-                      marginTop: 4,
-                      marginBottom: 4,
-                    }}>
+                    <div className="columns is-multiline">
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        fontWeight: 100,
+                        fontWeight: "heading",
                       }}>
                         Services
                       </div>
                       <ServiceRoll/>
-                    </div>
-                  {/* <div                 
-                    sx={{
-                      margin: 3,
-                    }}>
-                    { <BackgroundVideo videoTitle={main.video.videoTitle} poster={!!main.video.poster.childImageSharp ? main.video.poster.childImageSharp.fluid.src : main.video.poster }>
-                        {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
-                    </BackgroundVideo> }
-                  </div> */}
-                  {/* <div className="tile"
-                  sx={{
-                    padding: 3,
-                    margin: 3,
-                    fontFamily: "heading",
-                    marginTop: 4,
-                    marginBottom: 4,
-                    textAlign: "center",
-                    fontSize: 5,
-                    fontWeight: "body",
-                  }}>
-                   {main.missionStatement}
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -137,40 +103,34 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-
-                    <div className="columns is-multiline" 
-                    sx={{
-                      margin: 3,
-                      marginTop: 4,
-                      marginBottom: 4,
-                    }}>
+                    <div className="columns is-multiline" >
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        fontWeight: 100,
+                        fontWeight: "heading",
                       }}>
                         Testimonials
                       </div>
                       <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
                     </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
     </section>
     <section className="section section--gradient"
-    >
+      sx={{
+        backgroundColor: "background"
+      }}>
       <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="column is-12">
-                  <div className="column is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                <div className="columns is-multiline">
+                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                     sx={{
                     fontFamily: "heading",
-                    fontWeight: 100,
+                    fontWeight: "heading",
                     }}
                   >
                     Latest stories
