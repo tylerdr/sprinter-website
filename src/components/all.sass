@@ -137,8 +137,8 @@ $menu-label-color: $white-ter
 .service-list-item header
   display: flex 
 .service-list-item .featured-thumbnail
-  flex-basis: 50%
-  margin: 0 1.5em 0 0
+  flex-basis: 30%
+  margin: 1em 2em 1em 1em
 
 @import "~bulma"
 
@@ -216,7 +216,15 @@ a:hover
   background-color: inherit !important
 
 .content h1, .content h2, .content h3
-  font-weight: inherit !important 
+  font-weight: inherit !important
+
+@function tint($color, $percentage) 
+  @return mix(white, $color, $percentage);
+
+
+@function shade($color, $percentage) 
+  @return mix(black, $color, $percentage);
+
 
 article:hover 
   box-shadow: 0 0.2em 0.4em 0.4em rgba(10, 10, 10, 0.1)

@@ -103,7 +103,6 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                    <div className="columns is-multiline" >
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
@@ -112,7 +111,6 @@ export const IndexPageTemplate = ({
                         Testimonials
                       </div>
                       <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
-                    </div>
               </div>
             </div>
           </div>
