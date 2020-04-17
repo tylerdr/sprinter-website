@@ -7,6 +7,6 @@ description: >-
   when an unknown printer took a galley of type and scrambled it to make a type
   specimen book. It has
 featuredimage: /img/airplane-window.jpg
-icon: /img/noun-management-svg.svg
+icon: /img/noun_consulting_1276580-1-.svg
 ---
 test
