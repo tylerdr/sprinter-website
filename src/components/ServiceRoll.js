@@ -38,7 +38,8 @@ class ServiceRoll extends React.Component {
                       /> */}
                     </div>
                   ) : null}
-                  <p className="post-meta">
+                  <p className="post-meta"
+                  sx={{maxHeight: "60%", marginTop: "auto", marginBottom: "auto"}}>
                     <Link
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}
@@ -50,13 +51,13 @@ class ServiceRoll extends React.Component {
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <br></br>
-                    <span
+                    {/* <br></br> */}
+                    {/* <span
                     sx={{
                       color: "text",
                       fontFamily:"body",
                       fontWeight:"body"
-                    }}>{post.frontmatter.description}</span>
+                    }}>{post.frontmatter.description}</span> */}
                   </p>
                 </header>
                 <span className="float-right show-on-hover"
