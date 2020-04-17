@@ -10,6 +10,10 @@ import Testimonials from '../components/Testimonials'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Typing from 'react-typing-animation';
+import Delayed from '../components/Delayed'
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -86,6 +90,41 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
+                <div className="home-animation is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+                 sx={{ maxWidth: "60%", margin: "auto", color: "text"}}>
+                   <Typing>
+                  <div className="columns">
+                    <div className="column">
+                        <Delayed waitBeforeShow={1000}>
+                        <FontAwesomeIcon icon={faCheck} />
+                        </Delayed>
+                    </div>
+                    <div className="column is-10">
+                        Discovering tomorrow's technology today
+                      </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                        <Delayed waitBeforeShow={1500}>
+                        <FontAwesomeIcon icon={faCheck} />
+                        </Delayed>
+                    </div>
+                    <div className="column is-10">
+                        Developing tomorrow's technology today
+                      </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                        <Delayed waitBeforeShow={2000}>
+                        <FontAwesomeIcon icon={faCheck} />
+                        </Delayed>
+                    </div>
+                    <div className="column is-10">
+                        Delivering tomorrow's technology today
+                    </div>
+                  </div>
+                  </Typing>            
+                </div>
                     <div className="columns is-multiline">
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
@@ -101,10 +140,14 @@ export const IndexPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="section section--gradient"
-          sx={{
-            backgroundColor: "otherbackground"
-          }}>
+    <section className="full-width-image margin-top-0"
+       style={{
+         backgroundImage: `url(${
+           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+         })`,
+         backgroundPosition: `top left`,
+         backgroundAttachment: `fixed`
+       }}>
       <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
