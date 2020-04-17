@@ -21,7 +21,7 @@ export const IndexPageTemplate = ({
   main,
   testimonialsFrontmatter
 }) => (
-  <div>
+  <div sx={{color:'text'}}>
     <div
       className="full-width-image margin-top-0"
        style={{
@@ -86,12 +86,12 @@ export const IndexPageTemplate = ({
       sx={{
         backgroundColor: "background"
       }}>
-      <div className="container">
+      <div className="container" sx={{color: 'text'}}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="home-animation is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-                 sx={{ maxWidth: "60%", margin: "auto", color: "text"}}>
+                 sx={{ maxWidth: "60%", margin: "auto"}}>
                    <Typing>
                   <div className="columns">
                     <div className="column">
@@ -129,7 +129,7 @@ export const IndexPageTemplate = ({
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        fontWeight: "heading",
+                        fontWeight: "heading"
                       }}>
                         Services
                       </div>

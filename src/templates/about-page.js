@@ -55,7 +55,7 @@ export const AboutPageTemplate = ({
 
   const ValueContent = contentComponent || Content
   return (
-    <div>
+    <div sx={{color: "text"}}>
     <div
       className="full-width-image margin-top-0"
         style={{

@@ -20,8 +20,7 @@ class ServiceRoll extends React.Component {
                   sx={{
                     height: "100%",
                     backgroundColor: "otherbackground",
-                    color: "text",
-                    transition: "0.3s",
+                    color: "text"
                   }}
                   className={`service-list-item tile is-child box  ${
                     post.frontmatter.featuredpost ? 'is-featured' : ''

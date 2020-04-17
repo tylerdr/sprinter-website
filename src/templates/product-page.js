@@ -29,7 +29,7 @@ export const ProductPageTemplate = ({
 }) => {
 
   return(
-<div>
+<div sx={{color: "text"}}>
     <SlidingHeader title={title}/> 
     <section className="section section--gradient">
       <div className="container">

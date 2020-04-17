@@ -40,7 +40,7 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Layout sx={{color: "text"}}>
         <div
       className="full-width-image margin-top-0"
         style={{
