@@ -12,7 +12,6 @@ class Delayed extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({hidden: false});
-            console.log(this.props, "THESE PROPS")
         }, this.props.waitBeforeShow);
     }
 
