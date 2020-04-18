@@ -11,7 +11,9 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Typing from 'react-typing-animation';
 import Delayed from '../components/Delayed'
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faCheckDouble, faBorderNone } from "@fortawesome/free-solid-svg-icons";
+import { faSquare, faCheckSquare } from "@fortawesome/free-regular-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const IndexPageTemplate = ({
@@ -96,7 +98,7 @@ export const IndexPageTemplate = ({
                   <div className="columns">
                     <div className="column">
                         <Delayed waitBeforeShow={1000}>
-                        <FontAwesomeIcon icon={faCheck} />
+                        <FontAwesomeIcon icon={faCheckDouble} />
                         </Delayed>
                     </div>
                     <div className="column is-10">
@@ -106,7 +108,7 @@ export const IndexPageTemplate = ({
                   <div className="columns">
                     <div className="column">
                         <Delayed waitBeforeShow={1500}>
-                        <FontAwesomeIcon icon={faCheck} />
+                        <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
                     <div className="column is-10">
