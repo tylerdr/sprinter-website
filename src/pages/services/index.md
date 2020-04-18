@@ -1,9 +1,8 @@
 ---
-heading: How We Help
-path: /services
 templateKey: product-page
 title: Our Services
 image: /img/jumbotron.jpg
+heading: How We Help
 description: We are great...
 intro:
   blurbs:
@@ -17,8 +16,9 @@ intro:
   description: We are great...
 main:
   heading: Enabling Sustainable Change
-  description: We do such a great job that you'll never go back to your old
-    inefficient ways...
+  description: >-
+    We do such a great job that you'll never go back to your old inefficient
+    ways...
   image1:
     alt: a
     image: /img/blue-mountains.jpg
@@ -30,8 +30,10 @@ main:
     image: /img/blue-mountains.jpg
 testimonials:
   - author: Elisabeth Kaurismäki
-    quote: "I love sprinter :) "
+    image: /img/bllueee-real.jpg
+    quote: 'I love sprinter :) '
   - author: Philipp Trommler
+    image: /img/cpmputer-home.jpg
     quote: Especially Mitch & Zach
 full_image: /img/blue-mountains.jpg
 pricing:
@@ -46,18 +48,20 @@ pricing:
         - Recommend
       plan: Discovery
       price: Small
-    - description: "You are on you're way but need some help getting there. "
+    - description: 'You are on you''re way but need some help getting there. '
       items:
         - Longer collaboration
         - Hands on training
         - Minimal custom software development
       plan: Accelerate
       price: Average
-    - description: You understand that you need to change to stay competitive and want
-        to build a new solution to drive that change.
+    - description: >-
+        You understand that you need to change to stay competitive and want to
+        build a new solution to drive that change.
       items:
         - Full product development team
         - Onsite resources available
       plan: Transform
       price: Invest
 ---
+
