@@ -73,6 +73,7 @@ export const IndexPageTemplate = ({
             fontFamily: "body",
           }}
         >
+          {subheading}
         </h3>
       </div>
     </div>
@@ -95,7 +96,10 @@ export const IndexPageTemplate = ({
                         </Delayed>
                     </div>
                     <div className="column is-10">
-                        Discovering tomorrow's technology today
+                        <Delayed waitBeforeShow={1000}>
+                        <span>Discovering tomorrow's technology today</span>
+                        <span><a sx={{color: "secondary", textDecoration: "underline"}} >Discovering</a> tomorrow's technology today</span>
+                        </Delayed>
                       </div>
                   </div>
                   <div className="columns">
@@ -106,7 +110,10 @@ export const IndexPageTemplate = ({
                         </Delayed>
                     </div>
                     <div className="column is-10">
-                        Developing tomorrow's technology today
+                        <Delayed waitBeforeShow={1500}>
+                        <span>Developing tomorrow's technology today</span>
+                        <span><a sx={{color: "secondary", textDecoration: "underline"}} >Developing</a> tomorrow's technology today</span>
+                        </Delayed>
                       </div>
                   </div>
                   <div className="columns">
@@ -117,7 +124,10 @@ export const IndexPageTemplate = ({
                         </Delayed>
                     </div>
                     <div className="column is-10">
-                        Delivering tomorrow's technology today
+                        <Delayed waitBeforeShow={2000}>
+                        <span>Delivering tomorrow's technology today</span>
+                        <span><a sx={{color: "secondary", textDecoration: "underline"}} >Delivering</a> tomorrow's technology today</span>
+                        </Delayed>
                     </div>
                   </div>
                   </Typing>            
@@ -137,30 +147,8 @@ export const IndexPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="full-width-image margin-top-0"
-       style={{
-         backgroundImage: `url(${
-           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-         })`,
-         backgroundPosition: `top left`,
-         backgroundAttachment: `fixed`
-       }}>
-      <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-                      sx={{
-                        fontFamily: "heading",
-                        fontWeight: "heading",
-                      }}>
-                        Testimonials
-                      </div>
-                      <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="margin-top-0">
+      <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
     </section>
     <section className="section section--gradient"
       sx={{
@@ -248,6 +236,13 @@ export const pageQuery = graphql`
           testimonials {
             author
             quote
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

@@ -42,6 +42,7 @@
     "react-helmet": "^5.2.0",
     "react-player": "^1.14.2",
     "react-slick": "^0.25.2",
+    "react-slideshow-image": "^1.4.2",
     "react-social-icons": "^4.1.0",
     "react-typing-animation": "^1.6.2",
     "slick-carousel": "^1.8.1",
