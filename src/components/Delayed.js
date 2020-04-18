@@ -12,11 +12,12 @@ class Delayed extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({hidden: false});
+            console.log(this.props, "THESE PROPS")
         }, this.props.waitBeforeShow);
     }
 
     render() {
-        return this.state.hidden ? '' : this.props.children;
+        return this.state.hidden ? this.props.children[0] : this.props.children[1];
     }
 }
 

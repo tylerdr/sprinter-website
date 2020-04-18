@@ -60,7 +60,7 @@ export const IndexPageTemplate = ({
         >
           {title}
         </h1>
-        <Typing.Speed ms={25}/>
+        </Typing>
         <h3
           className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
@@ -73,15 +73,7 @@ export const IndexPageTemplate = ({
             fontFamily: "body",
           }}
         >
-          <span>Discovering</span>
-          <Typing.Backspace count={11}/>
-          <Typing.Speed ms={25}/>
-          <span>Developing</span>
-          <Typing.Backspace count={10}/>
-          <Typing.Speed ms={25}/>
-          <span>Delivering</span>&nbsp;Tommorow's Technology Today
         </h3>
-        </Typing>   
       </div>
     </div>
     <section className="section section--gradient"
@@ -96,9 +88,10 @@ export const IndexPageTemplate = ({
                  sx={{ maxWidth: "60%", margin: "auto"}}>
                    <Typing>
                   <div className="columns">
-                    <div className="column">
+                    <div className="column">                        
                         <Delayed waitBeforeShow={1000}>
-                        <FontAwesomeIcon icon={faCheckDouble} />
+                        <FontAwesomeIcon icon={faSquare} />
+                        <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
                     <div className="column is-10">
@@ -108,6 +101,7 @@ export const IndexPageTemplate = ({
                   <div className="columns">
                     <div className="column">
                         <Delayed waitBeforeShow={1500}>
+                        <FontAwesomeIcon icon={faSquare} />
                         <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
@@ -118,7 +112,8 @@ export const IndexPageTemplate = ({
                   <div className="columns">
                     <div className="column">
                         <Delayed waitBeforeShow={2000}>
-                        <FontAwesomeIcon icon={faCheck} />
+                        <FontAwesomeIcon icon={faSquare} />
+                        <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
                     <div className="column is-10">
