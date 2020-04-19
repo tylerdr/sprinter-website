@@ -86,7 +86,7 @@ export const IndexPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="home-animation is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-                 sx={{ maxWidth: "90%", margin: "auto"}}>
+                 sx={{ maxWidth: "60%", margin: "auto"}}>
                    <Typing>
                   <div className="columns">
                     <div className="column">                        
@@ -95,7 +95,7 @@ export const IndexPageTemplate = ({
                         <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
-                    <div className="column is-7">
+                    <div className="column is-10">
                         <Delayed waitBeforeShow={1000}>
                         <span>Discovering tomorrow's technology today</span>
                         <span><a sx={{color: "secondary", textDecoration: "underline"}} >Discovering</a> tomorrow's technology today</span>
@@ -109,7 +109,7 @@ export const IndexPageTemplate = ({
                         <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
-                    <div className="column is-7">
+                    <div className="column is-10">
                         <Delayed waitBeforeShow={1500}>
                         <span>Developing tomorrow's technology today</span>
                         <span><a sx={{color: "secondary", textDecoration: "underline"}} >Developing</a> tomorrow's technology today</span>
@@ -123,7 +123,7 @@ export const IndexPageTemplate = ({
                         <FontAwesomeIcon icon={faCheckSquare} />
                         </Delayed>
                     </div>
-                    <div className="column is-7">
+                    <div className="column is-10">
                         <Delayed waitBeforeShow={2000}>
                         <span>Delivering tomorrow's technology today</span>
                         <span><a sx={{color: "secondary", textDecoration: "underline"}} >Delivering</a> tomorrow's technology today</span>
