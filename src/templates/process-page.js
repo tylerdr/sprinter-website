@@ -182,8 +182,6 @@ ProcessPageTemplate.propTypes = {
 const ProcessPage = ({ data }) => {
   console.log(data, "This Data")
   const { frontmatter } = data.markdownRemark
-  const { nodes } = data.allMarkdownRemark
-  console.log(nodes, "NODES")
   return (
     <Layout>
       <ProcessPageTemplate
@@ -199,16 +197,15 @@ ProcessPage.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
     }),
-    // allMarkdownRemark: PropTypes.shape({
-    //   frontmatter: PropTypes.array,
-    // })
+    allMarkdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.array,
+    })
   }),
 }
 
 export default ProcessPage
 
 export const pageQuery = graphql`
-
   query ProcessPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "process-page" } }) {
       frontmatter {

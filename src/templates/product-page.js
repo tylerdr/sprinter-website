@@ -110,7 +110,6 @@ export const ProductPageTemplate = ({
                       ? fullImage.childImageSharp.fluid.src
                       : fullImage
                   })`,
-                }}
               />
               <h2 className="is-size-2">
                 {pricing.heading}
