@@ -17,22 +17,12 @@ import { faSquare, faCheckSquare } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ProcessPageTemplate = ({
-  image,
   title,
-  subheading,
-  main,
-  testimonialsFrontmatter
+  subheading
 }) => (
   <div sx={{color:'text'}}>
     <div
       className="full-width-image margin-top-0"
-       style={{
-         backgroundImage: `url(${
-           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-         })`,
-         backgroundPosition: `top left`,
-         backgroundAttachment: `fixed`,
-       }}
     >
       <div
         style={{
@@ -147,9 +137,6 @@ export const ProcessPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="margin-top-0">
-      <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
-    </section>
     <section className="section section--gradient"
       sx={{
         backgroundColor: "background"
@@ -187,7 +174,6 @@ export const ProcessPageTemplate = ({
 )
 
 ProcessPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -201,11 +187,8 @@ const ProcessPage = ({ data }) => {
   return (
     <Layout>
       <ProcessPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
-        main={frontmatter.main}
-        testimonialsFrontmatter={nodes[0].frontmatter}
       />
     </Layout>
   )
@@ -227,63 +210,10 @@ export default ProcessPage
 export const pageQuery = graphql`
 
   query ProcessPageTemplate {
-      __typename
-    allMarkdownRemark (
-      filter: { frontmatter: { templateKey: { eq: "product-page" } } }
-    ) {
-      nodes {
-        frontmatter {
-          testimonials {
-            author
-            quote
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     markdownRemark(frontmatter: { templateKey: { eq: "process-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         subheading
-        main {
-          missionStatement
-          visionStatement
-          video {
-            videoFile {
-              publicURL
-            }
-            videoTitle 
-            poster {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image1 {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
       }
     }
   }

@@ -7,10 +7,8 @@ const ProcessPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <ProcessPageTemplate
-        image={data.image}
         title={data.title}
         subheading={data.subheading}
-        main={data.main || {}}
       />
     )
   } else {

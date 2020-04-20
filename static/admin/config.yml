@@ -60,9 +60,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "process-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
           - {label: Subheading, name: subheading, widget: string}
-          - {label: Main, name: main, widget: object, fields: [{label: Mission Statement, name: missionStatement, widget: text}, {label: Vision Statement, name: visionStatement, widget: text}, {label: Video, name: video, widget: object, fields: [{label: Video File, name: videoFile, widget: file}, {label: Video Title, name: videoTitle, widget: string}, {label: Poster, name: poster, widget: image}]}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
