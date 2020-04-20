@@ -23,19 +23,12 @@ module.exports = {
         name: 'pages',
       },
     },
-    //  {
-    //    resolve: `gatsby-plugin-manifest`,
-    //    options: {
-    //      name: `Sprinter Consulting`,
-    //      short_name: `Sprinter`,
-    //      start_url: `/`,
-    //      background_color: `#f7f0eb`,
-    //      theme_color: `#a2466c`,
-    //      display: `standalone`,
-    //      icon: `${__dirname}/src/img/sprinter-favicon.png`,
-    //      theme_color_in_head: false,  //This path is relative to the root of the site.
-    //    },
-    //  },
+    {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://sprinter.digital/.netlify/identity` // required!
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

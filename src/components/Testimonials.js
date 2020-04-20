@@ -5,10 +5,11 @@ import { v4 } from 'uuid'
 import { jsx } from "theme-ui"
 import { Slide } from 'react-slideshow-image';
 import './Animations.css'
+import { useTestimonialData } from '../hooks/TestimonialQuery'
 
-
-const Testimonials = ({ testimonials }) => {
-  console.log(testimonials, "TESTImonials")
+const Testimonials = () => {
+  let {nodes: testData} =  useTestimonialData()
+  let testimonials = testData[0].frontmatter.testimonials
   const properties = {
     duration: 5000,
     transitionDuration: 500,
