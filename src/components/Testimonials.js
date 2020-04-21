@@ -26,13 +26,13 @@ const Testimonials = () => {
   <div className="slide-container">
         <Slide {...properties}>
         <div className="each-slide">
-          <div 
+          <div className="full-width-image"
           style={{
             backgroundImage: `url(${
               !!testimonials[0].image.childImageSharp ? testimonials[0].image.childImageSharp.fluid.src : testimonials[0].image
             })`,
           }}>
-            <span sx={{color: "text", backgroundColor: "otherbackground"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+            <span sx={{backgroundColor: "transparent"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
               {testimonials[0].quote}
               <br />
               <cite> – {testimonials[0].author}</cite>
@@ -40,13 +40,13 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="each-slide">
-          <div 
+          <div className="full-width-image"
           style={{
             backgroundImage: `url(${
               !!testimonials[1].image.childImageSharp ? testimonials[1].image.childImageSharp.fluid.src : testimonials[1].image
             })`,
           }}>
-             <span sx={{color: "text", backgroundColor: "otherbackground"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+             <span sx={{backgroundColor: "transparent"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
               {testimonials[1].quote}
               <br />
               <cite> – {testimonials[1].author}</cite>
@@ -54,13 +54,13 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="each-slide">
-          <div 
+          <div className="full-width-image"
           style={{
             backgroundImage: `url(${
               !!testimonials[2].image.childImageSharp ? testimonials[2].image.childImageSharp.fluid.src : testimonials[2].image
             })`,
           }}>
-            <span sx={{color: "text", backgroundColor: "otherbackground"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+            <span sx={{backgroundColor: "transparent"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
               {testimonials[2].quote}
               <br />
               <cite> – {testimonials[2].author}</cite>

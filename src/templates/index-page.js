@@ -92,30 +92,30 @@ export const IndexPageTemplate = ({
                     <div className="column is-12">                        
                         <Delayed waitBeforeShow={1000}>
                         <span>
-                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Discovering tomorrow's technology today
+                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Discovering tomorrow's technology
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text" sx={{color: "secondary", fontWeight: "bold"}} >Discovering</a> tomorrow's technology today
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text" sx={{color: "secondary", fontWeight: "bold"}} >Discovering</a> tomorrow's technology <i>today</i>
                         </span>
                         </Delayed>
                     </div>
                     <div className="column is-12">                        
                         <Delayed waitBeforeShow={1500}>
                         <span>
-                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Developing tomorrow's technology today
+                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Developing tomorrow's technology
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text"  sx={{color: "secondary", fontWeight: "bold"}} >Developing</a> tomorrow's technology today
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text"  sx={{color: "secondary", fontWeight: "bold"}} >Developing</a> tomorrow's technology <i>today</i>
                         </span>
                         </Delayed>
                     </div>
                     <div className="column is-12">                        
                         <Delayed waitBeforeShow={2000}>
                         <span>
-                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Delivering tomorrow's technology today
+                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Delivering tomorrow's technology
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text"  sx={{color: "secondary", fontWeight: "bold"}} >Delivering</a> tomorrow's technology today
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text"  sx={{color: "secondary", fontWeight: "bold"}} >Delivering</a> tomorrow's technology <i>today</i>
                         </span>
                         </Delayed>
                     </div>
@@ -137,7 +137,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="margin-top-0" sx={{backgroundColor: "otherbackground"}}>
+    <section className="margin-top-0">
     <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -154,9 +154,9 @@ export const IndexPageTemplate = ({
             </div>
         </div>
     </div>
-    <div className="testimonials-holder">
-    <Testimonials />
-    </div>
+    </section>
+    <section className="margin-top-0 testimonials-holder">
+      <Testimonials/>
     </section>
     <section className="section section--gradient"
       sx={{

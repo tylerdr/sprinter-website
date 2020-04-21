@@ -63,7 +63,6 @@
   }
 
   .testimonials-holder .slide-container {
-    width: 70%;
     margin: auto; }
   
   .testimonials-holder .each-slide > div {
@@ -71,15 +70,21 @@
     align-items: center;
     justify-content: center;
     background-size: cover;
-    height: 300px;
   }
   .testimonials-holder .each-slide span {
     padding: 20px;
     font-size: 20px;
     text-align: center;
     max-width: 90%;
+    color: white;
   }
-  .testimonials-holder .react-slideshow-wrapper.slide, .testimonials-holder span {
-    border-radius: 6px;
-
+  .testimonials-holder .indicators div{
+    background: #3072f9 !important;
+    opacity: 0.25;
+  }
+  .testimonials-holder .indicators div.active {
+    opacity: 0.75 !important;
+  }
+  .testimonials-holder .nav {
+    background: #3072f9 !important;
   }
