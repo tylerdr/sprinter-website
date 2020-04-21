@@ -14,7 +14,7 @@ tags:
 
 > Simplicity is the ultimate sophistication. -Leonardo da Vinci
 
-![Process photo](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0230b85f-fa0d-4e3b-89f3-36f4a0073623/alvaro-reyes-qWwpHwip31M-unsplash.jpg)
+![Process](/img/alvaro-reyes-qwwphwip31m-unsplash.jpg "Process")
 
 ## Technology is ***powerful.*** Technology is also ***complex.***
 
