@@ -26,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        url: `https://sprinter.digital/.netlify/identity` // required!
+        url: `https://sprinter.digital/` // required!
       }
     },
     {
