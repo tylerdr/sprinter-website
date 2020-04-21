@@ -15,6 +15,10 @@
 		transform:         translateY(-15px)
 	}
 }
+
+.animation-emphasized-text:hover {
+  text-decoration: underline;
+}
 .service-list-item img {  
   text-transform: uppercase;
   -webkit-animation-duration: 1s;

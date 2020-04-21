@@ -87,7 +87,7 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="home-animation is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                  sx={{ maxWidth: "60%", margin: "auto", minHeight: "180px"}}>
-                   <Typing>
+                   <Typing speed={40}>
                   <div className="columns is-multiline">
                     <div className="column is-12">                        
                         <Delayed waitBeforeShow={1000}>
@@ -95,7 +95,7 @@ export const IndexPageTemplate = ({
                         <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Discovering tomorrow's technology today
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a sx={{color: "secondary", textDecoration: "underline"}} >Discovering</a> tomorrow's technology today
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text" sx={{color: "secondary", fontWeight: "bold"}} >Discovering</a> tomorrow's technology today
                         </span>
                         </Delayed>
                     </div>
@@ -105,7 +105,7 @@ export const IndexPageTemplate = ({
                         <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Developing tomorrow's technology today
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a sx={{color: "secondary", borderBottom: "2px solid"}} >Developing</a> tomorrow's technology today
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text"  sx={{color: "secondary", fontWeight: "bold"}} >Developing</a> tomorrow's technology today
                         </span>
                         </Delayed>
                     </div>
@@ -115,7 +115,7 @@ export const IndexPageTemplate = ({
                         <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Delivering tomorrow's technology today
                         </span>
                         <span>
-                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a sx={{color: "secondary", borderBottom: "2px solid"}} >Delivering</a> tomorrow's technology today
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a className="animation-emphasized-text"  sx={{color: "secondary", fontWeight: "bold"}} >Delivering</a> tomorrow's technology today
                         </span>
                         </Delayed>
                     </div>
