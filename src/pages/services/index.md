@@ -29,7 +29,7 @@ main:
     image: /img/blue-mountains.jpg
 testimonials:
   - author: Elisabeth Kaurismäki
-    image: /img/bllueee-real.jpg
+    image: /img/oil-gas-testimonial.jpg
     quote: "I love sprinter :) "
   - author: Philipp Trommler
     image: /img/cpmputer-home.jpg
