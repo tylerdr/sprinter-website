@@ -32,7 +32,7 @@ const Testimonials = () => {
               !!testimonials[0].image.childImageSharp ? testimonials[0].image.childImageSharp.fluid.src : testimonials[0].image
             })`,
           }}>
-            <span>
+            <span sx={{color: "text", backgroundColor: "otherbackground"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
               {testimonials[0].quote}
               <br />
               <cite> – {testimonials[0].author}</cite>
@@ -46,7 +46,7 @@ const Testimonials = () => {
               !!testimonials[1].image.childImageSharp ? testimonials[1].image.childImageSharp.fluid.src : testimonials[1].image
             })`,
           }}>
-            <span>
+             <span sx={{color: "text", backgroundColor: "otherbackground"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
               {testimonials[1].quote}
               <br />
               <cite> – {testimonials[1].author}</cite>
@@ -60,7 +60,7 @@ const Testimonials = () => {
               !!testimonials[2].image.childImageSharp ? testimonials[2].image.childImageSharp.fluid.src : testimonials[2].image
             })`,
           }}>
-            <span>
+            <span sx={{color: "text", backgroundColor: "otherbackground"}} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
               {testimonials[2].quote}
               <br />
               <cite> – {testimonials[2].author}</cite>

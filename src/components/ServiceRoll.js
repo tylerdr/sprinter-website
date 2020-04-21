@@ -5,10 +5,18 @@ import PropTypes, { nominalTypeHack } from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import './Animations.css'
-class ServiceRoll extends React.Component {
-  render() {
-    const { data } = this.props
-    const { edges: services } = data.allMarkdownRemark
+import { useServiceRollData } from '../hooks/ServiceRollQuery'
+const ServiceRoll = ( { location }) => {
+    let { edges: services } = useServiceRollData()
+    if (location){
+      let featuredServices = []
+      services.forEach((item) => {
+        if (item.node.frontmatter.featuredpost == true){
+          featuredServices.push(item)
+        }
+      })
+      services = featuredServices
+    }
     console.log(services, "EDGES")
     return (
       <div className="columns is-multiline">
@@ -51,13 +59,13 @@ class ServiceRoll extends React.Component {
                     >
                       {post.frontmatter.title}
                     </Link>
-                    {/* <br></br> */}
-                    {/* <span
+                    <br></br>
+                    <span
                     sx={{
                       color: "text",
                       fontFamily:"body",
                       fontWeight:"body"
-                    }}>{post.frontmatter.description}</span> */}
+                    }}>{post.frontmatter.description}</span>
                   </p>
                 </header>
                 <span className="float-right show-on-hover"
@@ -77,7 +85,6 @@ class ServiceRoll extends React.Component {
       </div>
     )
   }
-}
 
 ServiceRoll.propTypes = {
   data: PropTypes.shape({
@@ -87,47 +94,5 @@ ServiceRoll.propTypes = {
   }),
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query ServiceRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "service-page" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 400)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                description
-                templateKey
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-                icon {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                  publicURL
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data, count) => <ServiceRoll data={data} count={count} />}
-  />
-)
+
+export default ServiceRoll

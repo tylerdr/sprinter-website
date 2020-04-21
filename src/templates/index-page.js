@@ -86,47 +86,37 @@ export const IndexPageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="home-animation is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-                 sx={{ maxWidth: "60%", margin: "auto"}}>
+                 sx={{ maxWidth: "60%", margin: "auto", minHeight: "180px"}}>
                    <Typing>
-                  <div className="columns">
-                    <div className="column">                        
+                  <div className="columns is-multiline">
+                    <div className="column is-12">                        
                         <Delayed waitBeforeShow={1000}>
-                        <FontAwesomeIcon icon={faSquare} />
-                        <FontAwesomeIcon icon={faCheckSquare} />
+                        <span>
+                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Discovering tomorrow's technology today
+                        </span>
+                        <span>
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a sx={{color: "secondary", textDecoration: "underline"}} >Discovering</a> tomorrow's technology today
+                        </span>
                         </Delayed>
                     </div>
-                    <div className="column is-10">
-                        <Delayed waitBeforeShow={1000}>
-                        <span>Discovering tomorrow's technology today</span>
-                        <span><a sx={{color: "secondary", textDecoration: "underline"}} >Discovering</a> tomorrow's technology today</span>
-                        </Delayed>
-                      </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
+                    <div className="column is-12">                        
                         <Delayed waitBeforeShow={1500}>
-                        <FontAwesomeIcon icon={faSquare} />
-                        <FontAwesomeIcon icon={faCheckSquare} />
+                        <span>
+                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Developing tomorrow's technology today
+                        </span>
+                        <span>
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a sx={{color: "secondary", borderBottom: "2px solid"}} >Developing</a> tomorrow's technology today
+                        </span>
                         </Delayed>
                     </div>
-                    <div className="column is-10">
-                        <Delayed waitBeforeShow={1500}>
-                        <span>Developing tomorrow's technology today</span>
-                        <span><a sx={{color: "secondary", textDecoration: "underline"}} >Developing</a> tomorrow's technology today</span>
-                        </Delayed>
-                      </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
+                    <div className="column is-12">                        
                         <Delayed waitBeforeShow={2000}>
-                        <FontAwesomeIcon icon={faSquare} />
-                        <FontAwesomeIcon icon={faCheckSquare} />
-                        </Delayed>
-                    </div>
-                    <div className="column is-10">
-                        <Delayed waitBeforeShow={2000}>
-                        <span>Delivering tomorrow's technology today</span>
-                        <span><a sx={{color: "secondary", textDecoration: "underline"}} >Delivering</a> tomorrow's technology today</span>
+                        <span>
+                        <FontAwesomeIcon icon={faSquare} />&nbsp;&nbsp;Delivering tomorrow's technology today
+                        </span>
+                        <span>
+                          <FontAwesomeIcon icon={faCheckSquare} />&nbsp;&nbsp;<a sx={{color: "secondary", borderBottom: "2px solid"}} >Delivering</a> tomorrow's technology today
+                        </span>
                         </Delayed>
                     </div>
                   </div>
@@ -140,15 +130,33 @@ export const IndexPageTemplate = ({
                       }}>
                         Services
                       </div>
-                      <ServiceRoll/>
+                      <ServiceRoll location={"home"}/>
                 </div>
               </div>
             </div>
           </div>
         </div>
     </section>
-    <section className="margin-top-0">
-      <Testimonials testimonials={testimonialsFrontmatter.testimonials} />
+    <section className="margin-top-0" sx={{backgroundColor: "otherbackground"}}>
+    <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                    sx={{
+                    fontFamily: "heading",
+                    fontWeight: "heading",
+                    }}
+                  >
+                  Testimonials
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div className="testimonials-holder">
+    <Testimonials />
+    </div>
     </section>
     <section className="section section--gradient"
       sx={{
@@ -196,8 +204,6 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   console.log(data, "This Data")
   const { frontmatter } = data.markdownRemark
-  const { nodes } = data.allMarkdownRemark
-  console.log(nodes, "NODES")
   return (
     <Layout>
       <IndexPageTemplate
@@ -205,7 +211,6 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         main={frontmatter.main}
-        testimonialsFrontmatter={nodes[0].frontmatter}
       />
     </Layout>
   )
@@ -227,26 +232,6 @@ export default IndexPage
 export const pageQuery = graphql`
 
   query IndexPageTemplate {
-      __typename
-    allMarkdownRemark (
-      filter: { frontmatter: { templateKey: { eq: "product-page" } } }
-    ) {
-      nodes {
-        frontmatter {
-          testimonials {
-            author
-            quote
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title

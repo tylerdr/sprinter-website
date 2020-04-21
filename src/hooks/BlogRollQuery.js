@@ -10,7 +10,7 @@ export const useBlogRollData = () => {
             ) {
               edges {
                 node {
-                  excerpt(pruneLength: 400)
+                  excerpt(pruneLength: 300)
                   id
                   fields {
                     slug

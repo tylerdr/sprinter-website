@@ -51,28 +51,31 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
-  .header.active {
+.header.active {
     opacity: 1
   }
-  .header-container {
+.header-container {
       position: relative;
   }
 
-  .slide-container {
+  .testimonials-holder .slide-container {
     width: 70%;
     margin: auto; }
   
-  .each-slide > div {
+  .testimonials-holder .each-slide > div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     height: 300px;
   }
-  .each-slide span {
+  .testimonials-holder .each-slide span {
     padding: 20px;
     font-size: 20px;
-    background: #efefef;
     text-align: center;
+    max-width: 90%;
   }
-  
+  .testimonials-holder .react-slideshow-wrapper.slide, .testimonials-holder span {
+    border-radius: 6px;
+
+  }

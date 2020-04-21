@@ -127,7 +127,7 @@ const Navbar = class extends React.Component {
                 color: "text",
                 // backgroundColor: "navbar",
               }}>
-                Blog
+                Our Ideas
               </Link>
               <Link className={`navbar-item ${
                 this.props.location.pathname.includes('contact') ? 'clicked' : '' }`}
