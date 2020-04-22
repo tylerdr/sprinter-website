@@ -122,6 +122,19 @@ export const IndexPageTemplate = ({
                   </div>
                   </Typing>            
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "background"
+      }}>
+      <div className="container" sx={{color: 'text'}}>
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
                     <div className="columns is-multiline">
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
@@ -137,7 +150,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="margin-top-0">
+    <section className="section section--gradient margin-top-0">
     <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
