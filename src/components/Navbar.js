@@ -6,7 +6,8 @@ import logo from '../img/logo.svg'
 import { jsx } from "theme-ui"
 import ThemeSwitcher from './theme-switcher'
 import { Location } from '@reach/router';
-
+import './Animations.css'
+import ChevronDown from 'react-feather/dist/icons/chevron-down'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -15,14 +16,18 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: '',
       currentPath: false,
+      activeSubNav: false
     }
   } 
-
 
   componentDidMount = () =>
     this.setState({ currentPath: this.props.location.pathname })
 
- 
+  toggleSubNav = subNav =>
+    this.setState({
+      activeSubNav: this.state.activeSubNav === subNav ? false : subNav
+    })
+
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
@@ -53,14 +58,15 @@ const Navbar = class extends React.Component {
         }}
         sx={{
           backgroundColor: "navbar",
+          textTransform: "uppercase"
         }}
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand" >
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Sprinter" style={{ width: '136px' }} />
+            <Link to="/" className="navbar-item on-hover" title="Logo">
+              <img src={logo} alt="Sprinter" style={{ width: '200px', minHeight: "100%" }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -83,53 +89,82 @@ const Navbar = class extends React.Component {
               //backgroundColor: "background",
             }}
           >
-            <div className="navbar-start has-text-centered" sx={{margin: "auto"}}>
-            <Link className={`navbar-item ${
+            <div className="navbar-start has-text-centered" sx={{marginRight: "auto", marginLeft: "auto"}}>
+            <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('about') ||
                 this.props.location.pathname.includes('services') ||
                 this.props.location.pathname.includes('contact') ||
+                this.props.location.pathname.includes('process') ||
                 this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
                 sx={{
                   fontWeight: "body",
                   color: "text",
-                  // backgroundColor: "navbar",
                 }}>
                   Home
                 </Link>
-              <Link className={`navbar-item ${
-                this.props.location.pathname.includes('services') ? 'clicked' : '' }`}
-               to="/services"
-              sx={{
-                fontWeight: "body",
-                color: "text",
-                // backgroundColor: "navbar",
-              }}>
-                Services
-              </Link>
-              <Link className={`navbar-item ${
+                <div
+                    className={`Nav--Group navbar-item ${
+                        this.state.activeSubNav === 'services' ? 'active' : ''
+                      }`}
+                    sx={{
+                      fontWeight: "body",
+                      color: "text",
+                      }}
+                    >
+                  <span
+                    className={`Link Nav--GroupParent ${
+                      this.props.location.pathname.includes('services') ||
+                      this.props.location.pathname.includes('process')
+                        ? 'clicked'
+                        : ''
+                    }`}
+                    onClick={() => this.toggleSubNav('services')}
+                    >
+                    Services <ChevronDown/>
+                  </span>
+                  <div className="Nav--GroupLinks" sx={{backgroundColor: "navbar"}}>
+                    <Link to="/services" className="Nav--GroupLink navbar-item"
+                        sx={{
+                        fontWeight: "body",
+                        color: "text",
+                        }}>
+                      Past Projects
+                    </Link>
+                    <Link to="/process" className="Nav--GroupLink navbar-item"
+                        sx={{
+                        fontWeight: "body",
+                        color: "text",
+                        }}>
+                      Our Process    
+                    </Link>
+                    <Link to="/process" className="Nav--GroupLink navbar-item"
+                        sx={{
+                        fontWeight: "body",
+                        color: "text",
+                        }}>
+                      Benefits    
+                    </Link>
+                  </div>
+                </div>
+              <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('about') ? 'clicked' : '' }`}
                to="/about"
               sx={{
                 fontWeight: "body",
                 color: "text",
-                // backgroundColor: "navbar",
               }}>
                 About
               </Link>
-              {/* <Link className="navbar-item" to="/services">
-                Our Services
-              </Link> */}
-              <Link className={`navbar-item ${
+              <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('blog') ? 'clicked' : '' }`}
               to="/blog"
               sx={{
                 fontWeight: "body",
-                color: "text",
-                // backgroundColor: "navbar",
+                color: "text"
               }}>
                 Our Ideas
               </Link>
-              <Link className={`navbar-item ${
+              <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('contact') ? 'clicked' : '' }`}
               to="/contact"
               sx={{

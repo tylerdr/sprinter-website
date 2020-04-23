@@ -17,6 +17,7 @@ $black: #2b2523
 
 body
   color: inherit;
+  line-height: 1.75 !important;
 
 .content .taglist
   list-style: none
@@ -74,8 +75,6 @@ body
 
 .navbar-item .icon
   color: $primary
-.navbar-menu .navbar-item:hover
-    border-bottom: 4px solid $primary
 .navbar
   position: fixed 
   width: 100% 
@@ -87,9 +86,17 @@ body
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
-a.navbar-item.clicked
+.navbar-item.clicked
+  color: $primary
+  font-weight: 500
+.navbar-item img 
+  max-height: 100% !important
+.navbar .container
+  min-height: 3.5rem !important
+
+.Link.clicked
     color: $primary
-    border-bottom: 2px solid $primary
+    font-weight: 500
 
 footer.footer
   padding: 3rem 0rem 0rem
@@ -149,6 +156,11 @@ $menu-label-color: $white-ter
     flex-basis: 50%;
   .service-list-item .featured-thumbnail
     flex-basis: 50%;
+  .navbar-item 
+    max-width: 30%
+    margin: auto
+  .Nav--GroupLinks
+    background-color: transparent !important
 
 +mobile
   .blog-list-item header
@@ -162,10 +174,20 @@ $menu-label-color: $white-ter
   .service-list-item .featured-thumbnail
     text-align: center;
     max-width: 50%
-    margin: auto  
+    margin: auto
+  .navbar-item 
+    max-width: 50%
+    margin: auto
+  .Nav--GroupLinks
+    background-color: transparent !important
+    
 +desktop
   .navbar-brand .navbar-item
     position: absolute !important
+  .Nav--GroupLinks
+    position: absolute
+  .Nav--GroupParent 
+    padding-right: 1.2rem !important;
 
 
 .content h1, .content h2, .content h3, .content h4 

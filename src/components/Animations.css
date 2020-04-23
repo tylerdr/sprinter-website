@@ -88,3 +88,36 @@
   .testimonials-holder .nav {
     background: #3072f9 !important;
   }
+  .Nav--Group {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .Nav--Group svg {
+    position: absolute;
+    color: #3072f9;
+  }
+  .Nav--Group.active svg {
+    transform: rotate(-180deg);
+  }
+  .Nav--GroupLinks {
+    top: 100%;
+    left: 0;
+    width: 10em;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease all;
+  }
+  
+  .Nav--Group.active .Nav--GroupLinks {
+    max-height: 100vh;
+    opacity: 1;
+    transition: 0.6s ease all;
+  }
+  
+
+  
+  .Nav--GroupLink {
+    display: block;
+    position: relative;
+  }
