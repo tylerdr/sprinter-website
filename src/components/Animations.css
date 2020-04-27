@@ -43,7 +43,7 @@
 }
 
 .img-2 {
-    background-image: url('../../static/img/coffee.png')
+    background-image: url('../../static/img/geometric-1732847_1920.jpg')
 }
 .img-3 {
     background-image: url('../../static/img/code.jpg')
@@ -120,4 +120,9 @@
   .Nav--GroupLink {
     display: block;
     position: relative;
+  }
+
+
+  .home-page-header .react-slideshow-container .nav {
+    border-radius: 2px
   }

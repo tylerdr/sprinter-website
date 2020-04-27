@@ -6,7 +6,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { useBlogRollData } from '../hooks/BlogRollQuery'
 
-const BlogRoll = ( { tag }) => {
+const BlogRoll = ( { tag, homepage}) => {
     let { edges: posts } = useBlogRollData()
     if (tag){
       let taggedPosts = []
@@ -17,6 +17,14 @@ const BlogRoll = ( { tag }) => {
       })
       console.log(taggedPosts, "TAGGED")
       posts = taggedPosts
+    }
+    else if (homepage){
+      let featuredPosts = []
+      posts.forEach((item) => {
+        if (item.node.frontmatter.featuredpost == true) 
+          featuredPosts.push(item)
+      })
+      posts = featuredPosts
     }
     return (
       <div className="columns is-multiline">
@@ -53,7 +61,7 @@ const BlogRoll = ( { tag }) => {
                       sx={{
                         color: "text",
                         fontFamily: "heading",
-                        fontWeight: "body",
+                        fontWeight: "heading",
                       }}
                     >
                       {post.frontmatter.title}

@@ -54,7 +54,7 @@ const ServiceRoll = ( { location }) => {
                       sx={{
                         color: "text",
                         fontFamily: "heading",
-                        fontWeight: "body",
+                        fontWeight: "heading",
                       }}
                     >
                       {post.frontmatter.title}

@@ -58,7 +58,8 @@ const Navbar = class extends React.Component {
         }}
         sx={{
           backgroundColor: "navbar",
-          textTransform: "uppercase"
+          textTransform: "uppercase",
+          fontFamily: "heading"
         }}
         role="navigation"
         aria-label="main-navigation"
