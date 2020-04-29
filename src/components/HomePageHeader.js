@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { jsx } from "theme-ui"
 import { Fade } from 'react-slideshow-image';
 import './Animations.css'
+import TypeformPopup from './TypeformPopup'
 import { useTestimonialData } from '../hooks/TestimonialQuery'
 import { Link } from 'gatsby'
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
@@ -43,7 +44,9 @@ const HomePageHeader = () => {
               !!testimonials[0].image.childImageSharp ? testimonials[0].image.childImageSharp.fluid.src : testimonials[1].image
             })`,
           }}>
-
+            <div className="home-header-description" sx={{ontFamily:'heading', fontWeight: 'heading', color: "white", fontSize: 4, position: "absolute", left: "1em", bottom: "3em"}}>
+              <TypeformPopup />
+              </div>
           </div>
         </div>
         <div className="each-slide">
