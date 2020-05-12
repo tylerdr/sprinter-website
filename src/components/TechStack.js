@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Helmet } from "react-helmet"
-import TechnologyData from './TechData'
 import ChevronDown from 'react-feather/dist/icons/chevron-down'
 import './Accordion.css'
 /** @jsx jsx */
