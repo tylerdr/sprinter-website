@@ -36,7 +36,7 @@ export const ProductPageTemplate = ({
         <div className="section">
           <div className="columns">
             <div className="column is-7 is-offset-1">
-              <div className="is-size-2"
+              <div className="is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
               sx={{
                 fontWeight: "heading",
                 fontFamily: "heading"
@@ -112,7 +112,7 @@ export const ProductPageTemplate = ({
                   })`,
                 }}
               />
-              <h2 className="is-size-2">
+              <h2 className="is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
