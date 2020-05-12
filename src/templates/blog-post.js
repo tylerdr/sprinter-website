@@ -19,10 +19,13 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   podcast,
+  date,
+  length,
   featuredimage,
+  author
 }) => {
   const PostContent = contentComponent || Content
-console.log(content, contentComponent)
+
 return (
     <section className="section">
       {helmet || ''}
@@ -35,9 +38,11 @@ return (
           sx={{
             color: "text",
           }}>
-            <h1 className="title is-size-2" sx={{fontFamily: "heading", textTransform: "uppercase", fontWeight: "heading"}}>
+            <h1 className="title is-size-2" sx={{fontFamily: "heading", fontWeight: "heading", textAlign: "center"}}>
               {title}
             </h1>
+            {!!podcast ? <p>{length} min</p> : <p>{length} min read</p>}
+            <p>{author} / {date}</p>
             <h3 sx={{fontFamily: "body", fontWeight: "body"}}>{description}</h3>
             {podcast && (
               <div>
@@ -96,6 +101,9 @@ console.log(post.html, "POSTHTML")
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         podcast={post.frontmatter.podcast}
+        date={post.frontmatter.date}
+        length={post.frontmatter.length}
+        author={post.frontmatter.author}
         featuredimage={post.frontmatter.featuredimage}
         helmet={
           <Helmet titleTemplate="%s | Blog">
@@ -131,6 +139,9 @@ export const pageQuery = graphql`
         title
         description
         tags
+        length
+        author
+        date(formatString: "MMMM DD, YYYY")
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 120, quality: 100) {

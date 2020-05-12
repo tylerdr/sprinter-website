@@ -19,6 +19,8 @@ export const useBlogRollData = () => {
                     title
                     tags
                     templateKey
+                    author
+                    length
                     date(formatString: "MMMM DD, YYYY")
                     podcast {
                       podcastLink {
