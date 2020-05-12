@@ -117,9 +117,6 @@ export const ProductPageTemplate = ({
               </h2>
               <p className="is-size-5">{pricing.description}</p>
               <Pricing data={pricing.plans} />
-              <h2 className="is-size-2">
-                Technologies We Use
-              </h2>
               <div>
               <TechStack/>
               </div>

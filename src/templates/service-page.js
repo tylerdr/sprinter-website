@@ -33,13 +33,15 @@ return (
           sx={{
             color: "text",
           }}>
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            <h1 className="title is-size-2" sx={{fontFamily: "heading", textTransform: "uppercase", fontWeight: "heading"}}>
               {title}
             </h1>
-            <h3>{description}</h3>
+            <h3 sx={{fontFamily: "body", fontWeight: "body"}}>{description}</h3>
             <PostContent className="markdown" content={content} 
             sx={{
               color: "text",
+              fontFamily: "body",
+              fontWeight: "body"
             }}/>
 
           </div>

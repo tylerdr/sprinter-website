@@ -91,8 +91,8 @@ const Footer = class extends React.Component {
               sx={{margin:"auto"}}>
                 <GoogleMap />
               </div> 
-               <div className="column" sx={{margin:"auto"}}>
-               <iframe src="https://sprinter.substack.com/embed" width="480" height="320" frameborder="0" scrolling="no"></iframe> 
+               <div className="column" sx={{margin:"auto", textAlign: "center"}}>
+               <iframe src="https://sprinter.substack.com/embed" width="270" height="180" frameborder="0" scrolling="no"></iframe> 
               </div> 
              </div> 
             <div className="social-bar has-text-centered" >
