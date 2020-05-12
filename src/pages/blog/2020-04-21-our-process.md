@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
 title: Our process
+length: 2
 date: 2020-04-21T21:37:42.738Z
 description: 'How we help you get from where you are to where you could be. '
 featuredpost: true
