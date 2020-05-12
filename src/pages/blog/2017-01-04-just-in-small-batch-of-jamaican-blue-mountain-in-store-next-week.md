@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Sprinter's Vision
-length: 3
+readlength: 2
 date: 2019-11-10T05:00:00.000Z
 description: >-
   How Sprinter is working with businesses to create transparency through
