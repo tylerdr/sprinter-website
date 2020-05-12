@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
 title: What is Design-Thinking?
+readlength: 2
 date: 2019-11-10T05:00:00.000Z
 description: >
   "Design thinking is a creative problem-solving and opportunity finding mindset
