@@ -65,7 +65,6 @@ body
     font-size: 18px
     font-size: 1rem
     line-height: 1.25
-    border-radius: .25rem
     text-decoration: none
     font-weight: 700
     text-align: center
@@ -176,10 +175,9 @@ $menu-label-color: $white-ter
     max-width: 50%
     margin: auto
   .navbar-item 
-    max-width: 50%
-    margin: auto
+    margin-right: auto
   .Nav--GroupLinks
-    background-color: transparent !important
+    width: 100%
     
 +desktop
   .navbar-brand .navbar-item
@@ -256,7 +254,6 @@ article:hover
 a.home-header-button
   background: #3072f9
   border: 1px #3072f9 solid
-  border-radius: .25rem
   padding: 15px
   font-size: 16px
   font-weight: bold
@@ -268,4 +265,11 @@ a.home-header-button:hover
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
 
+.box 
+  border-radius: 0px !important
 
+.navbar-burger:hover
+  background-color: transparent !important
+
+.navbar-brand img:hover
+  opacity: 0.75

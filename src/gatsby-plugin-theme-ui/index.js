@@ -20,12 +20,12 @@ export default {
       },
     },
   fonts: {
-    heading: "'Roboto', sans-serif",
-    body: "'Roboto', sans-serif",
+    heading: "'Brandon Grotesque','brandon-grotesque',Helvetica,sans-serif",
+    body: "Arial,sans-seriff",
   },
   fontWeights: {
     body: 400,
-    heading: 100,
+    heading: 500,
     bold: 700,
     thin: 100,
   },

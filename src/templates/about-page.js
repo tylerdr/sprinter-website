@@ -86,13 +86,14 @@ export const AboutPageTemplate = ({
           }}
           sx={{
             fontFamily: "heading",
-            fontWeight: "thin",
+            textTransform: "uppercase",
+            fontWeight: "heading",
           }}
         >
           {title}
         </h1>
         <h3
-          className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+          className="is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
@@ -122,14 +123,15 @@ export const AboutPageTemplate = ({
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                     sx={{
                       fontFamily: "heading",
-                      fontWeight: 100,
+                      textTransform: "uppercase",
+                      fontWeight: "heading",
                     }}>
                       {whatSlide.header}
                     </div>
                     <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} id="what-id" className="tile">
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -138,7 +140,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -147,7 +149,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -166,14 +168,10 @@ export const AboutPageTemplate = ({
                          marginBottom: 4,
                        }}><PreviewCompatibleImage imageInfo={imageA}/></div>
                        <div className="tile blockquote">
-                            <blockquote className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                            <blockquote className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                             sx={{
-                              // backgroundColor: "otherbackground",
-                              // borderLeft: "body",
-                              // borderLeftColor: "secondary",
-                              // fontFamily: "body",
-                              // fontWeight: "body",
-                              // borderRadius: "body",
+                              fontFamily: "body",
+                              fontWeight: "body",
                             }}>
                             {blockquotes.a}
                             </blockquote>
@@ -200,14 +198,15 @@ export const AboutPageTemplate = ({
                       <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        fontWeight: "thin",
+                        textTransform: "uppercase",
+                        fontWeight: "heading",
                       }}>
                         {howSlide.header}
                       </div>
                       <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -216,7 +215,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -225,7 +224,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -239,14 +238,10 @@ export const AboutPageTemplate = ({
                   </div>
                 </div>
                 <div className="tile blockquote">
-                            <blockquote className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                            <blockquote className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                             sx={{
-                              // backgroundColor: "otherbackground",
-                              // borderLeft: "body",
-                              // borderLeftColor: "secondary",
-                              // fontFamily: "body",
-                              // fontWeight: "body",
-                              // borderRadius: "body",
+                              fontFamily: "body",
+                              fontWeight: "body",
                             }}>
                             {blockquotes.c}
                             </blockquote>
@@ -264,14 +259,15 @@ export const AboutPageTemplate = ({
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                         sx={{
                           fontFamily: "heading",
-                          fontWeight: "thin",
+                          textTransform: "uppercase",
+                          fontWeight: "heading",
                     }}>
                       {whySlide.header}
                     </div>
                     <SliderWrap>
                       <Slider {...settings} sx={{height: '90%'}} className="tile">
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -280,7 +276,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -289,7 +285,7 @@ export const AboutPageTemplate = ({
                           </div>
                         </div>
                         <div className="each-slide">
-                          <div className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                          <div className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                           sx={{
                             fontFamily: "body",
                             fontWeight: "body",
@@ -301,13 +297,13 @@ export const AboutPageTemplate = ({
                       </SliderWrap>
                       </div>
                       <div className="blockquote">
-                            <blockquote className="is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                            <blockquote className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                             sx={{
                               // backgroundColor: "otherbackground",
                               // borderLeft: "body",
                               // borderLeftColor: "secondary",
-                              // fontFamily: "body",
-                              // fontWeight: "body",
+                              fontFamily: "body",
+                              fontWeight: "body",
                               // borderRadius: "body",
                               // width: "100%",
                             }}>
@@ -326,11 +322,12 @@ export const AboutPageTemplate = ({
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        fontWeight: "thin",
+                        textTransform: "uppercase",
+                        fontWeight: "heading",
                       }}>
                         {coreValuesTest.mainHeader}
                       </div>
-                      <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen"
+                      <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                       sx={{
                         fontFamily: "body",
                         fontWeight: "body",
@@ -344,20 +341,20 @@ export const AboutPageTemplate = ({
                         <Slider {...settings} sx={{height: '90%', marginTop: 4,}} className="tile">
                           <div className="each-slide">
                             <div>
-                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
-                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body1}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", textTransform: "uppercase", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
+                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body1}</div>
                             </div>
                           </div>
                           <div className="each-slide">
                           <div>
-                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
-                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body2}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", textTransform: "uppercase", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
+                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body2}</div>
                             </div>
                           </div>
                           <div className="each-slide">
                           <div>
-                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "thin", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
-                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-4-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body3}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", textTransform: "uppercase", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
+                              <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body3}</div>
                             </div>
                           </div>
                         </Slider>

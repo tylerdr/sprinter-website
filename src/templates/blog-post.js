@@ -38,12 +38,19 @@ return (
           sx={{
             color: "text",
           }}>
-            <h1 className="title is-size-2" sx={{fontFamily: "heading", fontWeight: "heading", textAlign: "center"}}>
+            <div sx={{
+              fontFamily: "heading",
+              fontWeight: "heading",
+              textAlign: "center",
+              margin: 4,
+            }}>
+              <h1 className="title is-size-2">
               {title}
             </h1>
+            <h3>{description}</h3>
             {!!podcast ? <p>{length} min</p> : <p>{length} min read</p>}
             <p>{author} / {date}</p>
-            <h3 sx={{fontFamily: "body", fontWeight: "body"}}>{description}</h3>
+            </div>
             {podcast && (
               <div>
                 <ReactPlayer 
@@ -63,6 +70,7 @@ return (
               color: "text",
               fontFamily: "body",
               fontWeight: "body",
+              fontSize: 3,
             }}/>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
