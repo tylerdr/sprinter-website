@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
 title: 'Digital Nomads: The New Comanches of the Tech Age'
+length: 2
 date: 2019-12-22T18:22:46.619Z
 description: |
   “The mass of men lead lives of quiet desperation." -Henry David Thoreau
