@@ -75,6 +75,14 @@ const BlogRoll = ( { tag, homepage}) => {
                     }}>
                       {post.frontmatter.date}
                     </span>
+                    <span className="is-size-6 is-block"
+                    sx={{
+                      color: "text",
+                      fontFamily:"body",
+                      fontWeight:"body"
+                    }}>
+                      {!!post.frontmatter.podcast ? <p>{post.frontmatter.length} min</p> : <p>{post.frontmatter.length} min read</p>}
+                    </span>
                   </p>
                 </header>
                 <p
