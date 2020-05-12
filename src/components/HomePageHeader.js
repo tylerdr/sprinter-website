@@ -31,7 +31,7 @@ const HomePageHeader = () => {
               !!testimonials[1].image.childImageSharp ? testimonials[1].image.childImageSharp.fluid.src : testimonials[0].image
             })`,
           }}>
-              <div className="home-header-description" sx={{ontFamily:'heading', fontWeight: 'heading', color: "white", fontSize: 4, position: "absolute", left: "1em", bottom: "3em"}}>
+              <div className="home-header-description" sx={{fontFamily:'heading', fontWeight: 'heading', color: "white", fontSize: 4, position: "absolute", left: "1em", bottom: "3em"}}>
                 <div sx={{margin: 4}}>Interested in working from anywhere?</div>
                 <div sx={{margin: 4}}><Link className="home-header-button" to="/contact"><span className="home-header-button-text">REACH OUT TO US <FontAwesomeIcon icon={faExternalLinkSquareAlt}/></span></Link></div>
               </div>
@@ -44,7 +44,7 @@ const HomePageHeader = () => {
               !!testimonials[0].image.childImageSharp ? testimonials[0].image.childImageSharp.fluid.src : testimonials[1].image
             })`,
           }}>
-            <div className="home-header-description" sx={{ontFamily:'heading', fontWeight: 'heading', color: "white", fontSize: 4, position: "absolute", left: "1em", bottom: "3em"}}>
+            <div className="home-header-description" sx={{fontFamily:'heading', fontWeight: 'heading', color: "white", fontSize: 4, position: "absolute", left: "1em", bottom: "3em"}}>
               <TypeformPopup />
               </div>
           </div>
