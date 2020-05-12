@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
 title: Who We Are
+readlength: 2
 date: 2019-11-10T05:00:00.000Z
 description: The Sprinter Consulting Story
 featuredpost: false
