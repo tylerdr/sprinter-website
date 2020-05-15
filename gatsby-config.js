@@ -74,6 +74,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-intercom-spa',
+      options: {
+        app_id: 'ybrxirvb',
+        include_in_development: true,
+        delay_timeout: 0
+      }
+    },
+    {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
