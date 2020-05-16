@@ -16,6 +16,7 @@
     "bulma": "^0.8.0",
     "gatsby": "^2.20.13",
     "gatsby-image": "^2.0.23",
+    "gatsby-plugin-intercom-spa": "^0.2.0",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^4.1.6",
