@@ -91,7 +91,7 @@ const Footer = class extends React.Component {
                         </span>
                 </a>
               </div>
-              <div className="column" sx={{ margin: "auto", textAlign: "center" }}>
+              <div className="column" sx={{ marginTop: "auto", textAlign: "center" }}>
                 <div className="social-bar has-text-centered"
                   sx={{
                     marginBottom: -2
