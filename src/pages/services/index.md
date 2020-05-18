@@ -3,7 +3,7 @@ templateKey: product-page
 title: Our Services
 image: /img/jumbotron.jpg
 heading: How We Help
-description: We are great...
+description: We are terrible
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -16,9 +16,8 @@ intro:
   description: We are great...
 main:
   heading: Enabling Sustainable Change
-  description: >-
-    We do such a great job that you'll never go back to your old inefficient
-    ways...
+  description: We do such a great job that you'll never go back to your old
+    inefficient ways...
   image1:
     alt: a
     image: /img/blue-mountains.jpg
@@ -31,16 +30,15 @@ main:
 testimonials:
   - author: Elisabeth Kaurismäki
     image: /img/oil-gas-testimonial.jpg
-    quote: 'I love sprinter :) '
+    quote: "I love sprinter :) "
   - author: Philipp Trommler
     image: /img/cpmputer-home.jpg
     quote: Especially Mitch & Zach
   - author: Egg Drop Soup
     image: /img/blue-mountains.jpg
-    quote: >-
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scram
+    quote: Lorem Ipsum is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy text ever
+      since the 1500s, when an unknown printer took a galley of type and scram
 full_image: /img/blue-mountains.jpg
 pricing:
   heading: Pay us
@@ -54,24 +52,22 @@ pricing:
         - Recommend
       plan: Discovery
       price: Small
-    - description: 'You are on you''re way but need some help getting there. '
+    - description: "You are on you're way but need some help getting there. "
       items:
         - Longer collaboration
         - Hands on training
         - Minimal custom software development
       plan: Accelerate
       price: Average
-    - description: >-
-        You understand that you need to change to stay competitive and want to
-        build a new solution to drive that change.
+    - description: You understand that you need to change to stay competitive and want
+        to build a new solution to drive that change.
       items:
         - Full product development team
         - Onsite resources available
       plan: Transform
       price: Invest
 technologies:
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path fill="#0868AC" d="M9.625 32.181c-11.029
+  - icon: <svg viewBox="0 0 128 128"> <path fill="#0868AC" d="M9.625 32.181c-11.029
       15.851-9.656 36.476-1.231 53.32.2.404.41.801.617
       1.198l.394.759.246.437.439.786c.262.461.53.92.804
       1.379l.459.756c.304.491.615.976.933 1.46l.398.614c.439.655.888 1.309 1.352
@@ -109,8 +105,7 @@ technologies:
       </svg>
     name: jQuery
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path fill="#F0DB4F" d="M1.408
+  - icon: <svg viewBox="0 0 128 128"> <path fill="#F0DB4F" d="M1.408
       1.408h125.184v125.185h-125.184z"></path><path fill="#323330" d="M116.347
       96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32
       4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498
@@ -128,8 +123,7 @@ technologies:
       2.07-17.444.06-10.735.001-21.468.001-32.237z"></path> </svg>
     name: JavaScript
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path fill="#83CD29" d="M112.771
+  - icon: <svg viewBox="0 0 128 128"> <path fill="#83CD29" d="M112.771
       30.334l-44.097-25.605c-2.781-1.584-6.402-1.584-9.205 0l-44.568
       25.605c-2.87 1.651-4.901 4.754-4.901 8.073v51.142c0 3.319 2.084 6.423
       4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0
@@ -156,8 +150,7 @@ technologies:
       </svg>
     name: Node.js
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path d="M107.3
+  - icon: <svg viewBox="0 0 128 128"> <path d="M107.3
       45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1
       2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9
       13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6
@@ -196,8 +189,7 @@ technologies:
       </svg>
     name: React
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path fill="#0074BD" d="M47.617 98.12s-4.767
+  - icon: <svg viewBox="0 0 128 128"> <path fill="#0074BD" d="M47.617 98.12s-4.767
       2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873
       3.351-24.439 10.47-55.308-.607-36.115-5.969zM44.629 84.455s-5.348 3.959
       2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132
@@ -222,8 +214,7 @@ technologies:
       3.331z"></path> </svg>
     name: Java
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path fill="#E44D26" d="M19.037
+  - icon: <svg viewBox="0 0 128 128"> <path fill="#E44D26" d="M19.037
       113.876l-10.005-112.215h109.936l-10.016 112.198-45.019
       12.48z"></path><path fill="#F16529" d="M64 116.8l36.378-10.086
       8.559-95.878h-44.937z"></path><path fill="#EBEBEB" d="M64
@@ -235,8 +226,7 @@ technologies:
       24.599v13.762h33.244l.276-3.092.628-6.978.329-3.692z"></path> </svg>
     name: HTML5
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path fill="#0074BD" d="M47.617 98.12s-4.767
+  - icon: <svg viewBox="0 0 128 128"> <path fill="#0074BD" d="M47.617 98.12s-4.767
       2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873
       3.351-24.439 10.47-55.308-.607-36.115-5.969zM44.629 84.455s-5.348 3.959
       2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132
@@ -261,8 +251,7 @@ technologies:
       3.331z"></path> </svg>
     name: MySQL
     section: Application and Data
-  - icon: >-
-      <svg viewBox="0 0 128 128"> <path d="M93.809 92.112c.785-6.533.55-7.492
+  - icon: <svg viewBox="0 0 128 128"> <path d="M93.809 92.112c.785-6.533.55-7.492
       5.416-6.433l1.235.108c3.742.17 8.637-.602 11.513-1.938 6.191-2.873
       9.861-7.668 3.758-6.409-13.924 2.873-14.881-1.842-14.881-1.842
       14.703-21.815 20.849-49.508
@@ -408,4 +397,3 @@ technologies:
     name: PostgreSQL
     section: Application and Data
 ---
-
