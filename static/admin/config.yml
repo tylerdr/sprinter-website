@@ -81,9 +81,9 @@ collections:
           - {label: Blockquotes, name: blockquotes, widget: object, fields: [{label: A, name: a, widget: text, required: false}, {label: B, name: b, widget: text, required: false}, {label: C, name: c, widget: text, required: false}]}
           - {label: Vision Statement, name: visionStatement, widget: text}
           - {label: Mission Statmeent, name: missionStatement, widget: text}
-      - file: "src/pages/services/index.md"
-        label: "Products Page"
-        name: "products"
+      - file: "src/pages/our-services/index.md"
+        label: "Services Page"
+        name: "our-services"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
           - {label: Title, name: title, widget: string}
