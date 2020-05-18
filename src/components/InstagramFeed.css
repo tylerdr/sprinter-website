@@ -5,8 +5,8 @@
 }
 
 .InstagramFeed--EmptyPost {
-  width: calc(100% / 8);
-  padding: calc(50% / 8) 0;
+  /* width: calc(100% / 3); */
+  /* padding: calc(50% / 3) 0; */
   margin: 0;
   position: relative;
   display: flex;
@@ -21,16 +21,16 @@
 
 @media screen and (max-width: 1120px) {
   .InstagramFeed--EmptyPost {
-    width: calc(100% / 4);
-    padding: calc(50% / 4) 0;
+    /* width: calc(100% / 3);
+    padding: calc(50% / 3) 0; */
     height: auto;
   }
 }
 
 @media screen and (max-width: 500px) {
   .InstagramFeed--EmptyPost {
-    width: calc(100% / 2);
-    padding: calc(50% / 2) 0;
+    /* width: calc(100% / 2);
+    padding: calc(50% / 2) 0; */
   }
 
   .InstagramFeed--EmptyPost:nth-child(n + 5) {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import Image from '../components/Image'
+
 
 import './InstagramFeed.css'
 
@@ -77,13 +80,19 @@ export default class InstagramFeed extends Component {
       return this.renderLoadingItems()
     }
     return (
-      <div className="InstagramFeed">
+      <div className="InstagramFeed"
+        sx={{
+          width:"100%",
+          height:"calc(100%/"+this.props.count/2+")",
+        }}
+      >
         {this.state.posts.slice(0, this.props.count).map(post => (
           <Post
             key={post.code}
             src={post.display_src}
             code={post.code}
             caption={post.caption}
+            count={this.props.count}
           />
         ))}
       </div>
@@ -91,13 +100,17 @@ export default class InstagramFeed extends Component {
   }
 }
 
-const Post = ({ src, code }) => (
+const Post = ({ src, code, count }) => (
   <a
     className="InstagramFeed--EmptyPost InstagramFeed--EmptyPost-loaded"
     href={`https://instagram.com/p/${code}`}
     rel="noopener noreferrer"
     target="_blank"
     aria-label="Instagram Post Link"
+    sx={{
+      width: "calc(100%/"+count+")",
+      paddingTop: "calc(100%/"+count+")",
+    }}
   >
     <Image background src={src} lazy alt="instagram image" />
   </a>

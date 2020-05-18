@@ -82,6 +82,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: `eqCkHAFjderam3MgHYnznMtwN4jqkVp7`,
+        trackPage: true,
+      }
+    },
+    {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
