@@ -1,3 +1,6 @@
+[dev]
+  framework = "gatsby"
+
 [build]
   publish = "public"
   command = "npm run build"
@@ -5,3 +8,13 @@
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
+
+# Specific branch context: all deploys from this specific branch will inherit
+# these settings.
+# [context.staging] # 'staging' is a branch name
+#   command = "echo 'staging'"
+#   base = "staging"
+
+# [context.dev] # 'dev' is a branch name
+#   command = "echo 'dev'"
+#   base = "dev"
