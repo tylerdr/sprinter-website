@@ -93,7 +93,7 @@ const Navbar = class extends React.Component {
             <div className="navbar-start has-text-centered" sx={{marginRight: "auto", marginLeft: "auto"}}>
             <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('about') ||
-                this.props.location.pathname.includes('services') ||
+                this.props.location.pathname.includes('our-services') ||
                 this.props.location.pathname.includes('contact') ||
                 this.props.location.pathname.includes('process') ||
                 this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
@@ -105,7 +105,7 @@ const Navbar = class extends React.Component {
                 </Link>
                 <div
                     className={`Nav--Group navbar-item ${
-                        this.state.activeSubNav === 'services' ? 'active' : ''
+                        this.state.activeSubNav === 'our-services' ? 'active' : ''
                       }`}
                     sx={{
                       fontWeight: "body",
@@ -114,17 +114,17 @@ const Navbar = class extends React.Component {
                     >
                   <span
                     className={`Link Nav--GroupParent ${
-                      this.props.location.pathname.includes('services') ||
+                      this.props.location.pathname.includes('our-services') ||
                       this.props.location.pathname.includes('process')
                         ? 'clicked'
                         : ''
                     }`}
-                    onClick={() => this.toggleSubNav('services')}
+                    onClick={() => this.toggleSubNav('our-services')}
                     >
                     Services <ChevronDown/>
                   </span>
                   <div className="Nav--GroupLinks" sx={{backgroundColor: "navbar"}}>
-                    <Link to="/services" className="Nav--GroupLink navbar-item"
+                    <Link to="/our-services" className="Nav--GroupLink navbar-item"
                         sx={{
                         fontWeight: "body",
                         color: "text",
