@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: '                                                                                                                                                                             '
+title: 'Our Process                                     '
 length: 3
 author: Mitchell Pousson II
 date: 2020-04-21T21:37:42.738Z
@@ -12,13 +12,11 @@ tags:
   - business
   - process optimization
 ---
-# Our Process
-
 > Simplicity is the ultimate sophistication. -Leonardo da Vinci
 
 ![Process](/img/alvaro-reyes-qwwphwip31m-unsplash.jpg "Process")
 
-Technology is _**powerful.**_ Technology is also _**complex.**_
+Technology is **_powerful._** Technology is also **_complex._**
 
 **What does that mean for you?**
 
