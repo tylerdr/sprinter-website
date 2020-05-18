@@ -5,119 +5,127 @@ import { Link } from 'gatsby'
 import InstagramFeed from './InstagramFeed'
 import GoogleMap from './GoogleMap'
 import { SocialIcon } from 'react-social-icons';
-import { MapPin, Smartphone, Mail } from 'react-feather'
+import { MapPin, Smartphone, Mail } from 'react-feather';
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <div>
-      <InstagramFeed count="8"
-      sx={{
-        backgroundColor: "primary",
-      }}/>
-      <footer className="footer">
-        <div>
-             <div className="columns is-vcentered" 
-            sx={{
-              marginRight: 4,
-              marginLeft: 4,
-            }}> 
-               <div className="column">
-                 <Link to="/contact" className="tile" sx={{fontSize: 6, margin: 4}}>Say Hello</Link>
-                  <a
-                      className="tile"
-                      sx={{
-                        margin: 4,
-                      }}
-                      href={`https://www.google.com.au/maps/search/${encodeURI(
-                       "9005 Overlook Blvd"
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MapPin 
-                      sx={{
-                      marginRight: 3,
-                      }}
-                      /> 
-                    <p 
+      <div
+        sx={{
+          backgroundColor: "otherbackground",
+        }}>
+        <footer className="footer">
+          <div>
+            <div className="columns is-vcentered"
+              sx={{
+                marginRight: 4,
+                marginLeft: 4,
+              }}>
+              <div className="column">
+                <Link to="/contact" className="tile" sx={{ fontSize: 4, margin: 2 }}>Say Hello</Link>
+                <a
+                  className="tile"
+                  sx={{
+                    margin: 2,
+                  }}
+                  href={`https://www.google.com.au/maps/search/${encodeURI(
+                    "9005 Overlook Blvd"
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span
                     sx={{
+                      whiteSpace: "nowrap",
                       fontSize: 2,
                       fontWeight: "body",
                       fontFamily: "body",
-                    }}>9005 Overlook Blvd
-                    </p>
-                    </a>
-                    <a className="tile"
-                    href={`tel:${"+1-615-957-5603"}`}
-                    sx={{
-                      margin: 4,
                     }}>
-                      <Smartphone 
+                    <MapPin
                       sx={{
-                      marginRight: 3,
+                        marginRight: 3,
                       }}
-                      />
-                      <p
-                      sx={{
-                        fontSize: 2,
-                        fontWeight: "body",
-                        fontFamily: "body",
-                      }}>
-                       +1 (615) 601-0782
-                       </p>
-                    </a>
-                    <a className="tile"
-                    href={`mailto:${"hello@sprinterconsulting.com"}`}
+                    />
+                    9005 Overlook Blvd
+                    </span>
+                </a>
+                <a className="tile"
+                  href={`tel:${"+1-615-957-5603"}`}
+                  sx={{
+                    margin: 2,
+                  }}>
+
+                  <span
                     sx={{
-                      margin: 4,
+                      whiteSpace: "nowrap",
+                      fontSize: 2,
+                      fontWeight: "body",
+                      fontFamily: "body",
                     }}>
-                      <Mail 
+                    <Smartphone
                       sx={{
-                      marginRight: 3,
+                        marginRight: 3,
                       }}
-                        />
-                        <p 
-                        sx={{
-                          fontSize: 2,
-                          fontWeight: "body",
-                          fontFamily: "body",
-                        }}>
-                          hello@sprinterconsulting.com
-                        </p>
-                    </a>
-              </div> 
-               <div className="column is-7"
-              sx={{margin:"auto"}}>
-                <GoogleMap />
-              </div> 
-               <div className="column" sx={{margin:"auto", textAlign: "center"}}>
-               <iframe src="https://sprinter.substack.com/embed" width="270" height="180" frameborder="0" scrolling="no"></iframe> 
-              </div> 
-             </div> 
-            <div className="social-bar has-text-centered" >
-            <SocialIcon url="https://instagram.com/sprinterconsulting/" 
-            sx={{
-              margin: 1,
-            }}/>
-            <SocialIcon url="https://www.linkedin.com/company/sprinterconsulting" 
-            sx={{
-              margin: 1,
-            }}/>
-            <SocialIcon url="https://twitter.com/Sprinter_HQ" 
-            sx={{
-              margin: 1,
-            }}/>
-            <SocialIcon url="https://facebook.com" 
-            sx={{
-              margin: 1,
-            }}/>
+                    />
+                    +1 (615) 601-0782
+                       </span>
+                </a>
+                <a className="tile"
+                  href={`mailto:${"hello@sprinterconsulting.com"}`}
+                  sx={{
+                    margin: 2,
+                  }}>
+                  <span
+                    sx={{
+                      whiteSpace: "nowrap",
+                      fontSize: 2,
+                      fontWeight: "body",
+                      fontFamily: "body",
+                    }}>
+                    <Mail
+                      sx={{
+                        marginRight: 3,
+                      }}
+                    />
+                    hello@sprinterconsulting.com
+                        </span>
+                </a>
+              </div>
+              <div className="column" sx={{ margin: "auto", textAlign: "center" }}>
+                <div className="social-bar has-text-centered"
+                  sx={{
+                    marginBottom: -2
+                  }}
+                >
+                  <SocialIcon url="https://instagram.com/sprinterconsulting/"
+                    sx={{
+                      margin: 1,
+                    }} />
+                  <SocialIcon url="https://www.linkedin.com/company/sprinterconsulting"
+                    sx={{
+                      margin: 1,
+                    }} />
+                  <SocialIcon url="https://twitter.com/Sprinter_HQ"
+                    sx={{
+                      margin: 1,
+                    }} />
+                  <SocialIcon url="https://facebook.com"
+                    sx={{
+                      margin: 1,
+                    }} />
+                </div>
+              </div>
+              <div className="column">
+              <iframe src="https://sprinter.substack.com/embed" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+
+                {/* <InstagramFeed count='3' /> */}
+              </div>
             </div>
             <div className="content has-text-centered">
-            © Copyright {new Date().getFullYear()} All rights reserved.
+              © Copyright {new Date().getFullYear()} All rights reserved.
              </div>
           </div>
-      </footer>
+        </footer>
       </div>
     )
   }
