@@ -1,3 +1,9 @@
+# Run Locally
+https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+Run: 
+`npx netlify-cms-proxy-server`
+`gatsby develop`
+
 # Gatsby + Netlify CMS Starter
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
