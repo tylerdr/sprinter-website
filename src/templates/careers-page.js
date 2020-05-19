@@ -10,7 +10,7 @@ import Content, { HTMLContent } from '../components/Content'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const ProcessPageTemplate = ({
+export const CareersPageTemplate = ({
   title,
   subheading,
   content,
@@ -78,20 +78,20 @@ export const ProcessPageTemplate = ({
   </div>
   )}
 
-ProcessPageTemplate.propTypes = {
+CareersPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
 }
 
-const ProcessPage = ({ data }) => {
+const CareersPage = ({ data }) => {
   console.log(data, "This Data")
   const { frontmatter } = data.markdownRemark
   const { html } = data.markdownRemark
   console.log(html, "HTML")
   return (
     <Layout>
-      <ProcessPageTemplate
+      <CareersPageTemplate
         content = {html}
         contentComponent={HTMLContent}
         title={frontmatter.title}
@@ -101,7 +101,7 @@ const ProcessPage = ({ data }) => {
   )
 }
 
-ProcessPage.propTypes = {
+CareersPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -110,11 +110,11 @@ ProcessPage.propTypes = {
   }),
 }
 
-export default ProcessPage
+export default CareersPage
 
 export const pageQuery = graphql`
-  query ProcessPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "process-page" } }) {
+  query CareersPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "careers-page" } }) {
       html
       frontmatter {
         title

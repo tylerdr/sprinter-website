@@ -95,7 +95,7 @@ const Navbar = class extends React.Component {
                 this.props.location.pathname.includes('about') ||
                 this.props.location.pathname.includes('our-services') ||
                 this.props.location.pathname.includes('contact') ||
-                this.props.location.pathname.includes('process') ||
+                this.props.location.pathname.includes('careers') ||
                 this.props.location.pathname.includes('blog') ? '' : 'clicked' }`}
                 sx={{
                   fontWeight: "body",
@@ -103,7 +103,7 @@ const Navbar = class extends React.Component {
                 }}>
                   Home
                 </Link>
-                <div
+                {/* <div
                     className={`Nav--Group navbar-item ${
                         this.state.activeSubNav === 'our-services' ? 'active' : ''
                       }`}
@@ -146,7 +146,16 @@ const Navbar = class extends React.Component {
                       Benefits    
                     </Link>
                   </div>
-                </div>
+                </div> */}
+              <Link className={`navbar-item on-hover ${
+                this.props.location.pathname.includes('our-services') ? 'clicked' : '' }`}
+               to="/our-services"
+              sx={{
+                fontWeight: "body",
+                color: "text",
+              }}>
+                Services
+              </Link>
               <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('about') ? 'clicked' : '' }`}
                to="/about"

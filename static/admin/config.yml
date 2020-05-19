@@ -57,11 +57,11 @@ collections:
           - {label: Second Call To Action, name: SecondCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}]}  
           - {label: Third Call To Action, name: ThirdCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}]}  
           - {label: Main, name: main, widget: object, fields: [{label: Mission Statement, name: missionStatement, widget: text}, {label: Vision Statement, name: visionStatement, widget: text}, {label: Video, name: video, widget: object, fields: [{label: Video File, name: videoFile, widget: file}, {label: Video Title, name: videoTitle, widget: string}, {label: Poster, name: poster, widget: image}]}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-      - file: "src/pages/process/index.md"
-        label: "Process Page"
-        name: "process"
+      - file: "src/pages/careers/index.md"
+        label: "Careers Page"
+        name: "careers"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "process-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "careers-page"}
           - {label: Title, name: title, widget: string}
           - {label: Subheading, name: subheading, widget: string}
           - {label: Body, name: body, widget: markdown}
