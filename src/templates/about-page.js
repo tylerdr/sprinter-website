@@ -24,7 +24,9 @@ export const AboutPageTemplate = ({
   whatSlide,
   howSlide,
   whySlide,
-  blockquotes  
+  blockquotes,
+  visionStatement,
+  missionStatement  
  }) => {
   const settings = {
     dots: true,
@@ -112,6 +114,20 @@ export const AboutPageTemplate = ({
       <div className="container">
           <div className="columns">
             <div className="column is-full">
+                <div className="about-section is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
+                  sx={{
+                    fontFamily: "body",
+                    fontWeight: "body",
+                  }}>
+                  <div className="columns">
+                    <div className="column">
+                      {visionStatement}
+                    </div>
+                    <div className="column">
+                      {missionStatement}
+                    </div>
+                  </div>
+                </div>
                 <div className="about-section"
                 sx={{
                   marginBottom: 3,
@@ -395,7 +411,9 @@ const AboutPage = ({ data }) => {
         whatSlide={frontmatter.whatSlide}
         howSlide={frontmatter.howSlide}
         whySlide={frontmatter.whySlide}
-        blockquotes={frontmatter.blockquotes}/>
+        blockquotes={frontmatter.blockquotes}
+        visionStatement={frontmatter.visionStatement}
+        missionStatement={frontmatter.missionStatement}/>
     </Layout>
   )
 }
@@ -424,6 +442,8 @@ export const aboutPageQuery = graphql`
               }
             }
           }
+        missionStatement
+        visionStatement
         whatSlide {
               header
               slide1

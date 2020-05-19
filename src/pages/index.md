@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Sprinter Consulting
-image: /img/circuit-board.jpg
+image: /img/home-page-header.jpg
 heading: Sprinter Consulting
 subheading: Delivering Tomorrow's Technology Today
 FirstCallToAction:

@@ -23,7 +23,6 @@ const ServiceRoll = ( { location }) => {
         {services &&
           services.map(({ node: post }) => (
             <div className="column is-6" key={post.id}>
-              <Link to={post.fields.slug}>
                 <article
                   sx={{
                     height: "100%",
@@ -48,7 +47,7 @@ const ServiceRoll = ( { location }) => {
                   ) : null}
                   <p className="post-meta"
                   sx={{maxHeight: "60%", marginTop: "auto", marginBottom: "auto"}}>
-                    <Link
+                    <div
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}
                       sx={{
@@ -58,7 +57,7 @@ const ServiceRoll = ( { location }) => {
                       }}
                     >
                       {post.frontmatter.title}
-                    </Link>
+                    </div>
                     <br></br>
                     <span
                     sx={{
@@ -68,7 +67,7 @@ const ServiceRoll = ( { location }) => {
                     }}>{post.frontmatter.description}</span>
                   </p>
                 </header>
-                <span className="float-right show-on-hover"
+                {/* <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 
                     fontWeight: "body",
@@ -77,9 +76,8 @@ const ServiceRoll = ( { location }) => {
                     textAlign: "end",
                     }}>
                   {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Learn More →</p>}
-                  </span>
+                  </span> */}
               </article>
-              </Link>
             </div>
           ))}
       </div>

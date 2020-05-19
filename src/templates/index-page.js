@@ -15,10 +15,54 @@ export const IndexPageTemplate = ({
   title,
   subheading,
   main,
-  testimonialsFrontmatter
+  FirstCallToAction,
+  SecondCallToAction,
+  ThirdCallToAction
 }) => (
   <div sx={{color:'text'}}>
-    <HomePageHeader/>
+    <div
+      className="full-width-image margin-top-0"
+      sx={{
+        height: "600px",
+        textAlign: "center"
+      }}
+        style={{
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+          backgroundPosition: `bottom`,
+          backgroundAttachment: `fixed`,
+        }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          width: '75%'
+        }}
+      >
+        <h1 
+          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white',
+            lineHeight: '1',
+            padding: '0.25em',
+          }}
+          sx={{
+            fontFamily: "heading",
+            textTransform: "uppercase",
+            fontWeight: "heading",
+          }}
+        >
+          {FirstCallToAction.firstLine}
+        </h1>
+      </div>
+      <button>GO</button>
+    </div>
     <section className="section section--gradient"
       sx={{
         backgroundColor: "background"
@@ -34,7 +78,7 @@ export const IndexPageTemplate = ({
                         textTransform: "uppercase",
                         fontWeight: "heading"
                       }}>
-                        Services
+                        Featured Services
                       </div>
                       <ServiceRoll location={"home"}/>
                 </div>
@@ -118,6 +162,9 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         main={frontmatter.main}
+        FirstCallToAction={frontmatter.FirstCallToAction}
+        SecondCallToAction={frontmatter.SecondCallToAction}
+        ThirdCallToAction={frontmatter.ThirdCallToAction}
       />
     </Layout>
   )
@@ -148,6 +195,18 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        FirstCallToAction {
+          firstLine
+        }
+        SecondCallToAction {
+          firstLine
+          statistic
+        }
+        ThirdCallToAction {
+          firstLine
+          secondLine
+          statistic
         }
         subheading
         main {
