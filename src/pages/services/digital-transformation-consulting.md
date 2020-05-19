@@ -1,11 +1,13 @@
 ---
 templateKey: service-page
 title: Digital Transformation Consulting
-description: >-
-  It is a long established fact that a reader will be distracted by the readable
-  content of a page when looking at its layout. 
+description: >
+  We know digital transformation can be a scary term. That’s why we guide you
+  through the process from start to finish. Recognizing that too much tech can
+  be a bad thing, we strategically implement software solutions based on your
+  current and future needs. 
 featuredpost: true
-featuredimage: /img/blue-mirror.jpg
+featuredimage: /img/noun_software_3344840.svg
 icon: /img/noun_consulting_1276580-1-.svg
 ---
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+\
