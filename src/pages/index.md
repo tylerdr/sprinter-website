@@ -11,11 +11,13 @@ SecondCallToAction:
   firstLine: Anxious about the future?
   statistic: 89% of all companies have already adopted a digital-first business
     strategy or plan to do so.
+  image: /img/business-digital.jpg
 ThirdCallToAction:
   firstLine: Frustrated with outdated systems?
   statistic: CEOs and senior executives say digital transformation risk is their
     top concern in 2019.
   secondLine: Curious about software solutions?
+  image: /img/outdated-system.jpg
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee
