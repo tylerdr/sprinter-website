@@ -1,12 +1,12 @@
 ---
 templateKey: product-page
 title: Our Services
-image: /img/jumbotron.jpg
+image: /img/business-4051773_1920.jpg
 heading: How We Help
 description: We are great...
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/noun-tech-consulting.png
       text: Digital Transformation Consulting
     - image: /img/coffee-gear.png
       text: Custom Software Product Development
