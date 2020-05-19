@@ -17,17 +17,17 @@ class TypeformPopup extends React.Component {
         <ReactTypeformEmbed
           popup
           autoOpen={false}
-          url="https://sprinter.typeform.com/to/wet7z5"
+          url={this.props.url}
           hideHeaders
           hideFooter
           buttonText="Go!"
-          style={{ top: 100 }}
+          style={{ top: 100 , display: 'none'}}
           ref={tf => {
             this.typeformEmbed = tf;
           }}
         />
         <button className="btn" onClick={this.openForm} style={{ cursor: 'pointer' }}>
-          Click to open the popup!
+          Get out there
         </button>
       </div>
     );

@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials'
 import ListAnimation from '../components/ListAnimation'
 import Typing from 'react-typing-animation';
 import HomePageHeader from '../components/HomePageHeader'
+import TypeformPopup from '../components/TypeformPopup'
 export const IndexPageTemplate = ({
   image,
   title,
@@ -60,8 +61,14 @@ export const IndexPageTemplate = ({
         >
           {FirstCallToAction.firstLine}
         </h1>
+        <div>
+      {/* <Link
+      to="/contact">
+      <button>GET OUT THERE</button>
+      </Link> */}
+      <TypeformPopup url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
       </div>
-      <button>GO</button>
+      </div>
     </div>
     <section className="section section--gradient"
       sx={{
@@ -87,27 +94,63 @@ export const IndexPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="section section--gradient margin-top-0">
-    <div className="container">
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "otherbackground"
+      }}>
+      <div className="container" sx={{color: 'text'}}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-                    sx={{
-                    fontFamily: "heading",
-                    textTransform: "uppercase",
-                    fontWeight: "heading",
-                    }}
-                  >
-                  Testimonials
-                  </div>
+                    <div className="columns">
+                      <div className="column"
+                      sx={{
+                        textAlign: "center"
+                      }}>
+                        <div className="is-size-3-mobile is-size-2-tablet is-size-3-widescreen">                        
+                          {SecondCallToAction.firstLine}
+                        </div>
+                        <div className="is-size-4-mobile is-size-3-tablet is-size-4-widescreen">
+                        {SecondCallToAction.statistic}
+                        </div>
+                      </div>
+                </div>
               </div>
             </div>
+          </div>
         </div>
-    </div>
     </section>
-    <section className="margin-top-0 testimonials-holder">
+    <section className="testimonials-holder"
+    sx={{
+      backgroundColor: "otherbackground"
+    }}>
       <Testimonials/>
+    </section>
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "otherbackground"
+      }}>
+      <div className="container" sx={{color: 'text'}}>
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                    <div className="columns">
+                      <div className="column"
+                      sx={{
+                        textAlign: "center"
+                      }}>
+                        <div className="is-size-3-mobile is-size-2-tablet is-size-3-widescreen">                        
+                          {ThirdCallToAction.firstLine}
+                        </div>
+                        <div className="is-size-4-mobile is-size-3-tablet is-size-4-widescreen">
+                        {ThirdCallToAction.statistic}
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </section>
     <section className="section section--gradient"
       sx={{

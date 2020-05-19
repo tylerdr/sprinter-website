@@ -46,7 +46,7 @@ const ServiceRoll = ( { location }) => {
                     </div>
                   ) : null}
                   <p className="post-meta"
-                  sx={{maxHeight: "60%", marginTop: "auto", marginBottom: "auto"}}>
+                  sx={{maxHeight: "60%", margin: "1em"}}>
                     <div
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}
@@ -54,19 +54,21 @@ const ServiceRoll = ( { location }) => {
                         color: "text",
                         fontFamily: "heading",
                         fontWeight: "heading",
+                        textAlign: "center"
                       }}
                     >
                       {post.frontmatter.title}
                     </div>
-                    <br></br>
-                    <span
+                  </p>
+                </header>
+                <div>
+                <span
                     sx={{
                       color: "text",
                       fontFamily:"body",
                       fontWeight:"body"
                     }}>{post.frontmatter.description}</span>
-                  </p>
-                </header>
+                </div>
                 {/* <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 

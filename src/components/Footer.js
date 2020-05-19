@@ -14,17 +14,13 @@ const Footer = class extends React.Component {
         sx={{
           backgroundColor: "otherbackground",
         }}>
-        <footer className="footer">
+        <footer className="footer container">
           <div>
-            <div className="columns is-vcentered"
-              sx={{
-                marginRight: 4,
-                marginLeft: 4,
-              }}>
+            <div className="columns is-vcentered">
               <div className="column">
                 <Link to="/contact" className="tile" sx={{ fontSize: 4, margin: 2 }}>Say Hello</Link>
+                <div className="tile">
                 <a
-                  className="tile"
                   sx={{
                     margin: 2,
                   }}
@@ -49,28 +45,32 @@ const Footer = class extends React.Component {
                     9005 Overlook Blvd
                     </span>
                 </a>
-                <a className="tile"
-                  href={`tel:${"+1-615-957-5603"}`}
-                  sx={{
-                    margin: 2,
-                  }}>
-
-                  <span
+                </div>
+                <div className="tile">
+                  <a
+                    href={`tel:${"+1-615-957-5603"}`}
                     sx={{
-                      whiteSpace: "nowrap",
-                      fontSize: 2,
-                      fontWeight: "body",
-                      fontFamily: "body",
+                      margin: 2,
                     }}>
-                    <Smartphone
+
+                    <span
                       sx={{
-                        marginRight: 3,
-                      }}
-                    />
-                    +1 (615) 601-0782
-                       </span>
-                </a>
-                <a className="tile"
+                        whiteSpace: "nowrap",
+                        fontSize: 2,
+                        fontWeight: "body",
+                        fontFamily: "body",
+                      }}>
+                      <Smartphone
+                        sx={{
+                          marginRight: 3,
+                        }}
+                      />
+                      +1 (615) 601-0782
+                        </span>
+                  </a>
+                </div>
+                <div className="tile">
+                <a
                   href={`mailto:${"hello@sprinterconsulting.com"}`}
                   sx={{
                     margin: 2,
@@ -90,6 +90,7 @@ const Footer = class extends React.Component {
                     hello@sprinterconsulting.com
                         </span>
                 </a>
+                </div>
               </div>
               <div className="column" sx={{ marginTop: "auto", textAlign: "center" }}>
                 <div className="social-bar has-text-centered"
