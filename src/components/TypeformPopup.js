@@ -26,7 +26,7 @@ class TypeformPopup extends React.Component {
             this.typeformEmbed = tf;
           }}
         />
-        <button className="btn" onClick={this.openForm} style={{ cursor: 'pointer' }}>
+        <button className="button" onClick={this.openForm} style={{ cursor: 'pointer' }}>
           Get out there
         </button>
       </div>

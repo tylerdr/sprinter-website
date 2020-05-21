@@ -6,7 +6,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
 import ServiceRoll from '../components/ServiceRoll'
-import Testimonials from '../components/Testimonials'
+import SingleTestimonial from '../components/SingleTestimonial'
+import { Slide } from 'react-slideshow-image';
 import ListAnimation from '../components/ListAnimation'
 import Typing from 'react-typing-animation';
 import HomePageHeader from '../components/HomePageHeader'
@@ -19,7 +20,21 @@ export const IndexPageTemplate = ({
   FirstCallToAction,
   SecondCallToAction,
   ThirdCallToAction
-}) => (
+}) => { 
+  const properties = {
+    // duration: 7000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: true,
+    arrows: true,
+    pauseOnHover: true,
+    autoplay: false,
+    // onChange: (oldIndex, newIndex) => {
+    //   console.log(`slide transition from ${oldIndex} to ${newIndex}`);
+    // }
+  }
+  
+  return (
   <div sx={{color:'text'}}>
     <div
       className="full-width-image margin-top-0"
@@ -108,10 +123,7 @@ export const IndexPageTemplate = ({
                         textAlign: "center"
                       }}>
                         <div className="is-size-3-mobile is-size-2-tablet is-size-3-widescreen">                        
-                          {SecondCallToAction.firstLine}
-                        </div>
-                        <div className="is-size-4-mobile is-size-3-tablet is-size-4-widescreen">
-                        {SecondCallToAction.statistic}
+                          <SingleTestimonial index={0}/>
                         </div>
                       </div>
                 </div>
@@ -124,7 +136,47 @@ export const IndexPageTemplate = ({
     sx={{
       backgroundColor: "otherbackground"
     }}>
-      <Testimonials/>
+        <div className="slide-container">
+        <Slide {...properties}>
+        <div className="each-slide">
+          <div className="full-width-image"
+          style={{
+            backgroundImage: `url(${
+              !!SecondCallToAction.image.childImageSharp ? SecondCallToAction.image.childImageSharp.fluid.src : SecondCallToAction.image
+            })`,
+          }}>
+            <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
+              <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                {SecondCallToAction.firstLine}
+              </div>
+              <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                {SecondCallToAction.statistic}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="each-slide">
+          <div className="full-width-image"
+          style={{
+            backgroundImage: `url(${
+              !!ThirdCallToAction.image.childImageSharp ? ThirdCallToAction.image.childImageSharp.fluid.src : ThirdCallToAction.image
+            })`,
+          }}>
+            <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
+              <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                {ThirdCallToAction.firstLine}
+              </div>
+              <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                {ThirdCallToAction.statistic}
+              </div>
+              <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                {ThirdCallToAction.secondLine}
+              </div>
+            </div>
+          </div>
+        </div>
+        </Slide>
+    </div>
     </section>
     <section className="section section--gradient"
       sx={{
@@ -140,10 +192,7 @@ export const IndexPageTemplate = ({
                         textAlign: "center"
                       }}>
                         <div className="is-size-3-mobile is-size-2-tablet is-size-3-widescreen">                        
-                          {ThirdCallToAction.firstLine}
-                        </div>
-                        <div className="is-size-4-mobile is-size-3-tablet is-size-4-widescreen">
-                        {ThirdCallToAction.statistic}
+                          <SingleTestimonial index={1}/>
                         </div>
                       </div>
                 </div>
@@ -186,7 +235,7 @@ export const IndexPageTemplate = ({
           </div>
     </section>
   </div>
-)
+)}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -245,35 +294,22 @@ export const pageQuery = graphql`
         SecondCallToAction {
           firstLine
           statistic
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         ThirdCallToAction {
           firstLine
           secondLine
           statistic
-        }
-        subheading
-        main {
-          missionStatement
-          visionStatement
-          video {
-            videoFile {
-              publicURL
-            }
-            videoTitle 
-            poster {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image1 {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
