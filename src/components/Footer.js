@@ -6,6 +6,9 @@ import InstagramFeed from './InstagramFeed'
 import GoogleMap from './GoogleMap'
 import { SocialIcon } from 'react-social-icons';
 import { MapPin, Smartphone, Mail } from 'react-feather';
+import { faArrowAltCircleRight, faBorderNone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Footer = class extends React.Component {
   render() {
@@ -14,11 +17,24 @@ const Footer = class extends React.Component {
         sx={{
           backgroundColor: "otherbackground",
         }}>
-        <footer className="footer container">
+        <footer className="footer container"
+        sx={{
+          marginBottom: "2.5em"
+        }}>
           <div>
             <div className="columns is-vcentered">
               <div className="column">
-                <Link to="/contact" className="tile" sx={{ fontSize: 4, margin: 2 }}>Say Hello</Link>
+                <div className="tile">
+                  <Link to="/contact"
+                  sx={{ 
+                    fontSize: 4,
+                    margin: 2,
+                    fontWeight: "body",
+                    fontFamily: "body"
+                    }}>
+                    Say Hello
+                  </Link>
+                </div>
                 <div className="tile">
                 <a
                   sx={{
@@ -127,6 +143,37 @@ const Footer = class extends React.Component {
              </div>
           </div>
         </footer>
+        <div className="foo"
+      sx={{
+        position: "fixed",
+        bottom: "0px",
+        width: "100%",
+        height: "2.5em",
+        backgroundColor: "navbar",
+        zIndex: "10",
+      }}>
+      <div className="ticker-text"
+        sx={{
+          maxWidth: "50%",
+          margin: "auto",
+          textAlign: "center",
+          height: "2.5em",
+          display: "flex",
+          alignItems: "flex-end"
+        }}>
+          <span className="desktop-ticker-text"
+          sx={{
+            width: "100%",
+          }}>Want a question answered immediately? Click the blue chat icon to the right!&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
+          </span>
+          <span className="mobile-ticker-text"
+          sx={{
+            width: "100%",
+            fontSize: "0.8em"
+          }}>Get your questions answered immediately!&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
+          </span>
+      </div>
+      </div>
       </div>
     )
   }

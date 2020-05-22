@@ -131,6 +131,6 @@ visionStatement: >-2
       We envision a world where life, work, and travel are seamlessly intertwined
       through the freeing power of modern technology.
 missionStatement: >
-  
-  Our mission is to unlock human potential by leveraging technology’s power to have the most positive impact.
+  Our mission is to build extraordinary products and design sustainable
+  solutions that bring joy to the experience of getting work done.
 ---

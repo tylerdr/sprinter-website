@@ -2,6 +2,8 @@ import React from 'react'
 import { ReactTypeformEmbed } from 'react-typeform-embed'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class TypeformPopup extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +34,7 @@ class TypeformPopup extends React.Component {
           padding: 3,
           fontSize: 3,
         }}>
-          {this.props.text}
+          {this.props.text}&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
         </div>
       </div>
     );

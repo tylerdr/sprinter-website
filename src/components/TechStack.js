@@ -19,7 +19,7 @@ export default class TechStack extends Component {
                 <Helmet>
                  <script async src='https://cdn1.stackshare.io/javascripts/client-code.js' charset='utf-8'></script>
                 </Helmet>
-                <div className="column is-12 is-12 is-size-4-mobile is-size-4-tablet is-size-3-widescreen">
+                <div className="column is-12 is-size-4-mobile is-size-4-mobile is-size-4-tablet is-size-1-widescreen">
                     <div>
                         <div
                          sx={{
@@ -27,7 +27,7 @@ export default class TechStack extends Component {
                             }}>
                             <span sx={{
                                 fontWeight: "heading",
-                                fontfamily: "heading"
+                                fontFamily: "heading"
                             }}>Technologies We Use</span>
 
                         </div>

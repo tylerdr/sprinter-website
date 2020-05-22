@@ -7,13 +7,9 @@ import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
 import ServiceRoll from '../components/ServiceRoll'
 import SingleTestimonial from '../components/SingleTestimonial'
-import { Slide } from 'react-slideshow-image';
 import { Fade } from 'react-slideshow-image';
-import ListAnimation from '../components/ListAnimation'
-import Typing from 'react-typing-animation';
-import HomePageHeader from '../components/HomePageHeader'
 import TypeformPopup from '../components/TypeformPopup'
-import '../components/Animations.css'
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -72,7 +68,6 @@ export const IndexPageTemplate = ({
           }}
           sx={{
             fontFamily: "heading",
-            textTransform: "uppercase",
             fontWeight: "heading",
           }}
         >
@@ -98,7 +93,7 @@ export const IndexPageTemplate = ({
                       <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        textTransform: "uppercase",
+          
                         fontWeight: "heading"
                       }}>
                         Featured Services
@@ -151,7 +146,7 @@ export const IndexPageTemplate = ({
                 position: "absolute",
                 left: "0px",
                 top: "0px",
-                }} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                }} className="first-tagline is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.firstLine} */}
                 <div>
                 <div>Worried about your company's outdated systems?</div>
@@ -169,16 +164,16 @@ export const IndexPageTemplate = ({
                 padding: 3
                 }} className="columns is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.statistic} */}
+                <div className="column">
+                <img src={ThirdCallToAction.icon.publicURL}/>
+                </div>
                 <div className="column is-7">
                   <div>
                     Curious about a modern solution?
                   </div>
-                  <div sx={{margin: 3}}>
+                  <div sx={{marginTop: 3}}>
                   <TypeformPopup sx={{margin: 3}} text={"Lets Talk"} url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
                   </div>
-                </div>
-                <div className="column">
-                <img src={ThirdCallToAction.icon.publicURL}/>
                 </div>
               </div>
               {/* <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
@@ -239,7 +234,7 @@ export const IndexPageTemplate = ({
                   <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                     sx={{
                     fontFamily: "heading",
-                    textTransform: "uppercase",
+      
                     fontWeight: "heading",
                     }}
                   >
@@ -250,7 +245,7 @@ export const IndexPageTemplate = ({
                     <Link className="button" to="/blog"
                     sx={{
                       fontFamily: "heading",
-                      textTransform: "uppercase",
+        
                     }}
                     >
                       Read more

@@ -106,7 +106,8 @@ export const AboutPageTemplate = ({
             fontFamily: "body",
           }}
         >
-          {subtitle}
+          {/* {subtitle} */}
+          {missionStatement}
         </h3>
       </div>
     </div>
@@ -114,7 +115,7 @@ export const AboutPageTemplate = ({
       <div className="container">
           <div className="columns">
             <div className="column is-full">
-                <div className="about-section is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
+                {/* <div className="about-section is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                   sx={{
                     fontFamily: "body",
                     fontWeight: "body",
@@ -127,7 +128,7 @@ export const AboutPageTemplate = ({
                       {missionStatement}
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="about-section"
                 sx={{
                   marginBottom: 3,
@@ -139,7 +140,6 @@ export const AboutPageTemplate = ({
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                     sx={{
                       fontFamily: "heading",
-                      textTransform: "uppercase",
                       fontWeight: "heading",
                     }}>
                       {whatSlide.header}
@@ -214,7 +214,7 @@ export const AboutPageTemplate = ({
                       <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        textTransform: "uppercase",
+
                         fontWeight: "heading",
                       }}>
                         {howSlide.header}
@@ -275,7 +275,7 @@ export const AboutPageTemplate = ({
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                         sx={{
                           fontFamily: "heading",
-                          textTransform: "uppercase",
+  
                           fontWeight: "heading",
                     }}>
                       {whySlide.header}
@@ -338,7 +338,7 @@ export const AboutPageTemplate = ({
                     <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                       sx={{
                         fontFamily: "heading",
-                        textTransform: "uppercase",
+
                         fontWeight: "heading",
                       }}>
                         {coreValuesTest.mainHeader}

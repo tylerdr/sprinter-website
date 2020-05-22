@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import './all.sass'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 //import icon from 'gatsby-plugin-manifest'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'

@@ -2,18 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import ServiceRoll from '../components/ServiceRoll'
 import TechStack from '../components/TechStack'
-import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import '../components/Accordion.css'
 import { v4 } from 'uuid'
 import '../components/Animations.css'
-import { SlidingHeader } from '../components/SlidingHeader'
 
 
 export const ProductPageTemplate = ({
@@ -61,7 +56,6 @@ export const ProductPageTemplate = ({
           }}
           sx={{
             fontFamily: "heading",
-            textTransform: "uppercase",
             fontWeight: "heading",
           }}
         >
@@ -74,18 +68,18 @@ export const ProductPageTemplate = ({
         <div className="section">
           <div className="columns">
             <div className="column is-7 is-offset-1">
-              <div className="is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+              <div className="is-size-4-mobile is-size-4-tablet is-size-1-widescreen"
               sx={{
                 fontWeight: "heading",
                 fontFamily: "heading"
               }}>{heading}</div>
-              <div
+              {/* <div
                 sx={{
                   fontWeight: "body",
                   fontFamily: "body"
                 }}>
                   {description}
-                </div>
+                </div> */}
             </div>
           </div>
           <div className="columns">
