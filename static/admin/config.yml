@@ -1,7 +1,10 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: dev
 
+local_backend: true
+
+# publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
@@ -34,9 +37,9 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
       - {label: "Icon", name: icon, widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
 
   - name: "pages"
     label: "Pages"
@@ -50,15 +53,16 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
-          - {label: First Call To Action, name: FirstCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}]} 
-          - {label: Second Call To Action, name: SecondCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}]}  
-          - {label: Third Call To Action, name: ThirdCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}]}  
+          - {label: First Call To Action, name: FirstCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}, {label: Icon, name: icon, widget: image, required: false}]} 
+          - {label: Second Call To Action, name: SecondCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}, {label: Icon, name: icon, widget: image, required: false}]}  
+          - {label: Third Call To Action, name: ThirdCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}, {label: Icon, name: icon, widget: image, required: false}]}
+          - {label: Fourth Call To Action, name: FourthCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}]}  
           - {label: Main, name: main, widget: object, fields: [{label: Mission Statement, name: missionStatement, widget: text}, {label: Vision Statement, name: visionStatement, widget: text}, {label: Video, name: video, widget: object, fields: [{label: Video File, name: videoFile, widget: file}, {label: Video Title, name: videoTitle, widget: string}, {label: Poster, name: poster, widget: image}]}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-      - file: "src/pages/process/index.md"
-        label: "Process Page"
-        name: "process"
+      - file: "src/pages/careers/index.md"
+        label: "Careers Page"
+        name: "careers"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "process-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "careers-page"}
           - {label: Title, name: title, widget: string}
           - {label: Subheading, name: subheading, widget: string}
           - {label: Body, name: body, widget: markdown}
@@ -81,9 +85,9 @@ collections:
           - {label: Blockquotes, name: blockquotes, widget: object, fields: [{label: A, name: a, widget: text, required: false}, {label: B, name: b, widget: text, required: false}, {label: C, name: c, widget: text, required: false}]}
           - {label: Vision Statement, name: visionStatement, widget: text}
           - {label: Mission Statmeent, name: missionStatement, widget: text}
-      - file: "src/pages/services/index.md"
-        label: "Products Page"
-        name: "products"
+      - file: "src/pages/our-services/index.md"
+        label: "Services Page"
+        name: "our-services"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
           - {label: Title, name: title, widget: string}
@@ -92,7 +96,7 @@ collections:
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
           - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}, {label: Image, name: image, widget: image}]}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}, {label: Industry, name: industry, widget: string}, {label: Image, name: image, widget: image}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
           - {label: Technologies, name: technologies, widget: list, fields: [{label: Icon, name: icon, widget: string}, {label: name, name: name, widget: string}, {label: Section, name: section, widget: select, options: ["Application and Data", "Utilities", "DevOps"]}]}

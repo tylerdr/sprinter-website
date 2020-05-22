@@ -13,12 +13,14 @@ export const useTestimonialData = () => {
                   testimonials {
                     author
                     quote
+                    industry
                     image {
                       childImageSharp {
                         fluid(maxWidth: 2048, quality: 100) {
                           ...GatsbyImageSharpFluid
                         }
                       }
+                      publicURL
                     }
                   }
                 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ProcessPageTemplate } from '../../templates/process-page'
+import { CareersPageTemplate } from '../../templates/careers-page'
 
-const ProcessPagePreview = ({ entry, getAsset }) => {
+const CareersPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
   if (data) {
     return (
-      <ProcessPageTemplate
+      <CareersPageTemplate
         title={data.title}
         subheading={data.subheading}
       />
@@ -16,11 +16,11 @@ const ProcessPagePreview = ({ entry, getAsset }) => {
   }
 }
 
-ProcessPagePreview.propTypes = {
+CareersPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default ProcessPagePreview
+export default CareersPagePreview

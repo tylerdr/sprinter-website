@@ -19,7 +19,7 @@
 .animation-emphasized-text:hover {
   text-decoration: underline;
 }
-.service-list-item img {  
+/* .service-list-item img {  
   text-transform: uppercase;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -35,7 +35,7 @@
   cursor: pointer;
   animation-name: bounce;
   -moz-animation-name: bounce;
-}
+} */
 
 
 .img-1 {

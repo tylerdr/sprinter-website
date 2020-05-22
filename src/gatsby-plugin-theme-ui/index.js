@@ -15,7 +15,7 @@ export default {
             otherbackground: '#525252',
             primary: '#899db3',
             secondary: '#3072f9',
-            navbar: 'rgba(38, 44, 48, .9)'
+            navbar: 'rgba(38, 44, 48, .9)',
           },
       },
     },
@@ -40,4 +40,5 @@ export default {
   borders: {
     body: "solid 7.5px",
   },
+
 }

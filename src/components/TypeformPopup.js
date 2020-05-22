@@ -1,6 +1,9 @@
 import React from 'react'
 import { ReactTypeformEmbed } from 'react-typeform-embed'
-
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class TypeformPopup extends React.Component {
   constructor(props) {
     super(props);
@@ -17,18 +20,22 @@ class TypeformPopup extends React.Component {
         <ReactTypeformEmbed
           popup
           autoOpen={false}
-          url="https://sprinter.typeform.com/to/wet7z5"
+          url={this.props.url}
           hideHeaders
           hideFooter
           buttonText="Go!"
-          style={{ top: 100 }}
+          style={{ top: 100 , display: 'none'}}
           ref={tf => {
             this.typeformEmbed = tf;
           }}
         />
-        <button className="btn" onClick={this.openForm} style={{ cursor: 'pointer' }}>
-          Click to open the popup!
-        </button>
+        <div className="button typeform-button" onClick={this.openForm} style={{ cursor: 'pointer'}}
+        sx={{
+          padding: 3,
+          fontSize: 3,
+        }}>
+          {this.props.text}&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
+        </div>
       </div>
     );
   }

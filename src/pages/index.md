@@ -1,21 +1,24 @@
 ---
 templateKey: index-page
 title: Sprinter Consulting
-image: /img/circuit-board.jpg
+image: /img/home-page-header.jpg
 heading: Sprinter Consulting
 subheading: Delivering Tomorrow's Technology Today
 FirstCallToAction:
-  firstLine: Explore the world of modern tech today & discover the endless
-    possibilities it has to offer.
+  firstLine: Explore the world of modern tech & discover the endless possibilities
+    it has to offer.
 SecondCallToAction:
   firstLine: Anxious about the future?
   statistic: 89% of all companies have already adopted a digital-first business
     strategy or plan to do so.
+  image: /img/business-digital.jpg
 ThirdCallToAction:
   firstLine: Frustrated with outdated systems?
   statistic: CEOs and senior executives say digital transformation risk is their
     top concern in 2019.
   secondLine: Curious about software solutions?
+  image: /img/outdated-system.jpg
+  icon: /img/noun_light_bulb.svg
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee
