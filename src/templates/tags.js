@@ -7,7 +7,7 @@ import BlogRoll from '../components/BlogRoll'
 class TagRoute extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props, "TAGS PROPS")
+    //console.log(props, "TAGS PROPS")
   }
   render() {
     const posts = this.props.data.allMarkdownRemark.edges

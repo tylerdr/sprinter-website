@@ -13,7 +13,7 @@ export class SlidingHeader extends React.Component {
         }
     }
     getNextState = () => {
-        console.log(this.state)
+        //console.log(this.state)
         if (this.state.activeimgClass === 'img-1') 
           return { activeimgClass: 'img-2', title: 'Product Management' };
         if (this.state.activeimgClass === 'img-2')
@@ -26,8 +26,8 @@ export class SlidingHeader extends React.Component {
             () => this.setState(this.getNextState()), 
             5000,
         )
-        console.log("MOUNTED")
-        console.log(this, "THIS")
+        //console.log("MOUNTED")
+        //console.log(this, "THIS")
     }
 
     componentWillUnmount() {

@@ -101,7 +101,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-console.log(post.html, "POSTHTML")
+//console.log(post.html, "POSTHTML")
   return (
     <Layout>
       <BlogPostTemplate

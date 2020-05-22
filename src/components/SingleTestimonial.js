@@ -10,7 +10,7 @@ import { useTestimonialData } from '../hooks/TestimonialQuery'
 const SingleTestimonial = ({ index }) => {
   let {nodes: testData} =  useTestimonialData()
   let testimonials = testData[0].frontmatter.testimonials
-  console.log(testimonials)
+  //console.log(testimonials)
   return(
     <div sx={{
       textAlign: "center"

@@ -9,7 +9,7 @@ import { jsx } from "theme-ui"
 let colorMode = 'light';
 if (typeof window !== 'undefined' && window.localStorage) {
     colorMode = localStorage.getItem('theme-ui-color-mode') || 'light';
-    console.log(colorMode, "COLOR MODE")
+    //console.log(colorMode, "COLOR MODE")
 }
 export default class TechStack extends Component {
     handleClick = event => event.target.classList.toggle('active')

@@ -17,7 +17,7 @@ const ServiceRoll = ( { location }) => {
       })
       services = featuredServices
     }
-    console.log(services, "EDGES")
+    //console.log(services, "EDGES")
     return (
       <div className="columns is-multiline">
         {services &&

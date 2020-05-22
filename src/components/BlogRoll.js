@@ -10,12 +10,11 @@ const BlogRoll = ( { tag, homepage}) => {
     let { edges: posts } = useBlogRollData()
     if (tag){
       let taggedPosts = []
-      console.log(tag, "THIS TAG")
       posts.forEach((item) => {
         if (item.node.frontmatter.tags.indexOf(tag) > -1) 
           taggedPosts.push(item)
       })
-      console.log(taggedPosts, "TAGGED")
+      // console.log(taggedPosts, "TAGGED")
       posts = taggedPosts
     }
     else if (homepage){

@@ -16,7 +16,7 @@ const ThemeSwitcher = () => {
   const moonTransform = colorMode === "dark" ? "translateY(0)": "translateY(-100px)"
   const color = colorMode === "dark" ? "#FEFCD7": "#FDB813"
   const containerBorder = colorMode === "dark" ?"1px solid #6B8096" : "1px solid #FFF"
-  console.log(nextColorMode)
+  //console.log(nextColorMode)
   return (
     <button 
     className="toggle-mode"

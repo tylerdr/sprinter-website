@@ -85,10 +85,10 @@ CareersPageTemplate.propTypes = {
 }
 
 const CareersPage = ({ data }) => {
-  console.log(data, "This Data")
+  //console.log(data, "This Data")
   const { frontmatter } = data.markdownRemark
   const { html } = data.markdownRemark
-  console.log(html, "HTML")
+  //console.log(html, "HTML")
   return (
     <Layout>
       <CareersPageTemplate

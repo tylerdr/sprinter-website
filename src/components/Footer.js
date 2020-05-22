@@ -143,7 +143,7 @@ const Footer = class extends React.Component {
              </div>
           </div>
         </footer>
-        <div className="foo"
+        {/* <div className="foo"
       sx={{
         position: "fixed",
         bottom: "0px",
@@ -173,7 +173,7 @@ const Footer = class extends React.Component {
           }}>Get your questions answered immediately!&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
           </span>
       </div>
-      </div>
+      </div> */}
       </div>
     )
   }
