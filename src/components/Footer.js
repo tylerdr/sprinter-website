@@ -17,10 +17,7 @@ const Footer = class extends React.Component {
         sx={{
           backgroundColor: "otherbackground",
         }}>
-        <footer className="footer container"
-        sx={{
-          marginBottom: "2.5em"
-        }}>
+        <footer className="footer container">
           <div>
             <div className="columns is-vcentered">
               <div className="column">

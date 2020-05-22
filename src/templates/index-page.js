@@ -183,12 +183,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
         <div className="each-slide">
-          <div className="full-width-image"
-          style={{
-            backgroundImage: `url(${
-              !!SecondCallToAction.image.childImageSharp ? SecondCallToAction.image.childImageSharp.fluid.src : SecondCallToAction.image
-            })`, 
-          }}>
+          <div className="full-width-image">
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {SecondCallToAction.firstLine}
