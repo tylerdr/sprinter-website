@@ -154,7 +154,7 @@ export const IndexPageTemplate = ({
                 }} className="is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.firstLine} */}
                 <div>
-                <div>Worried about your companies outdated systems?</div>
+                <div>Worried about your company's outdated systems?</div>
                 <div sx={{marginTop: 3, marginBottom: 3}}>You're <i>not</i> the only one.</div> 
                 <div>CEOs and senior executives say digital transformation risk is their top concern in 2019.</div>
                 </div>

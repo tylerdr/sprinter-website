@@ -1,6 +1,7 @@
 import React from 'react'
 import { ReactTypeformEmbed } from 'react-typeform-embed'
-
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 class TypeformPopup extends React.Component {
   constructor(props) {
     super(props);
@@ -26,9 +27,13 @@ class TypeformPopup extends React.Component {
             this.typeformEmbed = tf;
           }}
         />
-        <button className="button" onClick={this.openForm} style={{ cursor: 'pointer'}}>
+        <div className="button typeform-button" onClick={this.openForm} style={{ cursor: 'pointer'}}
+        sx={{
+          padding: 3,
+          fontSize: 3,
+        }}>
           {this.props.text}
-        </button>
+        </div>
       </div>
     );
   }
