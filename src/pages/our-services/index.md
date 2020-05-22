@@ -28,17 +28,15 @@ main:
     alt: c
     image: /img/blue-mountains.jpg
 testimonials:
-  - author: Elisabeth Kaurismäki
-    image: /img/oil-gas-testimonial.jpg
-    quote: "I love sprinter :) "
-  - author: Philipp Trommler
-    image: /img/cpmputer-home.jpg
-    quote: Especially Mitch & Zach
-  - author: Egg Drop Soup
+  - author: Author 1
+    image: /img/testimonial_1.svg
+    quote: Testimonial Quote 1
+  - author: Author 2
+    image: /img/testimonial_2.svg
+    quote: Testimonial Quote 2
+  - author: Author 3
     image: /img/blue-mountains.jpg
-    quote: Lorem Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text ever
-      since the 1500s, when an unknown printer took a galley of type and scram
+    quote: Testimonial Quote 3
 full_image: /img/blue-mountains.jpg
 pricing:
   heading: Pay us
