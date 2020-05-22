@@ -5,8 +5,8 @@ image: /img/home-page-header.jpg
 heading: Sprinter Consulting
 subheading: Delivering Tomorrow's Technology Today
 FirstCallToAction:
-  firstLine: Explore the world of modern tech today & discover the endless
-    possibilities it has to offer.
+  firstLine: Explore the world of modern tech & discover the endless possibilities
+    it has to offer.
 SecondCallToAction:
   firstLine: Anxious about the future?
   statistic: 89% of all companies have already adopted a digital-first business
@@ -18,6 +18,7 @@ ThirdCallToAction:
     top concern in 2019.
   secondLine: Curious about software solutions?
   image: /img/outdated-system.jpg
+  icon: /img/noun_light_bulb.svg
 main:
   image1:
     alt: A close-up of a paper filter filled with ground coffee

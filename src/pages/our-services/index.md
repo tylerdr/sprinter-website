@@ -31,12 +31,15 @@ testimonials:
   - author: Author 1
     image: /img/testimonial_1.svg
     quote: Testimonial Quote 1
+    industry: Oil and Gas
   - author: Author 2
     image: /img/testimonial_2.svg
     quote: Testimonial Quote 2
+    industry: Management Consulting
   - author: Author 3
     image: /img/blue-mountains.jpg
     quote: Testimonial Quote 3
+    industry: Industry 3
 full_image: /img/blue-mountains.jpg
 pricing:
   heading: Pay us

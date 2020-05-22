@@ -10,9 +10,28 @@ import { useTestimonialData } from '../hooks/TestimonialQuery'
 const SingleTestimonial = ({ index }) => {
   let {nodes: testData} =  useTestimonialData()
   let testimonials = testData[0].frontmatter.testimonials
+  console.log(testimonials)
   return(
-    <div>
-      {testimonials[index].quote} - {testimonials[index].author}
+    <div sx={{
+      textAlign: "center"
+    }}>
+      <div className="feautured-thumbnail">
+      <img src={testimonials[index].image.publicURL}/>
+      </div>
+      <div className ="is-size-4-mobile is-size-3-tablet is-size-3-widescreen"
+      sx={{
+        marginTop: 3, 
+        marginBottom: 3
+      }}>
+        {testimonials[index].quote}
+      </div>
+      <div className="is-size-5-mobile is-size-5-tablet is-size-5-widescreen">
+      - {testimonials[index].author}
+      </div>
+      <div className="is-size-6-mobile is-size-6-tablet is-size-6-widescreen">
+        Industry: {testimonials[index].industry}
+      </div>
+
     </div>
 )}
 

@@ -30,7 +30,45 @@ export const ProductPageTemplate = ({
 
   return(
 <div sx={{color: "text"}}>
-    <SlidingHeader title={title}/> 
+    {/* <SlidingHeader title={title}/>  */}
+    <div
+      className="full-width-image margin-top-0"
+        style={{
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+          backgroundPosition: `bottom`,
+          backgroundAttachment: `fixed`,
+        }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          width: '75%'
+        }}
+      >
+        <h1 
+          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white',
+            lineHeight: '1',
+            padding: '0.25em',
+          }}
+          sx={{
+            fontFamily: "heading",
+            textTransform: "uppercase",
+            fontWeight: "heading",
+          }}
+        >
+        Our Services
+        </h1>
+      </div>
+    </div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -53,7 +91,7 @@ export const ProductPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <ServiceRoll/>
-              <div className="columns">
+              {/* <div className="columns">
                 <div className="column is-7">
                   <div className="is-size-3"
                     sx={{
@@ -70,8 +108,8 @@ export const ProductPageTemplate = ({
                     {main.description}
                   </div>
                 </div>
-              </div>
-              <div className="tile is-ancestor">
+              </div> */}
+              {/* <div className="tile is-ancestor">
                 <div className="tile is-vertical">
                   <div className="tile">
                     <div className="tile is-parent is-vertical">
@@ -91,8 +129,8 @@ export const ProductPageTemplate = ({
                     </article>
                   </div>
                 </div>
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
               {testimonials.map(testimonial => (
                 <article key={v4()} className="message">
                   <div className="message-body">
@@ -101,8 +139,8 @@ export const ProductPageTemplate = ({
                     <cite> – {testimonial.author}</cite>
                     </div>
                     </article>))}
-                </div>
-              <div
+                </div> */}
+              {/* <div
                 className="full-width-image-container"
                 style={{
                   backgroundImage: `url(${
@@ -111,12 +149,12 @@ export const ProductPageTemplate = ({
                       : fullImage
                   })`,
                 }}
-              />
-              <h2 className="is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+              /> */}
+              {/* <h2 className="is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
-              <Pricing data={pricing.plans} />
+              <Pricing data={pricing.plans} /> */}
               <div>
               <TechStack/>
               </div>
