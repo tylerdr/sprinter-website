@@ -2,9 +2,11 @@ import React from 'react'
 import ChevronDown from 'react-feather/dist/icons/chevron-down'
 import _kebabCase from 'lodash/kebabCase'
 import './Accordion.css'
-import { faBullseye, faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faLongArrowAltRight, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Content, { HTMLContent } from '../components/Content'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 export default class Accordion extends React.Component {
   static defaultProps = {
@@ -39,23 +41,39 @@ export default class Accordion extends React.Component {
         {!!accordArray &&
           accordArray.map((item, index) => (
             <div
+            sx={{
+              boxShadow: "body",
+              margin: 3,
+              backgroundColor: "otherbackground"
+            }}
               className={`Accordion--item `}
               key={`accordion-item-${'-' + index}`}
               onClick={this.handleClick}
             >
-              <div className="flex">
-                <span>{item.header}</span>
-                <FontAwesomeIcon icon={faChevronCircleDown}/>
+              <div className="flex" sx={{margin: 2}}>
+                <span className="is-size-5-mobile is-size-4-tablet is-size-4-widescreen">{item.header}</span>
+                <FontAwesomeIcon className="plus-icon" sx={{color: "secondary"}} icon={faPlus}/>
+                <FontAwesomeIcon className="minus-icon" sx={{color: "secondary"}} icon={faMinus}/>
               </div>
-              <div className="description">
-                <div>
-                <FontAwesomeIcon icon={faBullseye}/>&nbsp;&nbsp;&nbsp;{item.bulletPointOne}
+              <div className="description"
+              sx={{
+                backgroundColor: "background",
+                padding: 4,
+              }}>
+                <div sx={{
+                  margin: 2
+                }}>
+                <FontAwesomeIcon sx={{color: "secondary"}}icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointOne}
                 </div>
-                <div>
-                <FontAwesomeIcon icon={faBullseye}/>&nbsp;&nbsp;&nbsp;{item.bulletPointTwo}
+                <div sx={{
+                  margin: 2
+                }}>
+                <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointTwo}
                 </div>
-                <div>
-                <FontAwesomeIcon icon={faBullseye}/>&nbsp;&nbsp;&nbsp;{item.bulletPointThree}
+                <div sx={{
+                  margin: 2
+                }}>
+                <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointThree}
                 </div>
               </div>
             </div>

@@ -15,15 +15,16 @@
 .Accordion--item {
   position: relative;
   padding: 1rem;
-  background: var(--bg2);
-  margin-bottom: 2rem;
   cursor: pointer;
 }
-
+.Accordion--item:hover  {
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
+} 
 .Accordion--item div {
   cursor: pointer;
   display: block;
-  margin: 0;
   font-size: 1.4rem;
   letter-spacing: 0.02rem;
   pointer-events: none;
@@ -34,23 +35,28 @@
   transition: ease all 0.3s;
 }
 
-.Accordion--item.active .flex svg {
-  transform: rotate(-180deg);
+.Accordion--item.active .flex .plus-icon {
+  display: none
 }
-
+.Accordion--item.active .flex .minus-icon {
+  display: block
+}
+.Accordion--item .flex .plus-icon {
+  display: block
+}
+.Accordion--item .flex .minus-icon {
+  display: none
+}
 .Accordion--item .description {
-  padding-top: 0;
   opacity: 0;
-  transition: ease all 0.8s;
+  transition: all .5s ease-in-out;
   height: 0;
-  visibility: hidden;
   display: none;
 }
 
 .Accordion--item.active .description {
-  padding-top: 2rem;
   opacity: 1;
-  height: 100%;
-  visibility: visible;
+  height: auto;
   display: block;
+  transition: all 2s ease-in-out;
 }

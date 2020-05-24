@@ -88,7 +88,17 @@ export const IndexPageTemplate = ({
       <div className="container" sx={{color: 'text'}}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <Accordion items={approaches} className="Approaches--Acordion"/>
+            <div className="columns is-multiline">
+                    <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+                      sx={{
+                        fontFamily: "heading",
+          
+                        fontWeight: "heading"
+                      }}>
+                        Sprinter's Approach
+                      </div>
+                    <Accordion items={approaches} className="Approaches--Acordion"/>
+                </div>
             </div>
           </div>
         </div>
@@ -101,7 +111,7 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
                     <div className="columns is-multiline">
-                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                       sx={{
                         fontFamily: "heading",
           
@@ -237,7 +247,7 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
                 <div className="columns is-multiline">
-                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                     sx={{
                     fontFamily: "heading",
       
