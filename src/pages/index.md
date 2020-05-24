@@ -4,9 +4,60 @@ title: Sprinter Consulting
 image: /img/home-page-header.jpg
 heading: Sprinter Consulting
 subheading: Delivering Tomorrow's Technology Today
+approaches:
+  approachOne:
+    header: Life in Sprints
+    body: >-
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  approachTwo:
+    header: Compete Against Complexity
+    body: >-
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  approachThree:
+    header: Clarify your Cognition
+    body: >-
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  approachFour:
+    header: Explore with Empathy
+    body: >-
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+
+      * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 FirstCallToAction:
   firstLine: Explore the world of modern tech & discover the endless possibilities
     it has to offer.
+  secondLine: ""
+  statistic: ""
 SecondCallToAction:
   firstLine: Anxious about the future?
   statistic: 89% of all companies have already adopted a digital-first business

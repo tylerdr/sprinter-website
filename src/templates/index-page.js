@@ -9,6 +9,9 @@ import ServiceRoll from '../components/ServiceRoll'
 import SingleTestimonial from '../components/SingleTestimonial'
 import { Fade } from 'react-slideshow-image';
 import TypeformPopup from '../components/TypeformPopup'
+import '../components/Accordion.css'
+import Accordion from '../components/Accordion'
+import ChevronDown from 'react-feather/dist/icons/chevron-down'
 
 export const IndexPageTemplate = ({
   image,
@@ -17,7 +20,8 @@ export const IndexPageTemplate = ({
   main,
   FirstCallToAction,
   SecondCallToAction,
-  ThirdCallToAction
+  ThirdCallToAction,
+  approaches
 }) => { 
   const properties = {
     // duration: 7000,
@@ -31,7 +35,6 @@ export const IndexPageTemplate = ({
     //   console.log(`slide transition from ${oldIndex} to ${newIndex}`);
     // }
   }
-  
   return (
   <div sx={{color:'text'}}>
     <div
@@ -74,14 +77,22 @@ export const IndexPageTemplate = ({
           {FirstCallToAction.firstLine}
         </h1>
         <div>
-      {/* <Link
-      to="/contact">
-      <button>GET OUT THERE</button>
-      </Link> */}
       <TypeformPopup text={"Get Out There"} url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
       </div>
       </div>
     </div>
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "background"
+      }}>
+      <div className="container" sx={{color: 'text'}}>
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <Accordion items={approaches} className="Approaches--Acordion"/>
+            </div>
+          </div>
+        </div>
+    </section>
     <section className="section section--gradient"
       sx={{
         backgroundColor: "background"
@@ -274,6 +285,7 @@ const IndexPage = ({ data }) => {
         FirstCallToAction={frontmatter.FirstCallToAction}
         SecondCallToAction={frontmatter.SecondCallToAction}
         ThirdCallToAction={frontmatter.ThirdCallToAction}
+        approaches={frontmatter.approaches}
       />
     </Layout>
   )
@@ -303,6 +315,32 @@ export const pageQuery = graphql`
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        approaches {
+          approachOne{
+            header
+            bulletPointOne
+            bulletPointTwo
+            bulletPointThree
+          }
+          approachTwo{
+            header
+            bulletPointOne
+            bulletPointTwo
+            bulletPointThree
+          }
+          approachThree{
+            header
+            bulletPointOne
+            bulletPointTwo
+            bulletPointThree
+          }
+          approachFour{
+            header
+            bulletPointOne
+            bulletPointTwo
+            bulletPointThree
           }
         }
         FirstCallToAction {

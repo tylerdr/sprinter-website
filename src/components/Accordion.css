@@ -14,36 +14,34 @@
 
 .Accordion--item {
   position: relative;
-  padding: 3rem;
+  padding: 1rem;
   background: var(--bg2);
   margin-bottom: 2rem;
   cursor: pointer;
 }
 
-.Accordion--item h2 {
+.Accordion--item div {
   cursor: pointer;
   display: block;
   margin: 0;
   font-size: 1.4rem;
-  text-transform: uppercase;
   letter-spacing: 0.02rem;
-  font-weight: bold;
   pointer-events: none;
 }
 
-.Accordion--item svg {
+.Accordion--item .flex svg {
   float: right;
   transition: ease all 0.3s;
 }
 
-.Accordion--item.active svg {
+.Accordion--item.active .flex svg {
   transform: rotate(-180deg);
 }
 
 .Accordion--item .description {
   padding-top: 0;
   opacity: 0;
-  transition: ease all 0.3s;
+  transition: ease all 0.8s;
   height: 0;
   visibility: hidden;
   display: none;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { ReactTypeformEmbed } from 'react-typeform-embed'
+import { Helmet } from "react-helmet"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -31,12 +32,28 @@ class TypeformPopup extends React.Component {
         />
         <div className="button typeform-button" onClick={this.openForm} style={{ cursor: 'pointer'}}
         sx={{
-          padding: 3,
           fontSize: 3,
         }}>
           {this.props.text}&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
         </div>
       </div>
+      // <React.Fragment>
+      //   <Helmet>
+      //   <script src="https://public-assets.typeform.com/confab/embed.js" async></script>
+      //   </Helmet>
+      //   <div className="cui-embed" 
+      //   sx={{
+      //     height: "400px",
+      //     width: "100%",
+      //     position: "absolute",
+      //     zIndex: '10'
+      //     }}
+      //     data-cui-uid="Ruwh1U"
+      //     data-cui-mode="widget"
+      //     data-cui-pill-button-color="#0000FF">
+      //     </div>
+      // </React.Fragment>
+     
     );
   }
 }
