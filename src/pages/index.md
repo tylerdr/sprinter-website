@@ -14,9 +14,14 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointOne: "Working in sprints is not only a collaborative approach to
+      developing amazing software, it's also a lifestyle. "
+    bulletPointTwo: "Each day is a gift that we're determined to use wisely. Whether
+      it's work, rest, or play we make sure that we're intentional with the
+      minutes we have. "
+    bulletPointThree: "Training in sprints allows us to be good stewards of our
+      time. By breaking the big picture down into bite-size pieces, we're able
+      to get more done, so we have more fun. "
   approachTwo:
     header: Compete Against Complexity
     body: >-
@@ -26,9 +31,14 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointOne: "The bad news: life can be messy. The good news: but it doesn't
+      have to be. We are so passionate about technology because of its power to
+      declutter daily routines so we can get the most out of life."
+    bulletPointTwo: "We don't view competing companies as competitors. We view them
+      as our teammates battling against the same opponent: complexity."
+    bulletPointThree: "With the help of modern software, we believe its truly
+      possible to create a world in which the complicated is made simple, so
+      that we can all spend our time focusing on the right things. "
   approachThree:
     header: Clarify your Cognition
     body: >-
@@ -38,9 +48,13 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointOne: "The human brain is pretty amazing. Its also pretty cluttered.
+      That's why we focus on coming up with ways to harness its power by making
+      it easier to hold onto the good ideas while filtering out the bad ones. "
+    bulletPointThree: "More work is not the answer. Our objective is to eliminate
+      busy work so that people can focus on the work that matters. "
+    bulletPointTwo: "In order to optimize insight, we create the right tools to get
+      the right things done. "
   approachFour:
     header: Explore with Empathy
     body: >-
@@ -50,9 +64,15 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-    bulletPointOne: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointTwo: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    bulletPointThree: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    bulletPointOne: >
+      Sprinter is rooted in empathy, this means that every person we do business
+      with knows that they are our priority, and that we will do everything we
+      can to help them achieve their goals.
+    bulletPointTwo: "Great software is useless and unless somebody can use it.
+      That's why we start with the user before designing any sort of product. "
+    bulletPointThree: We strive to help individuals reach their maximum potential by
+      freeing them from monotonous work so that they can focus on the projects
+      they’re passionate about.
 FirstCallToAction:
   firstLine: Explore the world of modern tech & discover the endless possibilities
     it has to offer.
