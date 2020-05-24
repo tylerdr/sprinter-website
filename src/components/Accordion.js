@@ -59,6 +59,8 @@ export default class Accordion extends React.Component {
               sx={{
                 backgroundColor: "background",
                 padding: 4,
+                fontFamily: "body",
+                fontWeight: "body"
               }}>
                 <div sx={{
                   margin: 2

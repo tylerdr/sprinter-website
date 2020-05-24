@@ -21,6 +21,7 @@
   position: relative;
   padding: 1rem;
   cursor: pointer;
+  box-shadow: 0 0.2em 0.4em 0.4em rgba(10, 10, 10, 0.1)
 } 
 .Accordion--item div {
   cursor: pointer;
