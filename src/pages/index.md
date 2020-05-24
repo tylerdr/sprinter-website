@@ -36,7 +36,7 @@ approaches:
       declutter daily routines so we can get the most out of life."
     bulletPointTwo: "We don't view competing companies as competitors. We view them
       as our teammates battling against the same opponent: complexity."
-    bulletPointThree: "With the help of modern software, we believe its truly
+    bulletPointThree: "With the help of modern software, we believe it's truly
       possible to create a world in which the complicated is made simple, so
       that we can all spend our time focusing on the right things. "
   approachThree:
