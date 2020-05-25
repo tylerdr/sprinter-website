@@ -136,7 +136,6 @@ export default class Index extends React.Component {
                           placeholder="Full Name"
                           sx={{
                             width: "10em",
-                            backgroundColor: "otherbackground"
                           }}
                             className="input"
                             type={'text'}
@@ -150,7 +149,6 @@ export default class Index extends React.Component {
                           <input 
                           sx={{
                             width: "15em",
-                            backgroundColor: "otherbackground"
                           }}
                             placeholder="Whatever Interests You"
                             className="input"
@@ -172,7 +170,6 @@ export default class Index extends React.Component {
                           <input
                           sx={{
                             width: "10em",
-                            backgroundColor: "otherbackground"
                           }}
                             placeholder="Email"
                             className="input"
@@ -188,7 +185,6 @@ export default class Index extends React.Component {
                           <input
                           sx={{
                             width: "15em",
-                            backgroundColor: "otherbackground"
                           }}
                             className="input"
                             placeholder="Any Additional Details"

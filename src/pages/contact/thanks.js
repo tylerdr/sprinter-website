@@ -4,7 +4,11 @@ import Layout from '../../components/Layout'
 import { jsx } from "theme-ui"
 export default () => (
   <Layout>
-    <section className="section">
+    <section className="section"
+    sx={{
+      backgroundColor: "background",
+      color: "text"
+    }}>
       <div className="container">
         <div className="content">
           <h3
