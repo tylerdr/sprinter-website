@@ -3,6 +3,8 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 const TagsPage = ({
   data: {
@@ -13,9 +15,17 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <section className="section">
+    <section className="section"
+    sx={{
+      color: "text",
+      backgroundColor: "background",
+      minHeight: "100%"
+    }}>
       <Helmet title={`Tags | ${title}`} />
-      <div className="container content">
+      <div className="container content"
+      sx={{
+        marginTop: 4
+      }}>
         <div className="columns">
           <div
             className="column is-10 is-offset-1"

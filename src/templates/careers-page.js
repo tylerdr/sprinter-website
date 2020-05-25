@@ -18,7 +18,7 @@ export const CareersPageTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
   return(
-  <div sx={{color:'text'}}>
+  <div sx={{color:'text', backgroundColor: 'background'}}>
     <div>
     <div
       className="full-width-image margin-top-0"

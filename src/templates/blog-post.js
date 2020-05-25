@@ -27,17 +27,18 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
 return (
-    <section className="section">
+    <section className="section"
+    sx={{
+      backgroundColor: "background",
+      color: "text"
+    }}>
       {helmet || ''}
       <div className="container content">
         <div className="columns"
         sx={{
           marginTop: 4,
         }}>
-          <div className="column is-10 is-offset-1"
-          sx={{
-            color: "text",
-          }}>
+          <div className="column is-10 is-offset-1">
             <div sx={{
               fontFamily: "heading",
               fontWeight: "heading",
