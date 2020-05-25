@@ -48,7 +48,7 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-    bulletPointOne: "The human brain is pretty amazing. Its also pretty cluttered.
+    bulletPointOne: "The human brain is pretty amazing. It's also pretty cluttered.
       That's why we focus on coming up with ways to harness its power by making
       it easier to hold onto the good ideas while filtering out the bad ones. "
     bulletPointThree: "More work is not the answer. Our objective is to eliminate
