@@ -88,16 +88,15 @@ export const IndexPageTemplate = ({
       <div className="container" sx={{color: 'text'}}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-            <div className="columns is-multiline">
-                    <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+                    <div className="columns is-multiline">
+                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                       sx={{
                         fontFamily: "heading",
-          
                         fontWeight: "heading"
                       }}>
-                        Sprinter's Approach
+                        Featured Services
                       </div>
-                    <Accordion items={approaches} className="Approaches--Acordion"/>
+                      <ServiceRoll location={"home"}/>
                 </div>
             </div>
           </div>
@@ -110,16 +109,15 @@ export const IndexPageTemplate = ({
       <div className="container" sx={{color: 'text'}}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-                    <div className="columns is-multiline">
-                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+            <div className="columns is-multiline">
+                    <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                       sx={{
                         fontFamily: "heading",
-          
                         fontWeight: "heading"
                       }}>
-                        Featured Services
+                        Sprinter's Approach
                       </div>
-                      <ServiceRoll location={"home"}/>
+                      <Accordion items={approaches} className={"columns is-multiline"}/>
                 </div>
             </div>
           </div>
@@ -254,7 +252,7 @@ export const IndexPageTemplate = ({
                     fontWeight: "heading",
                     }}
                   >
-                    Latest stories
+                    Latest Stories
                   </div>
                   <BlogRoll homepage={"homepage"} />
                   <div className="column is-12 has-text-centered">

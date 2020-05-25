@@ -19,7 +19,7 @@ export default class TechStack extends Component {
                 <Helmet>
                  <script async src='https://cdn1.stackshare.io/javascripts/client-code.js' charset='utf-8'></script>
                 </Helmet>
-                <div className="column is-12 is-size-4-mobile is-size-4-mobile is-size-4-tablet is-size-1-widescreen">
+                <div className="column is-12 is-size-4-mobile is-size-4-mobile is-size-4-tablet is-size-2-widescreen">
                     <div>
                         <div
                          sx={{

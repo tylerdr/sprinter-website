@@ -1,7 +1,7 @@
 ---
 templateKey: product-page
 title: Our Services
-image: /img/circuit-board.jpg
+image: /img/geometric-1732847_1920.jpg
 heading: How We Help
 description: We are great...
 intro:

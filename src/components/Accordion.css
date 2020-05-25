@@ -26,8 +26,6 @@
 .Accordion--item div {
   cursor: pointer;
   display: block;
-  font-size: 1.4rem;
-  letter-spacing: 0.02rem;
   pointer-events: none;
 }
 
@@ -36,17 +34,11 @@
   transition: ease all 0.3s;
 }
 
-.Accordion--item.active .flex .plus-icon {
+.Accordion--item.active .flex .plus-icon, .Accordion--item .flex .minus-icon {
   display: none
 }
-.Accordion--item.active .flex .minus-icon {
+.Accordion--item.active .flex .minus-icon, .Accordion--item .flex .plus-icon {
   display: block
-}
-.Accordion--item .flex .plus-icon {
-  display: block
-}
-.Accordion--item .flex .minus-icon {
-  display: none
 }
 .Accordion--item .description {
   opacity: 0;

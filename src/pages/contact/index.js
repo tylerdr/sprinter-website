@@ -91,14 +91,14 @@ export default class Index extends React.Component {
                 </h3>
               </div>
             </div>
-        <section className="section">
+        <section className="section" sx={{backgroundColor: "background", color: "text"}}>
           <div className="container">
             <div className="content"
             sx={{
               marginTop: 2,
               fontSize: 4,
             }}>
-              <div class="columns">
+              <div className="columns">
                 <div className="column">
                 <Helmet>
                   <script src="https://www.google.com/recaptcha/api.js" />

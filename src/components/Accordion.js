@@ -41,12 +41,13 @@ export default class Accordion extends React.Component {
         {!!accordArray &&
           accordArray.map((item, index) => (
             <div
+            className="column is-6">
+            <div
             sx={{
               boxShadow: "body",
-              margin: 3,
-              backgroundColor: "otherbackground"
+              backgroundColor: "otherbackground",
             }}
-              className={`Accordion--item `}
+              className={`Accordion--item`}
               key={`accordion-item-${'-' + index}`}
               onClick={this.handleClick}
             >
@@ -55,7 +56,7 @@ export default class Accordion extends React.Component {
                 <FontAwesomeIcon className="plus-icon" sx={{color: "secondary"}} icon={faPlus}/>
                 <FontAwesomeIcon className="minus-icon" sx={{color: "secondary"}} icon={faMinus}/>
               </div>
-              <div className="description"
+              <div className="description is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
               sx={{
                 backgroundColor: "background",
                 padding: 4,
@@ -78,6 +79,7 @@ export default class Accordion extends React.Component {
                 <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointThree}
                 </div>
               </div>
+            </div>
             </div>
           ))}
       </div>
