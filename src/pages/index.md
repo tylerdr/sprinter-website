@@ -16,9 +16,9 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
     bulletPointOne: "Working in sprints is not only a collaborative approach to
       developing amazing software, it's also a lifestyle. "
-    bulletPointTwo: "Each day is a gift that we're determined to use wisely. Whether
-      it's work, rest, or play we make sure that we're intentional with the
-      minutes we have. "
+    bulletPointTwo: Each day is a gift that we're determined to use wisely. Whether
+      it's work, rest, or play we make sure that we're intentional with the time
+      we're given.
     bulletPointThree: "Training in sprints allows us to be good stewards of our
       time. By breaking the big picture down into bite-size pieces, we're able
       to get more done, so we have more fun. "
@@ -32,8 +32,9 @@ approaches:
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
     bulletPointOne: "The bad news: life can be messy. The good news: but it doesn't
-      have to be. We are so passionate about technology because of its power to
-      declutter daily routines so we can get the most out of life."
+      have to be. We are so passionate about technology because it has allowed
+      us to declutter our daily routines so that we can get the most out of
+      life."
     bulletPointTwo: "We don't view competing companies as competitors. We view them
       as our teammates battling against the same opponent: complexity."
     bulletPointThree: "With the help of modern software, we believe it's truly
@@ -48,13 +49,15 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-    bulletPointOne: "The human brain is pretty amazing. It's also pretty cluttered.
-      That's why we focus on coming up with ways to harness its power by making
-      it easier to hold onto the good ideas while filtering out the bad ones. "
+    bulletPointOne: "The human brain is pretty amazing. It's also pretty
+      complicated. That's why we focus on coming up with ways to harness its
+      power by making it easier to hold onto the good ideas while filtering out
+      the bad ones. "
     bulletPointThree: "More work is not the answer. Our objective is to eliminate
       busy work so that people can focus on the work that matters. "
-    bulletPointTwo: "In order to optimize insight, we create the right tools to get
-      the right things done. "
+    bulletPointTwo: "Like any good carpenter or sculptor will tell you, its all
+      about having the right tools. In order to optimize insight, we find ways
+      that effortlessly work to clarify our cognition. "
   approachFour:
     header: Explore with Empathy
     body: >-
@@ -65,11 +68,11 @@ approaches:
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
     bulletPointOne: >
-      Sprinter is rooted in empathy, this means that every person we do business
+      Sprinter is rooted in empathy. This means that every person we do business
       with knows that they are our priority, and that we will do everything we
       can to help them achieve their goals.
-    bulletPointTwo: "Great software is useless and unless somebody can use it.
-      That's why we start with the user before designing any sort of product. "
+    bulletPointTwo: "Great software is useless unless somebody can use it. That's
+      why we start with the user before designing any sort of product. "
     bulletPointThree: We strive to help individuals reach their maximum potential by
       freeing them from monotonous work so that they can focus on the projects
       they’re passionate about.
