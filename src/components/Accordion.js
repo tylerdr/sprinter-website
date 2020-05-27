@@ -51,10 +51,10 @@ export default class Accordion extends React.Component {
               key={`accordion-item-${'-' + index}`}
               onClick={this.handleClick}
             >
-              <div className="flex" sx={{margin: 2}}>
-                <span className="is-size-5-mobile is-size-4-tablet is-size-4-widescreen">{item.header}</span>
-                <FontAwesomeIcon className="plus-icon" sx={{color: "secondary"}} icon={faPlus}/>
-                <FontAwesomeIcon className="minus-icon" sx={{color: "secondary"}} icon={faMinus}/>
+              <div className="flex" sx={{margin: 2, display: "flex", alignItems: "center"}}>
+                <div sx={{width: "97%"}}className="is-size-5-mobile is-size-4-tablet is-size-4-widescreen">{item.header}</div>
+                <div><FontAwesomeIcon className="plus-icon" sx={{color: "secondary"}} icon={faPlus}/></div>
+                <div><FontAwesomeIcon className="minus-icon" sx={{color: "secondary"}} icon={faMinus}/></div>
               </div>
               <div className="description is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
               sx={{
@@ -63,20 +63,49 @@ export default class Accordion extends React.Component {
                 fontFamily: "body",
                 fontWeight: "body"
               }}>
-                <div sx={{
+                <div
+                sx={{
                   margin: 2
                 }}>
-                <FontAwesomeIcon sx={{color: "secondary"}}icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointOne}
+                  <div>
+                    <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;<span sx={{fontWeight: "bold"}}>{item.bulletPointOne}</span>
+                  </div>
+                  <div
+                  sx={{
+                    fontSize: 2
+                  }}>
+                    {item.bulletPointOneBody}
+                  </div>
                 </div>
-                <div sx={{
+                <div
+                sx={{
                   margin: 2
-                }}>
-                <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointTwo}
+                }}
+                >
+                  <div>
+                    <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;<span sx={{fontWeight: "bold"}}>{item.bulletPointTwo}</span>
+                  </div>
+                  <div
+                  sx={{
+                    fontSize: 2
+                  }}
+                  >
+                    {item.bulletPointTwoBody}
+                  </div>
                 </div>
-                <div sx={{
+                <div
+                sx={{
                   margin: 2
                 }}>
-                <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;{item.bulletPointThree}
+                  <div>
+                    <FontAwesomeIcon sx={{color: "secondary"}} icon={faLongArrowAltRight}/>&nbsp;&nbsp;&nbsp;<span sx={{fontWeight: "bold"}}>{item.bulletPointThree}</span>
+                  </div>
+                  <div
+                  sx={{
+                    fontSize: 2
+                  }}>
+                    {item.bulletPointThreeBody}
+                  </div>
                 </div>
               </div>
             </div>

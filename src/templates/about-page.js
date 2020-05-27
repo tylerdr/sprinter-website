@@ -88,7 +88,6 @@ export const AboutPageTemplate = ({
           }}
           sx={{
             fontFamily: "heading",
-            textTransform: "uppercase",
             fontWeight: "heading",
           }}
         >

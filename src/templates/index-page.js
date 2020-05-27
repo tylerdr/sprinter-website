@@ -12,6 +12,7 @@ import TypeformPopup from '../components/TypeformPopup'
 import '../components/Accordion.css'
 import Accordion from '../components/Accordion'
 import ChevronDown from 'react-feather/dist/icons/chevron-down'
+import BackgroundVideo from '../components/BackgroundVideo'
 
 export const IndexPageTemplate = ({
   image,
@@ -151,12 +152,11 @@ export const IndexPageTemplate = ({
         <div className="slide-container">
         <Fade {...properties}>
         <div className="each-slide">
-          <div className="full-width-image"
-          style={{
-            backgroundImage: `url(${
-              !!ThirdCallToAction.image.childImageSharp ? ThirdCallToAction.image.childImageSharp.fluid.src : ThirdCallToAction.image
-            })`,
-          }}>
+          <div className="full-width-image">
+            <BackgroundVideo sx={{width: "100vw"}} videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                    {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
+                    {console.log(main.video)}
+              </BackgroundVideo> 
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{
                 backgroundColor: "rgba(38, 44, 48, .75)",
@@ -325,29 +325,55 @@ export const pageQuery = graphql`
             }
           }
         }
+        main {
+          video {
+            videoTitle
+            poster {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            videoFile {
+              publicURL
+            }
+          }
+        }
         approaches {
           approachOne{
             header
             bulletPointOne
+            bulletPointOneBody
             bulletPointTwo
+            bulletPointTwoBody
             bulletPointThree
+            bulletPointThreeBody
           }
           approachTwo{
             header
             bulletPointOne
+            bulletPointOneBody
             bulletPointTwo
+            bulletPointTwoBody
             bulletPointThree
+            bulletPointThreeBody
           }
           approachThree{
             header
             bulletPointOne
+            bulletPointOneBody
             bulletPointTwo
+            bulletPointTwoBody
             bulletPointThree
+            bulletPointThreeBody
           }
           approachFour{
             header
             bulletPointOne
+            bulletPointOneBody
             bulletPointTwo
+            bulletPointTwoBody
             bulletPointThree
           }
         }

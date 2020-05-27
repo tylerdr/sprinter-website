@@ -25,7 +25,6 @@
 } 
 .Accordion--item div {
   cursor: pointer;
-  display: block;
   pointer-events: none;
 }
 
