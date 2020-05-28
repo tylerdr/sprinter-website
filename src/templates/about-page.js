@@ -3,6 +3,7 @@ import React from 'react'
 import { jsx } from "theme-ui"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -58,6 +59,7 @@ export const AboutPageTemplate = ({
   const ValueContent = contentComponent || Content
   return (
     <div sx={{color: "text", backgroundColor: "background"}} className="about-page">
+    <SEO title={title} description={missionStatement}/>
     <div
       className="full-width-image margin-top-0"
         style={{

@@ -37,7 +37,7 @@ export default class TechStack extends Component {
                             overflowY: "scroll",
                             padding: 3
                         }}>
-                        <a frameborder="0"data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/f2bf411874c7dca75be20ffdbd6446"/>
+                        <a frameBorder="0"data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/f2bf411874c7dca75be20ffdbd6446"/>
                         </div>
                     </div>
                 {/* </div> */}

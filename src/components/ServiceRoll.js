@@ -45,7 +45,7 @@ const ServiceRoll = ( { location }) => {
                       /> */}
                     </div>
                   ) : null}
-                  <p className="post-meta"
+                  <div className="post-meta"
                   sx={{maxHeight: "60%", margin: "1em"}}>
                     <div
                       className="is-size-4 show-on-hover"
@@ -59,7 +59,7 @@ const ServiceRoll = ( { location }) => {
                     >
                       {post.frontmatter.title}
                     </div>
-                  </p>
+                  </div>
                 </header>
                 <div>
                 <span

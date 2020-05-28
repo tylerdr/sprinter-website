@@ -53,8 +53,8 @@ const BlogRoll = ( { tag, homepage}) => {
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
-                    <Link
+                  <div className="post-meta">
+                    <div
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}
                       sx={{
@@ -64,7 +64,7 @@ const BlogRoll = ( { tag, homepage}) => {
                       }}
                     >
                       {post.frontmatter.title}
-                    </Link>
+                    </div>
                     <span></span>
                     <span className="is-size-5 is-block"
                     sx={{
@@ -82,9 +82,9 @@ const BlogRoll = ( { tag, homepage}) => {
                     }}>
                       {!!post.frontmatter.podcast ? <p>{post.frontmatter.timeToConsume} min listen</p> : <p>{post.frontmatter.timeToConsume} min read</p>}
                     </span>
-                  </p>
+                  </div>
                 </header>
-                <p
+                <div
                 sx={{
                   fontFamily:"body",
                   fontWeight:"body"
@@ -92,7 +92,7 @@ const BlogRoll = ( { tag, homepage}) => {
                   {post.excerpt}
                   <br />
                   <br />
-                </p>
+                </div>
                 <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 

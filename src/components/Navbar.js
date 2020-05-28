@@ -100,7 +100,8 @@ const Navbar = class extends React.Component {
                 sx={{
                   fontWeight: "body",
                   color: "text",
-                }}>
+                }}
+                to="/">
                   Home
                 </Link>
                 {/* <div

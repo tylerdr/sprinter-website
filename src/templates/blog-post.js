@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import SEO from '../components/seo'
 import Content, { HTMLContent } from '../components/Content'
 import ReactPlayer from 'react-player'
 /** @jsx jsx */
@@ -32,7 +33,7 @@ return (
       backgroundColor: "background",
       color: "text"
     }}>
-      {helmet || ''}
+      <SEO title={title} description={description}/>
       <div className="container content">
         <div className="columns"
         sx={{
@@ -60,11 +61,11 @@ return (
               <PreviewCompatibleImage imageInfo={featuredimage}/>
             </div>
             {podcast && (
-              <div>
+              <div sx={{maxWidth: "75%", margin: "auto"}}>
                 <ReactPlayer 
                 url={podcast.podcastLink.publicURL} 
-                playing='true' 
-                controls='true'
+                playing={true} 
+                controls={true}
                 height='20px'
                 width='100%'
                 sx={{
@@ -79,7 +80,9 @@ return (
               fontFamily: "body",
               fontWeight: "body",
               fontSize: 3,
-              marginTop: 4
+              margin: "auto",
+              marginTop: 4,
+              maxWidth: "75%"
             }}/>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>

@@ -376,6 +376,7 @@ export const pageQuery = graphql`
             bulletPointTwo
             bulletPointTwoBody
             bulletPointThree
+            bulletPointThreeBody
           }
         }
         FirstCallToAction {

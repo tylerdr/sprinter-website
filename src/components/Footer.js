@@ -131,7 +131,7 @@ const Footer = class extends React.Component {
                 </div>
               </div>
               <div className="column">
-              <iframe src="https://sprinter.substack.com/embed" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+              <iframe src="https://sprinter.substack.com/embed" width="100%" height="100%" frameBorder="0" scrolling="no"></iframe>
 
                 {/* <InstagramFeed count='3' /> */}
               </div>

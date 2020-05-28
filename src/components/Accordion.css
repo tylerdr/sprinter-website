@@ -28,18 +28,54 @@
   pointer-events: none;
 }
 
+.Accordion--item.active .flex svg {
+  float: right;
+  transform: rotate(-180deg);
+  transition: ease all 0.3s;
+}
 .Accordion--item .flex svg {
   float: right;
   transition: ease all 0.3s;
 }
-
-.Accordion--item.active .flex .plus-icon, .Accordion--item .flex .minus-icon {
+/* .Accordion--item.active .flex .plus-icon, .Accordion--item .flex .minus-icon {
   display: none
 }
 .Accordion--item.active .flex .minus-icon, .Accordion--item .flex .plus-icon {
   display: block
+} */
+
+
+.Accordion--item.active .Accordion--item__inner{
+  max-height: 100rem;
+  transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition-duration: 0.5s;
+  transition-property: 100rem;
 }
-.Accordion--item .description {
+.Accordion--item.active .Accordion--item__content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.Accordion--item__inner {
+  max-height: 0;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  z-index: 1;
+  position: relative;
+}
+.Accordion--item__content {
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition-timing-function: linear, ease;
+  transition-duration: 0.1s;
+  transition-delay: 0.5s;
+  padding: 0 1.2rem 1.2rem;
+}
+
+/* .Accordion--item .description {
   opacity: 0;
   transition: all .5s ease-in-out;
   height: 0;
@@ -51,4 +87,4 @@
   height: auto;
   display: block;
   transition: all 2s ease-in-out;
-}
+} */
