@@ -41,7 +41,8 @@ export const IndexPageTemplate = ({
     <div
       className="full-width-image margin-top-0"
       sx={{
-        height: "600px",
+        minHeight: "500px",
+        height: "90vh",
         textAlign: "center"
       }}
         style={{

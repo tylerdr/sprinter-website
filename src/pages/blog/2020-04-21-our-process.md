@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: "Our Process                                     "
-length: 3
 author: Mitchell Pousson II
+timeToConsume: 3
 date: 2020-04-21T21:37:42.738Z
 description: "How we help you get from where you are to where you could be. "
 featuredpost: true
@@ -12,8 +12,6 @@ tags:
   - business
   - process optimization
 ---
-![Process](/img/business-4051773_1920.jpg "Process")
-
 "Simplicity is the ultimate sophistication." -Leonardo da Vinci
 
 Technology is ***powerful.*** Technology is also ***complex.***

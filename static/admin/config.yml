@@ -17,13 +17,13 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Length", name: "length", widget: "number"}
-      - {label: "Author", name: "author", widget: "text"}
+      - {label: "Author", name: "author", widget: "string", required: false}
+      - {label: "Time to Consume", name: "timeToConsume", widget: "number", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
       - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Podcast", name: "podcast", widget: object, fields: [{label: Podcast Link, name: podcastLink, widget: file, required: false}, {label: Podcast Title, name: podcastTitle, widget: text, required: false}]}
 

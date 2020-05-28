@@ -80,7 +80,7 @@ const BlogRoll = ( { tag, homepage}) => {
                       fontFamily:"body",
                       fontWeight:"body"
                     }}>
-                      {!!post.frontmatter.podcast ? <p>{post.frontmatter.length} min</p> : <p>{post.frontmatter.length} min read</p>}
+                      {!!post.frontmatter.podcast ? <p>{post.frontmatter.timeToConsume} min listen</p> : <p>{post.frontmatter.timeToConsume} min read</p>}
                     </span>
                   </p>
                 </header>

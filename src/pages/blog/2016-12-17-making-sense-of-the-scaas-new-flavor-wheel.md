@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: Who We Are
-length: 2
 author: Mitchell Pousson II
+timeToConsume: 2
 date: 2019-11-10T05:00:00.000Z
 description: The Sprinter Consulting Story
 featuredpost: false
@@ -11,8 +11,6 @@ tags:
   - blog
   - article
 ---
-![flavor wheel](/img/map-and-money.jpg)
-
 # **Chapter 1:**
 
 Like many eager college graduates, our CEO quickly landed a corporate job but shortly after became disenfranchised with the mundane and tedious work. Out of his frustrations with dated processes, insufficient software, and unreasonable hours, he quit his day job in order to pursue technology consulting.

@@ -20,7 +20,7 @@ export const useBlogRollData = () => {
                     tags
                     templateKey
                     author
-                    length
+                    timeToConsume
                     date(formatString: "MMMM DD, YYYY")
                     podcast {
                       podcastLink {

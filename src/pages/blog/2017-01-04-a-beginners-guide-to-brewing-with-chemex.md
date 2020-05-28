@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: What is Design-Thinking?
-length: 3
 author: Mitchell Pousson II
+timeToConsume: 3
 date: 2019-11-10T05:00:00.000Z
 description: >
   "Design thinking is a creative problem-solving and opportunity finding mindset
@@ -15,8 +15,6 @@ tags:
   - blogs
   - articles
 ---
-![chemex](/img/computers1.jpg)
-
 # Design thinking provides guiding principles, not a process.
 
 The end result is a platypus, an uncommon mix of different species. Because empathy builds the bridges of insight, a design thinking approach creates an enhanced level of collaboration between the creators and consumers. 
@@ -56,7 +54,6 @@ We can use our empathy and understanding of people to design experiences that cr
 # S.P.A.R.C
 
 See-->Plan-->Act-->Refine-->Communicate
-
 
 For an idea to become an experience, it must be implemented with the same rhythm of cognition in which it was conceived
 
