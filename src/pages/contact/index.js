@@ -165,7 +165,7 @@ export default class Index extends React.Component {
                             <option>I want to know more about working from anywhere</option>
                             <option>Just want to say hello</option> */}
                           </input>
-                          &nbsp;.&nbsp;
+                          &nbsp;in regards to services that you guys offer.
                         You can reach me at&nbsp;
                           <input
                           sx={{
@@ -179,8 +179,8 @@ export default class Index extends React.Component {
                             id={'email'}
                             required={true}
                           />
-                          &nbsp;.&nbsp;
-                          I would also like to add
+                          &nbsp; with more information or any further questions.
+                          {/* I would also like to add
                           &nbsp;
                           <input
                           sx={{
@@ -193,7 +193,7 @@ export default class Index extends React.Component {
                             id={'message'}
                             required={false}
                           />
-                          &nbsp;.&nbsp;
+                          &nbsp;.&nbsp; */}
                       </p>
                       {/* <div className="field newsletter control">
                           <input
