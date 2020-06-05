@@ -148,24 +148,25 @@ export const IndexPageTemplate = ({
     </section>
     <section className="testimonials-holder"
     sx={{
-      backgroundColor: "otherbackground"
+      backgroundColor: "background"
     }}>
         <div className="slide-container">
         <Fade {...properties}>
         <div className="each-slide">
           <div className="full-width-image">
-            <BackgroundVideo sx={{width: "100vw"}} videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+            {/* <BackgroundVideo sx={{width: "100vw"}} videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
                     {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     {console.log(main.video)}
-              </BackgroundVideo> 
+              </BackgroundVideo>  */}
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{
                 backgroundColor: "rgba(38, 44, 48, .75)",
                 maxWidth: "30%",
                 padding: 3,
                 position: "absolute",
-                left: "0px",
-                top: "0px",
+                left: "15px",
+                top: "15px",
+                borderRadius: "10px"
                 }} className="first-tagline is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.firstLine} */}
                 <div>
@@ -179,9 +180,10 @@ export const IndexPageTemplate = ({
                 position: "absolute",
                 maxWidth: "50%",
                 backgroundColor: "rgba(38, 44, 48, .75)",
-                right: "0px",
-                bottom: "0px",
-                padding: 3
+                right: "30px",
+                bottom: "30px",
+                padding: 3,
+                borderRadius: "10px"
                 }} className="columns is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.statistic} */}
                 <div className="column">

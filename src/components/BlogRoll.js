@@ -50,6 +50,7 @@ const BlogRoll = ( { tag, homepage}) => {
                           image: post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.title}`,
                         }}
+                        location={"blogRoll"}
                       />
                     </div>
                   ) : null}
