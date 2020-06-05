@@ -65,11 +65,9 @@ approaches:
     bulletPointTwoBody: Like any good carpenter or sculptor will tell you, it’s all
       about having the right tools. In order to optimize insight, we find ways
       that effortlessly work to clarify our cognition.
-    bulletPointThreeBody: >-
+    bulletPointThreeBody: >
       More work is not the answer. Our objective is to eliminate busy work so
       that people can focus on the work that matters.
-
-      Explore with Empathy
   approachFour:
     header: Explore with Empathy
     body: >-
