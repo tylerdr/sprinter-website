@@ -72,7 +72,7 @@ export const AboutPageTemplate = ({
             height: "50vh",
           }}>
             <Iframe
-            url="http://www.tylerdreher.com"
+            url="https://www.tylerdreher.com"
             sx={{
               height: "100%",
               width: "100%",
@@ -86,7 +86,7 @@ export const AboutPageTemplate = ({
               height: "50vh",
             }}>
             <Iframe
-            url="http://www.zachslessman.com"
+            url="https://www.zachslessman.com"
             sx={{
               height: "100%",
               width: "100%",
@@ -100,7 +100,7 @@ export const AboutPageTemplate = ({
               height: "50vh",
             }}>
             <Iframe
-            url="http://www.mitchellpousson.com"
+            url="https://www.mitchellpousson.com"
             sx={{
               height: "100%",
               width: "100%",
@@ -114,7 +114,7 @@ export const AboutPageTemplate = ({
               height: "50vh",
             }}>
             <Iframe
-            url="http://www.zachslessman.com"
+            url="https://www.zachslessman.com"
             sx={{
               height: "100%",
               width: "100%",
