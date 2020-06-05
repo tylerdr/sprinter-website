@@ -8,6 +8,6 @@ description: >
   current and future needs. 
 featuredpost: true
 featuredimage: /img/noun_software_3344840.svg
-icon: /img/noun_consulting_1276580-1-.svg
+icon: /img/noun-consulting.svg
 ---
 \

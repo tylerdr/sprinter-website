@@ -3,6 +3,7 @@ import React from 'react'
 import { jsx } from "theme-ui"
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll'
+import BackgroundVideo from '../../components/BackgroundVideo'
 
 export default class BlogIndexPage extends React.Component {
   render() {
@@ -14,16 +15,17 @@ export default class BlogIndexPage extends React.Component {
           }}
           >
           <div
-            className="full-width-image-container margin-top-0"
-            style={{
-              backgroundImage: `url('/img/blog_header.png')`,
-              alignItems: 'left',
-              backgroundPosition: `bottom`,
-              backgroundAttachment: `fixed`,
+            className="full-width-image"
+            sx={{
+              overflow: "hidden"
             }}
           >
-          <div
+            <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo" poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                  <source src="/img/compressedwritingvideo.mp4" type="video/mp4" />
+            </BackgroundVideo> 
+          {/* <div
           style={{
+            position: 'absolute',
             display: 'flex',
             height: '150px',
             lineHeight: '1',
@@ -46,7 +48,7 @@ export default class BlogIndexPage extends React.Component {
             >
               Latest Stories
             </h1>
-          </div>
+          </div> */}
           </div>
           <section className="section">
             <div className="container">

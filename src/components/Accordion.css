@@ -16,6 +16,8 @@
   position: relative;
   padding: 1rem;
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 .Accordion--item:hover  {
   position: relative;

@@ -6,6 +6,8 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import './Animations.css'
 import { useServiceRollData } from '../hooks/ServiceRollQuery'
+import { Samy, SvgProxy } from 'react-samy-svg';
+
 const ServiceRoll = ( { location }) => {
     let { edges: services } = useServiceRollData()
     if (location){
@@ -26,7 +28,7 @@ const ServiceRoll = ( { location }) => {
                 <article
                   sx={{
                     height: "100%",
-                    backgroundColor: "otherbackground",
+                    backgroundColor: "floatingCard",
                     color: "text"
                   }}
                   className={`service-list-item tile is-child box  ${
@@ -36,13 +38,9 @@ const ServiceRoll = ( { location }) => {
                 <header>
                   {post.frontmatter.icon ? (
                     <div className="featured-thumbnail">
-                      <img src={post.frontmatter.icon.publicURL}/>
-                      {/* <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.icon,
-                          alt: `featured image thumbnail for post ${post.title}`,
-                        }}
-                      /> */}
+                      <Samy path={post.frontmatter.icon.publicURL}>
+                        <SvgProxy fill="#000" />
+                      </Samy>
                     </div>
                   ) : null}
                   <div className="post-meta"

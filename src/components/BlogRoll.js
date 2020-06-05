@@ -34,7 +34,7 @@ const BlogRoll = ( { tag, homepage}) => {
                 <article
                   sx={{
                     height: "100%",
-                    backgroundColor: "otherbackground",
+                    backgroundColor: "floatingCard",
                     color: "text",
                     transition: "0.3s",
                   }}

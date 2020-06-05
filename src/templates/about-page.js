@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled, { withTheme } from 'styled-components'
+import Iframe from 'react-iframe'
 
 
 export const AboutPageTemplate = ({ 
@@ -60,58 +61,71 @@ export const AboutPageTemplate = ({
   return (
     <div sx={{color: "text", backgroundColor: "background"}} className="about-page">
     <SEO title={title} description={missionStatement}/>
-    <div
-      className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            !!headerImage.childImageSharp ? headerImage.childImageSharp.fluid.src : headerImage
-          })`,
-          backgroundPosition: `bottom`,
-          backgroundAttachment: `fixed`,
-        }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-          width: '75%'
-        }}
-      >
-        <h1 
-          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
+    <section className="section section--gradient"
+    sx={{
+      paddingTop: "5rem"
+    }}>
+      <div className="container">
+        <div className="columns">
+          <div className="column"
           sx={{
-            fontFamily: "heading",
-            fontWeight: "heading",
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
-          style={{
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-          sx={{
-            fontWeight: "body",
-            fontFamily: "body",
-          }}
-        >
-          {/* {subtitle} */}
-          {missionStatement}
-        </h3>
+            height: "50vh",
+          }}>
+            <Iframe
+            url="http://www.tylerdreher.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+          <div className="column"
+            sx={{
+              height: "50vh",
+            }}>
+            <Iframe
+            url="http://www.zachslessman.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+          <div className="column"
+            sx={{
+              height: "50vh",
+            }}>
+            <Iframe
+            url="http://www.mitchellpousson.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+          <div className="column"
+            sx={{
+              height: "50vh",
+            }}>
+            <Iframe
+            url="http://www.zachslessman.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
     <section className="section section--gradient">
       <div className="container">
           <div className="columns">

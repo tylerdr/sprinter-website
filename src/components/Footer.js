@@ -15,7 +15,7 @@ const Footer = class extends React.Component {
     return (
       <div
         sx={{
-          backgroundColor: "otherbackground",
+          backgroundColor: "footer",
           color: "text"
         }}>
         <footer className="footer container">

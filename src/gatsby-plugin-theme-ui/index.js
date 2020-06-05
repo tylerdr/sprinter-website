@@ -4,18 +4,22 @@ export default {
     colors: {
         text: '#000',
         background: '#fff',
-        otherbackground: '#f5f5f5',
+        otherbackground: '#f2f2f2',
         primary: '#d9dbde',
         secondary: '#3072f9',
-        navbar: 'rgba(255,255,255,.8)',
+        navbar: 'rgba(255,255,255,0.9)',
+        floatingCard: '#fff',
+        footer: '#d9d9d9',
         modes: {
           dark: {
             text: '#fff',
-            background: '#262c30',
-            otherbackground: '#525252',
+            background: '#262626',
+            otherbackground: '#333333',
             primary: '#899db3',
             secondary: '#3072f9',
-            navbar: 'rgba(38, 44, 48, .9)',
+            navbar: 'rgba(26, 26, 26, 0.9)',
+            floatingCard: '#333333',
+            footer: '#1a1a1a'
           },
       },
     },

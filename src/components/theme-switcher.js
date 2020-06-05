@@ -24,7 +24,7 @@ const ThemeSwitcher = () => {
         position: "absolute",
         top: 1,
         right: 50,
-        borderRadius: "30px",
+        borderRadius: "10px",
         fontSize: "1.25em",
         justifyContent: "space-between",
         display: "flex",

@@ -44,8 +44,7 @@ export default class Accordion extends React.Component {
             key={`accordion-item-${'-' + index}`}>
             <div
             sx={{
-              boxShadow: "body",
-              backgroundColor: "otherbackground",
+              backgroundColor: "floatingCard",
             }}
               className={`Accordion--item`}
               onClick={this.handleClick}
@@ -60,7 +59,7 @@ export default class Accordion extends React.Component {
                   <div className="Accordion--item__paragraph">
                     <div className="description is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
                       sx={{
-                        backgroundColor: "background",
+                        backgroundColor: "floatingCard",
                         padding: 4,
                         fontFamily: "body",
                         fontWeight: "body"
