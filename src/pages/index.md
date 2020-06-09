@@ -103,7 +103,7 @@ ThirdCallToAction:
   statistic: CEOs and senior executives say digital transformation risk is their
     top concern in 2019.
   secondLine: Curious about software solutions?
-  image: /img/noun_next_2510654.svg
+  image: /img/five-bulb-lights-1036936.jpg
   icon: /img/noun_light_bulb.svg
 main:
   image1:

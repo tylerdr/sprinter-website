@@ -14,6 +14,7 @@ import Accordion from '../components/Accordion'
 import ChevronDown from 'react-feather/dist/icons/chevron-down'
 import BackgroundVideo from '../components/BackgroundVideo'
 import { Samy, SvgProxy } from 'react-samy-svg';
+import Img from 'gatsby-image'
 export const IndexPageTemplate = ({
   image,
   title,
@@ -153,11 +154,13 @@ export const IndexPageTemplate = ({
         <div className="slide-container">
         <Fade {...properties}>
         <div className="each-slide">
-          <div className="full-width-image">
+          <div className="full-width-image"
+          sx={{justifyContent: "end"}}>
             {/* <BackgroundVideo sx={{width: "100vw"}} videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
                     {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     {console.log(main.video)}
               </BackgroundVideo>  */}
+            <div><img src={ThirdCallToAction.image.publicURL}/></div>
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{
                 backgroundColor: "rgba(38, 44, 48, .75)",
@@ -210,9 +213,6 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
               </div>
-              {/* <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
-                {/* {ThirdCallToAction.secondLine} */}
-              {/* </div> */}
             </div>
           </div>
         </div>

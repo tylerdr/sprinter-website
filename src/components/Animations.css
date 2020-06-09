@@ -68,7 +68,6 @@
   .testimonials-holder .each-slide > div {
     display: flex;
     align-items: center;
-    justify-content: center;
     background-size: cover;
   }
   .testimonials-holder .each-slide span {
