@@ -32,14 +32,17 @@ testimonials:
     image: /img/testimonial_1.svg
     quote: Testimonial Quote 1
     industry: Oil and Gas
+    divider: /img/noun_divider_857782.svg
   - author: Author 2
     image: /img/testimonial_2.svg
     quote: Testimonial Quote 2
     industry: Management Consulting
+    divider: /img/noun_divider_857782.svg
   - author: Author 3
     image: /img/blue-mountains.jpg
     quote: Testimonial Quote 3
     industry: Industry 3
+    divider: /img/noun_divider_857782.svg
 full_image: /img/blue-mountains.jpg
 pricing:
   heading: Pay us

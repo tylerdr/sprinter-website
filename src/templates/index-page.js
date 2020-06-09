@@ -13,7 +13,7 @@ import '../components/Accordion.css'
 import Accordion from '../components/Accordion'
 import ChevronDown from 'react-feather/dist/icons/chevron-down'
 import BackgroundVideo from '../components/BackgroundVideo'
-
+import { Samy, SvgProxy } from 'react-samy-svg';
 export const IndexPageTemplate = ({
   image,
   title,
@@ -175,6 +175,16 @@ export const IndexPageTemplate = ({
                 <div>CEOs and senior executives say digital transformation risk is their top concern in 2019.</div>
                 </div>
               </div>
+              {/* <div
+              sx={{
+                backgroundColor: "transparent",
+                position: "absolute",
+                right: "700px",
+              }}>
+                <Samy path={ThirdCallToAction.image.publicURL}>
+                        <SvgProxy fill="#000" width="200px"/>
+                  </Samy>
+              </div> */}
               <div sx={{
                 backgroundColor: "transparent",
                 position: "absolute",
@@ -187,7 +197,9 @@ export const IndexPageTemplate = ({
                 }} className="columns is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.statistic} */}
                 <div className="column">
-                <img src={ThirdCallToAction.icon.publicURL}/>
+                <Samy path={ThirdCallToAction.icon.publicURL}>
+                        <SvgProxy fill="#000" />
+                  </Samy>
                 </div>
                 <div className="column is-7">
                   <div>
@@ -403,11 +415,7 @@ export const pageQuery = graphql`
             publicURL
           }
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            publicURL
           }
         }
       }
