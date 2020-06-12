@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 /** @jsx jsx */
+import SEO from '../components/seo'
 import { jsx } from "theme-ui"
 import ServiceRoll from '../components/ServiceRoll'
 import TechStack from '../components/TechStack'
@@ -24,8 +25,9 @@ export const ProductPageTemplate = ({
 }) => {
 
   return(
-<div sx={{color: "text"}}>
+<div sx={{color: "text", backgroundColor: "background"}}>
     {/* <SlidingHeader title={title}/>  */}
+    <SEO title={title} description={description}/>
     <div
       className="full-width-image margin-top-0"
         style={{
@@ -68,7 +70,7 @@ export const ProductPageTemplate = ({
         <div className="section">
           <div className="columns">
             <div className="column is-7 is-offset-1">
-              <div className="is-size-4-mobile is-size-4-tablet is-size-1-widescreen"
+              <div className="is-size-4-mobile is-size-4-tablet is-size-2-widescreen"
               sx={{
                 fontWeight: "heading",
                 fontFamily: "heading"

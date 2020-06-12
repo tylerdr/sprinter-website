@@ -34,7 +34,7 @@ const BlogRoll = ( { tag, homepage}) => {
                 <article
                   sx={{
                     height: "100%",
-                    backgroundColor: "otherbackground",
+                    backgroundColor: "floatingCard",
                     color: "text",
                     transition: "0.3s",
                   }}
@@ -50,11 +50,12 @@ const BlogRoll = ( { tag, homepage}) => {
                           image: post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.title}`,
                         }}
+                        location={"blogRoll"}
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
-                    <Link
+                  <div className="post-meta">
+                    <div
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}
                       sx={{
@@ -64,7 +65,7 @@ const BlogRoll = ( { tag, homepage}) => {
                       }}
                     >
                       {post.frontmatter.title}
-                    </Link>
+                    </div>
                     <span></span>
                     <span className="is-size-5 is-block"
                     sx={{
@@ -80,11 +81,11 @@ const BlogRoll = ( { tag, homepage}) => {
                       fontFamily:"body",
                       fontWeight:"body"
                     }}>
-                      {!!post.frontmatter.podcast ? <p>{post.frontmatter.length} min</p> : <p>{post.frontmatter.length} min read</p>}
+                      {!!post.frontmatter.podcast ? <p>{post.frontmatter.timeToConsume} min listen</p> : <p>{post.frontmatter.timeToConsume} min read</p>}
                     </span>
-                  </p>
+                  </div>
                 </header>
-                <p
+                <div
                 sx={{
                   fontFamily:"body",
                   fontWeight:"body"
@@ -92,7 +93,7 @@ const BlogRoll = ( { tag, homepage}) => {
                   {post.excerpt}
                   <br />
                   <br />
-                </p>
+                </div>
                 <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 

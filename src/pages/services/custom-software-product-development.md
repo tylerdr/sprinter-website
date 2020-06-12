@@ -7,6 +7,6 @@ description: “Off the shelf” software solutions rarely work the way they sho
   during the development process.
 featuredpost: true
 featuredimage: /img/noun_software_3344840.svg
-icon: /img/noun-software-development-svg.svg
+icon: /img/noun_software_3344840.svg
 ---
 \

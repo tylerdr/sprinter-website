@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import SEO from '../components/seo'
 import Content, { HTMLContent } from '../components/Content'
 import ReactPlayer from 'react-player'
 /** @jsx jsx */
@@ -20,24 +21,25 @@ export const BlogPostTemplate = ({
   helmet,
   podcast,
   date,
-  length,
+  timeToConsume,
   featuredimage,
   author
 }) => {
   const PostContent = contentComponent || Content
 
 return (
-    <section className="section">
-      {helmet || ''}
+    <section className="section"
+    sx={{
+      backgroundColor: "background",
+      color: "text"
+    }}>
+      <SEO title={title} description={description}/>
       <div className="container content">
         <div className="columns"
         sx={{
           marginTop: 4,
         }}>
-          <div className="column is-10 is-offset-1"
-          sx={{
-            color: "text",
-          }}>
+          <div className="column is-10 is-offset-1">
             <div sx={{
               fontFamily: "heading",
               fontWeight: "heading",
@@ -48,21 +50,28 @@ return (
               {title}
             </h1>
             <h3>{description}</h3>
-            {!!podcast ? <p>{length} min</p> : <p>{length} min read</p>}
+            {!!podcast ? <p>{timeToConsume} min listen</p> : <p>{timeToConsume} min read</p>}
             <p>{author} / {date}</p>
             </div>
+            <div
+            sx={{
+              margin: "auto",
+              maxWidth: "75%"
+            }}>
+              <PreviewCompatibleImage imageInfo={featuredimage}/>
+            </div>
             {podcast && (
-              <div>
+              <div sx={{maxWidth: "75%", margin: "auto"}}>
                 <ReactPlayer 
                 url={podcast.podcastLink.publicURL} 
-                playing='true' 
-                controls='true'
+                playing={true} 
+                controls={true}
                 height='20px'
                 width='100%'
                 sx={{
-                  margin: 3, 
+                  marginBottom: 3, 
+                  marginTop: 3
                 }}/>
-                
               </div>
             )}
             <PostContent className="markdown" content={content} 
@@ -71,6 +80,9 @@ return (
               fontFamily: "body",
               fontWeight: "body",
               fontSize: 3,
+              margin: "auto",
+              marginTop: 4,
+              maxWidth: "75%"
             }}/>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -110,7 +122,7 @@ const BlogPost = ({ data }) => {
         description={post.frontmatter.description}
         podcast={post.frontmatter.podcast}
         date={post.frontmatter.date}
-        length={post.frontmatter.length}
+        timeToConsume={post.frontmatter.timeToConsume}
         author={post.frontmatter.author}
         featuredimage={post.frontmatter.featuredimage}
         helmet={
@@ -147,12 +159,12 @@ export const pageQuery = graphql`
         title
         description
         tags
-        length
         author
+        timeToConsume
         date(formatString: "MMMM DD, YYYY")
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 120, quality: 100) {
+            fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

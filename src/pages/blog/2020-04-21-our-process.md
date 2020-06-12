@@ -1,10 +1,10 @@
 ---
 templateKey: blog-post
-title: 'Our Process                                     '
-length: 3
+title: "Our Process                                     "
 author: Mitchell Pousson II
+timeToConsume: 3
 date: 2020-04-21T21:37:42.738Z
-description: 'How we help you get from where you are to where you could be. '
+description: "How we help you get from where you are to where you could be. "
 featuredpost: true
 featuredimage: /img/business-4051773_1920.jpg
 tags:
@@ -12,11 +12,9 @@ tags:
   - business
   - process optimization
 ---
-> Simplicity is the ultimate sophistication. -Leonardo da Vinci
+"Simplicity is the ultimate sophistication." -Leonardo da Vinci
 
-![Process](/img/alvaro-reyes-qwwphwip31m-unsplash.jpg "Process")
-
-Technology is **_powerful._** Technology is also **_complex._**
+Technology is ***powerful.*** Technology is also ***complex.***
 
 **What does that mean for you?**
 

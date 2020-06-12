@@ -19,7 +19,7 @@ export default class TechStack extends Component {
                 <Helmet>
                  <script async src='https://cdn1.stackshare.io/javascripts/client-code.js' charset='utf-8'></script>
                 </Helmet>
-                <div className="column is-12 is-size-4-mobile is-size-4-mobile is-size-4-tablet is-size-1-widescreen">
+                <div className="column is-12 is-size-4-mobile is-size-4-mobile is-size-4-tablet is-size-2-widescreen">
                     <div>
                         <div
                          sx={{
@@ -37,7 +37,7 @@ export default class TechStack extends Component {
                             overflowY: "scroll",
                             padding: 3
                         }}>
-                        <a frameborder="0"data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/f2bf411874c7dca75be20ffdbd6446"/>
+                        <a frameBorder="0"data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/f2bf411874c7dca75be20ffdbd6446"/>
                         </div>
                     </div>
                 {/* </div> */}

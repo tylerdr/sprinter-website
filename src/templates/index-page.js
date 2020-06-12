@@ -9,7 +9,12 @@ import ServiceRoll from '../components/ServiceRoll'
 import SingleTestimonial from '../components/SingleTestimonial'
 import { Fade } from 'react-slideshow-image';
 import TypeformPopup from '../components/TypeformPopup'
-
+import '../components/Accordion.css'
+import Accordion from '../components/Accordion'
+import ChevronDown from 'react-feather/dist/icons/chevron-down'
+import BackgroundVideo from '../components/BackgroundVideo'
+import { Samy, SvgProxy } from 'react-samy-svg';
+import Img from 'gatsby-image'
 export const IndexPageTemplate = ({
   image,
   title,
@@ -17,7 +22,8 @@ export const IndexPageTemplate = ({
   main,
   FirstCallToAction,
   SecondCallToAction,
-  ThirdCallToAction
+  ThirdCallToAction,
+  approaches
 }) => { 
   const properties = {
     // duration: 7000,
@@ -31,13 +37,13 @@ export const IndexPageTemplate = ({
     //   console.log(`slide transition from ${oldIndex} to ${newIndex}`);
     // }
   }
-  
   return (
   <div sx={{color:'text'}}>
     <div
       className="full-width-image margin-top-0"
       sx={{
-        height: "600px",
+        minHeight: "500px",
+        height: "90vh",
         textAlign: "center"
       }}
         style={{
@@ -74,10 +80,6 @@ export const IndexPageTemplate = ({
           {FirstCallToAction.firstLine}
         </h1>
         <div>
-      {/* <Link
-      to="/contact">
-      <button>GET OUT THERE</button>
-      </Link> */}
       <TypeformPopup text={"Get Out There"} url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
       </div>
       </div>
@@ -90,15 +92,35 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
                     <div className="columns is-multiline">
-                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                       sx={{
                         fontFamily: "heading",
-          
                         fontWeight: "heading"
                       }}>
                         Featured Services
                       </div>
                       <ServiceRoll location={"home"}/>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section className="section section--gradient"
+      sx={{
+        backgroundColor: "background"
+      }}>
+      <div className="container" sx={{color: 'text'}}>
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+            <div className="columns is-multiline">
+                    <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+                      sx={{
+                        fontFamily: "heading",
+                        fontWeight: "heading"
+                      }}>
+                        Sprinter's Approach
+                      </div>
+                      <Accordion items={approaches} className={"columns is-multiline"}/>
                 </div>
             </div>
           </div>
@@ -127,25 +149,27 @@ export const IndexPageTemplate = ({
     </section>
     <section className="testimonials-holder"
     sx={{
-      backgroundColor: "otherbackground"
+      backgroundColor: "background"
     }}>
         <div className="slide-container">
         <Fade {...properties}>
         <div className="each-slide">
           <div className="full-width-image"
-          style={{
-            backgroundImage: `url(${
-              !!ThirdCallToAction.image.childImageSharp ? ThirdCallToAction.image.childImageSharp.fluid.src : ThirdCallToAction.image
-            })`,
-          }}>
+          sx={{justifyContent: "end"}}>
+            {/* <BackgroundVideo sx={{width: "100vw"}} videoTitle={main.video.videoTitle} poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+                    {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
+                    {console.log(main.video)}
+              </BackgroundVideo>  */}
+            <div><img src={ThirdCallToAction.image.publicURL}/></div>
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{
                 backgroundColor: "rgba(38, 44, 48, .75)",
                 maxWidth: "30%",
                 padding: 3,
                 position: "absolute",
-                left: "0px",
-                top: "0px",
+                left: "15px",
+                top: "15px",
+                borderRadius: "10px"
                 }} className="first-tagline is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.firstLine} */}
                 <div>
@@ -154,18 +178,31 @@ export const IndexPageTemplate = ({
                 <div>CEOs and senior executives say digital transformation risk is their top concern in 2019.</div>
                 </div>
               </div>
+              {/* <div
+              sx={{
+                backgroundColor: "transparent",
+                position: "absolute",
+                right: "700px",
+              }}>
+                <Samy path={ThirdCallToAction.image.publicURL}>
+                        <SvgProxy fill="#000" width="200px"/>
+                  </Samy>
+              </div> */}
               <div sx={{
                 backgroundColor: "transparent",
                 position: "absolute",
                 maxWidth: "50%",
                 backgroundColor: "rgba(38, 44, 48, .75)",
-                right: "0px",
-                bottom: "0px",
-                padding: 3
+                right: "30px",
+                bottom: "30px",
+                padding: 3,
+                borderRadius: "10px"
                 }} className="columns is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.statistic} */}
                 <div className="column">
-                <img src={ThirdCallToAction.icon.publicURL}/>
+                <Samy path={ThirdCallToAction.icon.publicURL}>
+                        <SvgProxy fill="#000" />
+                  </Samy>
                 </div>
                 <div className="column is-7">
                   <div>
@@ -226,14 +263,14 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
                 <div className="columns is-multiline">
-                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                     sx={{
                     fontFamily: "heading",
       
                     fontWeight: "heading",
                     }}
                   >
-                    Latest stories
+                    Latest Stories
                   </div>
                   <BlogRoll homepage={"homepage"} />
                   <div className="column is-12 has-text-centered">
@@ -274,6 +311,7 @@ const IndexPage = ({ data }) => {
         FirstCallToAction={frontmatter.FirstCallToAction}
         SecondCallToAction={frontmatter.SecondCallToAction}
         ThirdCallToAction={frontmatter.ThirdCallToAction}
+        approaches={frontmatter.approaches}
       />
     </Layout>
   )
@@ -305,6 +343,59 @@ export const pageQuery = graphql`
             }
           }
         }
+        main {
+          video {
+            videoTitle
+            poster {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            videoFile {
+              publicURL
+            }
+          }
+        }
+        approaches {
+          approachOne{
+            header
+            bulletPointOne
+            bulletPointOneBody
+            bulletPointTwo
+            bulletPointTwoBody
+            bulletPointThree
+            bulletPointThreeBody
+          }
+          approachTwo{
+            header
+            bulletPointOne
+            bulletPointOneBody
+            bulletPointTwo
+            bulletPointTwoBody
+            bulletPointThree
+            bulletPointThreeBody
+          }
+          approachThree{
+            header
+            bulletPointOne
+            bulletPointOneBody
+            bulletPointTwo
+            bulletPointTwoBody
+            bulletPointThree
+            bulletPointThreeBody
+          }
+          approachFour{
+            header
+            bulletPointOne
+            bulletPointOneBody
+            bulletPointTwo
+            bulletPointTwoBody
+            bulletPointThree
+            bulletPointThreeBody
+          }
+        }
         FirstCallToAction {
           firstLine
         }
@@ -327,11 +418,7 @@ export const pageQuery = graphql`
             publicURL
           }
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            publicURL
           }
         }
       }

@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Sprinter Consulting',
     description:
-      'This repo contains the website for Sprinter Consulting.',
+      'A technology consulting firm that specializes in Product Management, Agile Management Training, Custom Software Product Development, and Digital Transformation Consulting.',
+    author: 'Tyler Dreher',  ///put Tyler for SEO purposes
   },
   plugins: [
     'gatsby-plugin-theme-ui',
@@ -60,17 +61,19 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-plugin-netlify-cms',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        enableIdentifyWidget: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/blog/`, `/contact/*`],
+        name: `Sprinter Consulting`,
+        short_name: `Sprinter`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#3072f9`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `${__dirname}/src/img/sprinter-favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -94,7 +97,21 @@ module.exports = {
         develop: true, // Activates purging in npm run develop
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
-    }, // must be after other CSS plugins
+    },
+    { // must be after other CSS plugins
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        enableIdentifyWidget: false,
+        customizeWebpackConfig: (config, { plugins }) => {
+          config.plugins.push(
+            plugins.define({
+              __MANIFEST_PLUGIN_HAS_LOCALISATION__: JSON.stringify('false'),
+            }),
+          );
+        },
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

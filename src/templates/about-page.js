@@ -3,6 +3,7 @@ import React from 'react'
 import { jsx } from "theme-ui"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -10,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled, { withTheme } from 'styled-components'
+import Iframe from 'react-iframe'
 
 
 export const AboutPageTemplate = ({ 
@@ -57,60 +59,73 @@ export const AboutPageTemplate = ({
 
   const ValueContent = contentComponent || Content
   return (
-    <div sx={{color: "text"}} className="about-page">
-    <div
-      className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            !!headerImage.childImageSharp ? headerImage.childImageSharp.fluid.src : headerImage
-          })`,
-          backgroundPosition: `bottom`,
-          backgroundAttachment: `fixed`,
-        }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-          width: '75%'
-        }}
-      >
-        <h1 
-          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
+    <div sx={{color: "text", backgroundColor: "background"}} className="about-page">
+    <SEO title={title} description={missionStatement}/>
+    <section className="section section--gradient"
+    sx={{
+      paddingTop: "5rem"
+    }}>
+      <div className="container">
+        <div className="columns">
+          <div className="column"
           sx={{
-            fontFamily: "heading",
-            textTransform: "uppercase",
-            fontWeight: "heading",
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
-          style={{
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-          sx={{
-            fontWeight: "body",
-            fontFamily: "body",
-          }}
-        >
-          {/* {subtitle} */}
-          {missionStatement}
-        </h3>
+            height: "50vh",
+          }}>
+            <Iframe
+            url="https://www.tylerdreher.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+          <div className="column"
+            sx={{
+              height: "50vh",
+            }}>
+            <Iframe
+            url="https://www.zachslessman.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+          <div className="column"
+            sx={{
+              height: "50vh",
+            }}>
+            <Iframe
+            url="https://www.mitchellpousson.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+          <div className="column"
+            sx={{
+              height: "50vh",
+            }}>
+            <Iframe
+            url="https://www.zachslessman.com"
+            sx={{
+              height: "100%",
+              width: "100%",
+              borderRadius: '10px',
+              boxShadow: '0 1.25em 1.25em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)'
+            }}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
     <section className="section section--gradient">
       <div className="container">
           <div className="columns">
@@ -137,7 +152,7 @@ export const AboutPageTemplate = ({
                   <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{minWidth: '50%'}}>
                     <div className="slider-holder">
-                    <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                    <div className="tile is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                     sx={{
                       fontFamily: "heading",
                       fontWeight: "heading",
@@ -211,7 +226,7 @@ export const AboutPageTemplate = ({
                   </div>
                   <div className="column" sx={{minWidth: '50%'}}>
                     <div className="slider-holder">
-                      <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                      <div className="tile is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                       sx={{
                         fontFamily: "heading",
 
@@ -272,7 +287,7 @@ export const AboutPageTemplate = ({
                   <div className="columns slider-row is-vcentered">
                   <div className="column" sx={{minWidth: '50%'}}>
                     <div className="slider-holder">
-                    <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                    <div className="tile is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                         sx={{
                           fontFamily: "heading",
   
@@ -335,7 +350,7 @@ export const AboutPageTemplate = ({
                     marginTop: 3,
                     marginBottom: 5, 
                   }}>
-                    <div className="tile is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                    <div className="tile is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
                       sx={{
                         fontFamily: "heading",
 
@@ -357,19 +372,19 @@ export const AboutPageTemplate = ({
                         <Slider {...settings} sx={{height: '90%', marginTop: 4,}} className="tile">
                           <div className="each-slide">
                             <div>
-                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", textTransform: "uppercase", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", fontFamily: "heading"}}>{coreValuesTest.header1}</div>
                               <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body1}</div>
                             </div>
                           </div>
                           <div className="each-slide">
                           <div>
-                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", textTransform: "uppercase", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", fontFamily: "heading"}}>{coreValuesTest.header2}</div>
                               <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body2}</div>
                             </div>
                           </div>
                           <div className="each-slide">
                           <div>
-                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", textTransform: "uppercase", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
+                              <div className="tile is-size-3-mobile is-size-2-tablet is-size-3-widescreen" sx={{fontWeight: "heading", fontFamily: "heading"}}>{coreValuesTest.header3}</div>
                               <div className="tile is-size-6-mobile is-size-6-tablet is-size-5-widescreen" sx={{fontWeight: "body", fontFamily: "body"}}>{coreValuesTest.body3}</div>
                             </div>
                           </div>

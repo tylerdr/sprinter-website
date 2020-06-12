@@ -133,4 +133,8 @@ visionStatement: >-2
 missionStatement: >
   Our mission is to build extraordinary products and design sustainable
   solutions that bring joy to the experience of getting work done.
+video:
+  videoFile: ""
+  videoTitle: ""
+  poster: ""
 ---

@@ -22,7 +22,11 @@ export const ServicePageTemplate = ({
   const PostContent = contentComponent || Content
 
 return (
-    <section className="section">
+    <section className="section"
+    sx={{
+      color: 'text',
+      backgroundColor: 'background'
+    }}>
       {helmet || ''}
       <div className="container content">
         <div className="columns"

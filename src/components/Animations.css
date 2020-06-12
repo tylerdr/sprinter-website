@@ -37,7 +37,7 @@
   -moz-animation-name: bounce;
 } */
 
-
+/* 
 .img-1 {
     background-image: url('../../static/img/colorful-code.jpg')
 }
@@ -47,7 +47,7 @@
 }
 .img-3 {
     background-image: url('../../static/img/code.jpg')
-}
+} */
 .header{
     position: absolute;
     top: 0;
@@ -68,7 +68,6 @@
   .testimonials-holder .each-slide > div {
     display: flex;
     align-items: center;
-    justify-content: center;
     background-size: cover;
   }
   .testimonials-holder .each-slide span {
