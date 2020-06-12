@@ -213,6 +213,9 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
               </div>
+              {/* <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                {/* {ThirdCallToAction.secondLine} */}
+              {/* </div> */}
             </div>
           </div>
         </div>
