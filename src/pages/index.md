@@ -1,6 +1,8 @@
 ---
 templateKey: index-page
 title: Sprinter Consulting
+seoDescription: We develop and implement custom enterprise software solutions
+  that save you both time and money.
 image: /img/home-page-header.jpg
 heading: Sprinter Consulting
 subheading: Delivering Tomorrow's Technology Today
