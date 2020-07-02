@@ -27,6 +27,7 @@
     "gatsby-plugin-sass": "^2.3.2",
     "gatsby-plugin-segment-js": "^3.2.2",
     "gatsby-plugin-sharp": "^2.6.8",
+    "gatsby-plugin-sitemap": "^2.4.10",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-remark-copy-linked-files": "^2.3.3",
     "gatsby-remark-images": "^3.3.7",
