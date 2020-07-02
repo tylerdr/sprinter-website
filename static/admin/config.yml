@@ -17,6 +17,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
       - {label: "Author", name: "author", widget: "string", required: false}
       - {label: "Time to Consume", name: "timeToConsume", widget: "number", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -35,6 +36,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "service-page"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
       - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
@@ -50,6 +52,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
+          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
@@ -65,6 +68,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "careers-page"}
           - {label: Title, name: title, widget: string}
+          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
           - {label: Subheading, name: subheading, widget: string}
           - {label: Body, name: body, widget: markdown}
       - file: "src/pages/about/index.md"
@@ -73,6 +77,7 @@ collections:
         fields:
           - {label: Template Key, name: templateKey, widget: hidden, default: about-page}
           - {label: Title, name: title, widget: string}
+          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
           - {label: Subtitle, name: subtitle, widget: text}
           - {label: Header Image, name: headerImage, widget: image}
           - {label: ImageA, name: imageA, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
@@ -93,6 +98,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
           - {label: Title, name: title, widget: string}
+          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}

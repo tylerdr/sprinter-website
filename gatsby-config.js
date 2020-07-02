@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: 'Sprinter Consulting',
+    siteUrl: `https://wwww.sprinterconsulting.com`,
     description:
-      'A technology consulting firm that specializes in Product Management, Agile Management Training, Custom Software Product Development, and Digital Transformation Consulting.',
+      'A technology consulting firm that specializes in Product Management, Custom Software Product Development, Agile Management Training, and Digital Transformation Consulting.',
     author: 'Tyler Dreher',  ///put Tyler for SEO purposes
   },
   plugins: [
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',

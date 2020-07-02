@@ -1,6 +1,9 @@
 ---
 templateKey: product-page
 title: Our Services
+seoDescription: We offer a variety of services tailored to fit your company
+  including digital transformation consulting, custom software product
+  development, and agile management training.
 image: /img/geometric-1732847_1920.jpg
 heading: How We Help
 description: We are great...

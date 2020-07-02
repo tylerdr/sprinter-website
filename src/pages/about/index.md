@@ -1,6 +1,8 @@
 ---
 templateKey: about-page
 title: About Us
+seoDescription: "We are a global team of elite problem solvers unified by the
+  shared goal of bettering individual lives through the power of technology. "
 subtitle: We are a global team of elite problem solvers unified by the shared
   goal of bettering individual lives through technology.
 headerImage: /img/stars.jpg
