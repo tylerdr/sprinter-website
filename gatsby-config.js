@@ -93,6 +93,16 @@ module.exports = {
         trackPage: true,
       }
     },
+    // In your gatsby-config.js
+    {
+      resolve: "gatsby-plugin-hubspot",
+      options: {
+        trackingCode: "7339867",
+        respectDNT: true,
+        productionOnly: true,
+      },
+    },
+
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
