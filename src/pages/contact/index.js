@@ -101,7 +101,7 @@ export default class Index extends React.Component {
               <div className="columns">
                 <div className="column">
                   <h3>Schedule Some Time</h3>
-                  <div style={{ minHeight: 300 }} className=" meetings-iframe-container" data-src="http://meet.sprinter.digital/meetings/tyler-dreher/meet-sprinter?embed=true"></div>
+                  <div style={{ minHeight: 300 }} className=" meetings-iframe-container" data-src="https://meet.sprinter.digital/meetings/tyler-dreher/meet-sprinter?embed=true"></div>
                 </div>
                 <div className="column">
                   <Helmet>
