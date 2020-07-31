@@ -24,41 +24,41 @@ const Footer = class extends React.Component {
               <div className="column">
                 <div className="tile">
                   <Link to="/contact"
-                  sx={{ 
-                    fontSize: 4,
-                    margin: 2,
-                    fontWeight: "body",
-                    fontFamily: "body"
+                    sx={{
+                      fontSize: 4,
+                      margin: 2,
+                      fontWeight: "body",
+                      fontFamily: "body"
                     }}>
                     Say Hello
                   </Link>
                 </div>
                 <div className="tile">
-                <a
-                  sx={{
-                    margin: 2,
-                  }}
-                  href={`https://www.google.com.au/maps/search/${encodeURI(
-                    "9005 Overlook Blvd"
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span
+                  <a
                     sx={{
-                      whiteSpace: "nowrap",
-                      fontSize: 2,
-                      fontWeight: "body",
-                      fontFamily: "body",
-                    }}>
-                    <MapPin
+                      margin: 2,
+                    }}
+                    href={`https://www.google.com.au/maps/search/${encodeURI(
+                      "9005 Overlook Blvd"
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span
                       sx={{
-                        marginRight: 3,
-                      }}
-                    />
+                        whiteSpace: "nowrap",
+                        fontSize: 2,
+                        fontWeight: "body",
+                        fontFamily: "body",
+                      }}>
+                      <MapPin
+                        sx={{
+                          marginRight: 3,
+                        }}
+                      />
                     9005 Overlook Blvd
                     </span>
-                </a>
+                  </a>
                 </div>
                 <div className="tile">
                   <a
@@ -84,26 +84,26 @@ const Footer = class extends React.Component {
                   </a>
                 </div>
                 <div className="tile">
-                <a
-                  href={`mailto:${"hello@sprinterconsulting.com"}`}
-                  sx={{
-                    margin: 2,
-                  }}>
-                  <span
+                  <a
+                    href={`mailto:${"hello@sprinterconsulting.com"}`}
                     sx={{
-                      whiteSpace: "nowrap",
-                      fontSize: 2,
-                      fontWeight: "body",
-                      fontFamily: "body",
+                      margin: 2,
                     }}>
-                    <Mail
+                    <span
                       sx={{
-                        marginRight: 3,
-                      }}
-                    />
+                        whiteSpace: "nowrap",
+                        fontSize: 2,
+                        fontWeight: "body",
+                        fontFamily: "body",
+                      }}>
+                      <Mail
+                        sx={{
+                          marginRight: 3,
+                        }}
+                      />
                     hello@sprinterconsulting.com
                         </span>
-                </a>
+                  </a>
                 </div>
               </div>
               <div className="column" sx={{ marginTop: "auto", textAlign: "center" }}>
@@ -131,7 +131,7 @@ const Footer = class extends React.Component {
                 </div>
               </div>
               <div className="column">
-              <iframe src="https://sprinter.substack.com/embed" width="100%" height="100%" frameBorder="0" scrolling="no"></iframe>
+                {/* <iframe src="https://sprinter.substack.com/embed" width="100%" height="100%" frameBorder="0" scrolling="no"></iframe> */}
 
                 {/* <InstagramFeed count='3' /> */}
               </div>
