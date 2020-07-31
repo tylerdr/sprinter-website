@@ -41,144 +41,153 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <Layout sx={{color: "text"}}>
-                <div
-              className="full-width-image margin-top-0"
-                style={{
-                  backgroundImage: `url('/img/newportri-2-.jpg')`,
-                  backgroundPosition: `bottom`,
-                  backgroundAttachment: `fixed`,
-                }}
+      <Layout sx={{ color: "text" }}>
+        <div
+          className="full-width-image margin-top-0"
+          style={{
+            backgroundImage: `url('/img/newportri-2-.jpg')`,
+            backgroundPosition: `bottom`,
+            backgroundAttachment: `fixed`,
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              height: '150px',
+              lineHeight: '1',
+              justifyContent: 'space-around',
+              alignItems: 'left',
+              flexDirection: 'column',
+              width: '75%'
+            }}
+          >
+            <h1
+              className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+              style={{
+                color: 'white',
+                lineHeight: '1',
+                padding: '0.25em',
+              }}
+              sx={{
+                fontFamily: 'heading',
+                fontWeight: 'heading',
+              }}
             >
-              <div
-                style={{
-                  display: 'flex',
-                  height: '150px',
-                  lineHeight: '1',
-                  justifyContent: 'space-around',
-                  alignItems: 'left',
-                  flexDirection: 'column',
-                  width: '75%'
-                }}
-              >
-                <h1 
-                  className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-                  style={{
-                    color: 'white',
-                    lineHeight: '1',
-                    padding: '0.25em',
-                  }}
-                  sx={{
-                    fontFamily: 'heading',
-                    fontWeight: 'heading',
-                  }}
-                >
-                Contact Us
+              Contact Us
                 </h1>
-                <h3
-                  className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-                  style={{
-                    color: 'white',
-                    lineHeight: '1',
-                    padding: '0.25em',
-                  }}
-                  sx={{
-                    fontWeight: "body",
-                    fontFamily: "body",
-                  }}
-                >
-                We know your time is valuable. That's why we promise to respond promptly to any questions you may have concerning our process. Reach out today and discover the infinite ways we can work together to make your business better.
+            <h3
+              className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+              style={{
+                color: 'white',
+                lineHeight: '1',
+                padding: '0.25em',
+              }}
+              sx={{
+                fontWeight: "body",
+                fontFamily: "body",
+              }}
+            >
+              We know your time is valuable. That's why we promise to respond promptly to any questions you may have concerning our process. Reach out today and discover the infinite ways we can work together to make your business better.
                 </h3>
-              </div>
-            </div>
-        <section className="section" sx={{backgroundColor: "background", color: "text"}}>
+          </div>
+        </div>
+        <section className="section" sx={{ textAlign: "center", backgroundColor: "background", color: "text" }}>
           <div className="container">
             <div className="content"
-            sx={{
-              marginTop: 2,
-              fontSize: 4,
-            }}>
+              sx={{
+                marginTop: 2,
+                fontSize: 4,
+              }}>
               <div className="columns">
                 <div className="column">
-                <Helmet>
-                  <script src="https://www.google.com/recaptcha/api.js" />
-                </Helmet>
-                    <form
+                  <h3>Schedule Some Time</h3>
+                  <div style={{ minHeight: 300 }} className=" meetings-iframe-container" data-src="https://meet.sprinter.digital/meetings/tyler-dreher/meet-sprinter?embed=true"></div>
+                </div>
+                <div className="column">
+                  <Helmet>
+                    <script src="https://www.google.com/recaptcha/api.js" />
+                    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+                  </Helmet>
+                  <h3>Or Drop Us A Line</h3>
+                  <form
                     sx={{
-                      maxWidth: "75%",
+                      // maxWidth: "75%",
+                      textAlign: "justify",
                       margin: "auto",
+                      paddingLeft: "2em",
+                      paddingTop: "1em",
                       fontFamily: "body",
                     }}
-                      name="contact"
-                      method="post"
-                      action="/contact/thanks/"
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                      // data-netlify-recaptcha="true"
-                      onSubmit={this.handleSubmit}
-                      className="contact-form"
-                    >
-                      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                      <input type="hidden" name="form-name" value="contact" />
-                      <div hidden>
-                        <label>
-                          Don’t fill this out:{' '}
-                          <input name="bot-field" onChange={this.handleChange} />
-                        </label>
-                      </div>
-                      <p
+                    name="contact"
+                    method="post"
+                    action="/contact/thanks/"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    // data-netlify-recaptcha="true"
+                    onSubmit={this.handleSubmit}
+                    className="contact-form"
+                  >
+                    {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div hidden>
+                      <label>
+                        Don’t fill this out:{' '}
+                        <input name="bot-field" onChange={this.handleChange} />
+                      </label>
+                    </div>
+                    <p
                       sx={{
-                        lineHeight: "3em",
+                        lineHeight: "2em",
                         fontSize: "1.25em"
                       }}>
-                        Hello, my name is&nbsp;
+                      Hello, my name is&nbsp;
                           <input
-                          placeholder="Full Name"
-                          sx={{
-                            width: "10em",
-                          }}
-                            className="input"
-                            type={'text'}
-                            name={'name'}
-                            onChange={this.handleChange}
-                            id={'name'}
-                            required={true}
-                          />
+                        placeholder="Full Name"
+                        sx={{
+                          width: "10em",
+                        }}
+                        className="input"
+                        type={'text'}
+                        name={'name'}
+                        onChange={this.handleChange}
+                        id={'name'}
+                        required={true}
+                      />
                       &nbsp;
                           and I would like to know more about&nbsp;
-                          <input 
-                          sx={{
-                            width: "15em",
-                          }}
-                            placeholder="Whatever Interests You"
-                            className="input"
-                            type={'enquiry'}
-                            name={'enquiry'}
-                            onChange={this.handleChange}
-                            id={'enquiry'}
-                            required={true}>
-                            {/* <option disabled>
+                          <input
+                        sx={{
+                          width: "15em",
+                        }}
+                        placeholder="Whatever Interests You"
+                        className="input"
+                        type={'enquiry'}
+                        name={'enquiry'}
+                        onChange={this.handleChange}
+                        id={'enquiry'}
+                        required={true}>
+                        {/* <option disabled>
                               Select One
                             </option>
                             <option>I would love to receive your posts in my email</option>
                             <option>Digital Transformation scares me, can you help?</option>
                             <option>I want to know more about working from anywhere</option>
                             <option>Just want to say hello</option> */}
-                          </input>
+                      </input>
                           &nbsp;in regards to services that you guys offer.
                         You can reach me at&nbsp;
                           <input
-                          sx={{
-                            width: "10em",
-                          }}
-                            placeholder="Email"
-                            className="input"
-                            type={'email'}
-                            name={'email'}
-                            onChange={this.handleChange}
-                            id={'email'}
-                            required={true}
-                          />
+                        sx={{
+                          width: "10em",
+                        }}
+                        placeholder="Email"
+                        className="input"
+                        type={'email'}
+                        name={'email'}
+                        onChange={this.handleChange}
+                        id={'email'}
+                        required={true}
+                      />
                           &nbsp; with more information or any further questions.
                           {/* I would also like to add
                           &nbsp;
@@ -194,8 +203,8 @@ export default class Index extends React.Component {
                             required={false}
                           />
                           &nbsp;.&nbsp; */}
-                      </p>
-                      {/* <div className="field newsletter control">
+                    </p>
+                    {/* <div className="field newsletter control">
                           <input
                             name={'newsletter'}
                             type={'checkbox'}
@@ -218,25 +227,25 @@ export default class Index extends React.Component {
                             </label>
                           </span>
                       </div> */}
-                      {/* <div
+                    {/* <div
                         className="g-recaptcha"
                         data-sitekey="6LekDb4UAAAAAK2fWolYytmkAxFYkzRdPaf76z-9"
                         data-netlify-recaptcha="true"
                       /> */}
-                      <div className="field">
-                        <button className="button" type="submit"
+                    <div className="field">
+                      <button className="button" type="submit"
                         sx={{
                           fontWeight: "body",
                           fontFamily: "body",
                           float: "right",
                           fontSize: 3
                         }}>
-                          Send&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
-                        </button>
-                      </div>
-                    </form>
+                        Send&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight} />
+                      </button>
                     </div>
-            </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </section>

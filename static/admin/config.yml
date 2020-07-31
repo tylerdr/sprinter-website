@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: dev
+  branch: master
 
 local_backend: true
 
@@ -15,18 +15,57 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
-      - {label: "Author", name: "author", widget: "string", required: false}
-      - {label: "Time to Consume", name: "timeToConsume", widget: "number", required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Podcast", name: "podcast", widget: object, fields: [{label: Podcast Link, name: podcastLink, widget: file, required: false}, {label: Podcast Title, name: podcastTitle, widget: text, required: false}]}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "SEO Description",
+          name: "seoDescription",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - {
+          label: "Time to Consume",
+          name: "timeToConsume",
+          widget: "number",
+          required: false,
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          required: false,
+        }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Podcast",
+          name: "podcast",
+          widget: object,
+          fields:
+            [
+              {
+                label: Podcast Link,
+                name: podcastLink,
+                widget: file,
+                required: false,
+              },
+              {
+                label: Podcast Title,
+                name: podcastTitle,
+                widget: text,
+                required: false,
+              },
+            ],
+        }
 
   - name: "service"
     label: "Service"
@@ -34,14 +73,34 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "service-page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
-      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
-      - {label: "Icon", name: icon, widget: image}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "service-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "SEO Description",
+          name: "seoDescription",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          required: false,
+        }
+      - {
+          label: "Featured Image",
+          name: "featuredimage",
+          widget: image,
+          required: false,
+        }
+      - { label: "Icon", name: icon, widget: image }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
 
   - name: "pages"
     label: "Pages"
@@ -50,61 +109,830 @@ collections:
         label: "Landing Page"
         name: "index"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Approaches, name: approaches, widget: object, fields: [{label: Approach One, name: approachOne, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Bulletpoint One, name: bulletPointOne, widget: text, required: false}, {label: Bulletpoint One Body, name: bulletPointOneBody, widget: text, required: false}, {label: Bulletpoint Two, name: bulletPointTwo, widget: text, required: false}, {label: Bulletpoint Two Body, name: bulletPointTwoBody, widget: text, required: false}, {label: Bulletpoint Three, name: bulletPointThree, widget: text, required: false}, {label: Bulletpoint Three Body, name: bulletPointThreeBody, widget: text, required: false}]}, {label: Approach Two, name: approachTwo, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Bulletpoint One, name: bulletPointOne, widget: text, required: false}, {label: Bulletpoint One Body, name: bulletPointOneBody, widget: text, required: false}, {label: Bulletpoint Two, name: bulletPointTwo, widget: text, required: false}, {label: Bulletpoint Two Body, name: bulletPointTwoBody, widget: text, required: false}, {label: Bulletpoint Three, name: bulletPointThree, widget: text, required: false}, {label: Bulletpoint Three Body, name: bulletPointThreeBody, widget: text, required: false}]}, {label: Approach Three, name: approachThree, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Bulletpoint One, name: bulletPointOne, widget: text, required: false}, {label: Bulletpoint One Body, name: bulletPointOneBody, widget: text, required: false}, {label: Bulletpoint Two, name: bulletPointTwo, widget: text, required: false}, {label: Bulletpoint Two Body, name: bulletPointTwoBody, widget: text, required: false}, {label: Bulletpoint Three, name: bulletPointThree, widget: text, required: false}, {label: Bulletpoint Three Body, name: bulletPointThreeBody, widget: text, required: false}]},  {label: Approach Four, name: approachFour, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Bulletpoint One, name: bulletPointOne, widget: text, required: false}, {label: Bulletpoint One Body, name: bulletPointOneBody, widget: text, required: false}, {label: Bulletpoint Two, name: bulletPointTwo, widget: text, required: false}, {label: Bulletpoint Two Body, name: bulletPointTwoBody, widget: text, required: false}, {label: Bulletpoint Three, name: bulletPointThree, widget: text, required: false}, {label: Bulletpoint Three Body, name: bulletPointThreeBody, widget: text, required: false}]}]}
-          - {label: First Call To Action, name: FirstCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}, {label: Icon, name: icon, widget: image, required: false}]} 
-          - {label: Second Call To Action, name: SecondCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}, {label: Icon, name: icon, widget: image, required: false}]}  
-          - {label: Third Call To Action, name: ThirdCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}, {label: Icon, name: icon, widget: image, required: false}]}
-          - {label: Fourth Call To Action, name: FourthCallToAction, widget: object, fields: [{label: First Line, name: firstLine, widget: text, required: false}, {label: Second Line, name: secondLine, widget: text, required: false}, {label: Statistic, name: statistic, widget: text, required: false}, {label: Button Text, name: buttonText, widget: text, required: false}, {label: Image, name: image, widget: image, required: false}]}  
-          - {label: Main, name: main, widget: object, fields: [{label: Mission Statement, name: missionStatement, widget: text}, {label: Vision Statement, name: visionStatement, widget: text}, {label: Video, name: video, widget: object, fields: [{label: Video File, name: videoFile, widget: file}, {label: Video Title, name: videoTitle, widget: string}, {label: Poster, name: poster, widget: image}]}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              required: false,
+            }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Approaches,
+              name: approaches,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Approach One,
+                    name: approachOne,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One,
+                          name: bulletPointOne,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One Body,
+                          name: bulletPointOneBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two,
+                          name: bulletPointTwo,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two Body,
+                          name: bulletPointTwoBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three,
+                          name: bulletPointThree,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three Body,
+                          name: bulletPointThreeBody,
+                          widget: text,
+                          required: false,
+                        },
+                      ],
+                  },
+                  {
+                    label: Approach Two,
+                    name: approachTwo,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One,
+                          name: bulletPointOne,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One Body,
+                          name: bulletPointOneBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two,
+                          name: bulletPointTwo,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two Body,
+                          name: bulletPointTwoBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three,
+                          name: bulletPointThree,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three Body,
+                          name: bulletPointThreeBody,
+                          widget: text,
+                          required: false,
+                        },
+                      ],
+                  },
+                  {
+                    label: Approach Three,
+                    name: approachThree,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One,
+                          name: bulletPointOne,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One Body,
+                          name: bulletPointOneBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two,
+                          name: bulletPointTwo,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two Body,
+                          name: bulletPointTwoBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three,
+                          name: bulletPointThree,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three Body,
+                          name: bulletPointThreeBody,
+                          widget: text,
+                          required: false,
+                        },
+                      ],
+                  },
+                  {
+                    label: Approach Four,
+                    name: approachFour,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One,
+                          name: bulletPointOne,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint One Body,
+                          name: bulletPointOneBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two,
+                          name: bulletPointTwo,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Two Body,
+                          name: bulletPointTwoBody,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three,
+                          name: bulletPointThree,
+                          widget: text,
+                          required: false,
+                        },
+                        {
+                          label: Bulletpoint Three Body,
+                          name: bulletPointThreeBody,
+                          widget: text,
+                          required: false,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: First Call To Action,
+              name: FirstCallToAction,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: First Line,
+                    name: firstLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Second Line,
+                    name: secondLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Statistic,
+                    name: statistic,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Button Text,
+                    name: buttonText,
+                    widget: text,
+                    required: false,
+                  },
+                  { label: Image, name: image, widget: image, required: false },
+                  { label: Icon, name: icon, widget: image, required: false },
+                ],
+            }
+          - {
+              label: Second Call To Action,
+              name: SecondCallToAction,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: First Line,
+                    name: firstLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Second Line,
+                    name: secondLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Statistic,
+                    name: statistic,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Button Text,
+                    name: buttonText,
+                    widget: text,
+                    required: false,
+                  },
+                  { label: Image, name: image, widget: image, required: false },
+                  { label: Icon, name: icon, widget: image, required: false },
+                ],
+            }
+          - {
+              label: Third Call To Action,
+              name: ThirdCallToAction,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: First Line,
+                    name: firstLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Second Line,
+                    name: secondLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Statistic,
+                    name: statistic,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Button Text,
+                    name: buttonText,
+                    widget: text,
+                    required: false,
+                  },
+                  { label: Image, name: image, widget: image, required: false },
+                  { label: Icon, name: icon, widget: image, required: false },
+                ],
+            }
+          - {
+              label: Fourth Call To Action,
+              name: FourthCallToAction,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: First Line,
+                    name: firstLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Second Line,
+                    name: secondLine,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Statistic,
+                    name: statistic,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Button Text,
+                    name: buttonText,
+                    widget: text,
+                    required: false,
+                  },
+                  { label: Image, name: image, widget: image, required: false },
+                ],
+            }
+          - {
+              label: Main,
+              name: main,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Mission Statement,
+                    name: missionStatement,
+                    widget: text,
+                  },
+                  {
+                    label: Vision Statement,
+                    name: visionStatement,
+                    widget: text,
+                  },
+                  {
+                    label: Video,
+                    name: video,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Video File, name: videoFile, widget: file },
+                        {
+                          label: Video Title,
+                          name: videoTitle,
+                          widget: string,
+                        },
+                        { label: Poster, name: poster, widget: image },
+                      ],
+                  },
+                  {
+                    label: Image1,
+                    name: image1,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                ],
+            }
       - file: "src/pages/careers/index.md"
         label: "Careers Page"
         name: "careers"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "careers-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Body, name: body, widget: markdown}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "careers-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              required: false,
+            }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: Body, name: body, widget: markdown }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
-          - {label: Template Key, name: templateKey, widget: hidden, default: about-page}
-          - {label: Title, name: title, widget: string}
-          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
-          - {label: Subtitle, name: subtitle, widget: text}
-          - {label: Header Image, name: headerImage, widget: image}
-          - {label: ImageA, name: imageA, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
-          - {label: ImageB, name: imageB, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
-          - {label: ImageC, name: imageC, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
-          - {label: ImageD, name: imageD, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}, {label: Width Options, name: widthOptions, widget: select, options: [is-4, is-6, is-7, is-8, is-10, is-12]}]}
-          - {label: CoreValuesTest, name: coreValuesTest, widget: object, fields: [{label: MainHeader, name: mainHeader, widget: text}, {label: Tagline, name: tagline, widget: text}, {label: Header1, name: header1, widget: text}, {label: Body1, name: body1, widget: text}, {label: Header2, name: header2, widget: text}, {label: Body2, name: body2, widget: text}, {label: Header3, name: header3, widget: text}, {label: Body3, name: body3, widget: text}]}
-          - {label: WhatSlide, name: whatSlide, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Slide1, name: slide1, widget: text, required: false}, {label: Slide2, name: slide2, widget: text, required: false}, {label: Slide3, name: slide3, widget: text, required: false}, {label: Slide4, name: slide4, widget: text, required: false}, {label: Slide5, name: slide5, widget: text, required: false}]}
-          - {label: HowSlide, name: howSlide, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Slide1, name: slide1, widget: text, required: false}, {label: Slide2, name: slide2, widget: text, required: false}, {label: Slide3, name: slide3, widget: text, required: false}, {label: Slide4, name: slide4, widget: text, required: false}, {label: Slide5, name: slide5, widget: text, required: false}]}
-          - {label: WhySlide, name: whySlide, widget: object, fields: [{label: Header, name: header, widget: text, required: false}, {label: Slide1, name: slide1, widget: text, required: false}, {label: Slide2, name: slide2, widget: text, required: false}, {label: Slide3, name: slide3, widget: text, required: false}, {label: Slide4, name: slide4, widget: text, required: false}, {label: Slide5, name: slide5, widget: text, required: false}]}
-          - {label: Blockquotes, name: blockquotes, widget: object, fields: [{label: A, name: a, widget: text, required: false}, {label: B, name: b, widget: text, required: false}, {label: C, name: c, widget: text, required: false}]}
-          - {label: Vision Statement, name: visionStatement, widget: text}
-          - {label: Mission Statmeent, name: missionStatement, widget: text}
-          - {label: Video, name: video, widget: object, fields: [{label: Video File, name: videoFile, widget: file, required: false}, {label: Video Title, name: videoTitle, widget: string, required: false}, {label: Poster, name: poster, widget: image, required: false}]}
+          - {
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: about-page,
+            }
+          - { label: Title, name: title, widget: string }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              required: false,
+            }
+          - { label: Subtitle, name: subtitle, widget: text }
+          - { label: Header Image, name: headerImage, widget: image }
+          - {
+              label: ImageA,
+              name: imageA,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Alt, name: alt, widget: string },
+                  {
+                    label: Width Options,
+                    name: widthOptions,
+                    widget: select,
+                    options: [is-4, is-6, is-7, is-8, is-10, is-12],
+                  },
+                ],
+            }
+          - {
+              label: ImageB,
+              name: imageB,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Alt, name: alt, widget: string },
+                  {
+                    label: Width Options,
+                    name: widthOptions,
+                    widget: select,
+                    options: [is-4, is-6, is-7, is-8, is-10, is-12],
+                  },
+                ],
+            }
+          - {
+              label: ImageC,
+              name: imageC,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Alt, name: alt, widget: string },
+                  {
+                    label: Width Options,
+                    name: widthOptions,
+                    widget: select,
+                    options: [is-4, is-6, is-7, is-8, is-10, is-12],
+                  },
+                ],
+            }
+          - {
+              label: ImageD,
+              name: imageD,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Alt, name: alt, widget: string },
+                  {
+                    label: Width Options,
+                    name: widthOptions,
+                    widget: select,
+                    options: [is-4, is-6, is-7, is-8, is-10, is-12],
+                  },
+                ],
+            }
+          - {
+              label: CoreValuesTest,
+              name: coreValuesTest,
+              widget: object,
+              fields:
+                [
+                  { label: MainHeader, name: mainHeader, widget: text },
+                  { label: Tagline, name: tagline, widget: text },
+                  { label: Header1, name: header1, widget: text },
+                  { label: Body1, name: body1, widget: text },
+                  { label: Header2, name: header2, widget: text },
+                  { label: Body2, name: body2, widget: text },
+                  { label: Header3, name: header3, widget: text },
+                  { label: Body3, name: body3, widget: text },
+                ],
+            }
+          - {
+              label: WhatSlide,
+              name: whatSlide,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Header,
+                    name: header,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide1,
+                    name: slide1,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide2,
+                    name: slide2,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide3,
+                    name: slide3,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide4,
+                    name: slide4,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide5,
+                    name: slide5,
+                    widget: text,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: HowSlide,
+              name: howSlide,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Header,
+                    name: header,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide1,
+                    name: slide1,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide2,
+                    name: slide2,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide3,
+                    name: slide3,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide4,
+                    name: slide4,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide5,
+                    name: slide5,
+                    widget: text,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: WhySlide,
+              name: whySlide,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Header,
+                    name: header,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide1,
+                    name: slide1,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide2,
+                    name: slide2,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide3,
+                    name: slide3,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide4,
+                    name: slide4,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Slide5,
+                    name: slide5,
+                    widget: text,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Blockquotes,
+              name: blockquotes,
+              widget: object,
+              fields:
+                [
+                  { label: A, name: a, widget: text, required: false },
+                  { label: B, name: b, widget: text, required: false },
+                  { label: C, name: c, widget: text, required: false },
+                ],
+            }
+          - { label: Vision Statement, name: visionStatement, widget: text }
+          - { label: Mission Statmeent, name: missionStatement, widget: text }
+          - {
+              label: Video,
+              name: video,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Video File,
+                    name: videoFile,
+                    widget: file,
+                    required: false,
+                  },
+                  {
+                    label: Video Title,
+                    name: videoTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Poster,
+                    name: poster,
+                    widget: image,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/our-services/index.md"
         label: "Services Page"
         name: "our-services"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "SEO Description", name: "seoDescription", widget: "string", required: false}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}, {label: Industry, name: industry, widget: string}, {label: Image, name: image, widget: image}, {label: Divider, name: divider, widget: image}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-          - {label: Technologies, name: technologies, widget: list, fields: [{label: Icon, name: icon, widget: string}, {label: name, name: name, widget: string}, {label: Section, name: section, widget: select, options: ["Application and Data", "Utilities", "DevOps"]}]}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "product-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              required: false,
+            }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Description, name: description, widget: string }
+          - {
+              label: Intro,
+              name: intro,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: Blurbs,
+                    name: blurbs,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Main,
+              name: main,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: Image1,
+                    name: image1,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                  {
+                    label: Image2,
+                    name: image2,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                  {
+                    label: Image3,
+                    name: image3,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Testimonials,
+              name: testimonials,
+              widget: list,
+              fields:
+                [
+                  { label: Quote, name: quote, widget: string },
+                  { label: Author, name: author, widget: string },
+                  { label: Industry, name: industry, widget: string },
+                  { label: Image, name: image, widget: image },
+                  { label: Divider, name: divider, widget: image },
+                ],
+            }
+          - { label: Full_image, name: full_image, widget: image }
+          - {
+              label: Pricing,
+              name: pricing,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: string },
+                  {
+                    label: Plans,
+                    name: plans,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Plan, name: plan, widget: string },
+                        { label: Price, name: price, widget: string },
+                        {
+                          label: Description,
+                          name: description,
+                          widget: string,
+                        },
+                        { label: Items, name: items, widget: list },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Technologies,
+              name: technologies,
+              widget: list,
+              fields:
+                [
+                  { label: Icon, name: icon, widget: string },
+                  { label: name, name: name, widget: string },
+                  {
+                    label: Section,
+                    name: section,
+                    widget: select,
+                    options: ["Application and Data", "Utilities", "DevOps"],
+                  },
+                ],
+            }
