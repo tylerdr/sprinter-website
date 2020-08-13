@@ -52,13 +52,13 @@ Examples of what doesn't work include: a blank whiteboard, flip chart, or sticky
 
 Just like GPT-3 receiving an entirely too vague prompt, users often freeze at the lack of creative constraints and have no idea where to start.
 
-Although they intuitively know the general functionality they need to solve the problem, inadequate prompts almost always fail to produce a complete picture of a solution capable of meeting the users unspoken demands.
+Although they intuitively know the general functionality they need to solve the problem, inadequate prompts almost always fail to produce a complete picture of a solution capable of meeting the users' unspoken demands.
 
 GPT-3 is our new product's end users and the combination of POV and wireframe is their prompt. 7 Minutes is the computation time required. And the output is the list of requirements extracted.
 
 Mixing up these prompts to solve a single problem can produce dramatically different results with unique and powerful benefits.
 
-Our hypothesis is that the exercise's positive results are closely tied to the users' freedom to try out new approaches from differing angles, while bound to the creative constraint the prompts provide.
+Our hypothesis is that the exercise's positive results are closely tied to the users' freedom to try out new approaches from differing angles while bound to the creative constraints the prompts provide.
 
 The same way that GPT-3 is only as valuable as the prompts it is given, our ideas are only as good as our ability to articulate them.
 
