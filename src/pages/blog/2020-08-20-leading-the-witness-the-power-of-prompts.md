@@ -23,7 +23,7 @@ Before we continue looking into just how powerful prompts are, it may be helpful
 
 3: to serve as the inciting cause of
 
-We see these examples of prompting in the work place, at home, and even in our social lives.
+We see these examples of prompting in the workplace, at home, and even in our social lives.
 
 But there's one example that really sums up just how powerful prompting can be: the classic *leading the witness* dilemma.
 
