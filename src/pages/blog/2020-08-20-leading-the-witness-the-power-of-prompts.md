@@ -50,7 +50,7 @@ How we process information and form opinions has just as much to do with the man
 
 The jury's perception, the witness's responses, and in the most extreme cases—even the witness's own thoughts and memories are all influenced by the lawyer's prompting.
 
-One of the more intriguing aspects of our *leading the witness* example is how it serves as a perfect analogy for the biases we face when creating a new software product and understanding the needs of potential users.
+One of the more intriguing aspects of our *leading the witness* example is how it serves as a perfect analogy for the biases we face when creating a new software product.
 
 In a workshop setting, product managers often use wireframe design templates to help gather early requirements from the team they are working with.
 
