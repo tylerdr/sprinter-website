@@ -38,7 +38,6 @@ export default class Index extends React.Component {
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
-
   render() {
     return (
       <Layout sx={{ color: "text" }}>
@@ -107,6 +106,7 @@ export default class Index extends React.Component {
                   <Helmet>
                     <script src="https://www.google.com/recaptcha/api.js" />
                     <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+                    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7339867.js"></script>
                   </Helmet>
                   <h3>Or Drop Us A Line</h3>
                   <form
