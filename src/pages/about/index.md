@@ -52,9 +52,9 @@ coreValuesTest:
     every possible approach in order to discover the best one.
 whatSlide:
   header: What We Do
-  slide1: We empower businesses to become more efficient by automating their
-    current systems and solving complex problems with simple tech-based
-    solutions. Our consulting process offers our clients a refreshing take on
+  slide1: We run agile driven product teams that build innovative enterprise
+    software and SAAS products that efficiently leverage the power of modern
+    technology. Our consulting process offers our clients a refreshing take on
     decluttering their operations through digital transformation. As the
     technology evolves, so do we, but more importantly so does your business. We
     are here to bridge the gap between your company's current struggles and the
@@ -65,21 +65,25 @@ whatSlide:
     we've handcrafted tools that make it easier to navigate the modern
     technological landscape. Through harnessing the power of modern software, we
     are able to optimize technology's potential within your current systems. "
-  slide3: "Before Sprinter, most businesses looking to update their systems were
-    forced to choose between \"off the shelf\" software options that fail
+  slide3: "We empower businesses to become more efficient by automating their
+    current systems and solving complex problems with simple tech-based
+    solutions. Before Sprinter, most businesses looking to update their systems
+    were forced to choose between \"off the shelf\" software options that fail
     miserably due to lack of communication. We've solved this problem through
     our consulting before and during the development process. Our focus is and
     always will be directed toward implementing new technology that saves you
     both time and money. "
 howSlide:
   header: How We Do It
-  slide1: Do you feel like your business is lacking something, but don’t
-    specifically know what? Do you recognize that your company could be better,
-    but don’t know how? These are two questions that our team of highly-skilled
-    experts are trained to answer. Through accessing feasible modern technology,
-    we are able to implement software solutions that positively impact your
-    overall workflow. By steering our focus toward your specific struggles, we
-    begin designing a detailed course of action tailored to fit your company.
+  slide1: We design and build simple, user-focused software products in innovative
+    environments using modern agile methods. Do you feel like your business is
+    lacking something, but don’t specifically know what? Do you recognize that
+    your company could be better, but don’t know how? These are two questions
+    that our team of highly-skilled experts are trained to answer. Through
+    accessing feasible modern technology, we are able to implement software
+    solutions that positively impact your overall workflow. By steering our
+    focus toward your specific struggles, we begin designing a detailed course
+    of action tailored to fit your company.
   slide2: Our team is a unique blend of creatives, engineers, and developers who
     are knowledgeable in both business operations as well as software
     development. Because we possess expertise in a broad array of different
@@ -98,7 +102,9 @@ howSlide:
 whySlide:
   header: Why We Do It
   slide1: >
-    We do it because we believe technology is the key to unlocking human
+    We do it to empower more people to live with purpose and passion through
+    meaningful work enabled by technology that is not dependent on time or
+    place. We do it because we believe technology is the key to unlocking human
     potential. Maintaining a clear "why" is just as important to us as the work
     we do. By centering our business around our core beliefs, we are able to
     focus our attention toward your company's specific needs. Through pairing
