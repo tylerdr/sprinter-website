@@ -1,9 +1,10 @@
 ---
 templateKey: service-page
-title: "Design Thinking Approach "
+title: Design Thinking Workshops
 description: >+
-  We use our empathy and understanding of people to design experiences that
-  create opportunities for active engagement and participation.
+  Combining proven best practices with our in-house tools & techniques, we
+  design & facilitate workshop experiences to engage participants and empower
+  individuals to identify & solve problems using design thinking principles. 
 
 featuredimage: /img/noun_design-thinking_2457855.svg
 icon: /img/noun_design-thinking_2457855.svg
