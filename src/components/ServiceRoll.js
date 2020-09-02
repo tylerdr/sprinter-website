@@ -19,7 +19,13 @@ const ServiceRoll = ( { location }) => {
       })
       services = featuredServices
     }
-    //console.log(services, "EDGES")
+    console.log(services.map(({node: {frontmatter: data}}) => data.order), "before")
+
+    services.sort(({node: {frontmatter: {order: a}}}, {node: {frontmatter: {order: b}}}) => {
+      console.log(a , b );
+      return a - b
+    })
+    console.log(services.map(({node: {frontmatter: data}}) => data.order), "after")
     return (
       <div className="columns is-multiline">
         {services &&
@@ -39,7 +45,7 @@ const ServiceRoll = ( { location }) => {
                   {post.frontmatter.icon ? (
                     <div className="featured-thumbnail">
                       <Samy path={post.frontmatter.icon.publicURL}>
-                        <SvgProxy fill="#000" />
+                        {/* <SvgProxy fill="#000" /> */}
                       </Samy>
                     </div>
                   ) : null}

@@ -17,6 +17,7 @@ export const useServiceRollData = () => {
                 frontmatter {
                   title
                   description
+                  order
                   templateKey
                   featuredpost
                   featuredimage {
@@ -25,6 +26,7 @@ export const useServiceRollData = () => {
                         ...GatsbyImageSharpFluid
                       }
                     }
+                    publicURL
                   }
                   icon {
                     childImageSharp {

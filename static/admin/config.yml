@@ -72,6 +72,7 @@ collections:
     folder: "src/pages/services"
     create: true
     slug: "{{slug}}"
+    # sortable_fields: ['order']
     fields:
       - {
           label: "Template Key",
@@ -80,6 +81,12 @@ collections:
           default: "service-page",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { 
+          label: "Order",
+          name: "order",
+          widget: "number",
+          required: false,
+        }
       - {
           label: "SEO Description",
           name: "seoDescription",
@@ -99,7 +106,7 @@ collections:
           widget: image,
           required: false,
         }
-      - { label: "Icon", name: icon, widget: image }
+      - { label: "Icon", name: icon, widget: image, required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
 
   - name: "pages"
@@ -926,7 +933,7 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: Icon, name: icon, widget: string },
+                  { label: Icon, name: icon, widget: string, required: false },
                   { label: name, name: name, widget: string },
                   {
                     label: Section,
