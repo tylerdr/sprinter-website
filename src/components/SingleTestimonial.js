@@ -18,7 +18,7 @@ const SingleTestimonial = ({ index }) => {
     }}>
       <div className="feautured-thumbnail">
       <Samy path={testimonials[index].image.publicURL}>
-        <SvgProxy fill="#000" />
+        {/* <SvgProxy fill="#000" /> */}
       </Samy>
       </div>
       <div className ="is-size-4-mobile is-size-3-tablet is-size-3-widescreen"
@@ -30,7 +30,7 @@ const SingleTestimonial = ({ index }) => {
       </div>
       <div className="divider">
       <Samy sx={{margin: "-75px"}}path={testimonials[index].divider.publicURL}>
-        <SvgProxy fill="#000" />
+        {/* <SvgProxy fill="#000" /> */}
       </Samy>
       </div>
       <div className="is-size-5-mobile is-size-5-tablet is-size-5-widescreen">
