@@ -2,11 +2,12 @@
 templateKey: service-page
 title: End-to-End Software Product Development
 order: 1
-description: Whether you have an idea for a software product, or simply know your
-  business needs to productize your expertise, we’ll guide you through our proven
-  process for product development. From problem discovery to product design, development
-  & implementation, we'll provide a dedicated, full-stack product team to help you turn your
-  problems into effective & sustainable digital solutions.
+description: Whether you have an idea for a software application, or simply
+  recognize your business needs to productize your expertise—our proven process
+  will guide you through product development from start to finish. From problem
+  discovery to product design, to development and implementation, we'll provide
+  a dedicated, full-stack product team to help you solve your problems through
+  effective and sustainable digital solutions.
 featuredpost: true
 featuredimage: /img/noun_software_3344840.svg
 icon: /img/noun_software_3344840.svg
