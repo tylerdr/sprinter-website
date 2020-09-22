@@ -38,7 +38,7 @@ These solutions are presented in a social media-esque timeline where the site's 
 
 Entrepreneurs, innovators, and aspiring founders seem to be infatuated by the site's growing power and appeal, however they're not the only ones cashing in on the importance of ideas.
 
-![](/img/download-1-.jpg)
+![](/img/my-first-million.jpg)
 
 *My First Million* is a podcast hosted by acclaimed marketer Shaan Puri and distinguished entrepreneur Sam Parr.
 
