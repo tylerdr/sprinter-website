@@ -50,7 +50,7 @@ It's quickly morphed into a fan favorite among tech geeks and entrepreneurs ever
 
 The more you listen to the podcast, the more you notice a common thread between all of the successful guests: a personal oath to continuously spotting new ideas throughout their daily routines.
 
-Although the concepts of brainstorming or \*ideation sessions (\*if you want to sound simultaneously both hip and formal) are nothing new, it's the first time in history we've been collectively granted the power of the internet to understand, and solve problems that concern people groups far beyond our circle of influence.
+Although the concepts of brainstorming or *ideation sessions* (if you want to sound simultaneously both hip and formal) are nothing new, it's the first time in history we've been collectively granted the power of the internet to understand, and solve problems that concern people groups far beyond our circle of influence.
 
 - - -
 
