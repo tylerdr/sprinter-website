@@ -42,7 +42,7 @@ Entrepreneurs, innovators, and aspiring founders seem to be infatuated by the si
 
 - - -
 
-*My First Million* is \*\*a podcast hosted by acclaimed marketer Shaan Puri and distinguished entrepreneur Sam Parr.
+*My First Million* is a podcast hosted by acclaimed marketer Shaan Puri and distinguished entrepreneur Sam Parr.
 
 The show's core objective is focused around interviewing interesting millionaires and extracting their often times lengthy, but insightful ongoing lists of new and exciting business propositions.
 
@@ -56,7 +56,7 @@ Although the concepts of brainstorming or \*ideation sessions (\*if you want to 
 
 While there are many advocates that support the *idea* of the idea muscle, perhaps the most infamous is James Altucher.
 
-![](/img/download.jpg)
+![](/img/altucher.jpg)
 
 He is a seasoned veteran when it comes to the game of winning big and then losing even bigger.
 
