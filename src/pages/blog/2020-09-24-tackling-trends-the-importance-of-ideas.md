@@ -56,7 +56,7 @@ Although the concepts of brainstorming or \*ideation sessions (\*if you want to 
 
 While there are many advocates that support the *idea* of the idea muscle, perhaps the most infamous is James Altucher.
 
-![](/img/altucher.jpg)
+![]()
 
 He is a seasoned veteran when it comes to the game of winning big and then losing even bigger.
 
