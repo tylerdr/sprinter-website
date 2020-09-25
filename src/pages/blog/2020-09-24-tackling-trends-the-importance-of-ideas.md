@@ -26,7 +26,7 @@ To be fair, all this might sound a bit lofty and abstract.
 
 And trust me it is, but if you can manage to develop concrete skills that engage this sort of abstract thinking, your chances at success will be significantly higher than those who don't.
 
-The three examples listed below are all excellent testimonials to why the importance of ideas is a trend worth tackling now more than ever.
+The three examples listed below serve as excellent testimony to why the importance of ideas is a trend worth tackling, now more than ever.
 
 - - -
 
