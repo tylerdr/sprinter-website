@@ -6,7 +6,7 @@ timeToConsume: 2
 date: 2019-12-22T18:22:46.619Z
 description: |
   “The mass of men lead lives of quiet desperation." -Henry David Thoreau
-featuredpost: true
+featuredpost: false
 featuredimage: /img/airplane-window.jpg
 tags:
   - blog
