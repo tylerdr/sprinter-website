@@ -201,7 +201,7 @@ export const IndexPageTemplate = ({
                 {/* {ThirdCallToAction.statistic} */}
                 {/* <div className="column">
                 <Samy path={ThirdCallToAction.icon.publicURL}>
-                        <SvgProxy fill="#000" />
+                        {/* <SvgProxy fill="#000" /> */}
                   </Samy>
                 </div>
                 <div className="column is-7">
