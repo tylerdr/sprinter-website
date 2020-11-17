@@ -202,7 +202,7 @@ export const IndexPageTemplate = ({
                 {/* <div className="column">
                 <Samy path={ThirdCallToAction.icon.publicURL}>
                         {/* <SvgProxy fill="#000" /> */}
-                  </Samy>
+                  {/* </Samy>
                 </div>
                 <div className="column is-7">
                   <div>
