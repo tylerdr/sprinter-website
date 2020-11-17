@@ -107,7 +107,7 @@ export const IndexPageTemplate = ({
     </section>
     <section className="section section--gradient"
       sx={{
-        backgroundColor: "background"
+        backgroundColor: "otherbackground"
       }}>
       <div className="container" sx={{color: 'text'}}>
           <div className="columns">
@@ -126,7 +126,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
     </section>
-    <section className="section section--gradient"
+    {/* <section className="section section--gradient"
       sx={{
         backgroundColor: "otherbackground"
       }}>
@@ -160,7 +160,7 @@ export const IndexPageTemplate = ({
                     {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     {console.log(main.video)}
               </BackgroundVideo>  */}
-            <div><img src={ThirdCallToAction.image.publicURL}/></div>
+            {/* <div><img src={ThirdCallToAction.image.publicURL}/></div>
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{
                 backgroundColor: "rgba(38, 44, 48, .75)",
@@ -172,12 +172,12 @@ export const IndexPageTemplate = ({
                 borderRadius: "10px"
                 }} className="first-tagline is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.firstLine} */}
-                <div>
+                {/* <div>
                 <div>Worried about your company's outdated systems?</div>
                 <div sx={{marginTop: 3, marginBottom: 3}}>You're <i>not</i> the only one.</div> 
                 <div>CEOs and senior executives say digital transformation risk is their top concern in 2019.</div>
                 </div>
-              </div>
+              </div> */}
               {/* <div
               sx={{
                 backgroundColor: "transparent",
@@ -188,7 +188,7 @@ export const IndexPageTemplate = ({
                         <SvgProxy fill="#000" width="200px"/>
                   </Samy>
               </div> */}
-              <div sx={{
+              {/* <div sx={{
                 backgroundColor: "transparent",
                 position: "absolute",
                 maxWidth: "50%",
@@ -199,7 +199,7 @@ export const IndexPageTemplate = ({
                 borderRadius: "10px"
                 }} className="columns is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.statistic} */}
-                <div className="column">
+                {/* <div className="column">
                 <Samy path={ThirdCallToAction.icon.publicURL}>
                         <SvgProxy fill="#000" />
                   </Samy>
@@ -211,12 +211,12 @@ export const IndexPageTemplate = ({
                   <div sx={{marginTop: 3}}>
                   <TypeformPopup sx={{margin: 3}} text={"Lets Talk"} url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
                   </div>
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
               {/* <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.secondLine} */}
               {/* </div> */}
-            </div>
+            {/* </div>
           </div>
         </div>
         <div className="each-slide">
@@ -232,9 +232,9 @@ export const IndexPageTemplate = ({
           </div>
         </div>
         </Fade>
-    </div>
-    </section>
-    <section className="section section--gradient"
+    </div> */}
+    {/* </section>  */}
+    {/* <section className="section section--gradient"
       sx={{
         backgroundColor: "otherbackground"
       }}>
@@ -254,7 +254,7 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-    </section>
+    </section> */}
     <section className="section section--gradient"
       sx={{
         backgroundColor: "background"

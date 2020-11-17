@@ -61,7 +61,7 @@ export const AboutPageTemplate = ({
   return (
     <div sx={{color: "text", backgroundColor: "background"}} className="about-page">
     <SEO title={title} description={missionStatement}/>
-    <section className="section section--gradient"
+    {/* <section className="section section--gradient"
     sx={{
       paddingTop: "5rem"
     }}>
@@ -125,7 +125,7 @@ export const AboutPageTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     <section className="section section--gradient">
       <div className="container">
           <div className="columns">
@@ -146,6 +146,7 @@ export const AboutPageTemplate = ({
                 </div> */}
                 <div className="about-section"
                 sx={{
+                  marginTop: 4,
                   marginBottom: 3,
                   paddingBottom: 4,
                 }}>

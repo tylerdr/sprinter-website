@@ -20,7 +20,7 @@ export default class BlogIndexPage extends React.Component {
               overflow: "hidden"
             }}
           >
-            <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo" poster="https://ucarecdn.com/0e262285-0c89-4147-a833-e8e82dab74b7">
+            <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo">
                   <source src="/img/compressedwritingvideo.mp4" type="video/mp4" />
             </BackgroundVideo> 
           {/* <div

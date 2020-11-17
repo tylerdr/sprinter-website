@@ -58,7 +58,7 @@ return (
               margin: "auto",
               maxWidth: "75%"
             }}>
-              <PreviewCompatibleImage imageInfo={featuredimage}/>
+              {featuredimage ? <PreviewCompatibleImage imageInfo={featuredimage}/> : ''}
             </div>
             {podcast && (
               <div sx={{maxWidth: "75%", margin: "auto"}}>
