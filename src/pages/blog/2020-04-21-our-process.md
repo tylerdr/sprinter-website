@@ -5,7 +5,7 @@ author: Mitchell Pousson II
 timeToConsume: 3
 date: 2020-04-21T21:37:42.738Z
 description: "How we help you get from where you are to where you could be. "
-featuredpost: true
+featuredpost: false
 featuredimage: /img/business-4051773_1920.jpg
 tags:
   - technology
