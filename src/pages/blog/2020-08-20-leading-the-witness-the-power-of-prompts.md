@@ -8,7 +8,7 @@ timeToConsume: 5
 date: 2020-08-20T20:38:48.326Z
 description: "A deep dive into how the infamous leading the witness dilemma ties
   into conquering our own biases.  "
-featuredpost: true
+featuredpost: false
 featuredimage: /img/lawyer-3268430_1920.jpg
 tags:
   - blog
