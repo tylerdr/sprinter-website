@@ -8,7 +8,7 @@ date: 2020-11-19T17:40:35.746Z
 description: Both the idea guy and the execution guy are critical for
   organizational success but how do we go about balancing the two?
 featuredpost: true
-featuredimage: /img/ssss.gif
+featuredimage: /img/undraw_meeting_re_i53h.png
 tags:
   - blog
 ---
@@ -52,7 +52,7 @@ Startups explore and capture markets well but as they grow they often lose their
 
 Big companies capitalize on existing markets efficiently but often fail in finding new pursuits.
 
-![](/img/undraw_meeting_re_i53h.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5533ac1a-991f-4fcf-98cb-bc6881395c80/ssss.gif](/img/ssss.gif)
 
 Ideas without execution are equally as worthless as executing on the wrong idea.
 
