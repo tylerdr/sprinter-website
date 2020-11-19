@@ -6,7 +6,7 @@ timeToConsume: 3
 date: 2020-09-03T19:09:25.742Z
 description: "This is our final blog in a three part series looking into the
   power of prompts. "
-featuredpost: true
+featuredpost: false
 featuredimage: /img/prisoner-296515_1280.png
 tags:
   - blog
