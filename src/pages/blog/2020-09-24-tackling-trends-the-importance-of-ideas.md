@@ -5,7 +5,7 @@ author: Mitchell D. Pousson II
 timeToConsume: 3
 date: 2020-09-24T20:49:42.532Z
 description: "We believe ideas are the currency of the future, here's why:"
-featuredpost: true
+featuredpost: false
 featuredimage: /img/brain-153040_1280.png
 tags:
   - blog
