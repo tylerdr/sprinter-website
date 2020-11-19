@@ -7,7 +7,7 @@ date: 2019-12-02T19:23:22.960Z
 description: 'We interviewed 8 randomly selected students on a college campus
   with one simple question: "If you had all the money in the world, would you
   still work? And if so, what would you do for work?"'
-featuredpost: false
+featuredpost: true
 featuredimage: /img/podcast-2.jpg
 tags:
   - podcast
