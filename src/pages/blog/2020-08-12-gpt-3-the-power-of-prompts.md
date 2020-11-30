@@ -7,7 +7,7 @@ author: Mitchell Pousson II
 timeToConsume: 4
 date: 2020-08-12T20:03:59.232Z
 description: What does the closest digital equivalent of our brains say about us?
-featuredpost: true
+featuredpost: false
 featuredimage: /img/monitor-42356_1280.png
 tags:
   - blog

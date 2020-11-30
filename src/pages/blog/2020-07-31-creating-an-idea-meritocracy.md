@@ -5,7 +5,7 @@ author: Mitchell Pousson
 timeToConsume: 5
 date: 2020-07-31T00:02:32.133Z
 description: Why is creating an idea meritocracy important?
-featuredpost: true
+featuredpost: false
 featuredimage: /img/alvaro-reyes-qwwphwip31m-unsplash.jpg
 tags:
   - blog

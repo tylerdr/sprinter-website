@@ -6,7 +6,7 @@ timeToConsume: 2
 date: 2019-11-10T05:00:00.000Z
 description: How Sprinter is working with businesses to create transparency
   through automation.
-featuredpost: true
+featuredpost: false
 featuredimage: /img/sprinteraboutimage.jpg
 tags:
   - blog

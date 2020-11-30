@@ -5,7 +5,7 @@ author: Mitchell Pousson II
 timeToConsume: 3
 date: 2020-08-05T14:52:20.076Z
 description: This is why you should never anchor early to a design layout.
-featuredpost: true
+featuredpost: false
 featuredimage: /img/interface-3614766_1280.png
 tags:
   - blog
