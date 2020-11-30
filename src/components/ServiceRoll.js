@@ -65,6 +65,7 @@ const ServiceRoll = ( { location }) => {
                     </div>
                   </div>
                 </header>
+                {location ? '':
                 <div>
                 <span
                     sx={{
@@ -72,7 +73,7 @@ const ServiceRoll = ( { location }) => {
                       fontFamily:"body",
                       fontWeight:"body"
                     }}>{post.frontmatter.description}</span>
-                </div>
+                </div>}
                 {/* <span className="float-right show-on-hover"
                   sx={{
                     fontFamily: "body", 
@@ -89,6 +90,7 @@ const ServiceRoll = ( { location }) => {
       </div>
     )
   }
+
 
 ServiceRoll.propTypes = {
   data: PropTypes.shape({

@@ -24,7 +24,7 @@ export const IndexPageTemplate = ({
   SecondCallToAction,
   ThirdCallToAction,
   approaches
-}) => { 
+}) => {
   const properties = {
     // duration: 7000,
     transitionDuration: 500,
@@ -38,95 +38,94 @@ export const IndexPageTemplate = ({
     // }
   }
   return (
-  <div sx={{color:'text'}}>
-    <div
-      className="full-width-image margin-top-0"
-      sx={{
-        minHeight: "500px",
-        height: "90vh",
-        textAlign: "center"
-      }}
+    <div sx={{ color: 'text' }}>
+      <div
+        className="full-width-image margin-top-0"
+        sx={{
+          minHeight: "500px",
+          height: "90vh",
+          textAlign: "center"
+        }}
         style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
+          backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image
+            })`,
           backgroundPosition: `bottom`,
           backgroundAttachment: `fixed`,
         }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-          width: '75%'
-        }}
       >
-        <h1 
-          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+        <div
           style={{
-            color: 'white',
+            display: 'flex',
+            height: '150px',
             lineHeight: '1',
-            padding: '0.25em',
-          }}
-          sx={{
-            fontFamily: "heading",
-            fontWeight: "heading",
+            justifyContent: 'space-around',
+            alignItems: 'left',
+            flexDirection: 'column',
+            width: '75%'
           }}
         >
-          {FirstCallToAction.firstLine}
-        </h1>
-        <div>
-      <TypeformPopup text={"Get Out There"} url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
+          <h1
+            className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+            style={{
+              color: 'white',
+              lineHeight: '1',
+              padding: '0.25em',
+            }}
+            sx={{
+              fontFamily: "heading",
+              fontWeight: "heading",
+            }}
+          >
+            {FirstCallToAction.firstLine}
+          </h1>
+          <div>
+            <TypeformPopup text={"Get Out There"} url={"https://sprinter.typeform.com/to/Dq6veQ"} />
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
-    <section className="section section--gradient"
-      sx={{
-        backgroundColor: "background"
-      }}>
-      <div className="container" sx={{color: 'text'}}>
+      <section className="section section--gradient"
+        sx={{
+          backgroundColor: "background"
+        }}>
+        <div className="container" sx={{ color: 'text' }}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-                    <div className="columns is-multiline">
-                      <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
-                      sx={{
-                        fontFamily: "heading",
-                        fontWeight: "heading"
-                      }}>
-                        Featured Services
+              <div className="columns is-multiline">
+                <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+                  sx={{
+                    fontFamily: "heading",
+                    fontWeight: "heading"
+                  }}>
+                  Featured Services
                       </div>
-                      <ServiceRoll location={"home"}/>
-                </div>
+                <ServiceRoll location={"home"} />
+              </div>
             </div>
           </div>
         </div>
-    </section>
-    <section className="section section--gradient"
-      sx={{
-        backgroundColor: "background"
-      }}>
-      <div className="container" sx={{color: 'text'}}>
+      </section>
+      <section className="section section--gradient"
+        sx={{
+          backgroundColor: "background"
+        }}>
+        <div className="container" sx={{ color: 'text' }}>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-            <div className="columns is-multiline">
-                    <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
-                      sx={{
-                        fontFamily: "heading",
-                        fontWeight: "heading"
-                      }}>
-                        Sprinter's Approach
+              <div className="columns is-multiline">
+                <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+                  sx={{
+                    fontFamily: "heading",
+                    fontWeight: "heading"
+                  }}>
+                  Sprinter's Approach
                       </div>
-                      <Accordion items={approaches} className={"columns is-multiline"}/>
-                </div>
+                <Accordion items={approaches} className={"columns is-multiline"} />
+              </div>
             </div>
           </div>
         </div>
-    </section>
-    <section className="section section--gradient"
+      </section>
+      {/* <section className="section section--gradient"
       sx={{
         backgroundColor: "otherbackground"
       }}>
@@ -160,7 +159,7 @@ export const IndexPageTemplate = ({
                     {main.video.videoFile && <source src={main.video.videoFile.publicURL} type="video/mp4" />}
                     {console.log(main.video)}
               </BackgroundVideo>  */}
-            <div><img src={ThirdCallToAction.image.publicURL}/></div>
+      {/* <div><img src={ThirdCallToAction.image.publicURL}/></div>
             <div className="columns is-multiline" sx={{textAlign: "center", color: "white"}}>
               <div sx={{
                 backgroundColor: "rgba(38, 44, 48, .75)",
@@ -172,13 +171,13 @@ export const IndexPageTemplate = ({
                 borderRadius: "10px"
                 }} className="first-tagline is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.firstLine} */}
-                <div>
+      {/* <div>
                 <div>Worried about your company's outdated systems?</div>
                 <div sx={{marginTop: 3, marginBottom: 3}}>You're <i>not</i> the only one.</div> 
                 <div>CEOs and senior executives say digital transformation risk is their top concern in 2019.</div>
                 </div>
-              </div>
-              {/* <div
+              </div> */}
+      {/* <div
               sx={{
                 backgroundColor: "transparent",
                 position: "absolute",
@@ -188,7 +187,7 @@ export const IndexPageTemplate = ({
                         <SvgProxy fill="#000" width="200px"/>
                   </Samy>
               </div> */}
-              <div sx={{
+      {/* <div sx={{
                 backgroundColor: "transparent",
                 position: "absolute",
                 maxWidth: "50%",
@@ -199,10 +198,10 @@ export const IndexPageTemplate = ({
                 borderRadius: "10px"
                 }} className="columns is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.statistic} */}
-                <div className="column">
+      {/* <div className="column">
                 <Samy path={ThirdCallToAction.icon.publicURL}>
                         {/* <SvgProxy fill="#000" /> */}
-                  </Samy>
+      {/* </Samy>
                 </div>
                 <div className="column is-7">
                   <div>
@@ -211,12 +210,12 @@ export const IndexPageTemplate = ({
                   <div sx={{marginTop: 3}}>
                   <TypeformPopup sx={{margin: 3}} text={"Lets Talk"} url={"https://sprinter.typeform.com/to/Dq6veQ"}/>
                   </div>
-                </div>
-              </div>
-              {/* <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
+                </div> */}
+      {/* </div> */}
+      {/* <div sx={{backgroundColor: "transparent"}} className="column is-12 is-size-6-mobile is-size-6-tablet is-size-5-widescreen">
                 {/* {ThirdCallToAction.secondLine} */}
-              {/* </div> */}
-            </div>
+      {/* </div> */}
+      {/* </div>
           </div>
         </div>
         <div className="each-slide">
@@ -232,9 +231,9 @@ export const IndexPageTemplate = ({
           </div>
         </div>
         </Fade>
-    </div>
-    </section>
-    <section className="section section--gradient"
+    </div> */}
+      {/* </section>  */}
+      {/* <section className="section section--gradient"
       sx={{
         backgroundColor: "otherbackground"
       }}>
@@ -254,42 +253,43 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-    </section>
-    <section className="section section--gradient"
-      sx={{
-        backgroundColor: "background"
-      }}>
-      <div className="container">
+    </section> */}
+      <section className="section section--gradient"
+        sx={{
+          backgroundColor: "background"
+        }}>
+        <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-                <div className="columns is-multiline">
-                  <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
-                    sx={{
+              <div className="columns is-multiline">
+                <div className="column is-12 is-size-3-mobile is-size-2-tablet is-size-2-widescreen"
+                  sx={{
                     fontFamily: "heading",
-      
+
                     fontWeight: "heading",
-                    }}
-                  >
-                    Latest Stories
+                  }}
+                >
+                  Latest Stories
                   </div>
-                  <BlogRoll homepage={"homepage"} />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="button" to="/blog"
+                <BlogRoll homepage={"homepage"} />
+                <div className="column is-12 has-text-centered">
+                  <Link className="button" to="/blog"
                     sx={{
                       fontFamily: "heading",
-        
+
                     }}
-                    >
-                      Read more
+                  >
+                    Read more
                     </Link>
-                  </div>
                 </div>
-                </div>
+              </div>
             </div>
           </div>
-    </section>
-  </div>
-)}
+        </div>
+      </section>
+    </div>
+  )
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),

@@ -41,7 +41,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout sx={{ color: "text" }}>
-        <div
+        {/* <div
           className="full-width-image margin-top-0"
           style={{
             backgroundImage: `url('/img/newportri-2-.jpg')`,
@@ -89,12 +89,12 @@ export default class Index extends React.Component {
               We know your time is valuable. That's why we promise to respond promptly to any questions you may have concerning our process. Reach out today and discover the infinite ways we can work together to make your business better.
                 </h3>
           </div>
-        </div>
-        <section className="section" sx={{ textAlign: "center", backgroundColor: "background", color: "text" }}>
+        </div> */}
+        <section className="section" sx={{ textAlign: "center", backgroundColor: "background", color: "text"}}>
           <div className="container">
             <div className="content"
               sx={{
-                marginTop: 2,
+                marginTop: 4,
                 fontSize: 4,
               }}>
               <div className="columns">
