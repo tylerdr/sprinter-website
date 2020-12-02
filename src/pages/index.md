@@ -91,8 +91,8 @@ approaches:
     bulletPointTwoBody: Great software is useless unless somebody can use it. That's
       why we start with the user before designing any sort of product.
 FirstCallToAction:
-  firstLine: Explore the world of modern tech & discover the endless possibilities
-    it has to offer.
+  firstLine: "The Right Software. Built for Real People. Explore the Possibilities
+    Today. "
   secondLine: ""
   statistic: ""
 SecondCallToAction:
