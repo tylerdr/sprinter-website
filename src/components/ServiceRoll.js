@@ -31,11 +31,13 @@ const ServiceRoll = ( { location }) => {
         {services &&
           services.map(({ node: post }) => (
             <div className="column is-6" key={post.id}>
+              <Link to={"/our-services"} className={location ? '': 'no-pointer-events'}>
                 <article
                   sx={{
                     height: "100%",
                     backgroundColor: "floatingCard",
-                    color: "text"
+                    color: "text",
+                    transition: "0.3s",
                   }}
                   className={`service-list-item tile is-child box  ${
                     post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -43,14 +45,14 @@ const ServiceRoll = ( { location }) => {
                 >
                 <header>
                   {post.frontmatter.icon ? (
-                    <div className="featured-thumbnail">
+                    <div className="featured-thumbnail" sx={{margin: "0.5em"}}>
                       <Samy path={post.frontmatter.icon.publicURL}>
                         {/* <SvgProxy fill="#000" /> */}
                       </Samy>
                     </div>
                   ) : null}
                   <div className="post-meta"
-                  sx={{maxHeight: "60%", margin: "1em"}}>
+                  sx={{margin: "0.5em", width: "300px"}}>
                     <div
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}
@@ -85,6 +87,7 @@ const ServiceRoll = ( { location }) => {
                   {!!post.frontmatter.podcast ? <p>Click to Listen →</p> : <p>Learn More →</p>}
                   </span> */}
               </article>
+              </Link>
             </div>
           ))}
       </div>

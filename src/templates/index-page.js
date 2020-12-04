@@ -79,7 +79,7 @@ export const IndexPageTemplate = ({
             {FirstCallToAction.firstLine}
           </h1>
           <div>
-            <TypeformPopup text={"Get Out There"} url={"https://sprinter.typeform.com/to/Dq6veQ"} />
+            <TypeformPopup text={"GET OUT THERE"} url={"https://sprinter.typeform.com/to/Dq6veQ"} />
           </div>
         </div>
       </div>
@@ -276,10 +276,10 @@ export const IndexPageTemplate = ({
                   <Link className="button" to="/blog"
                     sx={{
                       fontFamily: "heading",
-
+                      fontSize: "20px"
                     }}
                   >
-                    Read more
+                    READ MORE
                     </Link>
                 </div>
               </div>
