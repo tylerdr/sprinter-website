@@ -6,7 +6,7 @@ author: Mitchell D. Pousson II
 timeToConsume: 3
 date: 2020-10-02T19:27:31.395Z
 description: How do we start taking action on our ideas?
-featuredpost: true
+featuredpost: false
 featuredimage: /img/light-bulb-3104355_1920.jpg
 tags:
   - blog
