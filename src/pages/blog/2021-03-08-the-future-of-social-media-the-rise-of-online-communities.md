@@ -24,7 +24,7 @@ This has subsequently led to the purging of thousands of accounts leaving many o
 
 It seems that the digital products that shaped our internet age are now edging toward the end of their lifecycles causing many to question what our collective online future looks like.
 
-Only time will unveil what's in store for 2021 and the future of social media—but in the mean\*time—\*we've comprised our own list of predictions.
+Only time will unveil what's in store for 2021 and the future of social media—but in the meantime—we've comprised our own list of predictions.
 
 ## 5 Bold Social Media Predictions
 
