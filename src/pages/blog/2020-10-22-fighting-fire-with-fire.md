@@ -7,7 +7,7 @@ timeToConsume: 3
 date: 2020-10-22T23:04:26.916Z
 description: "Exploring the notion of fighting fire with fire in today's
   ever-evolving tech world. "
-featuredpost: true
+featuredpost: false
 featuredimage: /img/fire-heart-961194_1920.jpg
 tags:
   - blog
