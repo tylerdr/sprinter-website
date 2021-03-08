@@ -26,7 +26,7 @@ It seems that the digital products that shaped our internet age are now edging t
 
 Only time will unveil what's in store for 2021 and the future of social media—but in the meantime—we've comprised our own list of predictions.
 
-## 5 Bold Social Media Predictions
+## **5 Bold Social Media Predictions**
 
 1. Video and visual content will lead the way.
 2. Politics will drive users away from certain platforms.
@@ -98,13 +98,13 @@ Entrepreneurs are now more connected with other entrepreneurs than ever before t
 
 While there's not much overwhelming evidence to support this claim, we believe selling your data to marketing agencies and private communities will become a solidified trend in the near future. With so many social media platforms consistently stealing your data with unethical consent, there will be many startups and new digital businesses that offer to purchase it instead. Selling to the highest bidder will become a route taken by many in order to conveniently pocket a few bucks by submitting their personal data into digital auctions.
 
-### Invite-only communities will become popular.
+### **Invite-only communities will become popular.**
 
 ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a59e2d28-ec41-4d41-96fa-8c0084bb72c0/Untitled.png](/img/screenshot-2021-03-08-155302.png)
 
 As private communities continue to soar in popularity, so will their restrictions. Only individuals who meet certain criteria and are committed to following the community's guidelines will be allowed to join. This however comes as no surprise. As the established platforms take on more responsibility regarding what they do and don't allow within their sites, so will communities. These restrictions will provide a way for startups to be selective with their early adopters and test groups in order to acquire the relevant data they are after. Extensive background checks will take place before users are allowed into communities as a way to ensure the safety, health, and longevity of the group.
 
-### **Welcome to our virtual ideation session**
+### **Welcome to our virtual ideation session.**
 
 ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/73bec8db-74d9-41d9-8840-80c190d2bfc4/Untitled.png](/img/screenshot-2021-03-08-155331.png)
 
