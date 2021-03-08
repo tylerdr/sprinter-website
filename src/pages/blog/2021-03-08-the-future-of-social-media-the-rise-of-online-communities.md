@@ -46,9 +46,7 @@ Only time will unveil what's in store for 2021 and the future of social media—
 
 ### **Video content is here to stay**.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75e2153f-6f8e-44f5-bbcd-f1c51bbca03d/Untitled.png](/img/screenshot-2021-03-08-154642.png)
-
-Piper Sandler’s 40th Semi-Annual Taking Stock With Teens Survey Fall 2020, via Marketing Charts
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75e2153f-6f8e-44f5-bbcd-f1c51bbca03d/Untitled.png](/img/screenshot-2021-03-08-154642.png "Piper Sandler’s 40th Semi-Annual Taking Stock With Teens Survey Fall 2020, via Marketing Charts")
 
 Over the past several years, Snapchat has dominated the social media marketplace among American teens with TikTok and Instagram trailing behind by five to ten percent. So what makes these platforms so popular among the younger generation? Video. It should come as no surprise that video and visual content is generation Z's preferred method of consumption. They were raised in the era of Netflix, Hulu, YouTube, and are now the in the grips of fully-remote online learning. What we'll eventually see in the next couple of years is a vast decrease in written content such as blogs, newsletters, and even books. Most of the written material will be translated into easy to consume video clips and info-graphics. It's safe to say that video and visuals are the future of content.
 
@@ -72,9 +70,7 @@ According to Eric Weinstein, a capitol investor and Harvard physicist, "in our i
 
 ### **Social media abstinence will rise in mainstream popularity.**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8557a9bf-672b-450b-b8ef-07755ff3f371/Untitled.png](/img/screenshot-2021-03-08-155032.png)
-
-Jaron Lanier, one of the many voices urging the public to delete their social media accounts.
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8557a9bf-672b-450b-b8ef-07755ff3f371/Untitled.png](/img/screenshot-2021-03-08-155032.png "Jaron Lanier, one of the many voices urging the public to delete their social media accounts.")
 
 The Social Dilemma, a hit Netflix documentary released in late 2020, effectively alerted the public of the downsides of social media stemming from its manipulative algorithms. Nobody really thought staring at a screen for hours on end was healthy, but now here we are in 2021 and there are more people on social media than ever before—nearly 30.1 billion to be precise. Jaron Lanier, one of the individuals interviewed in the documentary, is a strong advocate for the anti-social media movement. Like many others, he's been made aware of the negative side effects associated with endless scrolling and has decided to take a stand against it. As politics and differing worldviews continue to plague popular platforms, many will hover over that *delete account* button and encourage their friends and family to do the same. This counter sub-culture will look similar to the *straight edge* movement that emerged amid the early-1980's hardcore punk scene. After all, complete abstinence is always easier than perfect moderation.
 
