@@ -18,7 +18,7 @@ People are fleeing town square and flooding the local pubs in search of better c
 
 Facebook, Twitter, Google, YouTube and a few other tech overlords have been creating and monitoring our digital worlds for over a decade now.
 
-However recent events riddled with public and political outrage have forced these platforms to accept more responsibility for what transpires on their watch.
+However, recent events riddled with public and political outrage have forced these platforms to accept more responsibility for what transpires on their watch.
 
 This has subsequently led to the purging of thousands of accounts leaving many on the hunt for better alternatives out of both frustration and fear.
 
