@@ -52,7 +52,7 @@ const ServiceRoll = ( { location }) => {
                     </div>
                   ) : null}
                   <div className="post-meta"
-                  sx={{margin: "0.5em", width: "300px"}}>
+                  sx={{margin: "0.5em"}}>
                     <div
                       className="is-size-4 show-on-hover"
                       to={post.fields.slug}

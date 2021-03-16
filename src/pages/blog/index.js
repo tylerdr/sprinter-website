@@ -14,15 +14,15 @@ export default class BlogIndexPage extends React.Component {
             backgroundColor: "background"
           }}
           >
-          <div
+          {/* <div
             className="full-width-image"
             sx={{
               overflow: "hidden"
             }}
-          >
-            <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo">
+          > */}
+            {/* <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo">
                   <source src="/img/compressedwritingvideo.mp4" type="video/mp4" />
-            </BackgroundVideo> 
+            </BackgroundVideo>  */}
           {/* <div
           style={{
             position: 'absolute',
@@ -49,11 +49,13 @@ export default class BlogIndexPage extends React.Component {
               Latest Stories
             </h1>
           </div> */}
-          </div>
+          {/* </div> */}
           <section className="section">
             <div className="container">
-              <div className="content">
-                <BlogRoll />
+              <div className="section">
+                <div className="content">
+                  <BlogRoll />
+                </div>
               </div>
             </div>
           </section>
