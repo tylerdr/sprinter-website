@@ -11,6 +11,9 @@ import ReactPlayer from 'react-player'
 import { jsx } from "theme-ui"
 import styled, { withTheme } from 'styled-components'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import HubspotForm from 'react-hubspot-form'
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const BlogPostTemplate = ({
   content,
@@ -84,6 +87,22 @@ return (
               marginTop: 4,
               maxWidth: "75%"
             }}/>
+            <div sx={{
+              maxWidth: "75%",
+              margin: "auto",
+              marginTop:4
+            }}
+            className="columns">
+            <div className="column is-6" sx={{fontSize: 5}}>
+              Sign up for our newsletter <FontAwesomeIcon icon={faLongArrowAltRight}/>
+            </div>
+            <div className="column is-6">
+            <HubspotForm
+              portalId="7339867"
+              formId="ca6762b7-99c0-4e87-84c1-e23dcf6ed639"
+            />
+            </div>
+            </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>

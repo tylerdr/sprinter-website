@@ -34,7 +34,7 @@ class TypeformPopup extends React.Component {
         sx={{
           fontSize: 3,
         }}>
-          {this.props.text}&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowAltCircleRight}/>
+          {this.props.text}
         </div>
       </div>
       // <React.Fragment>

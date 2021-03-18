@@ -28,7 +28,7 @@ export const ProductPageTemplate = ({
 <div sx={{color: "text", backgroundColor: "background"}}>
     {/* <SlidingHeader title={title}/>  */}
     <SEO title={title} description={description}/>
-    <div
+    {/* <div
       className="full-width-image margin-top-0"
         style={{
           backgroundImage: `url(${
@@ -64,7 +64,7 @@ export const ProductPageTemplate = ({
         Our Services
         </h1>
       </div>
-    </div>
+    </div> */}
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
