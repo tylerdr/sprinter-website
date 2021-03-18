@@ -26,7 +26,8 @@ approaches:
       the time we're given.
     bulletPointThreeBody: Training in sprints allows us to be good stewards of our
       time. By breaking the big picture down into bite-size pieces, we're able
-      to get more done, so we have more fun.
+      to get more done, produce higher-quality results, and have fun in the
+      process.
   approachTwo:
     header: Compete Against Complexity
     body: >-
@@ -37,14 +38,16 @@ approaches:
 
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
     bulletPointOne: De-cluttering Daily Activities
-    bulletPointTwo: Its's a Team Effort
+    bulletPointTwo: It's a Team Effort
     bulletPointThree: Simplify the Complex
     bulletPointOneBody: "The bad news: life can be messy. The good news: but it
       doesn't have to be. We are so passionate about technology because it has
       allowed us to declutter our daily routines so that we can get the most out
       of life."
-    bulletPointTwoBody: "We don't view competing companies as competitors. We view
-      them as our teammates battling against the same opponent: complexity."
+    bulletPointTwoBody: "Competition is a powerful driver, but rather than competing
+      against other companies, products or services, we choose to compete
+      against the complexity that can so easily creep in and cripple the things
+      we work so hard to build. "
     bulletPointThreeBody: With the help of modern software, we believe it's truly
       possible to create a world in which the complicated is made simple, so
       that we can all spend our time focusing on the right things.
@@ -64,9 +67,10 @@ approaches:
       complicated. That's why we focus on coming up with ways to harness its
       power by making it easier to hold onto the good ideas while filtering out
       the bad ones.
-    bulletPointTwoBody: Like any good carpenter or sculptor will tell you, it’s all
-      about having the right tools. In order to optimize insight, we find ways
-      that effortlessly work to clarify our cognition.
+    bulletPointTwoBody: Like any good carpenter or sculptor will tell you, having
+      the right tools can make all the difference. In order to optimize for
+      insight, we build & use tools that contribute to clarity of thought and
+      reject those that create clutter.
     bulletPointThreeBody: >
       More work is not the answer. Our objective is to eliminate busy work so
       that people can focus on the work that matters.
@@ -81,18 +85,19 @@ approaches:
       * **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
     bulletPointOne: People = Priority
     bulletPointTwo: User-Focused Designs
-    bulletPointThree: Powerful & Passionate Projects
+    bulletPointThree: Passionate People, Powerful Products
     bulletPointOneBody: Sprinter is rooted in empathy. This means that every person
       we do business with knows that they are our priority, and that we will do
       everything we can to help them achieve their goals.
-    bulletPointThreeBody: We strive to help individuals reach their maximum
-      potential by freeing them from monotonous work so that they can focus on
-      the projects they’re passionate about.
+    bulletPointThreeBody: "We strive to help individuals reach their maximum
+      potential by freeing them from monotonous work so that they can perform at
+      their peak on the projects they’re passionate about. "
     bulletPointTwoBody: Great software is useless unless somebody can use it. That's
-      why we start with the user before designing any sort of product.
+      why we take time to understand the user's perspective before designing any
+      product or feature they'll be expected to use.
 FirstCallToAction:
-  firstLine: Explore the world of modern tech & discover the endless possibilities
-    it has to offer.
+  firstLine: "The Right Software. Built for Real People. Explore the Possibilities
+    Today. "
   secondLine: ""
   statistic: ""
 SecondCallToAction:

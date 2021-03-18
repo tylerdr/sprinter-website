@@ -7,7 +7,7 @@ timeToConsume: 3
 date: 2020-11-19T17:40:35.746Z
 description: Both the idea guy and the execution guy are critical for
   organizational success but how do we go about balancing the two?
-featuredpost: true
+featuredpost: false
 featuredimage: /img/undraw_meeting_re_i53h.png
 tags:
   - blog

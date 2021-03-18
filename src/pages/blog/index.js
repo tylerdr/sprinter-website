@@ -9,18 +9,18 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <section 
+        <section
           sx={{
             backgroundColor: "background"
           }}
-          >
+        >
           {/* <div
             className="full-width-image"
             sx={{
               overflow: "hidden"
             }}
           > */}
-            {/* <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo">
+          {/* <BackgroundVideo sx={{width: "100vw"}} videoTitle="TestVideo">
                   <source src="/img/compressedwritingvideo.mp4" type="video/mp4" />
             </BackgroundVideo>  */}
           {/* <div
