@@ -6,7 +6,7 @@ author: Mitchell D. Pousson II
 timeToConsume: 3
 date: 2020-12-22T17:13:33.268Z
 description: "     "
-featuredpost: true
+featuredpost: false
 featuredimage: /img/20160198715_f2.jpg
 tags:
   - blog
