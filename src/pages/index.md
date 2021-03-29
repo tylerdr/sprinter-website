@@ -96,7 +96,7 @@ approaches:
       why we take time to understand the user's perspective before designing any
       product or feature they'll be expected to use.
 FirstCallToAction:
-  firstLine: "The Right Software. Built for Real People. Explore the Possibilities
+  firstLine: "The Right Software. Built for Real People. Explore The Possibilities
     Today. "
   secondLine: ""
   statistic: ""
