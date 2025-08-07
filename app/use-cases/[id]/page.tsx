@@ -1,33 +1,62 @@
-import { notFound } from "next/navigation"
-import Link from "next/link"
-import { ArrowRight, Clock, TrendingUp, Zap, CheckCircle, Building2, Users, Cpu, ArrowLeft } from "lucide-react"
-import { useCases, industries, roles, getRelatedMCPServers, getRelatedTools, getUseCasesByIndustry } from "@/lib/use-cases-data"
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Clock,
+  TrendingUp,
+  Zap,
+  CheckCircle,
+  Building2,
+  Users,
+  Cpu,
+  ArrowLeft,
+} from "lucide-react";
+import {
+  useCases,
+  industries,
+  roles,
+  getRelatedMCPServers,
+  getRelatedTools,
+  getUseCasesByIndustry,
+} from "@/lib/use-cases-data";
 
 export async function generateStaticParams() {
   return useCases.map((useCase) => ({
     id: useCase.id,
-  }))
+  }));
 }
 
-export default function UseCasePage({ params }: { params: { id: string } }) {
-  const useCase = useCases.find((uc) => uc.id === params.id)
-  
+export default async function UseCasePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const useCase = useCases.find((uc) => uc.id === id);
+
   if (!useCase) {
-    notFound()
+    notFound();
   }
 
-  const relatedMCPServers = getRelatedMCPServers(useCase.id)
-  const relatedTools = getRelatedTools(useCase.id)
+  const relatedMCPServers = getRelatedMCPServers(useCase.id);
+  const relatedTools = getRelatedTools(useCase.id);
   const relatedUseCases = useCases
-    .filter(uc => uc.id !== useCase.id && uc.industry.some(ind => useCase.industry.includes(ind)))
-    .slice(0, 3)
+    .filter(
+      (uc) =>
+        uc.id !== useCase.id &&
+        uc.industry.some((ind) => useCase.industry.includes(ind))
+    )
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen py-24">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
-          <Link href="/use-cases" className="hover:text-white transition-colors">
+          <Link
+            href="/use-cases"
+            className="hover:text-white transition-colors"
+          >
             Use Cases
           </Link>
           <span>/</span>
@@ -37,32 +66,36 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
         {/* Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className={`inline-block px-3 py-1 text-sm font-medium rounded-full ${
-              useCase.difficulty === "Easy" 
-                ? "bg-green-500/20 text-green-400"
-                : useCase.difficulty === "Medium"
-                ? "bg-yellow-500/20 text-yellow-400"
-                : "bg-red-500/20 text-red-400"
-            }`}>
+            <span
+              className={`inline-block px-3 py-1 text-sm font-medium rounded-full ${
+                useCase.difficulty === "Easy"
+                  ? "bg-green-500/20 text-green-400"
+                  : useCase.difficulty === "Medium"
+                    ? "bg-yellow-500/20 text-yellow-400"
+                    : "bg-red-500/20 text-red-400"
+              }`}
+            >
               {useCase.difficulty} Implementation
             </span>
             <span className="text-sm text-gray-500">•</span>
-            <span className="text-sm text-gray-400">{useCase.implementation}</span>
+            <span className="text-sm text-gray-400">
+              {useCase.implementation}
+            </span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {useCase.title}
           </h1>
-          
-          <p className="text-xl text-gray-400 mb-8">
-            {useCase.description}
-          </p>
+
+          <p className="text-xl text-gray-400 mb-8">{useCase.description}</p>
 
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30">
               <TrendingUp className="w-5 h-5 text-green-400 mb-2" />
-              <div className="text-2xl font-bold text-green-400">{useCase.roi}</div>
+              <div className="text-2xl font-bold text-green-400">
+                {useCase.roi}
+              </div>
               <p className="text-xs text-gray-400">Expected ROI</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
@@ -77,7 +110,9 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
               <CheckCircle className="w-5 h-5 text-purple-400 mb-2" />
-              <div className="text-2xl font-bold">{useCase.benefits.length}</div>
+              <div className="text-2xl font-bold">
+                {useCase.benefits.length}
+              </div>
               <p className="text-xs text-gray-400">Key Benefits</p>
             </div>
           </div>
@@ -100,10 +135,15 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
 
             {/* Tools & Technologies */}
             <section className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <h2 className="text-2xl font-semibold mb-4">Tools & Technologies</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Tools & Technologies
+              </h2>
               <div className="flex flex-wrap gap-2">
                 {useCase.tools.map((tool) => (
-                  <span key={tool} className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">
+                  <span
+                    key={tool}
+                    className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm"
+                  >
                     {tool}
                   </span>
                 ))}
@@ -113,7 +153,9 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
             {/* MCP Servers */}
             {relatedMCPServers.length > 0 && (
               <section className="p-6 rounded-xl bg-white/5 border border-white/10">
-                <h2 className="text-2xl font-semibold mb-4">MCP Server Integrations</h2>
+                <h2 className="text-2xl font-semibold mb-4">
+                  MCP Server Integrations
+                </h2>
                 <div className="space-y-4">
                   {relatedMCPServers.map((server) => (
                     <Link
@@ -125,10 +167,15 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
                         <h3 className="font-medium">{server.name}</h3>
                         <Cpu className="w-4 h-4 text-gray-500" />
                       </div>
-                      <p className="text-sm text-gray-400 mb-2">{server.description}</p>
+                      <p className="text-sm text-gray-400 mb-2">
+                        {server.description}
+                      </p>
                       <div className="flex flex-wrap gap-1">
                         {server.capabilities.slice(0, 3).map((cap) => (
-                          <span key={cap} className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-500">
+                          <span
+                            key={cap}
+                            className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-500"
+                          >
                             {cap}
                           </span>
                         ))}
@@ -149,8 +196,8 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
               </h3>
               <div className="space-y-3">
                 {useCase.industry.map((ind) => {
-                  const industry = industries.find(i => i.id === ind)
-                  if (!industry) return null
+                  const industry = industries.find((i) => i.id === ind);
+                  if (!industry) return null;
                   return (
                     <Link
                       key={ind}
@@ -160,12 +207,16 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
                       <div className="flex items-center gap-2">
                         <span className="text-2xl">{industry.icon}</span>
                         <div>
-                          <div className="font-medium text-sm">{industry.name}</div>
-                          <div className="text-xs text-gray-500">{industry.averageROI}</div>
+                          <div className="font-medium text-sm">
+                            {industry.name}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {industry.averageROI}
+                          </div>
                         </div>
                       </div>
                     </Link>
-                  )
+                  );
                 })}
               </div>
             </section>
@@ -178,8 +229,8 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
               </h3>
               <div className="space-y-3">
                 {useCase.roles.map((roleId) => {
-                  const role = roles.find(r => r.id === roleId)
-                  if (!role) return null
+                  const role = roles.find((r) => r.id === roleId);
+                  if (!role) return null;
                   return (
                     <Link
                       key={roleId}
@@ -187,16 +238,20 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
                       className="block p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
                     >
                       <div className="font-medium text-sm">{role.title}</div>
-                      <div className="text-xs text-gray-500">{role.avgTimeSaved} saved</div>
+                      <div className="text-xs text-gray-500">
+                        {role.avgTimeSaved} saved
+                      </div>
                     </Link>
-                  )
+                  );
                 })}
               </div>
             </section>
 
             {/* CTA */}
             <section className="p-6 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-blue-500/30">
-              <h3 className="text-lg font-semibold mb-3">Ready to Implement?</h3>
+              <h3 className="text-lg font-semibold mb-3">
+                Ready to Implement?
+              </h3>
               <p className="text-sm text-gray-400 mb-4">
                 Get a custom implementation plan for your organization.
               </p>
@@ -240,5 +295,5 @@ export default function UseCasePage({ params }: { params: { id: string } }) {
         )}
       </div>
     </div>
-  )
+  );
 }

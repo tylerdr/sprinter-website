@@ -1,36 +1,59 @@
-import { notFound } from "next/navigation"
-import Link from "next/link"
-import { ArrowRight, TrendingUp, AlertTriangle, CheckCircle, ArrowLeft, Briefcase } from "lucide-react"
-import { industries, getUseCasesByIndustry, roles, aiTools } from "@/lib/use-cases-data"
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import {
+  ArrowRight,
+  TrendingUp,
+  AlertTriangle,
+  CheckCircle,
+  ArrowLeft,
+  Briefcase,
+} from "lucide-react";
+import {
+  industries,
+  getUseCasesByIndustry,
+  roles,
+  aiTools,
+} from "@/lib/use-cases-data";
 
 export async function generateStaticParams() {
   return industries.map((industry) => ({
     id: industry.id,
-  }))
+  }));
 }
 
-export default function IndustryPage({ params }: { params: { id: string } }) {
-  const industry = industries.find((ind) => ind.id === params.id)
-  
+export default async function IndustryPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const industry = industries.find((ind) => ind.id === id);
+
   if (!industry) {
-    notFound()
+    notFound();
   }
 
-  const industryUseCases = getUseCasesByIndustry(industry.id)
-  const relatedRoles = roles.filter(role => 
-    role.useCases.some(uc => industryUseCases.some(iuc => iuc.id === uc))
-  )
+  const industryUseCases = getUseCasesByIndustry(industry.id);
+  const relatedRoles = roles.filter((role) =>
+    role.useCases.some((uc) => industryUseCases.some((iuc) => iuc.id === uc))
+  );
 
   return (
     <div className="min-h-screen py-24">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
-          <Link href="/use-cases" className="hover:text-white transition-colors">
+          <Link
+            href="/use-cases"
+            className="hover:text-white transition-colors"
+          >
             Use Cases
           </Link>
           <span>/</span>
-          <Link href="/use-cases/industries" className="hover:text-white transition-colors">
+          <Link
+            href="/use-cases/industries"
+            className="hover:text-white transition-colors"
+          >
             Industries
           </Link>
           <span>/</span>
@@ -45,9 +68,7 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
                 AI for <span className="gradient-text">{industry.name}</span>
               </h1>
-              <p className="text-xl text-gray-400">
-                {industry.description}
-              </p>
+              <p className="text-xl text-gray-400">{industry.description}</p>
             </div>
           </div>
 
@@ -55,17 +76,23 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30">
               <TrendingUp className="w-5 h-5 text-green-400 mb-2" />
-              <div className="text-2xl font-bold text-green-400">{industry.averageROI}</div>
+              <div className="text-2xl font-bold text-green-400">
+                {industry.averageROI}
+              </div>
               <p className="text-xs text-gray-400">Average ROI</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
               <Briefcase className="w-5 h-5 text-blue-400 mb-2" />
-              <div className="text-2xl font-bold">{industryUseCases.length}</div>
+              <div className="text-2xl font-bold">
+                {industryUseCases.length}
+              </div>
               <p className="text-xs text-gray-400">AI Use Cases</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
               <CheckCircle className="w-5 h-5 text-purple-400 mb-2" />
-              <div className="text-2xl font-bold">{industry.topTools.length}</div>
+              <div className="text-2xl font-bold">
+                {industry.topTools.length}
+              </div>
               <p className="text-xs text-gray-400">Recommended Tools</p>
             </div>
           </div>
@@ -91,7 +118,9 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
 
             {/* Use Cases */}
             <section>
-              <h2 className="text-2xl font-semibold mb-6">AI Solutions for {industry.name}</h2>
+              <h2 className="text-2xl font-semibold mb-6">
+                AI Solutions for {industry.name}
+              </h2>
               <div className="space-y-4">
                 {industryUseCases.map((useCase) => (
                   <Link
@@ -110,22 +139,28 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
                       </div>
                       <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
                     </div>
-                    
+
                     <div className="flex items-center gap-6 text-sm">
                       <div className="flex items-center gap-2">
                         <TrendingUp className="w-4 h-4 text-green-400" />
-                        <span className="text-green-400 font-medium">{useCase.roi}</span>
+                        <span className="text-green-400 font-medium">
+                          {useCase.roi}
+                        </span>
                       </div>
                       <div className="text-gray-500">•</div>
-                      <span className="text-gray-400">{useCase.timeToValue}</span>
+                      <span className="text-gray-400">
+                        {useCase.timeToValue}
+                      </span>
                       <div className="text-gray-500">•</div>
-                      <span className={`px-2 py-1 rounded-full text-xs ${
-                        useCase.difficulty === "Easy" 
-                          ? "bg-green-500/20 text-green-400"
-                          : useCase.difficulty === "Medium"
-                          ? "bg-yellow-500/20 text-yellow-400"
-                          : "bg-red-500/20 text-red-400"
-                      }`}>
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs ${
+                          useCase.difficulty === "Easy"
+                            ? "bg-green-500/20 text-green-400"
+                            : useCase.difficulty === "Medium"
+                              ? "bg-yellow-500/20 text-yellow-400"
+                              : "bg-red-500/20 text-red-400"
+                        }`}
+                      >
                         {useCase.difficulty}
                       </span>
                     </div>
@@ -138,7 +173,8 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
             <section className="p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/30">
               <h2 className="text-2xl font-semibold mb-4">Success Story</h2>
               <p className="text-gray-300 mb-4">
-                A leading {industry.name.toLowerCase()} company implemented our AI solutions and achieved:
+                A leading {industry.name.toLowerCase()} company implemented our
+                AI solutions and achieved:
               </p>
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
@@ -160,18 +196,22 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
           <div className="lg:col-span-1 space-y-6">
             {/* Recommended Tools */}
             <section className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <h3 className="text-lg font-semibold mb-4">Recommended AI Tools</h3>
+              <h3 className="text-lg font-semibold mb-4">
+                Recommended AI Tools
+              </h3>
               <div className="space-y-3">
                 {industry.topTools.map((toolName) => {
-                  const tool = aiTools.find(t => t.name === toolName)
+                  const tool = aiTools.find((t) => t.name === toolName);
                   return (
                     <div key={toolName} className="p-3 rounded-lg bg-white/5">
                       <div className="font-medium text-sm mb-1">{toolName}</div>
                       {tool && (
-                        <div className="text-xs text-gray-500">{tool.pricing}</div>
+                        <div className="text-xs text-gray-500">
+                          {tool.pricing}
+                        </div>
                       )}
                     </div>
-                  )
+                  );
                 })}
               </div>
             </section>
@@ -187,7 +227,9 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
                     className="block p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
                   >
                     <div className="font-medium text-sm">{role.title}</div>
-                    <div className="text-xs text-gray-500">{role.avgTimeSaved} saved</div>
+                    <div className="text-xs text-gray-500">
+                      {role.avgTimeSaved} saved
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -213,5 +255,5 @@ export default function IndustryPage({ params }: { params: { id: string } }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
