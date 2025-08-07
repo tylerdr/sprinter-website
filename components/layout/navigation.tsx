@@ -6,14 +6,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Menu, X, Zap } from "lucide-react"
 import { useState } from "react"
-
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/labs", label: "AI Labs" },
-  { href: "/contact", label: "Work With Us" },
-]
+import { NAVIGATION, COMPANY_INFO } from "@/lib/constants"
 
 export function Navigation() {
   const pathname = usePathname()
@@ -26,12 +19,12 @@ export function Navigation() {
           <Link href="/" className="flex items-center space-x-2">
             <Zap className="w-8 h-8 text-blue-500" />
             <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-              SprinterHQ
+              {COMPANY_INFO.name}
             </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {NAVIGATION.main.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -70,7 +63,7 @@ export function Navigation() {
           className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10"
         >
           <div className="container mx-auto px-4 py-4">
-            {navItems.map((item) => (
+            {NAVIGATION.main.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
