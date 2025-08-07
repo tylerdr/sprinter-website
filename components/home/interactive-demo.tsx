@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Bot, Workflow, Palette, Gamepad2 } from "lucide-react"
-import { useState, useEffect } from "react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Bot, Workflow, Palette, Gamepad2 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const demos = [
   {
@@ -34,22 +34,22 @@ const demos = [
     href: "/labs/sketch-studio",
     preview: "✏️ → ✨ → 🎨",
   },
-]
+];
 
 export function InteractiveDemo() {
-  const [activeDemo, setActiveDemo] = useState(0)
+  const [activeDemo, setActiveDemo] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveDemo((prev) => (prev + 1) % demos.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
+      setActiveDemo((prev) => (prev + 1) % demos.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 noise-bg opacity-50" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,16 +86,22 @@ export function InteractiveDemo() {
                   } border backdrop-blur-sm`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`p-2 rounded-lg ${
-                      activeDemo === index
-                        ? "bg-gradient-to-br from-blue-500 to-purple-600"
-                        : "bg-white/10"
-                    }`}>
+                    <div
+                      className={`p-2 rounded-lg ${
+                        activeDemo === index
+                          ? "bg-gradient-to-br from-blue-500 to-purple-600"
+                          : "bg-white/10"
+                      }`}
+                    >
                       <demo.icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold mb-1">{demo.title}</h3>
-                      <p className="text-sm text-gray-400 mb-2">{demo.description}</p>
+                      <h3 className="text-lg font-semibold mb-1">
+                        {demo.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-2">
+                        {demo.description}
+                      </p>
                       <div className="text-2xl tracking-wider font-mono opacity-50">
                         {demo.preview}
                       </div>
@@ -139,6 +145,10 @@ export function InteractiveDemo() {
                 >
                   Try Demo →
                 </Link>
+                <div className="mt-3 text-xs text-gray-500">
+                  Tip: Demos auto-rotate every 3s. Tap bullets to switch on
+                  mobile.
+                </div>
               </motion.div>
             </div>
 
@@ -159,10 +169,12 @@ export function InteractiveDemo() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-const React = { createElement: (component: any, props: any) => {
-  const Component = component
-  return <Component {...props} />
-}}
+const React = {
+  createElement: (component: any, props: any) => {
+    const Component = component;
+    return <Component {...props} />;
+  },
+};

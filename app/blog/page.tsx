@@ -1,86 +1,50 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Calendar, Clock, ArrowRight, BookOpen, TrendingUp, Zap, Brain, Rocket } from "lucide-react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  Calendar,
+  Clock,
+  ArrowRight,
+  BookOpen,
+  TrendingUp,
+  Zap,
+  Brain,
+  Rocket,
+} from "lucide-react";
 
-const articles = [
-  {
-    id: "agentic-workflows-guide",
-    title: "The Complete Guide to Agentic Workflows: How AI Agents Transform Business Operations",
-    excerpt: "Learn how autonomous AI agents can handle complex tasks in parallel, reducing operational overhead by 95% while improving accuracy.",
-    category: "AI Strategy",
-    readTime: "8 min read",
-    date: "2024-01-15",
-    featured: true,
-    icon: Brain,
-    tags: ["Agentic AI", "Automation", "Enterprise"],
-  },
-  {
-    id: "roi-calculator-ai",
-    title: "Calculate Your AI ROI: A Framework for Measuring AI Impact",
-    excerpt: "A practical framework for calculating the real ROI of AI implementations, with case studies showing 300% returns in 60 days.",
-    category: "Business Value",
-    readTime: "6 min read",
-    date: "2024-01-10",
-    featured: true,
-    icon: TrendingUp,
-    tags: ["ROI", "Metrics", "Strategy"],
-  },
-  {
-    id: "ai-vs-automation",
-    title: "AI vs Traditional Automation: When to Use Which",
-    excerpt: "Understanding the difference between rule-based automation and intelligent AI agents, and how to choose the right approach.",
-    category: "Technology",
-    readTime: "5 min read",
-    date: "2024-01-08",
-    featured: false,
-    icon: Zap,
-    tags: ["Technology", "Decision Making"],
-  },
-  {
-    id: "building-ai-team",
-    title: "Building Your AI Team: Hire, Partner, or Build?",
-    excerpt: "Explore the pros and cons of different approaches to building AI capabilities in your organization.",
-    category: "Leadership",
-    readTime: "7 min read",
-    date: "2024-01-05",
-    featured: false,
-    icon: Rocket,
-    tags: ["Team Building", "Strategy"],
-  },
-  {
-    id: "ai-healthcare-revolution",
-    title: "How AI is Revolutionizing Healthcare: 5 Real Examples",
-    excerpt: "From patient monitoring to diagnosis assistance, see how AI is transforming healthcare delivery with concrete examples.",
-    category: "Case Studies",
-    readTime: "10 min read",
-    date: "2024-01-03",
-    featured: false,
-    icon: Brain,
-    tags: ["Healthcare", "Case Studies"],
-  },
-  {
-    id: "prompt-engineering-business",
-    title: "Prompt Engineering for Business: Getting the Most from AI",
-    excerpt: "Master the art of prompt engineering to maximize the value of AI tools in your business operations.",
-    category: "How-To",
-    readTime: "6 min read",
-    date: "2023-12-28",
-    featured: false,
-    icon: Zap,
-    tags: ["Tutorial", "Best Practices"],
-  },
-]
+import { articles as articleData } from "@/lib/blog-data";
+
+const iconByCategory: Record<string, any> = {
+  "AI Strategy": Brain,
+  "Business Value": TrendingUp,
+  Technology: Zap,
+  Leadership: Rocket,
+  "Case Studies": Brain,
+  "How-To": Zap,
+};
+
+const articles = articleData.map((a) => ({
+  id: a.slug,
+  title: a.title,
+  excerpt: a.excerpt,
+  category: a.category,
+  readTime: a.readTime,
+  date: a.date,
+  featured: a.featured ?? false,
+  icon: iconByCategory[a.category] ?? Zap,
+  tags: a.tags,
+}));
+
+const counts = articles.reduce<Record<string, number>>((acc, a) => {
+  acc[a.category] = (acc[a.category] || 0) + 1;
+  return acc;
+}, {});
 
 const categories = [
   { name: "All", count: articles.length },
-  { name: "AI Strategy", count: 2 },
-  { name: "Business Value", count: 1 },
-  { name: "Technology", count: 1 },
-  { name: "Case Studies", count: 1 },
-  { name: "How-To", count: 1 },
-]
+  ...Object.entries(counts).map(([name, count]) => ({ name, count })),
+];
 
 export default function BlogPage() {
   return (
@@ -93,15 +57,17 @@ export default function BlogPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-6">
             <BookOpen className="w-5 h-5 text-blue-400" />
-            <span className="text-sm font-medium text-blue-400">Insights & Resources</span>
+            <span className="text-sm font-medium text-blue-400">
+              Insights & Resources
+            </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             AI <span className="gradient-text">Insights</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Practical guides, case studies, and strategies for implementing AI in your business. 
-            No hype, just results.
+            Practical guides, case studies, and strategies for implementing AI
+            in your business. No hype, just results.
           </p>
         </motion.div>
 
@@ -120,7 +86,9 @@ export default function BlogPage() {
                     className="w-full text-left px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex justify-between items-center"
                   >
                     <span className="text-sm">{category.name}</span>
-                    <span className="text-xs text-gray-500">{category.count}</span>
+                    <span className="text-xs text-gray-500">
+                      {category.count}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -128,7 +96,8 @@ export default function BlogPage() {
               <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30">
                 <h4 className="font-semibold mb-3">Get Weekly AI Insights</h4>
                 <p className="text-sm text-gray-400 mb-4">
-                  Join 5,000+ leaders getting practical AI strategies delivered to their inbox.
+                  Join 5,000+ leaders getting practical AI strategies delivered
+                  to their inbox.
                 </p>
                 <input
                   type="email"
@@ -162,19 +131,21 @@ export default function BlogPage() {
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                        article.featured
-                          ? "bg-blue-500/20 text-blue-400"
-                          : "bg-white/10 text-gray-400"
-                      }`}>
+                      <span
+                        className={`px-3 py-1 text-xs font-medium rounded-full ${
+                          article.featured
+                            ? "bg-blue-500/20 text-blue-400"
+                            : "bg-white/10 text-gray-400"
+                        }`}
+                      >
                         {article.category}
                       </span>
                       <div className="flex items-center gap-2 text-xs text-gray-500">
                         <Calendar className="w-3 h-3" />
-                        {new Date(article.date).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          day: 'numeric',
-                          year: 'numeric'
+                        {new Date(article.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
                         })}
                       </div>
                       <div className="flex items-center gap-1 text-xs text-gray-500">
@@ -186,20 +157,21 @@ export default function BlogPage() {
                     <h2 className="text-xl md:text-2xl font-bold mb-3 group-hover:gradient-text transition-all">
                       {article.title}
                     </h2>
-                    
-                    <p className="text-gray-400 mb-4">
-                      {article.excerpt}
-                    </p>
+
+                    <p className="text-gray-400 mb-4">{article.excerpt}</p>
 
                     <div className="flex items-center justify-between">
                       <div className="flex flex-wrap gap-2">
                         {article.tags.map((tag) => (
-                          <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">
+                          <span
+                            key={tag}
+                            className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400"
+                          >
                             {tag}
                           </span>
                         ))}
                       </div>
-                      
+
                       <Link
                         href={`/blog/${article.id}`}
                         className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium text-sm"
@@ -211,11 +183,13 @@ export default function BlogPage() {
                   </div>
 
                   <div className="flex-shrink-0">
-                    <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${
-                      article.featured
-                        ? "bg-gradient-to-br from-blue-500 to-purple-600"
-                        : "bg-white/10"
-                    }`}>
+                    <div
+                      className={`w-16 h-16 rounded-xl flex items-center justify-center ${
+                        article.featured
+                          ? "bg-gradient-to-br from-blue-500 to-purple-600"
+                          : "bg-white/10"
+                      }`}
+                    >
                       <article.icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
@@ -244,10 +218,12 @@ export default function BlogPage() {
           className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-white/10 max-w-4xl mx-auto"
         >
           <h3 className="text-3xl font-bold mb-4">
-            Ready to implement these <span className="gradient-text">strategies</span>?
+            Ready to implement these{" "}
+            <span className="gradient-text">strategies</span>?
           </h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Don't just read about AI transformation—experience it. Let's discuss how these insights apply to your business.
+            Don't just read about AI transformation—experience it. Let's discuss
+            how these insights apply to your business.
           </p>
           <Link
             href="/contact"
@@ -259,5 +235,5 @@ export default function BlogPage() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
