@@ -69,7 +69,7 @@ export default function MusicStudioPage() {
               <h4 className="font-medium mb-2">Generate & Export</h4>
               <p className="text-sm text-muted-foreground">
                 Listen to your AI-generated track with real-time waveform
-                visualization and download when you're satisfied.
+                visualization and download when you&apos;re satisfied.
               </p>
             </div>
           </div>

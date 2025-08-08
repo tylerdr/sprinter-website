@@ -45,10 +45,10 @@ export default function AdCreatorPage() {
           <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
             Enter your product information, choose a style and color scheme, then watch as AI generates
             professional ads optimized for each social media platform. The system creates designs 
-            tailored to each platform's dimensions and best practices.
+            tailored to each platform&apos;s dimensions and best practices.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            In production, Sprinter AI's creative platform can integrate with your brand guidelines,
+            In production, Sprinter AI&apos;s creative platform can integrate with your brand guidelines,
             generate thousands of ad variations for A/B testing, and automatically optimize content
             based on performance data across all marketing channels.
           </p>

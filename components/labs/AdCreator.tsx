@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Upload, Download, Palette, Type, MousePointer, RefreshCw } from "lucide-react";
+import { useState, useRef } from "react";
+import { Upload, Download, Palette, RefreshCw } from "lucide-react";
 
 interface AdFormat {
   name: string;
@@ -191,7 +191,7 @@ export default function AdCreator() {
     ctx.font = `bold ${isBanner ? 24 : isVertical ? 64 : 48}px Arial, sans-serif`;
     ctx.textAlign = "center";
     
-    let textY = data.uploadedImage ? 
+    const textY = data.uploadedImage ? 
       (isVertical ? format.height * 0.6 : format.height * 0.2) : 
       format.height * 0.3;
     
@@ -465,7 +465,9 @@ export default function AdCreator() {
                 
                 <div className="bg-white rounded-lg p-2 overflow-hidden">
                   <canvas
-                    ref={(el) => canvasRefs.current[index] = el}
+                    ref={(el) => {
+                      if (el) canvasRefs.current[index] = el;
+                    }}
                     className="w-full h-auto border border-border/10 rounded"
                     style={{ 
                       maxHeight: format.height > format.width ? '300px' : '150px',
@@ -488,7 +490,9 @@ export default function AdCreator() {
       {/* Hidden canvases for generation */}
       <div className="hidden">
         {AD_FORMATS.map((_, index) => (
-          <canvas key={index} ref={(el) => canvasRefs.current[index] = el} />
+          <canvas key={index} ref={(el) => {
+            if (el) canvasRefs.current[index] = el;
+          }} />
         ))}
       </div>
     </div>

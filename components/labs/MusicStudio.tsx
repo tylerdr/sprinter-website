@@ -7,7 +7,6 @@ import {
   Pause,
   Download,
   Volume2,
-  RotateCcw,
   Music,
   Sparkles,
   Clock,
@@ -93,22 +92,21 @@ export default function MusicStudio() {
   const [duration, setDuration] = useState(30);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationProgress, setGenerationProgress] = useState(0);
-  const [generatedTrack, setGeneratedTrack] = useState<any>(null);
+  const [generatedTrack, setGeneratedTrack] = useState<typeof mockSamples[0] & { title: string; duration: number; prompt: string; generatedAt: string } | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(0.7);
   
-  const audioRef = useRef<HTMLAudioElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
 
   // Initialize Web Audio API
   useEffect(() => {
     if (typeof window !== 'undefined' && 'AudioContext' in window) {
       try {
-        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        audioContextRef.current = new (window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext)();
       } catch (error) {
         console.warn('Web Audio API not supported:', error);
       }
@@ -210,7 +208,7 @@ export default function MusicStudio() {
     }
   };
 
-  const handleStyleSelect = (style: any) => {
+  const handleStyleSelect = (style: typeof presetStyles[0]) => {
     setSelectedStyle(style.name);
     setPrompt(style.prompt);
   };
@@ -290,13 +288,12 @@ export default function MusicStudio() {
         
         // Simulate time progress
         const startTime = audioContextRef.current.currentTime;
-        let timeUpdateId: number;
         const updateTime = () => {
           if (audioContextRef.current) {
             const elapsed = audioContextRef.current.currentTime - startTime;
             setCurrentTime(Math.min(elapsed, duration));
             if (elapsed < duration && isPlaying) {
-              timeUpdateId = requestAnimationFrame(updateTime);
+              requestAnimationFrame(updateTime);
             }
           }
         };
@@ -306,6 +303,7 @@ export default function MusicStudio() {
   };
 
   const handleDownload = () => {
+    if (!generatedTrack) return;
     // Create a mock download
     const element = document.createElement('a');
     const file = new Blob(['Mock audio file content'], { type: 'audio/wav' });

@@ -274,7 +274,7 @@ export default function QuizGenerator() {
                   <label className="block text-sm font-medium mb-2">Question Type</label>
                   <select
                     value={config.questionType}
-                    onChange={(e) => setConfig({...config, questionType: e.target.value as any})}
+                    onChange={(e) => setConfig({...config, questionType: e.target.value as 'mixed' | 'multiple-choice' | 'true-false' | 'short-answer'})}
                     className="w-full p-3 bg-card/10 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
                   >
                     <option value="mixed">Mixed</option>
@@ -308,7 +308,7 @@ export default function QuizGenerator() {
                   <label className="block text-sm font-medium mb-2">Difficulty Level</label>
                   <select
                     value={config.difficulty}
-                    onChange={(e) => setConfig({...config, difficulty: e.target.value as any})}
+                    onChange={(e) => setConfig({...config, difficulty: e.target.value as 'easy' | 'medium' | 'hard'})}
                     className="w-full p-3 bg-card/10 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
                   >
                     <option value="easy">Easy</option>

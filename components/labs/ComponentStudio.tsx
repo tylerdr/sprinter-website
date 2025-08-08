@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Code,
@@ -13,7 +13,6 @@ import {
   Sun,
   Bell,
   TrendingUp,
-  CreditCard,
   Sparkles,
 } from "lucide-react";
 
@@ -261,10 +260,12 @@ export default function ComponentStudio() {
     setIsGenerating(false);
   };
 
+  // Move state hooks to the main component
+  const [currentStep] = useState(2);
+  const [isDark, setIsDark] = useState(false);
+  const [count] = useState(3);
+
   const renderComponent = (componentName: string) => {
-    const [currentStep, setCurrentStep] = useState(2);
-    const [isDark, setIsDark] = useState(false);
-    const [count, setCount] = useState(3);
 
     switch (componentName) {
       case "PricingCard":

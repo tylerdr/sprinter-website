@@ -6,10 +6,7 @@ import {
   Mic,
   MicOff,
   Volume2,
-  VolumeX,
   Settings,
-  Play,
-  Pause,
   RotateCcw,
   Zap,
   Clock,
@@ -95,7 +92,7 @@ export default function VoiceChat() {
   const [isPushToTalkActive, setIsPushToTalkActive] = useState(false);
   const [messages, setMessages] = useState<VoiceMessage[]>([]);
   const [currentTranscript, setCurrentTranscript] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const [, setIsTyping] = useState(false);
   const [settings, setSettings] = useState<VoiceSettings>({
     voice: "natural",
     inputMode: "auto-detect",
@@ -480,7 +477,7 @@ export default function VoiceChat() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <User className="w-4 h-4 text-blue-400" />
-                    <span className="text-sm font-medium text-blue-400">You're saying:</span>
+                    <span className="text-sm font-medium text-blue-400">You&apos;re saying:</span>
                   </div>
                   <p className="text-white">{currentTranscript}</p>
                 </motion.div>
