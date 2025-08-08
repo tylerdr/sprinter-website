@@ -49,12 +49,27 @@ function AnimatedNumber({
   duration?: number;
   delay?: number;
 }) {
-  const [displayValue, setDisplayValue] = useState(0);
+  const [displayValue, setDisplayValue] = useState<number | null>(null);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Check for reduced motion preference
+  const prefersReducedMotion = useRef<boolean>(false);
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      prefersReducedMotion.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+  }, []);
+
   useEffect(() => {
     if (!isInView) return;
+
+    // If reduced motion is preferred, show final value immediately
+    if (prefersReducedMotion.current) {
+      setDisplayValue(value);
+      return;
+    }
 
     const startTime = Date.now() + delay * 1000;
     const endValue = value;
@@ -75,8 +90,22 @@ function AnimatedNumber({
       }
     };
 
-    requestAnimationFrame(updateNumber);
+    // Start animation immediately if delay is 0, otherwise wait for delay
+    if (delay === 0) {
+      setDisplayValue(0);
+      requestAnimationFrame(updateNumber);
+    } else {
+      setTimeout(() => {
+        setDisplayValue(0);
+        requestAnimationFrame(updateNumber);
+      }, delay * 1000);
+    }
   }, [isInView, value, duration, delay]);
+
+  // Don't render anything until we're ready to show a value
+  if (displayValue === null) {
+    return <span ref={ref} className="opacity-0" aria-hidden="true">{value}</span>;
+  }
 
   return <span ref={ref}>{displayValue}</span>;
 }
