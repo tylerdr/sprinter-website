@@ -73,12 +73,12 @@ export function Hero() {
             key={i}
             className="absolute w-2 h-2 bg-brand/20 rounded-full"
             initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight 
+              x: `${Math.random() * 100}%`,
+              y: `${Math.random() * 100}%` 
             }}
             animate={{
-              x: [null, Math.random() * window.innerWidth],
-              y: [null, Math.random() * window.innerHeight],
+              x: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
+              y: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
             }}
             transition={{
               duration: 20 + i * 5,
