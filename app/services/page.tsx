@@ -19,6 +19,8 @@ import { getPageMetadata } from "@/lib/seo";
 import { StructuredData } from "@/components/seo-structured-data";
 import { ExecutionPlaybook } from "@/components/home/execution-playbook";
 import { WhyNow } from "@/components/home/why-now";
+import { PricingComparison } from "@/components/services/pricing-comparison";
+import { ExecutionTimeline } from "@/components/shared/execution-timeline";
 
 export const metadata: Metadata = getPageMetadata("services");
 
@@ -238,7 +240,11 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <PricingComparison />
+
+          <ExecutionTimeline />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16" style={{ display: 'none' }}>
             {services.map((service) => (
               <div key={service.id} className="relative">
                 <div

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, Users, TrendingUp, Sparkles } from "lucide-react";
+import { ImpactMetrics } from "@/components/shared/impact-metrics";
 
 const benefits = [
   {
@@ -101,28 +102,29 @@ export function HumanCenteredSection() {
               reclaimed for meaningful work, new opportunities created, and
               teams empowered to do what they do best.
             </p>
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-warning mb-2">
-                  100K+
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Hours Reclaimed for Creativity
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">
-                  New Jobs Created
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-brand mb-2">0</div>
-                <div className="text-sm text-muted-foreground">
-                  People Replaced
-                </div>
-              </div>
-            </div>
+            <ImpactMetrics 
+              variant="card" 
+              showAnimation={true}
+              metrics={[
+                {
+                  value: "100",
+                  suffix: "K+",
+                  label: "Hours Reclaimed for Creativity",
+                  color: "text-warning"
+                },
+                {
+                  value: "50",
+                  suffix: "+",
+                  label: "New Jobs Created",
+                  color: "text-accent"
+                },
+                {
+                  value: "0",
+                  label: "People Replaced",
+                  color: "text-brand"
+                }
+              ]}
+            />
           </div>
         </motion.div>
       </div>

@@ -4,38 +4,18 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Zap } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ImpactMetrics } from "@/components/shared/impact-metrics";
+import { HeroBackground } from "./hero-background";
 
 export function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero section"
     >
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, color-mix(in oklch, var(--brand-start) 15%, transparent), transparent 40%)`,
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="absolute inset-0 noise-bg" aria-hidden="true" />
-
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse bg-brand-10" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse animation-delay-2000 bg-brand-10" />
-      </div>
+      <HeroBackground />
+      
+      <div className="absolute inset-0 noise-bg opacity-30" aria-hidden="true" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
@@ -103,48 +83,11 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-2xl mx-auto px-2 sm:px-0"
-            role="group"
-            aria-label="Company statistics"
-          >
-            <div className="text-center">
-              <div
-                className="text-2xl sm:text-3xl font-bold gradient-text"
-                aria-label="100K plus"
-              >
-                100K+
-              </div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">
-                Hours Reclaimed
-              </div>
-            </div>
-            <div className="text-center">
-              <div
-                className="text-2xl sm:text-3xl font-bold gradient-text"
-                aria-label="50 plus"
-              >
-                50+
-              </div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">
-                Jobs Created
-              </div>
-            </div>
-            <div className="text-center">
-              <div
-                className="text-2xl sm:text-3xl font-bold gradient-text"
-                aria-label="250 percent"
-              >
-                250%
-              </div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">
-                Average ROI
-              </div>
-            </div>
-          </motion.div>
+          <ImpactMetrics 
+            variant="hero" 
+            showAnimation={true}
+            className="mt-12 sm:mt-16 md:mt-20 px-2 sm:px-0"
+          />
         </motion.div>
       </div>
 

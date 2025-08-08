@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Rocket, Brain, Users, Target, ArrowRight, Zap } from "lucide-react";
-import { METRICS } from "@/lib/constants";
 import { getPageMetadata } from "@/lib/seo";
+import { CompanyTimeline } from "@/components/about/company-timeline";
+import { ImpactMetrics } from "@/components/shared/impact-metrics";
 
 export const metadata: Metadata = getPageMetadata("about");
 
@@ -30,42 +31,6 @@ const values = [
     title: "Purposeful Innovation",
     description:
       "Every AI system we build frees humans from repetitive tasks so they can pursue meaningful, creative work.",
-  },
-];
-
-const timeline = [
-  {
-    year: "2018",
-    event:
-      "Started in a garage with one mission: make AI practical for real businesses",
-  },
-  {
-    year: "2019",
-    event:
-      "Deployed first production AI agent - automated 70% of loan processing for a regional bank",
-  },
-  {
-    year: "2020",
-    event:
-      "Pivoted to healthcare during COVID - built triage systems handling 10K+ patients daily",
-  },
-  {
-    year: "2021",
-    event:
-      "Launched venture model - became technical co-founders instead of just vendors",
-  },
-  {
-    year: "2022",
-    event: "Our AI systems generated $5M+ in new revenue for clients",
-  },
-  {
-    year: "2023",
-    event:
-      "Fortune 500 breakthrough - deployed enterprise AI handling millions in transactions",
-  },
-  {
-    year: "2024",
-    event: "Now powering 50+ production AI systems generating $10M+ annually",
   },
 ];
 
@@ -152,44 +117,34 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-brand-gradient" />
-            {timeline.map((item) => (
-              <div key={item.year} className="flex gap-6 mb-8 relative">
-                <div className="w-16 h-16 rounded-full bg-brand-gradient flex items-center justify-center flex-shrink-0 z-10">
-                  <span className="text-sm font-bold">{item.year}</span>
-                </div>
-                <div className="flex-1 p-4 rounded-lg bg-card/5 border border-border/10">
-                  <p className="text-foreground/80">{item.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <CompanyTimeline />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
-          <div className="p-6 rounded-xl border border-success-30 bg-success-10 text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">
-              {METRICS.revenueGenerated}
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Client Revenue Generated
-            </p>
-          </div>
-          <div className="p-6 rounded-xl border border-info-30 bg-info-10 text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-            <p className="text-sm text-muted-foreground">
-              AI Products Deployed
-            </p>
-          </div>
-          <div className="p-6 rounded-xl border border-brand-30 bg-brand-10 text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">
-              {METRICS.clientSatisfaction}
-            </div>
-            <p className="text-sm text-muted-foreground">Client Satisfaction</p>
-          </div>
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
+          <ImpactMetrics 
+            variant="inline" 
+            showAnimation={true}
+            metrics={[
+              {
+                value: "10",
+                suffix: "M+",
+                label: "Revenue Generated",
+                color: "gradient-text"
+              },
+              {
+                value: "50",
+                suffix: "+",
+                label: "AI Products Deployed",
+                color: "gradient-text"
+              },
+              {
+                value: "100",
+                suffix: "%",
+                label: "Client Satisfaction",
+                color: "gradient-text"
+              }
+            ]}
+          />
         </div>
 
         <div className="text-center p-8 rounded-2xl border border-border/10 bg-brand-10">
