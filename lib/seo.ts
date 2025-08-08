@@ -45,11 +45,14 @@ export function generateMetadata({
   const fullKeywords = keywords || SEO.keywords
   const fullOgTitle = ogTitle || title || SEO.title
   const fullOgDescription = ogDescription || description || SEO.description
-  const fullOgImage = ogImage || SEO.ogImage
+  
+  // Generate dynamic OG image if not provided
+  const fullOgImage = ogImage || `${SEO.siteUrl}/api/og?title=${encodeURIComponent(fullOgTitle)}&description=${encodeURIComponent(fullOgDescription.substring(0, 100))}`
+  
   const fullOgUrl = ogUrl || SEO.siteUrl
   const fullTwitterTitle = twitterTitle || ogTitle || title || SEO.title
   const fullTwitterDescription = twitterDescription || ogDescription || description || SEO.description
-  const fullTwitterImage = twitterImage || ogImage || SEO.ogImage
+  const fullTwitterImage = twitterImage || ogImage || fullOgImage
 
   return {
     title: fullTitle,

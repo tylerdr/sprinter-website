@@ -71,6 +71,12 @@ export default function AboutPage() {
               we free people from soul-crushing repetitive work so they can contribute their unique human talents.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
+              We specialize in bringing AI to industries often overlooked by Silicon Valley—manufacturing, 
+              healthcare, traditional finance, construction. These &quot;outdated&quot; sectors aren&apos;t behind; 
+              they&apos;re full of untapped potential. They have the most to gain from AI because they haven&apos;t 
+              been disrupted yet. We help them leapfrog straight to cutting-edge automation.
+            </p>
+            <p className="text-lg text-foreground/80 mb-4">
               Six years and 50+ deployments later, we&apos;ve proven this model works. We&apos;ve automated mortgage underwriting, 
               built AI agents that manage patient care, and created systems that generate millions in new revenue. 
               Not in theory. In production. With real users and real results.
