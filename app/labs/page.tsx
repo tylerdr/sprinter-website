@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music } from "lucide-react";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("labs");
@@ -47,6 +47,22 @@ const labs = [
     gradient: "from-orange-500 to-red-600",
   },
   {
+    icon: Music,
+    title: "AI Music Studio",
+    description:
+      "Create original music tracks with AI. Describe your desired genre, mood, and instruments to generate custom compositions in seconds.",
+    href: "/labs/music-studio",
+    gradient: "from-purple-500 to-indigo-600",
+  },
+  {
+    icon: Megaphone,
+    title: "AI Ad Creator",
+    description:
+      "Generate professional social media ads for all platforms instantly. Create Instagram, Facebook, Twitter, LinkedIn content with AI-powered design.",
+    href: "/labs/ad-creator",
+    gradient: "from-pink-500 to-purple-600",
+  },
+  {
     icon: BarChart3,
     title: "AI Data Analyzer",
     description:
@@ -79,6 +95,14 @@ const labs = [
     gradient: "from-amber-500 to-orange-600",
   },
   {
+    icon: FileQuestion,
+    title: "PDF Quiz Generator",
+    description:
+      "Upload any PDF and automatically generate customized quizzes with multiple choice, true/false, and short answer questions.",
+    href: "/labs/quiz-generator",
+    gradient: "from-purple-500 to-violet-600",
+  },
+  {
     icon: Calculator,
     title: "AI ROI Calculator",
     description:
@@ -93,6 +117,14 @@ const labs = [
       "Build AI agent workflows visually by snapping together blocks for reading, processing, deciding, and outputting. See how agents work together.",
     href: "/labs/agent-playground",
     gradient: "from-indigo-500 to-purple-600",
+  },
+  {
+    icon: Mic,
+    title: "Realtime Voice Chat",
+    description:
+      "Experience natural AI conversations with real-time speech recognition, interruption handling, and lifelike voice responses. The future of voice AI.",
+    href: "/labs/voice-chat",
+    gradient: "from-pink-500 to-rose-600",
   },
 ];
 
