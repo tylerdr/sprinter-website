@@ -7,6 +7,7 @@ import { TrustSignals } from "@/components/home/trust-signals";
 import { HumanCenteredSection } from "@/components/home/human-centered";
 import { WhyNow } from "@/components/home/why-now";
 import { ExecutionPlaybook } from "@/components/home/execution-playbook";
+import { WhoWeWorkWith } from "@/components/home/who-we-work-with";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("home");
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyNow />
       <ServicesPreview />
       <ExecutionPlaybook compact />
+      <WhoWeWorkWith />
       <RecentWins />
       <InteractiveDemo />
       <TrustSignals />
