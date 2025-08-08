@@ -68,7 +68,7 @@ export default function CaseStudiesPage() {
 
         <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {caseStudies.map((study) => (
-            <div key={study.id} className="group">
+            <article key={study.id} className="group">
               <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all">
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
                   <div className="xl:col-span-2">
@@ -79,9 +79,14 @@ export default function CaseStudiesPage() {
                         <study.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                       <div className="min-w-0">
-                        <h2 className="text-xl sm:text-2xl font-bold mb-1">
-                          {study.title}
-                        </h2>
+                        <h3 className="text-xl sm:text-2xl font-bold mb-1">
+                          <Link
+                            href={`/case-studies/${study.id}`}
+                            className="hover:underline"
+                          >
+                            {study.title}
+                          </Link>
+                        </h3>
                         <p className="text-xs sm:text-sm text-gray-400">
                           {study.category}
                         </p>
@@ -165,7 +170,7 @@ export default function CaseStudiesPage() {
                         </Link>
                         <Link
                           href="/contact"
-                          className="flex items-center justify-center gap-2 flex-1 px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
+                          className="flex items-center justify-center gap-2 flex-1 px-4 sm:px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
                         >
                           Get Similar Results
                           <ArrowRight className="w-4 h-4" />
@@ -175,11 +180,11 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-white/10 max-w-4xl mx-auto">
+        <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-brand-10 border border-brand-30 max-w-4xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">
             Ready to become our next{" "}
             <span className="gradient-text">success story</span>?
@@ -191,7 +196,7 @@ export default function CaseStudiesPage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
             >
               Start Your AI Transformation
               <ArrowRight className="w-4 h-4" />

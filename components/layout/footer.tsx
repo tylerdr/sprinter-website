@@ -84,7 +84,7 @@ export function Footer() {
             >
               <a
                 href={SOCIAL_LINKS.github}
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-lg"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-lg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on GitHub (opens in new window)"
@@ -93,7 +93,7 @@ export function Footer() {
               </a>
               <a
                 href={SOCIAL_LINKS.twitter}
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-lg"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-lg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on X (Twitter) (opens in new window)"
@@ -102,7 +102,7 @@ export function Footer() {
               </a>
               <a
                 href={SOCIAL_LINKS.linkedin}
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-lg"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-lg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect with us on LinkedIn (opens in new window)"
@@ -111,7 +111,7 @@ export function Footer() {
               </a>
               <a
                 href={SOCIAL_LINKS.email}
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-lg"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-lg"
                 aria-label="Send us an email"
               >
                 <Mail className="w-5 h-5" aria-hidden="true" />

@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { getPageMetadata } from "@/lib/seo";
 import { StructuredData } from "@/components/seo-structured-data";
+import { ExecutionPlaybook } from "@/components/home/execution-playbook";
+import { WhyNow } from "@/components/home/why-now";
 
 export const metadata: Metadata = getPageMetadata("services");
 
@@ -230,9 +232,9 @@ export default function ServicesPage() {
               Choose Your <span className="gradient-text">AI Journey</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From rapid prototypes to enterprise transformations, we offer
-              flexible engagement models. One thing never changes: we deliver
-              working AI, fast.
+              There has never been a better time to gain advantage with
+              technology. We build AI systems that accelerate what you already
+              do well and fill the gaps you don’t have time for.
             </p>
           </div>
 
@@ -333,34 +335,12 @@ export default function ServicesPage() {
             ))}
           </div>
 
+          <div className="mb-4">
+            <WhyNow />
+          </div>
+
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Our Process
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {process.map((item, index) => (
-                <div key={item.step} className="relative">
-                  <div className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-brand-gradient flex items-center justify-center">
-                        <span className="text-sm font-bold">{item.step}</span>
-                      </div>
-                      <item.icon className="w-6 h-6 text-info" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {item.description}
-                    </p>
-                    <p className="text-xs text-info">{item.duration}</p>
-                  </div>
-                  {index < process.length - 1 && (
-                    <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                      <ArrowRight className="w-5 h-5 text-muted-foreground/30" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            <ExecutionPlaybook />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -418,25 +398,25 @@ export default function ServicesPage() {
                 <h3 className="font-semibold">How We Work with PE Partners:</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">
                       Portfolio-wide AI opportunity assessment
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">
                       Rapid deployment across multiple companies
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">
                       Value creation metrics aligned with exit strategy
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">
                       Knowledge transfer to operating partners
                     </span>

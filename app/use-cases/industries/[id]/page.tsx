@@ -172,8 +172,8 @@ export default async function IndustryPage({
 
                     <div className="flex items-center gap-6 text-sm">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="w-4 h-4 text-green-400" />
-                        <span className="text-green-400 font-medium">
+                        <TrendingUp className="w-4 h-4 text-success" />
+                        <span className="text-success font-medium">
                           {useCase.roi}
                         </span>
                       </div>
@@ -185,10 +185,10 @@ export default async function IndustryPage({
                       <span
                         className={`px-2 py-1 rounded-full text-xs ${
                           useCase.difficulty === "Easy"
-                            ? "bg-green-500/20 text-green-400"
+                            ? "bg-success-10 text-success"
                             : useCase.difficulty === "Medium"
-                              ? "bg-yellow-500/20 text-yellow-400"
-                              : "bg-red-500/20 text-red-400"
+                              ? "bg-warning-10 text-warning"
+                              : "bg-destructive-10 text-destructive"
                         }`}
                       >
                         {useCase.difficulty}

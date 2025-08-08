@@ -34,55 +34,121 @@ export default async function CaseStudyPage({
   return (
     <div className="min-h-screen py-24">
       <div className="container mx-auto px-4 max-w-6xl">
+        {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success-10 border border-success-30 mb-6">
             <span className="text-sm font-medium text-success">
-              Proven Results
+              {study.category}
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-3">{study.title}</h1>
           <p className="text-gray-400 max-w-2xl mx-auto">{study.description}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-sm font-semibold text-destructive mb-2">
-                  THE CHALLENGE
-                </h3>
-                <p className="text-gray-300">{study.challenge}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-info mb-2">
-                  OUR SOLUTION
-                </h3>
-                <p className="text-gray-300">{study.solution}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-500 mb-3">
-                  KEY FEATURES
-                </h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {study.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-2 text-sm text-gray-400"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-info" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <blockquote className="p-4 rounded-lg bg-white/5 border-l-2 border-blue-500 italic text-gray-300">
-                &quot;{study.testimonial}&quot;
-              </blockquote>
+        {/* Executive Summary */}
+        <section className="mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-xl bg-destructive-10 border border-destructive-30">
+              <h3 className="text-sm font-semibold text-destructive mb-2">
+                Problem
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {study.challenge}
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-info-10 border border-info-30">
+              <h3 className="text-sm font-semibold text-info mb-2">Solution</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {study.solution}
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-success-10 border border-success-30">
+              <h3 className="text-sm font-semibold text-success mb-2">
+                Impact
+              </h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                {study.results.slice(0, 3).map((r) => (
+                  <li
+                    key={r.label}
+                    className="flex items-center justify-between"
+                  >
+                    <span className="text-gray-400">{r.label}</span>
+                    <span className="font-semibold text-success">
+                      {r.metric}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        </section>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <main className="lg:col-span-2 space-y-10">
+            {/* Situation & Problem */}
+            <section>
+              <h2 className="text-2xl font-bold mb-3">Situation & Problem</h2>
+              <p className="text-gray-300 leading-relaxed">{study.challenge}</p>
+            </section>
+
+            {/* Solution Overview */}
+            <section>
+              <h2 className="text-2xl font-bold mb-3">Solution Overview</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                {study.solution}
+              </p>
+              <h3 className="text-sm font-semibold text-gray-500 mb-3">
+                Key Capabilities
+              </h3>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {study.features.map((f) => (
+                  <li
+                    key={f}
+                    className="flex items-center gap-2 text-sm text-gray-400"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-info" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Testimonial */}
+            <section>
+              <h2 className="text-2xl font-bold mb-3">Client Voice</h2>
+              <blockquote className="p-4 rounded-lg bg-white/5 border-l-2 border-info italic text-gray-300">
+                &quot;{study.testimonial}&quot;
+              </blockquote>
+            </section>
+
+            {/* Implementation Approach */}
+            <section>
+              <h2 className="text-2xl font-bold mb-3">
+                Implementation Approach
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                  <h3 className="font-semibold mb-2">Pilot (2–4 weeks)</h3>
+                  <p className="text-sm text-gray-400">
+                    Define Tier‑1 fields and workflows, run on real data, add
+                    human‑in‑the‑loop review, and measure time‑only ROI.
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                  <h3 className="font-semibold mb-2">Scale (4–8 weeks)</h3>
+                  <p className="text-sm text-gray-400">
+                    Expand coverage, enable analytics, and harden integrations
+                    and governance.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </main>
+
+          {/* Sidebar */}
           <aside>
-            <h3 className="text-sm font-semibold text-success mb-4">RESULTS</h3>
-            <div className="space-y-4 mb-6">
+            <h3 className="text-sm font-semibold text-success mb-4">Results</h3>
+            <div className="space-y-4 mb-8">
               {study.results.map((r) => (
                 <div
                   key={r.label}
@@ -97,7 +163,7 @@ export default async function CaseStudyPage({
             </div>
             <Link
               href="/contact"
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
             >
               Get Similar Results
               <ArrowRight className="w-4 h-4" />
@@ -105,6 +171,7 @@ export default async function CaseStudyPage({
           </aside>
         </div>
 
+        {/* CTA */}
         <div className="mt-16 p-8 rounded-2xl border border-brand-30 bg-brand-10 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Ready to achieve similar{" "}
@@ -112,8 +179,7 @@ export default async function CaseStudyPage({
           </h2>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Let&apos;s discuss how we can transform your operations with AI. Our
-            team is ready to help you identify opportunities and deliver results
-            in weeks, not months.
+            team delivers measurable impact in weeks, not months.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

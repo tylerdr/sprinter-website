@@ -28,8 +28,8 @@ export default function ContactPage() {
             Work With <span className="gradient-text">Us</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to build something amazing with AI? Let&apos;s discuss your
-            vision and how we can help bring it to life.
+            Bring a problem or a dataset. We’ll bring a working system. Let’s
+            turn unstructured data and workflows into compounding leverage.
           </p>
         </div>
 

@@ -43,7 +43,7 @@ export default function SketchStudioPage() {
           <h3 className="text-lg font-semibold mb-3">How it works</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-lg bg-warning-10 border border-warning-30 flex items-center justify-center mb-3">
                 <span className="text-lg font-bold">1</span>
               </div>
               <h4 className="font-medium mb-2">Draw Your Idea</h4>
@@ -53,7 +53,7 @@ export default function SketchStudioPage() {
               </p>
             </div>
             <div>
-              <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-lg bg-warning-10 border border-warning-30 flex items-center justify-center mb-3">
                 <span className="text-lg font-bold">2</span>
               </div>
               <h4 className="font-medium mb-2">Add Details</h4>
@@ -63,7 +63,7 @@ export default function SketchStudioPage() {
               </p>
             </div>
             <div>
-              <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-lg bg-warning-10 border border-warning-30 flex items-center justify-center mb-3">
                 <span className="text-lg font-bold">3</span>
               </div>
               <h4 className="font-medium mb-2">Generate Art</h4>

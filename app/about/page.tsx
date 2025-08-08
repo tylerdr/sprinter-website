@@ -80,12 +80,13 @@ export default function AboutPage() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            AI That Helps People,{" "}
-            <span className="gradient-text">Not Replace Them</span>
+            Build an Unfair Advantage with{" "}
+            <span className="gradient-text">Agentic AI</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We believe human time is precious. AI should handle the tasks people
-            hate, so they can focus on work that brings purpose and joy.
+            AI is a generational shift—akin to the industrial revolution. We
+            ship production systems that accelerate what you already do well,
+            fill operational gaps, and create durable competitive advantage.
           </p>
         </div>
 
@@ -99,33 +100,26 @@ export default function AboutPage() {
             </p>
             <p className="text-lg text-foreground/80 mb-4">
               After building AI systems at scale for enterprises, I founded
-              Sprinter AI with a deeper purpose: to create technology that
-              enables human flourishing. Yes, we deliver ROI. But more
-              importantly, we free people from soul-crushing repetitive work so
-              they can contribute their unique human talents.
+              Sprinter AI to prove a simple idea: momentum beats slideware. Ship
+              useful AI fast, measure impact, and compound advantage.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
-              We specialize in bringing AI to industries often overlooked by
-              Silicon Valley—manufacturing, healthcare, traditional finance,
-              construction. These &quot;outdated&quot; sectors aren&apos;t
-              behind; they&apos;re full of untapped potential. They have the
-              most to gain from AI because they haven&apos;t been disrupted yet.
-              We help them leapfrog straight to cutting-edge automation.
+              We specialize in applying AI where it moves the needle most—often
+              in overlooked industries with rich workflows and data:
+              manufacturing, healthcare, financial services, logistics. These
+              sectors have the most to gain and the fewest fast movers.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
-              Six years and 50+ deployments later, we&apos;ve proven this model
-              works. We&apos;ve automated mortgage underwriting, built AI agents
-              that manage patient care, and created systems that generate
-              millions in new revenue. Not in theory. In production. With real
-              users and real results.
+              Six years and 50+ deployments later, the playbook is battle-
+              tested: automate the repetitive, operationalize unstructured data,
+              augment teams with agents, and integrate into the systems you
+              already use. Not in theory—live in production.
             </p>
             <p className="text-lg text-foreground/80">
-              <strong className="text-foreground">
-                Our philosophy: Build technology that helps people.
-              </strong>{" "}
-              Every AI system we deploy doesn&apos;t just drive ROI—it gives
-              people back their time, their creativity, and their opportunity to
-              do meaningful work. That&apos;s the real value we create.
+              <strong className="text-foreground">Our philosophy:</strong>
+              Move quickly, build real systems, and compound advantage. Great AI
+              gives teams back time and amplifies what they&apos;re already
+              world‑class at.
             </p>
             <div className="mt-8 pt-6 border-t border-border/10">
               <p className="text-base font-semibold text-foreground">
@@ -146,8 +140,8 @@ export default function AboutPage() {
                 key={value.title}
                 className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all"
               >
-                <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500/20 to-blue-500/20 w-fit mb-4">
-                  <value.icon className="w-6 h-6 text-purple-400" />
+                <div className="p-3 rounded-lg border border-brand-30 bg-brand-10 w-fit mb-4">
+                  <value.icon className="w-6 h-6 text-brand" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-sm text-muted-foreground">

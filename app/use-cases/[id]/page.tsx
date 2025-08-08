@@ -121,7 +121,7 @@ export default async function UseCasePage({
 
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30">
+            <div className="p-4 rounded-xl border border-success-30 bg-success-10">
               <TrendingUp className="w-5 h-5 text-success mb-2" />
               <div className="text-2xl font-bold text-success">
                 {useCase.roi}
@@ -156,7 +156,7 @@ export default async function UseCasePage({
               <div className="space-y-3">
                 {useCase.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5" />
                     <span className="text-gray-300">{benefit}</span>
                   </div>
                 ))}
@@ -314,7 +314,7 @@ export default async function UseCasePage({
                     {related.description}
                   </p>
                   <div className="flex items-center gap-4 text-xs">
-                    <span className="text-green-400">{related.roi}</span>
+                    <span className="text-success">{related.roi}</span>
                     <span className="text-gray-500">•</span>
                     <span className="text-gray-400">{related.timeToValue}</span>
                   </div>

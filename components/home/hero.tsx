@@ -51,7 +51,7 @@ export function Hero() {
           >
             <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium">
-              Human-Centered AI Since 2018
+              Applied AI Since 2018
             </span>
           </motion.div>
 
@@ -71,9 +71,9 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            There has never been this much leverage available. AI lets you ship
-            faster, compound advantages, and turn unstructured data into
-            products and decisions. Early movers will be impossible to catch.
+            There has never been this much leverage available. AI turns
+            workflows into systems and unstructured data into decisions. Early
+            movers will be very hard to catch.
           </motion.p>
 
           <motion.div

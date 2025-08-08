@@ -52,14 +52,13 @@ export function HumanCenteredSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Technology That{" "}
-            <span className="gradient-text">Helps People Thrive</span>
+            Built for <span className="gradient-text">People</span>. Tuned for
+            Impact.
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We believe AI should handle the tasks people hate, so they can
-            pursue work that matters. Every system we build creates opportunity,
-            not obsolescence.
+            We keep the human in the loop—but the point is progress. Let AI
+            handle the repetitive so your team can compound what they do best.
           </p>
         </motion.div>
 
@@ -104,7 +103,7 @@ export function HumanCenteredSection() {
             </p>
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 mb-2">
+                <div className="text-3xl font-bold text-warning mb-2">
                   100K+
                 </div>
                 <div className="text-sm text-muted-foreground">

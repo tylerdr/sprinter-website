@@ -115,7 +115,7 @@ export default function BlogPage() {
                 key={article.id}
                 className={`group p-4 sm:p-6 rounded-xl border backdrop-blur-sm transition-all hover:scale-[1.01] ${
                   article.featured
-                    ? "bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/30"
+                    ? "bg-brand-10 border-brand-30"
                     : "bg-white/5 border-white/10 hover:bg-white/10"
                 }`}
               >
@@ -204,7 +204,7 @@ export default function BlogPage() {
           </div>
         </div>
 
-        <div className="mt-12 sm:mt-16 text-center p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-white/10 max-w-4xl mx-auto">
+        <div className="mt-12 sm:mt-16 text-center p-6 sm:p-8 rounded-2xl bg-brand-10 border border-brand-30 max-w-4xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">
             Ready to implement these{" "}
             <span className="gradient-text">strategies</span>?
@@ -215,7 +215,7 @@ export default function BlogPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
           >
             Schedule a Strategy Call
             <ArrowRight className="w-4 h-4" />

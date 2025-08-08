@@ -29,8 +29,8 @@ export default function UseCasesPage() {
             AI <span className="gradient-text">Use Cases</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Discover how AI transforms every industry and role. Real
-            implementations with proven ROI.
+            Every industry is up for grabs. Establish AI leadership now and make
+            your advantage compounding.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export default function UseCasesPage() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-blue-400 text-sm font-medium group-hover:text-blue-300">
+                  <div className="flex items-center gap-2 text-brand text-sm font-medium hover:opacity-90">
                     Learn More
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -164,8 +164,8 @@ export default function UseCasesPage() {
                 </div>
                 <p className="text-xs text-gray-400 mb-3">{role.description}</p>
                 <div className="flex items-center gap-2 text-xs">
-                  <Clock className="w-3 h-3 text-green-400" />
-                  <span className="text-green-400">
+                  <Clock className="w-3 h-3 text-success" />
+                  <span className="text-success">
                     {role.avgTimeSaved} saved
                   </span>
                 </div>
