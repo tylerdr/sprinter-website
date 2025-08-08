@@ -4,7 +4,11 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { generateMetadata as createSEOMetadata, generateOrganizationStructuredData, getStructuredDataScript } from "@/lib/seo";
+import {
+  generateMetadata as createSEOMetadata,
+  generateOrganizationStructuredData,
+  getStructuredDataScript,
+} from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +22,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = createSEOMetadata({
   title: "Sprinter AI - Move at the Pace of AI",
-  description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks.",
-  keywords: "AI consulting, human-centered AI, autonomous agents, purposeful work, AI development, venture studio, AI products",
+  description:
+    "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks.",
+  keywords:
+    "AI consulting, human-centered AI, autonomous agents, purposeful work, AI development, venture studio, AI products",
   ogTitle: "Sprinter AI - Move at the Pace of AI",
   canonical: "https://sprinter.ai",
 });
@@ -51,17 +57,17 @@ export default function RootLayout({
           {/* Skip Navigation Links */}
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-brand-gradient text-primary-foreground px-4 py-2 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2"
           >
             Skip to main content
           </a>
           <a
             href="#navigation"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-36 focus:z-50 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-36 focus:z-50 bg-brand-gradient text-primary-foreground px-4 py-2 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2"
           >
             Skip to navigation
           </a>
-          
+
           <Navigation />
           <main id="main-content" className="flex-1 pt-16">
             {children}

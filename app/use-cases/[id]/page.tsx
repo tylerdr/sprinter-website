@@ -99,10 +99,10 @@ export default async function UseCasePage({
             <span
               className={`inline-block px-3 py-1 text-sm font-medium rounded-full ${
                 useCase.difficulty === "Easy"
-                  ? "bg-green-500/20 text-green-400"
+                  ? "bg-success-10 text-success"
                   : useCase.difficulty === "Medium"
-                    ? "bg-yellow-500/20 text-yellow-400"
-                    : "bg-red-500/20 text-red-400"
+                    ? "bg-warning-10 text-warning"
+                    : "bg-destructive-10 text-destructive"
               }`}
             >
               {useCase.difficulty} Implementation
@@ -122,24 +122,24 @@ export default async function UseCasePage({
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30">
-              <TrendingUp className="w-5 h-5 text-green-400 mb-2" />
-              <div className="text-2xl font-bold text-green-400">
+              <TrendingUp className="w-5 h-5 text-success mb-2" />
+              <div className="text-2xl font-bold text-success">
                 {useCase.roi}
               </div>
               <p className="text-xs text-gray-400">Expected ROI</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <Clock className="w-5 h-5 text-blue-400 mb-2" />
+              <Clock className="w-5 h-5 text-info mb-2" />
               <div className="text-2xl font-bold">{useCase.timeToValue}</div>
               <p className="text-xs text-gray-400">Time to Value</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <Zap className="w-5 h-5 text-yellow-400 mb-2" />
+              <Zap className="w-5 h-5 text-warning mb-2" />
               <div className="text-2xl font-bold">{useCase.implementation}</div>
               <p className="text-xs text-gray-400">Implementation</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <CheckCircle className="w-5 h-5 text-purple-400 mb-2" />
+              <CheckCircle className="w-5 h-5 text-accent mb-2" />
               <div className="text-2xl font-bold">
                 {useCase.benefits.length}
               </div>
@@ -172,7 +172,7 @@ export default async function UseCasePage({
                 {useCase.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm"
+                    className="px-3 py-1 rounded-full bg-info-10 text-info text-sm"
                   >
                     {tool}
                   </span>
@@ -278,7 +278,7 @@ export default async function UseCasePage({
             </section>
 
             {/* CTA */}
-            <section className="p-6 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-blue-500/30">
+            <section className="p-6 rounded-xl border border-brand-30 bg-brand-10">
               <h3 className="text-lg font-semibold mb-3">
                 Ready to Implement?
               </h3>
@@ -287,7 +287,7 @@ export default async function UseCasePage({
               </p>
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
               >
                 Get Started
                 <ArrowRight className="w-4 h-4" />

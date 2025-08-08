@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { motion } from "framer-motion"
-import { Download, RefreshCw, Wand2, Upload, Sparkles, Eraser, Undo } from "lucide-react"
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  Download,
+  RefreshCw,
+  Wand2,
+  Upload,
+  Sparkles,
+  Eraser,
+  Undo,
+} from "lucide-react";
 
 const styleOptions = [
   "Photorealistic",
@@ -13,87 +21,87 @@ const styleOptions = [
   "Digital Art",
   "3D Render",
   "Pixel Art",
-]
+];
 
 const examplePrompts = [
   "A futuristic city at sunset",
   "A magical forest with glowing trees",
   "A steampunk robot",
   "An underwater castle",
-]
+];
 
 export default function SketchStudio() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [isDrawing, setIsDrawing] = useState(false)
-  const [prompt, setPrompt] = useState("")
-  const [style, setStyle] = useState("Photorealistic")
-  const [isGenerating, setIsGenerating] = useState(false)
-  const [generatedImage, setGeneratedImage] = useState<string | null>(null)
-  const [brushSize, setBrushSize] = useState(5)
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isDrawing, setIsDrawing] = useState(false);
+  const [prompt, setPrompt] = useState("");
+  const [style, setStyle] = useState("Photorealistic");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedImage, setGeneratedImage] = useState<string | null>(null);
+  const [brushSize, setBrushSize] = useState(5);
 
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    setIsDrawing(true)
-    const canvas = canvasRef.current
-    if (!canvas) return
-    
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    
-    const rect = canvas.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    
-    ctx.beginPath()
-    ctx.moveTo(x, y)
-  }
+    setIsDrawing(true);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  };
 
   const draw = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!isDrawing) return
-    
-    const canvas = canvasRef.current
-    if (!canvas) return
-    
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    
-    const rect = canvas.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    
-    ctx.lineWidth = brushSize
-    ctx.lineCap = "round"
-    ctx.strokeStyle = "#ffffff"
-    ctx.lineTo(x, y)
-    ctx.stroke()
-  }
+    if (!isDrawing) return;
+
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  };
 
   const stopDrawing = () => {
-    setIsDrawing(false)
-  }
+    setIsDrawing(false);
+  };
 
   const clearCanvas = () => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    
-    ctx.fillStyle = "#1a1a1a"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-    setGeneratedImage(null)
-  }
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    setGeneratedImage(null);
+  };
 
   const generateImage = async () => {
-    setIsGenerating(true)
-    
+    setIsGenerating(true);
+
     // Simulate AI generation
-    await new Promise(resolve => setTimeout(resolve, 3000))
-    
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     // In production, this would call an AI image generation API
     // For demo, we'll show a placeholder message
-    setGeneratedImage("/api/placeholder/600/400")
-    setIsGenerating(false)
-  }
+    setGeneratedImage("/api/placeholder/600/400");
+    setIsGenerating(false);
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -113,9 +121,7 @@ export default function SketchStudio() {
                 <Eraser className="w-4 h-4" />
                 Clear
               </button>
-              <button
-                className="px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors flex items-center gap-2"
-              >
+              <button className="px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors flex items-center gap-2">
                 <Undo className="w-4 h-4" />
                 Undo
               </button>
@@ -127,18 +133,20 @@ export default function SketchStudio() {
               ref={canvasRef}
               width={800}
               height={500}
-              className="w-full border border-border/20 rounded-lg cursor-crosshair bg-gray-900"
+              className="w-full border border-border/20 rounded-lg cursor-crosshair bg-background"
               onMouseDown={startDrawing}
               onMouseMove={draw}
               onMouseUp={stopDrawing}
               onMouseLeave={stopDrawing}
             />
-            
+
             {generatedImage && (
               <div className="absolute inset-0 bg-background/80 rounded-lg flex items-center justify-center">
                 <div className="text-center">
-                  <Sparkles className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-                  <p className="text-lg font-semibold mb-2">AI Image Generated!</p>
+                  <Sparkles className="w-12 h-12 text-warning mx-auto mb-4" />
+                  <p className="text-lg font-semibold mb-2">
+                    AI Image Generated!
+                  </p>
                   <p className="text-sm text-muted-foreground mb-4">
                     In production, your transformed artwork would appear here
                   </p>
@@ -181,7 +189,7 @@ export default function SketchStudio() {
             placeholder="Describe what you're drawing..."
             className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-orange-500 focus:outline-none h-24 resize-none text-sm"
           />
-          
+
           <div className="flex flex-wrap gap-2 mt-3">
             {examplePrompts.map((example) => (
               <button
@@ -204,7 +212,7 @@ export default function SketchStudio() {
                 onClick={() => setStyle(option)}
                 className={`px-3 py-2 rounded-lg text-sm transition-all ${
                   style === option
-                    ? "bg-gradient-to-r from-orange-500 to-red-600 text-primary-foreground"
+                    ? "bg-brand-gradient text-primary-foreground"
                     : "bg-card/10 hover:bg-card/20"
                 }`}
               >
@@ -217,7 +225,7 @@ export default function SketchStudio() {
         <button
           onClick={generateImage}
           disabled={isGenerating}
-          className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+          className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
         >
           {isGenerating ? (
             <>
@@ -244,5 +252,5 @@ export default function SketchStudio() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }

@@ -1,43 +1,50 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Rocket, Lightbulb, Code, Presentation } from "lucide-react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Rocket, Lightbulb, Code, Presentation } from "lucide-react";
 
 const services = [
   {
     icon: Lightbulb,
     title: "AI Discovery & Workshops",
-    description: "Identify AI opportunities with structured workshops and strategic roadmaps",
+    description:
+      "Identify AI opportunities with structured workshops and strategic roadmaps",
     href: "/services#workshops",
     gradient: "from-yellow-500 to-orange-600",
   },
   {
     icon: Presentation,
     title: "Speaking & Training",
-    description: "Energize your team with keynotes and hands-on AI training sessions",
+    description:
+      "Energize your team with keynotes and hands-on AI training sessions",
     href: "/services#training",
     gradient: "from-green-500 to-teal-600",
   },
   {
     icon: Code,
     title: "Custom AI Development",
-    description: "Build production-ready AI agents and intelligent automation systems",
+    description:
+      "Build production-ready AI agents and intelligent automation systems",
     href: "/services#development",
     gradient: "from-blue-500 to-purple-600",
   },
   {
     icon: Rocket,
     title: "Venture Studio",
-    description: "Co-build AI products as your technical co-founder with equity partnerships",
+    description:
+      "Co-build AI products as your technical co-founder with equity partnerships",
     href: "/services#ventures",
     gradient: "from-purple-500 to-pink-600",
   },
-]
+];
 
 export function ServicesPreview() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 relative" aria-labelledby="services-heading">
+    <section
+      className="py-12 sm:py-16 md:py-24 relative"
+      aria-labelledby="services-heading"
+    >
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,11 +53,15 @@ export function ServicesPreview() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 id="services-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2
+            id="services-heading"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+          >
             Our <span className="gradient-text">Services</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            From discovery to deployment, we partner with you at every stage of your AI journey
+            From roadmap to production, we build agents and data products that
+            amplify your team and create unfair advantage.
           </p>
         </motion.div>
 
@@ -66,9 +77,12 @@ export function ServicesPreview() {
             >
               <Link
                 href={service.href}
-                className="group block p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation h-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+                className="group block p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation h-full focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
               >
-                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${service.gradient} mb-4 sm:mb-6`} aria-hidden="true">
+                <div
+                  className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${service.gradient} mb-4 sm:mb-6`}
+                  aria-hidden="true"
+                >
                   <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all">
@@ -77,9 +91,14 @@ export function ServicesPreview() {
                 <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
                   {service.description}
                 </p>
-                <span className="text-sm font-medium text-blue-400 group-hover:text-blue-300 flex items-center gap-1">
+                <span className="text-sm font-medium text-info group-hover:text-foreground flex items-center gap-1">
                   Learn more
-                  <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  <span
+                    className="inline-block transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
                 </span>
               </Link>
             </motion.div>
@@ -102,5 +121,5 @@ export function ServicesPreview() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

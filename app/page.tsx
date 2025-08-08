@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <HumanCenteredSection />
-      <RecentWins />
       <ServicesPreview />
+      <RecentWins />
       <InteractiveDemo />
       <TrustSignals />
+      <HumanCenteredSection />
     </>
   )
 }

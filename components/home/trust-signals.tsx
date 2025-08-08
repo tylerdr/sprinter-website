@@ -1,34 +1,37 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const clients = [
   "Vero Capital",
-  "Rock Hill Capital", 
+  "Rock Hill Capital",
   "Beckway",
   "Wells Fargo",
   "Accenture",
   "Broadlume",
-]
+];
 
 const testimonials = [
   {
-    quote: "Sprinter AI's AI automation reduced our loan processing time by 70%, saving us over $3M annually. Their team delivered in weeks what others quoted months for.",
+    quote:
+      "Sprinter AI's AI automation reduced our loan processing time by 70%, saving us over $3M annually. Their team delivered in weeks what others quoted months for.",
     author: "Michael Rodriguez, SVP",
     company: "Pacific Trust Bank",
   },
   {
-    quote: "The discovery workshop identified 3 high-ROI automation opportunities. We started with one sprint and now have AI handling 40% of our data operations.",
+    quote:
+      "The discovery workshop identified 3 high-ROI automation opportunities. We started with one sprint and now have AI handling 40% of our data operations.",
     author: "Sarah Martinez, Partner",
     company: "Beckway",
   },
   {
-    quote: "During COVID, they built our triage system in 10 days. It processed 10,000+ patients daily and reduced ER wait times by 4 hours.",
+    quote:
+      "During COVID, they built our triage system in 10 days. It processed 10,000+ patients daily and reduced ER wait times by 4 hours.",
     author: "Dr. Sarah Chen, CMO",
     company: "Seattle Health Network",
   },
-]
+];
 
 export function TrustSignals() {
   return (
@@ -79,18 +82,22 @@ export function TrustSignals() {
               transition={{ delay: index * 0.1 }}
               className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm h-full flex flex-col"
             >
-              <div className="mb-4 text-2xl sm:text-3xl text-blue-500">❝</div>
+              <div className="mb-4 text-2xl sm:text-3xl text-brand">❝</div>
               <p className="text-foreground/80 mb-4 italic text-sm sm:text-base leading-relaxed flex-grow">
                 {testimonial.quote}
               </p>
               <div className="mt-auto">
-                <div className="font-semibold text-sm sm:text-base">{testimonial.author}</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">{testimonial.company}</div>
+                <div className="font-semibold text-sm sm:text-base">
+                  {testimonial.author}
+                </div>
+                <div className="text-xs sm:text-sm text-muted-foreground">
+                  {testimonial.company}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

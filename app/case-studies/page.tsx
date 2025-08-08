@@ -17,7 +17,10 @@ import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("caseStudies");
 
-const iconByCategory: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+const iconByCategory: Record<
+  string,
+  React.ComponentType<React.SVGProps<SVGSVGElement>>
+> = {
   "FinTech AI Platform": DollarSign,
   "B2B SaaS": Zap,
   "Healthcare Tech": Users,
@@ -46,9 +49,9 @@ export default function CaseStudiesPage() {
     <div className="min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-green-500/10 border border-green-500/30 mb-4 sm:mb-6">
-            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-            <span className="text-xs sm:text-sm font-medium text-green-400">
+          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-success-10 border border-success-30 mb-4 sm:mb-6">
+            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-success" />
+            <span className="text-xs sm:text-sm font-medium text-success">
               Proven Results
             </span>
           </div>
@@ -57,17 +60,15 @@ export default function CaseStudiesPage() {
             Case <span className="gradient-text">Studies</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-2 sm:px-0">
-            Real AI transformations delivering measurable ROI. See how we&apos;ve
-            helped businesses 10x their efficiency and unlock millions in value.
+            Real AI transformations delivering measurable ROI. See how
+            we&apos;ve helped businesses 10x their efficiency and unlock
+            millions in value.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {caseStudies.map((study) => (
-            <div
-              key={study.id}
-              className="group"
-            >
+            <div key={study.id} className="group">
               <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all">
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
                   <div className="xl:col-span-2">
@@ -93,16 +94,20 @@ export default function CaseStudiesPage() {
 
                     <div className="space-y-4 mb-4 sm:mb-6">
                       <div>
-                        <h3 className="text-xs sm:text-sm font-semibold text-red-400 mb-2">
+                        <h3 className="text-xs sm:text-sm font-semibold text-destructive mb-2">
                           THE CHALLENGE
                         </h3>
-                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{study.challenge}</p>
+                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                          {study.challenge}
+                        </p>
                       </div>
                       <div>
-                        <h3 className="text-xs sm:text-sm font-semibold text-blue-400 mb-2">
+                        <h3 className="text-xs sm:text-sm font-semibold text-info mb-2">
                           OUR SOLUTION
                         </h3>
-                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{study.solution}</p>
+                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                          {study.solution}
+                        </p>
                       </div>
                     </div>
 
@@ -116,7 +121,7 @@ export default function CaseStudiesPage() {
                             key={feature}
                             className="flex items-center gap-2"
                           >
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-info" />
                             <span className="text-xs sm:text-sm text-gray-400">
                               {feature}
                             </span>
@@ -125,21 +130,21 @@ export default function CaseStudiesPage() {
                       </div>
                     </div>
 
-                    <blockquote className="p-3 sm:p-4 rounded-lg bg-white/5 border-l-2 border-blue-500 italic text-gray-300 text-sm sm:text-base leading-relaxed">
+                    <blockquote className="p-3 sm:p-4 rounded-lg bg-card/5 border-l-2 border-info italic text-gray-300 text-sm sm:text-base leading-relaxed">
                       &quot;{study.testimonial}&quot;
                     </blockquote>
                   </div>
 
                   <div className="xl:col-span-1 order-first xl:order-last">
                     <div className="xl:sticky xl:top-24">
-                      <h3 className="text-xs sm:text-sm font-semibold text-green-400 mb-3 sm:mb-4">
+                      <h3 className="text-xs sm:text-sm font-semibold text-success mb-3 sm:mb-4">
                         RESULTS
                       </h3>
                       <div className="grid grid-cols-2 xl:grid-cols-1 gap-3 sm:gap-4 mb-4 sm:mb-6">
                         {study.results.map((result) => (
                           <div
                             key={result.label}
-                            className="p-3 sm:p-4 rounded-lg bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20"
+                            className="p-3 sm:p-4 rounded-lg border border-success-30 bg-success-10"
                           >
                             <div className="text-2xl sm:text-3xl font-bold gradient-text mb-1">
                               {result.metric}

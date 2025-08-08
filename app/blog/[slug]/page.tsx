@@ -1,17 +1,28 @@
-import { notFound } from "next/navigation"
-import Link from "next/link"
-import { articles, getArticleBySlug } from "@/lib/blog-data"
-import type { Metadata } from "next"
-import { ArrowLeft, Calendar, Clock, Share2, BookOpen, ArrowRight } from "lucide-react"
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { articles, getArticleBySlug } from "@/lib/blog-data";
+import type { Metadata } from "next";
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  Share2,
+  BookOpen,
+  ArrowRight,
+} from "lucide-react";
 
 export function generateStaticParams() {
-  return articles.map(a => ({ slug: a.slug }))
+  return articles.map((a) => ({ slug: a.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug)
-  if (!article) return { title: "Article – Sprinter AI" }
+  const article = getArticleBySlug(slug);
+  if (!article) return { title: "Article – Sprinter AI" };
   return {
     title: `${article.title} – Sprinter AI`,
     description: article.excerpt,
@@ -22,13 +33,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: article.date,
       tags: article.tags,
     },
-  }
+  };
 }
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug)
-  if (!article) return notFound()
+  const article = getArticleBySlug(slug);
+  if (!article) return notFound();
 
   const relatedArticles = articles
     .filter(
@@ -53,11 +68,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <header className="mb-8 sm:mb-12">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/20 text-blue-400">
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-brand-10 text-brand">
                 {article.category}
               </span>
               {article.featured && (
-                <span className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                <span className="px-3 py-1 text-xs font-medium rounded-full bg-brand-gradient text-primary-foreground">
                   Featured
                 </span>
               )}
@@ -120,7 +135,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
 
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-xl p-6 sm:p-8 mb-12">
+            <div className="bg-brand-10 rounded-xl p-6 sm:p-8 mb-12 border border-brand-30">
               <h3 className="text-xl sm:text-2xl font-bold mb-3">
                 Ready to implement these strategies?
               </h3>
@@ -130,7 +145,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
               >
                 Schedule a Strategy Call
                 <ArrowRight className="w-4 h-4" />
@@ -140,7 +155,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {relatedArticles.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-blue-400" />
+                  <BookOpen className="w-5 h-5 text-brand" />
                   Related Articles
                 </h3>
                 <div className="grid gap-4">
@@ -152,14 +167,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <h4 className="font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+                          <h4 className="font-semibold mb-2 group-hover:text-brand transition-colors">
                             {related.title}
                           </h4>
                           <p className="text-sm text-gray-500 line-clamp-2">
                             {related.excerpt}
                           </p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all mt-1" />
+                        <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-brand group-hover:translate-x-1 transition-all mt-1" />
                       </div>
                     </Link>
                   ))}
@@ -170,5 +185,5 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,34 +1,39 @@
-import type { Metadata } from "next"
-import { Palette } from "lucide-react"
-import { generateMetadata as createSEOMetadata } from "@/lib/seo"
-import { SEO } from "@/lib/constants"
-import SketchStudio from "@/components/labs/SketchStudio"
+import type { Metadata } from "next";
+import { Palette } from "lucide-react";
+import { generateMetadata as createSEOMetadata } from "@/lib/seo";
+import { SEO } from "@/lib/constants";
+import SketchStudio from "@/components/labs/SketchStudio";
 
 export const metadata: Metadata = createSEOMetadata({
   title: "AI Sketch Studio - Transform Drawings with AI | Sprinter AI",
-  description: "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity and digital art generation.",
-  keywords: "AI art generation, sketch to art, AI drawing, digital art creation, AI sketch enhancement, creative AI tools, AI artwork",
+  description:
+    "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity and digital art generation.",
+  keywords:
+    "AI art generation, sketch to art, AI drawing, digital art creation, AI sketch enhancement, creative AI tools, AI artwork",
   canonical: `${SEO.siteUrl}/labs/sketch-studio`,
   ogTitle: "AI Sketch Studio - Turn Sketches into Art",
-  ogDescription: "Interactive AI art tool: Transform your rough sketches into polished digital artwork with AI enhancement.",
-})
+  ogDescription:
+    "Interactive AI art tool: Transform your rough sketches into polished digital artwork with AI enhancement.",
+});
 
 export default function SketchStudioPage() {
-
   return (
     <div className="min-h-screen py-24">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 mb-6">
-            <Palette className="w-5 h-5 text-orange-400" />
-            <span className="text-sm font-medium text-orange-400">AI Art Generation</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warning-10 border border-warning-30 mb-6">
+            <Palette className="w-5 h-5 text-warning" />
+            <span className="text-sm font-medium text-warning">
+              AI Art Generation
+            </span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             AI Sketch <span className="gradient-text">Studio</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Draw rough sketches and watch AI transform them into stunning artwork
+            Draw rough sketches and watch AI transform them into stunning
+            artwork
           </p>
         </div>
 
@@ -43,7 +48,8 @@ export default function SketchStudioPage() {
               </div>
               <h4 className="font-medium mb-2">Draw Your Idea</h4>
               <p className="text-sm text-muted-foreground">
-                Use the canvas to sketch your concept. Don&apos;t worry about perfection—AI understands rough drawings!
+                Use the canvas to sketch your concept. Don&apos;t worry about
+                perfection—AI understands rough drawings!
               </p>
             </div>
             <div>
@@ -52,7 +58,8 @@ export default function SketchStudioPage() {
               </div>
               <h4 className="font-medium mb-2">Add Details</h4>
               <p className="text-sm text-muted-foreground">
-                Optionally describe your vision and choose an art style to guide the AI transformation.
+                Optionally describe your vision and choose an art style to guide
+                the AI transformation.
               </p>
             </div>
             <div>
@@ -61,12 +68,13 @@ export default function SketchStudioPage() {
               </div>
               <h4 className="font-medium mb-2">Generate Art</h4>
               <p className="text-sm text-muted-foreground">
-                Click transform and watch AI turn your sketch into professional artwork in seconds.
+                Click transform and watch AI turn your sketch into professional
+                artwork in seconds.
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

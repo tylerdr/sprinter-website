@@ -104,22 +104,22 @@ export default async function IndustryPage({
 
           {/* Key Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30">
-              <TrendingUp className="w-5 h-5 text-green-400 mb-2" />
-              <div className="text-2xl font-bold text-green-400">
+            <div className="p-4 rounded-xl border border-success-30 bg-success-10">
+              <TrendingUp className="w-5 h-5 text-success mb-2" />
+              <div className="text-2xl font-bold text-success">
                 {industry.averageROI}
               </div>
               <p className="text-xs text-gray-400">Average ROI</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <Briefcase className="w-5 h-5 text-blue-400 mb-2" />
+              <Briefcase className="w-5 h-5 text-info mb-2" />
               <div className="text-2xl font-bold">
                 {industryUseCases.length}
               </div>
               <p className="text-xs text-gray-400">AI Use Cases</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <CheckCircle className="w-5 h-5 text-purple-400 mb-2" />
+              <CheckCircle className="w-5 h-5 text-accent mb-2" />
               <div className="text-2xl font-bold">
                 {industry.topTools.length}
               </div>
@@ -133,13 +133,13 @@ export default async function IndustryPage({
             {/* Industry Challenges */}
             <section className="p-6 rounded-xl bg-white/5 border border-white/10">
               <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                <AlertTriangle className="w-6 h-6 text-yellow-400" />
+                <AlertTriangle className="w-6 h-6 text-warning" />
                 Industry Challenges
               </h2>
               <div className="space-y-3">
                 {industry.challenges.map((challenge, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2" />
+                    <div className="w-1.5 h-1.5 bg-warning rounded-full mt-2" />
                     <span className="text-gray-300">{challenge}</span>
                   </div>
                 ))}
@@ -200,7 +200,7 @@ export default async function IndustryPage({
             </section>
 
             {/* Success Story */}
-            <section className="p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/30">
+            <section className="p-6 rounded-xl border border-brand-30 bg-brand-10">
               <h2 className="text-2xl font-semibold mb-4">Success Story</h2>
               <p className="text-gray-300 mb-4">
                 A leading {industry.name.toLowerCase()} company implemented our
@@ -266,7 +266,7 @@ export default async function IndustryPage({
             </section>
 
             {/* CTA */}
-            <section className="p-6 rounded-xl bg-gradient-to-br from-green-500/20 to-blue-500/20 border border-green-500/30">
+            <section className="p-6 rounded-xl border border-brand-30 bg-brand-10">
               <h3 className="text-lg font-semibold mb-3">
                 Transform Your {industry.name} Operations
               </h3>
@@ -275,7 +275,7 @@ export default async function IndustryPage({
               </p>
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-gradient-to-r from-green-500 to-blue-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
               >
                 Schedule Discovery Call
                 <ArrowRight className="w-4 h-4" />

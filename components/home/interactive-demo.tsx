@@ -81,7 +81,7 @@ export function InteractiveDemo() {
                   href={demo.href}
                   className={`group block p-6 rounded-xl transition-all ${
                     activeDemo === index
-                      ? "bg-gradient-to-r from-blue-500/20 to-purple-600/20 border-blue-500/50"
+                      ? "bg-brand-10 border-brand-30"
                       : "bg-card/5 border-border/10 hover:bg-card/10"
                   } border backdrop-blur-sm`}
                 >
@@ -89,7 +89,7 @@ export function InteractiveDemo() {
                     <div
                       className={`p-2 rounded-lg ${
                         activeDemo === index
-                          ? "bg-gradient-to-br from-blue-500 to-purple-600"
+                          ? "bg-brand-gradient"
                           : "bg-card/10"
                       }`}
                     >
@@ -117,7 +117,7 @@ export function InteractiveDemo() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-96 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-border/10 overflow-hidden"
+            className="relative h-96 rounded-2xl border border-border/10 overflow-hidden bg-brand-10"
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
@@ -141,7 +141,7 @@ export function InteractiveDemo() {
                 </p>
                 <Link
                   href={demos[activeDemo].href}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
                 >
                   Try Demo →
                 </Link>
@@ -159,7 +159,7 @@ export function InteractiveDemo() {
                   onClick={() => setActiveDemo(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     activeDemo === index
-                      ? "w-8 bg-gradient-to-r from-blue-500 to-purple-600"
+                      ? "w-8 bg-brand-gradient"
                       : "bg-foreground/30"
                   }`}
                 />
@@ -173,7 +173,10 @@ export function InteractiveDemo() {
 }
 
 const React = {
-  createElement: (component: React.ComponentType<Record<string, unknown>>, props: Record<string, unknown>) => {
+  createElement: (
+    component: React.ComponentType<Record<string, unknown>>,
+    props: Record<string, unknown>
+  ) => {
     const Component = component;
     return <Component {...props} />;
   },

@@ -8,6 +8,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Semantic colors mapped to CSS vars so Tailwind tokens work */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -37,6 +38,16 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  /* Additional semantic tokens */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  /* Brand gradient endpoints */
+  --color-brand-start: var(--brand-start);
+  --color-brand-end: var(--brand-end);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -76,6 +87,16 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  /* Semantic additions */
+  --success: oklch(0.769 0.188 70.08);
+  --success-foreground: oklch(0.208 0.042 265.755);
+  --warning: oklch(0.828 0.189 84.429);
+  --warning-foreground: oklch(0.208 0.042 265.755);
+  --info: oklch(0.6 0.118 184.704);
+  --info-foreground: oklch(0.129 0.042 264.695);
+  /* Brand gradient defaults map to primary/accent */
+  --brand-start: var(--primary);
+  --brand-end: var(--accent);
 }
 
 .dark {
@@ -110,6 +131,16 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  /* Semantic additions - dark */
+  --success: oklch(0.645 0.246 16.439);
+  --success-foreground: oklch(0.984 0.003 247.858);
+  --warning: oklch(0.627 0.265 303.9);
+  --warning-foreground: oklch(0.984 0.003 247.858);
+  --info: oklch(0.488 0.243 264.376);
+  --info-foreground: oklch(0.984 0.003 247.858);
+  /* Brand gradient defaults map to primary/accent */
+  --brand-start: var(--primary);
+  --brand-end: var(--accent);
 }
 
 @layer base {
@@ -195,15 +226,47 @@
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent;
+  /* Use theme-driven brand gradient */
+  background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .glow {
-  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+  /* Subtle brand glow */
+  filter: drop-shadow(0 0 20px color-mix(in oklch, var(--brand-start) 40%, transparent));
 }
 
 .noise-bg {
   background-image: 
-    radial-gradient(ellipse at top, rgba(59, 130, 246, 0.1), transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.1), transparent 50%);
+    radial-gradient(ellipse at top, color-mix(in oklch, var(--brand-start) 15%, transparent), transparent 50%),
+    radial-gradient(ellipse at bottom, color-mix(in oklch, var(--brand-end) 15%, transparent), transparent 50%);
 }
+
+/* Utility: brand gradient background */
+.bg-brand-gradient {
+  background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+}
+
+/* Simple semantic color utilities */
+.text-brand { color: var(--brand-start); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-info { color: var(--info); }
+.text-destructive { color: var(--destructive); }
+.text-accent { color: var(--accent); }
+
+.bg-brand-10 { background-color: color-mix(in oklch, var(--brand-start) 10%, transparent); }
+.bg-success-10 { background-color: color-mix(in oklch, var(--success) 10%, transparent); }
+.bg-warning-10 { background-color: color-mix(in oklch, var(--warning) 10%, transparent); }
+.bg-info-10 { background-color: color-mix(in oklch, var(--info) 10%, transparent); }
+.bg-destructive-10 { background-color: color-mix(in oklch, var(--destructive) 10%, transparent); }
+.bg-accent-10 { background-color: color-mix(in oklch, var(--accent) 10%, transparent); }
+
+.border-brand-30 { border-color: color-mix(in oklch, var(--brand-start) 30%, transparent); }
+.border-success-30 { border-color: color-mix(in oklch, var(--success) 30%, transparent); }
+.border-warning-30 { border-color: color-mix(in oklch, var(--warning) 30%, transparent); }
+.border-info-30 { border-color: color-mix(in oklch, var(--info) 30%, transparent); }
+.border-destructive-30 { border-color: color-mix(in oklch, var(--destructive) 30%, transparent); }
+.border-accent-30 { border-color: color-mix(in oklch, var(--accent) 30%, transparent); }

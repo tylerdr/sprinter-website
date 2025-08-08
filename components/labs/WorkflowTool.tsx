@@ -1,17 +1,25 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Workflow, Plus, Trash2, Bot, Download, RefreshCw, Sparkles } from "lucide-react"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Workflow,
+  Plus,
+  Trash2,
+  Bot,
+  Download,
+  RefreshCw,
+  Sparkles,
+} from "lucide-react";
 
 interface WorkflowStep {
-  id: string
-  title: string
-  description: string
+  id: string;
+  title: string;
+  description: string;
   aiSuggestion?: {
-    type: string
-    benefit: string
-  }
+    type: string;
+    benefit: string;
+  };
 }
 
 const exampleWorkflows = [
@@ -23,7 +31,7 @@ const exampleWorkflows = [
       "Search knowledge base",
       "Draft response",
       "Review and send",
-    ]
+    ],
   },
   {
     name: "Content Creation",
@@ -33,78 +41,107 @@ const exampleWorkflows = [
       "Write draft",
       "Edit and proofread",
       "Publish and distribute",
-    ]
+    ],
   },
-]
+];
 
 export default function WorkflowTool() {
-  const [workflowName, setWorkflowName] = useState("")
-  const [steps, setSteps] = useState<WorkflowStep[]>([])
-  const [newStep, setNewStep] = useState("")
-  const [analyzed, setAnalyzed] = useState(false)
+  const [workflowName, setWorkflowName] = useState("");
+  const [steps, setSteps] = useState<WorkflowStep[]>([]);
+  const [newStep, setNewStep] = useState("");
+  const [analyzed, setAnalyzed] = useState(false);
 
   const addStep = () => {
     if (newStep.trim()) {
-      setSteps([...steps, {
-        id: Date.now().toString(),
-        title: newStep,
-        description: "",
-      }])
-      setNewStep("")
-      setAnalyzed(false)
+      setSteps([
+        ...steps,
+        {
+          id: Date.now().toString(),
+          title: newStep,
+          description: "",
+        },
+      ]);
+      setNewStep("");
+      setAnalyzed(false);
     }
-  }
+  };
 
   const removeStep = (id: string) => {
-    setSteps(steps.filter(step => step.id !== id))
-    setAnalyzed(false)
-  }
+    setSteps(steps.filter((step) => step.id !== id));
+    setAnalyzed(false);
+  };
 
-  const loadExample = (example: typeof exampleWorkflows[0]) => {
-    setWorkflowName(example.name)
-    setSteps(example.steps.map((step, index) => ({
-      id: index.toString(),
-      title: step,
-      description: "",
-    })))
-    setAnalyzed(false)
-  }
+  const loadExample = (example: (typeof exampleWorkflows)[0]) => {
+    setWorkflowName(example.name);
+    setSteps(
+      example.steps.map((step, index) => ({
+        id: index.toString(),
+        title: step,
+        description: "",
+      }))
+    );
+    setAnalyzed(false);
+  };
 
   const analyzeWorkflow = () => {
     const suggestions = [
-      { keywords: ["categorize", "classify", "sort"], type: "Classification AI", benefit: "95% accuracy, instant categorization" },
-      { keywords: ["search", "find", "lookup"], type: "Semantic Search AI", benefit: "Find relevant info 10x faster" },
-      { keywords: ["write", "draft", "create"], type: "Content Generation AI", benefit: "Generate first drafts in seconds" },
-      { keywords: ["review", "check", "verify"], type: "Quality Check AI", benefit: "Automated QA with consistent standards" },
-      { keywords: ["analyze", "research", "investigate"], type: "Research AI Agent", benefit: "Comprehensive analysis in minutes" },
-      { keywords: ["extract", "collect", "gather"], type: "Data Extraction AI", benefit: "Automate data collection" },
-    ]
+      {
+        keywords: ["categorize", "classify", "sort"],
+        type: "Classification AI",
+        benefit: "95% accuracy, instant categorization",
+      },
+      {
+        keywords: ["search", "find", "lookup"],
+        type: "Semantic Search AI",
+        benefit: "Find relevant info 10x faster",
+      },
+      {
+        keywords: ["write", "draft", "create"],
+        type: "Content Generation AI",
+        benefit: "Generate first drafts in seconds",
+      },
+      {
+        keywords: ["review", "check", "verify"],
+        type: "Quality Check AI",
+        benefit: "Automated QA with consistent standards",
+      },
+      {
+        keywords: ["analyze", "research", "investigate"],
+        type: "Research AI Agent",
+        benefit: "Comprehensive analysis in minutes",
+      },
+      {
+        keywords: ["extract", "collect", "gather"],
+        type: "Data Extraction AI",
+        benefit: "Automate data collection",
+      },
+    ];
 
-    const analyzedSteps = steps.map(step => {
-      const lowerTitle = step.title.toLowerCase()
-      const suggestion = suggestions.find(s => 
-        s.keywords.some(keyword => lowerTitle.includes(keyword))
-      )
-      
+    const analyzedSteps = steps.map((step) => {
+      const lowerTitle = step.title.toLowerCase();
+      const suggestion = suggestions.find((s) =>
+        s.keywords.some((keyword) => lowerTitle.includes(keyword))
+      );
+
       return {
         ...step,
         aiSuggestion: suggestion || {
           type: "Process Automation",
-          benefit: "Reduce manual effort by 50%"
-        }
-      }
-    })
+          benefit: "Reduce manual effort by 50%",
+        },
+      };
+    });
 
-    setSteps(analyzedSteps)
-    setAnalyzed(true)
-  }
+    setSteps(analyzedSteps);
+    setAnalyzed(true);
+  };
 
   const reset = () => {
-    setWorkflowName("")
-    setSteps([])
-    setNewStep("")
-    setAnalyzed(false)
-  }
+    setWorkflowName("");
+    setSteps([]);
+    setNewStep("");
+    setAnalyzed(false);
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -116,13 +153,15 @@ export default function WorkflowTool() {
           className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm"
         >
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-2">Workflow Name</label>
+            <label className="block text-sm font-medium mb-2">
+              Workflow Name
+            </label>
             <input
               type="text"
               value={workflowName}
               onChange={(e) => setWorkflowName(e.target.value)}
               placeholder="e.g., Customer Onboarding Process"
-              className="w-full px-4 py-2 rounded-lg bg-card/10 border border-border/20 focus:border-purple-500 focus:outline-none transition-colors"
+              className="w-full px-4 py-2 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--accent)] focus:outline-none transition-colors"
             />
           </div>
 
@@ -135,11 +174,11 @@ export default function WorkflowTool() {
                 onChange={(e) => setNewStep(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && addStep()}
                 placeholder="Enter a step in your workflow"
-                className="flex-1 px-4 py-2 rounded-lg bg-card/10 border border-border/20 focus:border-purple-500 focus:outline-none transition-colors"
+                className="flex-1 px-4 py-2 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--accent)] focus:outline-none transition-colors"
               />
               <button
                 onClick={addStep}
-                className="px-4 py-2 bg-purple-500 text-primary-foreground rounded-lg hover:bg-purple-600 transition-colors"
+                className="px-4 py-2 bg-brand-gradient text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
               >
                 <Plus className="w-5 h-5" />
               </button>
@@ -162,7 +201,7 @@ export default function WorkflowTool() {
                     transition={{ delay: index * 0.05 }}
                     className={`p-4 rounded-lg border ${
                       step.aiSuggestion
-                        ? "bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-purple-500/30"
+                        ? "border-brand-30 bg-brand-10"
                         : "bg-card/5 border-border/10"
                     }`}
                   >
@@ -180,9 +219,9 @@ export default function WorkflowTool() {
                             animate={{ opacity: 1, y: 0 }}
                             className="flex items-start gap-2 mt-2 p-3 rounded-lg bg-black/30"
                           >
-                            <Bot className="w-4 h-4 text-blue-400 mt-0.5" />
+                            <Bot className="w-4 h-4 text-info mt-0.5" />
                             <div className="flex-1">
-                              <div className="text-sm font-medium text-blue-400">
+                              <div className="text-sm font-medium text-info">
                                 AI Recommendation: {step.aiSuggestion.type}
                               </div>
                               <div className="text-xs text-muted-foreground mt-1">
@@ -209,12 +248,12 @@ export default function WorkflowTool() {
             <button
               onClick={analyzeWorkflow}
               disabled={steps.length === 0}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+              className="flex items-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
             >
               <Sparkles className="w-5 h-5" />
               Analyze with AI
             </button>
-            
+
             {analyzed && (
               <button
                 onClick={() => {}}
@@ -224,7 +263,7 @@ export default function WorkflowTool() {
                 Export Plan
               </button>
             )}
-            
+
             <button
               onClick={reset}
               className="flex items-center gap-2 px-6 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors"
@@ -263,24 +302,23 @@ export default function WorkflowTool() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 rounded-lg bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30"
+              className="mt-6 p-4 rounded-lg border border-success-30 bg-success-10"
             >
-              <h4 className="font-semibold mb-2 text-green-400">AI Impact Summary</h4>
+              <h4 className="font-semibold mb-2 text-success">
+                AI Impact Summary
+              </h4>
               <div className="text-sm text-foreground/80">
                 <div className="mb-2">
-                  🚀 {steps.filter(s => s.aiSuggestion).length} steps can be augmented with AI
+                  🚀 {steps.filter((s) => s.aiSuggestion).length} steps can be
+                  augmented with AI
                 </div>
-                <div className="mb-2">
-                  ⏱️ Estimated time savings: 60-80%
-                </div>
-                <div>
-                  📈 ROI potential: 10x efficiency gain
-                </div>
+                <div className="mb-2">⏱️ Estimated time savings: 60-80%</div>
+                <div>📈 ROI potential: 10x efficiency gain</div>
               </div>
             </motion.div>
           )}
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

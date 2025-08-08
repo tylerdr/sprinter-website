@@ -11,7 +11,7 @@ export default function NotFound() {
             Page Not Found
           </h2>
           <p className="text-gray-300 mb-8">
-            Looks like this page took an unexpected detour into the AI void. 
+            Looks like this page took an unexpected detour into the AI void.
             Don&apos;t worry, we&apos;ll help you find your way back.
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
           >
             <Home className="w-4 h-4" />
             Back to Homepage

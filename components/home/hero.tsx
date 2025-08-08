@@ -1,36 +1,39 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { ArrowRight, Cpu, Zap } from "lucide-react"
-import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Cpu, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero section">
-      <div 
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      aria-label="Hero section"
+    >
+      <div
         className="absolute inset-0 opacity-20"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, color-mix(in oklch, var(--brand-start) 15%, transparent), transparent 40%)`,
         }}
         aria-hidden="true"
       />
-      
+
       <div className="absolute inset-0 noise-bg" aria-hidden="true" />
-      
+
       <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse animation-delay-2000" />
+        <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse bg-brand-10" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse animation-delay-2000 bg-brand-10" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -46,8 +49,10 @@ export function Hero() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-card/5 border border-border/10 backdrop-blur-sm mb-6 sm:mb-8"
           >
-            <Zap className="w-4 h-4 text-yellow-500" aria-hidden="true" />
-            <span className="text-xs sm:text-sm font-medium">Human-Centered AI Since 2018</span>
+            <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
+            <span className="text-xs sm:text-sm font-medium">
+              Human-Centered AI Since 2018
+            </span>
           </motion.div>
 
           <motion.h1
@@ -66,8 +71,9 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            We build AI that handles repetitive tasks so people can focus on meaningful work. 
-            Your team deserves to do what they love, not what machines can do better.
+            There has never been this much leverage available. AI lets you ship
+            faster, compound advantages, and turn unstructured data into
+            products and decisions. Early movers will be impossible to catch.
           </motion.p>
 
           <motion.div
@@ -78,14 +84,17 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all hover:scale-105 text-sm sm:text-base touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all hover:scale-105 text-sm sm:text-base touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
             >
               Work With Us
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              <ArrowRight
+                className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
             </Link>
             <Link
               href="/labs"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-card/10 backdrop-blur-sm text-foreground font-semibold rounded-lg border border-border/20 hover:bg-card/20 transition-all hover:scale-105 text-sm sm:text-base touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-card/10 backdrop-blur-sm text-foreground font-semibold rounded-lg border border-border/20 hover:bg-card/20 transition-all hover:scale-105 text-sm sm:text-base touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
             >
               <Cpu className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
               Explore AI Labs
@@ -101,16 +110,37 @@ export function Hero() {
             aria-label="Company statistics"
           >
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="100K plus">100K+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">Hours Reclaimed</div>
+              <div
+                className="text-2xl sm:text-3xl font-bold gradient-text"
+                aria-label="100K plus"
+              >
+                100K+
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">
+                Hours Reclaimed
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="50 plus">50+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">Jobs Created</div>
+              <div
+                className="text-2xl sm:text-3xl font-bold gradient-text"
+                aria-label="50 plus"
+              >
+                50+
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">
+                Jobs Created
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="250 percent">250%</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">Average ROI</div>
+              <div
+                className="text-2xl sm:text-3xl font-bold gradient-text"
+                aria-label="250 percent"
+              >
+                250%
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">
+                Average ROI
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -134,5 +164,5 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

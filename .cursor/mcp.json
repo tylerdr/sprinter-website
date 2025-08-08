@@ -1,0 +1,22 @@
+{
+    "mcpServers": {
+      "supabase": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://postgres:postgres@127.0.0.1:54322/postgres"]
+      },
+      "mastra": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@mastra/mcp-docs-server"]
+      },
+      "shadcn": {
+        "command": "npx",
+        "args": ["-y", "@heilgar/shadcn-ui-mcp-server"]
+      },
+      "playwright": {
+        "command": "npx",
+        "args": ["@playwright/mcp@latest"]
+      }
+    }
+  }
+  

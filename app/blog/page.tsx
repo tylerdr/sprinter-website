@@ -16,7 +16,10 @@ import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("blog");
 
-const iconByCategory: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+const iconByCategory: Record<
+  string,
+  React.ComponentType<React.SVGProps<SVGSVGElement>>
+> = {
   "AI Strategy": Brain,
   "Business Value": TrendingUp,
   Technology: Zap,
@@ -52,9 +55,9 @@ export default function BlogPage() {
     <div className="min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-4 sm:mb-6">
-            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-            <span className="text-xs sm:text-sm font-medium text-blue-400">
+          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-brand-10 border border-brand-30 mb-4 sm:mb-6">
+            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-brand" />
+            <span className="text-xs sm:text-sm font-medium text-brand">
               Insights & Resources
             </span>
           </div>
@@ -71,7 +74,9 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
           <div className="lg:col-span-1 order-last lg:order-first">
             <div className="lg:sticky lg:top-24">
-              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Categories</h3>
+              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+                Categories
+              </h3>
               <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
                 {categories.map((category) => (
                   <button
@@ -86,14 +91,17 @@ export default function BlogPage() {
                 ))}
               </div>
 
-              <div className="mt-6 sm:mt-8 p-4 sm:p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30">
-                <h4 className="font-semibold mb-3 text-sm sm:text-base">Stay Updated</h4>
+              <div className="mt-6 sm:mt-8 p-4 sm:p-6 rounded-xl bg-brand-10 border border-brand-30">
+                <h4 className="font-semibold mb-3 text-sm sm:text-base">
+                  Stay Updated
+                </h4>
                 <p className="text-xs sm:text-sm text-gray-400 mb-4 leading-relaxed">
-                  AI Insights newsletter coming soon. Get notified when we launch.
+                  AI Insights newsletter coming soon. Get notified when we
+                  launch.
                 </p>
                 <Link
                   href="/contact"
-                  className="block w-full text-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:opacity-90 touch-manipulation min-h-[40px]"
+                  className="block w-full text-center px-4 py-2 bg-brand-gradient text-primary-foreground text-xs sm:text-sm font-medium rounded-lg hover:opacity-90 touch-manipulation min-h-[40px]"
                 >
                   Get Notified
                 </Link>
@@ -118,7 +126,7 @@ export default function BlogPage() {
                         <span
                           className={`px-2 sm:px-3 py-1 text-xs font-medium rounded-full inline-block w-fit ${
                             article.featured
-                              ? "bg-blue-500/20 text-blue-400"
+                              ? "bg-brand-10 text-brand"
                               : "bg-white/10 text-gray-400"
                           }`}
                         >
@@ -127,11 +135,14 @@ export default function BlogPage() {
                         <div className="flex items-center gap-3 text-xs text-gray-500">
                           <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
-                            {new Date(article.date).toLocaleDateString("en-US", {
-                              month: "short",
-                              day: "numeric",
-                              year: "numeric",
-                            })}
+                            {new Date(article.date).toLocaleDateString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric",
+                              }
+                            )}
                           </div>
                           <div className="flex items-center gap-1">
                             <Clock className="w-3 h-3" />
@@ -144,7 +155,9 @@ export default function BlogPage() {
                         {article.title}
                       </h2>
 
-                      <p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed">{article.excerpt}</p>
+                      <p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed">
+                        {article.excerpt}
+                      </p>
 
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div className="flex flex-wrap gap-1 sm:gap-2">
@@ -160,7 +173,7 @@ export default function BlogPage() {
 
                         <Link
                           href={`/blog/${article.id}`}
-                          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium text-sm touch-manipulation py-1"
+                          className="inline-flex items-center gap-2 text-brand hover:opacity-90 font-medium text-sm touch-manipulation py-1"
                         >
                           Read More
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -171,9 +184,7 @@ export default function BlogPage() {
                     <div className="flex-shrink-0 order-first sm:order-last">
                       <div
                         className={`w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center ${
-                          article.featured
-                            ? "bg-gradient-to-br from-blue-500 to-purple-600"
-                            : "bg-white/10"
+                          article.featured ? "bg-brand-gradient" : "bg-white/10"
                         }`}
                       >
                         <article.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -199,8 +210,8 @@ export default function BlogPage() {
             <span className="gradient-text">strategies</span>?
           </h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            Don&apos;t just read about AI transformation—experience it. Let&apos;s discuss
-            how these insights apply to your business.
+            Don&apos;t just read about AI transformation—experience it.
+            Let&apos;s discuss how these insights apply to your business.
           </p>
           <Link
             href="/contact"

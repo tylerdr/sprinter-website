@@ -62,17 +62,17 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="p-8 rounded-2xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30 text-center"
+        className="p-8 rounded-2xl text-center border border-success-30 bg-success-10"
         role="status"
         aria-live="polite"
       >
-        <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Sparkles className="w-8 h-8 text-green-400" aria-hidden="true" />
+        <div className="w-16 h-16 bg-success-10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Sparkles className="w-8 h-8 text-success" aria-hidden="true" />
         </div>
         <h2 className="text-2xl font-bold mb-2">Message Received!</h2>
         <p className="text-gray-400 mb-4">
-          Thanks for reaching out. We&apos;ll get back to you within 24
-          hours to discuss your AI project.
+          Thanks for reaching out. We&apos;ll get back to you within 24 hours to
+          discuss your AI project.
         </p>
         <button
           onClick={() => {
@@ -85,7 +85,7 @@ export default function ContactForm() {
               projectType: "",
             });
           }}
-          className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          className="text-info hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm"
         >
           Send another message
         </button>
@@ -96,13 +96,11 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+      className="p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm"
       noValidate
       aria-label="Contact form"
     >
-      <h2 className="text-2xl font-bold mb-6">
-        Start Your AI Journey
-      </h2>
+      <h2 className="text-2xl font-bold mb-6">Start Your AI Journey</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
@@ -118,9 +116,11 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="name-required"
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
           />
-          <span id="name-required" className="sr-only">Required field</span>
+          <span id="name-required" className="sr-only">
+            Required field
+          </span>
         </div>
 
         <div>
@@ -136,9 +136,11 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="email-required"
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
           />
-          <span id="email-required" className="sr-only">Required field</span>
+          <span id="email-required" className="sr-only">
+            Required field
+          </span>
         </div>
       </div>
 
@@ -152,7 +154,7 @@ export default function ContactForm() {
           name="company"
           value={formData.company}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+          className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
         />
       </div>
 
@@ -177,7 +179,9 @@ export default function ContactForm() {
           <option value="speaking">Speaking/Training</option>
           <option value="other">Other</option>
         </select>
-        <span id="projectType-required" className="sr-only">Required field</span>
+        <span id="projectType-required" className="sr-only">
+          Required field
+        </span>
       </div>
 
       <div className="mb-6">
@@ -193,20 +197,25 @@ export default function ContactForm() {
           aria-required="true"
           aria-describedby="message-required"
           rows={5}
-          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors resize-none"
           placeholder="Describe your vision, challenges, or ideas..."
         />
-        <span id="message-required" className="sr-only">Required field</span>
+        <span id="message-required" className="sr-only">
+          Required field
+        </span>
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="flex items-center gap-2 px-8 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2"
       >
         {isSubmitting ? (
           <>
-            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true" />
+            <div
+              className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
+              aria-hidden="true"
+            />
             <span>Sending...</span>
             <span className="sr-only">Form is being submitted</span>
           </>

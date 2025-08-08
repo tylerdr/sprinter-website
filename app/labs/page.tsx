@@ -1,40 +1,44 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Bot, Workflow, Palette, Gamepad2, ArrowRight } from "lucide-react"
-import { getPageMetadata } from "@/lib/seo"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Bot, Workflow, Palette, Gamepad2, ArrowRight } from "lucide-react";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("labs")
+export const metadata: Metadata = getPageMetadata("labs");
 
 const labs = [
   {
     icon: Bot,
     title: "Agent Simulator",
-    description: "Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.",
+    description:
+      "Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.",
     href: "/labs/agent-simulator",
     gradient: "from-blue-500 to-cyan-600",
   },
   {
     icon: Workflow,
     title: "Workflow Designer",
-    description: "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
+    description:
+      "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
     href: "/labs/workflow-tool",
     gradient: "from-purple-500 to-pink-600",
   },
   {
     icon: Gamepad2,
     title: "Ideation Lab",
-    description: "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation.",
+    description:
+      "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation.",
     href: "/labs/ideation",
     gradient: "from-green-500 to-teal-600",
   },
   {
     icon: Palette,
     title: "AI Sketch Studio",
-    description: "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.",
+    description:
+      "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.",
     href: "/labs/sketch-studio",
     gradient: "from-orange-500 to-red-600",
   },
-]
+];
 
 export default function LabsPage() {
   return (
@@ -45,23 +49,26 @@ export default function LabsPage() {
             AI <span className="gradient-text">Labs</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
-            Interactive demonstrations of our AI capabilities. Experience the future of intelligent automation through hands-on tools and games.
+            Interactive demonstrations of our AI capabilities. Experience the
+            future of intelligent automation through hands-on tools and games.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto" role="list">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto"
+          role="list"
+        >
           {labs.map((lab) => (
-            <div
-              key={lab.title}
-              className="w-full"
-              role="listitem"
-            >
+            <div key={lab.title} className="w-full" role="listitem">
               <Link
                 href={lab.href}
-                className="group block h-full p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+                className="group block h-full p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
                 aria-label={`Try ${lab.title} - ${lab.description}`}
               >
-                <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-br ${lab.gradient} mb-4 sm:mb-6`} aria-hidden="true">
+                <div
+                  className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-br ${lab.gradient} mb-4 sm:mb-6`}
+                  aria-hidden="true"
+                >
                   <lab.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold mb-3 group-hover:gradient-text transition-all">
@@ -70,25 +77,29 @@ export default function LabsPage() {
                 <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
                   {lab.description}
                 </p>
-                <div className="flex items-center gap-2 text-blue-400 font-medium group-hover:text-blue-300 text-sm sm:text-base">
+                <div className="flex items-center gap-2 text-brand font-medium group-hover:opacity-90 text-sm sm:text-base">
                   Try it now
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  <ArrowRight
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    aria-hidden="true"
+                  />
                 </div>
               </Link>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-border/10 max-w-4xl mx-auto">
+        <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl border border-brand-30 bg-brand-10 max-w-4xl mx-auto">
           <h3 className="text-xl sm:text-2xl font-bold mb-4">
             Ready to build something amazing?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            These demos showcase just a fraction of what we can build together. Let&apos;s discuss your AI vision.
+            These demos showcase just a fraction of what we can build together.
+            Let&apos;s discuss your AI vision.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
           >
             Start a Project
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -96,5 +107,5 @@ export default function LabsPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

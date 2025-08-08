@@ -162,7 +162,7 @@ Total execution time: 6.2 seconds`);
             <button
               onClick={runSimulation}
               disabled={isRunning || !scenario.trim()}
-              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 touch-manipulation min-h-[44px] text-sm sm:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 touch-manipulation min-h-[44px] text-sm sm:text-base"
             >
               {isRunning ? (
                 <>
@@ -222,9 +222,9 @@ Total execution time: 6.2 seconds`);
                   <div
                     className={`p-2 rounded-lg ${
                       agent.status === "working"
-                        ? "bg-blue-500/20"
+                        ? "bg-info-10"
                         : agent.status === "done"
-                          ? "bg-green-500/20"
+                          ? "bg-success-10"
                           : "bg-card/10"
                     }`}
                   >
@@ -232,12 +232,14 @@ Total execution time: 6.2 seconds`);
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold text-sm sm:text-base">{agent.name}</h3>
+                      <h3 className="font-semibold text-sm sm:text-base">
+                        {agent.name}
+                      </h3>
                       {agent.status === "working" && (
-                        <Loader className="w-4 h-4 animate-spin text-blue-400" />
+                        <Loader className="w-4 h-4 animate-spin text-info" />
                       )}
                       {agent.status === "done" && (
-                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <CheckCircle className="w-4 h-4 text-success" />
                       )}
                     </div>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -257,9 +259,9 @@ Total execution time: 6.2 seconds`);
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="p-4 sm:p-6 rounded-xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30"
+            className="p-4 sm:p-6 rounded-xl border border-success-30 bg-success-10"
           >
-            <h3 className="text-lg sm:text-xl font-bold mb-3 text-green-400">
+            <h3 className="text-lg sm:text-xl font-bold mb-3 text-success">
               ✨ Mission Complete!
             </h3>
             <pre className="whitespace-pre-wrap text-xs sm:text-sm text-foreground/80 font-mono overflow-x-auto">

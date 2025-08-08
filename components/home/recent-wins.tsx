@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { TrendingUp, Clock, Users, DollarSign, ArrowRight } from "lucide-react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { TrendingUp, Clock, Users, DollarSign, ArrowRight } from "lucide-react";
 
 const recentWins = [
   {
@@ -26,13 +26,19 @@ const recentWins = [
     timeframe: "in 3 months",
     description: "AI content engine driving 400% traffic growth",
   },
-]
+];
 
 export function RecentWins() {
   return (
     <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent" />
-      
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, color-mix(in oklch, var(--success) 5%, transparent), transparent)",
+        }}
+      />
+
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,16 +47,19 @@ export function RecentWins() {
           transition={{ duration: 0.8 }}
           className="text-center mb-10 sm:mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-green-500/10 border border-green-500/30 mb-4 sm:mb-6">
-            <TrendingUp className="w-4 h-4 text-green-400" />
-            <span className="text-xs sm:text-sm font-medium text-green-400">Recent Client Wins</span>
+          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-success-10 border border-success-30 mb-4 sm:mb-6">
+            <TrendingUp className="w-4 h-4 text-success" />
+            <span className="text-xs sm:text-sm font-medium text-success">
+              Recent Client Wins
+            </span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            This Month&apos;s <span className="gradient-text">Success Stories</span>
+            This Month&apos;s{" "}
+            <span className="gradient-text">Success Stories</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            Real results from real clients. Updated monthly.
+            Proof that focused AI execution compounds. Ship, measure, iterate.
           </p>
         </motion.div>
 
@@ -62,19 +71,27 @@ export function RecentWins() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30 h-full flex flex-col"
+              className="p-4 sm:p-6 rounded-xl border border-success-30 h-full flex flex-col"
             >
               <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4 flex-grow">
-                <div className="p-2 rounded-lg bg-green-500/20 flex-shrink-0">
-                  <win.icon className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                <div className="p-2 rounded-lg bg-success-10 flex-shrink-0">
+                  <win.icon className="w-4 h-4 sm:w-5 sm:h-5 text-success" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="text-xs sm:text-sm text-muted-foreground mb-1">{win.client}</div>
-                  <div className="text-xl sm:text-2xl font-bold text-green-400 leading-tight">{win.result}</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground/80">{win.timeframe}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground mb-1">
+                    {win.client}
+                  </div>
+                  <div className="text-xl sm:text-2xl font-bold text-success leading-tight">
+                    {win.result}
+                  </div>
+                  <div className="text-xs sm:text-sm text-muted-foreground/80">
+                    {win.timeframe}
+                  </div>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-auto">{win.description}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-auto">
+                {win.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -84,19 +101,26 @@ export function RecentWins() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center p-6 rounded-xl bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 max-w-2xl mx-auto"
+          className="text-center p-6 rounded-xl border border-warning-30 max-w-2xl mx-auto bg-warning-10"
         >
           <div className="flex items-center justify-center gap-2 mb-3">
-            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
-            <h3 className="text-lg sm:text-xl font-bold text-orange-400">Limited Availability</h3>
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-warning" />
+            <h3 className="text-lg sm:text-xl font-bold text-warning">
+              Limited Availability
+            </h3>
           </div>
           <p className="text-foreground/80 mb-4 text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            We only take on <strong>3 new AI transformation projects per month</strong> to ensure quality delivery. 
-            <span className="text-orange-400 font-semibold block sm:inline"> 2 spots remaining for this quarter.</span>
+            We only take on{" "}
+            <strong>3 new AI transformation projects per month</strong> to
+            ensure quality delivery.
+            <span className="text-warning font-semibold block sm:inline">
+              {" "}
+              2 spots remaining for this quarter.
+            </span>
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
           >
             Reserve Your Spot
             <ArrowRight className="w-4 h-4" />
@@ -104,5 +128,5 @@ export function RecentWins() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
