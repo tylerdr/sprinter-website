@@ -4,10 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NAVIGATION, COMPANY_INFO } from "@/lib/constants";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { BrandLogo } from "@/components/logo/BrandLogo";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -24,16 +25,10 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="flex items-center space-x-2 min-w-0"
+            className="flex items-center gap-3 min-w-0"
             aria-label="Sprinter AI Home"
           >
-            <Zap
-              className="w-7 h-7 sm:w-8 sm:h-8 text-brand flex-shrink-0"
-              aria-hidden="true"
-            />
-            <span className="text-lg sm:text-xl font-bold gradient-text truncate">
-              {COMPANY_INFO.name}
-            </span>
+            <BrandLogo className="h-8" priority />
           </Link>
 
           {/* Desktop Navigation */}

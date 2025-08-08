@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Zap, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 import { COMPANY_INFO, SOCIAL_LINKS, NAVIGATION } from "@/lib/constants";
 
 export function Footer() {
@@ -13,13 +14,12 @@ export function Footer() {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <Zap
-                className="w-7 h-7 sm:w-8 sm:h-8 text-brand"
-                aria-hidden="true"
+              <Image
+                src="/logo-no-background.png"
+                alt="Sprinter Consulting logo"
+                width={160}
+                height={36}
               />
-              <span className="text-lg sm:text-xl font-bold gradient-text">
-                {COMPANY_INFO.name}
-              </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {COMPANY_INFO.tagline}. One intelligent sprint at a time.

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -82,23 +83,24 @@ export function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0"
           >
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all hover:scale-105 text-sm sm:text-base touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
-            >
-              Work With Us
-              <ArrowRight
-                className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
-                aria-hidden="true"
-              />
-            </Link>
-            <Link
-              href="/labs"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-card/10 backdrop-blur-sm text-foreground font-semibold rounded-lg border border-border/20 hover:bg-card/20 transition-all hover:scale-105 text-sm sm:text-base touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
-            >
-              <Cpu className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-              Explore AI Labs
-            </Link>
+            <Button asChild variant="gradient" className="px-8 py-4 text-base">
+              <Link href="/contact" className="group">
+                Work With Us
+                <ArrowRight
+                  className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
+                  aria-hidden="true"
+                />
+              </Link>
+            </Button>
+            <Button asChild variant="glass" className="px-8 py-4 text-base">
+              <Link href="/labs" className="group">
+                <Cpu
+                  className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
+                  aria-hidden="true"
+                />
+                Explore AI Labs
+              </Link>
+            </Button>
           </motion.div>
 
           <motion.div

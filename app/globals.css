@@ -88,15 +88,17 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
   /* Semantic additions */
-  --success: oklch(0.769 0.188 70.08);
-  --success-foreground: oklch(0.208 0.042 265.755);
-  --warning: oklch(0.828 0.189 84.429);
-  --warning-foreground: oklch(0.208 0.042 265.755);
-  --info: oklch(0.6 0.118 184.704);
-  --info-foreground: oklch(0.129 0.042 264.695);
+  /* Toned to brand-friendly hues */
+  --success: oklch(0.72 0.08 240);
+  --success-foreground: oklch(0.129 0.02 240);
+  --warning: oklch(0.85 0.08 85);
+  --warning-foreground: oklch(0.2 0.03 85);
+  --info: oklch(0.8 0.06 220);
+  --info-foreground: oklch(0.16 0.02 220);
   /* Brand gradient defaults map to primary/accent */
-  --brand-start: var(--primary);
-  --brand-end: var(--accent);
+  --brand-start: #1d7dff; /* matches Sprinter blue */
+  --brand-end: #0a3bcf;   /* deeper Sprinter blue */
+  --brand-angle: 90deg;
 }
 
 .dark {
@@ -132,15 +134,16 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
   /* Semantic additions - dark */
-  --success: oklch(0.645 0.246 16.439);
-  --success-foreground: oklch(0.984 0.003 247.858);
-  --warning: oklch(0.627 0.265 303.9);
-  --warning-foreground: oklch(0.984 0.003 247.858);
-  --info: oklch(0.488 0.243 264.376);
-  --info-foreground: oklch(0.984 0.003 247.858);
+  --success: oklch(0.65 0.07 240);
+  --success-foreground: oklch(0.97 0.01 240);
+  --warning: oklch(0.74 0.07 85);
+  --warning-foreground: oklch(0.97 0.01 85);
+  --info: oklch(0.7 0.06 220);
+  --info-foreground: oklch(0.97 0.01 220);
   /* Brand gradient defaults map to primary/accent */
-  --brand-start: var(--primary);
-  --brand-end: var(--accent);
+  --brand-start: #6aa6ff;
+  --brand-end: #1b4ae1;
+  --brand-angle: 90deg;
 }
 
 @layer base {
@@ -227,7 +230,7 @@
 
 .gradient-text {
   /* Use theme-driven brand gradient */
-  background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+  background-image: linear-gradient(var(--brand-angle, 90deg), var(--brand-start), var(--brand-end));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -246,7 +249,7 @@
 
 /* Utility: brand gradient background */
 .bg-brand-gradient {
-  background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+  background-image: linear-gradient(var(--brand-angle, 90deg), var(--brand-start), var(--brand-end));
 }
 
 /* Simple semantic color utilities */

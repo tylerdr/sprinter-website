@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
 import {
   generateMetadata as createSEOMetadata,
   generateOrganizationStructuredData,
@@ -73,6 +74,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ThemeCustomizer />
         </ThemeProvider>
       </body>
     </html>
