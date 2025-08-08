@@ -11,7 +11,7 @@ test.describe('About', () => {
     await expect(page.locator('text=A Note from Our Founder')).toBeVisible();
     
     // Check founder signature was added
-    await expect(page.locator('text=— Alex Chen')).toBeVisible();
+    await expect(page.locator('text=— Tyler Dreher')).toBeVisible();
     await expect(page.locator('text=Founder & CEO, Sprinter AI')).toBeVisible();
     
     // Check philosophy statement

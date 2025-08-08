@@ -1,0 +1,117 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- link "Skip to navigation":
+  - /url: "#navigation"
+- navigation "Main navigation":
+  - link "Sprinter AI Home":
+    - /url: /
+    - text: Sprinter AI
+  - list:
+    - link "Home":
+      - /url: /
+    - link "About":
+      - /url: /about
+    - link "Services":
+      - /url: /services
+    - link "Use Cases":
+      - /url: /use-cases
+    - link "Case Studies":
+      - /url: /case-studies
+    - link "AI Labs":
+      - /url: /labs
+    - link "Insights":
+      - /url: /blog
+    - link "Work With Us":
+      - /url: /contact
+    - switch "Switch to light theme": Toggle between light and dark theme
+- main:
+  - heading "AI Labs" [level=1]
+  - paragraph: Interactive demonstrations of our AI capabilities. Experience the future of intelligent automation through hands-on tools and games.
+  - list:
+    - listitem:
+      - link "Try Agent Simulator - Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.":
+        - /url: /labs/agent-simulator
+        - heading "Agent Simulator" [level=2]
+        - paragraph: Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.
+        - text: Try it now
+    - listitem:
+      - link "Try Workflow Designer - Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.":
+        - /url: /labs/workflow-tool
+        - heading "Workflow Designer" [level=2]
+        - paragraph: Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.
+        - text: Try it now
+    - listitem:
+      - 'link "Try Ideation Lab - Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation."':
+        - /url: /labs/ideation
+        - heading "Ideation Lab" [level=2]
+        - paragraph: "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation."
+        - text: Try it now
+    - listitem:
+      - link "Try AI Sketch Studio - Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.":
+        - /url: /labs/sketch-studio
+        - heading "AI Sketch Studio" [level=2]
+        - paragraph: Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.
+        - text: Try it now
+  - heading "Ready to build something amazing?" [level=3]
+  - paragraph: These demos showcase just a fraction of what we can build together. Let's discuss your AI vision.
+  - link "Start a Project":
+    - /url: /contact
+- contentinfo:
+  - text: Sprinter AI
+  - paragraph: Move at the Pace of AI. One intelligent sprint at a time.
+  - navigation "Explore":
+    - heading "Explore" [level=3]
+    - list:
+      - listitem:
+        - link "About Us":
+          - /url: /about
+      - listitem:
+        - link "Services":
+          - /url: /services
+      - listitem:
+        - link "Case Studies":
+          - /url: /case-studies
+      - listitem:
+        - link "AI Labs":
+          - /url: /labs
+      - listitem:
+        - link "Insights":
+          - /url: /blog
+  - navigation "AI Tools":
+    - heading "AI Tools" [level=3]
+    - list:
+      - listitem:
+        - link "Agent Simulator":
+          - /url: /labs/agent-simulator
+      - listitem:
+        - link "Workflow Designer":
+          - /url: /labs/workflow-tool
+      - listitem:
+        - link "Ideation Lab":
+          - /url: /labs/ideation
+      - listitem:
+        - link "AI Sketch Studio":
+          - /url: /labs/sketch-studio
+  - heading "Connect" [level=3]
+  - list "Social media links":
+    - link "Follow us on GitHub (opens in new window)":
+      - /url: https://github.com/SprinterAI
+    - link "Follow us on X (Twitter) (opens in new window)":
+      - /url: https://x.com/SprinterAI
+    - link "Connect with us on LinkedIn (opens in new window)":
+      - /url: https://www.linkedin.com/company/sprinter-ai/
+    - link "Send us an email":
+      - /url: mailto:hello@sprinter.ai
+  - link "Start Building":
+    - /url: /contact
+  - paragraph:
+    - text: © 2025 Sprinter AI. All rights reserved. |
+    - link "Privacy Policy":
+      - /url: /privacy
+    - link "Terms of Service":
+      - /url: /terms
+- alert
+```

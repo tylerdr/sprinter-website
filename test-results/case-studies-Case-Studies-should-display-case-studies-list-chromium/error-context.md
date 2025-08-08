@@ -1,0 +1,207 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- link "Skip to navigation":
+  - /url: "#navigation"
+- navigation "Main navigation":
+  - link "Sprinter AI Home":
+    - /url: /
+    - text: Sprinter AI
+  - list:
+    - link "Home":
+      - /url: /
+    - link "About":
+      - /url: /about
+    - link "Services":
+      - /url: /services
+    - link "Use Cases":
+      - /url: /use-cases
+    - link "Case Studies":
+      - /url: /case-studies
+    - link "AI Labs":
+      - /url: /labs
+    - link "Insights":
+      - /url: /blog
+    - link "Work With Us":
+      - /url: /contact
+    - switch "Switch to light theme": Toggle between light and dark theme
+- main:
+  - text: Proven Results
+  - heading "Case Studies" [level=1]
+  - paragraph: Real AI transformations delivering measurable ROI. See how we've helped businesses 10x their efficiency and unlock millions in value.
+  - heading "MortgageQ – AI Loan Assistant" [level=2]
+  - paragraph: FinTech AI Platform
+  - paragraph: AI-powered loan assistant for Non-QM mortgage professionals
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: Mortgage officers spending 4+ hours daily searching through 50+ lender guidelines, losing deals to faster competitors
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Built an AI knowledge engine that instantly answers complex loan questions, matches scenarios to lenders in seconds
+  - heading "KEY FEATURES" [level=3]
+  - text: Instant answers to complex Non-QM questions Automated lender matching Document requirement generation Real-time guideline updates
+  - blockquote: "\"We're closing loans 300% faster. The AI assistant is like having a senior underwriter available 24/7.\""
+  - heading "RESULTS" [level=3]
+  - text: 95% Reduction in research time 300% Faster loan closings 50+ Lenders integrated $2.4M Additional revenue enabled
+  - link "View Details":
+    - /url: /case-studies/ai-mortgage-assistant
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "Cab-O-Matic – AI SKU Translator" [level=2]
+  - paragraph: B2B SaaS
+  - paragraph: AI SKU translator for cabinet dealers
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: Cabinet dealers wasting 3+ hours per quote managing spreadsheets across multiple manufacturers
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Developed AI that translates one cabinet plan into every manufacturer's SKUs instantly
+  - heading "KEY FEATURES" [level=3]
+  - text: One-click multi-manufacturer quotes Automatic tax & freight calculation Real-time pricing updates Cloud-based collaboration
+  - blockquote: "\"What took hours now takes minutes, and accuracy is perfect.\""
+  - heading "RESULTS" [level=3]
+  - text: 3x Productivity increase 90% Error reduction 15min Quote time (was 3 hours) $450K Annual savings per dealer
+  - link "View Details":
+    - /url: /case-studies/ai-cabinet-automation
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "RPM Healthcare – AI Care Coach" [level=2]
+  - paragraph: Healthcare Tech
+  - paragraph: Autonomous care coach for remote patient monitoring
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: Nurses overwhelmed managing 200+ patients, missing critical health events
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Created AI care coach that automates check-ins, triages data, and escalates issues
+  - heading "KEY FEATURES" [level=3]
+  - text: Automated patient check-ins Intelligent triage system Personalized health education Predictive risk alerts
+  - blockquote: "\"The AI coach handles routine tasks so our nurses can focus on critical care. It's transformative.\""
+  - heading "RESULTS" [level=3]
+  - text: 60% Nurse workload reduction 85% Patient engagement rate 40% Reduction in readmissions 5x Patient coverage increase
+  - link "View Details":
+    - /url: /case-studies/ai-patient-coach
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "Amble Innovation – AI Workshop Platform" [level=2]
+  - paragraph: Enterprise Software
+  - paragraph: Digital innovation toolkit for Fortune 500 consultants
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: Accenture needed to digitize and scale their innovation workshops globally
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Built AI-powered platform for remote workshops with intelligent insight extraction
+  - heading "KEY FEATURES" [level=3]
+  - text: AI-powered insight extraction Digital war room collaboration Automated connection mapping Knowledge base integration
+  - blockquote: "\"Amble revolutionized how we run innovation sessions. The AI insights are game-changing.\""
+  - heading "RESULTS" [level=3]
+  - text: 10x Workshop efficiency 500+ Workshops delivered 30% Better idea quality $1.2M Consulting revenue enabled
+  - link "View Details":
+    - /url: /case-studies/ai-workshop-platform
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "TrueLetter – AI Content Engine" [level=2]
+  - paragraph: Content Automation
+  - paragraph: Scaled content generation for e-commerce
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: E-commerce site needed 10,000+ unique product pages for SEO
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Built AI pipeline that scrapes, analyzes, and generates SEO-optimized content at scale
+  - heading "KEY FEATURES" [level=3]
+  - text: Automated data scraping Sentiment analysis SEO optimization Comparison table generation
+  - blockquote: "\"The content engine delivered more in 3 months than our team could in 3 years.\""
+  - heading "RESULTS" [level=3]
+  - text: 10,000+ Pages generated 400% Organic traffic increase 98% Content uniqueness score $3M Revenue attributed
+  - link "View Details":
+    - /url: /case-studies/ai-content-automation
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "Pacific Trust Bank – AI Mortgage Underwriting" [level=2]
+  - paragraph: Financial Services
+  - paragraph: Automated mortgage underwriting system that reduced processing time by 70% for regional bank
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: Pacific Trust Bank, a $2.8B regional bank in Washington, was losing market share to online lenders due to 21-day mortgage processing times. Manual underwriting required 15+ document reviews per loan, with underwriters spending 80% of their time on data validation rather than risk assessment. Rising interest rates increased application volume 40% while regulatory compliance demands grew.
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Built a comprehensive AI underwriting platform that automates document ingestion, validates borrower data across 12 external sources, performs risk scoring using ensemble ML models, and generates compliance reports. The system handles everything from credit analysis to property valuation integration, while maintaining human oversight for edge cases and final approval workflows.
+  - heading "KEY FEATURES" [level=3]
+  - text: Automated document OCR and data extraction Multi-source income and asset verification Real-time credit and fraud risk scoring Integrated property valuation workflows Regulatory compliance automation Exception handling and escalation rules Audit trail and explainable decisions Integration with core banking systems
+  - blockquote: "\"This AI system has been transformative for our lending operation. We've gone from losing deals to competitors to being the fastest bank in our market. Our underwriters now focus on complex cases while the AI handles routine applications flawlessly. The ROI was evident within the first quarter.\""
+  - heading "RESULTS" [level=3]
+  - text: 70% Reduction in processing time 6.3 days Average loan turnaround 40% Increase in loan volume $3.2M Annual cost savings 98.7% Accuracy rate in risk assessment 85% Reduction in manual reviews
+  - link "View Details":
+    - /url: /case-studies/pacific-trust-mortgage-automation
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "Seattle Health Network – AI Patient Triage" [level=2]
+  - paragraph: Healthcare Technology
+  - paragraph: Emergency AI triage system that managed 10,000+ daily COVID patients during the pandemic
+  - heading "THE CHALLENGE" [level=3]
+  - paragraph: During COVID-19 peak in March 2020, Seattle Health Network's 8-hospital system was overwhelmed with 10,000+ daily calls and walk-ins. Nurses couldn't keep up with screening protocols, leading to 6-hour wait times and delayed care for critical patients. The manual triage process missed 15% of high-risk cases, while low-acuity patients clogged emergency departments.
+  - heading "OUR SOLUTION" [level=3]
+  - paragraph: Deployed an AI-powered triage system within 10 days that conducts symptom screening via phone and web interfaces, applies CDC protocols with real-time updates, prioritizes patients using severity scoring, and automatically schedules appropriate care levels. The system integrates with Epic EHR and manages bed allocation across the network while providing multilingual support.
+  - heading "KEY FEATURES" [level=3]
+  - text: Multi-channel patient intake (phone, web, mobile) Real-time CDC protocol integration Multilingual support (English, Spanish, Korean) Epic EHR integration and data sync Dynamic bed allocation optimization Automated appointment scheduling Risk stratification and escalation Analytics dashboard for capacity planning
+  - blockquote: "\"When COVID hit, we needed a solution yesterday. Sprinter AI delivered an AI triage system that literally saved lives by ensuring the sickest patients got care first. It processed more patients in a day than our staff could handle in a week, with remarkable accuracy. This technology became the backbone of our pandemic response.\""
+  - heading "RESULTS" [level=3]
+  - text: 10,847 Peak daily patients processed 45 seconds Average triage time 89% Accuracy in severity classification 4.2 hours Reduction in ED wait times 300% Increase in nurse productivity 92% Patient satisfaction score
+  - link "View Details":
+    - /url: /case-studies/seattle-health-covid-triage
+  - link "Get Similar Results":
+    - /url: /contact
+  - heading "Ready to become our next success story?" [level=3]
+  - paragraph: Join companies that have transformed their operations with AI. Most clients see ROI within 60 days.
+  - link "Start Your AI Transformation":
+    - /url: /contact
+  - link "Try Our AI Demos":
+    - /url: /labs
+- contentinfo:
+  - text: Sprinter AI
+  - paragraph: Move at the Pace of AI. One intelligent sprint at a time.
+  - navigation "Explore":
+    - heading "Explore" [level=3]
+    - list:
+      - listitem:
+        - link "About Us":
+          - /url: /about
+      - listitem:
+        - link "Services":
+          - /url: /services
+      - listitem:
+        - link "Case Studies":
+          - /url: /case-studies
+      - listitem:
+        - link "AI Labs":
+          - /url: /labs
+      - listitem:
+        - link "Insights":
+          - /url: /blog
+  - navigation "AI Tools":
+    - heading "AI Tools" [level=3]
+    - list:
+      - listitem:
+        - link "Agent Simulator":
+          - /url: /labs/agent-simulator
+      - listitem:
+        - link "Workflow Designer":
+          - /url: /labs/workflow-tool
+      - listitem:
+        - link "Ideation Lab":
+          - /url: /labs/ideation
+      - listitem:
+        - link "AI Sketch Studio":
+          - /url: /labs/sketch-studio
+  - heading "Connect" [level=3]
+  - list "Social media links":
+    - link "Follow us on GitHub (opens in new window)":
+      - /url: https://github.com/SprinterAI
+    - link "Follow us on X (Twitter) (opens in new window)":
+      - /url: https://x.com/SprinterAI
+    - link "Connect with us on LinkedIn (opens in new window)":
+      - /url: https://www.linkedin.com/company/sprinter-ai/
+    - link "Send us an email":
+      - /url: mailto:hello@sprinter.ai
+  - link "Start Building":
+    - /url: /contact
+  - paragraph:
+    - text: © 2025 Sprinter AI. All rights reserved. |
+    - link "Privacy Policy":
+      - /url: /privacy
+    - link "Terms of Service":
+      - /url: /terms
+- alert
+```

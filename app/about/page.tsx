@@ -87,7 +87,7 @@ export default function AboutPage() {
               their creativity, and their opportunity to do meaningful work. That&apos;s the real value we create.
             </p>
             <div className="mt-8 pt-6 border-t border-border/10">
-              <p className="text-base font-semibold text-foreground">— Alex Chen</p>
+              <p className="text-base font-semibold text-foreground">— Tyler Dreher</p>
               <p className="text-sm text-muted-foreground">Founder & CEO, Sprinter AI</p>
             </div>
           </div>

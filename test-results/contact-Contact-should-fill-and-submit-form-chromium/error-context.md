@@ -1,0 +1,121 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- link "Skip to navigation":
+  - /url: "#navigation"
+- navigation "Main navigation":
+  - link "Sprinter AI Home":
+    - /url: /
+    - text: Sprinter AI
+  - list:
+    - link "Home":
+      - /url: /
+    - link "About":
+      - /url: /about
+    - link "Services":
+      - /url: /services
+    - link "Use Cases":
+      - /url: /use-cases
+    - link "Case Studies":
+      - /url: /case-studies
+    - link "AI Labs":
+      - /url: /labs
+    - link "Insights":
+      - /url: /blog
+    - link "Work With Us":
+      - /url: /contact
+    - switch "Switch to light theme": Toggle between light and dark theme
+- main:
+  - text: Let's Build Together
+  - heading "Work With Us" [level=1]
+  - paragraph: Ready to build something amazing with AI? Let's discuss your vision and how we can help bring it to life.
+  - form "Contact form":
+    - heading "Start Your AI Journey" [level=2]
+    - text: Name *
+    - textbox "Name *": Test User
+    - text: Required field Email *
+    - textbox "Email *": test@example.com
+    - text: Required field Company
+    - textbox "Company": Test Company
+    - text: What can we help you with? *
+    - combobox "What can we help you with? *":
+      - option "Select an option" [selected]
+      - option "AI Discovery Workshop"
+      - option "Custom AI Development"
+      - option "Venture Partnership"
+      - option "Speaking/Training"
+      - option "Other"
+    - text: Required field Tell us about your project *
+    - textbox "Tell us about your project *"
+    - text: Required field
+    - button "Send Message"
+  - heading "Get in Touch" [level=3]
+  - link "hello@sprinter.ai":
+    - /url: mailto:hello@sprinter.ai
+  - link "+1 (415) 555-1234":
+    - /url: tel:+14155551234
+  - text: San Francisco, CA United States
+  - heading "Book a Discovery Call" [level=3]
+  - paragraph: Prefer to talk? Schedule a 30-minute call to discuss your AI needs.
+  - link "Schedule Call":
+    - /url: mailto:hello@sprinter.ai?subject=Discovery%20Call
+  - heading "Response Time" [level=3]
+  - paragraph: We typically respond within 24 hours during business days. For urgent matters, please call directly.
+- contentinfo:
+  - text: Sprinter AI
+  - paragraph: Move at the Pace of AI. One intelligent sprint at a time.
+  - navigation "Explore":
+    - heading "Explore" [level=3]
+    - list:
+      - listitem:
+        - link "About Us":
+          - /url: /about
+      - listitem:
+        - link "Services":
+          - /url: /services
+      - listitem:
+        - link "Case Studies":
+          - /url: /case-studies
+      - listitem:
+        - link "AI Labs":
+          - /url: /labs
+      - listitem:
+        - link "Insights":
+          - /url: /blog
+  - navigation "AI Tools":
+    - heading "AI Tools" [level=3]
+    - list:
+      - listitem:
+        - link "Agent Simulator":
+          - /url: /labs/agent-simulator
+      - listitem:
+        - link "Workflow Designer":
+          - /url: /labs/workflow-tool
+      - listitem:
+        - link "Ideation Lab":
+          - /url: /labs/ideation
+      - listitem:
+        - link "AI Sketch Studio":
+          - /url: /labs/sketch-studio
+  - heading "Connect" [level=3]
+  - list "Social media links":
+    - link "Follow us on GitHub (opens in new window)":
+      - /url: https://github.com/SprinterAI
+    - link "Follow us on X (Twitter) (opens in new window)":
+      - /url: https://x.com/SprinterAI
+    - link "Connect with us on LinkedIn (opens in new window)":
+      - /url: https://www.linkedin.com/company/sprinter-ai/
+    - link "Send us an email":
+      - /url: mailto:hello@sprinter.ai
+  - link "Start Building":
+    - /url: /contact
+  - paragraph:
+    - text: © 2025 Sprinter AI. All rights reserved. |
+    - link "Privacy Policy":
+      - /url: /privacy
+    - link "Terms of Service":
+      - /url: /terms
+- alert
+```

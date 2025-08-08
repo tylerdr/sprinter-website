@@ -7,18 +7,18 @@ export const COMPANY_INFO = {
   philosophy: "We believe human time is valuable. AI should handle repetitive tasks so people can focus on creative, strategic, and meaningful work that brings them joy and purpose.",
   founded: "2018",
   email: "hello@sprinter.ai",
-  phone: "+1 (415) 555-1234", // Update with real phone
+  phone: "+1 (615) 601-0782",
   location: {
-    city: "San Francisco",
-    state: "CA",
+    city: "Brentwood",
+    state: "TN",
     country: "United States",
   },
 }
 
 export const SOCIAL_LINKS = {
-  twitter: "https://x.com/SprinterAI",
-  linkedin: "https://www.linkedin.com/company/sprinter-ai/",
-  github: "https://github.com/SprinterAI",
+  twitter: "https://x.com/sprinter_hq",
+  linkedin: "https://www.linkedin.com/company/sprinterconsulting/",
+  github: "https://github.com/sprinterhq",
   email: `mailto:${COMPANY_INFO.email}`,
 }
 
@@ -108,7 +108,7 @@ export const SEO = {
   keywords: "AI consulting, AI development, autonomous agents, human-centered AI, AI acceleration, venture studio, AI products, purposeful work",
   ogImage: "/og-image.png", // Add this image later
   siteUrl: "https://sprinter.ai",
-  twitterHandle: "@SprinterAI",
+  twitterHandle: "@sprinter_hq",
   organizationType: "Organization" as const,
   author: "Sprinter AI",
 }

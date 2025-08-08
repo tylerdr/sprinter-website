@@ -1,0 +1,135 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- link "Skip to navigation":
+  - /url: "#navigation"
+- navigation "Main navigation":
+  - link "Sprinter AI Home":
+    - /url: /
+    - text: Sprinter AI
+  - list:
+    - link "Home":
+      - /url: /
+    - link "About":
+      - /url: /about
+    - link "Services":
+      - /url: /services
+    - link "Use Cases":
+      - /url: /use-cases
+    - link "Case Studies":
+      - /url: /case-studies
+    - link "AI Labs":
+      - /url: /labs
+    - link "Insights":
+      - /url: /blog
+    - link "Work With Us":
+      - /url: /contact
+    - switch "Switch to light theme": Toggle between light and dark theme
+- main:
+  - text: Our Story
+  - heading "AI That Helps People, Not Replace Them" [level=1]
+  - paragraph: We believe human time is precious. AI should handle the tasks people hate, so they can focus on work that brings purpose and joy.
+  - heading "A Note from Our Founder" [level=2]
+  - paragraph: "\"In 2018, I was watching companies spend millions on AI consultants who delivered PowerPoints instead of products. I knew there had to be a better way.\""
+  - paragraph: "After building AI systems at scale for enterprises, I founded Sprinter AI with a deeper purpose: to create technology that enables human flourishing. Yes, we deliver ROI. But more importantly, we free people from soul-crushing repetitive work so they can contribute their unique human talents."
+  - paragraph: We specialize in bringing AI to industries often overlooked by Silicon Valley—manufacturing, healthcare, traditional finance, construction. These "outdated" sectors aren't behind; they're full of untapped potential. They have the most to gain from AI because they haven't been disrupted yet. We help them leapfrog straight to cutting-edge automation.
+  - paragraph: Six years and 50+ deployments later, we've proven this model works. We've automated mortgage underwriting, built AI agents that manage patient care, and created systems that generate millions in new revenue. Not in theory. In production. With real users and real results.
+  - paragraph:
+    - strong: "Our philosophy: Build technology that helps people."
+    - text: Every AI system we deploy doesn't just drive ROI—it gives people back their time, their creativity, and their opportunity to do meaningful work. That's the real value we create.
+  - paragraph: — Alex Chen
+  - paragraph: Founder & CEO, Sprinter AI
+  - heading "Our Values" [level=2]
+  - heading "Move at the Pace of AI" [level=3]
+  - paragraph: First prototype in 10 days. We ship AI solutions at the speed of innovation, not bureaucracy.
+  - heading "Human-Centered Design" [level=3]
+  - paragraph: We build AI that augments human capability, not replaces it. Technology should enable people to do work they love.
+  - heading "Create Abundance" [level=3]
+  - paragraph: AI doesn't destroy jobs—it creates opportunities. We've helped create 50+ new roles by automating the mundane.
+  - heading "Purposeful Innovation" [level=3]
+  - paragraph: Every AI system we build frees humans from repetitive tasks so they can pursue meaningful, creative work.
+  - heading "Our Journey" [level=2]
+  - text: "2018"
+  - paragraph: "Started in a garage with one mission: make AI practical for real businesses"
+  - text: "2019"
+  - paragraph: Deployed first production AI agent - automated 70% of loan processing for a regional bank
+  - text: "2020"
+  - paragraph: Pivoted to healthcare during COVID - built triage systems handling 10K+ patients daily
+  - text: "2021"
+  - paragraph: Launched venture model - became technical co-founders instead of just vendors
+  - text: "2022"
+  - paragraph: Our AI systems generated $5M+ in new revenue for clients
+  - text: "2023"
+  - paragraph: Fortune 500 breakthrough - deployed enterprise AI handling millions in transactions
+  - text: "2024"
+  - paragraph: Now powering 50+ production AI systems generating $10M+ annually
+  - text: $10M+
+  - paragraph: Client Revenue Generated
+  - text: 50+
+  - paragraph: AI Products Deployed
+  - text: 95%+
+  - paragraph: Client Satisfaction
+  - heading "Ready to Build AI That Empowers People?" [level=3]
+  - paragraph: Join the companies creating abundance through human-centered AI. Let's build technology that helps people thrive.
+  - link "Start Your Journey":
+    - /url: /contact
+  - link "See Our Work":
+    - /url: /case-studies
+- contentinfo:
+  - text: Sprinter AI
+  - paragraph: Move at the Pace of AI. One intelligent sprint at a time.
+  - navigation "Explore":
+    - heading "Explore" [level=3]
+    - list:
+      - listitem:
+        - link "About Us":
+          - /url: /about
+      - listitem:
+        - link "Services":
+          - /url: /services
+      - listitem:
+        - link "Case Studies":
+          - /url: /case-studies
+      - listitem:
+        - link "AI Labs":
+          - /url: /labs
+      - listitem:
+        - link "Insights":
+          - /url: /blog
+  - navigation "AI Tools":
+    - heading "AI Tools" [level=3]
+    - list:
+      - listitem:
+        - link "Agent Simulator":
+          - /url: /labs/agent-simulator
+      - listitem:
+        - link "Workflow Designer":
+          - /url: /labs/workflow-tool
+      - listitem:
+        - link "Ideation Lab":
+          - /url: /labs/ideation
+      - listitem:
+        - link "AI Sketch Studio":
+          - /url: /labs/sketch-studio
+  - heading "Connect" [level=3]
+  - list "Social media links":
+    - link "Follow us on GitHub (opens in new window)":
+      - /url: https://github.com/SprinterAI
+    - link "Follow us on X (Twitter) (opens in new window)":
+      - /url: https://x.com/SprinterAI
+    - link "Connect with us on LinkedIn (opens in new window)":
+      - /url: https://www.linkedin.com/company/sprinter-ai/
+    - link "Send us an email":
+      - /url: mailto:hello@sprinter.ai
+  - link "Start Building":
+    - /url: /contact
+  - paragraph:
+    - text: © 2025 Sprinter AI. All rights reserved. |
+    - link "Privacy Policy":
+      - /url: /privacy
+    - link "Terms of Service":
+      - /url: /terms
+- alert
+```

@@ -1,0 +1,102 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- link "Skip to navigation":
+  - /url: "#navigation"
+- navigation "Main navigation":
+  - link "Sprinter AI Home":
+    - /url: /
+    - text: Sprinter AI
+  - list:
+    - link "Home":
+      - /url: /
+    - link "About":
+      - /url: /about
+    - link "Services":
+      - /url: /services
+    - link "Use Cases":
+      - /url: /use-cases
+    - link "Case Studies":
+      - /url: /case-studies
+    - link "AI Labs":
+      - /url: /labs
+    - link "Insights":
+      - /url: /blog
+    - link "Work With Us":
+      - /url: /contact
+    - switch "Switch to light theme": Toggle between light and dark theme
+- main:
+  - text: Interactive Demo
+  - heading "Agent Simulator" [level=1]
+  - paragraph: Watch multiple AI agents work together in parallel to solve complex tasks
+  - text: "Give the agents a mission:"
+  - textbox "e.g., Plan a product launch event"
+  - text: "Try:"
+  - button "Plan a one-day tech conference in San Francisco"
+  - button "Research and summarize the latest AI trends"
+  - button "Create a marketing campaign for a new AI product"
+  - button "Analyze customer feedback and generate insights"
+  - button "Run Simulation" [disabled]
+  - button "Run Example"
+  - button "Reset"
+  - heading "How it works" [level=3]
+  - paragraph: This simulation demonstrates how multiple specialized AI agents collaborate to solve complex tasks. Each agent has specific capabilities and they work in parallel, sharing information and coordinating to achieve the goal efficiently.
+  - paragraph: In real-world applications, Sprinter AI's agentic workflows can orchestrate dozens of agents, each handling specific subtasks, calling APIs, processing data, and making decisions autonomously.
+- contentinfo:
+  - text: Sprinter AI
+  - paragraph: Move at the Pace of AI. One intelligent sprint at a time.
+  - navigation "Explore":
+    - heading "Explore" [level=3]
+    - list:
+      - listitem:
+        - link "About Us":
+          - /url: /about
+      - listitem:
+        - link "Services":
+          - /url: /services
+      - listitem:
+        - link "Case Studies":
+          - /url: /case-studies
+      - listitem:
+        - link "AI Labs":
+          - /url: /labs
+      - listitem:
+        - link "Insights":
+          - /url: /blog
+  - navigation "AI Tools":
+    - heading "AI Tools" [level=3]
+    - list:
+      - listitem:
+        - link "Agent Simulator":
+          - /url: /labs/agent-simulator
+      - listitem:
+        - link "Workflow Designer":
+          - /url: /labs/workflow-tool
+      - listitem:
+        - link "Ideation Lab":
+          - /url: /labs/ideation
+      - listitem:
+        - link "AI Sketch Studio":
+          - /url: /labs/sketch-studio
+  - heading "Connect" [level=3]
+  - list "Social media links":
+    - link "Follow us on GitHub (opens in new window)":
+      - /url: https://github.com/SprinterAI
+    - link "Follow us on X (Twitter) (opens in new window)":
+      - /url: https://x.com/SprinterAI
+    - link "Connect with us on LinkedIn (opens in new window)":
+      - /url: https://www.linkedin.com/company/sprinter-ai/
+    - link "Send us an email":
+      - /url: mailto:hello@sprinter.ai
+  - link "Start Building":
+    - /url: /contact
+  - paragraph:
+    - text: © 2025 Sprinter AI. All rights reserved. |
+    - link "Privacy Policy":
+      - /url: /privacy
+    - link "Terms of Service":
+      - /url: /terms
+- alert
+```
