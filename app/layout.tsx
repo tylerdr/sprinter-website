@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "SprinterHQ - AI Consulting & Venture Studio",
-  description: "Building the future with autonomous AI agents. We design intelligent systems and launch AI-powered products that redefine what's possible.",
-  keywords: "AI consulting, AI development, autonomous agents, agentic workflows, venture studio, AI products",
-  ogTitle: "SprinterHQ - Ship AI Products in Weeks, Not Months",
+  title: "Sprinter AI - Move at the Pace of AI",
+  description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks.",
+  keywords: "AI consulting, human-centered AI, autonomous agents, purposeful work, AI development, venture studio, AI products",
+  ogTitle: "Sprinter AI - Move at the Pace of AI",
   canonical: "https://sprinter.ai",
 });
 

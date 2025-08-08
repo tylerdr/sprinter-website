@@ -5,7 +5,7 @@ import { SEO } from "@/lib/constants"
 import IdeationLab from "@/components/labs/IdeationLab"
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Ideation Lab - AI Creative Games | SprinterHQ",
+  title: "Ideation Lab - AI Creative Games | Sprinter AI",
   description: "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation with AI-powered creativity.",
   keywords: "AI ideation, creative AI games, brainstorming, startup ideas, AI creativity, innovation games, AI-powered brainstorming",
   canonical: `${SEO.siteUrl}/labs/ideation`,

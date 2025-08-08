@@ -9,23 +9,23 @@ export const metadata: Metadata = getPageMetadata("about")
 const values = [
   {
     icon: Rocket,
-    title: "Speed & Efficiency",
-    description: "First prototype in 10 days or less. We've shipped production AI in 2 weeks that others quoted 6 months for.",
+    title: "Move at the Pace of AI",
+    description: "First prototype in 10 days. We ship AI solutions at the speed of innovation, not bureaucracy.",
   },
   {
     icon: Brain,
-    title: "Deep Technical Expertise",
-    description: "Our team includes ex-FAANG engineers and AI researchers. We've been shipping neural networks since 2018.",
+    title: "Human-Centered Design",
+    description: "We build AI that augments human capability, not replaces it. Technology should enable people to do work they love.",
   },
   {
     icon: Users,
-    title: "True Partnership",
-    description: "We embed with your team, transfer knowledge, and often take equity. Your success is literally our success.",
+    title: "Create Abundance",
+    description: "AI doesn't destroy jobs—it creates opportunities. We've helped create 50+ new roles by automating the mundane.",
   },
   {
     icon: Target,
-    title: "Results-Driven",
-    description: "Average client sees ROI in 60 days. We track every metric and optimize until targets are hit.",
+    title: "Purposeful Innovation",
+    description: "Every AI system we build frees humans from repetitive tasks so they can pursue meaningful, creative work.",
   },
 ]
 
@@ -50,11 +50,11 @@ export default function AboutPage() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Building the Future, <span className="gradient-text">One Sprint at a Time</span>
+            AI That Helps People, <span className="gradient-text">Not Replace Them</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We&apos;re engineers who became entrepreneurs because we saw too many companies struggling 
-            to turn AI potential into real business value.
+            We believe human time is precious. AI should handle the tasks people hate, 
+            so they can focus on work that brings purpose and joy.
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function AboutPage() {
               I knew there had to be a better way.&quot;
             </p>
             <p className="text-lg text-foreground/80 mb-4">
-              After building AI systems at scale for enterprises, I founded SprinterHQ with a simple belief: 
-              AI transformation shouldn&apos;t take years or cost millions. With the right approach—rapid prototyping, 
-              pragmatic solutions, and obsessive focus on ROI—we could deliver production AI in weeks.
+              After building AI systems at scale for enterprises, I founded Sprinter AI with a deeper purpose: 
+              to create technology that enables human flourishing. Yes, we deliver ROI. But more importantly, 
+              we free people from soul-crushing repetitive work so they can contribute their unique human talents.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
               Six years and 50+ deployments later, we&apos;ve proven this model works. We&apos;ve automated mortgage underwriting, 
@@ -76,9 +76,9 @@ export default function AboutPage() {
               Not in theory. In production. With real users and real results.
             </p>
             <p className="text-lg text-foreground/80">
-              <strong className="text-foreground">Our philosophy is simple: Ship code, not slides.</strong> 
-              {" "}Every engagement starts with a working prototype. Every sprint ends with deployable AI. 
-              Because in the end, the only metric that matters is the value we create for your business.
+              <strong className="text-foreground">Our philosophy: Build technology that helps people.</strong> 
+              {" "}Every AI system we deploy doesn&apos;t just drive ROI—it gives people back their time, 
+              their creativity, and their opportunity to do meaningful work. That&apos;s the real value we create.
             </p>
           </div>
         </div>
@@ -138,11 +138,11 @@ export default function AboutPage() {
 
         <div className="text-center p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-border/10">
           <h3 className="text-3xl font-bold mb-4">
-            Ready to Write the Next Chapter <span className="gradient-text">Together</span>?
+            Ready to Build AI That <span className="gradient-text">Empowers People</span>?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Join the companies that have transformed their operations with AI. 
-            Let&apos;s build something extraordinary.
+            Join the companies creating abundance through human-centered AI. 
+            Let&apos;s build technology that helps people thrive.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

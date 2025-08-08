@@ -14,7 +14,7 @@ const clients = [
 
 const testimonials = [
   {
-    quote: "SprinterHQ's AI automation reduced our loan processing time by 70%, saving us over $3M annually. Their team delivered in weeks what others quoted months for.",
+    quote: "Sprinter AI's AI automation reduced our loan processing time by 70%, saving us over $3M annually. Their team delivered in weeks what others quoted months for.",
     author: "Michael Rodriguez, SVP",
     company: "Pacific Trust Bank",
   },

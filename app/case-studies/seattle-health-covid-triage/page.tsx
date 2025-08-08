@@ -5,8 +5,8 @@ import Link from "next/link"
 import { ArrowRight, Heart, Users, Clock, Shield, CheckCircle, Phone, Monitor, MessageSquare } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Seattle Health Network – AI Patient Triage Case Study – SprinterHQ",
-  description: "How SprinterHQ built an emergency AI triage system that processed 10,000+ daily COVID patients and reduced ED wait times by 4.2 hours.",
+  title: "Seattle Health Network – AI Patient Triage Case Study – Sprinter AI",
+  description: "How Sprinter AI built an emergency AI triage system that processed 10,000+ daily COVID patients and reduced ED wait times by 4.2 hours.",
 }
 
 export default function SeattleHealthCaseStudyPage() {
@@ -339,7 +339,7 @@ export default function SeattleHealthCaseStudyPage() {
               {/* Additional testimonial */}
               <div className="p-6 rounded-lg bg-white/5 border border-white/10 mt-6">
                 <blockquote className="text-lg italic text-gray-300 mb-4">
-                  &quot;In 72 hours, SprinterHQ delivered what would have taken our IT team 6 months. The AI triage system didn&apos;t just help us manage COVID - it became our new standard of care.&quot;
+                  &quot;In 72 hours, Sprinter AI delivered what would have taken our IT team 6 months. The AI triage system didn&apos;t just help us manage COVID - it became our new standard of care.&quot;
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

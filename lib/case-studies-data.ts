@@ -170,7 +170,7 @@ export const caseStudies: CaseStudy[] = [
       { metric: "300%", label: "Increase in nurse productivity" },
       { metric: "92%", label: "Patient satisfaction score" },
     ],
-    testimonial: "When COVID hit, we needed a solution yesterday. SprinterHQ delivered an AI triage system that literally saved lives by ensuring the sickest patients got care first. It processed more patients in a day than our staff could handle in a week, with remarkable accuracy. This technology became the backbone of our pandemic response.",
+    testimonial: "When COVID hit, we needed a solution yesterday. Sprinter AI delivered an AI triage system that literally saved lives by ensuring the sickest patients got care first. It processed more patients in a day than our staff could handle in a week, with remarkable accuracy. This technology became the backbone of our pandemic response.",
     features: [
       "Multi-channel patient intake (phone, web, mobile)",
       "Real-time CDC protocol integration",

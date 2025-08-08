@@ -1,6 +1,6 @@
-# SprinterHQ Website
+# Sprinter AI Website
 
-A modern, futuristic website for SprinterHQ - an AI consulting business and venture studio specializing in autonomous AI agents and agentic workflows.
+A modern, futuristic website for Sprinter AI - an AI consulting business and venture studio specializing in autonomous AI agents and agentic workflows.
 
 ## 🚀 Features
 
@@ -37,7 +37,7 @@ A modern, futuristic website for SprinterHQ - an AI consulting business and vent
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:SprinterHQ/sprinter-website.git
+git clone git@github.com:SprinterAI/sprinter-website.git
 cd sprinter-website
 ```
 
@@ -129,12 +129,12 @@ Required environment variables (see `.env.local.example`):
 
 ## 🤝 Contributing
 
-This is a private repository for SprinterHQ. Please coordinate with the team before making changes.
+This is a private repository for Sprinter AI. Please coordinate with the team before making changes.
 
 ## 📄 License
 
-Proprietary - SprinterHQ © 2024
+Proprietary - Sprinter AI © 2024
 
 ---
 
-Built with 💙 by SprinterHQ - Building the future with autonomous AI agents.
+Built with 💙 by Sprinter AI - Building the future with autonomous AI agents.

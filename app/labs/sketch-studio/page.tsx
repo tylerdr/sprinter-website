@@ -5,7 +5,7 @@ import { SEO } from "@/lib/constants"
 import SketchStudio from "@/components/labs/SketchStudio"
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "AI Sketch Studio - Transform Drawings with AI | SprinterHQ",
+  title: "AI Sketch Studio - Transform Drawings with AI | Sprinter AI",
   description: "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity and digital art generation.",
   keywords: "AI art generation, sketch to art, AI drawing, digital art creation, AI sketch enhancement, creative AI tools, AI artwork",
   canonical: `${SEO.siteUrl}/labs/sketch-studio`,

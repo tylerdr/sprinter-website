@@ -11,9 +11,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const study = getCaseStudyBySlug(slug)
-  if (!study) return { title: "Case Study – SprinterHQ" }
+  if (!study) return { title: "Case Study – Sprinter AI" }
   return {
-    title: `${study.title} – Case Study – SprinterHQ`,
+    title: `${study.title} – Case Study – Sprinter AI`,
     description: study.description,
   }
 }

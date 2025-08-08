@@ -5,7 +5,7 @@ import { SEO } from "@/lib/constants"
 import WorkflowTool from "@/components/labs/WorkflowTool"
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Workflow Designer - AI Process Mapping Tool | SprinterHQ",
+  title: "Workflow Designer - AI Process Mapping Tool | Sprinter AI",
   description: "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
   keywords: "workflow automation, process mapping, AI transformation, business process optimization, workflow designer, AI integration",
   canonical: `${SEO.siteUrl}/labs/workflow-tool`,

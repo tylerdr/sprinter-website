@@ -23,7 +23,7 @@ npm run lint
 
 ## Architecture Overview
 
-This is a Next.js 15 website for SprinterHQ, an AI consulting and venture studio. The codebase uses:
+This is a Next.js 15 website for Sprinter AI, an AI consulting and venture studio. The codebase uses:
 
 - **Framework**: Next.js 15 with App Router, TypeScript, React 19
 - **Styling**: Tailwind CSS v4, shadcn/ui components

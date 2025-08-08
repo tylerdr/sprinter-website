@@ -1,9 +1,10 @@
 // Centralized constants and configuration for the entire site
 
 export const COMPANY_INFO = {
-  name: "SprinterHQ",
-  tagline: "Ship AI Products in Weeks, Not Months",
-  description: "AI consulting business and venture studio specializing in autonomous AI agents and agentic workflows",
+  name: "Sprinter AI",
+  tagline: "Move at the Pace of AI",
+  description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work they're uniquely capable of, not tasks AI can handle.",
+  philosophy: "We believe human time is valuable. AI should handle repetitive tasks so people can focus on creative, strategic, and meaningful work that brings them joy and purpose.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (415) 555-1234", // Update with real phone
@@ -15,9 +16,9 @@ export const COMPANY_INFO = {
 }
 
 export const SOCIAL_LINKS = {
-  twitter: "https://x.com/Sprinter_HQ",
-  linkedin: "https://www.linkedin.com/company/19101178/",
-  github: "https://github.com/SprinterHQ",
+  twitter: "https://x.com/SprinterAI",
+  linkedin: "https://www.linkedin.com/company/sprinter-ai/",
+  github: "https://github.com/SprinterAI",
   email: `mailto:${COMPANY_INFO.email}`,
 }
 
@@ -60,6 +61,8 @@ export const METRICS = {
   clientSatisfaction: "95%+",
   projectsPerMonth: 3,
   spotsRemaining: 2,
+  humanHoursReclaimed: "100K+",
+  jobsCreated: "50+",
 }
 
 export const PRICING = {
@@ -100,76 +103,76 @@ export const CLIENTS = [
 ]
 
 export const SEO = {
-  title: "SprinterHQ - AI Consulting & Venture Studio",
-  description: "Building the future with autonomous AI agents. We design intelligent systems and launch AI-powered products that redefine what's possible.",
-  keywords: "AI consulting, AI development, autonomous agents, agentic workflows, venture studio, AI products",
+  title: "Sprinter AI - Move at the Pace of AI",
+  description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks. Ship AI products in weeks, not months.",
+  keywords: "AI consulting, AI development, autonomous agents, human-centered AI, AI acceleration, venture studio, AI products, purposeful work",
   ogImage: "/og-image.png", // Add this image later
   siteUrl: "https://sprinter.ai",
-  twitterHandle: "@Sprinter_HQ",
+  twitterHandle: "@SprinterAI",
   organizationType: "Organization" as const,
-  author: "SprinterHQ",
+  author: "Sprinter AI",
 }
 
 // Page-specific SEO metadata
 export const PAGE_SEO = {
   home: {
-    title: "AI Consulting & Autonomous Agent Development | SprinterHQ",
-    description: "Transform your business with AI in weeks, not months. Expert AI consulting, autonomous agents, and venture studio services. 250% ROI in 60 days.",
-    keywords: "AI consulting, autonomous agents, AI development, venture studio, machine learning, AI transformation, business automation",
-    ogTitle: "SprinterHQ - Ship AI Products in Weeks, Not Months",
+    title: "Sprinter AI - Move at the Pace of AI | Human-Centered AI Solutions",
+    description: "Transform your business with AI that empowers people. We build AI systems that free humans from repetitive tasks to focus on meaningful work. 250% ROI in 60 days.",
+    keywords: "AI consulting, autonomous agents, human-centered AI, AI development, venture studio, machine learning, AI transformation, purposeful work",
+    ogTitle: "Sprinter AI - Building AI That Helps People",
   },
   about: {
-    title: "About SprinterHQ - AI Consulting Experts Since 2018",
-    description: "Meet the team behind $10M+ in AI-generated revenue. Ex-FAANG engineers building production AI systems since 2018.",
-    keywords: "AI consulting team, AI experts, venture studio, autonomous agents, AI development company, machine learning experts",
-    ogTitle: "About SprinterHQ - Building the Future with AI",
+    title: "About Sprinter AI - Building Human-Centered AI Since 2018",
+    description: "Meet the team creating AI that enables human flourishing. Ex-FAANG engineers building systems that free people to do work they love.",
+    keywords: "AI consulting team, human-centered AI, AI experts, venture studio, autonomous agents, purposeful work, AI development company",
+    ogTitle: "About Sprinter AI - AI for Human Flourishing",
   },
   services: {
-    title: "AI Consulting Services - From Strategy to Production",
-    description: "AI workshops, rapid prototyping, enterprise transformation, and venture partnerships. Get ROI in 60 days with our proven methodology.",
-    keywords: "AI consulting services, AI workshops, rapid prototyping, AI transformation, venture studio, machine learning consulting",
-    ogTitle: "AI Consulting Services - SprinterHQ",
+    title: "AI Services - Technology That Creates Human Opportunity | Sprinter AI",
+    description: "AI workshops, rapid prototyping, and transformation services. We build AI that handles repetitive tasks so your team can focus on creative, strategic work.",
+    keywords: "AI consulting services, human-centered AI, AI workshops, rapid prototyping, AI transformation, venture studio, purposeful work",
+    ogTitle: "AI Services That Enable Human Potential - Sprinter AI",
   },
   useCases: {
-    title: "AI Use Cases & Implementation Examples | SprinterHQ",
-    description: "Discover proven AI use cases across industries. From loan underwriting to predictive maintenance - see how AI transforms businesses.",
-    keywords: "AI use cases, AI implementation, business automation, AI examples, industry AI solutions, autonomous agents",
-    ogTitle: "AI Use Cases That Drive Real Business Value",
+    title: "AI Use Cases - Automation That Creates Human Opportunity | Sprinter AI",
+    description: "Discover how AI can handle repetitive tasks across industries, freeing people for creative and strategic work. Real examples of human-centered AI.",
+    keywords: "AI use cases, human-centered automation, AI implementation, purposeful work, industry AI solutions, autonomous agents",
+    ogTitle: "AI Use Cases That Empower People - Sprinter AI",
   },
   caseStudies: {
-    title: "AI Case Studies - Real Results & ROI | SprinterHQ",
-    description: "See how we've generated $10M+ in value through AI. Real case studies with measurable results and proven ROI.",
-    keywords: "AI case studies, AI success stories, AI ROI, business transformation, autonomous agents results, AI implementation",
-    ogTitle: "Proven AI Success Stories & Case Studies",
+    title: "AI Case Studies - Creating Value for Businesses & People | Sprinter AI",
+    description: "See how we've generated $10M+ in value while enabling teams to focus on meaningful work. Real stories of human-centered AI transformation.",
+    keywords: "AI case studies, human-centered AI, AI success stories, AI ROI, business transformation, purposeful work, AI implementation",
+    ogTitle: "Human-Centered AI Success Stories - Sprinter AI",
   },
   labs: {
-    title: "AI Labs - Interactive Demos & Prototypes | SprinterHQ",
-    description: "Experience cutting-edge AI tools firsthand. Interactive demos of autonomous agents, workflow automation, and AI ideation tools.",
-    keywords: "AI demos, interactive AI, AI prototypes, autonomous agents demo, workflow automation, AI tools, AI playground",
-    ogTitle: "AI Labs - Experience the Future of AI",
+    title: "AI Labs - Experience the Future of Human-AI Collaboration | Sprinter AI",
+    description: "Interactive demos of AI tools that augment human capabilities. See how AI can be your creative partner, not your replacement.",
+    keywords: "AI demos, human-AI collaboration, interactive AI, AI prototypes, autonomous agents demo, AI tools, purposeful technology",
+    ogTitle: "AI Labs - Human-AI Collaboration in Action",
   },
   blog: {
-    title: "AI Insights & Industry Trends | SprinterHQ Blog",
-    description: "Expert insights on AI development, autonomous agents, and industry trends. Learn from practitioners building production AI systems.",
-    keywords: "AI blog, AI insights, autonomous agents, AI trends, machine learning, AI development, venture studio insights",
-    ogTitle: "AI Insights from Industry Experts",
+    title: "AI Insights - Building Technology for Human Flourishing | Sprinter AI Blog",
+    description: "Expert insights on building AI that enables human potential. Learn how to create abundance through human-centered AI development.",
+    keywords: "AI blog, human-centered AI, AI insights, purposeful technology, AI trends, machine learning, AI development, human flourishing",
+    ogTitle: "AI Insights for Human Flourishing - Sprinter AI",
   },
   contact: {
-    title: "Work With Us - AI Consulting & Development | SprinterHQ",
-    description: "Ready to transform your business with AI? Get started with a free consultation. Limited spots available - book your AI strategy session today.",
-    keywords: "AI consulting contact, hire AI experts, AI development services, autonomous agents, AI transformation, venture studio",
-    ogTitle: "Start Your AI Transformation Journey",
+    title: "Work With Us - Build AI That Helps People | Sprinter AI",
+    description: "Ready to build AI that empowers your team? Let's create technology that handles the mundane so humans can pursue the meaningful. Free consultation available.",
+    keywords: "AI consulting contact, human-centered AI, hire AI experts, AI development services, autonomous agents, purposeful technology",
+    ogTitle: "Build AI That Empowers People - Sprinter AI",
   },
   privacy: {
-    title: "Privacy Policy | SprinterHQ",
-    description: "How SprinterHQ protects your privacy and handles data. Transparent practices for our AI consulting and development services.",
-    keywords: "privacy policy, data protection, AI consulting privacy, SprinterHQ privacy",
-    ogTitle: "Privacy Policy - SprinterHQ",
+    title: "Privacy Policy | Sprinter AI",
+    description: "How Sprinter AI protects your privacy and handles data. Transparent, ethical practices for human-centered AI development.",
+    keywords: "privacy policy, data protection, AI consulting privacy, Sprinter AI privacy, ethical AI",
+    ogTitle: "Privacy Policy - Sprinter AI",
   },
   terms: {
-    title: "Terms of Service | SprinterHQ",
-    description: "Terms and conditions for SprinterHQ AI consulting services, venture studio partnerships, and AI development projects.",
-    keywords: "terms of service, AI consulting terms, SprinterHQ terms, venture studio terms",
-    ogTitle: "Terms of Service - SprinterHQ",
+    title: "Terms of Service | Sprinter AI",
+    description: "Terms and conditions for Sprinter AI consulting services, venture studio partnerships, and human-centered AI development projects.",
+    keywords: "terms of service, AI consulting terms, Sprinter AI terms, venture studio terms, ethical AI",
+    ogTitle: "Terms of Service - Sprinter AI",
   },
 }

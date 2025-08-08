@@ -150,7 +150,7 @@ export function generateOrganizationStructuredData() {
     sameAs: [
       "https://twitter.com/Sprinter_HQ",
       "https://www.linkedin.com/company/19101178/",
-      "https://github.com/SprinterHQ",
+      "https://github.com/SprinterAI",
     ],
     makesOffer: [
       {

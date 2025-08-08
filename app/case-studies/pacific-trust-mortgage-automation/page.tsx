@@ -5,8 +5,8 @@ import Link from "next/link"
 import { ArrowRight, Building2, Calendar, Users, TrendingUp, Shield, CheckCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Pacific Trust Bank – AI Mortgage Underwriting Case Study – SprinterHQ",
-  description: "How SprinterHQ built an AI-powered mortgage underwriting system that reduced processing time by 70% and saved $3.2M annually for Pacific Trust Bank.",
+  title: "Pacific Trust Bank – AI Mortgage Underwriting Case Study – Sprinter AI",
+  description: "How Sprinter AI built an AI-powered mortgage underwriting system that reduced processing time by 70% and saved $3.2M annually for Pacific Trust Bank.",
 }
 
 export default function PacificTrustCaseStudyPage() {

@@ -47,7 +47,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-card/5 border border-border/10 backdrop-blur-sm mb-6 sm:mb-8"
           >
             <Zap className="w-4 h-4 text-yellow-500" aria-hidden="true" />
-            <span className="text-xs sm:text-sm font-medium">Building AI Since 2018</span>
+            <span className="text-xs sm:text-sm font-medium">Human-Centered AI Since 2018</span>
           </motion.div>
 
           <motion.h1
@@ -56,8 +56,8 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           >
-            Ship AI Products in{" "}
-            <span className="gradient-text block sm:inline">Weeks, Not Months</span>
+            Move at the{" "}
+            <span className="gradient-text block sm:inline">Pace of AI</span>
           </motion.h1>
 
           <motion.p
@@ -66,8 +66,8 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            We&apos;re technical co-founders who&apos;ve built 50+ production AI systems. 
-            From rapid prototypes to enterprise deployments, we deliver real ROI fast.
+            We build AI that handles repetitive tasks so people can focus on meaningful work. 
+            Your team deserves to do what they love, not what machines can do better.
           </motion.p>
 
           <motion.div
@@ -101,12 +101,12 @@ export function Hero() {
             aria-label="Company statistics"
           >
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="50 plus">50+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">AI Systems Built</div>
+              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="100K plus">100K+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">Hours Reclaimed</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="2 to 4">2-4</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">Week Sprints</div>
+              <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="50 plus">50+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-tight">Jobs Created</div>
             </div>
             <div className="text-center">
               <div className="text-2xl sm:text-3xl font-bold gradient-text" aria-label="250 percent">250%</div>

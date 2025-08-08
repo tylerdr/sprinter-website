@@ -5,7 +5,7 @@ import { SEO } from "@/lib/constants";
 import AgentSimulator from "@/components/labs/AgentSimulator";
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Agent Simulator - Interactive AI Demo | SprinterHQ",
+  title: "Agent Simulator - Interactive AI Demo | Sprinter AI",
   description: "Watch multiple AI agents collaborate in parallel to solve complex tasks. Interactive demo showcasing autonomous agent workflows and coordination.",
   keywords: "AI agents, autonomous agents, agentic workflows, AI simulation, multi-agent systems, collaborative AI, AI demo",
   canonical: `${SEO.siteUrl}/labs/agent-simulator`,
@@ -46,7 +46,7 @@ export default function AgentSimulatorPage() {
             coordinating to achieve the goal efficiently.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            In real-world applications, SprinterHQ&apos;s agentic workflows can
+            In real-world applications, Sprinter AI&apos;s agentic workflows can
             orchestrate dozens of agents, each handling specific subtasks,
             calling APIs, processing data, and making decisions autonomously.
           </p>
