@@ -273,3 +273,39 @@
 .border-info-30 { border-color: color-mix(in oklch, var(--info) 30%, transparent); }
 .border-destructive-30 { border-color: color-mix(in oklch, var(--destructive) 30%, transparent); }
 .border-accent-30 { border-color: color-mix(in oklch, var(--accent) 30%, transparent); }
+
+/* Custom slider styling for ROI Calculator */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: linear-gradient(var(--brand-angle, 90deg), var(--brand-start), var(--brand-end));
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-webkit-slider-track {
+  height: 8px;
+  border-radius: 4px;
+  background: color-mix(in oklch, var(--brand-start) 15%, transparent);
+  border: 1px solid color-mix(in oklch, var(--brand-start) 20%, transparent);
+}
+
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: linear-gradient(var(--brand-angle, 90deg), var(--brand-start), var(--brand-end));
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: color-mix(in oklch, var(--brand-start) 15%, transparent);
+  border: 1px solid color-mix(in oklch, var(--brand-start) 20%, transparent);
+}

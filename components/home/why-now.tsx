@@ -5,21 +5,21 @@ import { Rocket, Database, Users, Zap } from "lucide-react";
 export function WhyNow() {
   const points = [
     {
-      title: "Leverage Like Never Before",
+      title: "Build Like Never Before",
       description:
-        "Frontier models + cheap compute turn ideas into working systems fast. Small teams can now ship enterprise-scale outcomes.",
+        "Frontier models + cheap compute transform ideas into live systems instantly. Small teams now ship enterprise-scale breakthroughs and dominate markets.",
       icon: Rocket,
     },
     {
-      title: "Use Your Unstructured Data",
+      title: "Unlock Your Hidden Gold",
       description:
-        "Docs, emails, tickets, transcripts—now queryable, actionable, and automatable. Your moat is hiding in plain sight.",
+        "Transform docs, emails, tickets, transcripts into queryable intelligence and automated workflows. Your competitive moat is ready to activate.",
       icon: Database,
     },
     {
-      title: "Amplify Your Workforce",
+      title: "Supercharge Your Team",
       description:
-        "Agents handle the repetitive and the forgotten. Your people focus on the work only they can do.",
+        "Deploy AI agents to crush repetitive tasks and automate forgotten workflows. Your people focus on creating breakthrough value only humans can deliver.",
       icon: Users,
     },
   ];
@@ -37,8 +37,8 @@ export function WhyNow() {
             History
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A once-in-a-generation platform shift. Move first, compound
-            advantage, and turn workflows and data into durable moat.
+            A once-in-a-generation platform shift. Strike first, build momentum,
+            and craft workflows and data into unbreakable competitive moats.
           </p>
         </div>
 

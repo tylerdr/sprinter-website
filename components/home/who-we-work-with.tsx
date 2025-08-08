@@ -48,15 +48,15 @@ const industries = [
 const companyTypes = [
   {
     icon: Building2,
-    title: "Fortune 500 Enterprises",
+    title: "Fortune 500 Companies",
     description: "Global corporations transforming at scale with AI automation and intelligent systems",
-    examples: ["Wells Fargo", "Accenture"],
+    examples: ["Enterprise Scale", "Multi-National"],
   },
   {
     icon: TrendingUp,
-    title: "High-Growth Startups",
+    title: "Series A-C Startups",
     description: "Fast-moving companies building AI-native products from day one",
-    examples: ["Series A-C", "VC-Backed"],
+    examples: ["VC-Backed", "High Growth"],
   },
   {
     icon: HeartHandshake,

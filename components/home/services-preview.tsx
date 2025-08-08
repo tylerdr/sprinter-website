@@ -9,7 +9,7 @@ const services = [
     icon: Lightbulb,
     title: "AI Discovery & Workshops",
     description:
-      "Identify AI opportunities with structured workshops and strategic roadmaps",
+      "Craft your AI strategy and launch breakthrough initiatives with hands-on workshops that turn vision into action",
     href: "/services#workshops",
     gradient: "from-yellow-500 to-orange-600",
   },
@@ -17,7 +17,7 @@ const services = [
     icon: Presentation,
     title: "Speaking & Training",
     description:
-      "Energize your team with keynotes and hands-on AI training sessions",
+      "Ignite your team's potential and build AI mastery through dynamic keynotes and intensive training that drives results",
     href: "/services#training",
     gradient: "from-green-500 to-teal-600",
   },
@@ -25,7 +25,7 @@ const services = [
     icon: Code,
     title: "Custom AI Development",
     description:
-      "Build production-ready AI agents and intelligent automation systems",
+      "Ship production-ready AI agents and craft intelligent automation that transforms operations and accelerates growth",
     href: "/services#development",
     gradient: "from-blue-500 to-purple-600",
   },
@@ -33,7 +33,7 @@ const services = [
     icon: Rocket,
     title: "Venture Studio",
     description:
-      "Co-build AI products as your technical co-founder with equity partnerships",
+      "Launch AI ventures together as your technical co-founder, building breakthrough products that create lasting value",
     href: "/services#ventures",
     gradient: "from-purple-500 to-pink-600",
   },
@@ -60,8 +60,8 @@ export function ServicesPreview() {
             Our <span className="gradient-text">Services</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            From roadmap to production, we build agents and data products that
-            amplify your team and create unfair advantage.
+            From vision to victory, we craft AI agents and data products that
+            supercharge your team and build unstoppable competitive advantage.
           </p>
         </motion.div>
 

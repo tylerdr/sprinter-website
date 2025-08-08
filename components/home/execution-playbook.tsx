@@ -19,39 +19,39 @@ type Step = {
 
 const steps: Step[] = [
   {
-    title: "Explore Workflows",
+    title: "Hunt Down Workflows",
     description:
-      "Shadow real processes, map the messy middle, and capture triggers, inputs, and outputs.",
+      "Dive deep into real processes, decode the chaos, and extract every trigger, input, and output that drives results.",
     icon: ClipboardList,
   },
   {
-    title: "Question Requirements",
+    title: "Challenge Everything",
     description:
-      "Pressure-test assumptions. What must be perfect vs. good-enough? Where can latency or cost flex?",
+      "Crush false assumptions and ruthlessly prioritize. Define what demands perfection vs. good-enough, then architect for speed and impact.",
     icon: Target,
   },
   {
-    title: "Identify Use Cases",
+    title: "Target Quick Wins",
     description:
-      "Rank by ROI, feasibility, data readiness, and integration complexity. Pick 1–3 to ship now.",
+      "Rank opportunities by explosive ROI, feasibility, and data readiness. Cherry-pick 1–3 game-changers to launch immediately.",
     icon: ListChecks,
   },
   {
-    title: "Clarify Actions",
+    title: "Engineer Precision",
     description:
-      "Define precise agent actions: read, transform, retrieve, decide, update, notify—plus guardrails.",
+      "Craft laser-focused agent actions: read, transform, retrieve, decide, update, notify—with bulletproof guardrails that ensure success.",
     icon: Brain,
   },
   {
-    title: "Develop Agents",
+    title: "Build & Deploy",
     description:
-      "Build narrow agents first. Integrate with your systems. Instrument everything.",
+      "Craft focused agents that dominate specific tasks. Integrate seamlessly with existing systems and instrument every interaction for maximum insight.",
     icon: Gauge,
   },
   {
-    title: "Measure & Iterate",
+    title: "Optimize & Scale",
     description:
-      "Ship, observe, and compound: track accuracy, cycle time, cost per action, and user outcomes.",
+      "Ship fast, learn faster, compound relentlessly: track accuracy, slash cycle times, minimize costs, and amplify user outcomes exponentially.",
     icon: Repeat,
   },
 ];
@@ -65,8 +65,8 @@ export function ExecutionPlaybook({ compact = false }: { compact?: boolean }) {
             Execution <span className="gradient-text">Playbook</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Not theory—systems in production. A practical path to compounding
-            leverage.
+            Zero theory—pure execution. A battle-tested roadmap to build momentum,
+            ship results, and compound your competitive edge.
           </p>
         </div>
 

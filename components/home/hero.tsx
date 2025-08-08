@@ -135,7 +135,7 @@ export function Hero() {
           >
             <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium">
-              Applied AI Since 2018
+              Agentic AI is an Unfair Advantage
             </span>
           </motion.div>
 
@@ -145,8 +145,8 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           >
-            Move at the{" "}
-            <span className="gradient-text block sm:inline">Pace of AI</span>
+            Craft Your{" "}
+            <span className="gradient-text block sm:inline">Unfair Advantage</span>
           </motion.h1>
 
           <motion.p
@@ -155,9 +155,8 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            There&apos;s never been a better time to build. AI transforms months of 
-            work into days, turning your boldest ideas into production systems. 
-            The future belongs to those who ship fast.
+            Frontier models + cheap compute let small teams build systems that read, decide and act. 
+            Turn unstructured data and fragmented workflows into outcomes—fast. Build now, compound forever.
           </motion.p>
 
           <motion.div
@@ -168,7 +167,7 @@ export function Hero() {
           >
             <Button asChild variant="gradient" className="px-8 py-4 text-base">
               <Link href="/contact" className="group">
-                Work With Us
+                Start Building
                 <ArrowRight
                   className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   aria-hidden="true"

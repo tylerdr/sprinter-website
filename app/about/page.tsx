@@ -10,13 +10,13 @@ export const metadata: Metadata = getPageMetadata("about");
 const values = [
   {
     icon: Rocket,
-    title: "Move at the Pace of AI",
+    title: "Prototype in 10 Days",
     description:
       "First prototype in 10 days. We ship AI solutions at the speed of innovation, not bureaucracy.",
   },
   {
     icon: Brain,
-    title: "Human-Centered Design",
+    title: "Human-Centered by Default",
     description:
       "We build AI that augments human capability, not replaces it. Technology should enable people to do work they love.",
   },
@@ -28,7 +28,7 @@ const values = [
   },
   {
     icon: Target,
-    title: "Purposeful Innovation",
+    title: "Build with Purpose",
     description:
       "Every AI system we build frees humans from repetitive tasks so they can pursue meaningful, creative work.",
   },
@@ -58,33 +58,14 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm">
             <h2 className="text-3xl font-bold mb-6">A Note from Our Founder</h2>
-            <p className="text-lg text-foreground/80 mb-4 italic">
-              &quot;In 2018, I was watching companies spend millions on AI
-              consultants who delivered PowerPoints instead of products. I knew
-              there had to be a better way.&quot;
+            <p className="text-lg text-foreground/80 mb-4">
+              I started my career as an engineer at Exxon. Every day I saw brilliant people slowed by spreadsheets, manual planning, and systems that wouldn&apos;t talk to each other. Later, running a construction/roofing company, I ran into the same thing—critical workflows, no software built for how the work actually gets done. Curiosity and frustration pushed me to build the tools I needed in both worlds: software to plan maintenance, systems to run field ops, and automation that freed my team to focus on real work.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
-              After building AI systems at scale for enterprises, I founded
-              Sprinter AI to prove a simple idea: momentum beats slideware. Ship
-              useful AI fast, measure impact, and compound advantage.
-            </p>
-            <p className="text-lg text-foreground/80 mb-4">
-              We specialize in applying AI where it moves the needle most—often
-              in overlooked industries with rich workflows and data:
-              manufacturing, healthcare, financial services, logistics. These
-              sectors have the most to gain and the fewest fast movers.
-            </p>
-            <p className="text-lg text-foreground/80 mb-4">
-              Six years and 50+ deployments later, the playbook is battle-
-              tested: automate the repetitive, operationalize unstructured data,
-              augment teams with agents, and integrate into the systems you
-              already use. Not in theory—live in production.
+              I can&apos;t stand the idea of smart people burning hours on tasks that are monotonous for humans and trivial for computers. In 2018 I left Exxon and started Sprinter to fix that. We began with predictive maintenance, analytics and AI, learned fast by building (and breaking) internal SaaS experiments, and ran our first AI workshop in 2019 to help clients find practical use cases. By 2020, a first API call to GPT-3 blew the doors off what was possible. In 2021 we leaned into agentic patterns—if a model can write, it can decide; if it can decide, it can act. In 2022 we formalized our workshops and built Amble Ideation to scale them.
             </p>
             <p className="text-lg text-foreground/80">
-              <strong className="text-foreground">Our philosophy:</strong>
-              Move quickly, build real systems, and compound advantage. Great AI
-              gives teams back time and amplifies what they&apos;re already
-              world‑class at.
+              <strong className="text-foreground">Sprinter exists to empower agency—in people and in AI.</strong> Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage.
             </p>
             <div className="mt-8 pt-6 border-t border-border/10">
               <p className="text-base font-semibold text-foreground">

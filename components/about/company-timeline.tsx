@@ -25,54 +25,50 @@ interface TimelineEvent {
 
 const timelineEvents: TimelineEvent[] = [
   {
+    year: "Before Sprinter",
+    title: "Engineering Foundation",
+    description: "Engineer at Exxon; led digital transformation initiatives and built software to run maintenance planning. Launched a construction/roofing business; built the operations systems we needed when off-the-shelf options failed.",
+    icon: Building,
+    highlight: true
+  },
+  {
     year: "2018",
-    title: "The Beginning",
-    description: "Started in a garage with one mission: make AI practical for real businesses",
+    title: "Founded Sprinter",
+    description: "Left Exxon. Founded Sprinter to build software that helps people do more of the work only they can do.",
     icon: Rocket,
     highlight: true
   },
   {
     year: "2019",
-    title: "First Production AI",
-    description: "Deployed first production AI agent - automated 70% of loan processing for a regional bank",
-    icon: Zap,
-    metrics: "70% automation rate"
+    title: "First AI Workshops",
+    description: "First AI workshops (design thinking + agile) to identify use cases and ship prototypes with clients. Began building and iterating on multiple SaaS ideas (learned a lot the hard way).",
+    icon: Users
   },
   {
     year: "2020",
-    title: "Pandemic Pivot",
-    description: "Pivoted to healthcare during COVID - built triage systems handling 10K+ patients daily",
-    icon: Heart,
-    highlight: true,
-    metrics: "10,000+ patients/day"
+    title: "GPT-3 Integration",
+    description: "First GPT-3 integration. Realized text → actions → agents would become the new UI.",
+    icon: Zap,
+    highlight: true
   },
   {
     year: "2021",
-    title: "Venture Model Launch",
-    description: "Launched venture model - became technical co-founders instead of just vendors",
-    icon: Users,
-    metrics: "5 partnerships"
+    title: "Agentic Patterns",
+    description: "Formalized agentic patterns (APIs, tools, decisions, actions).",
+    icon: Heart
   },
   {
     year: "2022",
-    title: "Scale Milestone",
-    description: "Our AI systems generated $5M+ in new revenue for clients",
-    icon: TrendingUp,
-    metrics: "$5M+ revenue generated"
+    title: "Workshop Platform",
+    description: "Launched a formal workshop offering; built Amble Ideation to run collaborative, AI-powered workshops at scale.",
+    icon: TrendingUp
   },
   {
-    year: "2023",
-    title: "Enterprise Breakthrough",
-    description: "Fortune 500 breakthrough - deployed enterprise AI handling millions in transactions",
-    icon: Building,
-    highlight: true,
-    metrics: "$100M+ transactions processed"
-  },
-  {
-    year: "2024",
-    title: "Industry Leader",
-    description: "Now powering 50+ production AI systems generating $10M+ annually",
+    year: "2023–2025",
+    title: "Production Systems",
+    description: "Built and shipped production systems and products across finance, healthcare, manufacturing and logistics—turning unstructured data and messy workflows into decisions and outcomes.",
     icon: Trophy,
+    highlight: true,
     metrics: "50+ live systems"
   }
 ];
@@ -90,7 +86,7 @@ export function CompanyTimeline() {
           Our Journey
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          From a garage startup to powering AI for Fortune 500s, we&apos;ve stayed true 
+          From engineering foundations to production AI systems, we&apos;ve stayed true 
           to our mission: building AI that helps people thrive.
         </p>
       </motion.div>

@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, ArrowRight } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks } from "lucide-react";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("labs");
 
 const labs = [
+  {
+    icon: MessageSquare,
+    title: "AI Assistant",
+    description:
+      "Experience our sophisticated AI assistant with specialized agents, tool calling capabilities, and intelligent reasoning. Choose your agent and see Sprinter's AI in action.",
+    href: "/labs/ai-assistant",
+    gradient: "from-cyan-500 to-blue-600",
+  },
   {
     icon: Bot,
     title: "Agent Simulator",
@@ -37,6 +45,54 @@ const labs = [
       "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.",
     href: "/labs/sketch-studio",
     gradient: "from-orange-500 to-red-600",
+  },
+  {
+    icon: BarChart3,
+    title: "AI Data Analyzer",
+    description:
+      "Upload CSV or Excel files and get instant insights, visualizations, and predictions. Turn raw data into actionable intelligence.",
+    href: "/labs/data-analyzer",
+    gradient: "from-emerald-500 to-cyan-600",
+  },
+  {
+    icon: Mic,
+    title: "Voice to Process",
+    description:
+      "Describe your business workflow verbally and watch AI create a detailed process map with optimization suggestions.",
+    href: "/labs/voice-to-process",
+    gradient: "from-violet-500 to-purple-600",
+  },
+  {
+    icon: Code2,
+    title: "AI Code Review Assistant",
+    description:
+      "Paste your code and get AI-powered suggestions for improvements, security fixes, and best practice recommendations.",
+    href: "/labs/code-review",
+    gradient: "from-indigo-500 to-blue-600",
+  },
+  {
+    icon: FileText,
+    title: "Document Intelligence",
+    description:
+      "Upload PDFs, reports, or documents and extract key insights, summaries, and answer specific questions about the content.",
+    href: "/labs/document-intelligence",
+    gradient: "from-amber-500 to-orange-600",
+  },
+  {
+    icon: Calculator,
+    title: "AI ROI Calculator",
+    description:
+      "Calculate your potential savings from AI automation. See breakeven timeline, productivity gains, and annual cost savings for your team.",
+    href: "/labs/roi-calculator",
+    gradient: "from-green-500 to-emerald-600",
+  },
+  {
+    icon: Blocks,
+    title: "Agent Playground",
+    description:
+      "Build AI agent workflows visually by snapping together blocks for reading, processing, deciding, and outputting. See how agents work together.",
+    href: "/labs/agent-playground",
+    gradient: "from-indigo-500 to-purple-600",
   },
 ];
 
