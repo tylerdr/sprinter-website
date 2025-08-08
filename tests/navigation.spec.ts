@@ -21,7 +21,7 @@ test.describe('Navigation', () => {
     // Navigate to Case Studies
     await page.click('text=Case Studies');
     await expect(page).toHaveURL('/case-studies');
-    await expect(page.locator('h1')).toContainText('Real Results');
+    await expect(page.locator('h1')).toContainText('Case Studies');
     
     // Navigate to AI Labs
     await page.click('text=AI Labs');

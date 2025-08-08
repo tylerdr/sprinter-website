@@ -5,7 +5,7 @@ test.describe('Case Studies', () => {
     await page.goto('/case-studies');
     
     // Check page loads
-    await expect(page.locator('h1')).toContainText('Real Results');
+    await expect(page.locator('h1')).toContainText('Case Studies');
     
     // Check multiple case studies are displayed
     const caseStudies = page.locator('article');
