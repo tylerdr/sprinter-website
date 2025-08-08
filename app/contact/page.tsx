@@ -29,7 +29,7 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Work With <span className="gradient-text">Us</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Ready to build something amazing with AI? Let&apos;s discuss your
             vision and how we can help bring it to life.
           </p>
@@ -47,7 +47,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <a
                   href="mailto:hello@sprinter.ai"
-                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+                  className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-sm"
                 >
                   <Mail className="w-5 h-5" aria-hidden="true" />
                   <span>hello@sprinter.ai</span>
@@ -55,13 +55,13 @@ export default function ContactPage() {
 
                 <a
                   href="tel:+14155551234"
-                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+                  className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background rounded-sm"
                 >
                   <Phone className="w-5 h-5" aria-hidden="true" />
                   <span>+1 (415) 555-1234</span>
                 </a>
 
-                <div className="flex items-start gap-3 text-gray-400">
+                <div className="flex items-start gap-3 text-gray-300">
                   <MapPin className="w-5 h-5 mt-0.5" aria-hidden="true" />
                   <address className="not-italic">
                     San Francisco, CA
@@ -77,7 +77,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold mb-2">
                 Book a Discovery Call
               </h3>
-              <p className="text-sm text-gray-400 mb-4">
+              <p className="text-sm text-gray-300 mb-4">
                 Prefer to talk? Schedule a 30-minute call to discuss your AI
                 needs.
               </p>
@@ -93,7 +93,7 @@ export default function ContactPage() {
             <div className="p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <MessageSquare className="w-8 h-8 text-purple-400 mb-3" aria-hidden="true" />
               <h3 className="text-xl font-semibold mb-2">Response Time</h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-300">
                 We typically respond within 24 hours during business days. For
                 urgent matters, please call directly.
               </p>

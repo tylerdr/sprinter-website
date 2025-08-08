@@ -148,8 +148,8 @@ export function generateOrganizationStructuredData() {
       addressCountry: COMPANY_INFO.location.country,
     },
     sameAs: [
-      "https://twitter.com/Sprinter_HQ",
-      "https://www.linkedin.com/company/19101178/",
+      "https://x.com/SprinterAI",
+      "https://www.linkedin.com/company/sprinter-ai/",
       "https://github.com/SprinterAI",
     ],
     makesOffer: [

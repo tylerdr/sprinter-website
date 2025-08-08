@@ -87,19 +87,16 @@ export default function BlogPage() {
               </div>
 
               <div className="mt-6 sm:mt-8 p-4 sm:p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30">
-                <h4 className="font-semibold mb-3 text-sm sm:text-base">Get Weekly AI Insights</h4>
+                <h4 className="font-semibold mb-3 text-sm sm:text-base">Stay Updated</h4>
                 <p className="text-xs sm:text-sm text-gray-400 mb-4 leading-relaxed">
-                  Join 5,000+ leaders getting practical AI strategies delivered
-                  to their inbox.
+                  AI Insights newsletter coming soon. Get notified when we launch.
                 </p>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-xs sm:text-sm mb-3 touch-manipulation min-h-[40px]"
-                />
-                <button className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:opacity-90 touch-manipulation min-h-[40px]">
-                  Subscribe
-                </button>
+                <Link
+                  href="/contact"
+                  className="block w-full text-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:opacity-90 touch-manipulation min-h-[40px]"
+                >
+                  Get Notified
+                </Link>
               </div>
             </div>
           </div>

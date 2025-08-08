@@ -26,11 +26,11 @@ export const caseStudies: CaseStudy[] = [
     solution: "Built an AI knowledge engine that instantly answers complex loan questions, matches scenarios to lenders in seconds",
     results: [
       { metric: "95%", label: "Reduction in research time" },
-      { metric: "300%", label: "Increase in closing speed" },
+      { metric: "300%", label: "Faster loan closings" },
       { metric: "50+", label: "Lenders integrated" },
       { metric: "$2.4M", label: "Additional revenue enabled" },
     ],
-    testimonial: "We've seen our closing time increase by 300%. The AI assistant is like having a senior underwriter available 24/7.",
+    testimonial: "We're closing loans 300% faster. The AI assistant is like having a senior underwriter available 24/7.",
     features: [
       "Instant answers to complex Non-QM questions",
       "Automated lender matching",

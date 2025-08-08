@@ -77,6 +77,30 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </Link>
           </aside>
         </div>
+
+        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/30 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            Ready to achieve similar <span className="gradient-text">results</span>?
+          </h2>
+          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            Let&apos;s discuss how we can transform your operations with AI. Our team is ready to help you identify opportunities and deliver results in weeks, not months.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Schedule a Strategy Call
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors"
+            >
+              View More Case Studies
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -343,6 +343,65 @@ export default function ServicesPage() {
           ))}
         </div>
 
+        <div className="mb-16">
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              For Private Equity & Investment Firms
+            </h2>
+            <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Transform multiple portfolio companies with one strategic partnership. 
+              We act as your AI SWAT team to rapidly uplift operational efficiency and valuation across your holdings.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">10x</div>
+                <p className="text-sm text-muted-foreground">Leverage across portfolio</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">4-8 weeks</div>
+                <p className="text-sm text-muted-foreground">Per implementation</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">30-50%</div>
+                <p className="text-sm text-muted-foreground">Efficiency gains</p>
+              </div>
+            </div>
+            <div className="space-y-3 mb-8">
+              <h3 className="font-semibold">How We Work with PE Partners:</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">Portfolio-wide AI opportunity assessment</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">Rapid deployment across multiple companies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">Value creation metrics aligned with exit strategy</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">Knowledge transfer to operating partners</span>
+                </li>
+              </ul>
+            </div>
+            <p className="text-sm italic text-muted-foreground mb-6">
+              &quot;Traditional companies in your portfolio have the most to gain from AI - we help them leapfrog competitors who aren&apos;t moving fast enough.&quot;
+            </p>
+            <div className="text-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-lg hover:opacity-90 transition-all"
+              >
+                Discuss Portfolio Opportunities
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-4xl mx-auto">
           <div className="p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-border/10">
             <div className="flex flex-col md:flex-row items-center gap-6">
