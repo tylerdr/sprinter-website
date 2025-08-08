@@ -52,9 +52,9 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            There has never been this much leverage available. AI turns
-            workflows into systems and unstructured data into decisions. Early
-            movers will be very hard to catch.
+            There&apos;s never been a better time to build. AI transforms months of 
+            work into days, turning your boldest ideas into production systems. 
+            The future belongs to those who ship fast.
           </motion.p>
 
           <motion.div

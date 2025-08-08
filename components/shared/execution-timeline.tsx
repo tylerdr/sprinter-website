@@ -134,10 +134,7 @@ export function ExecutionTimeline() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-30 via-brand to-brand-30 hidden md:block" />
-
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {executionSteps.map((step, index) => {
               const isExpanded = expandedStep === step.id;
               const Icon = step.icon;
@@ -145,8 +142,8 @@ export function ExecutionTimeline() {
               return (
                 <motion.div
                   key={step.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className="relative"
@@ -154,93 +151,84 @@ export function ExecutionTimeline() {
                   <button
                     onClick={() => setExpandedStep(isExpanded ? null : step.id)}
                     className={cn(
-                      "w-full text-left group transition-all",
-                      "focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-background rounded-xl"
+                      "w-full text-left group transition-all rounded-xl",
+                      "focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-background"
                     )}
                     aria-expanded={isExpanded}
                   >
-                    <div className="flex items-start gap-4 md:gap-6">
-                      {/* Icon */}
-                      <div className="relative flex-shrink-0">
-                        <div className={cn(
-                          "w-16 h-16 rounded-full flex items-center justify-center transition-all",
-                          "border-2",
-                          isExpanded
-                            ? "bg-brand-gradient border-transparent scale-110"
-                            : "bg-card/10 border-brand-30 group-hover:scale-105"
-                        )}>
-                          <Icon className={cn(
-                            "w-8 h-8",
-                            isExpanded ? "text-primary-foreground" : "text-brand"
-                          )} />
-                        </div>
-                        {index < executionSteps.length - 1 && (
-                          <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-0.5 h-6 bg-gradient-to-b from-brand-30 to-transparent md:hidden" />
-                        )}
-                      </div>
-
-                      {/* Content */}
-                      <div className={cn(
-                        "flex-1 p-6 rounded-xl border transition-all",
-                        isExpanded
-                          ? "bg-card/10 border-brand-30 shadow-lg shadow-brand/5"
-                          : "bg-card/5 border-border/10 group-hover:bg-card/10"
-                      )}>
-                        <div className="flex items-start justify-between mb-3">
+                    <div className={cn(
+                      "p-6 rounded-xl border transition-all h-full",
+                      isExpanded
+                        ? "bg-gradient-to-br from-brand/10 to-brand-end/10 border-brand-30 shadow-lg shadow-brand/10"
+                        : "bg-card/5 border-border/10 group-hover:bg-card/10 group-hover:border-border/20"
+                    )}>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-start gap-4">
+                          <div className={cn(
+                            "p-2.5 rounded-lg transition-all",
+                            isExpanded
+                              ? "bg-brand-gradient"
+                              : "bg-brand/10"
+                          )}>
+                            <Icon className={cn(
+                              "w-5 h-5",
+                              isExpanded ? "text-primary-foreground" : "text-brand"
+                            )} />
+                          </div>
                           <div>
-                            <h3 className="text-xl font-semibold mb-1">
+                            <h3 className="text-lg font-semibold mb-1">
                               {step.title}
                             </h3>
                             <span className="text-sm text-brand font-medium">
                               {step.duration}
                             </span>
                           </div>
-                          <ChevronRight className={cn(
-                            "w-5 h-5 text-muted-foreground transition-transform mt-1",
-                            isExpanded ? "rotate-90" : "group-hover:translate-x-1"
-                          )} />
                         </div>
-
-                        <p className="text-muted-foreground mb-4">
-                          {step.description}
-                        </p>
-
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <div className="border-t border-border/20 pt-4 mt-4">
-                              <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                                <Users className="w-4 h-4" />
-                                What We Do
-                              </h4>
-                              <ul className="space-y-2 mb-4">
-                                {step.details.map((detail, i) => (
-                                  <li key={i} className="flex items-start gap-2">
-                                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                                    <span className="text-sm text-muted-foreground">
-                                      {detail}
-                                    </span>
-                                  </li>
-                                ))}
-                              </ul>
-
-                              <div className="p-3 rounded-lg bg-success-10 border border-success-30">
-                                <h4 className="text-sm font-semibold mb-1 flex items-center gap-2">
-                                  <CheckCircle className="w-4 h-4 text-success" />
-                                  Outcome
-                                </h4>
-                                <p className="text-sm text-muted-foreground">
-                                  {step.outcome}
-                                </p>
-                              </div>
-                            </div>
-                          </motion.div>
-                        )}
+                        <ChevronRight className={cn(
+                          "w-5 h-5 text-muted-foreground transition-transform mt-1 flex-shrink-0",
+                          isExpanded ? "rotate-90" : "group-hover:translate-x-1"
+                        )} />
                       </div>
+
+                      <p className="text-muted-foreground text-sm">
+                        {step.description}
+                      </p>
+
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="border-t border-border/20 pt-4 mt-4">
+                            <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
+                              <Users className="w-4 h-4" />
+                              What We Do
+                            </h4>
+                            <ul className="space-y-2 mb-4">
+                              {step.details.map((detail, i) => (
+                                <li key={i} className="flex items-start gap-2">
+                                  <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                                  <span className="text-sm text-muted-foreground">
+                                    {detail}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+
+                            <div className="p-3 rounded-lg bg-success-10 border border-success-30">
+                              <h4 className="text-sm font-semibold mb-1 flex items-center gap-2">
+                                <CheckCircle className="w-4 h-4 text-success" />
+                                Outcome
+                              </h4>
+                              <p className="text-sm text-muted-foreground">
+                                {step.outcome}
+                              </p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
                     </div>
                   </button>
                 </motion.div>

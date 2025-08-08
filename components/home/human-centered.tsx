@@ -71,15 +71,20 @@ export function HumanCenteredSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all"
+              className="group relative"
             >
-              <div className="p-3 rounded-lg border border-accent-30 bg-accent-10 w-fit mb-4">
-                <benefit.icon className="w-6 h-6 text-accent" />
+              <div className="h-full p-6 rounded-2xl bg-gradient-to-b from-transparent to-accent/5 hover:to-accent/10 transition-all duration-300">
+                <div className="flex flex-col items-center text-center">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3">{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {benefit.description}
-              </p>
+              <div className="absolute inset-0 rounded-2xl border border-accent/10 group-hover:border-accent/30 transition-colors duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </div>

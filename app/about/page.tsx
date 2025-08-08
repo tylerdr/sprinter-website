@@ -100,18 +100,21 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value) => (
+            {values.map((value, index) => (
               <div
                 key={value.title}
-                className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all"
+                className="group relative p-6 rounded-xl bg-gradient-to-b from-card/5 to-card/10 hover:from-card/10 hover:to-card/15 transition-all duration-300"
               >
-                <div className="p-3 rounded-lg border border-brand-30 bg-brand-10 w-fit mb-4">
-                  <value.icon className="w-6 h-6 text-brand" />
+                <div className="flex flex-col items-center text-center">
+                  <div className="p-4 rounded-2xl bg-gradient-to-br from-brand/10 to-brand-end/10 mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <value.icon className="w-8 h-8 text-brand" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {value.description}
-                </p>
+                <div className="absolute inset-0 rounded-xl border border-border/10 group-hover:border-brand/30 transition-colors duration-300 pointer-events-none" />
               </div>
             ))}
           </div>

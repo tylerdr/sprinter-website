@@ -20,12 +20,21 @@ type Preset = {
   angle?: number;
 };
 
+// Default theme that matches the Sprinter brand
+const DEFAULT_THEME = {
+  start: "oklch(0.488 0.243 264.376)", // Blue
+  end: "oklch(0.6 0.118 184.704)",     // Teal/Cyan
+  angle: 90,
+  primary: "oklch(0.269 0.055 265.755)",
+  accent: "oklch(0.828 0.189 84.429)",
+};
+
 const PRESETS: Array<Preset> = [
   {
-    name: "Sprinter",
-    start: "oklch(0.488 0.243 264.376)",
-    end: "oklch(0.6 0.118 184.704)",
-    angle: 90,
+    name: "Sprinter (Default)",
+    start: DEFAULT_THEME.start,
+    end: DEFAULT_THEME.end,
+    angle: DEFAULT_THEME.angle,
   },
   {
     name: "Sunset",
@@ -120,21 +129,13 @@ export function ThemeCustomizer() {
   };
 
   const onReset = () => {
-    const cs = getComputedStyle(document.documentElement);
-    const defStart = cs.getPropertyValue("--primary").trim();
-    const defEnd = cs.getPropertyValue("--accent").trim();
-    setStart(defStart);
-    setEnd(defEnd);
-    setAngle(90);
-    setPrimary(defStart);
-    setAccent(defEnd);
-    applyTheme({
-      start: defStart,
-      end: defEnd,
-      angle: 90,
-      primary: defStart,
-      accent: defEnd,
-    });
+    // Reset to default Sprinter theme
+    setStart(DEFAULT_THEME.start);
+    setEnd(DEFAULT_THEME.end);
+    setAngle(DEFAULT_THEME.angle);
+    setPrimary(DEFAULT_THEME.primary);
+    setAccent(DEFAULT_THEME.accent);
+    applyTheme(DEFAULT_THEME);
     try {
       localStorage.removeItem("sprinter-theme");
     } catch {}
