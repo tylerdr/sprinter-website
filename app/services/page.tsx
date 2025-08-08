@@ -1,249 +1,384 @@
-"use client"
-
-import { motion } from "framer-motion"
+import type { Metadata } from "next"
 import Link from "next/link"
-import { Check, ArrowRight, Sparkles, Zap, Rocket, Building2 } from "lucide-react"
+import { 
+  Zap, 
+  Code, 
+  Rocket, 
+  Building, 
+  Handshake,
+  Clock,
+  CheckCircle,
+  ArrowRight,
+  Users,
+  TrendingUp,
+  Shield,
+  Brain,
+  Target
+} from "lucide-react"
+import { getPageMetadata } from "@/lib/seo"
+import { StructuredData } from "@/components/seo-structured-data"
+
+export const metadata: Metadata = getPageMetadata("services")
 
 const services = [
   {
+    id: "workshop",
     title: "AI Discovery Workshop",
-    icon: Sparkles,
+    tagline: "Find Your AI Quick Wins",
+    description: "One-day intensive session with our engineers to identify and prioritize high-ROI AI opportunities specific to your business",
+    icon: Brain,
     duration: "1 Day",
     price: "$5,000",
-    description: "Identify and prioritize AI opportunities in your business",
-    deliverables: [
-      "Custom AI opportunity assessment",
-      "Prioritized use case roadmap",
-      "ROI projections for top 5 use cases",
-      "Implementation timeline",
-      "Recording & transcript",
-      "30-day follow-up support",
+    features: [
+      "Process mapping & bottleneck analysis",
+      "AI readiness assessment of your data & systems",
+      "ROI projections for top 3 opportunities",
+      "Technical feasibility evaluation",
+      "90-day implementation roadmap"
     ],
-    idealFor: "Companies exploring AI adoption",
+    deliverables: [
+      "Opportunity assessment report",
+      "Technical architecture sketch",
+      "Budget & timeline estimates"
+    ],
+    ideal: "Perfect for executives exploring where AI can drive immediate value",
+    results: "Typical outcome: 3-5 actionable AI opportunities identified",
     cta: "Book Workshop",
-    popular: false,
+    popular: false
   },
   {
-    title: "AI Sprint Package",
-    icon: Zap,
-    duration: "2-4 Weeks",
-    price: "$25,000 - $50,000",
-    description: "Rapid prototype to production-ready AI solution",
-    deliverables: [
-      "Custom AI agent or automation",
-      "Integration with existing systems",
-      "User training & documentation",
-      "30-day warranty & support",
-      "Performance metrics dashboard",
-      "Source code ownership",
-    ],
-    idealFor: "Quick wins and proof of concepts",
-    cta: "Start Sprint",
-    popular: true,
-  },
-  {
-    title: "AI Transformation",
+    id: "sprint",
+    title: "AI Sprint",
+    tagline: "Ship Production AI in Weeks",
+    description: "2-4 week rapid development sprint that takes you from concept to deployed AI system with real users",
     icon: Rocket,
+    duration: "2-4 Weeks",
+    price: "$25,000 - $75,000",
+    features: [
+      "Working prototype delivered in 10 days",
+      "Production deployment with monitoring",
+      "Integration with your existing systems",
+      "Team training & knowledge transfer",
+      "30 days of post-launch support"
+    ],
+    deliverables: [
+      "Production-ready AI system",
+      "Complete documentation",
+      "Source code ownership",
+      "Performance dashboard"
+    ],
+    ideal: "Best for teams ready to move fast and see immediate results",
+    results: "Average client sees 250% ROI within 60 days",
+    cta: "Start Sprint",
+    popular: true
+  },
+  {
+    id: "transformation",
+    title: "Enterprise AI Transformation",
+    tagline: "Comprehensive AI Integration",
+    description: "Full-scale AI implementation across multiple business units with ongoing optimization",
+    icon: Building,
     duration: "3-6 Months",
     price: "$150,000+",
-    description: "End-to-end AI product development and deployment",
-    deliverables: [
-      "Full AI platform development",
-      "Multiple integrated AI agents",
-      "Custom ML models if needed",
-      "Comprehensive testing & QA",
-      "Team training program",
-      "6-month support & maintenance",
-      "Continuous optimization",
+    features: [
+      "Multiple AI system deployments",
+      "Enterprise architecture design",
+      "Custom ML model development",
+      "Team upskilling program",
+      "Change management support"
     ],
-    idealFor: "Enterprise transformations",
-    cta: "Transform Now",
-    popular: false,
+    deliverables: [
+      "Complete AI platform",
+      "API integrations",
+      "Training curriculum",
+      "Governance framework",
+      "Success metrics tracking"
+    ],
+    ideal: "For organizations committed to AI-driven transformation",
+    results: "Typical impact: 30-50% operational efficiency gains",
+    cta: "Transform Your Business",
+    popular: false
   },
   {
+    id: "venture",
     title: "Venture Partnership",
-    icon: Building2,
-    duration: "Ongoing",
+    tagline: "Your Technical Co-Founder",
+    description: "We build and scale AI products together, sharing both the risk and the reward",
+    icon: Handshake,
+    duration: "6-12 Months",
     price: "Equity-based",
-    description: "We become your technical co-founder",
-    deliverables: [
-      "Full product development",
-      "Technical architecture & strategy",
-      "AI/ML expertise",
-      "Ongoing development team",
+    features: [
+      "Full product development from MVP to scale",
+      "Technical leadership & architecture",
+      "Engineering team building",
       "Fundraising support",
-      "Go-to-market assistance",
-      "Shared risk & reward",
+      "Go-to-market strategy execution"
     ],
-    idealFor: "Startups & new ventures",
-    cta: "Partner With Us",
-    popular: false,
-  },
+    deliverables: [
+      "Complete AI product",
+      "Technical infrastructure",
+      "Development team",
+      "Investor deck support",
+      "Growth playbook"
+    ],
+    ideal: "For founders who need a technical partner, not a vendor",
+    results: "Portfolio companies have raised $50M+ collectively",
+    cta: "Explore Partnership",
+    popular: false
+  }
 ]
 
-const additionalServices = [
+const process = [
   {
-    title: "Speaking & Keynotes",
-    description: "Energize your event with AI insights",
-    price: "$10,000+",
+    step: 1,
+    title: "Discovery",
+    description: "Map your processes, identify bottlenecks, prioritize opportunities",
+    icon: Target,
+    duration: "1-2 days"
   },
   {
-    title: "Team Training",
-    description: "Custom AI training for your team",
-    price: "$15,000/day",
+    step: 2,
+    title: "Prototype",
+    description: "Build working AI in days, validate approach with real data",
+    icon: Code,
+    duration: "5-10 days"
   },
   {
-    title: "AI Strategy Consulting",
-    description: "Ongoing strategic AI guidance",
-    price: "$20,000/month",
+    step: 3,
+    title: "Deploy",
+    description: "Ship to production, integrate systems, train your team",
+    icon: Rocket,
+    duration: "1-2 weeks"
   },
+  {
+    step: 4,
+    title: "Optimize",
+    description: "Monitor performance, iterate based on data, maximize ROI",
+    icon: TrendingUp,
+    duration: "Ongoing"
+  }
+]
+
+const differentiators = [
+  {
+    title: "We Ship, Not Slide",
+    description: "Working code in 10 days, not PowerPoints in 10 weeks",
+    icon: Code
+  },
+  {
+    title: "Real Engineers",
+    description: "Built by developers who've shipped AI at scale since 2018",
+    icon: Users
+  },
+  {
+    title: "ROI Focused",
+    description: "Every project tied to measurable business outcomes",
+    icon: Target
+  }
 ]
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen py-24">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
+    <>
+      <StructuredData 
+        type="service" 
+        serviceName="AI Consulting Services" 
+        serviceDescription="Comprehensive AI consulting, development, and transformation services including workshops, rapid prototyping, and enterprise solutions."
+      />
+      <StructuredData 
+        type="faq"
+        faqs={[
+          {
+            question: "How long does an AI project typically take?",
+            answer: "Our AI Sprint delivers production-ready systems in 2-4 weeks. Discovery workshops take 1 day, while enterprise transformations range from 3-6 months depending on scope."
+          },
+          {
+            question: "What's included in an AI Sprint?",
+            answer: "An AI Sprint includes a working prototype in 10 days, production deployment with monitoring, integration with existing systems, team training, and 30 days of post-launch support."
+          },
+          {
+            question: "Do you work with small businesses or just enterprises?",
+            answer: "We work with businesses of all sizes. Our AI Discovery Workshop is perfect for smaller companies exploring AI opportunities, while our Enterprise AI Transformation serves larger organizations."
+          },
+          {
+            question: "What kind of ROI can I expect?",
+            answer: "Our average client sees 250% ROI within 60 days of deployment. Results vary by use case, but we focus on measurable business outcomes and track performance metrics closely."
+          }
+        ]}
+      />
+      <div className="min-h-screen py-24">
+        <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-6">
             <Zap className="w-5 h-5 text-blue-400" />
-            <span className="text-sm font-medium text-blue-400">Flexible Engagement Models</span>
+            <span className="text-sm font-medium text-blue-400">How We Work</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Our <span className="gradient-text">Services</span>
+            Choose Your <span className="gradient-text">AI Journey</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            From workshops to full transformation, we meet you where you are on your AI journey. 
-            Most clients see ROI within 60 days.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            From rapid prototypes to enterprise transformations, we offer flexible engagement models. 
+            One thing never changes: we deliver working AI, fast.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {services.map((service) => (
+            <div
+              key={service.id}
               className="relative"
             >
-              {service.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                  <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full">
-                    MOST POPULAR
-                  </span>
-                </div>
-              )}
-              
-              <div className={`h-full p-6 rounded-2xl backdrop-blur-sm transition-all hover:scale-105 ${
+              <div className={`p-8 rounded-2xl bg-card/5 border backdrop-blur-sm h-full ${
                 service.popular 
-                  ? "bg-gradient-to-b from-blue-500/20 to-purple-600/20 border-2 border-blue-500/50" 
-                  : "bg-white/5 border border-white/10 hover:bg-white/10"
+                  ? 'border-blue-500/50 shadow-lg shadow-blue-500/10' 
+                  : 'border-border/10'
               }`}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-lg ${
-                    service.popular ? "bg-blue-500/30" : "bg-white/10"
-                  }`}>
-                    <service.icon className="w-6 h-6" />
+                {service.popular && (
+                  <div className="absolute -top-3 left-8 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full">
+                    <span className="text-xs font-semibold text-white">MOST POPULAR</span>
                   </div>
-                  <div className="text-sm text-gray-400">{service.duration}</div>
+                )}
+                
+                <div className="flex items-start justify-between mb-6">
+                  <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+                    <service.icon className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-muted-foreground">{service.duration}</div>
+                    <div className="text-xl font-bold gradient-text">{service.price}</div>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <div className="text-2xl font-bold gradient-text mb-3">{service.price}</div>
-                <p className="text-sm text-gray-400 mb-4">{service.description}</p>
-                
+
+                <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                <p className="text-sm text-blue-400 font-medium mb-3">{service.tagline}</p>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold mb-3 text-foreground/80">What&apos;s Included:</h4>
+                  <ul className="space-y-2">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold mb-3 text-foreground/80">Deliverables:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {service.deliverables.map((deliverable) => (
+                      <span 
+                        key={deliverable} 
+                        className="px-3 py-1 text-xs bg-card/10 border border-border/20 rounded-full"
+                      >
+                        {deliverable}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="space-y-2 mb-6">
-                  {service.deliverables.map((item) => (
-                    <div key={item} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs text-gray-300">{item}</span>
-                    </div>
-                  ))}
+                  <p className="text-sm text-muted-foreground italic">{service.ideal}</p>
+                  <p className="text-sm text-green-400 font-medium">{service.results}</p>
                 </div>
-                
-                <div className="text-xs text-gray-500 mb-4">
-                  Ideal for: {service.idealFor}
-                </div>
-                
-                <Link
+
+                <Link 
                   href="/contact"
-                  className={`flex items-center justify-center gap-2 w-full px-4 py-2 font-medium rounded-lg transition-all ${
+                  className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all w-full justify-center ${
                     service.popular
-                      ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90"
-                      : "bg-white/10 text-white hover:bg-white/20"
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90'
+                      : 'bg-card/10 border border-border/20 hover:bg-card/20'
                   }`}
                 >
                   {service.cta}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="max-w-4xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center">Additional Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {additionalServices.map((service) => (
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Process</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {process.map((item, index) => (
               <div
-                key={service.title}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+                key={item.step}
+                className="relative"
               >
-                <h3 className="font-semibold mb-2">{service.title}</h3>
-                <p className="text-sm text-gray-400 mb-3">{service.description}</p>
-                <div className="text-lg font-bold gradient-text">{service.price}</div>
+                <div className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                      <span className="text-sm font-bold">{item.step}</span>
+                    </div>
+                    <item.icon className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
+                  <p className="text-xs text-blue-400">{item.duration}</p>
+                </div>
+                {index < process.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                    <ArrowRight className="w-5 h-5 text-muted-foreground/30" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-center p-8 rounded-2xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30 max-w-4xl mx-auto"
-        >
-          <h3 className="text-3xl font-bold mb-4">
-            🎯 <span className="gradient-text">Success Guarantee</span>
-          </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            We're so confident in our approach that we offer a <strong>100% satisfaction guarantee</strong> on 
-            our workshops and a <strong>clear ROI commitment</strong> on all development projects. 
-            If we don't deliver the promised value, we'll work for free until we do.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">60 days</div>
-              <div className="text-sm text-gray-400">Average time to ROI</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {differentiators.map((item) => (
+            <div
+              key={item.title}
+              className="p-6 rounded-xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30"
+            >
+              <item.icon className="w-8 h-8 text-green-400 mb-4" />
+              <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.description}</p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">3-10x</div>
-              <div className="text-sm text-gray-400">Typical efficiency gain</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">100%</div>
-              <div className="text-sm text-gray-400">Client satisfaction</div>
+          ))}
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-border/10">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-3">
+                  Not Sure Where to Start?
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Let&apos;s have a conversation about your AI goals. We&apos;ll recommend the best path forward - 
+                  honest technical advice from engineers who&apos;ve been there.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    <span>30-min call</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4" />
+                    <span>No sales pressure</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:opacity-90 transition-all"
+                >
+                  Schedule Free Consultation
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
-          >
-            Get Started Risk-Free
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
+    </>
   )
 }

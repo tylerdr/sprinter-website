@@ -1,4 +1,8 @@
+import type { Metadata } from "next"
 import { COMPANY_INFO } from "@/lib/constants"
+import { getPageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = getPageMetadata("privacy")
 
 export default function PrivacyPage() {
   return (
@@ -91,7 +95,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-semibold mb-4">8. Changes to This Policy</h2>
             <p className="text-gray-300">
               We may update this Privacy Policy from time to time. We will notify you of any changes 
-              by posting the new Privacy Policy on this page and updating the "Last updated" date.
+              by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
             </p>
           </section>
         </div>

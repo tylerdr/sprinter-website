@@ -61,7 +61,7 @@ export function InteractiveDemo() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Experience <span className="gradient-text">AI in Action</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Interactive demos showcasing our AI capabilities. Try them yourself!
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export function InteractiveDemo() {
                   className={`group block p-6 rounded-xl transition-all ${
                     activeDemo === index
                       ? "bg-gradient-to-r from-blue-500/20 to-purple-600/20 border-blue-500/50"
-                      : "bg-white/5 border-white/10 hover:bg-white/10"
+                      : "bg-card/5 border-border/10 hover:bg-card/10"
                   } border backdrop-blur-sm`}
                 >
                   <div className="flex items-start gap-4">
@@ -90,16 +90,16 @@ export function InteractiveDemo() {
                       className={`p-2 rounded-lg ${
                         activeDemo === index
                           ? "bg-gradient-to-br from-blue-500 to-purple-600"
-                          : "bg-white/10"
+                          : "bg-card/10"
                       }`}
                     >
-                      <demo.icon className="w-5 h-5 text-white" />
+                      <demo.icon className="w-5 h-5 text-foreground" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold mb-1">
                         {demo.title}
                       </h3>
-                      <p className="text-sm text-gray-400 mb-2">
+                      <p className="text-sm text-muted-foreground mb-2">
                         {demo.description}
                       </p>
                       <div className="text-2xl tracking-wider font-mono opacity-50">
@@ -117,7 +117,7 @@ export function InteractiveDemo() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-96 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-white/10 overflow-hidden"
+            className="relative h-96 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-border/10 overflow-hidden"
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
@@ -130,22 +130,22 @@ export function InteractiveDemo() {
               >
                 <div className="mb-6">
                   {React.createElement(demos[activeDemo].icon, {
-                    className: "w-24 h-24 mx-auto text-white/50 glow",
+                    className: "w-24 h-24 mx-auto text-foreground/50 glow",
                   })}
                 </div>
                 <h3 className="text-2xl font-bold mb-2 gradient-text">
                   {demos[activeDemo].title}
                 </h3>
-                <p className="text-gray-400 mb-6 px-8">
+                <p className="text-muted-foreground mb-6 px-8">
                   {demos[activeDemo].description}
                 </p>
                 <Link
                   href={demos[activeDemo].href}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
                 >
                   Try Demo →
                 </Link>
-                <div className="mt-3 text-xs text-gray-500">
+                <div className="mt-3 text-xs text-muted-foreground/80">
                   Tip: Demos auto-rotate every 3s. Tap bullets to switch on
                   mobile.
                 </div>
@@ -160,7 +160,7 @@ export function InteractiveDemo() {
                   className={`w-2 h-2 rounded-full transition-all ${
                     activeDemo === index
                       ? "w-8 bg-gradient-to-r from-blue-500 to-purple-600"
-                      : "bg-white/30"
+                      : "bg-foreground/30"
                   }`}
                 />
               ))}
@@ -173,7 +173,7 @@ export function InteractiveDemo() {
 }
 
 const React = {
-  createElement: (component: any, props: any) => {
+  createElement: (component: React.ComponentType<Record<string, unknown>>, props: Record<string, unknown>) => {
     const Component = component;
     return <Component {...props} />;
   },

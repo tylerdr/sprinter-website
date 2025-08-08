@@ -1,8 +1,9 @@
-"use client"
-
-import { motion } from "framer-motion"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Bot, Workflow, Palette, Gamepad2, ArrowRight } from "lucide-react"
+import { getPageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = getPageMetadata("labs")
 
 const labs = [
   {
@@ -37,72 +38,62 @@ const labs = [
 
 export default function LabsPage() {
   return (
-    <div className="min-h-screen py-24">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
             AI <span className="gradient-text">Labs</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
             Interactive demonstrations of our AI capabilities. Experience the future of intelligent automation through hands-on tools and games.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {labs.map((lab, index) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto" role="list">
+          {labs.map((lab) => (
+            <div
               key={lab.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="w-full"
+              role="listitem"
             >
               <Link
                 href={lab.href}
-                className="group block h-full p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all hover:scale-105"
+                className="group block h-full p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+                aria-label={`Try ${lab.title} - ${lab.description}`}
               >
-                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${lab.gradient} mb-6`}>
-                  <lab.icon className="w-8 h-8 text-white" />
+                <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-br ${lab.gradient} mb-4 sm:mb-6`} aria-hidden="true">
+                  <lab.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
                 </div>
-                <h2 className="text-2xl font-bold mb-3 group-hover:gradient-text transition-all">
+                <h2 className="text-xl sm:text-2xl font-bold mb-3 group-hover:gradient-text transition-all">
                   {lab.title}
                 </h2>
-                <p className="text-gray-400 mb-4">
+                <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
                   {lab.description}
                 </p>
-                <div className="flex items-center gap-2 text-blue-400 font-medium group-hover:text-blue-300">
+                <div className="flex items-center gap-2 text-blue-400 font-medium group-hover:text-blue-300 text-sm sm:text-base">
                   Try it now
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-center mt-16 p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-white/10"
-        >
-          <h3 className="text-2xl font-bold mb-4">
+        <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-border/10 max-w-4xl mx-auto">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4">
             Ready to build something amazing?
           </h3>
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
             These demos showcase just a fraction of what we can build together. Let&apos;s discuss your AI vision.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
           >
             Start a Project
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import {
@@ -5,7 +6,6 @@ import {
   TrendingUp,
   AlertTriangle,
   CheckCircle,
-  ArrowLeft,
   Briefcase,
 } from "lucide-react";
 import {
@@ -14,11 +14,41 @@ import {
   roles,
   aiTools,
 } from "@/lib/use-cases-data";
+import { generateMetadata as createSEOMetadata } from "@/lib/seo";
+import { SEO } from "@/lib/constants";
 
 export async function generateStaticParams() {
   return industries.map((industry) => ({
     id: industry.id,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const industry = industries.find((ind) => ind.id === id);
+
+  if (!industry) {
+    return createSEOMetadata({
+      title: "Industry Not Found",
+      description: "The requested industry could not be found.",
+      noindex: true,
+    });
+  }
+
+  const useCases = getUseCasesByIndustry(industry.id);
+
+  return createSEOMetadata({
+    title: `AI for ${industry.name} - Use Cases & Implementation`,
+    description: `${industry.description} Discover ${useCases.length}+ proven AI use cases with ${industry.averageROI} average ROI.`,
+    keywords: `AI for ${industry.name.toLowerCase()}, ${industry.name.toLowerCase()} automation, AI use cases, ${industry.topTools.join(", ").toLowerCase()}, business transformation`,
+    canonical: `${SEO.siteUrl}/use-cases/industries/${industry.id}`,
+    ogTitle: `Transform ${industry.name} with AI`,
+    ogDescription: `${industry.description} See proven implementations with ${industry.averageROI} ROI.`,
+  });
 }
 
 export default async function IndustryPage({

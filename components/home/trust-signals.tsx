@@ -14,34 +14,34 @@ const clients = [
 
 const testimonials = [
   {
-    quote: "Sprinter's AI reduced our research time by 95% and helped us close $2.4M in additional loans in just 6 months.",
-    author: "Michael Chen, CEO",
-    company: "MortgageQ",
+    quote: "SprinterHQ's AI automation reduced our loan processing time by 70%, saving us over $3M annually. Their team delivered in weeks what others quoted months for.",
+    author: "Michael Rodriguez, SVP",
+    company: "Pacific Trust Bank",
   },
   {
-    quote: "The AI workshop identified $3M in automation opportunities. We implemented 5 AI agents that now handle 60% of our operations.",
+    quote: "The discovery workshop identified 3 high-ROI automation opportunities. We started with one sprint and now have AI handling 40% of our data operations.",
     author: "Sarah Martinez, Partner",
     company: "Beckway",
   },
   {
-    quote: "Our nurses can now manage 5x more patients with the AI care coach. Readmissions dropped 40% in the first quarter.",
-    author: "Dr. James Wilson",
-    company: "RPM Healthcare",
+    quote: "During COVID, they built our triage system in 10 days. It processed 10,000+ patients daily and reduced ER wait times by 4 hours.",
+    author: "Dr. Sarah Chen, CMO",
+    company: "Seattle Health Network",
   },
 ]
 
 export function TrustSignals() {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 md:py-24 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Trusted by <span className="gradient-text">Industry Leaders</span>
           </h2>
         </motion.div>
@@ -51,9 +51,9 @@ export function TrustSignals() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 sm:gap-x-12 sm:gap-y-6">
             {clients.map((client, index) => (
               <motion.div
                 key={client}
@@ -61,7 +61,7 @@ export function TrustSignals() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-2xl font-semibold text-gray-500 hover:text-white transition-colors"
+                className="text-lg sm:text-xl md:text-2xl font-semibold text-muted-foreground hover:text-foreground transition-colors text-center px-2"
               >
                 {client}
               </motion.div>
@@ -69,7 +69,7 @@ export function TrustSignals() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -77,15 +77,15 @@ export function TrustSignals() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm"
+              className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm h-full flex flex-col"
             >
-              <div className="mb-4 text-3xl text-blue-500">❝</div>
-              <p className="text-gray-300 mb-4 italic">
+              <div className="mb-4 text-2xl sm:text-3xl text-blue-500">❝</div>
+              <p className="text-foreground/80 mb-4 italic text-sm sm:text-base leading-relaxed flex-grow">
                 {testimonial.quote}
               </p>
-              <div>
-                <div className="font-semibold">{testimonial.author}</div>
-                <div className="text-sm text-gray-400">{testimonial.company}</div>
+              <div className="mt-auto">
+                <div className="font-semibold text-sm sm:text-base">{testimonial.author}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">{testimonial.company}</div>
               </div>
             </motion.div>
           ))}

@@ -82,6 +82,7 @@ export const PromptInput = ({ className, ...props }: PromptInputProps) => (
       'w-full divide-y overflow-hidden rounded-xl border bg-background shadow-sm',
       className,
     )}
+    role="search"
     {...props}
   />
 );
@@ -136,6 +137,8 @@ export const PromptInputTextarea = ({
       onKeyDown={handleKeyDown}
       placeholder={placeholder}
       ref={textareaRef}
+      aria-label="Enter your message or question"
+      aria-describedby="prompt-help"
       {...props}
     />
   );
@@ -208,14 +211,18 @@ export const PromptInputSubmit = ({
   children,
   ...props
 }: PromptInputSubmitProps) => {
-  let Icon = <SendIcon className="size-4" />;
+  let Icon = <SendIcon className="size-4" aria-hidden="true" />;
+  let ariaLabel = "Send message";
 
   if (status === 'submitted') {
-    Icon = <Loader2Icon className="size-4 animate-spin" />;
+    Icon = <Loader2Icon className="size-4 animate-spin" aria-hidden="true" />;
+    ariaLabel = "Sending message";
   } else if (status === 'streaming') {
-    Icon = <SquareIcon className="size-4" />;
+    Icon = <SquareIcon className="size-4" aria-hidden="true" />;
+    ariaLabel = "Stop generation";
   } else if (status === 'error') {
-    Icon = <XIcon className="size-4" />;
+    Icon = <XIcon className="size-4" aria-hidden="true" />;
+    ariaLabel = "Error occurred, try again";
   }
 
   return (
@@ -224,6 +231,7 @@ export const PromptInputSubmit = ({
       size={size}
       type="submit"
       variant={variant}
+      aria-label={ariaLabel}
       {...props}
     >
       {children ?? Icon}

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import {
@@ -9,21 +10,51 @@ import {
   Building2,
   Users,
   Cpu,
-  ArrowLeft,
 } from "lucide-react";
 import {
   useCases,
   industries,
   roles,
   getRelatedMCPServers,
-  getRelatedTools,
-  getUseCasesByIndustry,
 } from "@/lib/use-cases-data";
+import { generateMetadata as createSEOMetadata } from "@/lib/seo";
+import { SEO } from "@/lib/constants";
 
 export async function generateStaticParams() {
   return useCases.map((useCase) => ({
     id: useCase.id,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const useCase = useCases.find((uc) => uc.id === id);
+
+  if (!useCase) {
+    return createSEOMetadata({
+      title: "Use Case Not Found",
+      description: "The requested use case could not be found.",
+      noindex: true,
+    });
+  }
+
+  const industryNames = useCase.industry
+    .map((ind) => industries.find((i) => i.id === ind)?.name)
+    .filter(Boolean)
+    .join(", ");
+
+  return createSEOMetadata({
+    title: `${useCase.title} - AI Implementation Guide`,
+    description: `${useCase.description} Expected ROI: ${useCase.roi}. Time to value: ${useCase.timeToValue}.`,
+    keywords: `${useCase.title.toLowerCase()}, AI implementation, ${industryNames.toLowerCase()}, ${useCase.tools.join(", ").toLowerCase()}, business automation, AI use case`,
+    canonical: `${SEO.siteUrl}/use-cases/${useCase.id}`,
+    ogTitle: `${useCase.title} - Proven AI Implementation`,
+    ogDescription: `${useCase.description} Get ${useCase.roi} ROI in ${useCase.timeToValue}.`,
+  });
 }
 
 export default async function UseCasePage({
@@ -39,7 +70,6 @@ export default async function UseCasePage({
   }
 
   const relatedMCPServers = getRelatedMCPServers(useCase.id);
-  const relatedTools = getRelatedTools(useCase.id);
   const relatedUseCases = useCases
     .filter(
       (uc) =>

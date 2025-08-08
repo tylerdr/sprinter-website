@@ -1,4 +1,8 @@
+import type { Metadata } from "next"
 import { COMPANY_INFO } from "@/lib/constants"
+import { getPageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = getPageMetadata("terms")
 
 export default function TermsPage() {
   return (
@@ -11,7 +15,7 @@ export default function TermsPage() {
           <section className="p-6 rounded-xl bg-white/5 border border-white/10">
             <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-300">
-              By accessing and using the services provided by {COMPANY_INFO.name} ("we," "us," or "our"), 
+              By accessing and using the services provided by {COMPANY_INFO.name} (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), 
               you agree to be bound by these Terms of Service. If you do not agree to these terms, 
               please do not use our services.
             </p>
@@ -88,7 +92,7 @@ export default function TermsPage() {
           <section className="p-6 rounded-xl bg-white/5 border border-white/10">
             <h2 className="text-2xl font-semibold mb-4">8. Warranties and Disclaimers</h2>
             <p className="text-gray-300">
-              Our services are provided "as is" without warranties of any kind, either express or implied. 
+              Our services are provided &quot;as is&quot; without warranties of any kind, either express or implied. 
               We do not guarantee that our services will be uninterrupted, secure, or error-free.
             </p>
           </section>
@@ -123,7 +127,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold mb-4">12. Changes to Terms</h2>
             <p className="text-gray-300">
               We reserve the right to modify these Terms at any time. We will notify users of any 
-              material changes by posting the new Terms on this page and updating the "Effective Date."
+              material changes by posting the new Terms on this page and updating the &quot;Effective Date.&quot;
             </p>
           </section>
 

@@ -8,8 +8,9 @@ export function generateStaticParams() {
   return caseStudies.map(c => ({ slug: c.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const study = getCaseStudyBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug)
   if (!study) return { title: "Case Study – SprinterHQ" }
   return {
     title: `${study.title} – Case Study – SprinterHQ`,
@@ -17,8 +18,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const study = getCaseStudyBySlug(params.slug)
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug)
   if (!study) return notFound()
 
   return (
@@ -55,7 +57,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </ul>
               </div>
               <blockquote className="p-4 rounded-lg bg-white/5 border-l-2 border-blue-500 italic text-gray-300">
-                "{study.testimonial}"
+                &quot;{study.testimonial}&quot;
               </blockquote>
             </div>
           </div>
