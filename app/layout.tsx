@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/layout/navigation";
+import { MainNavigation } from "@/components/layout/main-navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
@@ -69,7 +69,7 @@ export default function RootLayout({
             Skip to navigation
           </a>
 
-          <Navigation />
+          <MainNavigation />
           <main id="main-content" className="flex-1 pt-16">
             {children}
           </main>

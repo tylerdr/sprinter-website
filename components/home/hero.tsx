@@ -5,15 +5,118 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Zap } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
-import { HeroBackground } from "./hero-background";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [clickRipples, setClickRipples] = useState<{ x: number; y: number; id: number }[]>([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    const handleClick = (e: MouseEvent) => {
+      const newRipple = { x: e.clientX, y: e.clientY, id: Date.now() };
+      setClickRipples(prev => [...prev, newRipple]);
+      
+      // Remove ripple after animation
+      setTimeout(() => {
+        setClickRipples(prev => prev.filter(r => r.id !== newRipple.id));
+      }, 2000);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("click", handleClick);
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleClick);
+    };
+  }, []);
+
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero section"
     >
-      <HeroBackground />
+      {/* Mouse-following gradient */}
+      <div
+        className="absolute inset-0 opacity-20 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, color-mix(in oklch, var(--brand-start) 15%, transparent), transparent 40%)`,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Click ripples */}
+      {clickRipples.map(ripple => (
+        <motion.div
+          key={ripple.id}
+          className="absolute pointer-events-none"
+          initial={{ width: 0, height: 0, opacity: 0.5 }}
+          animate={{ width: 400, height: 400, opacity: 0 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          style={{
+            left: ripple.x - 200,
+            top: ripple.y - 200,
+            background: `radial-gradient(circle, color-mix(in oklch, var(--brand-start) 30%, transparent), transparent)`,
+            borderRadius: "50%",
+          }}
+        />
+      ))}
+
+      {/* Floating particles */}
+      <div className="absolute inset-0" aria-hidden="true">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-brand/20 rounded-full"
+            initial={{ 
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight 
+            }}
+            animate={{
+              x: [null, Math.random() * window.innerWidth],
+              y: [null, Math.random() * window.innerHeight],
+            }}
+            transition={{
+              duration: 20 + i * 5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Gradient orbs */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <motion.div 
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -100, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 bg-brand-10"
+        />
+        <motion.div 
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 100, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 bg-brand-10"
+        />
+      </div>
       
       <div className="absolute inset-0 noise-bg opacity-30" aria-hidden="true" />
 
