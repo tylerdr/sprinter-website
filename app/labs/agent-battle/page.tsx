@@ -83,7 +83,7 @@ export default function AgentBattlePage() {
       setConfig(prev => ({
         ...prev,
         topic: preset.topic,
-        judgeCriteria: preset.criteria as any,
+        judgeCriteria: preset.criteria as ("accuracy" | "cost" | "latency" | "clarity" | "creativity" | "practicality")[],
       }));
       setSelectedPreset(presetId);
     }
@@ -191,7 +191,7 @@ export default function AgentBattlePage() {
                         onValueChange={(value) => 
                           setConfig(prev => ({ 
                             ...prev, 
-                            agentA: { ...prev.agentA!, model: value as any }
+                            agentA: { ...prev.agentA!, model: value as "gpt-4" | "gpt-3.5-turbo" | "claude-3-opus" | "claude-3-sonnet" }
                           }))
                         }
                       >
@@ -213,7 +213,7 @@ export default function AgentBattlePage() {
                         onValueChange={(value) => 
                           setConfig(prev => ({ 
                             ...prev, 
-                            agentA: { ...prev.agentA!, style: value as any }
+                            agentA: { ...prev.agentA!, style: value as "analytical" | "creative" | "pragmatic" | "theoretical" }
                           }))
                         }
                       >
@@ -242,7 +242,7 @@ export default function AgentBattlePage() {
                         onValueChange={(value) => 
                           setConfig(prev => ({ 
                             ...prev, 
-                            agentB: { ...prev.agentB!, model: value as any }
+                            agentB: { ...prev.agentB!, model: value as "gpt-4" | "gpt-3.5-turbo" | "claude-3-opus" | "claude-3-sonnet" }
                           }))
                         }
                       >
@@ -264,7 +264,7 @@ export default function AgentBattlePage() {
                         onValueChange={(value) => 
                           setConfig(prev => ({ 
                             ...prev, 
-                            agentB: { ...prev.agentB!, style: value as any }
+                            agentB: { ...prev.agentB!, style: value as "analytical" | "creative" | "pragmatic" | "theoretical" }
                           }))
                         }
                       >
@@ -289,19 +289,19 @@ export default function AgentBattlePage() {
                     {["accuracy", "cost", "latency", "clarity", "creativity", "practicality"].map(criterion => (
                       <Button
                         key={criterion}
-                        variant={config.judgeCriteria?.includes(criterion as any) ? "default" : "outline"}
+                        variant={config.judgeCriteria?.includes(criterion as "accuracy" | "cost" | "latency" | "clarity" | "creativity" | "practicality") ? "default" : "outline"}
                         size="sm"
                         onClick={() => {
                           const current = config.judgeCriteria || [];
-                          if (current.includes(criterion as any)) {
+                          if (current.includes(criterion as "accuracy" | "cost" | "latency" | "clarity" | "creativity" | "practicality")) {
                             setConfig(prev => ({
                               ...prev,
-                              judgeCriteria: current.filter(c => c !== criterion) as any
+                              judgeCriteria: current.filter(c => c !== criterion) as ("accuracy" | "cost" | "latency" | "clarity" | "creativity" | "practicality")[]
                             }));
                           } else {
                             setConfig(prev => ({
                               ...prev,
-                              judgeCriteria: [...current, criterion] as any
+                              judgeCriteria: [...current, criterion as "accuracy" | "cost" | "latency" | "clarity" | "creativity" | "practicality"] as ("accuracy" | "cost" | "latency" | "clarity" | "creativity" | "practicality")[]
                             }));
                           }
                         }}

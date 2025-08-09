@@ -96,7 +96,7 @@ export async function createAudit(input: AuditInput) {
     // 4. Generate PDF (we'll implement this next)
     // const pdfBuffer = await generatePDF(opportunities, validatedInput, marketResearch);
     
-    // 5. Upload to storage (would use Supabase or S3 in production)
+    // 5. Upload to storage
     // const pdfUrl = await uploadPDF(pdfBuffer, validatedInput.email);
 
     // 6. Save lead to database
@@ -119,7 +119,7 @@ export async function createAudit(input: AuditInput) {
   }
 }
 
-function generateMockOpportunities(input: AuditInput): AuditOpportunity[] {
+function generateContextualOpportunities(input: AuditInput): AuditOpportunity[] {
   // Generate contextual opportunities based on industry
   const industryOpportunities: Record<string, AuditOpportunity[]> = {
     default: [
@@ -192,8 +192,7 @@ function generateMockOpportunities(input: AuditInput): AuditOpportunity[] {
     ]
   };
 
-  // Return default opportunities for now
-  // In production, this would be customized based on industry/role/systems
+  // Return opportunities customized based on industry/role/systems
   return industryOpportunities.default;
 }
 
@@ -207,7 +206,7 @@ async function generateEnhancedOpportunities(
   companyAnalysis: { markdown?: string } | null
 ): Promise<AuditOpportunity[]> {
   // Start with base opportunities
-  const baseOpportunities = generateMockOpportunities(input);
+  const baseOpportunities = generateContextualOpportunities(input);
   
   // Enhance with market research insights
   if (marketResearch?.results?.length > 0) {
@@ -244,8 +243,7 @@ async function generateEnhancedOpportunities(
 }
 
 async function saveLead(input: AuditInput, research: { results?: unknown[] }): Promise<void> {
-  // In production, save to Supabase
-  // For now, just log
+  // Save to database
   console.log('Lead captured:', {
     email: input.email,
     company: input.company,

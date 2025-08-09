@@ -179,7 +179,7 @@ export async function generateWireframe(
     position: { x: number; y: number };
     size: { width: number; height: number };
     content: string;
-    style?: Record<string, any>;
+    style?: Record<string, string | number>;
   }>;
   layout: string;
   interactions: string[];

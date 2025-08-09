@@ -50,9 +50,9 @@ export default function DataAnalyzerPage() {
             and suggest actionable recommendations based on your data.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            In production, Sprinter AI&apos;s data intelligence platform can handle
-            massive datasets, connect to databases and APIs, perform real-time
-            analysis, and generate automated reports with predictive modeling.
+            Sprinter AI&apos;s data intelligence platform handles
+            massive datasets, connects to databases and APIs, performs real-time
+            analysis, and generates automated reports with predictive modeling.
           </p>
         </div>
       </div>

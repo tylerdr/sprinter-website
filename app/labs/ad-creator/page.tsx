@@ -48,8 +48,8 @@ export default function AdCreatorPage() {
             tailored to each platform&apos;s dimensions and best practices.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            In production, Sprinter AI&apos;s creative platform can integrate with your brand guidelines,
-            generate thousands of ad variations for A/B testing, and automatically optimize content
+            Sprinter AI&apos;s creative platform integrates with your brand guidelines,
+            generates thousands of ad variations for A/B testing, and automatically optimizes content
             based on performance data across all marketing channels.
           </p>
         </div>

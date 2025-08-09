@@ -110,7 +110,7 @@ const JOURNEY_TEMPLATES = [
 ];
 
 // Custom Node Component
-function CustomNode({ data, type }: { data: any; type: string }) {
+function CustomNode({ data, type }: { data: { label: string; description?: string }; type: string }) {
   const nodeType = NODE_TYPES[type as keyof typeof NODE_TYPES];
   const Icon = nodeType?.icon || Box;
 
@@ -144,8 +144,16 @@ const nodeTypes = {
 };
 
 // ConstrUX Wireframe Component
+interface WireframeElement {
+  id: string;
+  type: string;
+  position: { x: number; y: number };
+  size: { width: number; height: number };
+  content: string;
+}
+
 function ConstrUXPanel({ selectedNode }: { selectedNode: Node | null }) {
-  const [wireframeElements, setWireframeElements] = useState<any[]>([]);
+  const [wireframeElements, setWireframeElements] = useState<WireframeElement[]>([]);
   const [selectedElement, setSelectedElement] = useState<string | null>(null);
 
   const addWireframeElement = (type: string) => {
@@ -281,7 +289,7 @@ function StoryboardingFlow() {
     []
   );
 
-  const onNodeClick = useCallback((event: any, node: Node) => {
+  const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
     setSelectedNode(node);
   }, []);
 
