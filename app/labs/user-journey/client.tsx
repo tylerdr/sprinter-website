@@ -27,8 +27,7 @@ import {
   CheckCircle2,
   Monitor,
   RefreshCw,
-  Download,
-  Upload
+  Download
 } from "lucide-react";
 
 // Node types for user journey
@@ -237,7 +236,7 @@ export function UserJourneyClient() {
     <>
       <h3>How User Journey Mapping Works</h3>
       <p>
-        Create visual representations of your customer's experience across all touchpoints.
+        Create visual representations of your customer&apos;s experience across all touchpoints.
         Our AI-powered journey mapper helps you identify pain points, optimize conversions,
         and design better user experiences.
       </p>

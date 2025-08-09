@@ -10,7 +10,7 @@ export function WorkflowToolClient() {
       <p>
         Map out your business workflow step by step, and our AI will analyze
         each stage to identify opportunities for automation and augmentation. 
-        We'll show you exactly where AI agents can streamline operations, 
+        We&apos;ll show you exactly where AI agents can streamline operations, 
         reduce errors, and accelerate your processes.
       </p>
       <h4>Key Features</h4>
