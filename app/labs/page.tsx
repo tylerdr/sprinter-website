@@ -256,6 +256,14 @@ export default function LabsPage() {
     ? labs 
     : labs.filter(lab => lab.category === activeCategory);
 
+  // Calculate counts for each category
+  const categoryCounts = categories.reduce((acc, category) => {
+    acc[category.id] = category.id === "all" 
+      ? labs.length 
+      : labs.filter(lab => lab.category === category.id).length;
+    return acc;
+  }, {} as Record<string, number>);
+
   return (
     <div className="min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6">
@@ -270,7 +278,7 @@ export default function LabsPage() {
         </div>
 
         {/* Sticky Category Navigation */}
-        <div className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/10 mb-8 sm:mb-12">
+        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-md border-b border-border/10 mb-8 sm:mb-12">
           <div className="container mx-auto px-4 sm:px-6 py-4">
             <div className="flex overflow-x-auto scrollbar-hide gap-2 sm:gap-4 pb-2">
               {categories.map((category) => (
@@ -282,14 +290,18 @@ export default function LabsPage() {
                       ? "bg-brand-gradient text-primary-foreground shadow-lg"
                       : "bg-card/30 text-muted-foreground hover:bg-card/50 hover:text-foreground"
                   }`}
-                  aria-label={`Filter by ${category.name}: ${category.description}`}
+                  aria-label={`Filter by ${category.name}: ${category.description} (${categoryCounts[category.id]} items)`}
                 >
-                  {category.name}
-                  {activeCategory === category.id && (
-                    <span className="ml-2 text-xs opacity-80">
-                      {filteredLabs.length}
+                  <span className="flex items-center gap-2">
+                    {category.name}
+                    <span className={`text-xs px-1.5 py-0.5 rounded-full ${
+                      activeCategory === category.id 
+                        ? "bg-white/20 text-white" 
+                        : "bg-muted-foreground/20"
+                    }`}>
+                      {categoryCounts[category.id]}
                     </span>
-                  )}
+                  </span>
                 </button>
               ))}
             </div>
@@ -353,7 +365,7 @@ export default function LabsPage() {
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
             role="list"
           >
-            {filteredLabs.filter(lab => !lab.featured).map((lab) => (
+            {filteredLabs.filter(lab => activeCategory === "all" ? !lab.featured : true).map((lab) => (
               <div key={lab.title} className="w-full" role="listitem">
                 <Link
                   href={lab.href}
