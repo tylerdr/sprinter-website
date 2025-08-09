@@ -1,10 +1,22 @@
 'use client';
 
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star } from "lucide-react";
 import { useState } from "react";
 
 const labs = [
+  // Featured - High-value lead magnets
+  {
+    icon: Sparkles,
+    title: "AI Opportunity Audit",
+    description:
+      "Get a personalized AI roadmap with your top 3 opportunities, ROI projections, and 30-day action plan. Takes 10 minutes.",
+    href: "/labs/opportunity-audit",
+    gradient: "from-yellow-500 to-orange-600",
+    category: "advisory",
+    actionVerb: "Start",
+    featured: true,
+  },
   // Agents Category
   {
     icon: Bot,
@@ -164,20 +176,99 @@ const labs = [
     category: "creative",
     actionVerb: "Create",
   },
+  
+  // Play Category - Fun & Viral Games
+  {
+    icon: Gamepad2,
+    title: "Pitch Golf",
+    description:
+      "You get a random market + constraint. 3 \"strokes\" (features) to make it viable. AI scores novelty, feasibility, and moat.",
+    href: "/labs/pitch-golf",
+    gradient: "from-lime-500 to-green-600",
+    category: "play",
+    actionVerb: "Play",
+  },
+  {
+    icon: Gamepad2,
+    title: "Market Map Jam",
+    description:
+      "Drag competitors on a 2x2 grid (Price vs Speed). AI suggests white-space opportunities. Export your market analysis.",
+    href: "/labs/market-map",
+    gradient: "from-teal-500 to-cyan-600",
+    category: "play",
+    actionVerb: "Map",
+  },
+  {
+    icon: Gamepad2,
+    title: "Agent Battle",
+    description:
+      "Two agent designs compete on accuracy, cost, and latency. Learn trade-offs while having fun. Export winning designs.",
+    href: "/labs/agent-battle",
+    gradient: "from-red-500 to-pink-600",
+    category: "play",
+    actionVerb: "Battle",
+  },
+  {
+    icon: Gamepad2,
+    title: "Prompt Golf",
+    description:
+      "Minimize tokens & latency for target outputs. Compete on the leaderboard. Perfect for learning prompt engineering.",
+    href: "/labs/prompt-golf",
+    gradient: "from-indigo-500 to-blue-600",
+    category: "play",
+    actionVerb: "Golf",
+  },
+  {
+    icon: Gamepad2,
+    title: "Idea Derby",
+    description:
+      "Multiplayer Shark Tank. Submit 60-sec pitches, AI judges. Winners get a templated 10-day implementation plan.",
+    href: "/labs/idea-derby",
+    gradient: "from-purple-500 to-pink-600",
+    category: "play",
+    actionVerb: "Compete",
+  },
+  
+  // Advisory Category - Strategic Tools
+  {
+    icon: Sparkles,
+    title: "Web Presence Audit",
+    description:
+      "Check if your website is AI-readable. Analyze OG tags, structured data, RAG compatibility, and MCP endpoints.",
+    href: "/labs/web-audit",
+    gradient: "from-blue-500 to-indigo-600",
+    category: "advisory",
+    actionVerb: "Audit",
+  },
+  {
+    icon: Sparkles,
+    title: "Process Mining Workshop",
+    description:
+      "Map your workflows and discover automation opportunities. Get a prioritized list with effort/impact scores.",
+    href: "/labs/process-mining",
+    gradient: "from-emerald-500 to-teal-600",
+    category: "advisory",
+    actionVerb: "Map",
+  },
 ];
 
 const categories = [
   { id: "all", name: "All", description: "View all AI demos" },
+  { id: "advisory", name: "Advisory", description: "Strategic AI assessments and planning" },
   { id: "agents", name: "Agents", description: "AI agent workflows and automation" },
   { id: "docs", name: "Docs", description: "Document processing and analysis" },
   { id: "data", name: "Data", description: "Data analysis and calculations" },
   { id: "voice", name: "Voice", description: "Voice AI and conversation" },
   { id: "creative", name: "Creative", description: "Creative AI tools and games" },
+  { id: "play", name: "Play", description: "Fun AI games and challenges" },
 ];
 
 export default function LabsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
 
+  const featuredLabs = labs.filter(lab => lab.featured);
+  const regularLabs = labs.filter(lab => !lab.featured);
+  
   const filteredLabs = activeCategory === "all" 
     ? labs 
     : labs.filter(lab => lab.category === activeCategory);
@@ -236,12 +327,50 @@ export default function LabsPage() {
             </div>
           )}
 
+          {/* Featured Lab (only show when viewing all) */}
+          {activeCategory === "all" && featuredLabs.length > 0 && (
+            <div className="mb-12">
+              {featuredLabs.map((lab) => (
+                <div key={lab.title} className="relative">
+                  <div className="absolute -top-3 left-6 z-10">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-500 text-black shadow-lg">
+                      <Star className="w-3 h-3" />
+                      FEATURED
+                    </span>
+                  </div>
+                  <Link
+                    href={lab.href}
+                    className="group block p-8 rounded-2xl bg-gradient-to-br from-yellow-500/10 to-orange-600/10 border-2 border-yellow-500/30 backdrop-blur-sm hover:border-yellow-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-500/20"
+                  >
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${lab.gradient} group-hover:scale-110 transition-transform duration-300`}>
+                        <lab.icon className="w-10 h-10 text-primary-foreground" />
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="text-3xl font-bold mb-3 group-hover:gradient-text transition-all duration-300">
+                          {lab.title}
+                        </h2>
+                        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+                          {lab.description}
+                        </p>
+                        <div className="flex items-center gap-2 text-yellow-500 font-semibold text-lg">
+                          {lab.actionVerb} now
+                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* Responsive Grid */}
           <div
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
             role="list"
           >
-            {filteredLabs.map((lab) => (
+            {filteredLabs.filter(lab => !lab.featured).map((lab) => (
               <div key={lab.title} className="w-full" role="listitem">
                 <Link
                   href={lab.href}

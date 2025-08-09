@@ -40,6 +40,12 @@ const workItems = [
 
 const labItems = [
   {
+    title: "⭐ AI Opportunity Audit",
+    href: "/labs/opportunity-audit",
+    description: "Get your personalized AI roadmap in 10 minutes",
+    featured: true,
+  },
+  {
     title: "Agent Simulator",
     href: "/labs/agent-simulator",
     description: "Test AI agent workflows in real-time",
@@ -55,9 +61,25 @@ const labItems = [
     description: "Generate and explore AI-powered ideas",
   },
   {
-    title: "Sketch Studio",
-    href: "/labs/sketch-studio",
-    description: "Create AI-generated visual concepts",
+    title: "Pitch Golf",
+    href: "/labs/pitch-golf",
+    description: "3 strokes to make your idea viable",
+  },
+  {
+    title: "Document Intelligence",
+    href: "/labs/document-intelligence",
+    description: "Extract insights from any document",
+  },
+  {
+    title: "ROI Calculator",
+    href: "/labs/roi-calculator",
+    description: "Calculate your AI automation savings",
+  },
+  {
+    title: "View All Labs →",
+    href: "/labs",
+    description: "Explore all AI demos and tools",
+    isViewAll: true,
   },
 ];
 
@@ -156,6 +178,10 @@ export function MainNavigation() {
                           key={item.title}
                           title={item.title}
                           href={item.href}
+                          className={cn(
+                            item.featured && "bg-yellow-500/10 border border-yellow-500/20",
+                            item.isViewAll && "col-span-2 bg-brand/5 border border-brand/20"
+                          )}
                         >
                           {item.description}
                         </ListItem>

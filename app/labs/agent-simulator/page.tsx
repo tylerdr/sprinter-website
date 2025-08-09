@@ -3,6 +3,7 @@ import { Bot } from "lucide-react";
 import { generateMetadata as createSEOMetadata } from "@/lib/seo";
 import { SEO } from "@/lib/constants";
 import AgentSimulator from "@/components/labs/AgentSimulator";
+import { LabLayout } from "@/components/labs/LabLayout";
 
 export const metadata: Metadata = createSEOMetadata({
   title: "Agent Simulator - Interactive AI Demo | Sprinter AI",
@@ -18,9 +19,13 @@ export const metadata: Metadata = createSEOMetadata({
 
 export default function AgentSimulatorPage() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <div className="text-center mb-8 sm:mb-12">
+    <LabLayout 
+      title="Agent Simulator" 
+      description="Watch multiple AI agents collaborate in parallel"
+      category="agents"
+    >
+      <div className="space-y-8">
+        <div className="text-center">
           <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-brand-10 border border-brand-30 mb-4 sm:mb-6">
             <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-brand" />
             <span className="text-xs sm:text-sm font-medium text-brand">
@@ -56,6 +61,6 @@ export default function AgentSimulatorPage() {
           </p>
         </div>
       </div>
-    </div>
+    </LabLayout>
   );
 }

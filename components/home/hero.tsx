@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Zap } from "lucide-react";
+import { ArrowRight, Cpu, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
 import { ClientProofBand } from "@/components/home/client-proof-band";
 import { useEffect, useState } from "react";
@@ -183,8 +183,12 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0"
           >
             <Button asChild variant="gradient" className="px-8 py-4 text-base">
-              <Link href="/contact" className="group">
-                Start a 10-Day Sprint
+              <Link href="/labs/opportunity-audit" className="group">
+                <Sparkles
+                  className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
+                  aria-hidden="true"
+                />
+                Get Your AI Opportunity Audit
                 <ArrowRight
                   className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   aria-hidden="true"
@@ -192,12 +196,8 @@ export function Hero() {
               </Link>
             </Button>
             <Button asChild variant="glass" className="px-8 py-4 text-base">
-              <Link href="/labs" className="group">
-                <Cpu
-                  className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
-                  aria-hidden="true"
-                />
-                See Live Demos
+              <Link href="/contact" className="group">
+                Start a 10-Day Sprint
               </Link>
             </Button>
           </motion.div>
