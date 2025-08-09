@@ -7,10 +7,6 @@ import { Button } from "@/components/ui/button";
 import { ShareMenu } from "@/components/labs/share-menu";
 
 export function AgentSimulatorClient() {
-  const handleFullscreen = () => {
-    document.documentElement.requestFullscreen();
-  };
-
   const exampleScenarios = [
     { label: "Plan a one-day conference", prompt: "Organize a 200-person AI conference in San Francisco" },
     { label: "Summarize AI trends", prompt: "Analyze top AI research papers from last month" },
@@ -30,8 +26,7 @@ export function AgentSimulatorClient() {
         <DeviceFrame 
           title="Agent Simulator" 
           onShare={() => {}} 
-          onEmbed={() => {}} 
-          onFullscreen={handleFullscreen}
+          onEmbed={() => {}}
         >
           <AgentSimulator />
         </DeviceFrame>
