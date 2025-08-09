@@ -24,18 +24,21 @@ const labsSubmenu = [
     ]
   },
   {
-    category: "Advisory",
+    category: "Featured",
     items: [
-      { href: "/labs/web-audit", label: "Web Presence Audit", description: "Check AI-readability", icon: Sparkles },
-      { href: "/labs/process-mining", label: "Process Mining", description: "Find automation opportunities", icon: Sparkles },
+      { href: "/labs/opportunity-audit", label: "AI Opportunity Audit", description: "Get your AI roadmap", icon: Sparkles },
+      { href: "/labs/agent-battle", label: "Agent Battle", description: "AI vs AI debates", icon: Gamepad2 },
+      { href: "/labs/tiny-town", label: "Tiny Town", description: "Simulate AI NPCs", icon: Bot },
+      { href: "/labs/vibe-coding", label: "Vibe Coding", description: "Generate UI components", icon: Palette },
     ]
   },
   {
-    category: "Agents",
+    category: "Agents & Workflows",
     items: [
       { href: "/labs/agent-simulator", label: "Agent Simulator", description: "Watch AI agents collaborate", icon: Bot },
       { href: "/labs/agent-playground", label: "Agent Playground", description: "Build workflows visually", icon: Bot },
       { href: "/labs/ai-assistant", label: "AI Assistant", description: "Chat with our AI", icon: Bot },
+      { href: "/labs/storyboarding", label: "Storyboarding", description: "Map user journeys", icon: Bot },
     ]
   },
   {
@@ -44,14 +47,16 @@ const labsSubmenu = [
       { href: "/labs/document-intelligence", label: "Document Intelligence", description: "Extract insights from PDFs", icon: FileText },
       { href: "/labs/data-analyzer", label: "Data Analyzer", description: "Analyze CSV/Excel files", icon: BarChart3 },
       { href: "/labs/roi-calculator", label: "ROI Calculator", description: "Calculate AI savings", icon: BarChart3 },
+      { href: "/labs/code-review", label: "Code Review", description: "AI code analysis", icon: FileText },
     ]
   },
   {
     category: "Creative & Play",
     items: [
       { href: "/labs/ideation", label: "Ideation Lab", description: "AI brainstorming games", icon: Gamepad2 },
-      { href: "/labs/pitch-golf", label: "Pitch Golf", description: "3 strokes to viability", icon: Gamepad2 },
       { href: "/labs/sketch-studio", label: "Sketch Studio", description: "AI-enhanced drawing", icon: Palette },
+      { href: "/labs/music-studio", label: "Music Studio", description: "Create AI music", icon: Palette },
+      { href: "/labs/ad-creator", label: "Ad Creator", description: "Generate social ads", icon: Palette },
     ]
   },
 ];

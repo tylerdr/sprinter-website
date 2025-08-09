@@ -177,79 +177,62 @@ const labs = [
     actionVerb: "Create",
   },
   
-  // Play Category - Fun & Viral Games
-  {
-    icon: Gamepad2,
-    title: "Pitch Golf",
-    description:
-      "You get a random market + constraint. 3 \"strokes\" (features) to make it viable. AI scores novelty, feasibility, and moat.",
-    href: "/labs/pitch-golf",
-    gradient: "from-lime-500 to-green-600",
-    category: "play",
-    actionVerb: "Play",
-  },
-  {
-    icon: Gamepad2,
-    title: "Market Map Jam",
-    description:
-      "Drag competitors on a 2x2 grid (Price vs Speed). AI suggests white-space opportunities. Export your market analysis.",
-    href: "/labs/market-map",
-    gradient: "from-teal-500 to-cyan-600",
-    category: "play",
-    actionVerb: "Map",
-  },
+  // Play Category - Fun & Interactive Experiences
   {
     icon: Gamepad2,
     title: "Agent Battle",
     description:
-      "Two agent designs compete on accuracy, cost, and latency. Learn trade-offs while having fun. Export winning designs.",
+      "Two AI agents debate head-to-head on any topic. Watch GPT-4 vs Claude compete while an AI judge scores each round. Export transcripts and insights.",
     href: "/labs/agent-battle",
     gradient: "from-red-500 to-pink-600",
     category: "play",
     actionVerb: "Battle",
+    featured: true,
   },
   {
-    icon: Gamepad2,
-    title: "Prompt Golf",
+    icon: Blocks,
+    title: "Tiny Town",
     description:
-      "Minimize tokens & latency for target outputs. Compete on the leaderboard. Perfect for learning prompt engineering.",
-    href: "/labs/prompt-golf",
-    gradient: "from-indigo-500 to-blue-600",
+      "Simulate a miniature world with AI-powered NPCs. Watch agents interact, optimize workflows, and discover bottlenecks in real-time operations.",
+    href: "/labs/tiny-town",
+    gradient: "from-emerald-500 to-teal-600",
     category: "play",
-    actionVerb: "Golf",
+    actionVerb: "Simulate",
+    featured: true,
   },
   {
-    icon: Gamepad2,
-    title: "Idea Derby",
+    icon: Palette,
+    title: "Vibe Coding",
     description:
-      "Multiplayer Shark Tank. Submit 60-sec pitches, AI judges. Winners get a templated 10-day implementation plan.",
-    href: "/labs/idea-derby",
-    gradient: "from-purple-500 to-pink-600",
-    category: "play",
-    actionVerb: "Compete",
+      "Describe any UI component and watch AI generate production-ready code instantly. Choose framework, style, and export to your project.",
+    href: "/labs/vibe-coding",
+    gradient: "from-purple-500 to-indigo-600",
+    category: "creative",
+    actionVerb: "Generate",
+    featured: true,
+  },
+  {
+    icon: Workflow,
+    title: "Storyboarding & ConstrUX",
+    description:
+      "Map user journeys visually with React Flow, design wireframes for each screen, and simulate the complete experience flow with AI assistance.",
+    href: "/labs/storyboarding",
+    gradient: "from-blue-500 to-cyan-600",
+    category: "creative",
+    actionVerb: "Design",
+    featured: true,
+  },
+  {
+    icon: Blocks,
+    title: "Component Studio",
+    description:
+      "Build AI-powered React components visually. Drag, drop, and configure to create custom UI elements with intelligent behavior.",
+    href: "/labs/component-studio",
+    gradient: "from-indigo-500 to-purple-600",
+    category: "creative",
+    actionVerb: "Build",
   },
   
-  // Advisory Category - Strategic Tools
-  {
-    icon: Sparkles,
-    title: "Web Presence Audit",
-    description:
-      "Check if your website is AI-readable. Analyze OG tags, structured data, RAG compatibility, and MCP endpoints.",
-    href: "/labs/web-audit",
-    gradient: "from-blue-500 to-indigo-600",
-    category: "advisory",
-    actionVerb: "Audit",
-  },
-  {
-    icon: Sparkles,
-    title: "Process Mining Workshop",
-    description:
-      "Map your workflows and discover automation opportunities. Get a prioritized list with effort/impact scores.",
-    href: "/labs/process-mining",
-    gradient: "from-emerald-500 to-teal-600",
-    category: "advisory",
-    actionVerb: "Map",
-  },
 ];
 
 const categories = [

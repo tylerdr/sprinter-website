@@ -61,9 +61,24 @@ const labItems = [
     description: "Generate and explore AI-powered ideas",
   },
   {
-    title: "Pitch Golf",
-    href: "/labs/pitch-golf",
-    description: "3 strokes to make your idea viable",
+    title: "Agent Battle",
+    href: "/labs/agent-battle",
+    description: "Watch AI agents debate head-to-head",
+  },
+  {
+    title: "Tiny Town",
+    href: "/labs/tiny-town",
+    description: "Simulate a world with AI NPCs",
+  },
+  {
+    title: "Vibe Coding",
+    href: "/labs/vibe-coding",
+    description: "Generate UI components instantly",
+  },
+  {
+    title: "Storyboarding",
+    href: "/labs/storyboarding",
+    description: "Map user journeys visually",
   },
   {
     title: "Document Intelligence",
