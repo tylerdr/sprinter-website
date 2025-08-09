@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import Balancer from "react-wrap-balancer";
 import { 
   Bot, 
-  Brain, 
-  Database, 
-  Plug, 
-  Zap, 
   ArrowRight,
   CheckCircle,
   Home,
@@ -28,6 +26,12 @@ const products = [
     gradient: "from-blue-500 to-cyan-600",
     featured: true,
     isExternal: true,
+    screenshot: {
+      src: "/images/products/mortgageq-screenshot.svg",
+      alt: "MortgageQ.ai interface showing AI-powered lending guideline comparisons",
+      width: 400,
+      height: 300
+    }
   },
   {
     icon: Building2,
@@ -39,6 +43,12 @@ const products = [
     gradient: "from-purple-500 to-pink-600",
     featured: true,
     isExternal: true,
+    screenshot: {
+      src: "/images/products/cabomatic-screenshot.svg",
+      alt: "Cabomatic interface showing CAD-to-quote AI processing",
+      width: 400,
+      height: 300
+    }
   },
   {
     icon: Lightbulb,
@@ -50,6 +60,12 @@ const products = [
     gradient: "from-green-500 to-teal-600",
     featured: true,
     isExternal: true,
+    screenshot: {
+      src: "/images/products/amble-ideation-screenshot.svg",
+      alt: "Amble Ideation workshop interface with AI clustering visualization",
+      width: 400,
+      height: 300
+    }
   },
   {
     icon: FileText,
@@ -74,7 +90,7 @@ const products = [
 export function Products() {
   return (
     <section
-      className="py-12 sm:py-16 md:py-24 relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
       aria-labelledby="products-heading"
     >
       {/* Background gradient */}
@@ -92,28 +108,34 @@ export function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center space-y-12 md:space-y-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-brand-gradient/10 border border-brand-start/20 mb-4 sm:mb-6">
-            <Bot className="w-4 h-4 text-brand-start" />
-            <span className="text-xs sm:text-sm font-medium text-brand-start">
-              Core Products
-            </span>
-          </div>
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-brand-gradient/10 border border-brand-start/20">
+              <Bot className="w-4 h-4 text-brand-start" />
+              <span className="text-xs sm:text-sm font-semibold text-brand-start">
+                Core Products
+              </span>
+            </div>
 
-          <h2
-            id="products-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-          >
-            Live Products. <span className="gradient-text">Real Results.</span>
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            Experience our AI solutions in action. From live SaaS products to custom development services.
-          </p>
+            <h2
+              id="products-heading"
+              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight"
+            >
+              <Balancer>
+                Live Products. <span className="gradient-text">Real Results.</span>
+              </Balancer>
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed">
+              <Balancer>
+                Experience our AI solutions in action. From live SaaS products to custom development services.
+              </Balancer>
+            </p>
+          </div>
         </motion.div>
 
         {/* Featured Products (Real SaaS Products) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mt-16">
           {products.filter(product => product.featured).map((product, index) => (
             <motion.div
               key={product.title}
@@ -133,6 +155,20 @@ export function Products() {
                 </div>
 
                 <div className="flex flex-col h-full">
+                  {/* Product screenshot */}
+                  {product.screenshot && (
+                    <div className="mb-6 overflow-hidden rounded-lg border border-border/10">
+                      <Image
+                        src={product.screenshot.src}
+                        alt={product.screenshot.alt}
+                        width={product.screenshot.width}
+                        height={product.screenshot.height}
+                        className="w-full h-auto transition-transform hover:scale-105"
+                        priority
+                      />
+                    </div>
+                  )}
+
                   <div className="flex items-start gap-4 mb-6">
                     <div
                       className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${product.gradient} flex-shrink-0`}
@@ -142,10 +178,10 @@ export function Products() {
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all">
+                      <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all tracking-tight leading-tight">
                         {product.title}
                       </h3>
-                      <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
+                      <p className="text-muted-foreground mb-4 text-sm sm:text-base font-normal leading-relaxed">
                         {product.description}
                       </p>
                     </div>
@@ -184,17 +220,21 @@ export function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center space-y-4 mt-16"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold mb-2">
-            Custom <span className="gradient-text">AI Solutions</span>
+          <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight">
+            <Balancer>
+              Custom <span className="gradient-text">AI Solutions</span>
+            </Balancer>
           </h3>
-          <p className="text-muted-foreground">
-            Tailored AI platforms and services for your unique business needs.
+          <p className="text-muted-foreground font-normal leading-relaxed">
+            <Balancer>
+              Tailored AI platforms and services for your unique business needs.
+            </Balancer>
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto mt-8">
           {products.filter(product => !product.featured).map((product, index) => (
             <motion.div
               key={product.title}
@@ -215,10 +255,10 @@ export function Products() {
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all">
+                      <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all tracking-tight leading-tight">
                         {product.title}
                       </h3>
-                      <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
+                      <p className="text-muted-foreground mb-4 text-sm sm:text-base font-normal leading-relaxed">
                         {product.description}
                       </p>
                     </div>
@@ -256,14 +296,18 @@ export function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-center mt-8 sm:mt-12"
+          className="text-center mt-12"
         >
           <div className="p-6 rounded-xl border border-info/30 max-w-2xl mx-auto bg-info/5">
-            <h3 className="text-lg sm:text-xl font-bold mb-2">
-              Not sure which product fits your needs?
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 tracking-tight leading-tight">
+              <Balancer>
+                Not sure which product fits your needs?
+              </Balancer>
             </h3>
-            <p className="text-muted-foreground mb-4 text-sm sm:text-base">
-              Schedule a free 30-minute consultation to explore the best AI solution for your business.
+            <p className="text-muted-foreground mb-4 text-sm sm:text-base font-normal leading-relaxed">
+              <Balancer>
+                Schedule a free 30-minute consultation to explore the best AI solution for your business.
+              </Balancer>
             </p>
             <Link
               href="/contact"

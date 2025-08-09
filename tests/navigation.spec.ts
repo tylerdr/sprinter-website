@@ -6,7 +6,7 @@ test.describe('Navigation', () => {
     
     // Check homepage loads
     await expect(page).toHaveTitle(/Sprinter AI/);
-    await expect(page.locator('h1')).toContainText('Move at the Pace of AI');
+    await expect(page.locator('h1')).toContainText('Build at the pace of AI');
     
     // Navigate to About
     await page.click('text=About');

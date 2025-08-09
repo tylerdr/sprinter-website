@@ -5,7 +5,7 @@ test.describe('Homepage', () => {
     await page.goto('/');
     
     // Check hero content
-    await expect(page.locator('h1')).toContainText('Move at the Pace of AI');
+    await expect(page.locator('h1')).toContainText('Build at the pace of AI');
     await expect(page.locator('text=We build AI that handles repetitive tasks')).toBeVisible();
     
     // Check established badge

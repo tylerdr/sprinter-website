@@ -52,17 +52,17 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="tel:+14155551234"
+                  href="tel:+16156010782"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm"
                 >
                   <Phone className="w-5 h-5" aria-hidden="true" />
-                  <span>+1 (415) 555-1234</span>
+                  <span>+1 (615) 601-0782</span>
                 </a>
 
                 <div className="flex items-start gap-3 text-muted-foreground">
                   <MapPin className="w-5 h-5 mt-0.5" aria-hidden="true" />
                   <address className="not-italic">
-                    San Francisco, CA
+                    Brentwood, TN
                     <br />
                     United States
                   </address>

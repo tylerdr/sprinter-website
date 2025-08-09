@@ -289,7 +289,7 @@ export default async function UseCasePage({
                 href="/contact"
                 className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
               >
-                Get Started
+                Start a 10-Day Sprint
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </section>

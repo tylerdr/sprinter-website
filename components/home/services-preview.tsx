@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 import { Rocket, Lightbulb, Code, Presentation } from "lucide-react";
 
 const services = [
@@ -42,7 +43,7 @@ const services = [
 export function ServicesPreview() {
   return (
     <section
-      className="py-12 sm:py-16 md:py-24 relative"
+      className="py-16 md:py-24 relative"
       aria-labelledby="services-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -51,21 +52,27 @@ export function ServicesPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center space-y-12 md:space-y-16"
         >
-          <h2
-            id="services-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-          >
-            Our <span className="gradient-text">Services</span>
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            From vision to victory, we craft AI agents and data products that
-            supercharge your team and build unstoppable competitive advantage.
-          </p>
+          <div className="space-y-4">
+            <h2
+              id="services-heading"
+              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight"
+            >
+              <Balancer>
+                Our <span className="gradient-text">Services</span>
+              </Balancer>
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed">
+              <Balancer>
+                From vision to victory, we craft AI agents and data products that
+                supercharge your team and build unstoppable competitive advantage.
+              </Balancer>
+            </p>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto mt-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -85,10 +92,10 @@ export function ServicesPreview() {
                 >
                   <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all tracking-tight leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm sm:text-base font-normal leading-relaxed">
                   {service.description}
                 </p>
                 <span className="text-sm font-medium text-info group-hover:text-foreground flex items-center gap-1">
@@ -110,7 +117,7 @@ export function ServicesPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-center mt-8 sm:mt-12"
+          className="text-center mt-12"
         >
           <Link
             href="/services"

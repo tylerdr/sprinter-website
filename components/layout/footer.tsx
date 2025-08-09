@@ -22,7 +22,7 @@ export function Footer() {
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              {COMPANY_INFO.tagline}. One intelligent sprint at a time.
+              {COMPANY_INFO.tagline}
             </p>
             <div
               className="flex space-x-4"
@@ -149,7 +149,7 @@ export function Footer() {
             href="/contact"
             className="px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation text-sm inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
           >
-            Start Building
+            Start a 10-Day Sprint
           </Link>
         </div>
 

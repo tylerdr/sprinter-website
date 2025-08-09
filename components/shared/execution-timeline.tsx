@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
+import { IconBadge } from "@/components/ui/icon-badge";
 
 interface TimelineStep {
   id: string;
@@ -109,31 +111,37 @@ export function ExecutionTimeline() {
   const [expandedStep, setExpandedStep] = useState<string | null>("discovery");
 
   return (
-    <div className="py-16">
+    <div className="py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center space-y-12 md:space-y-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-10 border border-brand-30 mb-6">
-            <Code className="w-5 h-5 text-brand" />
-            <span className="text-sm font-medium text-brand">
-              Proven Execution Playbook
-            </span>
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-10 border border-brand-30">
+              <Code className="w-5 h-5 text-brand" />
+              <span className="text-sm font-semibold text-brand">
+                Proven Execution Playbook
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+              <Balancer>
+                From Idea to <span className="gradient-text">Production in 4 Weeks</span>
+              </Balancer>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
+              <Balancer>
+                Our battle-tested process delivers working AI systems fast. No lengthy 
+                discovery phases, no endless PowerPoints—just rapid iteration and real results.
+              </Balancer>
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            From Idea to <span className="gradient-text">Production in 4 Weeks</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our battle-tested process delivers working AI systems fast. No lengthy 
-            discovery phases, no endless PowerPoints—just rapid iteration and real results.
-          </p>
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {executionSteps.map((step, index) => {
               const isExpanded = expandedStep === step.id;
@@ -176,10 +184,10 @@ export function ExecutionTimeline() {
                             )} />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold mb-1">
+                            <h3 className="text-lg font-semibold mb-1 tracking-tight leading-tight">
                               {step.title}
                             </h3>
-                            <span className="text-sm text-brand font-medium">
+                            <span className="text-sm text-brand font-semibold tabular-nums">
                               {step.duration}
                             </span>
                           </div>
@@ -190,7 +198,7 @@ export function ExecutionTimeline() {
                         )} />
                       </div>
 
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground text-sm font-normal leading-relaxed">
                         {step.description}
                       </p>
 
@@ -202,10 +210,13 @@ export function ExecutionTimeline() {
                           transition={{ duration: 0.3 }}
                         >
                           <div className="border-t border-border/20 pt-4 mt-4">
-                            <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                              <Users className="w-4 h-4" />
-                              What We Do
-                            </h4>
+                            <div className="mb-3">
+                              <IconBadge
+                                icon={<Users className="w-4 h-4" />}
+                                title="What We Do"
+                                className="mb-0"
+                              />
+                            </div>
                             <ul className="space-y-2 mb-4">
                               {step.details.map((detail, i) => (
                                 <li key={i} className="flex items-start gap-2">
@@ -246,13 +257,17 @@ export function ExecutionTimeline() {
           className="mt-12 p-8 rounded-2xl border border-brand-30 bg-brand-10 text-center"
         >
           <Clock className="w-12 h-12 text-brand mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-3">
-            Most Clients See ROI in 60 Days
+          <h3 className="text-2xl font-semibold mb-3 tracking-tight leading-tight">
+            <Balancer>
+              Most Clients See ROI in 60 Days
+            </Balancer>
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Our rapid deployment approach means you&apos;re not waiting months to see results. 
-            We focus on quick wins that demonstrate value while building toward 
-            transformational outcomes.
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto font-normal leading-relaxed">
+            <Balancer>
+              Our rapid deployment approach means you&apos;re not waiting months to see results. 
+              We focus on quick wins that demonstrate value while building toward 
+              transformational outcomes.
+            </Balancer>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

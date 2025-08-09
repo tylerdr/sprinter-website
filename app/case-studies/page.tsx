@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   TrendingUp,
@@ -11,6 +12,7 @@ import {
   Building2,
   Heart,
 } from "lucide-react";
+import { Stat } from "@/components/ui/stat";
 
 import { caseStudies as caseStudyData } from "@/lib/case-studies-data";
 import { getPageMetadata } from "@/lib/seo";
@@ -39,9 +41,12 @@ const caseStudies = caseStudyData.map((c) => ({
   solution: c.solution,
   results: c.results,
   testimonial: c.testimonial,
+  testimonialAuthor: c.testimonialAuthor,
   icon: iconByCategory[c.category] ?? Zap,
   gradient: c.gradient,
   features: c.features,
+  screenshot: c.screenshot,
+  architectureDiagram: c.architectureDiagram,
 }));
 
 export default function CaseStudiesPage() {
@@ -72,6 +77,17 @@ export default function CaseStudiesPage() {
               <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all">
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
                   <div className="xl:col-span-2">
+                    {/* Screenshot */}
+                    <div className="mb-6 rounded-xl overflow-hidden bg-white/5 border border-white/10">
+                      <Image
+                        src={study.screenshot}
+                        alt={`${study.title} screenshot`}
+                        width={800}
+                        height={400}
+                        className="w-full h-48 sm:h-64 object-cover"
+                        priority={caseStudies.indexOf(study) < 2}
+                      />
+                    </div>
                     <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                       <div
                         className={`p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${study.gradient} flex-shrink-0`}
@@ -135,8 +151,13 @@ export default function CaseStudiesPage() {
                       </div>
                     </div>
 
-                    <blockquote className="p-3 sm:p-4 rounded-lg bg-card/5 border-l-2 border-info italic text-gray-300 text-sm sm:text-base leading-relaxed">
-                      &quot;{study.testimonial}&quot;
+                    <blockquote className="p-3 sm:p-4 rounded-lg bg-card/5 border-l-2 border-info">
+                      <p className="italic text-gray-300 text-sm sm:text-base leading-relaxed mb-2">
+                        &quot;{study.testimonial}&quot;
+                      </p>
+                      <cite className="text-xs text-gray-500 not-italic font-medium">
+                        — {study.testimonialAuthor}
+                      </cite>
                     </blockquote>
                   </div>
 
@@ -147,17 +168,12 @@ export default function CaseStudiesPage() {
                       </h3>
                       <div className="grid grid-cols-2 xl:grid-cols-1 gap-3 sm:gap-4 mb-4 sm:mb-6">
                         {study.results.map((result) => (
-                          <div
+                          <Stat
                             key={result.label}
-                            className="p-3 sm:p-4 rounded-lg border border-success-30 bg-success-10"
-                          >
-                            <div className="text-2xl sm:text-3xl font-bold gradient-text mb-1">
-                              {result.metric}
-                            </div>
-                            <div className="text-xs sm:text-sm text-gray-400">
-                              {result.label}
-                            </div>
-                          </div>
+                            label={result.label}
+                            value={result.metric}
+                            className="border-success-30 bg-success-10 text-success"
+                          />
                         ))}
                       </div>
 
@@ -205,7 +221,7 @@ export default function CaseStudiesPage() {
               href="/labs"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base"
             >
-              Try Our AI Demos
+              See Live Demos
             </Link>
           </div>
         </div>

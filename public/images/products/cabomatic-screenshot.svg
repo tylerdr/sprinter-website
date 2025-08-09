@@ -1,0 +1,32 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="12" fill="#0f0f0f" stroke="#27272a" stroke-width="1"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="400" height="50" rx="12" fill="#18181b"/>
+  <rect x="15" y="15" width="70" height="20" rx="4" fill="#a855f7"/>
+  <text x="20" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white">Cabomatic</text>
+  
+  <!-- Upload Area -->
+  <rect x="20" y="70" width="170" height="100" rx="8" fill="#27272a" stroke="#3f3f46" stroke-dasharray="4,4"/>
+  <text x="70" y="120" font-family="Arial, sans-serif" font-size="12" fill="#71717a">Upload CAD</text>
+  
+  <!-- Arrow -->
+  <path d="M200 115 L220 115 M215 110 L220 115 L215 120" stroke="#a855f7" stroke-width="2" fill="none"/>
+  
+  <!-- Results -->
+  <rect x="240" y="70" width="140" height="180" rx="8" fill="#1a1a1a" stroke="#27272a"/>
+  <text x="250" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f4f4f5">Multi-Manufacturer</text>
+  <text x="250" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f4f4f5">Quotes Generated</text>
+  
+  <!-- Quote cards -->
+  <rect x="250" y="120" width="120" height="30" rx="4" fill="#10b981/20" stroke="#10b981/40"/>
+  <text x="255" y="135" font-family="Arial, sans-serif" font-size="10" fill="#10b981">Manufacturer A: $1,450</text>
+  
+  <rect x="250" y="160" width="120" height="30" rx="4" fill="#3b82f6/20" stroke="#3b82f6/40"/>
+  <text x="255" y="175" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">Manufacturer B: $1,380</text>
+  
+  <rect x="250" y="200" width="120" height="30" rx="4" fill="#f59e0b/20" stroke="#f59e0b/40"/>
+  <text x="255" y="215" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">Manufacturer C: $1,520</text>
+  
+  <!-- Processing time -->
+  <text x="20" y="275" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Processed in 15 seconds</text>
+</svg>

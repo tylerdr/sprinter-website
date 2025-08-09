@@ -23,8 +23,8 @@ test.describe('Contact', () => {
     
     // Check contact info is displayed
     await expect(page.locator('text=hello@sprinter.ai')).toBeVisible();
-    await expect(page.locator('text=+1 (415) 555-1234')).toBeVisible();
-    await expect(page.locator('text=San Francisco, CA')).toBeVisible();
+    await expect(page.locator('text=+1 (615) 601-0782')).toBeVisible();
+    await expect(page.locator('text=Brentwood, TN')).toBeVisible();
     
     // Check Book Discovery Call section
     await expect(page.locator('text=Book a Discovery Call')).toBeVisible();

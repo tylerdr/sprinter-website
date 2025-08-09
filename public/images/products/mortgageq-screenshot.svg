@@ -1,0 +1,29 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="12" fill="#0f0f0f" stroke="#27272a" stroke-width="1"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="400" height="50" rx="12" fill="#18181b"/>
+  <rect x="15" y="15" width="60" height="20" rx="4" fill="#3b82f6"/>
+  <text x="20" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white">MortgageQ</text>
+  
+  <!-- Search Bar -->
+  <rect x="20" y="70" width="360" height="40" rx="8" fill="#27272a" stroke="#3f3f46"/>
+  <text x="30" y="92" font-family="Arial, sans-serif" font-size="14" fill="#71717a">Ask about Non-QM lending guidelines...</text>
+  
+  <!-- Results Cards -->
+  <rect x="20" y="130" width="170" height="120" rx="8" fill="#1a1a1a" stroke="#27272a"/>
+  <rect x="30" y="140" width="20" height="20" rx="4" fill="#10b981"/>
+  <text x="55" y="152" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f4f4f5">Lender A Guidelines</text>
+  <text x="30" y="170" font-family="Arial, sans-serif" font-size="10" fill="#71717a">DTI: Up to 50%</text>
+  <text x="30" y="185" font-family="Arial, sans-serif" font-size="10" fill="#71717a">Credit Score: 620+</text>
+  <text x="30" y="200" font-family="Arial, sans-serif" font-size="10" fill="#71717a">LTV: Up to 80%</text>
+  
+  <rect x="210" y="130" width="170" height="120" rx="8" fill="#1a1a1a" stroke="#27272a"/>
+  <rect x="220" y="140" width="20" height="20" rx="4" fill="#3b82f6"/>
+  <text x="245" y="152" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f4f4f5">Lender B Guidelines</text>
+  <text x="220" y="170" font-family="Arial, sans-serif" font-size="10" fill="#71717a">DTI: Up to 45%</text>
+  <text x="220" y="185" font-family="Arial, sans-serif" font-size="10" fill="#71717a">Credit Score: 640+</text>
+  <text x="220" y="200" font-family="Arial, sans-serif" font-size="10" fill="#71717a">LTV: Up to 75%</text>
+  
+  <!-- Time indicator -->
+  <text x="20" y="275" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Results in 2.3 seconds</text>
+</svg>

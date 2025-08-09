@@ -35,7 +35,7 @@ test.describe('About', () => {
     await expect(page.locator('text=Our Values')).toBeVisible();
     
     // Check specific values
-    await expect(page.locator('text=Move at the Pace of AI')).toBeVisible();
+    await expect(page.locator('text=Build at the pace of AI')).toBeVisible();
     await expect(page.locator('text=Human-Centered Design')).toBeVisible();
     await expect(page.locator('text=Create Abundance')).toBeVisible();
     await expect(page.locator('text=Purposeful Innovation')).toBeVisible();

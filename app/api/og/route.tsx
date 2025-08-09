@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     
     const title = searchParams.get('title') || 'Sprinter AI'
-    const description = searchParams.get('description') || 'Move at the Pace of AI'
+    const description = searchParams.get('description') || 'Build at the pace of AI'
     const type = searchParams.get('type') || 'default'
 
     return new ImageResponse(
@@ -120,7 +120,7 @@ export async function GET(request: NextRequest) {
                 fontWeight: '500',
               }}
             >
-              Move at the Pace of AI
+              Build at the pace of AI
             </div>
           </div>
 

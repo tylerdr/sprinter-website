@@ -187,7 +187,7 @@ export function MainNavigation() {
 
             <Button asChild variant="gradient" size="sm">
               <Link href="/contact" className="group">
-                Work With Us
+                Start a 10-Day Sprint
                 <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -307,7 +307,7 @@ export function MainNavigation() {
                 {/* CTA Button */}
                 <Button asChild variant="gradient" className="w-full">
                   <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Work With Us
+                    Start a 10-Day Sprint
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

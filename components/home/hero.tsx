@@ -5,7 +5,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Zap } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
+import { ClientProofBand } from "@/components/home/client-proof-band";
 import { useEffect, useState } from "react";
+import Balancer from "react-wrap-balancer";
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -143,31 +145,46 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
           >
-            Build Your{" "}
-            <span className="gradient-text block sm:inline">Unfair Advantage</span>
+            <Balancer>
+              Build Your{" "}
+              <span className="gradient-text block sm:inline">Unfair Advantage</span>
+            </Balancer>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 font-normal"
           >
-            Agentic AI turns unstructured data into decisions and outcomes—fast. 
-            Ship your first product in 10 days.
+            <Balancer>
+              Agentic AI turns unstructured data into decisions and outcomes—fast. 
+              Ship your first product in 10 days.
+            </Balancer>
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-base sm:text-lg text-muted-foreground/80 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed"
+          >
+            <Balancer>
+              We keep the human in the loop—but the point is progress. Let AI handle the repetitive so your team can compound what they do best.
+            </Balancer>
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0"
           >
             <Button asChild variant="gradient" className="px-8 py-4 text-base">
               <Link href="/contact" className="group">
-                Start Building
+                Start a 10-Day Sprint
                 <ArrowRight
                   className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   aria-hidden="true"
@@ -180,7 +197,7 @@ export function Hero() {
                   className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
                   aria-hidden="true"
                 />
-                Try a Demo
+                See Live Demos
               </Link>
             </Button>
           </motion.div>
@@ -190,6 +207,8 @@ export function Hero() {
             showAnimation={true}
             className="mt-12 sm:mt-16 md:mt-20 px-2 sm:px-0"
           />
+          
+          <ClientProofBand />
         </motion.div>
       </div>
 

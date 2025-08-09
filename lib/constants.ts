@@ -2,7 +2,7 @@
 
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "Move at the Pace of AI",
+  tagline: "Build at the pace of AI.",
   description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work they're uniquely capable of, not tasks AI can handle.",
   philosophy: "We believe human time is valuable. AI should handle repetitive tasks so people can focus on creative, strategic, and meaningful work that brings them joy and purpose.",
   founded: "2018",
@@ -30,7 +30,7 @@ export const NAVIGATION = {
     { href: "/labs", label: "AI Labs" },
     { href: "/blog", label: "Insights" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Work With Us" },
+    { href: "/contact", label: "Start a 10-Day Sprint" },
   ],
   footer: {
     products: [
@@ -111,7 +111,7 @@ export const CLIENTS = [
 ]
 
 export const SEO = {
-  title: "Sprinter AI - Move at the Pace of AI",
+  title: "Sprinter AI - Build at the pace of AI",
   description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks. Ship AI products in weeks, not months.",
   keywords: "AI consulting, AI development, autonomous agents, human-centered AI, AI acceleration, venture studio, AI products, purposeful work",
   ogImage: "/og-image.png", // Add this image later
@@ -124,7 +124,7 @@ export const SEO = {
 // Page-specific SEO metadata
 export const PAGE_SEO = {
   home: {
-    title: "Sprinter AI - Move at the Pace of AI | Human-Centered AI Solutions",
+    title: "Sprinter AI - Build at the pace of AI | Human-Centered AI Solutions",
     description: "Transform your business with AI that empowers people. We build AI systems that free humans from repetitive tasks to focus on meaningful work. 250% ROI in 60 days.",
     keywords: "AI consulting, autonomous agents, human-centered AI, AI development, venture studio, machine learning, AI transformation, purposeful work",
     ogTitle: "Sprinter AI - Building AI That Helps People",
@@ -166,7 +166,7 @@ export const PAGE_SEO = {
     ogTitle: "AI Insights for Human Flourishing - Sprinter AI",
   },
   contact: {
-    title: "Work With Us - Build AI That Helps People | Sprinter AI",
+    title: "Start a 10-Day Sprint - Build AI That Helps People | Sprinter AI",
     description: "Ready to build AI that empowers your team? Let's create technology that handles the mundane so humans can pursue the meaningful. Free consultation available.",
     keywords: "AI consulting contact, human-centered AI, hire AI experts, AI development services, autonomous agents, purposeful technology",
     ogTitle: "Build AI That Empowers People - Sprinter AI",

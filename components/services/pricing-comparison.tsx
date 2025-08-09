@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { Check, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 interface Feature {
   name: string;
   workshop: boolean | string;
+  advisory: boolean | string;
   sprint: boolean | string;
   enterprise: boolean | string;
   venture: boolean | string;
@@ -15,74 +17,52 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    name: "Discovery & Assessment",
-    workshop: true,
-    sprint: true,
-    enterprise: true,
-    venture: true
-  },
-  {
-    name: "Working Prototype",
+    name: "Prototype time",
     workshop: false,
+    advisory: false,
     sprint: "10 days",
     enterprise: "Multiple",
     venture: "Continuous"
   },
   {
-    name: "Production Deployment",
+    name: "Deployment",
     workshop: false,
-    sprint: true,
-    enterprise: true,
-    venture: true
+    advisory: "Guidance",
+    sprint: "Production",
+    enterprise: "Enterprise",
+    venture: "Full scale"
   },
   {
-    name: "Custom AI Models",
-    workshop: false,
-    sprint: "Pre-trained",
-    enterprise: "Custom trained",
+    name: "Data work",
+    workshop: "Assessment",
+    advisory: "Strategy",
+    sprint: "Integration",
+    enterprise: "Platform",
     venture: "Full stack"
   },
   {
-    name: "Team Training",
+    name: "Custom models",
+    workshop: false,
+    advisory: "Guidance",
+    sprint: "Pre-trained",
+    enterprise: "Custom trained",
+    venture: "Full development"
+  },
+  {
+    name: "Training",
     workshop: "Workshop",
-    sprint: "Included",
+    advisory: "Office hours",
+    sprint: "Team training",
     enterprise: "Full program",
     venture: "Team building"
   },
   {
-    name: "Post-Launch Support",
+    name: "Support",
     workshop: false,
+    advisory: "Weekly calls",
     sprint: "30 days",
     enterprise: "6 months",
     venture: "Ongoing"
-  },
-  {
-    name: "Source Code Ownership",
-    workshop: false,
-    sprint: true,
-    enterprise: true,
-    venture: "Shared"
-  },
-  {
-    name: "ROI Tracking",
-    workshop: "Projections",
-    sprint: true,
-    enterprise: true,
-    venture: true
-  },
-  {
-    name: "Dedicated Team",
-    workshop: false,
-    sprint: "2-4 weeks",
-    enterprise: "3-6 months",
-    venture: "Full-time"
-  },
-  {
-    name: "Strategic Advisory",
-    workshop: true,
-    sprint: false,
-    enterprise: true,
-    venture: true
   }
 ];
 
@@ -92,36 +72,45 @@ const packages = [
     name: "AI Discovery Workshop",
     price: "$5,000",
     duration: "1 Day",
-    description: "Find your AI quick wins",
+    description: "Find quick wins and go/no-go on the top 3 opportunities—then execute.",
     highlight: false,
-    cta: "Book Workshop"
+    cta: "Start a 10-Day Sprint"
+  },
+  {
+    id: "advisory",
+    name: "Advisory & Team Enablement",
+    price: "$20K/mo",
+    duration: "Ongoing",
+    description: "Ship faster without quality debt. We teach patterns, reviews, test scaffolds, and observability so 'vibe coded' features stick in production.",
+    highlight: false,
+    cta: "Start a 10-Day Sprint"
   },
   {
     id: "sprint",
     name: "AI Sprint",
     price: "$25-75K",
     duration: "2-4 Weeks",
-    description: "Ship production AI fast",
+    description: "Prototype in 10 days, deploy in 4 weeks, with real users and dashboards.",
     highlight: true,
-    cta: "Start Sprint"
+    cta: "Start a 10-Day Sprint"
   },
   {
     id: "enterprise",
     name: "Enterprise Transformation",
     price: "$150K+",
     duration: "3-6 Months",
-    description: "Full-scale AI integration",
+    description: "String sprints, unify data, harden governance.",
     highlight: false,
-    cta: "Transform Now"
+    cta: "Start a 10-Day Sprint"
   },
   {
     id: "venture",
     name: "Venture Partnership",
     price: "Equity",
     duration: "6-12 Months",
-    description: "Your technical co-founder",
+    description: "We're your technical co-founder. Code, team, infra, GTM—shoulder-to-shoulder.",
     highlight: false,
-    cta: "Partner With Us"
+    cta: "Start a 10-Day Sprint"
   }
 ];
 
@@ -172,7 +161,7 @@ export function PricingComparison() {
             </div>
             
             <div className="space-y-3 mb-6">
-              {features.slice(0, 5).map((feature) => {
+              {features.map((feature) => {
                 const value = feature[pkg.id as keyof Feature];
                 return (
                   <div key={feature.name} className="flex items-start gap-2">
@@ -211,44 +200,38 @@ export function PricingComparison() {
       </div>
 
       {/* Desktop Table View */}
-      <div className="hidden lg:block overflow-x-auto">
+      <div className="hidden lg:block">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="min-w-[900px]"
+          className="overflow-x-auto"
         >
-          <table className="w-full">
-            <thead>
-              <tr>
-                <th className="text-left p-4 font-medium text-muted-foreground">
-                  Features
-                </th>
+          <Table>
+            <TableHeader>
+              <TableRow className="border-b border-border/20">
+                <TableHead className="w-[200px] text-left font-medium text-muted-foreground">
+                  
+                </TableHead>
                 {packages.map((pkg) => (
-                  <th key={pkg.id} className="p-4">
+                  <TableHead key={pkg.id} className="text-center p-0">
                     <div className={cn(
-                      "p-4 rounded-t-xl",
+                      "p-4 m-2 rounded-xl relative",
                       pkg.highlight
                         ? "bg-brand-gradient"
-                        : "bg-card/5"
+                        : "bg-card/5 border border-border/10"
                     )}>
                       {pkg.highlight && (
-                        <div className="text-xs font-semibold text-primary-foreground mb-2">
-                          MOST POPULAR
+                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-brand text-white text-xs font-semibold rounded-full">
+                          Most Popular
                         </div>
                       )}
-                      <h3 className={cn(
+                      <div className={cn(
                         "text-lg font-bold mb-1",
                         pkg.highlight ? "text-primary-foreground" : ""
                       )}>
                         {pkg.name}
-                      </h3>
-                      <p className={cn(
-                        "text-sm mb-3",
-                        pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
-                      )}>
-                        {pkg.description}
-                      </p>
+                      </div>
                       <div className={cn(
                         "text-2xl font-bold mb-1",
                         pkg.highlight ? "text-primary-foreground" : "gradient-text"
@@ -256,30 +239,36 @@ export function PricingComparison() {
                         {pkg.price}
                       </div>
                       <div className={cn(
-                        "text-sm",
+                        "text-sm mb-3",
                         pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
                       )}>
                         {pkg.duration}
                       </div>
+                      <p className={cn(
+                        "text-xs leading-relaxed",
+                        pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
+                      )}>
+                        {pkg.description}
+                      </p>
                     </div>
-                  </th>
+                  </TableHead>
                 ))}
-              </tr>
-            </thead>
-            <tbody>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {features.map((feature, index) => (
-                <tr
+                <TableRow
                   key={feature.name}
                   className={cn(
                     "border-b border-border/10",
                     index % 2 === 0 ? "bg-card/5" : ""
                   )}
                 >
-                  <td className="p-4 font-medium text-sm">{feature.name}</td>
+                  <TableCell className="font-medium text-sm">{feature.name}</TableCell>
                   {packages.map((pkg) => {
                     const value = feature[pkg.id as keyof Feature];
                     return (
-                      <td key={pkg.id} className="p-4 text-center">
+                      <TableCell key={pkg.id} className="text-center">
                         {value === true ? (
                           <Check className="w-5 h-5 text-success mx-auto" />
                         ) : value === false ? (
@@ -289,15 +278,15 @@ export function PricingComparison() {
                             {value}
                           </span>
                         )}
-                      </td>
+                      </TableCell>
                     );
                   })}
-                </tr>
+                </TableRow>
               ))}
-              <tr>
-                <td className="p-4"></td>
+              <TableRow className="border-none">
+                <TableCell></TableCell>
                 {packages.map((pkg) => (
-                  <td key={pkg.id} className="p-4">
+                  <TableCell key={pkg.id} className="pt-6">
                     <Link
                       href="/contact"
                       className={cn(
@@ -310,11 +299,11 @@ export function PricingComparison() {
                       {pkg.cta}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
-                  </td>
+                  </TableCell>
                 ))}
-              </tr>
-            </tbody>
-          </table>
+              </TableRow>
+            </TableBody>
+          </Table>
         </motion.div>
       </div>
 

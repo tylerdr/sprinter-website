@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const exampleScenarios = [
-  "Plan a one-day tech conference in San Francisco",
+  "Plan a one-day tech conference in Nashville",
   "Research and summarize the latest AI trends",
   "Create a marketing campaign for a new AI product",
   "Analyze customer feedback and generate insights",

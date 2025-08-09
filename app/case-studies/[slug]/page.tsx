@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies-data";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { Stat } from "@/components/ui/stat";
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -42,7 +44,19 @@ export default async function CaseStudyPage({
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-3">{study.title}</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">{study.description}</p>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-8">{study.description}</p>
+          
+          {/* Hero Screenshot */}
+          <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+            <Image
+              src={study.screenshot}
+              alt={`${study.title} screenshot`}
+              width={1200}
+              height={600}
+              className="w-full h-64 md:h-96 object-cover"
+              priority
+            />
+          </div>
         </div>
 
         {/* Executive Summary */}
@@ -116,10 +130,31 @@ export default async function CaseStudyPage({
             {/* Testimonial */}
             <section>
               <h2 className="text-2xl font-bold mb-3">Client Voice</h2>
-              <blockquote className="p-4 rounded-lg bg-white/5 border-l-2 border-info italic text-gray-300">
-                &quot;{study.testimonial}&quot;
+              <blockquote className="p-4 rounded-lg bg-white/5 border-l-2 border-info">
+                <p className="italic text-gray-300 mb-2">
+                  &quot;{study.testimonial}&quot;
+                </p>
+                <cite className="text-sm text-gray-500 not-italic font-medium">
+                  — {study.testimonialAuthor}
+                </cite>
               </blockquote>
             </section>
+
+            {/* Architecture Diagram */}
+            {study.architectureDiagram && (
+              <section>
+                <h2 className="text-2xl font-bold mb-3">System Architecture</h2>
+                <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 p-4">
+                  <Image
+                    src={study.architectureDiagram}
+                    alt={`${study.title} architecture diagram`}
+                    width={800}
+                    height={500}
+                    className="w-full h-auto max-h-96 object-contain mx-auto"
+                  />
+                </div>
+              </section>
+            )}
 
             {/* Implementation Approach */}
             <section>
@@ -150,15 +185,12 @@ export default async function CaseStudyPage({
             <h3 className="text-sm font-semibold text-success mb-4">Results</h3>
             <div className="space-y-4 mb-8">
               {study.results.map((r) => (
-                <div
+                <Stat
                   key={r.label}
-                  className="p-4 rounded-lg border border-success-30 bg-success-10"
-                >
-                  <div className="text-3xl font-bold gradient-text mb-1">
-                    {r.metric}
-                  </div>
-                  <div className="text-sm text-gray-400">{r.label}</div>
-                </div>
+                  label={r.label}
+                  value={r.metric}
+                  className="border-success-30 bg-success-10 text-success"
+                />
               ))}
             </div>
             <Link

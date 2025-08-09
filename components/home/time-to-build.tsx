@@ -136,7 +136,7 @@ export function TimeToBuild() {
                 href="/contact?intent=10-day-sprint"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
               >
-                Start Your 10-Day Sprint
+                Start a 10-Day Sprint
                 <Zap className="w-4 h-4" />
               </a>
               <a

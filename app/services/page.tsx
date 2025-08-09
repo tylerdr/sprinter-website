@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 import {
   Zap,
   Code,
-  Rocket,
-  Building,
-  Handshake,
   Clock,
   CheckCircle,
   ArrowRight,
   Users,
-  TrendingUp,
   Shield,
-  Brain,
   Target,
 } from "lucide-react";
 import { getPageMetadata } from "@/lib/seo";
@@ -21,153 +17,11 @@ import { ExecutionPlaybook } from "@/components/home/execution-playbook";
 import { WhyNow } from "@/components/home/why-now";
 import { PricingComparison } from "@/components/services/pricing-comparison";
 import { ExecutionTimeline } from "@/components/shared/execution-timeline";
+import { IconBadge } from "@/components/ui/icon-badge";
 
 export const metadata: Metadata = getPageMetadata("services");
 
-const services = [
-  {
-    id: "workshop",
-    title: "AI Discovery Workshop",
-    tagline: "Find Your AI Quick Wins",
-    description:
-      "One-day intensive session with our engineers to identify and prioritize high-ROI AI opportunities specific to your business",
-    icon: Brain,
-    duration: "1 Day",
-    price: "$5,000",
-    features: [
-      "Process mapping & bottleneck analysis",
-      "AI readiness assessment of your data & systems",
-      "ROI projections for top 3 opportunities",
-      "Technical feasibility evaluation",
-      "90-day implementation roadmap",
-    ],
-    deliverables: [
-      "Opportunity assessment report",
-      "Technical architecture sketch",
-      "Budget & timeline estimates",
-    ],
-    ideal:
-      "Perfect for executives exploring where AI can drive immediate value",
-    results: "Typical outcome: 3-5 actionable AI opportunities identified",
-    cta: "Book Workshop",
-    popular: false,
-  },
-  {
-    id: "sprint",
-    title: "AI Sprint",
-    tagline: "Ship Production AI in Weeks",
-    description:
-      "2-4 week rapid development sprint that takes you from concept to deployed AI system with real users",
-    icon: Rocket,
-    duration: "2-4 Weeks",
-    price: "$25,000 - $75,000",
-    features: [
-      "Working prototype delivered in 10 days",
-      "Production deployment with monitoring",
-      "Integration with your existing systems",
-      "Team training & knowledge transfer",
-      "30 days of post-launch support",
-    ],
-    deliverables: [
-      "Production-ready AI system",
-      "Complete documentation",
-      "Source code ownership",
-      "Performance dashboard",
-    ],
-    ideal: "Best for teams ready to move fast and see immediate results",
-    results: "Average client sees 250% ROI within 60 days",
-    cta: "Start Sprint",
-    popular: true,
-  },
-  {
-    id: "transformation",
-    title: "Enterprise AI Transformation",
-    tagline: "Comprehensive AI Integration",
-    description:
-      "Full-scale AI implementation across multiple business units with ongoing optimization",
-    icon: Building,
-    duration: "3-6 Months",
-    price: "$150,000+",
-    features: [
-      "Multiple AI system deployments",
-      "Enterprise architecture design",
-      "Custom ML model development",
-      "Team upskilling program",
-      "Change management support",
-    ],
-    deliverables: [
-      "Complete AI platform",
-      "API integrations",
-      "Training curriculum",
-      "Governance framework",
-      "Success metrics tracking",
-    ],
-    ideal: "For organizations committed to AI-driven transformation",
-    results: "Typical impact: 30-50% operational efficiency gains",
-    cta: "Transform Your Business",
-    popular: false,
-  },
-  {
-    id: "venture",
-    title: "Venture Partnership",
-    tagline: "Your Technical Co-Founder",
-    description:
-      "We build and scale AI products together, sharing both the risk and the reward",
-    icon: Handshake,
-    duration: "6-12 Months",
-    price: "Equity-based",
-    features: [
-      "Full product development from MVP to scale",
-      "Technical leadership & architecture",
-      "Engineering team building",
-      "Fundraising support",
-      "Go-to-market strategy execution",
-    ],
-    deliverables: [
-      "Complete AI product",
-      "Technical infrastructure",
-      "Development team",
-      "Investor deck support",
-      "Growth playbook",
-    ],
-    ideal: "For founders who need a technical partner, not a vendor",
-    results: "Portfolio companies have raised $50M+ collectively",
-    cta: "Explore Partnership",
-    popular: false,
-  },
-];
 
-const process = [
-  {
-    step: 1,
-    title: "Discovery",
-    description:
-      "Map your processes, identify bottlenecks, prioritize opportunities",
-    icon: Target,
-    duration: "1-2 days",
-  },
-  {
-    step: 2,
-    title: "Prototype",
-    description: "Build working AI in days, validate approach with real data",
-    icon: Code,
-    duration: "5-10 days",
-  },
-  {
-    step: 3,
-    title: "Deploy",
-    description: "Ship to production, integrate systems, train your team",
-    icon: Rocket,
-    duration: "1-2 weeks",
-  },
-  {
-    step: 4,
-    title: "Optimize",
-    description: "Monitor performance, iterate based on data, maximize ROI",
-    icon: TrendingUp,
-    duration: "Ongoing",
-  },
-];
 
 const differentiators = [
   {
@@ -220,182 +74,166 @@ export default function ServicesPage() {
           },
         ]}
       />
-      <div className="min-h-screen py-24">
+      <div className="min-h-screen py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-10 border border-brand-30 mb-6">
-              <Zap className="w-5 h-5 text-brand" />
-              <span className="text-sm font-medium text-brand">
-                How We Work
-              </span>
-            </div>
+          <div className="text-center space-y-12 md:space-y-16">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-10 border border-brand-30">
+                <Zap className="w-5 h-5 text-brand" />
+                <span className="text-sm font-semibold text-brand">
+                  How We Work
+                </span>
+              </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Choose Your <span className="gradient-text">AI Journey</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              There has never been a better time to gain advantage with
-              technology. We build AI systems that accelerate what you already
-              do well and fill the gaps you don’t have time for.
-            </p>
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+                <Balancer>
+                  Choose Your <span className="gradient-text">AI Journey</span>
+                </Balancer>
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
+                <Balancer>
+                  There has never been a better time to gain advantage with
+                  technology. We build AI systems that accelerate what you already
+                  do well and fill the gaps you don&apos;t have time for.
+                </Balancer>
+              </p>
+            </div>
           </div>
 
-          <PricingComparison />
+          <div className="mt-16">
+            <PricingComparison />
+          </div>
 
           <ExecutionTimeline />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16" style={{ display: 'none' }}>
-            {services.map((service) => (
-              <div key={service.id} className="relative">
-                <div
-                  className={`p-8 rounded-2xl bg-card/5 border backdrop-blur-sm h-full ${
-                    service.popular
-                      ? "border-brand-30 shadow-lg shadow-[color:color-mix(in_oklch,_var(--brand-start)_20%,_transparent)]"
-                      : "border-border/10"
-                  }`}
-                >
-                  {service.popular && (
-                    <div className="absolute -top-3 left-8 px-3 py-1 bg-brand-gradient rounded-full">
-                      <span className="text-xs font-semibold text-primary-foreground">
-                        MOST POPULAR
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="p-3 rounded-lg border border-brand-30 bg-brand-10">
-                      <service.icon className="w-8 h-8 text-brand" />
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-muted-foreground">
-                        {service.duration}
-                      </div>
-                      <div className="text-xl font-bold gradient-text">
-                        {service.price}
-                      </div>
-                    </div>
-                  </div>
-
-                  <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-brand font-medium mb-3">
-                    {service.tagline}
-                  </p>
-                  <p className="text-muted-foreground mb-6">
-                    {service.description}
-                  </p>
-
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold mb-3 text-foreground/80">
-                      What&apos;s Included:
-                    </h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold mb-3 text-foreground/80">
-                      Deliverables:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.deliverables.map((deliverable) => (
-                        <span
-                          key={deliverable}
-                          className="px-3 py-1 text-xs bg-card/10 border border-border/20 rounded-full"
-                        >
-                          {deliverable}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-muted-foreground italic">
-                      {service.ideal}
-                    </p>
-                    <p className="text-sm text-success font-medium">
-                      {service.results}
-                    </p>
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all w-full justify-center ${
-                      service.popular
-                        ? "bg-brand-gradient text-primary-foreground hover:opacity-90"
-                        : "bg-card/10 border border-border/20 hover:bg-card/20"
-                    }`}
-                  >
-                    {service.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mb-4">
+          <div className="mt-16">
             <WhyNow />
           </div>
 
-          <div className="mb-16">
+          <div className="mt-16">
             <ExecutionPlaybook />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             {differentiators.map((item) => (
               <div
                 key={item.title}
                 className="p-6 rounded-xl border border-success-30 bg-success-10"
               >
-                <item.icon className="w-8 h-8 text-success mb-4" />
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
+                <IconBadge
+                  icon={<item.icon className="w-5 h-5 text-success" />}
+                  title={item.title}
+                  body={item.description}
+                  className="mb-0"
+                />
               </div>
             ))}
           </div>
 
-          <div className="mb-16">
-            <div className="p-8 rounded-2xl border border-brand-30 bg-brand-10">
-              <h2 className="text-3xl font-bold mb-6 text-center">
-                For Private Equity & Investment Firms
+          <div className="mt-16">
+            <div className="p-8 rounded-2xl border border-info-30 bg-info-10">
+              <h2 className="text-3xl font-semibold mb-6 text-center tracking-tight leading-tight">
+                <Balancer>
+                  Advisory & Team Enablement (Vibe Coding)
+                </Balancer>
               </h2>
-              <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Transform multiple portfolio companies with one strategic
-                partnership. We act as your AI SWAT team to rapidly uplift
-                operational efficiency and valuation across your holdings.
+              <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
+                <Balancer>
+                  Ship faster without quality debt. We teach patterns, reviews, test scaffolds, and observability so &apos;vibe coded&apos; features stick in production.
+                </Balancer>
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="font-semibold mb-4 text-lg">What&apos;s Included:</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Weekly office hours for technical guidance</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Async code review and feedback</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Design patterns and architecture guidance</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Prompt libraries and AI tool templates</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Test harness setup and best practices</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">Productionizing checklist and deployment guidance</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-4 text-lg">Perfect For:</h3>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li>• Teams moving fast with AI but worried about technical debt</li>
+                    <li>• Engineering managers who need to scale code quality practices</li>
+                    <li>• Startups balancing speed with maintainability</li>
+                    <li>• Companies wanting to build internal AI expertise</li>
+                  </ul>
+                  <div className="mt-6 p-4 rounded-lg bg-card/20 border border-border/20">
+                    <div className="text-2xl font-semibold gradient-text mb-1 tabular-nums">$20,000/month</div>
+                    <div className="text-sm text-muted-foreground">Ongoing engagement</div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
+                >
+                  Start a 10-Day Sprint
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <div className="p-8 rounded-2xl border border-brand-30 bg-brand-10">
+              <h2 className="text-3xl font-semibold mb-6 text-center tracking-tight leading-tight">
+                <Balancer>
+                  For Private Equity & Investment Firms
+                </Balancer>
+              </h2>
+              <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
+                <Balancer>
+                  Transform multiple portfolio companies with one strategic
+                  partnership. We act as your AI SWAT team to rapidly uplift
+                  operational efficiency and valuation across your holdings.
+                </Balancer>
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold gradient-text mb-2">
+                  <div className="text-3xl font-semibold gradient-text mb-2 tabular-nums">
                     10x
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground font-normal leading-relaxed">
                     Leverage across portfolio
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold gradient-text mb-2">
+                  <div className="text-3xl font-semibold gradient-text mb-2 tabular-nums">
                     4-8 weeks
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground font-normal leading-relaxed">
                     Per implementation
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold gradient-text mb-2">
+                  <div className="text-3xl font-semibold gradient-text mb-2 tabular-nums">
                     30-50%
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground font-normal leading-relaxed">
                     Efficiency gains
                   </p>
                 </div>
@@ -439,7 +277,7 @@ export default function ServicesPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-3 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
                 >
-                  Discuss Portfolio Opportunities
+                  Start a 10-Day Sprint
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -450,13 +288,17 @@ export default function ServicesPage() {
             <div className="p-8 rounded-2xl border border-brand-30 bg-brand-10">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3">
-                    Not Sure Where to Start?
+                  <h3 className="text-2xl font-semibold mb-3 tracking-tight leading-tight">
+                    <Balancer>
+                      Not Sure Where to Start?
+                    </Balancer>
                   </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Let&apos;s have a conversation about your AI goals.
-                    We&apos;ll recommend the best path forward - honest
-                    technical advice from engineers who&apos;ve been there.
+                  <p className="text-muted-foreground mb-4 font-normal leading-relaxed">
+                    <Balancer>
+                      Let&apos;s have a conversation about your AI goals.
+                      We&apos;ll recommend the best path forward - honest
+                      technical advice from engineers who&apos;ve been there.
+                    </Balancer>
                   </p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
@@ -474,7 +316,7 @@ export default function ServicesPage() {
                     href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
                   >
-                    Schedule Free Consultation
+                    Start a 10-Day Sprint
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </div>

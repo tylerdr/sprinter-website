@@ -1,0 +1,44 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="12" fill="#0f0f0f" stroke="#27272a" stroke-width="1"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="400" height="50" rx="12" fill="#18181b"/>
+  <rect x="15" y="15" width="80" height="20" rx="4" fill="#10b981"/>
+  <text x="20" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white">Amble Ideation</text>
+  
+  <!-- Workshop prompt -->
+  <rect x="20" y="70" width="360" height="30" rx="6" fill="#27272a"/>
+  <text x="30" y="88" font-family="Arial, sans-serif" font-size="12" fill="#f4f4f5">Workshop: "How might we improve customer onboarding?"</text>
+  
+  <!-- Ideas cluster visualization -->
+  <g>
+    <!-- Cluster 1 -->
+    <circle cx="80" cy="140" r="25" fill="#3b82f6/20" stroke="#3b82f6"/>
+    <text x="70" y="145" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">Digital</text>
+    
+    <!-- Cluster 2 -->
+    <circle cx="200" cy="140" r="30" fill="#10b981/20" stroke="#10b981"/>
+    <text x="185" y="145" font-family="Arial, sans-serif" font-size="10" fill="#10b981">Personalization</text>
+    
+    <!-- Cluster 3 -->
+    <circle cx="320" cy="140" r="20" fill="#f59e0b/20" stroke="#f59e0b"/>
+    <text x="310" y="145" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">Support</text>
+    
+    <!-- Individual ideas -->
+    <circle cx="60" cy="120" r="3" fill="#3b82f6"/>
+    <circle cx="100" cy="160" r="3" fill="#3b82f6"/>
+    <circle cx="180" cy="115" r="3" fill="#10b981"/>
+    <circle cx="220" cy="165" r="3" fill="#10b981"/>
+    <circle cx="310" cy="125" r="3" fill="#f59e0b"/>
+    <circle cx="330" cy="155" r="3" fill="#f59e0b"/>
+  </g>
+  
+  <!-- AI Insights panel -->
+  <rect x="20" y="190" width="360" height="80" rx="8" fill="#1a1a1a" stroke="#27272a"/>
+  <text x="30" y="208" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f4f4f5">AI-Generated Insights:</text>
+  <text x="30" y="225" font-family="Arial, sans-serif" font-size="10" fill="#71717a">• 37 ideas generated across 3 main themes</text>
+  <text x="30" y="240" font-family="Arial, sans-serif" font-size="10" fill="#71717a">• "Personalization" cluster shows highest engagement</text>
+  <text x="30" y="255" font-family="Arial, sans-serif" font-size="10" fill="#71717a">• Recommendation: Focus on adaptive user journeys</text>
+  
+  <!-- Participants indicator -->
+  <text x="280" y="88" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ 12 participants active</text>
+</svg>

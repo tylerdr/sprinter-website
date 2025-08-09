@@ -22,12 +22,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Sprinter AI - Move at the Pace of AI",
+  title: "Sprinter AI - Build at the pace of AI",
   description:
     "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks.",
   keywords:
     "AI consulting, human-centered AI, autonomous agents, purposeful work, AI development, venture studio, AI products",
-  ogTitle: "Sprinter AI - Move at the Pace of AI",
+  ogTitle: "Sprinter AI - Build at the pace of AI",
   canonical: "https://sprinter.ai",
 });
 

@@ -10,8 +10,11 @@ export const CaseStudySchema = z.object({
   solution: z.string(),
   results: z.array(ResultSchema),
   testimonial: z.string(),
+  testimonialAuthor: z.string(),
   features: z.array(z.string()),
   gradient: z.string(),
+  screenshot: z.string(),
+  architectureDiagram: z.string().optional(),
 });
 
 export type CaseStudy = z.infer<typeof CaseStudySchema>;
@@ -37,6 +40,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "The AI doesn't just help us manage Non-QM complexity—it turned it into our competitive advantage. We're closing loans 300% faster with the confidence of having a senior underwriter available 24/7.",
+    testimonialAuthor: "VP Operations, Pacific Coast Lending",
     features: [
       "Multi-agent parallel lender research",
       "Field normalization across divergent nomenclatures",
@@ -47,6 +51,8 @@ export const caseStudies: CaseStudy[] = [
       "ROI calculator: time savings alone covers platform cost",
     ],
     gradient: "from-green-500 to-emerald-600",
+    screenshot: "/images/products/mortgageq-screenshot.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
     slug: "ai-cabinet-automation",
@@ -68,6 +74,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "This isn't just automation—it's transformation. We quote more options, close faster, and our designers focus on design instead of spreadsheets. The ROI was evident within weeks.",
+    testimonialAuthor: "Operations Director, Custom Cabinet Solutions",
     features: [
       "Visual AI parser for PDFs and price lists",
       "Canonical SKU schema with semantic reconciliation",
@@ -79,6 +86,8 @@ export const caseStudies: CaseStudy[] = [
       "Compounding knowledge base (each mapping improves system)",
     ],
     gradient: "from-blue-500 to-purple-600",
+    screenshot: "/images/products/cabomatic-screenshot.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
     slug: "ai-patient-coach",
@@ -100,6 +109,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "The AI coach transformed our care model. Nurses now manage 5× more patients with better outcomes because they focus on those who need them most. We've avoided millions in penalties while improving both patient and staff satisfaction.",
+    testimonialAuthor: "Chief Nursing Officer, Regional Health Network",
     features: [
       "Multi-modal patient engagement (voice, SMS, app)",
       "Clinical NLP for symptom extraction",
@@ -111,6 +121,8 @@ export const caseStudies: CaseStudy[] = [
       "Regulatory compliance reporting (CMS, HEDIS)",
     ],
     gradient: "from-red-500 to-pink-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
     slug: "ai-workshop-platform",
@@ -132,6 +144,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "Amble didn't just digitize our workshops—it revolutionized our entire innovation practice. We can now run 10 workshops simultaneously across continents, with AI surfacing insights we would have missed. It's become our competitive differentiator.",
+    testimonialAuthor: "Managing Director, Innovation Practice Lead",
     features: [
       "Real-time collaborative digital canvas",
       "AI-powered idea clustering and theme extraction",
@@ -143,6 +156,8 @@ export const caseStudies: CaseStudy[] = [
       "Async workshop capability for global teams",
     ],
     gradient: "from-purple-500 to-indigo-600",
+    screenshot: "/images/products/amble-ideation-screenshot.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
     slug: "ai-content-automation",
@@ -164,6 +179,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "This AI engine accomplished in 3 months what would've taken our team 3 years and $2M. We went from invisible to dominating long-tail searches. The ROI is extraordinary—we're now the category leader in organic traffic.",
+    testimonialAuthor: "VP Growth, E-commerce Platform",
     features: [
       "Multi-source product data aggregation",
       "Review mining with sentiment analysis",
@@ -175,6 +191,8 @@ export const caseStudies: CaseStudy[] = [
       "A/B testing framework for content performance",
     ],
     gradient: "from-orange-500 to-yellow-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
 ];
 

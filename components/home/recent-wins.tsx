@@ -122,7 +122,7 @@ export function RecentWins() {
             href="/contact"
             className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base"
           >
-            Reserve Your Spot
+            Start a 10-Day Sprint
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>

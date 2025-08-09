@@ -5,7 +5,7 @@ test.describe('SEO and Meta Tags', () => {
     await page.goto('/');
     
     // Check title
-    await expect(page).toHaveTitle(/Sprinter AI.*Move at the Pace of AI/);
+    await expect(page).toHaveTitle(/Sprinter AI.*Build at the pace of AI/);
     
     // Check meta description
     const description = await page.getAttribute('meta[name="description"]', 'content');

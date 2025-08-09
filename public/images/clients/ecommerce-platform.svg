@@ -1,0 +1,7 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="8" fill="#1a1a1a"/>
+  <path d="M20 25h20l-3 10h-14l-3-10z" fill="none" stroke="#6b7280" stroke-width="2"/>
+  <circle cx="25" cy="40" r="2" fill="#6b7280"/>
+  <circle cx="35" cy="40" r="2" fill="#6b7280"/>
+  <text x="45" y="35" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">ShopPlatform</text>
+</svg>

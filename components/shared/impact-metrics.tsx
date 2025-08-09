@@ -33,9 +33,8 @@ const defaultMetrics: Metric[] = [
     color: "gradient-text"
   },
   {
-    value: "250",
-    suffix: "%",
-    label: "Average ROI",
+    value: "10",
+    label: "Days to Ship",
     color: "gradient-text"
   }
 ];
@@ -129,9 +128,9 @@ export function ImpactMetrics({
   };
 
   const valueClasses = {
-    hero: "text-2xl sm:text-3xl font-bold",
-    card: "text-3xl font-bold mb-2",
-    inline: "text-2xl font-bold"
+    hero: "text-2xl sm:text-3xl font-semibold tabular-nums",
+    card: "text-3xl font-semibold mb-2 tabular-nums",
+    inline: "text-2xl font-semibold tabular-nums"
   };
 
   const labelClasses = {
