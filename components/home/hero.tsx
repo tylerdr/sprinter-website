@@ -145,7 +145,7 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           >
-            Craft Your{" "}
+            Build Your{" "}
             <span className="gradient-text block sm:inline">Unfair Advantage</span>
           </motion.h1>
 
@@ -155,8 +155,8 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            Frontier models + cheap compute let small teams build systems that read, decide and act. 
-            Turn unstructured data and fragmented workflows into outcomes—fast. Build now, compound forever.
+            Agentic AI turns unstructured data into decisions and outcomes—fast. 
+            Ship your first product in 10 days.
           </motion.p>
 
           <motion.div
@@ -180,7 +180,7 @@ export function Hero() {
                   className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
                   aria-hidden="true"
                 />
-                Explore AI Labs
+                Try a Demo
               </Link>
             </Button>
           </motion.div>

@@ -6,14 +6,7 @@ import { getPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = getPageMetadata("labs");
 
 const labs = [
-  {
-    icon: MessageSquare,
-    title: "AI Assistant",
-    description:
-      "Experience our sophisticated AI assistant with specialized agents, tool calling capabilities, and intelligent reasoning. Choose your agent and see Sprinter's AI in action.",
-    href: "/labs/ai-assistant",
-    gradient: "from-cyan-500 to-blue-600",
-  },
+  // Enterprise-relevant tools first
   {
     icon: Bot,
     title: "Agent Simulator",
@@ -21,70 +14,7 @@ const labs = [
       "Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.",
     href: "/labs/agent-simulator",
     gradient: "from-blue-500 to-cyan-600",
-  },
-  {
-    icon: Workflow,
-    title: "Workflow Designer",
-    description:
-      "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
-    href: "/labs/workflow-tool",
-    gradient: "from-purple-500 to-pink-600",
-  },
-  {
-    icon: Gamepad2,
-    title: "Ideation Lab",
-    description:
-      "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation.",
-    href: "/labs/ideation",
-    gradient: "from-green-500 to-teal-600",
-  },
-  {
-    icon: Palette,
-    title: "AI Sketch Studio",
-    description:
-      "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.",
-    href: "/labs/sketch-studio",
-    gradient: "from-orange-500 to-red-600",
-  },
-  {
-    icon: Music,
-    title: "AI Music Studio",
-    description:
-      "Create original music tracks with AI. Describe your desired genre, mood, and instruments to generate custom compositions in seconds.",
-    href: "/labs/music-studio",
-    gradient: "from-purple-500 to-indigo-600",
-  },
-  {
-    icon: Megaphone,
-    title: "AI Ad Creator",
-    description:
-      "Generate professional social media ads for all platforms instantly. Create Instagram, Facebook, Twitter, LinkedIn content with AI-powered design.",
-    href: "/labs/ad-creator",
-    gradient: "from-pink-500 to-purple-600",
-  },
-  {
-    icon: BarChart3,
-    title: "AI Data Analyzer",
-    description:
-      "Upload CSV or Excel files and get instant insights, visualizations, and predictions. Turn raw data into actionable intelligence.",
-    href: "/labs/data-analyzer",
-    gradient: "from-emerald-500 to-cyan-600",
-  },
-  {
-    icon: Mic,
-    title: "Voice to Process",
-    description:
-      "Describe your business workflow verbally and watch AI create a detailed process map with optimization suggestions.",
-    href: "/labs/voice-to-process",
-    gradient: "from-violet-500 to-purple-600",
-  },
-  {
-    icon: Code2,
-    title: "AI Code Review Assistant",
-    description:
-      "Paste your code and get AI-powered suggestions for improvements, security fixes, and best practice recommendations.",
-    href: "/labs/code-review",
-    gradient: "from-indigo-500 to-blue-600",
+    category: "enterprise",
   },
   {
     icon: FileText,
@@ -93,14 +23,7 @@ const labs = [
       "Upload PDFs, reports, or documents and extract key insights, summaries, and answer specific questions about the content.",
     href: "/labs/document-intelligence",
     gradient: "from-amber-500 to-orange-600",
-  },
-  {
-    icon: FileQuestion,
-    title: "PDF Quiz Generator",
-    description:
-      "Upload any PDF and automatically generate customized quizzes with multiple choice, true/false, and short answer questions.",
-    href: "/labs/quiz-generator",
-    gradient: "from-purple-500 to-violet-600",
+    category: "enterprise",
   },
   {
     icon: Calculator,
@@ -109,6 +32,7 @@ const labs = [
       "Calculate your potential savings from AI automation. See breakeven timeline, productivity gains, and annual cost savings for your team.",
     href: "/labs/roi-calculator",
     gradient: "from-green-500 to-emerald-600",
+    category: "enterprise",
   },
   {
     icon: Blocks,
@@ -117,6 +41,52 @@ const labs = [
       "Build AI agent workflows visually by snapping together blocks for reading, processing, deciding, and outputting. See how agents work together.",
     href: "/labs/agent-playground",
     gradient: "from-indigo-500 to-purple-600",
+    category: "enterprise",
+  },
+  {
+    icon: Workflow,
+    title: "Workflow Designer",
+    description:
+      "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
+    href: "/labs/workflow-tool",
+    gradient: "from-purple-500 to-pink-600",
+    category: "enterprise",
+  },
+  {
+    icon: BarChart3,
+    title: "AI Data Analyzer",
+    description:
+      "Upload CSV or Excel files and get instant insights, visualizations, and predictions. Turn raw data into actionable intelligence.",
+    href: "/labs/data-analyzer",
+    gradient: "from-emerald-500 to-cyan-600",
+    category: "enterprise",
+  },
+  {
+    icon: MessageSquare,
+    title: "AI Assistant",
+    description:
+      "Experience our sophisticated AI assistant with specialized agents, tool calling capabilities, and intelligent reasoning. Choose your agent and see Sprinter's AI in action.",
+    href: "/labs/ai-assistant",
+    gradient: "from-cyan-500 to-blue-600",
+    category: "enterprise",
+  },
+  {
+    icon: Mic,
+    title: "Voice to Process",
+    description:
+      "Describe your business workflow verbally and watch AI create a detailed process map with optimization suggestions.",
+    href: "/labs/voice-to-process",
+    gradient: "from-violet-500 to-purple-600",
+    category: "enterprise",
+  },
+  {
+    icon: Code2,
+    title: "AI Code Review Assistant",
+    description:
+      "Paste your code and get AI-powered suggestions for improvements, security fixes, and best practice recommendations.",
+    href: "/labs/code-review",
+    gradient: "from-indigo-500 to-blue-600",
+    category: "developer",
   },
   {
     icon: Mic,
@@ -125,6 +95,53 @@ const labs = [
       "Experience natural AI conversations with real-time speech recognition, interruption handling, and lifelike voice responses. The future of voice AI.",
     href: "/labs/voice-chat",
     gradient: "from-pink-500 to-rose-600",
+    category: "innovation",
+  },
+  // Creative/Consumer tools at the end
+  {
+    icon: Gamepad2,
+    title: "Ideation Lab",
+    description:
+      "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation.",
+    href: "/labs/ideation",
+    gradient: "from-green-500 to-teal-600",
+    category: "creative",
+  },
+  {
+    icon: Megaphone,
+    title: "AI Ad Creator",
+    description:
+      "Generate professional social media ads for all platforms instantly. Create Instagram, Facebook, Twitter, LinkedIn content with AI-powered design.",
+    href: "/labs/ad-creator",
+    gradient: "from-pink-500 to-purple-600",
+    category: "creative",
+  },
+  {
+    icon: FileQuestion,
+    title: "PDF Quiz Generator",
+    description:
+      "Upload any PDF and automatically generate customized quizzes with multiple choice, true/false, and short answer questions.",
+    href: "/labs/quiz-generator",
+    gradient: "from-purple-500 to-violet-600",
+    category: "education",
+  },
+  {
+    icon: Palette,
+    title: "AI Sketch Studio",
+    description:
+      "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.",
+    href: "/labs/sketch-studio",
+    gradient: "from-orange-500 to-red-600",
+    category: "creative",
+  },
+  {
+    icon: Music,
+    title: "AI Music Studio",
+    description:
+      "Create original music tracks with AI. Describe your desired genre, mood, and instruments to generate custom compositions in seconds.",
+    href: "/labs/music-studio",
+    gradient: "from-purple-500 to-indigo-600",
+    category: "creative",
   },
 ];
 

@@ -49,7 +49,8 @@ function AnimatedNumber({
   duration?: number;
   delay?: number;
 }) {
-  const [displayValue, setDisplayValue] = useState<number | null>(null);
+  const [displayValue, setDisplayValue] = useState<number>(value);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -63,16 +64,18 @@ function AnimatedNumber({
   }, []);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || hasAnimated) return;
 
     // If reduced motion is preferred, show final value immediately
     if (prefersReducedMotion.current) {
       setDisplayValue(value);
+      setHasAnimated(true);
       return;
     }
 
     const startTime = Date.now() + delay * 1000;
     const endValue = value;
+    const startValue = Math.floor(value * 0.5); // Start from 50% of final value
 
     const updateNumber = () => {
       const now = Date.now();
@@ -81,31 +84,28 @@ function AnimatedNumber({
       
       // Easing function for smooth animation
       const easedProgress = 1 - Math.pow(1 - progress, 3);
-      const currentValue = Math.floor(easedProgress * endValue);
+      const currentValue = Math.floor(startValue + easedProgress * (endValue - startValue));
       
       setDisplayValue(currentValue);
 
       if (progress < 1) {
         requestAnimationFrame(updateNumber);
+      } else {
+        setHasAnimated(true);
       }
     };
 
-    // Start animation immediately if delay is 0, otherwise wait for delay
+    // Start animation after delay
     if (delay === 0) {
-      setDisplayValue(0);
+      setDisplayValue(startValue);
       requestAnimationFrame(updateNumber);
     } else {
       setTimeout(() => {
-        setDisplayValue(0);
+        setDisplayValue(startValue);
         requestAnimationFrame(updateNumber);
       }, delay * 1000);
     }
-  }, [isInView, value, duration, delay]);
-
-  // Don't render anything until we're ready to show a value
-  if (displayValue === null) {
-    return <span ref={ref} className="opacity-0" aria-hidden="true">{value}</span>;
-  }
+  }, [isInView, value, duration, delay, hasAnimated]);
 
   return <span ref={ref}>{displayValue}</span>;
 }

@@ -24,31 +24,39 @@ export const SOCIAL_LINKS = {
 
 export const NAVIGATION = {
   main: [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/products", label: "Products" },
     { href: "/services", label: "Services" },
-    { href: "/use-cases", label: "Use Cases" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/labs", label: "AI Labs" },
     { href: "/blog", label: "Insights" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Work With Us" },
   ],
   footer: {
-    explore: [
-      { href: "/about", label: "About Us" },
-      { href: "/services", label: "Services" },
+    products: [
+      { href: "/products", label: "All Products" },
+      { href: "/case-studies/ai-mortgage-assistant", label: "MortgageQ" },
+      { href: "/case-studies/ai-cabinet-automation", label: "Cab-O-Matic" },
+      { href: "/case-studies/amble-ideation", label: "Amble Ideation" },
+    ],
+    services: [
+      { href: "/services", label: "All Services" },
+      { href: "/services#workshops", label: "Workshops" },
+      { href: "/services#sprint", label: "AI Sprint" },
+      { href: "/services#enterprise", label: "Enterprise" },
+      { href: "/services#venture", label: "Venture Partnership" },
+    ],
+    resources: [
       { href: "/case-studies", label: "Case Studies" },
       { href: "/labs", label: "AI Labs" },
+      { href: "/use-cases", label: "Use Cases" },
+      { href: "/blog", label: "Insights" },
     ],
-    aiTools: [
-      { href: "/labs/agent-simulator", label: "Agent Simulator" },
-      { href: "/labs/workflow-tool", label: "Workflow Designer" },
-      { href: "/labs/ideation", label: "Ideation Lab" },
-      { href: "/labs/sketch-studio", label: "AI Sketch Studio" },
-    ],
-    legal: [
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms of Service" },
+    company: [
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Contact" },
+      { href: "/privacy", label: "Privacy" },
+      { href: "/terms", label: "Terms" },
     ],
   },
 }
