@@ -99,8 +99,8 @@ interface GeneratedComponent {
 export default function VibeCodingPage() {
   const [prompt, setPrompt] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
-  const [selectedStyle, setSelectedStyle] = useState("minimal");
-  const [framework, setFramework] = useState("react");
+  const [selectedStyle, setSelectedStyle] = useState<"minimal" | "gradient" | "dark" | "glassmorphism" | "neubrutalism" | "corporate">("minimal");
+  const [framework, setFramework] = useState<"react" | "vue" | "svelte" | "html">("react");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedCode, setGeneratedCode] = useState<GeneratedComponent | null>(null);
   const [history, setHistory] = useState<GeneratedComponent[]>([]);
@@ -124,6 +124,8 @@ export default function VibeCodingPage() {
         prompt,
         framework,
         style: selectedStyle,
+        responsive: true,
+        typescript: false,
         creativity: creativity / 100,
       });
 
@@ -134,7 +136,7 @@ export default function VibeCodingPage() {
         framework,
         style: selectedStyle,
         timestamp: Date.now(),
-        v0Url: result.v0Url,
+        v0Url: result.v0Url || undefined,
       };
 
       setGeneratedCode(component);
@@ -238,7 +240,7 @@ body {
                   {/* Framework */}
                   <div>
                     <Label>Framework</Label>
-                    <Select value={framework} onValueChange={setFramework}>
+                    <Select value={framework} onValueChange={(value) => setFramework(value as "react" | "vue" | "svelte" | "html")}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -254,7 +256,7 @@ body {
                   {/* Style */}
                   <div>
                     <Label>Style Preset</Label>
-                    <Select value={selectedStyle} onValueChange={setSelectedStyle}>
+                    <Select value={selectedStyle} onValueChange={(value) => setSelectedStyle(value as "minimal" | "gradient" | "dark" | "glassmorphism" | "neubrutalism" | "corporate")}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>

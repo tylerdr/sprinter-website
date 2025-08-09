@@ -87,7 +87,6 @@ Return ONLY valid JSON:
       const response = await generateText({
         model: openai(config.aiModel),
         prompt,
-        maxTokens: 200,
       });
 
       const parsed = JSON.parse(response.text);
@@ -157,7 +156,6 @@ Decide your next action. Return ONLY valid JSON:
     const response = await generateText({
       model: openai("gpt-3.5-turbo"),
       prompt,
-      maxTokens: 150,
     });
 
     return JSON.parse(response.text);
@@ -207,7 +205,6 @@ Determine the interaction outcome. Return ONLY valid JSON:
     const response = await generateText({
       model: openai("gpt-3.5-turbo"),
       prompt,
-      maxTokens: 150,
     });
 
     return JSON.parse(response.text);
@@ -275,7 +272,6 @@ Provide operational insights. Return ONLY valid JSON:
     const response = await generateText({
       model: openai("gpt-4"),
       prompt,
-      maxTokens: 500,
     });
 
     return JSON.parse(response.text);
@@ -296,7 +292,7 @@ Provide operational insights. Return ONLY valid JSON:
 
 // Save simulation to database
 export async function saveSimulation(state: SimulationState) {
-  const supabase = createClient();
+  const supabase = await createClient();
   
   const { data, error } = await supabase
     .from("simulations")
@@ -316,7 +312,7 @@ export async function saveSimulation(state: SimulationState) {
 
 // Setup realtime subscriptions for multiplayer
 export async function setupRealtimeSimulation(simulationId: string) {
-  const supabase = createClient();
+  const supabase = await createClient();
   
   // Subscribe to simulation updates
   const channel = supabase.channel(`simulation:${simulationId}`)
@@ -344,7 +340,7 @@ export async function exportSimulationData(
   format: "json" | "csv" = "json"
 ) {
   // Save lead
-  const supabase = createClient();
+  const supabase = await createClient();
   await supabase.from("leads").insert({
     email,
     source: "tiny-town",

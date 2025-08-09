@@ -51,7 +51,6 @@ Return ONLY the component code, no explanations.`;
       model,
       system: systemPrompt,
       prompt: userPrompt,
-      maxTokens: 2000,
       temperature: 0.3 + (creativity * 0.7), // Scale temperature with creativity
     });
 
@@ -262,7 +261,6 @@ Return ONLY valid JSON:
     const response = await generateText({
       model: openai("gpt-3.5-turbo"),
       prompt,
-      maxTokens: 500,
     });
 
     return JSON.parse(response.text);
@@ -301,7 +299,6 @@ Return ONLY the modified component code.`;
       const response = await generateText({
         model: openai("gpt-3.5-turbo"),
         prompt,
-        maxTokens: 1500,
         temperature: 0.8,
       });
       
@@ -325,7 +322,7 @@ export async function exportComponentPackage(
   email: string
 ) {
   // Save lead
-  const supabase = createClient();
+  const supabase = await createClient();
   await supabase.from("leads").insert({
     email,
     source: "vibe-coding",
@@ -389,7 +386,7 @@ export async function saveToGallery(
   },
   userId?: string
 ) {
-  const supabase = createClient();
+  const supabase = await createClient();
   
   const { data, error } = await supabase
     .from("component_gallery")

@@ -146,7 +146,6 @@ Provide your ${round === 1 ? "opening argument" : "response"} (120-150 words). B
       const agentAResponse = await generateText({
         model: getModel(config.agentA.model),
         prompt: agentAPrompt,
-        maxTokens: 200,
       });
 
       // Agent B's turn
@@ -166,7 +165,6 @@ Provide your ${round === 1 ? "opening argument" : "response"} (120-150 words). B
       const agentBResponse = await generateText({
         model: getModel(config.agentB.model),
         prompt: agentBPrompt,
-        maxTokens: 200,
       });
 
       // Judge this round
@@ -197,7 +195,6 @@ Return ONLY valid JSON in this format:
       const judgeResponse = await generateText({
         model: getModel(config.judgeModel),
         prompt: judgePrompt,
-        maxTokens: 300,
       });
 
       let roundScore: RoundScore;
@@ -268,7 +265,6 @@ Provide a comprehensive final verdict. Return ONLY valid JSON:
     const finalJudge = await generateText({
       model: getModel(config.judgeModel),
       prompt: finalJudgePrompt,
-      maxTokens: 500,
     });
 
     try {
@@ -325,7 +321,7 @@ function estimateCost(model: string, tokens: number): number {
 // Save battle transcript to Supabase
 async function saveBattleTranscript(battle: BattleState) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     
     const { data, error } = await supabase
       .from("agent_battles")
@@ -351,7 +347,7 @@ async function saveBattleTranscript(battle: BattleState) {
 // Get battle by ID (for sharing)
 export async function getBattleById(id: string): Promise<BattleState | null> {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     
     const { data, error } = await supabase
       .from("agent_battles")
@@ -378,7 +374,7 @@ export async function getBattleById(id: string): Promise<BattleState | null> {
 // Export battle as PDF/JSON (lead capture)
 export async function exportBattle(battleId: string, email: string, format: "pdf" | "json" = "json") {
   // Save lead
-  const supabase = createClient();
+  const supabase = await createClient();
   await supabase.from("leads").insert({
     email,
     source: "agent-battle",

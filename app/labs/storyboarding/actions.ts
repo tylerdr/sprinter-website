@@ -16,7 +16,7 @@ export const JourneySchema = z.object({
     data: z.object({
       label: z.string(),
       description: z.string().optional(),
-      metadata: z.record(z.any()).optional(),
+      metadata: z.record(z.string(), z.any()).optional(),
     }),
   })),
   edges: z.array(z.object({
@@ -71,7 +71,6 @@ Create 5-10 nodes with appropriate connections. Space nodes nicely (x: 100-1000,
       model: openai("gpt-4"),
       system: systemPrompt,
       prompt: userPrompt,
-      maxTokens: 1000,
     });
 
     const journey = JSON.parse(response.text);
@@ -135,7 +134,6 @@ Provide UX insights and recommendations. Return ONLY valid JSON:
     const response = await generateText({
       model: openai("gpt-3.5-turbo"),
       prompt,
-      maxTokens: 500,
     });
 
     return JSON.parse(response.text);
@@ -206,7 +204,6 @@ Return ONLY valid JSON with UI elements:
     const response = await generateText({
       model: openai("gpt-3.5-turbo"),
       prompt,
-      maxTokens: 800,
     });
 
     return JSON.parse(response.text);
@@ -249,7 +246,7 @@ export async function exportJourney(
   format: "json" | "pdf" | "figma" = "json"
 ) {
   // Save lead
-  const supabase = createClient();
+  const supabase = await createClient();
   await supabase.from("leads").insert({
     email,
     source: "storyboarding",
@@ -347,7 +344,6 @@ Trace the most likely path and identify issues. Return ONLY valid JSON:
     const response = await generateText({
       model: openai("gpt-4"),
       prompt,
-      maxTokens: 800,
     });
 
     return JSON.parse(response.text);
@@ -379,7 +375,7 @@ export async function saveToGallery(
   isPublic: boolean = false,
   userId?: string
 ) {
-  const supabase = createClient();
+  const supabase = await createClient();
   
   const { data, error } = await supabase
     .from("journey_gallery")

@@ -615,7 +615,21 @@ function StoryboardingFlow() {
                   Cancel
                 </Button>
                 <Button onClick={async () => {
-                  await exportJourney({ nodes, edges, name: journeyName }, email);
+                  await exportJourney({ 
+                    nodes: nodes.map(n => ({
+                      id: n.id,
+                      type: (n.type || 'action') as "start" | "action" | "decision" | "screen" | "touchpoint" | "end",
+                      position: n.position,
+                      data: n.data as { label: string; description?: string; metadata?: Record<string, unknown> }
+                    })), 
+                    edges: edges.map(e => ({
+                      id: e.id,
+                      source: e.source,
+                      target: e.target,
+                      label: typeof e.label === 'string' ? e.label : undefined
+                    })), 
+                    name: journeyName 
+                  }, email);
                   setShowExport(false);
                 }}>
                   <Download className="w-4 h-4 mr-2" />

@@ -200,7 +200,7 @@ export default function TinyTownPage() {
 
       const newNPCs = prev.npcs.map(npc => {
         // Simple AI behavior
-        let newNPC = { ...npc };
+        const newNPC = { ...npc };
         
         // Update position towards goal
         if (npc.path.length > 0) {
