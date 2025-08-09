@@ -92,9 +92,9 @@ export default function ServicesPage() {
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
                 <Balancer>
-                  There has never been a better time to gain advantage with
-                  technology. We build AI systems that accelerate what you already
-                  do well and fill the gaps you don&apos;t have time for.
+                  Now&apos;s the time to seize an AI advantage. We build systems that 
+                  amplify what you&apos;re already great at and handle the stuff that 
+                  slows you down.
                 </Balancer>
               </p>
             </div>

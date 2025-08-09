@@ -5,38 +5,38 @@ import Image from "next/image";
 
 const clientLogos = [
   {
-    name: "Healthcare Network",
-    slug: "healthcare-network",
+    name: "Meridian Health Systems",
+    slug: "meridian-health",
     width: 120,
     height: 60
   },
   {
-    name: "FinTech Startup",
-    slug: "fintech-startup",
+    name: "Velocity Financial",
+    slug: "velocity-financial",
     width: 120,
     height: 60
   },
   {
-    name: "Manufacturing Corp",
-    slug: "manufacturing-corp",
+    name: "Summit Manufacturing",
+    slug: "summit-manufacturing",
     width: 120,
     height: 60
   },
   {
-    name: "E-commerce Platform",
-    slug: "ecommerce-platform",
+    name: "NextGen Commerce",
+    slug: "nextgen-commerce",
     width: 120,
     height: 60
   },
   {
-    name: "Logistics Leader",
-    slug: "logistics-leader",
+    name: "Global Logistics Partners",
+    slug: "global-logistics",
     width: 120,
     height: 60
   },
   {
-    name: "Tech Innovator",
-    slug: "tech-innovator",
+    name: "Innovate Tech Solutions",
+    slug: "innovate-tech",
     width: 120,
     height: 60
   }

@@ -7,21 +7,21 @@ import { TrendingUp, Clock, Users, DollarSign, ArrowRight } from "lucide-react";
 const recentWins = [
   {
     icon: DollarSign,
-    client: "FinTech Startup",
+    client: "Velocity Financial",
     result: "$2.4M additional revenue",
     timeframe: "in 6 months",
     description: "AI loan assistant processing 300% more applications",
   },
   {
     icon: Clock,
-    client: "Healthcare Provider",
+    client: "Meridian Health Systems",
     result: "5x patient capacity",
     timeframe: "in 90 days",
     description: "AI care coach managing routine check-ins",
   },
   {
     icon: Users,
-    client: "E-commerce Platform",
+    client: "NextGen Commerce",
     result: "10,000 pages created",
     timeframe: "in 3 months",
     description: "AI content engine driving 400% traffic growth",

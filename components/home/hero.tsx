@@ -137,7 +137,7 @@ export function Hero() {
           >
             <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium">
-              Working AI in 10 Days • Not Slides in 10 Weeks
+              Real AI in Production • Not Just Another Deck
             </span>
           </motion.div>
 
@@ -160,7 +160,7 @@ export function Hero() {
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 font-normal"
           >
             <Balancer>
-              Ship working AI in days, not quarters. Keep humans in the loop, automate the rest.
+              We build AI that actually ships. In days, not quarters. Your team stays in control while AI handles the grunt work.
             </Balancer>
           </motion.p>
 
@@ -171,7 +171,7 @@ export function Hero() {
             className="text-base sm:text-lg text-muted-foreground/80 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed"
           >
             <Balancer>
-              Products in the wild: MortgageQ, Cab-O-Matic, Amble Ideation. Results {'>'}  slides.
+              Live products serving real customers: MortgageQ, Cabomatic, Amble. No slides. Just results.
             </Balancer>
           </motion.p>
 
