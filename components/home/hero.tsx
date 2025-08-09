@@ -137,7 +137,7 @@ export function Hero() {
           >
             <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium">
-              MortgageQ • Cab-O-Matic • Amble in Production
+              Working AI in 10 Days • Not Slides in 10 Weeks
             </span>
           </motion.div>
 
