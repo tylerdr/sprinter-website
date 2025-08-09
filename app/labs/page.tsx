@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star, Globe, BookOpen } from "lucide-react";
 import { useState } from "react";
 
 const labs = [
@@ -200,6 +200,52 @@ const labs = [
     actionVerb: "Simulate",
     featured: true,
   },
+  
+  // Multiplayer Category - New Collaborative AI Games
+  {
+    icon: Gamepad2,
+    title: "Cards Against AI",
+    description:
+      "Play Cards Against Humanity: Startup Edition with friends and AI players. Dark humor meets tech in this multiplayer party game.",
+    href: "/labs/cards-against-ai",
+    gradient: "from-purple-600 to-pink-600",
+    category: "multiplayer",
+    actionVerb: "Play",
+    featured: true,
+  },
+  {
+    icon: Palette,
+    title: "AI Telestrations",
+    description:
+      "Draw, guess, and laugh as your sketches transform through a hilarious chain of human and AI interpretations.",
+    href: "/labs/ai-telestrations",
+    gradient: "from-orange-500 to-pink-500",
+    category: "multiplayer",
+    actionVerb: "Draw",
+    featured: true,
+  },
+  {
+    icon: BookOpen,
+    title: "Story Adventure",
+    description:
+      "Choose your own adventure where AI writes the story and players vote on choices. Every decision shapes the narrative!",
+    href: "/labs/story-adventure",
+    gradient: "from-indigo-500 to-purple-600",
+    category: "multiplayer",
+    actionVerb: "Create",
+    featured: true,
+  },
+  {
+    icon: Globe,
+    title: "Future Scenarios",
+    description:
+      "Build future worlds together with AI. Collaborate on scenarios and explore humanity's AI-driven future through worldbuilding.",
+    href: "/labs/future-scenarios",
+    gradient: "from-cyan-500 to-blue-600",
+    category: "multiplayer",
+    actionVerb: "Build",
+    featured: true,
+  },
   {
     icon: Palette,
     title: "Vibe Coding",
@@ -244,6 +290,7 @@ const categories = [
   { id: "voice", name: "Voice", description: "Voice AI and conversation" },
   { id: "creative", name: "Creative", description: "Creative AI tools and games" },
   { id: "play", name: "Play", description: "Fun AI games and challenges" },
+  { id: "multiplayer", name: "Multiplayer", description: "Collaborative AI games with friends" },
 ];
 
 export default function LabsPage() {
