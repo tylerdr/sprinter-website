@@ -174,7 +174,7 @@ export function TestimonialCarousel({
                 transition={{ delay: index * 0.05 }}
                 className="group"
               >
-                <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/5 border border-border/10 hover:bg-card/10 transition-all">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/20 border border-border/30 hover:bg-card/30 transition-all">
                   <Building2 className="w-4 h-4 text-muted-foreground" />
                   <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
                     {client}
@@ -194,7 +194,7 @@ export function TestimonialCarousel({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-card/5 border border-border/10 rounded-2xl p-8 md:p-12"
+              className="bg-card/20 border border-border/30 rounded-2xl p-8 md:p-12"
             >
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Quote Section */}
@@ -260,14 +260,14 @@ export function TestimonialCarousel({
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 rounded-full bg-card/10 border border-border/20 hover:bg-card/20 transition-all"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 rounded-full bg-card/30 border border-border/20 hover:bg-card/40 transition-all"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 rounded-full bg-card/10 border border-border/20 hover:bg-card/20 transition-all"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 rounded-full bg-card/30 border border-border/20 hover:bg-card/40 transition-all"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5" />

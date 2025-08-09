@@ -39,7 +39,7 @@ export default function SketchStudioPage() {
 
         <SketchStudio />
 
-        <div className="mt-12 p-6 rounded-xl bg-card/5 border border-border/10">
+        <div className="mt-12 p-6 rounded-xl bg-card/20 border border-border/30">
           <h3 className="text-lg font-semibold mb-3">How it works</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>

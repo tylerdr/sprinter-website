@@ -150,7 +150,7 @@ export default function WorkflowTool() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm"
+          className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm"
         >
           <div className="mb-6">
             <label className="block text-sm font-medium mb-2">
@@ -161,7 +161,7 @@ export default function WorkflowTool() {
               value={workflowName}
               onChange={(e) => setWorkflowName(e.target.value)}
               placeholder="e.g., Customer Onboarding Process"
-              className="w-full px-4 py-2 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--accent)] focus:outline-none transition-colors"
+              className="w-full px-4 py-2 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--accent)] focus:outline-none transition-colors"
             />
           </div>
 
@@ -174,7 +174,7 @@ export default function WorkflowTool() {
                 onChange={(e) => setNewStep(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && addStep()}
                 placeholder="Enter a step in your workflow"
-                className="flex-1 px-4 py-2 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--accent)] focus:outline-none transition-colors"
+                className="flex-1 px-4 py-2 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--accent)] focus:outline-none transition-colors"
               />
               <button
                 onClick={addStep}
@@ -202,7 +202,7 @@ export default function WorkflowTool() {
                     className={`p-4 rounded-lg border ${
                       step.aiSuggestion
                         ? "border-brand-30 bg-brand-10"
-                        : "bg-card/5 border-border/10"
+                        : "bg-card/20 border-border/30"
                     }`}
                   >
                     <div className="flex items-start justify-between">
@@ -257,7 +257,7 @@ export default function WorkflowTool() {
             {analyzed && (
               <button
                 onClick={() => {}}
-                className="flex items-center gap-2 px-6 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors"
+                className="flex items-center gap-2 px-6 py-3 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors"
               >
                 <Download className="w-5 h-5" />
                 Export Plan
@@ -266,7 +266,7 @@ export default function WorkflowTool() {
 
             <button
               onClick={reset}
-              className="flex items-center gap-2 px-6 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors"
+              className="flex items-center gap-2 px-6 py-3 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors"
             >
               <RefreshCw className="w-5 h-5" />
               Reset
@@ -280,7 +280,7 @@ export default function WorkflowTool() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm"
+          className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm"
         >
           <h3 className="text-lg font-semibold mb-4">Quick Templates</h3>
           <div className="space-y-3">
@@ -288,7 +288,7 @@ export default function WorkflowTool() {
               <button
                 key={example.name}
                 onClick={() => loadExample(example)}
-                className="w-full p-3 text-left rounded-lg bg-card/5 hover:bg-card/10 border border-border/10 transition-colors"
+                className="w-full p-3 text-left rounded-lg bg-card/20 hover:bg-card/30 border border-border/30 transition-colors"
               >
                 <div className="font-medium mb-1">{example.name}</div>
                 <div className="text-xs text-muted-foreground">

@@ -39,7 +39,7 @@ export default function WorkflowToolPage() {
 
         <WorkflowTool />
 
-        <div className="mt-8 p-6 rounded-xl bg-card/5 border border-border/10">
+        <div className="mt-8 p-6 rounded-xl bg-card/20 border border-border/30">
           <h3 className="text-lg font-semibold mb-3">How it works</h3>
           <p className="text-muted-foreground">
             Map out your business workflow step by step, and our AI will analyze

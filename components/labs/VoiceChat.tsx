@@ -462,7 +462,7 @@ export default function VoiceChat() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-6 sm:p-8 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm"
+            className="p-6 sm:p-8 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm"
           >
             <WaveformOrb />
             
@@ -578,7 +578,7 @@ export default function VoiceChat() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mb-6 p-4 rounded-lg bg-card/10 border border-border/20"
+                  className="mb-6 p-4 rounded-lg bg-card/30 border border-border/20"
                 >
                   <h3 className="text-sm font-medium mb-4">Voice Settings</h3>
                   
@@ -591,7 +591,7 @@ export default function VoiceChat() {
                           setSettings(prev => ({ ...prev, voice: value }))
                         }
                       >
-                        <SelectTrigger className="bg-card/10">
+                        <SelectTrigger className="bg-card/30">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -615,7 +615,7 @@ export default function VoiceChat() {
                           setSettings(prev => ({ ...prev, inputMode: value }))
                         }
                       >
-                        <SelectTrigger className="bg-card/10">
+                        <SelectTrigger className="bg-card/30">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -638,7 +638,7 @@ export default function VoiceChat() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm"
+            className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm"
           >
             <h3 className="text-lg font-semibold mb-4">Sample Conversations</h3>
             <div className="space-y-3">
@@ -666,7 +666,7 @@ export default function VoiceChat() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm"
+            className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm"
           >
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold">Conversation</h3>

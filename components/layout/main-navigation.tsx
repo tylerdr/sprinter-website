@@ -239,7 +239,7 @@ export function MainNavigation() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-foreground hover:bg-card/10 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
+              className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
               aria-label={
                 mobileMenuOpen
                   ? "Close navigation menu"
@@ -285,9 +285,9 @@ export function MainNavigation() {
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
                         className={cn(
-                          "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/10",
+                          "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/30",
                           pathname === item.href
-                            ? "text-foreground bg-card/10"
+                            ? "text-foreground bg-card/30"
                             : "text-muted-foreground"
                         )}
                       >
@@ -309,9 +309,9 @@ export function MainNavigation() {
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
                         className={cn(
-                          "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/10",
+                          "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/30",
                           pathname === item.href
-                            ? "text-foreground bg-card/10"
+                            ? "text-foreground bg-card/30"
                             : "text-muted-foreground"
                         )}
                       >
@@ -333,9 +333,9 @@ export function MainNavigation() {
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
                         className={cn(
-                          "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/10",
+                          "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/30",
                           pathname === item.href
-                            ? "text-foreground bg-card/10"
+                            ? "text-foreground bg-card/30"
                             : "text-muted-foreground"
                         )}
                       >

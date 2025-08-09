@@ -28,7 +28,7 @@ const preBuiltComponents: ComponentData[] = [
     keywords: ["pricing", "card", "plan", "subscription", "price", "gradient", "border"],
     code: `function PricingCard() {
   return (
-    <div className="relative p-6 rounded-xl bg-card/5 border border-border/10 hover:border-brand/30 transition-all duration-300 group">
+    <div className="relative p-6 rounded-xl bg-card/20 border border-border/30 hover:border-brand/30 transition-all duration-300 group">
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-brand/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="relative">
         <div className="flex items-center justify-between mb-4">
@@ -99,7 +99,7 @@ const preBuiltComponents: ComponentData[] = [
   
   return (
     <div className="relative inline-block">
-      <button className="p-2 rounded-lg bg-card/10 hover:bg-card/20 transition-colors">
+      <button className="p-2 rounded-lg bg-card/30 hover:bg-card/40 transition-colors">
         <Bell className="w-6 h-6" />
         {count > 0 && (
           <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full animate-pulse">
@@ -170,7 +170,7 @@ const preBuiltComponents: ComponentData[] = [
     keywords: ["metric", "stat", "analytics", "dashboard", "kpi", "chart", "trending"],
     code: `function MetricCard() {
   return (
-    <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+    <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
       <div className="flex items-center justify-between mb-2">
         <h3 className="text-sm font-medium text-muted-foreground">Revenue</h3>
         <TrendingUp className="w-4 h-4 text-success" />
@@ -270,7 +270,7 @@ export default function ComponentStudio() {
     switch (componentName) {
       case "PricingCard":
         return (
-          <div className="relative p-6 rounded-xl bg-card/5 border border-border/10 hover:border-brand/30 transition-all duration-300 group">
+          <div className="relative p-6 rounded-xl bg-card/20 border border-border/30 hover:border-brand/30 transition-all duration-300 group">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-brand/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="relative">
               <div className="flex items-center justify-between mb-4">
@@ -321,7 +321,7 @@ export default function ComponentStudio() {
       case "NotificationBadge":
         return (
           <div className="relative inline-block">
-            <button className="p-2 rounded-lg bg-card/10 hover:bg-card/20 transition-colors">
+            <button className="p-2 rounded-lg bg-card/30 hover:bg-card/40 transition-colors">
               <Bell className="w-6 h-6" />
               {count > 0 && (
                 <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full animate-pulse">
@@ -364,7 +364,7 @@ export default function ComponentStudio() {
       
       case "MetricCard":
         return (
-          <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+          <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-medium text-muted-foreground">Revenue</h3>
               <TrendingUp className="w-4 h-4 text-success" />
@@ -390,7 +390,7 @@ export default function ComponentStudio() {
   return (
     <div className="max-w-7xl mx-auto">
       {/* Input Section */}
-      <div className="mb-8 p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+      <div className="mb-8 p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
         <div className="mb-4">
           <label className="block text-sm font-medium mb-2">
             Describe your component
@@ -400,7 +400,7 @@ export default function ComponentStudio() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="e.g., a modern pricing card with gradient border"
-            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-accent focus:outline-none"
+            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-accent focus:outline-none"
             onKeyDown={(e) => e.key === 'Enter' && generateComponent()}
           />
         </div>
@@ -428,7 +428,7 @@ export default function ComponentStudio() {
             <button
               onClick={refineComponent}
               disabled={isGenerating}
-              className="flex items-center gap-2 px-4 py-2 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 disabled:opacity-50"
             >
               <RefreshCw className="w-4 h-4" />
               Refine
@@ -468,7 +468,7 @@ export default function ComponentStudio() {
                 </h3>
                 <button
                   onClick={copyToClipboard}
-                  className="flex items-center gap-2 px-3 py-1 bg-card/10 hover:bg-card/20 rounded-lg text-sm transition-colors"
+                  className="flex items-center gap-2 px-3 py-1 bg-card/30 hover:bg-card/40 rounded-lg text-sm transition-colors"
                 >
                   {copied ? (
                     <>
@@ -485,7 +485,7 @@ export default function ComponentStudio() {
               </div>
               
               <div className="relative">
-                <pre className="p-4 rounded-lg bg-slate-900 text-slate-100 text-sm overflow-x-auto border border-border/10">
+                <pre className="p-4 rounded-lg bg-slate-900 text-slate-100 text-sm overflow-x-auto border border-border/30">
                   <code className="language-tsx">
                     {generatedComponent.code}
                   </code>
@@ -500,7 +500,7 @@ export default function ComponentStudio() {
                 Live Preview
               </h3>
               
-              <div className="p-8 rounded-lg bg-card/5 border border-border/10 backdrop-blur-sm min-h-[300px] flex items-center justify-center">
+              <div className="p-8 rounded-lg bg-card/20 border border-border/30 backdrop-blur-sm min-h-[300px] flex items-center justify-center">
                 {renderComponent(generatedComponent.name)}
               </div>
             </div>

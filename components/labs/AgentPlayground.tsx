@@ -291,7 +291,7 @@ export default function AgentPlayground() {
         transition={{ delay: 0.1 }}
         className="mb-6 sm:mb-8"
       >
-        <div className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Block Library */}
             <div className="lg:w-1/3">
@@ -339,7 +339,7 @@ export default function AgentPlayground() {
                   <button
                     onClick={createExampleWorkflow}
                     disabled={isRunning}
-                    className="flex items-center gap-2 px-3 py-2 text-xs bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors touch-manipulation"
+                    className="flex items-center gap-2 px-3 py-2 text-xs bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors touch-manipulation"
                   >
                     <Plus className="w-3 h-3" />
                     Example
@@ -347,7 +347,7 @@ export default function AgentPlayground() {
                   <button
                     onClick={resetPlayground}
                     disabled={isRunning}
-                    className="flex items-center gap-2 px-3 py-2 text-xs bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors touch-manipulation"
+                    className="flex items-center gap-2 px-3 py-2 text-xs bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors touch-manipulation"
                   >
                     <RefreshCw className="w-3 h-3" />
                     Clear
@@ -359,7 +359,7 @@ export default function AgentPlayground() {
                 ref={playgroundRef}
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="relative h-96 rounded-xl border-2 border-dashed border-border/20 bg-card/5 backdrop-blur-sm p-4 overflow-hidden"
+                className="relative h-96 rounded-xl border-2 border-dashed border-border/20 bg-card/20 backdrop-blur-sm p-4 overflow-hidden"
               >
                 {workflowBlocks.length === 0 ? (
                   <div className="flex items-center justify-center h-full text-muted-foreground">
@@ -479,7 +479,7 @@ export default function AgentPlayground() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-3 rounded-lg bg-card/5 border border-border/10"
+                  className="flex items-start gap-3 p-3 rounded-lg bg-card/20 border border-border/30"
                 >
                   <div className="w-6 h-6 bg-success text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold mt-0.5">
                     {index + 1}
@@ -499,7 +499,7 @@ export default function AgentPlayground() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="mt-6 p-4 sm:p-6 rounded-xl bg-card/10 border border-border/20"
+            className="mt-6 p-4 sm:p-6 rounded-xl bg-card/30 border border-border/20"
           >
             {(() => {
               const block = workflowBlocks.find(b => b.id === selectedBlock);
@@ -521,7 +521,7 @@ export default function AgentPlayground() {
                   <p className="text-sm text-muted-foreground mb-3">
                     {block.type.description}
                   </p>
-                  <div className="p-3 rounded-lg bg-card/5 border border-border/10">
+                  <div className="p-3 rounded-lg bg-card/20 border border-border/30">
                     <h4 className="text-sm font-medium mb-2">Sample Output:</h4>
                     <p className="text-xs font-mono text-muted-foreground">
                       {block.type.mockOutput}

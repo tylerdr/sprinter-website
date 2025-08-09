@@ -88,7 +88,7 @@ export function TimeToBuild() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="p-6 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 hover:border-brand/30 transition-all duration-300">
+              <div className="p-6 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm hover:bg-card/30 hover:border-brand/30 transition-all duration-300">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-gradient-to-br from-brand/20 to-brand-end/20 group-hover:scale-110 transition-transform duration-300">
                     <reason.icon className="w-6 h-6 text-brand" />
@@ -141,7 +141,7 @@ export function TimeToBuild() {
               </a>
               <a
                 href="/labs"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors border border-border/20"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors border border-border/20"
               >
                 Explore What&apos;s Possible
               </a>

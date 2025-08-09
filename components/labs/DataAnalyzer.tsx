@@ -59,7 +59,7 @@ export default function DataAnalyzer() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+      <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
         {!file ? (
           <div className="text-center">
             <div className="border-2 border-dashed border-border/20 rounded-xl p-8 sm:p-12 hover:border-brand/30 transition-colors">
@@ -97,7 +97,7 @@ export default function DataAnalyzer() {
               <div className="flex gap-3">
                 <button
                   onClick={resetAnalysis}
-                  className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/10 transition-colors min-h-[40px]"
+                  className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/30 transition-colors min-h-[40px]"
                 >
                   Change File
                 </button>
@@ -145,7 +145,7 @@ export default function DataAnalyzer() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+                  <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                     <div className="flex items-center gap-2 mb-4">
                       <TrendingUp className="w-5 h-5 text-green-500" />
                       <h4 className="font-semibold text-sm sm:text-base">Key Insights</h4>
@@ -160,7 +160,7 @@ export default function DataAnalyzer() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+                  <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                     <div className="flex items-center gap-2 mb-4">
                       <AlertCircle className="w-5 h-5 text-brand" />
                       <h4 className="font-semibold text-sm sm:text-base">Recommendations</h4>

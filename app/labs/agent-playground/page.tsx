@@ -40,7 +40,7 @@ export default function AgentPlaygroundPage() {
         <AgentPlayground />
 
         <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10">
+          <div className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30">
             <h3 className="text-base sm:text-lg font-semibold mb-3">
               How Agent Workflows Work
             </h3>
@@ -60,7 +60,7 @@ export default function AgentPlaygroundPage() {
             </div>
           </div>
 
-          <div className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10">
+          <div className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30">
             <h3 className="text-base sm:text-lg font-semibold mb-3">
               Real-World Applications
             </h3>

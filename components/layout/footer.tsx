@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="bg-background border-t border-border/10"
+      className="bg-background border-t border-border/30"
     >
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
@@ -144,7 +144,7 @@ export function Footer() {
         </div>
 
         {/* Call to Action */}
-        <div className="border-t border-border/10 mt-8 pt-8 text-center">
+        <div className="border-t border-border/30 mt-8 pt-8 text-center">
           <Link
             href="/contact"
             className="px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation text-sm inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
@@ -154,7 +154,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-border/10 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
+        <div className="border-t border-border/30 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
           <p className="text-xs sm:text-sm text-muted-foreground">
             © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
           </p>

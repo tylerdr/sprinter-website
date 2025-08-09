@@ -331,7 +331,7 @@ export default function MusicStudio() {
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="E.g., Upbeat electronic dance music with synthesizers and driving bassline for a workout playlist..."
-          className="w-full h-32 px-4 py-3 rounded-xl bg-card/10 border border-border/20 focus:border-primary/50 focus:outline-none resize-none"
+          className="w-full h-32 px-4 py-3 rounded-xl bg-card/30 border border-border/20 focus:border-primary/50 focus:outline-none resize-none"
         />
       </div>
 
@@ -348,7 +348,7 @@ export default function MusicStudio() {
               className={`p-4 rounded-xl border transition-all ${
                 selectedStyle === style.name
                   ? 'border-primary bg-primary/10'
-                  : 'border-border/20 bg-card/5 hover:bg-card/10'
+                  : 'border-border/20 bg-card/20 hover:bg-card/30'
               }`}
             >
               <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${style.color} mb-2 mx-auto`} />
@@ -371,7 +371,7 @@ export default function MusicStudio() {
               className={`px-4 py-2 rounded-lg border transition-all ${
                 duration === d.value
                   ? 'border-primary bg-primary/10'
-                  : 'border-border/20 bg-card/5 hover:bg-card/10'
+                  : 'border-border/20 bg-card/20 hover:bg-card/30'
               }`}
             >
               <Clock className="w-4 h-4 inline mr-2" />
@@ -411,7 +411,7 @@ export default function MusicStudio() {
             exit={{ opacity: 0, height: 0 }}
             className="space-y-4"
           >
-            <div className="w-full bg-card/10 rounded-full h-2">
+            <div className="w-full bg-card/30 rounded-full h-2">
               <motion.div
                 className="h-2 bg-gradient-to-r from-primary to-purple-600 rounded-full"
                 initial={{ width: 0 }}
@@ -432,7 +432,7 @@ export default function MusicStudio() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-6 rounded-xl bg-card/10 border border-border/20 space-y-6"
+            className="p-6 rounded-xl bg-card/30 border border-border/20 space-y-6"
           >
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold">{generatedTrack.title}</h3>

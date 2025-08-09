@@ -127,7 +127,7 @@ export default function DocumentIntelligence() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+      <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
         {!file ? (
           <div className="text-center">
             <div className="border-2 border-dashed border-border/20 rounded-xl p-8 sm:p-12 hover:border-brand/30 transition-colors">
@@ -165,7 +165,7 @@ export default function DocumentIntelligence() {
               <div className="flex gap-3">
                 <button
                   onClick={resetDocument}
-                  className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/10 transition-colors min-h-[40px]"
+                  className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/30 transition-colors min-h-[40px]"
                 >
                   Change File
                 </button>
@@ -206,7 +206,7 @@ export default function DocumentIntelligence() {
             {analysis && !isAnalyzing && (
               <div className="space-y-6">
                 {/* Tabs */}
-                <div className="flex gap-1 p-1 bg-card/10 rounded-lg">
+                <div className="flex gap-1 p-1 bg-card/30 rounded-lg">
                   <button
                     onClick={() => setActiveTab('summary')}
                     className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -252,7 +252,7 @@ export default function DocumentIntelligence() {
                       </p>
                     </div>
 
-                    <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+                    <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                       <h4 className="font-semibold mb-4 text-sm sm:text-base">Key Points</h4>
                       <ul className="space-y-3">
                         {analysis.keyPoints.map((point, index) => (
@@ -268,7 +268,7 @@ export default function DocumentIntelligence() {
 
                 {activeTab === 'entities' && (
                   <div className="space-y-6">
-                    <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+                    <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                       <h4 className="font-semibold mb-4 text-sm sm:text-base">Extracted Entities</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                         {analysis.entities.map((entity, index) => (
@@ -287,7 +287,7 @@ export default function DocumentIntelligence() {
 
                 {activeTab === 'qa' && (
                   <div className="space-y-6">
-                    <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+                    <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                       <h4 className="font-semibold mb-4 text-sm sm:text-base">Ask Questions</h4>
                       <div className="flex gap-3">
                         <input
@@ -295,7 +295,7 @@ export default function DocumentIntelligence() {
                           value={question}
                           onChange={(e) => setQuestion(e.target.value)}
                           placeholder="Ask a question about the document..."
-                          className="flex-1 p-3 bg-card/10 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
+                          className="flex-1 p-3 bg-card/30 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
                           onKeyPress={(e) => e.key === 'Enter' && askQuestion()}
                         />
                         <button
@@ -314,7 +314,7 @@ export default function DocumentIntelligence() {
 
                     <div className="space-y-4">
                       {analysis.questions.map((qa, index) => (
-                        <div key={index} className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+                        <div key={index} className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                           <div className="mb-3">
                             <div className="font-medium text-sm sm:text-base mb-2">Q: {qa.question}</div>
                             <div className="text-muted-foreground text-sm sm:text-base leading-relaxed">

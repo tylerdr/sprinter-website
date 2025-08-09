@@ -333,10 +333,10 @@ export default function AiAssistant() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6 sm:mb-8"
       >
-        <div className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <label className="block text-sm font-medium mb-3">Choose Your AI Agent:</label>
           <Select value={selectedAgent} onValueChange={setSelectedAgent}>
-            <SelectTrigger className="w-full bg-card/10 border-border/20">
+            <SelectTrigger className="w-full bg-card/30 border-border/20">
               <SelectValue>
                 <div className="flex items-center gap-3">
                   <div className={`p-2 rounded-lg bg-gradient-to-r ${currentAgent.color}`}>
@@ -382,7 +382,7 @@ export default function AiAssistant() {
         transition={{ delay: 0.1 }}
         className="mb-6 sm:mb-8"
       >
-        <div className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <h3 className="text-sm font-medium mb-3">Try these sample prompts:</h3>
           <div className="flex flex-wrap gap-2">
             {samplePrompts[selectedAgent]?.map((prompt, index) => (
@@ -405,7 +405,7 @@ export default function AiAssistant() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm overflow-hidden"
+        className="rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm overflow-hidden"
       >
         {/* Messages */}
         <ScrollArea className="h-[500px] p-4 sm:p-6">
@@ -446,7 +446,7 @@ export default function AiAssistant() {
                       "rounded-xl px-4 py-3",
                       message.role === "user"
                         ? "bg-brand-10 text-foreground"
-                        : "bg-card/10 border border-border/20"
+                        : "bg-card/30 border border-border/20"
                     )}>
                       {message.isTyping ? (
                         <div className="flex items-center gap-2">
@@ -474,7 +474,7 @@ export default function AiAssistant() {
                           {message.toolCalls.map((tool) => (
                             <div
                               key={tool.id}
-                              className="flex items-center gap-2 p-2 rounded-lg bg-card/10 border border-border/20"
+                              className="flex items-center gap-2 p-2 rounded-lg bg-card/30 border border-border/20"
                             >
                               <tool.icon className="w-4 h-4 text-muted-foreground" />
                               <div className="flex-1 min-w-0">
@@ -550,7 +550,7 @@ export default function AiAssistant() {
         </ScrollArea>
 
         {/* Input */}
-        <div className="border-t border-border/10 p-4 sm:p-6">
+        <div className="border-t border-border/30 p-4 sm:p-6">
           <div className="flex gap-2 sm:gap-3">
             <input
               ref={inputRef}
@@ -559,7 +559,7 @@ export default function AiAssistant() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder={`Ask ${currentAgent.name} anything...`}
-              className="flex-1 px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-brand focus:outline-none transition-colors text-sm sm:text-base touch-manipulation"
+              className="flex-1 px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-brand focus:outline-none transition-colors text-sm sm:text-base touch-manipulation"
               disabled={isTyping}
             />
             <Button

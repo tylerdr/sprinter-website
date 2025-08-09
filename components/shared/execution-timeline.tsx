@@ -168,7 +168,7 @@ export function ExecutionTimeline() {
                       "p-6 rounded-xl border transition-all h-full",
                       isExpanded
                         ? "bg-gradient-to-br from-brand/10 to-brand-end/10 border-brand-30 shadow-lg shadow-brand/10"
-                        : "bg-card/5 border-border/10 group-hover:bg-card/10 group-hover:border-border/20"
+                        : "bg-card/20 border-border/30 group-hover:bg-card/30 group-hover:border-border/40"
                     )}>
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-start gap-4">
@@ -279,7 +279,7 @@ export function ExecutionTimeline() {
             </Link>
             <Link
               href="/case-studies"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-card/10 border border-border/20 font-semibold rounded-lg hover:bg-card/20 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-card/30 border border-border/20 font-semibold rounded-lg hover:bg-card/40 transition-all"
             >
               See Success Stories
             </Link>

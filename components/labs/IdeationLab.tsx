@@ -170,7 +170,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
       >
         <button
           onClick={() => setGameMode("brainstorm")}
-          className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all text-left group"
+          className="p-6 rounded-xl bg-card/20 border border-border/30 hover:bg-card/30 transition-all text-left group"
         >
           <Lightbulb className="w-8 h-8 text-warning mb-3" />
           <h3 className="text-xl font-semibold mb-2">AI Brainstorm</h3>
@@ -181,7 +181,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
 
         <button
           onClick={() => setGameMode("scoring")}
-          className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all text-left group"
+          className="p-6 rounded-xl bg-card/20 border border-border/30 hover:bg-card/30 transition-all text-left group"
         >
           <TrendingUp className="w-8 h-8 text-info mb-3" />
           <h3 className="text-xl font-semibold mb-2">Idea Scorer</h3>
@@ -192,7 +192,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
 
         <button
           onClick={() => setGameMode("race")}
-          className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all text-left group"
+          className="p-6 rounded-xl bg-card/20 border border-border/30 hover:bg-card/30 transition-all text-left group"
         >
           <Trophy className="w-8 h-8 text-accent mb-3" />
           <h3 className="text-xl font-semibold mb-2">Idea Race</h3>
@@ -203,7 +203,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
 
         <button
           onClick={() => setGameMode("scattergories")}
-          className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all text-left group"
+          className="p-6 rounded-xl bg-card/20 border border-border/30 hover:bg-card/30 transition-all text-left group"
         >
           <Timer className="w-8 h-8 text-success mb-3" />
           <h3 className="text-xl font-semibold mb-2">Startup Scattergories</h3>
@@ -226,7 +226,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
             exit={{ opacity: 0, y: -20 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+            <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
               <h2 className="text-2xl font-bold mb-4">
                 AI Brainstorm Generator
               </h2>
@@ -240,7 +240,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
                   value={theme}
                   onChange={(e) => setTheme(e.target.value)}
                   placeholder="e.g., sustainable energy, remote education"
-                  className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--warning)] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--warning)] focus:outline-none"
                 />
               </div>
 
@@ -292,7 +292,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
             exit={{ opacity: 0, y: -20 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+            <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
               <h2 className="text-2xl font-bold mb-4">Idea Scorer</h2>
 
               <div className="mb-6">
@@ -303,7 +303,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
                   value={userInput}
                   onChange={(e) => setUserInput(e.target.value)}
                   placeholder="Describe your startup or product idea..."
-                  className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--info)] focus:outline-none h-32 resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--info)] focus:outline-none h-32 resize-none"
                 />
               </div>
 
@@ -353,7 +353,7 @@ Suggestion: Consider adding a social component to increase viral growth potentia
         <div className="text-center mt-6">
           <button
             onClick={resetGame}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors"
           >
             <RefreshCw className="w-4 h-4" />
             Back to Games

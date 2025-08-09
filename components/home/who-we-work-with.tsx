@@ -83,7 +83,7 @@ export function WhoWeWorkWith() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/10 border border-border/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/30 border border-border/20 mb-6">
             <Building2 className="w-5 h-5 text-brand" />
             <span className="text-sm font-medium text-brand">
               Trusted By Industry Leaders
@@ -117,7 +117,7 @@ export function WhoWeWorkWith() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="p-4 rounded-lg bg-card/5 border border-border/10 text-center hover:bg-card/10 transition-colors group"
+                className="p-4 rounded-lg bg-card/20 border border-border/30 text-center hover:bg-card/30 transition-colors group"
               >
                 <div className="flex items-center justify-center h-16">
                   <Image
@@ -149,7 +149,7 @@ export function WhoWeWorkWith() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="p-6 rounded-2xl bg-card/5 border border-border/10 hover:bg-card/10 transition-colors group"
+                className="p-6 rounded-2xl bg-card/20 border border-border/30 hover:bg-card/30 transition-colors group"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="p-2 rounded-lg bg-gradient-to-br from-brand/20 to-brand/10 group-hover:scale-110 transition-transform">

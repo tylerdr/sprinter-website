@@ -146,7 +146,7 @@ export function Products() {
               className="w-full"
             >
               <div
-                className="group block p-6 sm:p-8 rounded-2xl bg-card/5 border backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation h-full relative border-brand-start/30 bg-brand-gradient/5"
+                className="group block p-6 sm:p-8 rounded-2xl bg-card/20 border backdrop-blur-sm hover:bg-card/30 transition-all hover:scale-105 touch-manipulation h-full relative border-brand-start/30 bg-brand-gradient/5"
               >
                 <div className="absolute -top-3 left-6">
                   <div className="px-3 py-1 bg-brand-gradient text-primary-foreground text-xs font-semibold rounded-full">
@@ -157,7 +157,7 @@ export function Products() {
                 <div className="flex flex-col h-full">
                   {/* Product screenshot */}
                   {product.screenshot && (
-                    <div className="mb-6 overflow-hidden rounded-lg border border-border/10">
+                    <div className="mb-6 overflow-hidden rounded-lg border border-border/30">
                       <Image
                         src={product.screenshot.src}
                         alt={product.screenshot.alt}
@@ -244,7 +244,7 @@ export function Products() {
               transition={{ delay: (index + 3) * 0.1, duration: 0.5 }}
               className="w-full"
             >
-              <div className="group block p-6 sm:p-8 rounded-2xl bg-card/5 border backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation h-full relative border-border/10">
+              <div className="group block p-6 sm:p-8 rounded-2xl bg-card/20 border backdrop-blur-sm hover:bg-card/30 transition-all hover:scale-105 touch-manipulation h-full relative border-border/30">
                 <div className="flex flex-col h-full">
                   <div className="flex items-start gap-4 mb-6">
                     <div
@@ -311,7 +311,7 @@ export function Products() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-card/10 backdrop-blur-sm text-foreground font-medium rounded-lg border border-border/20 hover:bg-card/20 transition-all touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-card/30 backdrop-blur-sm text-foreground font-medium rounded-lg border border-border/20 hover:bg-card/40 transition-all touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
             >
               Get Free Consultation
               <ArrowRight className="w-4 h-4" />

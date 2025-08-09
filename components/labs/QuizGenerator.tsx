@@ -151,7 +151,7 @@ export default function QuizGenerator() {
 
   const renderQuestion = (question: QuizQuestion, index: number) => {
     return (
-      <div key={question.id} className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+      <div key={question.id} className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
         <div className="flex items-start gap-3 mb-4">
           <span className="flex-shrink-0 w-6 h-6 bg-brand-gradient text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center">
             {index + 1}
@@ -174,7 +174,7 @@ export default function QuizGenerator() {
                     className={`p-3 rounded-lg border ${
                       showAnswers && question.correctAnswer === optionIndex 
                         ? 'border-green-500/50 bg-green-500/10' 
-                        : 'border-border/20 bg-card/5'
+                        : 'border-border/20 bg-card/20'
                     }`}
                   >
                     <span className="text-sm">{String.fromCharCode(65 + optionIndex)}. {option}</span>
@@ -194,7 +194,7 @@ export default function QuizGenerator() {
                     className={`p-3 rounded-lg border ${
                       showAnswers && question.correctAnswer.toString().toLowerCase() === option.toLowerCase() 
                         ? 'border-green-500/50 bg-green-500/10' 
-                        : 'border-border/20 bg-card/5'
+                        : 'border-border/20 bg-card/20'
                     }`}
                   >
                     <span className="text-sm">{option}</span>
@@ -227,7 +227,7 @@ export default function QuizGenerator() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+      <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
         {!generatedQuiz ? (
           <div className="space-y-6">
             {/* File Upload */}
@@ -262,7 +262,7 @@ export default function QuizGenerator() {
             </div>
 
             {/* Quiz Configuration */}
-            <div className="p-6 bg-card/5 border border-border/10 rounded-xl">
+            <div className="p-6 bg-card/20 border border-border/30 rounded-xl">
               <div className="flex items-center gap-2 mb-4">
                 <Settings className="w-5 h-5 text-brand" />
                 <h3 className="text-lg font-semibold">Quiz Configuration</h3>
@@ -275,7 +275,7 @@ export default function QuizGenerator() {
                   <select
                     value={config.questionType}
                     onChange={(e) => setConfig({...config, questionType: e.target.value as 'mixed' | 'multiple-choice' | 'true-false' | 'short-answer'})}
-                    className="w-full p-3 bg-card/10 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
+                    className="w-full p-3 bg-card/30 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
                   >
                     <option value="mixed">Mixed</option>
                     <option value="multiple-choice">Multiple Choice</option>
@@ -309,7 +309,7 @@ export default function QuizGenerator() {
                   <select
                     value={config.difficulty}
                     onChange={(e) => setConfig({...config, difficulty: e.target.value as 'easy' | 'medium' | 'hard'})}
-                    className="w-full p-3 bg-card/10 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
+                    className="w-full p-3 bg-card/30 border border-border/20 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand/50"
                   >
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -359,7 +359,7 @@ export default function QuizGenerator() {
         ) : (
           <div className="space-y-6">
             {/* Quiz Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-border/10">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-border/30">
               <div>
                 <h3 className="text-xl font-bold mb-2">Generated Quiz</h3>
                 <p className="text-sm text-muted-foreground">
@@ -370,14 +370,14 @@ export default function QuizGenerator() {
               <div className="flex gap-3 flex-wrap">
                 <button
                   onClick={() => setShowAnswers(!showAnswers)}
-                  className="flex items-center gap-2 px-4 py-2 bg-card/10 border border-border/20 rounded-lg hover:bg-card/20 transition-colors text-sm min-h-[40px]"
+                  className="flex items-center gap-2 px-4 py-2 bg-card/30 border border-border/20 rounded-lg hover:bg-card/40 transition-colors text-sm min-h-[40px]"
                 >
                   {showAnswers ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   {showAnswers ? 'Hide' : 'Show'} Answers
                 </button>
                 <button
                   onClick={resetGenerator}
-                  className="flex items-center gap-2 px-4 py-2 border border-border/20 rounded-lg hover:bg-card/10 transition-colors text-sm min-h-[40px]"
+                  className="flex items-center gap-2 px-4 py-2 border border-border/20 rounded-lg hover:bg-card/30 transition-colors text-sm min-h-[40px]"
                 >
                   <RotateCcw className="w-4 h-4" />
                   New Quiz

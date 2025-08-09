@@ -130,154 +130,50 @@ export default function ServicesPage() {
             ))}
           </div>
 
+          {/* Advisory Section - Detailed for conversion */}
           <div className="mt-16">
             <div className="p-8 rounded-2xl border border-info-30 bg-info-10">
               <h2 className="text-3xl font-semibold mb-6 text-center tracking-tight leading-tight">
                 <Balancer>
-                  Advisory & Team Enablement (Vibe Coding)
+                  Vibe Coding, Without the Vibes Failing in Prod
                 </Balancer>
               </h2>
               <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
                 <Balancer>
-                  Ship faster without quality debt. We teach patterns, reviews, test scaffolds, and observability so &apos;vibe coded&apos; features stick in production.
+                  Weekly office hours, async code reviews, test harness scaffolds, observability, productionizing checklist. $20k/mo.
                 </Balancer>
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <h3 className="font-semibold mb-4 text-lg">What&apos;s Included:</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Weekly office hours for technical guidance</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Async code review and feedback</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Design patterns and architecture guidance</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Prompt libraries and AI tool templates</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Test harness setup and best practices</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">Productionizing checklist and deployment guidance</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-4 text-lg">Perfect For:</h3>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li>• Teams moving fast with AI but worried about technical debt</li>
-                    <li>• Engineering managers who need to scale code quality practices</li>
-                    <li>• Startups balancing speed with maintainability</li>
-                    <li>• Companies wanting to build internal AI expertise</li>
-                  </ul>
-                  <div className="mt-6 p-4 rounded-lg bg-card/20 border border-border/20">
-                    <div className="text-2xl font-semibold gradient-text mb-1 tabular-nums">$20,000/month</div>
-                    <div className="text-sm text-muted-foreground">Ongoing engagement</div>
-                  </div>
-                </div>
-              </div>
               <div className="text-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-3 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
                 >
-                  Start a 10-Day Sprint
+                  Book Technical Screening
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
             </div>
           </div>
 
+          {/* PE Section - keep this as it's not duplicated in pricing */}
           <div className="mt-16">
             <div className="p-8 rounded-2xl border border-brand-30 bg-brand-10">
               <h2 className="text-3xl font-semibold mb-6 text-center tracking-tight leading-tight">
                 <Balancer>
-                  For Private Equity & Investment Firms
+                  For Private Equity & Investors
                 </Balancer>
               </h2>
               <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
                 <Balancer>
-                  Transform multiple portfolio companies with one strategic
-                  partnership. We act as your AI SWAT team to rapidly uplift
-                  operational efficiency and valuation across your holdings.
+                  We act as your AI SWAT team across your portfolio: 4-8 weeks per company, 30-50% efficiency gains.
                 </Balancer>
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-semibold gradient-text mb-2 tabular-nums">
-                    10x
-                  </div>
-                  <p className="text-sm text-muted-foreground font-normal leading-relaxed">
-                    Leverage across portfolio
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-semibold gradient-text mb-2 tabular-nums">
-                    4-8 weeks
-                  </div>
-                  <p className="text-sm text-muted-foreground font-normal leading-relaxed">
-                    Per implementation
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-semibold gradient-text mb-2 tabular-nums">
-                    30-50%
-                  </div>
-                  <p className="text-sm text-muted-foreground font-normal leading-relaxed">
-                    Efficiency gains
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-3 mb-8">
-                <h3 className="font-semibold">How We Work with PE Partners:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      Portfolio-wide AI opportunity assessment
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      Rapid deployment across multiple companies
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      Value creation metrics aligned with exit strategy
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      Knowledge transfer to operating partners
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <p className="text-sm italic text-muted-foreground mb-6">
-                &quot;Traditional companies in your portfolio have the most to
-                gain from AI - we help them leapfrog competitors who aren&apos;t
-                moving fast enough.&quot;
               </p>
               <div className="text-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-3 bg-brand-gradient text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
                 >
-                  Start a 10-Day Sprint
+                  Request Portfolio Audit
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

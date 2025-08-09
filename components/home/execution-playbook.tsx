@@ -74,7 +74,7 @@ export function ExecutionPlaybook({ compact = false }: { compact?: boolean }) {
           {steps.map((s, idx) => (
             <div
               key={s.title}
-              className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all"
+              className="p-6 rounded-xl bg-card/20 border border-border/30 hover:bg-card/30 transition-all"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div

@@ -82,7 +82,7 @@ export function InteractiveDemo() {
                   className={`group block p-6 rounded-xl transition-all ${
                     activeDemo === index
                       ? "bg-brand-10 border-brand-30"
-                      : "bg-card/5 border-border/10 hover:bg-card/10"
+                      : "bg-card/20 border-border/30 hover:bg-card/30"
                   } border backdrop-blur-sm`}
                 >
                   <div className="flex items-start gap-4">
@@ -90,7 +90,7 @@ export function InteractiveDemo() {
                       className={`p-2 rounded-lg ${
                         activeDemo === index
                           ? "bg-brand-gradient"
-                          : "bg-card/10"
+                          : "bg-card/30"
                       }`}
                     >
                       <demo.icon className="w-5 h-5 text-foreground" />
@@ -117,7 +117,7 @@ export function InteractiveDemo() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-96 rounded-2xl border border-border/10 overflow-hidden bg-brand-10"
+            className="relative h-96 rounded-2xl border border-border/30 overflow-hidden bg-brand-10"
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div

@@ -36,7 +36,7 @@ export default function RoiCalculatorPage() {
 
         {/* Key Benefits */}
         <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-          <div className="text-center p-6 bg-card/5 border border-border/10 rounded-xl backdrop-blur-sm">
+          <div className="text-center p-6 bg-card/20 border border-border/30 rounded-xl backdrop-blur-sm">
             <TrendingUp className="w-8 h-8 text-green-500 mx-auto mb-3" />
             <h3 className="font-semibold mb-2">Real-Time Calculations</h3>
             <p className="text-sm text-muted-foreground">
@@ -44,7 +44,7 @@ export default function RoiCalculatorPage() {
             </p>
           </div>
           
-          <div className="text-center p-6 bg-card/5 border border-border/10 rounded-xl backdrop-blur-sm">
+          <div className="text-center p-6 bg-card/20 border border-border/30 rounded-xl backdrop-blur-sm">
             <Target className="w-8 h-8 text-brand mx-auto mb-3" />
             <h3 className="font-semibold mb-2">Accurate Projections</h3>
             <p className="text-sm text-muted-foreground">
@@ -52,7 +52,7 @@ export default function RoiCalculatorPage() {
             </p>
           </div>
           
-          <div className="text-center p-6 bg-card/5 border border-border/10 rounded-xl backdrop-blur-sm">
+          <div className="text-center p-6 bg-card/20 border border-border/30 rounded-xl backdrop-blur-sm">
             <Calculator className="w-8 h-8 text-purple-500 mx-auto mb-3" />
             <h3 className="font-semibold mb-2">Comprehensive Analysis</h3>
             <p className="text-sm text-muted-foreground">
@@ -83,7 +83,7 @@ export default function RoiCalculatorPage() {
             </a>
             <a
               href="/labs"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border/20 rounded-lg hover:bg-card/10 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border/20 rounded-lg hover:bg-card/30 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
             >
               Explore More AI Tools
             </a>

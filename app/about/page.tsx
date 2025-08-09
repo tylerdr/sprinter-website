@@ -56,7 +56,7 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-4xl mx-auto mb-16">
-          <div className="p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm">
+          <div className="p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm">
             <h2 className="text-3xl font-bold mb-6">A Note from Our Founder</h2>
             <p className="text-lg text-foreground/80 mb-4">
               I started my career as an engineer at Exxon. Every day I saw brilliant people slowed by spreadsheets, manual planning, and systems that wouldn&apos;t talk to each other. Later, running a construction/roofing company, I ran into the same thing—critical workflows, no software built for how the work actually gets done. Curiosity and frustration pushed me to build the tools I needed in both worlds: software to plan maintenance, systems to run field ops, and automation that freed my team to focus on real work.
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <p className="text-lg text-foreground/80">
               <strong className="text-foreground">Sprinter exists to empower agency—in people and in AI.</strong> Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage.
             </p>
-            <div className="mt-8 pt-6 border-t border-border/10">
+            <div className="mt-8 pt-6 border-t border-border/30">
               <p className="text-base font-semibold text-foreground">
                 — Tyler Dreher
               </p>
@@ -95,7 +95,7 @@ export default function AboutPage() {
                     {value.description}
                   </p>
                 </div>
-                <div className="absolute inset-0 rounded-xl border border-border/10 group-hover:border-brand/30 transition-colors duration-300 pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl border border-border/30 group-hover:border-brand/30 transition-colors duration-300 pointer-events-none" />
               </div>
             ))}
           </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="text-center p-8 rounded-2xl border border-border/10 bg-brand-10">
+        <div className="text-center p-8 rounded-2xl border border-border/30 bg-brand-10">
           <h3 className="text-3xl font-bold mb-4">
             Ready to Build AI That{" "}
             <span className="gradient-text">Empowers People</span>?
@@ -150,7 +150,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors"
             >
               See Our Work
             </Link>

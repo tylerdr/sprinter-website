@@ -110,18 +110,18 @@ export default function SketchStudio() {
         animate={{ opacity: 1, x: 0 }}
         className="lg:col-span-2"
       >
-        <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold">Canvas</h2>
             <div className="flex gap-2">
               <button
                 onClick={clearCanvas}
-                className="px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-card/30 text-foreground rounded-lg hover:bg-card/40 transition-colors flex items-center gap-2"
               >
                 <Eraser className="w-4 h-4" />
                 Clear
               </button>
-              <button className="px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors flex items-center gap-2">
+              <button className="px-4 py-2 bg-card/30 text-foreground rounded-lg hover:bg-card/40 transition-colors flex items-center gap-2">
                 <Undo className="w-4 h-4" />
                 Undo
               </button>
@@ -152,7 +152,7 @@ export default function SketchStudio() {
                   </p>
                   <button
                     onClick={() => setGeneratedImage(null)}
-                    className="px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors"
+                    className="px-4 py-2 bg-card/30 text-foreground rounded-lg hover:bg-card/40 transition-colors"
                   >
                     Continue Drawing
                   </button>
@@ -181,13 +181,13 @@ export default function SketchStudio() {
         animate={{ opacity: 1, x: 0 }}
         className="space-y-6"
       >
-        <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <h3 className="text-lg font-semibold mb-4">Description (Optional)</h3>
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="Describe what you're drawing..."
-            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-orange-500 focus:outline-none h-24 resize-none text-sm"
+            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-orange-500 focus:outline-none h-24 resize-none text-sm"
           />
 
           <div className="flex flex-wrap gap-2 mt-3">
@@ -195,7 +195,7 @@ export default function SketchStudio() {
               <button
                 key={example}
                 onClick={() => setPrompt(example)}
-                className="text-xs px-3 py-1 rounded-full bg-card/10 hover:bg-card/20 transition-colors"
+                className="text-xs px-3 py-1 rounded-full bg-card/30 hover:bg-card/40 transition-colors"
               >
                 {example}
               </button>
@@ -203,7 +203,7 @@ export default function SketchStudio() {
           </div>
         </div>
 
-        <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <h3 className="text-lg font-semibold mb-4">Art Style</h3>
           <div className="grid grid-cols-2 gap-2">
             {styleOptions.map((option) => (
@@ -213,7 +213,7 @@ export default function SketchStudio() {
                 className={`px-3 py-2 rounded-lg text-sm transition-all ${
                   style === option
                     ? "bg-brand-gradient text-primary-foreground"
-                    : "bg-card/10 hover:bg-card/20"
+                    : "bg-card/30 hover:bg-card/40"
                 }`}
               >
                 {option}
@@ -241,11 +241,11 @@ export default function SketchStudio() {
         </button>
 
         <div className="flex gap-2">
-          <button className="flex-1 px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors flex items-center justify-center gap-2">
+          <button className="flex-1 px-4 py-2 bg-card/30 text-foreground rounded-lg hover:bg-card/40 transition-colors flex items-center justify-center gap-2">
             <Upload className="w-4 h-4" />
             Upload
           </button>
-          <button className="flex-1 px-4 py-2 bg-card/10 text-foreground rounded-lg hover:bg-card/20 transition-colors flex items-center justify-center gap-2">
+          <button className="flex-1 px-4 py-2 bg-card/30 text-foreground rounded-lg hover:bg-card/40 transition-colors flex items-center justify-center gap-2">
             <Download className="w-4 h-4" />
             Download
           </button>

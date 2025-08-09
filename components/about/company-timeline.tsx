@@ -148,7 +148,7 @@ function TimelineItem({
           className={`p-6 rounded-xl border transition-all ${
             event.highlight 
               ? "bg-gradient-to-br from-brand/10 to-brand-end/10 border-brand-30" 
-              : "bg-card/5 border-border/10"
+              : "bg-card/20 border-border/30"
           }`}
         >
           <div className={`flex items-start gap-4 ${!isEven ? "md:flex-row-reverse md:text-left" : ""}`}>

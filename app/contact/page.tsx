@@ -39,7 +39,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+            <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
               <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
 
               <div className="space-y-4">
@@ -88,7 +88,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+            <div className="p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
               <MessageSquare
                 className="w-8 h-8 text-brand mb-3"
                 aria-hidden="true"

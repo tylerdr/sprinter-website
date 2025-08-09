@@ -96,7 +96,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm"
+      className="p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm"
       noValidate
       aria-label="Contact form"
     >
@@ -116,7 +116,7 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="name-required"
-            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
           />
           <span id="name-required" className="sr-only">
             Required field
@@ -136,7 +136,7 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="email-required"
-            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
           />
           <span id="email-required" className="sr-only">
             Required field
@@ -154,7 +154,7 @@ export default function ContactForm() {
           name="company"
           value={formData.company}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
+          className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
         />
       </div>
 
@@ -197,7 +197,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-describedby="message-required"
           rows={5}
-          className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors resize-none"
           placeholder="Describe your vision, challenges, or ideas..."
         />
         <span id="message-required" className="sr-only">

@@ -145,7 +145,7 @@ export function PricingComparison() {
               "p-6 rounded-xl border",
               pkg.highlight
                 ? "bg-brand-10 border-brand-30 shadow-lg shadow-brand/10"
-                : "bg-card/5 border-border/10"
+                : "bg-card/20 border-border/30"
             )}
           >
             {pkg.highlight && (
@@ -189,7 +189,7 @@ export function PricingComparison() {
                 "inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg font-medium transition-all",
                 pkg.highlight
                   ? "bg-brand-gradient text-primary-foreground hover:opacity-90"
-                  : "bg-card/10 border border-border/20 hover:bg-card/20"
+                  : "bg-card/30 border border-border/20 hover:bg-card/40"
               )}
             >
               {pkg.cta}
@@ -219,7 +219,7 @@ export function PricingComparison() {
                       "p-4 m-2 rounded-xl relative",
                       pkg.highlight
                         ? "bg-brand-gradient"
-                        : "bg-card/5 border border-border/10"
+                        : "bg-card/20 border border-border/30"
                     )}>
                       {pkg.highlight && (
                         <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-brand text-white text-xs font-semibold rounded-full">
@@ -260,8 +260,8 @@ export function PricingComparison() {
                 <TableRow
                   key={feature.name}
                   className={cn(
-                    "border-b border-border/10",
-                    index % 2 === 0 ? "bg-card/5" : ""
+                    "border-b border-border/30",
+                    index % 2 === 0 ? "bg-card/20" : ""
                   )}
                 >
                   <TableCell className="font-medium text-sm">{feature.name}</TableCell>
@@ -293,7 +293,7 @@ export function PricingComparison() {
                         "inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg font-medium transition-all",
                         pkg.highlight
                           ? "bg-brand-gradient text-primary-foreground hover:opacity-90"
-                          : "bg-card/10 border border-border/20 hover:bg-card/20"
+                          : "bg-card/30 border border-border/20 hover:bg-card/40"
                       )}
                     >
                       {pkg.cta}

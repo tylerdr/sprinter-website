@@ -39,7 +39,7 @@ export default function VoiceToProcessPage() {
 
         <VoiceToProcess />
 
-        <div className="mt-8 sm:mt-12 p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10">
+        <div className="mt-8 sm:mt-12 p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30">
           <h3 className="text-base sm:text-lg font-semibold mb-3">
             How it works
           </h3>

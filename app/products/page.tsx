@@ -107,7 +107,7 @@ export default function ProductsPage() {
             {products.map((product) => (
               <div
                 key={product.name}
-                className="group relative rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm overflow-hidden hover:bg-card/10 hover:border-brand/30 transition-all duration-300"
+                className="group relative rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm overflow-hidden hover:bg-card/30 hover:border-brand/30 transition-all duration-300"
               >
                 {/* Screenshot */}
                 <div className="relative h-48 overflow-hidden">
@@ -142,7 +142,7 @@ export default function ProductsPage() {
                   </p>
 
                   {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-3 mb-6 pb-6 border-b border-border/10">
+                  <div className="grid grid-cols-3 gap-3 mb-6 pb-6 border-b border-border/30">
                     {Object.entries(product.metrics).map(([key, metric]) => (
                       <Stat
                         key={key}

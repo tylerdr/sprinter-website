@@ -84,7 +84,7 @@ export function ServicesPreview() {
             >
               <Link
                 href={service.href}
-                className="group block p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/10 transition-all hover:scale-105 touch-manipulation h-full focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
+                className="group block p-6 sm:p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm hover:bg-card/30 transition-all hover:scale-105 touch-manipulation h-full focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
               >
                 <div
                   className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${service.gradient} mb-4 sm:mb-6`}
@@ -121,7 +121,7 @@ export function ServicesPreview() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-card/10 backdrop-blur-sm text-foreground font-medium rounded-lg border border-border/20 hover:bg-card/20 transition-all touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-card/30 backdrop-blur-sm text-foreground font-medium rounded-lg border border-border/20 hover:bg-card/40 transition-all touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
           >
             View All Services
           </Link>

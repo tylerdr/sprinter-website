@@ -156,7 +156,7 @@ export default function VoiceToProcess() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Voice Input Section */}
-      <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+      <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
         <h3 className="text-lg sm:text-xl font-semibold mb-4">Describe Your Process</h3>
         
         {!transcription ? (
@@ -188,14 +188,14 @@ export default function VoiceToProcess() {
           </div>
         ) : (
           <div className="space-y-4">
-            <div className="p-4 bg-card/10 border border-border/20 rounded-lg">
+            <div className="p-4 bg-card/30 border border-border/20 rounded-lg">
               <h4 className="font-medium mb-2 text-sm sm:text-base">Transcription:</h4>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{transcription}</p>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={reset}
-                className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/10 transition-colors min-h-[40px]"
+                className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/30 transition-colors min-h-[40px]"
               >
                 Try Again
               </button>
@@ -242,7 +242,7 @@ export default function VoiceToProcess() {
           </div>
 
           {/* Process Steps */}
-          <div className="bg-card/5 border border-border/10 rounded-xl p-6">
+          <div className="bg-card/20 border border-border/30 rounded-xl p-6">
             <h4 className="font-semibold mb-4 text-sm sm:text-base">Process Flow</h4>
             <div className="space-y-4">
               {processMap.steps.map((step, index) => (
@@ -282,7 +282,7 @@ export default function VoiceToProcess() {
 
           {/* Recommendations */}
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+            <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
               <h4 className="font-semibold mb-4 text-sm sm:text-base">Process Optimizations</h4>
               <ul className="space-y-3">
                 {processMap.optimizations.map((opt, index) => (
@@ -294,7 +294,7 @@ export default function VoiceToProcess() {
               </ul>
             </div>
 
-            <div className="p-4 sm:p-6 bg-card/5 border border-border/10 rounded-xl">
+            <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
               <h4 className="font-semibold mb-4 text-sm sm:text-base">Automation Opportunities</h4>
               <ul className="space-y-3">
                 {processMap.automationOpportunities.map((auto, index) => (

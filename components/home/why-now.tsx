@@ -46,7 +46,7 @@ export function WhyNow() {
           {points.map((pt) => (
             <div
               key={pt.title}
-              className="p-6 rounded-xl bg-card/5 border border-border/10 hover:bg-card/10 transition-all"
+              className="p-6 rounded-xl bg-card/20 border border-border/30 hover:bg-card/30 transition-all"
             >
               <div
                 className="inline-flex p-3 rounded-lg border border-brand-30 bg-brand-10 mb-4"

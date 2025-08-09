@@ -133,11 +133,11 @@ export function Hero() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-card/5 border border-border/10 backdrop-blur-sm mb-6 sm:mb-8"
+            className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-card/20 border border-border/30 backdrop-blur-sm mb-6 sm:mb-8"
           >
             <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium">
-              Agentic AI is an Unfair Advantage
+              MortgageQ • Cab-O-Matic • Amble in Production
             </span>
           </motion.div>
 
@@ -148,8 +148,8 @@ export function Hero() {
             className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
           >
             <Balancer>
-              Build Your{" "}
-              <span className="gradient-text block sm:inline">Unfair Advantage</span>
+              Build at the{" "}
+              <span className="gradient-text block sm:inline">pace of AI</span>
             </Balancer>
           </motion.h1>
 
@@ -160,8 +160,7 @@ export function Hero() {
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 font-normal"
           >
             <Balancer>
-              Agentic AI turns unstructured data into decisions and outcomes—fast. 
-              Ship your first product in 10 days.
+              Ship working AI in days, not quarters. Keep humans in the loop, automate the rest.
             </Balancer>
           </motion.p>
 
@@ -172,7 +171,7 @@ export function Hero() {
             className="text-base sm:text-lg text-muted-foreground/80 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed"
           >
             <Balancer>
-              We keep the human in the loop—but the point is progress. Let AI handle the repetitive so your team can compound what they do best.
+              Products in the wild: MortgageQ, Cab-O-Matic, Amble Ideation. Results {'>'}  slides.
             </Balancer>
           </motion.p>
 
@@ -188,7 +187,7 @@ export function Hero() {
                   className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
                   aria-hidden="true"
                 />
-                Get Your AI Opportunity Audit
+                Get an AI Opportunity Audit
                 <ArrowRight
                   className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   aria-hidden="true"

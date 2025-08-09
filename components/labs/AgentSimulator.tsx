@@ -131,7 +131,7 @@ Total execution time: 6.2 seconds`);
         transition={{ delay: 0.1 }}
         className="mb-6 sm:mb-8"
       >
-        <div className="p-4 sm:p-6 rounded-xl bg-card/5 border border-border/10 backdrop-blur-sm">
+        <div className="p-4 sm:p-6 rounded-xl bg-card/20 border border-border/30 backdrop-blur-sm">
           <label className="block text-sm font-medium mb-3">
             Give the agents a mission:
           </label>
@@ -140,7 +140,7 @@ Total execution time: 6.2 seconds`);
             value={scenario}
             onChange={(e) => setScenario(e.target.value)}
             placeholder="e.g., Plan a product launch event"
-            className="w-full px-4 py-3 rounded-lg bg-card/10 border border-border/20 focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base touch-manipulation"
+            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base touch-manipulation"
             disabled={isRunning}
           />
 
@@ -150,7 +150,7 @@ Total execution time: 6.2 seconds`);
               <button
                 key={example}
                 onClick={() => setScenario(example)}
-                className="text-xs px-3 py-1 rounded-full bg-card/10 hover:bg-card/20 transition-colors touch-manipulation min-h-[32px]"
+                className="text-xs px-3 py-1 rounded-full bg-card/30 hover:bg-card/40 transition-colors touch-manipulation min-h-[32px]"
                 disabled={isRunning}
               >
                 {example}
@@ -179,7 +179,7 @@ Total execution time: 6.2 seconds`);
             <button
               onClick={runExample}
               disabled={isRunning}
-              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base"
             >
               <Play className="w-4 h-4 sm:w-5 sm:h-5" />
               Run Example
@@ -187,7 +187,7 @@ Total execution time: 6.2 seconds`);
 
             <button
               onClick={reset}
-              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-card/10 text-foreground font-medium rounded-lg hover:bg-card/20 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-card/30 text-foreground font-medium rounded-lg hover:bg-card/40 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base"
             >
               <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5" />
               Reset
@@ -215,7 +215,7 @@ Total execution time: 6.2 seconds`);
                     ? "bg-blue-500/10 border-blue-500/30"
                     : agent.status === "done"
                       ? "bg-green-500/10 border-green-500/30"
-                      : "bg-card/5 border-border/10"
+                      : "bg-card/20 border-border/30"
                 }`}
               >
                 <div className="flex items-start gap-3">
@@ -225,7 +225,7 @@ Total execution time: 6.2 seconds`);
                         ? "bg-info-10"
                         : agent.status === "done"
                           ? "bg-success-10"
-                          : "bg-card/10"
+                          : "bg-card/30"
                     }`}
                   >
                     <agent.icon className="w-5 h-5" />

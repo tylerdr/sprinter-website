@@ -257,7 +257,7 @@ export default function AdCreator() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Input Section */}
-      <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+      <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
         <h2 className="text-xl sm:text-2xl font-bold mb-6">Ad Content & Styling</h2>
         
         <div className="grid lg:grid-cols-2 gap-8">
@@ -269,7 +269,7 @@ export default function AdCreator() {
                 type="text"
                 value={adData.productName}
                 onChange={(e) => setAdData(prev => ({ ...prev, productName: e.target.value }))}
-                className="w-full px-4 py-3 bg-card/10 border border-border/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-sm sm:text-base"
+                className="w-full px-4 py-3 bg-card/30 border border-border/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-sm sm:text-base"
                 placeholder="Enter your product name"
               />
             </div>
@@ -280,7 +280,7 @@ export default function AdCreator() {
                 type="text"
                 value={adData.tagline}
                 onChange={(e) => setAdData(prev => ({ ...prev, tagline: e.target.value }))}
-                className="w-full px-4 py-3 bg-card/10 border border-border/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-sm sm:text-base"
+                className="w-full px-4 py-3 bg-card/30 border border-border/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-sm sm:text-base"
                 placeholder="Your compelling tagline"
               />
             </div>
@@ -291,7 +291,7 @@ export default function AdCreator() {
                 type="text"
                 value={adData.ctaText}
                 onChange={(e) => setAdData(prev => ({ ...prev, ctaText: e.target.value }))}
-                className="w-full px-4 py-3 bg-card/10 border border-border/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-sm sm:text-base"
+                className="w-full px-4 py-3 bg-card/30 border border-border/20 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-sm sm:text-base"
                 placeholder="e.g., Get Started Today"
               />
             </div>
@@ -354,7 +354,7 @@ export default function AdCreator() {
                     <div className={`p-4 rounded-lg border-2 transition-all ${
                       adData.style === style.name 
                         ? 'border-brand bg-brand-10' 
-                        : 'border-border/20 bg-card/5 hover:border-brand/30'
+                        : 'border-border/20 bg-card/20 hover:border-brand/30'
                     }`}>
                       <div className="font-medium text-sm">{style.name}</div>
                       <div className="text-xs text-muted-foreground mt-1">{style.description}</div>
@@ -380,7 +380,7 @@ export default function AdCreator() {
                     <div className={`p-3 rounded-lg border-2 flex items-center gap-3 transition-all ${
                       adData.colorScheme === scheme.name 
                         ? 'border-brand bg-brand-10' 
-                        : 'border-border/20 bg-card/5 hover:border-brand/30'
+                        : 'border-border/20 bg-card/20 hover:border-brand/30'
                     }`}>
                       <div className="flex gap-1">
                         <div className="w-6 h-6 rounded" style={{ backgroundColor: scheme.primary }}></div>
@@ -397,7 +397,7 @@ export default function AdCreator() {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={loadSampleData}
-                className="flex items-center justify-center gap-2 px-4 py-2 border border-border/20 rounded-lg hover:bg-card/10 transition-colors text-sm"
+                className="flex items-center justify-center gap-2 px-4 py-2 border border-border/20 rounded-lg hover:bg-card/30 transition-colors text-sm"
               >
                 <RefreshCw className="w-4 h-4" />
                 Load Sample
@@ -441,12 +441,12 @@ export default function AdCreator() {
 
       {/* Generated Ads Grid */}
       {generatedAds.length > 0 && !isGenerating && (
-        <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+        <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
           <h2 className="text-xl sm:text-2xl font-bold mb-6">Generated Ads</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {AD_FORMATS.map((format, index) => (
-              <div key={format.name} className="bg-card/5 border border-border/10 rounded-xl p-4">
+              <div key={format.name} className="bg-card/20 border border-border/30 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div>
                     <h3 className="font-semibold text-sm">{format.name}</h3>
@@ -456,7 +456,7 @@ export default function AdCreator() {
                   </div>
                   <button
                     onClick={() => downloadAd(index)}
-                    className="p-2 hover:bg-card/10 rounded-lg transition-colors"
+                    className="p-2 hover:bg-card/30 rounded-lg transition-colors"
                     title="Download ad"
                   >
                     <Download className="w-4 h-4 text-brand" />
@@ -468,7 +468,7 @@ export default function AdCreator() {
                     ref={(el) => {
                       if (el) canvasRefs.current[index] = el;
                     }}
-                    className="w-full h-auto border border-border/10 rounded"
+                    className="w-full h-auto border border-border/30 rounded"
                     style={{ 
                       maxHeight: format.height > format.width ? '300px' : '150px',
                       aspectRatio: `${format.width}/${format.height}`

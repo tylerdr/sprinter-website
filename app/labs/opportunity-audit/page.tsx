@@ -174,7 +174,7 @@ export default function OpportunityAuditPage() {
 
           <Progress value={progress} className="h-2" />
 
-          <Card className="border-border/50 backdrop-blur">
+          <Card className="border-border/200 backdrop-blur">
             <CardContent className="pt-6">
               <form onSubmit={form.handleSubmit(onSubmit)}>
                 <AnimatePresence mode="wait">

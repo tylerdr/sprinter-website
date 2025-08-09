@@ -151,7 +151,7 @@ export default function CaseStudiesPage() {
                       </div>
                     </div>
 
-                    <blockquote className="p-3 sm:p-4 rounded-lg bg-card/5 border-l-2 border-info">
+                    <blockquote className="p-3 sm:p-4 rounded-lg bg-card/20 border-l-2 border-info">
                       <p className="italic text-gray-300 text-sm sm:text-base leading-relaxed mb-2">
                         &quot;{study.testimonial}&quot;
                       </p>

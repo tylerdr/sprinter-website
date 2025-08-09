@@ -216,7 +216,7 @@ export function EnhancedNavigation() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-foreground hover:bg-card/10 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
+              className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
               aria-label={
                 mobileMenuOpen
                   ? "Close navigation menu"
@@ -265,9 +265,9 @@ export function EnhancedNavigation() {
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
                         className={cn(
-                          "block py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/5 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                          "block py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/40 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
                           pathname === item.href || (isLabs && pathname.startsWith("/labs"))
-                            ? "text-foreground bg-card/10"
+                            ? "text-foreground bg-card/30"
                             : "text-muted-foreground"
                         )}
                         aria-current={pathname === item.href ? "page" : undefined}
@@ -280,21 +280,21 @@ export function EnhancedNavigation() {
                           <Link
                             href="/labs/opportunity-audit"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2 px-4 text-sm text-muted-foreground hover:text-foreground hover:bg-card/5 rounded-lg"
+                            className="block py-2 px-4 text-sm text-muted-foreground hover:text-foreground hover:bg-card/40 rounded-lg"
                           >
                             <span className="text-yellow-500">★</span> AI Opportunity Audit
                           </Link>
                           <Link
                             href="/labs/agent-simulator"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2 px-4 text-sm text-muted-foreground hover:text-foreground hover:bg-card/5 rounded-lg"
+                            className="block py-2 px-4 text-sm text-muted-foreground hover:text-foreground hover:bg-card/40 rounded-lg"
                           >
                             Agent Simulator
                           </Link>
                           <Link
                             href="/labs/ideation"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2 px-4 text-sm text-muted-foreground hover:text-foreground hover:bg-card/5 rounded-lg"
+                            className="block py-2 px-4 text-sm text-muted-foreground hover:text-foreground hover:bg-card/40 rounded-lg"
                           >
                             Ideation Games
                           </Link>

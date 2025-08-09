@@ -278,7 +278,7 @@ export default function LabsPage() {
         </div>
 
         {/* Sticky Category Navigation */}
-        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-md border-b border-border/10 mb-8 sm:mb-12">
+        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-md border-b border-border/30 mb-8 sm:mb-12">
           <div className="container mx-auto px-4 sm:px-6 py-4">
             <div className="flex overflow-x-auto scrollbar-hide gap-2 sm:gap-4 pb-2">
               {categories.map((category) => (
@@ -288,7 +288,7 @@ export default function LabsPage() {
                   className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     activeCategory === category.id
                       ? "bg-brand-gradient text-primary-foreground shadow-lg"
-                      : "bg-card/30 text-muted-foreground hover:bg-card/50 hover:text-foreground"
+                      : "bg-card/30 text-muted-foreground hover:bg-card/400 hover:text-foreground"
                   }`}
                   aria-label={`Filter by ${category.name}: ${category.description} (${categoryCounts[category.id]} items)`}
                 >
@@ -369,7 +369,7 @@ export default function LabsPage() {
               <div key={lab.title} className="w-full" role="listitem">
                 <Link
                   href={lab.href}
-                  className="group block h-full p-6 sm:p-8 rounded-2xl bg-card/5 border border-border/10 backdrop-blur-sm hover:bg-card/15 hover:border-border/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-brand/10 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background relative overflow-hidden"
+                  className="group block h-full p-6 sm:p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm hover:bg-card/15 hover:border-border/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-brand/10 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background relative overflow-hidden"
                   aria-label={`${lab.actionVerb} ${lab.title} - ${lab.description}`}
                 >
                   {/* Glow Effect Background */}

@@ -58,7 +58,7 @@ export default function RoiCalculator() {
     <div className="max-w-6xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Input Panel */}
-        <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+        <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
           <div className="flex items-center gap-3 mb-6">
             <Calculator className="w-6 h-6 text-brand" />
             <h3 className="text-xl font-bold">Input Parameters</h3>
@@ -80,7 +80,7 @@ export default function RoiCalculator() {
                 max="100"
                 value={teamSize}
                 onChange={(e) => setTeamSize(Number(e.target.value))}
-                className="w-full h-2 bg-card/10 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-2 bg-card/30 rounded-lg appearance-none cursor-pointer slider"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>1 person</span>
@@ -103,7 +103,7 @@ export default function RoiCalculator() {
                 max="200"
                 value={hourlyRate}
                 onChange={(e) => setHourlyRate(Number(e.target.value))}
-                className="w-full h-2 bg-card/10 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-2 bg-card/30 rounded-lg appearance-none cursor-pointer slider"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>$25/hr</span>
@@ -126,7 +126,7 @@ export default function RoiCalculator() {
                 max="40"
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(Number(e.target.value))}
-                className="w-full h-2 bg-card/10 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-2 bg-card/30 rounded-lg appearance-none cursor-pointer slider"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>1 hr</span>
@@ -150,7 +150,7 @@ export default function RoiCalculator() {
                 step="5000"
                 value={implementationCost}
                 onChange={(e) => setImplementationCost(Number(e.target.value))}
-                className="w-full h-2 bg-card/10 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-2 bg-card/30 rounded-lg appearance-none cursor-pointer slider"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>$10K</span>
@@ -173,7 +173,7 @@ export default function RoiCalculator() {
                 max="95"
                 value={automationEfficiency}
                 onChange={(e) => setAutomationEfficiency(Number(e.target.value))}
-                className="w-full h-2 bg-card/10 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-2 bg-card/30 rounded-lg appearance-none cursor-pointer slider"
               />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>50%</span>
@@ -209,26 +209,26 @@ export default function RoiCalculator() {
           </div>
 
           {/* Detailed Results */}
-          <div className="bg-card/5 border border-border/10 rounded-2xl p-6 backdrop-blur-sm">
+          <div className="bg-card/20 border border-border/30 rounded-2xl p-6 backdrop-blur-sm">
             <h4 className="font-bold text-lg mb-4">Cost-Benefit Analysis</h4>
             
             <div className="space-y-4">
-              <div className="flex justify-between py-2 border-b border-border/10">
+              <div className="flex justify-between py-2 border-b border-border/30">
                 <span className="text-muted-foreground">Current Annual Cost</span>
                 <span className="font-semibold">{formatCurrency(results.currentAnnualCost)}</span>
               </div>
               
-              <div className="flex justify-between py-2 border-b border-border/10">
+              <div className="flex justify-between py-2 border-b border-border/30">
                 <span className="text-muted-foreground">Time Saved Per Week</span>
                 <span className="font-semibold">{formatNumber(results.timeSavedPerWeek)} hours</span>
               </div>
               
-              <div className="flex justify-between py-2 border-b border-border/10">
+              <div className="flex justify-between py-2 border-b border-border/30">
                 <span className="text-muted-foreground">Implementation Cost</span>
                 <span className="font-semibold text-red-500">-{formatCurrency(implementationCost)}</span>
               </div>
               
-              <div className="flex justify-between py-2 border-b border-border/10">
+              <div className="flex justify-between py-2 border-b border-border/30">
                 <span className="text-muted-foreground">Annual Savings</span>
                 <span className="font-semibold text-green-500">+{formatCurrency(results.annualSavings)}</span>
               </div>
@@ -243,7 +243,7 @@ export default function RoiCalculator() {
           </div>
 
           {/* Breakeven Timeline */}
-          <div className="bg-card/5 border border-border/10 rounded-2xl p-6 backdrop-blur-sm">
+          <div className="bg-card/20 border border-border/30 rounded-2xl p-6 backdrop-blur-sm">
             <h4 className="font-bold text-lg mb-4">Breakeven Analysis</h4>
             
             <div className="space-y-4">
@@ -254,7 +254,7 @@ export default function RoiCalculator() {
                     {Math.round(results.breakEvenDays)} days
                   </span>
                 </div>
-                <div className="w-full bg-card/10 rounded-full h-3">
+                <div className="w-full bg-card/30 rounded-full h-3">
                   <div 
                     className="bg-gradient-to-r from-brand to-purple-600 h-3 rounded-full transition-all duration-1000"
                     style={{ width: `${Math.min((365 - results.breakEvenDays) / 365 * 100, 100)}%` }}

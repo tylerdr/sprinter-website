@@ -170,14 +170,14 @@ users[i].score = users[i].points ** 3 + getCachedFib(20);`
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Code Input Section */}
-      <div className="bg-card/5 border border-border/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+      <div className="bg-card/20 border border-border/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <h3 className="text-lg sm:text-xl font-semibold">Code Input</h3>
           <div className="flex gap-3">
             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
-              className="px-3 py-2 bg-card/10 border border-border/20 rounded-lg text-sm"
+              className="px-3 py-2 bg-card/30 border border-border/20 rounded-lg text-sm"
             >
               <option value="javascript">JavaScript</option>
               <option value="typescript">TypeScript</option>
@@ -188,7 +188,7 @@ users[i].score = users[i].points ** 3 + getCachedFib(20);`
             </select>
             <button
               onClick={loadSampleCode}
-              className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/10 transition-colors"
+              className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/30 transition-colors"
             >
               Load Sample
             </button>
@@ -200,13 +200,13 @@ users[i].score = users[i].points ** 3 + getCachedFib(20);`
             value={code}
             onChange={handleCodeChange}
             placeholder="Paste your code here for AI-powered review..."
-            className="w-full h-64 p-4 bg-card/10 border border-border/20 rounded-lg font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand/50"
+            className="w-full h-64 p-4 bg-card/30 border border-border/20 rounded-lg font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand/50"
           />
           
           <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={reset}
-              className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/10 transition-colors min-h-[40px]"
+              className="px-4 py-2 text-sm border border-border/20 rounded-lg hover:bg-card/30 transition-colors min-h-[40px]"
             >
               Clear Code
             </button>
@@ -326,7 +326,7 @@ users[i].score = users[i].points ** 3 + getCachedFib(20);`
                               )}
                             </button>
                           </div>
-                          <pre className="text-xs p-3 bg-card/10 rounded-lg overflow-x-auto">
+                          <pre className="text-xs p-3 bg-card/30 rounded-lg overflow-x-auto">
                             <code>{issue.improvedCode}</code>
                           </pre>
                         </div>

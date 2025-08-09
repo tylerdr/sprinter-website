@@ -66,7 +66,7 @@ export function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-foreground hover:bg-card/10 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
+              className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
               aria-label={
                 mobileMenuOpen
                   ? "Close navigation menu"
@@ -112,9 +112,9 @@ export function Navigation() {
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        "block py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/5 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                        "block py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/40 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
                         pathname === item.href
-                          ? "text-foreground bg-card/10"
+                          ? "text-foreground bg-card/30"
                           : "text-muted-foreground"
                       )}
                       aria-current={pathname === item.href ? "page" : undefined}
