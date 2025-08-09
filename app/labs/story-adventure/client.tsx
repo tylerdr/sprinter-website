@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LabWrapper } from "@/components/labs/lab-wrapper";
 import { Button } from "@/components/ui/button";
@@ -463,7 +463,7 @@ function StoryAdventureGame() {
   );
 }
 
-export function StoryAdventureClient() {
+function StoryAdventureContent() {
   const howItWorks = (
     <>
       <h3>How AI Story Adventure Works</h3>
@@ -539,5 +539,13 @@ export function StoryAdventureClient() {
     >
       <StoryAdventureGame />
     </LabWrapper>
+  );
+}
+
+export function StoryAdventureClient() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <StoryAdventureContent />
+    </Suspense>
   );
 }

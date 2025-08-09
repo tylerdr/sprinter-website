@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LabWrapper } from "@/components/labs/lab-wrapper";
 import { Button } from "@/components/ui/button";
@@ -433,7 +433,7 @@ function FutureScenariosGame() {
   );
 }
 
-export function FutureScenariosClient() {
+function FutureScenariosContent() {
   const howItWorks = (
     <>
       <h3>How Future Scenarios Works</h3>
@@ -502,5 +502,13 @@ export function FutureScenariosClient() {
     >
       <FutureScenariosGame />
     </LabWrapper>
+  );
+}
+
+export function FutureScenariosClient() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <FutureScenariosContent />
+    </Suspense>
   );
 }

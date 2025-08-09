@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LabWrapper } from "@/components/labs/lab-wrapper";
 import { Button } from "@/components/ui/button";
@@ -120,8 +120,8 @@ function CardsAgainstAIGame() {
     const channel = supabase.channel(`room:${roomCode}`)
       .on('presence', { event: 'sync' }, () => {
         const state = channel.presenceState();
-        const playerList = Object.values(state).flat();
-        setPlayers(playerList as {id: string; name: string; isAI: boolean; avatar: string; score: number; isHost?: boolean}[]);
+        const playerList = Object.values(state).flat() as unknown as {id: string; name: string; isAI: boolean; avatar: string; score: number; isHost?: boolean}[];
+        setPlayers(playerList);
       })
       .on('broadcast', { event: 'game-update' }, ({ payload }) => {
         setGameState(payload.gameState);
@@ -385,7 +385,7 @@ function CardsAgainstAIGame() {
   );
 }
 
-export function CardsAgainstAIClient() {
+function CardsAgainstAIContent() {
   const howItWorks = (
     <>
       <h3>How Cards Against AI Works</h3>
@@ -453,5 +453,13 @@ export function CardsAgainstAIClient() {
     >
       <CardsAgainstAIGame />
     </LabWrapper>
+  );
+}
+
+export function CardsAgainstAIClient() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CardsAgainstAIContent />
+    </Suspense>
   );
 }

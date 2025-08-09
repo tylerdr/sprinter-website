@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LabWrapper } from "@/components/labs/lab-wrapper";
 import { Button } from "@/components/ui/button";
@@ -410,7 +410,7 @@ function AITelestrationsGame() {
   );
 }
 
-export function AITelestrationsClient() {
+function AITelestrationsContent() {
   const howItWorks = (
     <>
       <h3>How AI Telestrations Works</h3>
@@ -480,5 +480,13 @@ export function AITelestrationsClient() {
     >
       <AITelestrationsGame />
     </LabWrapper>
+  );
+}
+
+export function AITelestrationsClient() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AITelestrationsContent />
+    </Suspense>
   );
 }
