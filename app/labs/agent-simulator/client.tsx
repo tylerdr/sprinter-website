@@ -1,16 +1,12 @@
 "use client";
 
-import { Bot, Rocket, FileText, MessageSquare } from "lucide-react";
 import AgentSimulator from "@/components/labs/AgentSimulator";
 import { DeviceFrame } from "@/components/ui/device-frame";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ShareMenu } from "@/components/labs/share-menu";
-import { useState } from "react";
 
 export function AgentSimulatorClient() {
-  const [simulatorState, setSimulatorState] = useState({});
-
   const handleFullscreen = () => {
     document.documentElement.requestFullscreen();
   };
@@ -37,7 +33,7 @@ export function AgentSimulatorClient() {
           onEmbed={() => {}} 
           onFullscreen={handleFullscreen}
         >
-          <AgentSimulator onStateChange={setSimulatorState} />
+          <AgentSimulator />
         </DeviceFrame>
 
         {/* Quick action buttons */}
@@ -131,7 +127,7 @@ export function AgentSimulatorClient() {
             </TabsContent>
 
             <TabsContent value="share" className="mt-6">
-              <ShareMenu slug="agent-simulator" state={simulatorState} />
+              <ShareMenu slug="agent-simulator" state={{}} />
               <div className="mt-6 p-4 rounded-lg bg-muted/50">
                 <p className="text-sm text-muted-foreground">
                   Share this demo with your team or embed it in your documentation.
