@@ -16,7 +16,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import { generateRoomCode, generatePlayerId, AI_PERSONALITIES } from "@/lib/multiplayer/rooms";
-import { createClient } from "@/lib/supabase/client";
+import { useMultiplayerRoom } from "@/lib/hooks/useMultiplayerRoom";
 import { nanoid } from "nanoid";
 
 // Card decks for the game
@@ -96,7 +96,25 @@ function CardsAgainstAIGame() {
   const [roomState, setRoomState] = useState<'lobby' | 'playing' | 'finished'>('lobby');
   const [copied, setCopied] = useState(false);
 
-  const supabase = createClient();
+  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+    roomCode,
+    playerId,
+    playerName,
+    isHost,
+    onPresenceSync: (playersList) => {
+      setPlayers(playersList as {id: string; name: string; isAI: boolean; avatar: string; score: number; isHost?: boolean}[]);
+    },
+    onBroadcast: (event, payload) => {
+      if (event === 'game-update') {
+        if (payload.gameState) {
+          setGameState(payload.gameState as GameState);
+        }
+        if (payload.roomState) {
+          setRoomState(payload.roomState as 'lobby' | 'playing' | 'finished');
+        }
+      }
+    },
+  });
 
   // Initialize or join room
   useEffect(() => {
@@ -105,47 +123,17 @@ function CardsAgainstAIGame() {
       const newCode = generateRoomCode();
       router.push(`/labs/cards-against-ai?room=${newCode}`);
       setIsHost(true);
-    } else {
-      // Join existing room
-      joinRoom();
     }
 
     const id = localStorage.getItem('playerId') || generatePlayerId();
     localStorage.setItem('playerId', id);
     setPlayerId(id);
-  }, [roomCode]);
+  }, [roomCode, router]);
 
-  const joinRoom = async () => {
-    // Subscribe to room updates
-    const channel = supabase.channel(`room:${roomCode}`)
-      .on('presence', { event: 'sync' }, () => {
-        const state = channel.presenceState();
-        const playerList = Object.values(state).flat() as unknown as {id: string; name: string; isAI: boolean; avatar: string; score: number; isHost?: boolean}[];
-        setPlayers(playerList);
-      })
-      .on('broadcast', { event: 'game-update' }, ({ payload }) => {
-        setGameState(payload.gameState);
-        setRoomState(payload.roomState);
-      })
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  };
 
   const joinGame = async () => {
     if (!playerName) return;
-
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
-      id: playerId,
-      name: playerName,
-      isAI: false,
-      score: 0,
-      isHost,
-      avatar: '👤',
-    });
+    // The presence tracking is now handled in the useMultiplayerRoom hook
 
     // Draw initial hand
     const hand = WHITE_CARDS.sort(() => Math.random() - 0.5).slice(0, 7);
@@ -153,12 +141,13 @@ function CardsAgainstAIGame() {
   };
 
   const addAIPlayer = async () => {
+    if (!isConnected) return;
+    
     const aiPlayer = AI_PERSONALITIES['cards-against-ai'][
       Math.floor(Math.random() * AI_PERSONALITIES['cards-against-ai'].length)
     ];
     
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
+    await trackPlayer({
       id: nanoid(),
       name: aiPlayer.name,
       isAI: true,
@@ -182,28 +171,18 @@ function CardsAgainstAIGame() {
       timeLeft: 60,
     };
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'game-update',
-      payload: {
-        gameState: initialState,
-        roomState: 'playing',
-      },
+    await broadcast('game-update', {
+      gameState: initialState,
+      roomState: 'playing',
     });
   };
 
   const submitCards = async () => {
     if (selectedCards.length === 0) return;
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'card-submission',
-      payload: {
-        playerId,
-        cards: selectedCards,
-      },
+    await broadcast('card-submission', {
+      playerId,
+      cards: selectedCards,
     });
 
     setSelectedCards([]);

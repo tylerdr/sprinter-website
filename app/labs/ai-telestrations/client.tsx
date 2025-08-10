@@ -16,7 +16,7 @@ import {
   Eraser
 } from "lucide-react";
 import { generateRoomCode, generatePlayerId, AI_PERSONALITIES } from "@/lib/multiplayer/rooms";
-import { createClient } from "@/lib/supabase/client";
+import { useMultiplayerRoom } from "@/lib/hooks/useMultiplayerRoom";
 
 interface GameRound {
   prompt?: string;
@@ -153,14 +153,12 @@ function AITelestrationsGame() {
   const [playerName, setPlayerName] = useState("");
   const [playerId, setPlayerId] = useState<string>("");
   const [isHost, setIsHost] = useState(false);
-  const [players] = useState<{id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean}[]>([]);
-  const [gameState] = useState<GameState | null>(null);
-  const [currentPrompt] = useState("");
+  const [players, setPlayers] = useState<{id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean}[]>([]);
+  const [gameState, setGameState] = useState<GameState | null>(null);
+  const [currentPrompt, setCurrentPrompt] = useState("");
   const [currentGuess, setCurrentGuess] = useState("");
-  const [roomState] = useState<'lobby' | 'playing' | 'reveal'>('lobby');
+  const [roomState, setRoomState] = useState<'lobby' | 'playing' | 'reveal'>('lobby');
   const [copied, setCopied] = useState(false);
-
-  const supabase = createClient();
 
   const startingPrompts = [
     "A robot eating spaghetti",
@@ -185,28 +183,45 @@ function AITelestrationsGame() {
     const id = localStorage.getItem('playerId') || generatePlayerId();
     localStorage.setItem('playerId', id);
     setPlayerId(id);
-  }, [roomCode]);
+  }, [roomCode, router]);
+
+  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+    roomCode,
+    playerId,
+    playerName,
+    isHost,
+    onPresenceSync: (playersList) => {
+      setPlayers(playersList as {id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean}[]);
+    },
+    onBroadcast: (event, payload) => {
+      if (event === 'game-update') {
+        if (payload.gameState) {
+          setGameState(payload.gameState as GameState);
+        }
+        if (payload.roomState) {
+          setRoomState(payload.roomState as 'lobby' | 'playing' | 'reveal');
+        }
+      } else if (event === 'round-update') {
+        if (payload.prompt) {
+          setCurrentPrompt(payload.prompt as string);
+        }
+      }
+    },
+  });
 
   const joinGame = async () => {
     if (!playerName) return;
-
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
-      id: playerId,
-      name: playerName,
-      isAI: false,
-      isHost,
-      avatar: '👤',
-    });
+    // The presence tracking is now handled in the useEffect when the channel subscribes
   };
 
   const addAIPlayer = async () => {
+    if (!isConnected) return;
+    
     const aiPlayer = AI_PERSONALITIES['telestrations'][
       Math.floor(Math.random() * AI_PERSONALITIES['telestrations'].length)
     ];
     
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
+    await trackPlayer({
       id: generatePlayerId(),
       name: aiPlayer.name,
       isAI: true,
@@ -217,7 +232,7 @@ function AITelestrationsGame() {
   };
 
   const startGame = async () => {
-    if (players.length < 3) return;
+    if (players.length < 3 || !isConnected) return;
 
     // Initialize chains - one for each player
     const chains = players.map((player, i) => [{
@@ -235,38 +250,27 @@ function AITelestrationsGame() {
       activePlayerIndex: 0,
     };
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'game-update',
-      payload: {
-        gameState: initialState,
-        roomState: 'playing',
-      },
+    await broadcast('game-update', {
+      gameState: initialState,
+      roomState: 'playing',
     });
   };
 
   const submitDrawing = async (drawing: string) => {
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'submit-drawing',
-      payload: {
-        playerId,
-        drawing,
-      },
+    if (!isConnected) return;
+    
+    await broadcast('submit-drawing', {
+      playerId,
+      drawing,
     });
   };
 
   const submitGuess = async () => {
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'submit-guess',
-      payload: {
-        playerId,
-        guess: currentGuess,
-      },
+    if (!isConnected) return;
+    
+    await broadcast('submit-guess', {
+      playerId,
+      guess: currentGuess,
     });
     setCurrentGuess("");
   };

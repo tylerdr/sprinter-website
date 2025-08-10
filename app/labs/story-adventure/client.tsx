@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateRoomCode, generatePlayerId } from "@/lib/multiplayer/rooms";
-import { createClient } from "@/lib/supabase/client";
+import { useMultiplayerRoom } from "@/lib/hooks/useMultiplayerRoom";
 
 interface StoryChapter {
   id: string;
@@ -88,15 +88,13 @@ function StoryAdventureGame() {
   const [playerName, setPlayerName] = useState("");
   const [playerId, setPlayerId] = useState<string>("");
   const [isHost, setIsHost] = useState(false);
-  const [players] = useState<{id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean; score?: number; lastVote?: boolean}[]>([]);
+  const [players, setPlayers] = useState<{id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean; score?: number; lastVote?: boolean}[]>([]);
   const [storyState, setStoryState] = useState<StoryState | null>(null);
   const [customChoice, setCustomChoice] = useState("");
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [roomState, setRoomState] = useState<'lobby' | 'playing' | 'ended'>('lobby');
   const [copied, setCopied] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  const supabase = createClient();
 
   useEffect(() => {
     if (!roomCode) {
@@ -108,7 +106,29 @@ function StoryAdventureGame() {
     const id = localStorage.getItem('playerId') || generatePlayerId();
     localStorage.setItem('playerId', id);
     setPlayerId(id);
-  }, [roomCode]);
+  }, [roomCode, router]);
+
+  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+    roomCode,
+    playerId,
+    playerName,
+    isHost,
+    onPresenceSync: (playersList) => {
+      setPlayers(playersList as {id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean; score?: number; lastVote?: boolean}[]);
+    },
+    onBroadcast: (event, payload) => {
+      if (event === 'story-update') {
+        if (payload.storyState) {
+          setStoryState(payload.storyState as StoryState);
+        }
+        if (payload.roomState) {
+          setRoomState(payload.roomState as 'lobby' | 'playing' | 'ended');
+        }
+      } else if (event === 'vote-choice' || event === 'custom-choice') {
+        // Handle voting updates
+      }
+    },
+  });
 
   // Auto-scroll to latest chapter
   useEffect(() => {
@@ -119,19 +139,12 @@ function StoryAdventureGame() {
 
   const joinGame = async () => {
     if (!playerName) return;
-
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
-      id: playerId,
-      name: playerName,
-      isAI: false,
-      isHost,
-      avatar: '📖',
-      score: 0,
-    });
+    // The presence tracking is now handled in the useMultiplayerRoom hook
   };
 
   const addAIPlayer = async () => {
+    if (!isConnected) return;
+    
     const aiPersonalities = [
       { name: 'Chaos Agent', avatar: '🎭', style: 'chaotic' },
       { name: 'Romance Bot', avatar: '💕', style: 'romantic' },
@@ -141,14 +154,14 @@ function StoryAdventureGame() {
     
     const ai = aiPersonalities[Math.floor(Math.random() * aiPersonalities.length)];
     
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
+    await trackPlayer({
       id: generatePlayerId(),
       name: ai.name,
       isAI: true,
       isHost: false,
       avatar: ai.avatar,
       style: ai.style,
+      score: 0,
     });
   };
 
@@ -180,14 +193,9 @@ function StoryAdventureGame() {
       },
     };
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'story-update',
-      payload: {
-        storyState: initialState,
-        roomState: 'playing',
-      },
+    await broadcast('story-update', {
+      storyState: initialState,
+      roomState: 'playing',
     });
 
     setStoryState(initialState);
@@ -199,31 +207,21 @@ function StoryAdventureGame() {
     
     setSelectedChoice(choiceId);
     
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'vote-choice',
-      payload: {
-        playerId,
-        choiceId,
-        chapterId: storyState.chapters[storyState.currentChapter].id,
-      },
+    await broadcast('vote-choice', {
+      playerId,
+      choiceId,
+      chapterId: storyState.chapters[storyState.currentChapter].id,
     });
   };
 
   const submitCustomChoice = async () => {
     if (!customChoice || !storyState) return;
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'custom-choice',
-      payload: {
-        playerId,
-        playerName,
-        customText: customChoice,
-        chapterId: storyState.chapters[storyState.currentChapter].id,
-      },
+    await broadcast('custom-choice', {
+      playerId,
+      playerName,
+      customText: customChoice,
+      chapterId: storyState.chapters[storyState.currentChapter].id,
     });
 
     setCustomChoice("");

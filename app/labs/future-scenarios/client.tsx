@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateRoomCode, generatePlayerId, AI_PERSONALITIES } from "@/lib/multiplayer/rooms";
-import { createClient } from "@/lib/supabase/client";
+import { useMultiplayerRoom } from "@/lib/hooks/useMultiplayerRoom";
 
 interface Scenario {
   id: string;
@@ -85,7 +85,7 @@ function FutureScenariosGame() {
   const [playerName, setPlayerName] = useState("");
   const [playerId, setPlayerId] = useState<string>("");
   const [isHost, setIsHost] = useState(false);
-  const [players] = useState<{id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean}[]>([]);
+  const [players, setPlayers] = useState<{id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean}[]>([]);
   const [worldState, setWorldState] = useState<WorldState | null>(null);
   const [scenarioInput, setScenarioInput] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof CATEGORIES>('technology');
@@ -93,7 +93,27 @@ function FutureScenariosGame() {
   const [copied, setCopied] = useState(false);
   const [currentPrompt, setCurrentPrompt] = useState("");
 
-  const supabase = createClient();
+  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+    roomCode,
+    playerId,
+    playerName,
+    isHost,
+    onPresenceSync: (playersList) => {
+      setPlayers(playersList as {id: string; name: string; isAI: boolean; avatar: string; isHost?: boolean}[]);
+    },
+    onBroadcast: (event, payload) => {
+      if (event === 'world-update') {
+        if (payload.worldState) {
+          setWorldState(payload.worldState as WorldState);
+        }
+        if (payload.roomState) {
+          setRoomState(payload.roomState as 'lobby' | 'building' | 'exploring');
+        }
+      } else if (event === 'add-scenario' || event === 'vote-scenario') {
+        // Handle scenario updates
+      }
+    },
+  });
 
   useEffect(() => {
     if (!roomCode) {
@@ -105,28 +125,21 @@ function FutureScenariosGame() {
     const id = localStorage.getItem('playerId') || generatePlayerId();
     localStorage.setItem('playerId', id);
     setPlayerId(id);
-  }, [roomCode]);
+  }, [roomCode, router]);
 
   const joinGame = async () => {
     if (!playerName) return;
-
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
-      id: playerId,
-      name: playerName,
-      isAI: false,
-      isHost,
-      avatar: '🧑‍🚀',
-    });
+    // The presence tracking is now handled in the useMultiplayerRoom hook
   };
 
   const addAIPlayer = async () => {
+    if (!isConnected) return;
+    
     const aiPlayer = AI_PERSONALITIES['future-scenarios'][
       Math.floor(Math.random() * AI_PERSONALITIES['future-scenarios'].length)
     ];
     
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.track({
+    await trackPlayer({
       id: generatePlayerId(),
       name: aiPlayer.name,
       isAI: true,
@@ -149,14 +162,9 @@ function FutureScenariosGame() {
       },
     };
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'world-update',
-      payload: {
-        worldState: initialState,
-        roomState: 'building',
-      },
+    await broadcast('world-update', {
+      worldState: initialState,
+      roomState: 'building',
     });
 
     setWorldState(initialState);
@@ -190,26 +198,16 @@ function FutureScenariosGame() {
       reactions: {},
     };
 
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'add-scenario',
-      payload: newScenario,
-    });
+    await broadcast('add-scenario', { ...newScenario });
 
     setScenarioInput("");
   };
 
   const voteOnScenario = async (scenarioId: string, vote: 'likely' | 'unlikely' | 'wild') => {
-    const channel = supabase.channel(`room:${roomCode}`);
-    await channel.send({
-      type: 'broadcast',
-      event: 'vote-scenario',
-      payload: {
-        scenarioId,
-        playerId,
-        vote,
-      },
+    await broadcast('vote-scenario', {
+      scenarioId,
+      playerId,
+      vote,
     });
   };
 
