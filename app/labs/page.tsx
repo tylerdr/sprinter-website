@@ -290,7 +290,7 @@ const categories = [
   { id: "voice", name: "Voice", description: "Voice AI and conversation" },
   { id: "creative", name: "Creative", description: "Creative AI tools and games" },
   { id: "play", name: "Play", description: "Fun AI games and challenges" },
-  { id: "multiplayer", name: "Multiplayer", description: "Collaborative AI games with friends" },
+  // { id: "multiplayer", name: "Multiplayer", description: "Collaborative AI games with friends" }, // Temporarily disabled
 ];
 
 export default function LabsPage() {
@@ -299,15 +299,18 @@ export default function LabsPage() {
   const featuredLabs = labs.filter(lab => lab.featured);
   const regularLabs = labs.filter(lab => !lab.featured);
   
+  // Filter out multiplayer labs as they require backend setup
+  const availableLabs = labs.filter(lab => lab.category !== "multiplayer");
+  
   const filteredLabs = activeCategory === "all" 
-    ? labs 
-    : labs.filter(lab => lab.category === activeCategory);
+    ? availableLabs 
+    : availableLabs.filter(lab => lab.category === activeCategory);
 
-  // Calculate counts for each category
+  // Calculate counts for each category (excluding multiplayer)
   const categoryCounts = categories.reduce((acc, category) => {
     acc[category.id] = category.id === "all" 
-      ? labs.length 
-      : labs.filter(lab => lab.category === category.id).length;
+      ? availableLabs.length 
+      : availableLabs.filter(lab => lab.category === category.id).length;
     return acc;
   }, {} as Record<string, number>);
 

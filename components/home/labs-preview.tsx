@@ -108,15 +108,12 @@ export function LabsPreview() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Link href={lab.href}>
-                <Card className="h-full hover:border-primary/50 transition-all duration-300 group overflow-hidden">
-                  <div 
-                    className={`absolute inset-0 bg-gradient-to-br ${lab.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                  />
-                  <CardHeader className="relative">
+              <Link href={lab.href} className="block h-full">
+                <Card className="h-full hover:border-primary/50 transition-all duration-300 group relative">
+                  <CardHeader>
                     <div className="flex items-start justify-between mb-2">
-                      <div className={`p-2 rounded-lg bg-card border ${lab.color}`}>
-                        <lab.icon className={`w-5 h-5 ${lab.color}`} />
+                      <div className="p-2 rounded-lg bg-background/50 border border-border">
+                        <lab.icon className="w-5 h-5 text-primary" />
                       </div>
                       <Badge variant="secondary" className="text-xs">
                         {lab.badge}
@@ -129,10 +126,10 @@ export function LabsPreview() {
                       {lab.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="relative">
+                  <CardContent>
                     <div className="flex items-center gap-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                       <span>Try it now</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardContent>
                 </Card>

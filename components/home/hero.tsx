@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
-import { ClientProofBand } from "@/components/home/client-proof-band";
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 
@@ -164,22 +163,12 @@ export function Hero() {
             </Balancer>
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-base sm:text-lg text-muted-foreground/80 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed"
-          >
-            <Balancer>
-              Live products serving real customers: MortgageQ, Cabomatic, Amble. No slides. Just results.
-            </Balancer>
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0"
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0 mb-12 sm:mb-16"
           >
             <Button asChild variant="gradient" className="px-8 py-4 text-base">
               <Link href="/labs/opportunity-audit" className="group">
@@ -204,10 +193,8 @@ export function Hero() {
           <ImpactMetrics 
             variant="hero" 
             showAnimation={true}
-            className="mt-12 sm:mt-16 md:mt-20 px-2 sm:px-0"
+            className="px-2 sm:px-0"
           />
-          
-          <ClientProofBand />
         </motion.div>
       </div>
 
