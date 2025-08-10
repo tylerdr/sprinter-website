@@ -2,129 +2,172 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Balancer from "react-wrap-balancer";
-import { Rocket, Lightbulb, Code, Presentation } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Rocket, 
+  Lightbulb, 
+  Code, 
+  Users,
+  ArrowRight,
+  Clock,
+  Target,
+  Zap
+} from "lucide-react";
 
 const services = [
   {
     icon: Lightbulb,
-    title: "AI Discovery & Workshops",
-    description:
-      "Craft your AI strategy and launch breakthrough initiatives with hands-on workshops that turn vision into action",
-    href: "/services#workshops",
-    gradient: "from-yellow-500 to-orange-600",
+    title: "AI Discovery Workshop",
+    shortTitle: "Discovery",
+    description: "Identify high-ROI AI opportunities in your business. One day to transform your perspective.",
+    features: ["1 Day", "$5,000", "3-5 Opportunities"],
+    href: "/services/discovery",
+    badge: "Most Popular",
+    highlight: true,
   },
   {
-    icon: Presentation,
-    title: "Speaking & Training",
-    description:
-      "Ignite your team's potential and build AI mastery through dynamic keynotes and intensive training that drives results",
-    href: "/services#training",
-    gradient: "from-green-500 to-teal-600",
+    icon: Zap,
+    title: "10-Day AI Sprint", 
+    shortTitle: "Sprint",
+    description: "From idea to production AI in 10 days. We build, deploy, and train your team.",
+    features: ["10 Days", "$25-50K", "Production Ready"],
+    href: "/services/sprint",
+    badge: "Fast Track",
   },
   {
     icon: Code,
-    title: "Custom AI Development",
-    description:
-      "Ship production-ready AI agents and craft intelligent automation that transforms operations and accelerates growth",
-    href: "/services#development",
-    gradient: "from-blue-500 to-purple-600",
+    title: "Enterprise Transformation",
+    shortTitle: "Transform",
+    description: "Full-scale AI integration across your organization. Strategic, systematic, scalable.",
+    features: ["3-6 Months", "$150K+", "Company-Wide"],
+    href: "/services/enterprise",
   },
   {
     icon: Rocket,
-    title: "Venture Studio",
-    description:
-      "Launch AI ventures together as your technical co-founder, building breakthrough products that create lasting value",
-    href: "/services#ventures",
-    gradient: "from-purple-500 to-pink-600",
+    title: "Venture Partnership",
+    shortTitle: "Venture",
+    description: "We become your technical co-founder. Build breakthrough AI products together.",
+    features: ["Ongoing", "Equity-Based", "Co-Creation"],
+    href: "/services/venture",
+    badge: "Exclusive",
   },
 ];
 
 export function ServicesPreview() {
   return (
-    <section
-      className="py-16 md:py-24 relative"
-      aria-labelledby="services-heading"
-    >
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="py-16 sm:py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+      
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-12 md:space-y-16"
+          className="text-center mb-12"
         >
-          <div className="space-y-4">
-            <h2
-              id="services-heading"
-              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight"
-            >
-              <Balancer>
-                Our <span className="gradient-text">Services</span>
-              </Balancer>
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0 font-normal leading-relaxed">
-              <Balancer>
-                From vision to victory, we craft AI agents and data products that
-                supercharge your team and build unstoppable competitive advantage.
-              </Balancer>
-            </p>
+          <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
+            <Target className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">
+              How We Work
+            </span>
           </div>
+          
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Choose Your <span className="gradient-text">AI Journey</span>
+          </h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            From rapid prototypes to enterprise transformation. Pick the path that fits your timeline and ambition.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="w-full"
+              transition={{ delay: index * 0.1 }}
+              className="h-full"
             >
-              <Link
-                href={service.href}
-                className="group block p-6 sm:p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm hover:bg-card/30 transition-all hover:scale-105 touch-manipulation h-full focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
-              >
-                <div
-                  className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${service.gradient} mb-4 sm:mb-6`}
-                  aria-hidden="true"
-                >
-                  <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:gradient-text transition-all tracking-tight leading-tight">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 text-sm sm:text-base font-normal leading-relaxed">
-                  {service.description}
-                </p>
-                <span className="text-sm font-medium text-info group-hover:text-foreground flex items-center gap-1">
-                  Learn more
-                  <span
-                    className="inline-block transition-transform group-hover:translate-x-1"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </span>
+              <Link href={service.href} className="block h-full">
+                <Card className={`h-full hover:border-primary/50 transition-all duration-300 group relative ${
+                  service.highlight ? 'border-primary/30 bg-primary/5' : ''
+                }`}>
+                  {service.badge && (
+                    <div className="absolute -top-3 left-4">
+                      <Badge variant="default" className="text-xs">
+                        {service.badge}
+                      </Badge>
+                    </div>
+                  )}
+                  
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="p-2 rounded-lg bg-background/50 border border-border">
+                        <service.icon className="w-5 h-5 text-primary" />
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="mt-2">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  
+                  <CardContent className="pt-0">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {service.features.map((feature, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs px-2 py-1 rounded-full bg-muted/50 text-muted-foreground"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>Learn more</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
               </Link>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          transition={{ delay: 0.5 }}
           className="text-center mt-12"
         >
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-card/30 backdrop-blur-sm text-foreground font-medium rounded-lg border border-border/20 hover:bg-card/40 transition-all touch-manipulation min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
-          >
-            View All Services
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/services">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              >
+                Compare All Options
+              </motion.button>
+            </Link>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 border border-border rounded-lg font-medium hover:bg-card/50 transition-colors"
+              >
+                Schedule a Call
+              </motion.button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
