@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Zap, Sparkles } from "lucide-react";
+import { ArrowRight, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";

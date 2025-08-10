@@ -5,18 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { 
   Rocket, 
-  Target, 
   Users, 
-  Clock, 
   CheckCircle,
   ArrowRight,
   Handshake,
   Code,
-  TrendingUp,
-  Calendar,
   Shield,
   Brain,
-  Layers,
   DollarSign
 } from "lucide-react";
 
@@ -179,7 +174,7 @@ export default function VenturePage() {
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="border-green-500/20 bg-green-500/5">
               <CardHeader>
-                <CardTitle className="text-green-500">We're Looking For</CardTitle>
+                <CardTitle className="text-green-500">We&apos;re Looking For</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">

@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Building2, 
-  Target, 
   Users, 
-  Clock, 
   CheckCircle,
   ArrowRight,
-  Rocket,
   Code,
   TrendingUp,
-  Calendar,
   Shield,
   Brain,
   Layers
@@ -87,7 +83,7 @@ export default function EnterprisePage() {
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
             Systematic AI integration across your entire organization.
-            We don't just implement AI—we transform how you operate, compete, and grow.
+            We don&apos;t just implement AI—we transform how you operate, compete, and grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
@@ -217,14 +213,14 @@ export default function EnterprisePage() {
                 <div>
                   <h4 className="font-semibold mb-3">We Ship, Not Consult</h4>
                   <p className="text-sm text-muted-foreground mb-4">
-                    We're builders, not advisors. Every engagement delivers working AI systems, 
+                    We&apos;re builders, not advisors. Every engagement delivers working AI systems, 
                     not just recommendations.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3">Proven at Scale</h4>
                   <p className="text-sm text-muted-foreground mb-4">
-                    50+ enterprise deployments. We've seen what works and what doesn't 
+                    50+ enterprise deployments. We&apos;ve seen what works and what doesn&apos;t 
                     at Fortune 500 scale.
                   </p>
                 </div>
@@ -239,7 +235,7 @@ export default function EnterprisePage() {
                   <h4 className="font-semibold mb-3">Risk Mitigation</h4>
                   <p className="text-sm text-muted-foreground mb-4">
                     Enterprise-grade security, compliance, and governance from day one. 
-                    We've navigated the regulations.
+                    We&apos;ve navigated the regulations.
                   </p>
                 </div>
               </div>
@@ -258,9 +254,9 @@ export default function EnterprisePage() {
                 <div>
                   <h3 className="font-semibold mb-2">Recent Enterprise Success</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    "Transformed a Fortune 500 financial services firm with AI-powered risk assessment 
+                    &quot;Transformed a Fortune 500 financial services firm with AI-powered risk assessment 
                     and customer intelligence. Reduced processing time by 85%, increased accuracy to 99.2%, 
-                    and generated $47M in new revenue opportunities in the first year."
+                    and generated $47M in new revenue opportunities in the first year.&quot;
                   </p>
                   <div className="flex gap-6 text-sm">
                     <div>
@@ -289,7 +285,7 @@ export default function EnterprisePage() {
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join the enterprises transforming their operations with AI. 
-            Let's discuss your vision and build a roadmap to get there.
+            Let&apos;s discuss your vision and build a roadmap to get there.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">

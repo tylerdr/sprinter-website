@@ -4,15 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Lightbulb, 
   Target, 
   Users, 
-  Clock, 
   CheckCircle,
   ArrowRight,
   Zap,
   Brain,
-  TrendingUp,
   Calendar
 } from "lucide-react";
 
@@ -107,7 +104,7 @@ export default function DiscoveryPage() {
         {/* What You Get */}
         <div className="max-w-6xl mx-auto mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">
-            What You'll <span className="gradient-text">Achieve</span>
+            What You&apos;ll <span className="gradient-text">Achieve</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card>
@@ -204,7 +201,7 @@ export default function DiscoveryPage() {
                 <ul className="space-y-2 text-sm">
                   <li>• Companies already deep in AI implementation</li>
                   <li>• Teams looking for hands-on technical training only</li>
-                  <li>• Organizations wanting a vendor to just "do it all"</li>
+                  <li>• Organizations wanting a vendor to just &quot;do it all&quot;</li>
                   <li>• Groups smaller than 3 or larger than 12 participants</li>
                 </ul>
               </CardContent>
@@ -218,7 +215,7 @@ export default function DiscoveryPage() {
             Ready to Transform Your <span className="gradient-text">AI Strategy</span>?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join the 100+ companies who've discovered their AI opportunities with us.
+            Join the 100+ companies who&apos;ve discovered their AI opportunities with us.
             Limited workshop dates available each month.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

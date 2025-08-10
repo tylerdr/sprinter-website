@@ -7,10 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Rocket, 
   Lightbulb, 
-  Code, 
-  Users,
+  Code,
   ArrowRight,
-  Clock,
   Target,
   Zap
 } from "lucide-react";

@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Zap, 
   Target, 
   Users, 
-  Clock, 
   CheckCircle,
   ArrowRight,
   Rocket,
   Code,
   TrendingUp,
-  Calendar,
   Shield
 } from "lucide-react";
 
@@ -147,7 +145,7 @@ export default function SprintPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Security, monitoring, error handling, and documentation included. This isn't a prototype—it's ready for real users.
+                  Security, monitoring, error handling, and documentation included. This isn&apos;t a prototype—it&apos;s ready for real users.
                 </p>
               </CardContent>
             </Card>
@@ -223,7 +221,7 @@ export default function SprintPage() {
         {/* What You Get */}
         <div className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">
-            What's <span className="gradient-text">Included</span>
+            What&apos;s <span className="gradient-text">Included</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {deliverables.map((item, index) => (
@@ -255,9 +253,9 @@ export default function SprintPage() {
                 <div>
                   <h3 className="font-semibold mb-2">Recent Sprint Success</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    "We built an AI customer service agent for a SaaS company in 10 days. 
+                    &quot;We built an AI customer service agent for a SaaS company in 10 days. 
                     It now handles 70% of support tickets automatically, saving 30 hours per week 
-                    and improving response time from hours to seconds."
+                    and improving response time from hours to seconds.&quot;
                   </p>
                   <Link href="/case-studies" className="text-sm text-primary hover:underline">
                     Read more success stories →
@@ -274,7 +272,7 @@ export default function SprintPage() {
             Ready to Ship AI in <span className="gradient-text">10 Days</span>?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Stop planning. Start shipping. Join the 50+ companies who've launched 
+            Stop planning. Start shipping. Join the 50+ companies who&apos;ve launched 
             production AI with our sprint process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

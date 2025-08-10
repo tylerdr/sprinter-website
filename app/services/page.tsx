@@ -5,7 +5,6 @@ import {
   Zap,
   Code,
   Clock,
-  CheckCircle,
   ArrowRight,
   Users,
   Shield,
