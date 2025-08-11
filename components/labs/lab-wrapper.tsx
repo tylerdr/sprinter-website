@@ -5,6 +5,7 @@ import { ShareMenu } from "@/components/labs/share-menu";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
+import Link from "next/link";
 
 interface LabWrapperProps {
   title: string;
@@ -107,7 +108,7 @@ export function LabWrapper({
             <h3 className="text-xl font-semibold mb-2">Ready to implement this?</h3>
             <p className="text-muted-foreground mb-4">{ctaText}</p>
             <Button asChild variant="gradient">
-              <a href="/contact">Book a 30-min Strategy Call</a>
+              <Link href="/contact">Book a 30-min Strategy Call</Link>
             </Button>
           </div>
         </section>

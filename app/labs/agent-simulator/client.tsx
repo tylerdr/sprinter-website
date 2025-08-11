@@ -5,6 +5,7 @@ import { DeviceFrame } from "@/components/ui/device-frame";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ShareMenu } from "@/components/labs/share-menu";
+import Link from "next/link";
 
 export function AgentSimulatorClient() {
   const exampleScenarios = [
@@ -139,7 +140,7 @@ export function AgentSimulatorClient() {
               Get a 30-day implementation plan based on your use case
             </p>
             <Button asChild variant="gradient">
-              <a href="/contact">Book a 30-min Strategy Call</a>
+              <Link href="/contact">Book a 30-min Strategy Call</Link>
             </Button>
           </div>
         </section>

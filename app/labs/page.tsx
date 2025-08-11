@@ -27,6 +27,7 @@ const labs = [
     gradient: "from-blue-500 to-cyan-600",
     category: "agents",
     actionVerb: "Watch",
+    featured: true,
   },
   {
     icon: Blocks,
@@ -57,6 +58,7 @@ const labs = [
     gradient: "from-purple-500 to-pink-600",
     category: "agents",
     actionVerb: "Build",
+    featured: true,
   },
   
   // Docs Category
@@ -187,7 +189,7 @@ const labs = [
     gradient: "from-red-500 to-pink-600",
     category: "play",
     actionVerb: "Battle",
-    featured: true,
+    featured: false,
   },
   {
     icon: Blocks,
@@ -198,7 +200,7 @@ const labs = [
     gradient: "from-emerald-500 to-teal-600",
     category: "play",
     actionVerb: "Simulate",
-    featured: true,
+    featured: false,
   },
   
   // Multiplayer Category - New Collaborative AI Games
@@ -211,7 +213,7 @@ const labs = [
     gradient: "from-purple-600 to-pink-600",
     category: "multiplayer",
     actionVerb: "Play",
-    featured: true,
+    featured: false,
   },
   {
     icon: Palette,
@@ -222,7 +224,7 @@ const labs = [
     gradient: "from-orange-500 to-pink-500",
     category: "multiplayer",
     actionVerb: "Draw",
-    featured: true,
+    featured: false,
   },
   {
     icon: BookOpen,
@@ -233,7 +235,7 @@ const labs = [
     gradient: "from-indigo-500 to-purple-600",
     category: "multiplayer",
     actionVerb: "Create",
-    featured: true,
+    featured: false,
   },
   {
     icon: Globe,
@@ -244,7 +246,7 @@ const labs = [
     gradient: "from-cyan-500 to-blue-600",
     category: "multiplayer",
     actionVerb: "Build",
-    featured: true,
+    featured: false,
   },
   {
     icon: Palette,
@@ -255,7 +257,7 @@ const labs = [
     gradient: "from-purple-500 to-indigo-600",
     category: "creative",
     actionVerb: "Generate",
-    featured: true,
+    featured: false,
   },
   {
     icon: Workflow,
@@ -266,7 +268,7 @@ const labs = [
     gradient: "from-blue-500 to-cyan-600",
     category: "creative",
     actionVerb: "Design",
-    featured: true,
+    featured: false,
   },
   {
     icon: Blocks,

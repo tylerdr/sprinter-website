@@ -346,12 +346,12 @@ function StoryboardingFlow() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="text-center">
-        <Badge variant="outline" className="mb-4">
-          <GitBranch className="w-3 h-3 mr-1" />
-          Visual Journey Mapping
-        </Badge>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="text-center space-y-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/30">
+          <Layers className="w-4 h-4 text-purple-500" />
+          <span className="text-sm font-medium text-purple-500">AI Experience Design</span>
+        </div>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
           Storyboarding & <span className="gradient-text">ConstrUX</span>
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

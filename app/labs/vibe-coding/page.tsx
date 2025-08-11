@@ -14,6 +14,7 @@ import { Slider } from "@/components/ui/slider";
 import { LabLayout } from "@/components/labs/LabLayout";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import { sandpackDark } from "@codesandbox/sandpack-themes";
+import Link from "next/link";
 import { 
   Code2, 
   Palette, 
@@ -379,10 +380,10 @@ body {
                             size="sm"
                             asChild
                           >
-                            <a href={generatedCode.v0Url} target="_blank" rel="noopener noreferrer">
+                            <Link href={generatedCode.v0Url} target="_blank" rel="noopener noreferrer">
                               Open in v0
                               <ChevronRight className="w-4 h-4 ml-1" />
-                            </a>
+                            </Link>
                           </Button>
                         )}
                         <Button
