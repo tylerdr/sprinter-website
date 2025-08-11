@@ -67,9 +67,9 @@ export function DeviceFrame({
         isFullscreen && "fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm"
       )}>
         <div className="flex items-center gap-2">
-          <span className="inline-flex size-3 rounded-full bg-red-500/80" />
-          <span className="inline-flex size-3 rounded-full bg-yellow-500/80" />
-          <span className="inline-flex size-3 rounded-full bg-green-500/80" />
+          <span className="inline-flex size-3 rounded-full bg-destructive/80" />
+          <span className="inline-flex size-3 rounded-full bg-warning/80" />
+          <span className="inline-flex size-3 rounded-full bg-success/80" />
           <div className="ml-3 text-sm text-muted-foreground truncate max-w-[40ch]">{title}</div>
         </div>
         <div className="flex items-center gap-2">

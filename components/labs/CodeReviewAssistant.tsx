@@ -134,21 +134,21 @@ users[i].score = users[i].points ** 3 + getCachedFib(20);`
 
   const getIssueColor = (type: string, severity: string) => {
     const baseColors = {
-      security: 'text-red-400',
-      performance: 'text-yellow-400',
-      quality: 'text-blue-400',
-      style: 'text-green-400'
+      security: 'text-destructive',
+      performance: 'text-warning',
+      quality: 'text-info',
+      style: 'text-success'
     };
     
     const severityBg = {
-      high: 'bg-red-500/20 border-red-500/30',
-      medium: 'bg-yellow-500/20 border-yellow-500/30',
-      low: 'bg-blue-500/20 border-blue-500/30'
+      high: 'bg-destructive/20 border-destructive/30',
+      medium: 'bg-warning/20 border-warning/30',
+      low: 'bg-info/20 border-info/30'
     };
 
     return {
-      text: baseColors[type as keyof typeof baseColors] || 'text-gray-400',
-      bg: severityBg[severity as keyof typeof severityBg] || 'bg-gray-500/20 border-gray-500/30'
+      text: baseColors[type as keyof typeof baseColors] || 'text-muted-foreground',
+      bg: severityBg[severity as keyof typeof severityBg] || 'bg-muted/20 border-muted/30'
     };
   };
 
@@ -258,11 +258,11 @@ users[i].score = users[i].points ** 3 + getCachedFib(20);`
                 <div className="text-xs sm:text-sm text-muted-foreground">Total Issues</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-red-400">{review.summary.securityIssues}</div>
+                <div className="text-2xl font-bold text-destructive">{review.summary.securityIssues}</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">Security</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400">{review.summary.performanceIssues}</div>
+                <div className="text-2xl font-bold text-warning">{review.summary.performanceIssues}</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">Performance</div>
               </div>
               <div className="text-center">

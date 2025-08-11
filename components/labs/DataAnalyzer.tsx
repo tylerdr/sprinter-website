@@ -147,13 +147,13 @@ export default function DataAnalyzer() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="p-4 sm:p-6 bg-card/20 border border-border/30 rounded-xl">
                     <div className="flex items-center gap-2 mb-4">
-                      <TrendingUp className="w-5 h-5 text-green-500" />
+                      <TrendingUp className="w-5 h-5 text-success" />
                       <h4 className="font-semibold text-sm sm:text-base">Key Insights</h4>
                     </div>
                     <ul className="space-y-3">
                       {analysis.insights.map((insight, index) => (
                         <li key={index} className="flex gap-2 text-sm">
-                          <span className="text-green-500 font-bold">•</span>
+                          <span className="text-success font-bold">•</span>
                           <span className="text-muted-foreground leading-relaxed">{insight}</span>
                         </li>
                       ))}

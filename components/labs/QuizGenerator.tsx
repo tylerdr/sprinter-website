@@ -173,13 +173,13 @@ export default function QuizGenerator() {
                     key={optionIndex}
                     className={`p-3 rounded-lg border ${
                       showAnswers && question.correctAnswer === optionIndex 
-                        ? 'border-green-500/50 bg-green-500/10' 
+                        ? 'border-success/50 bg-success/10' 
                         : 'border-border/20 bg-card/20'
                     }`}
                   >
                     <span className="text-sm">{String.fromCharCode(65 + optionIndex)}. {option}</span>
                     {showAnswers && question.correctAnswer === optionIndex && (
-                      <CheckCircle className="w-4 h-4 text-green-500 inline ml-2" />
+                      <CheckCircle className="w-4 h-4 text-success inline ml-2" />
                     )}
                   </div>
                 ))}
@@ -193,13 +193,13 @@ export default function QuizGenerator() {
                     key={option}
                     className={`p-3 rounded-lg border ${
                       showAnswers && question.correctAnswer.toString().toLowerCase() === option.toLowerCase() 
-                        ? 'border-green-500/50 bg-green-500/10' 
+                        ? 'border-success/50 bg-success/10' 
                         : 'border-border/20 bg-card/20'
                     }`}
                   >
                     <span className="text-sm">{option}</span>
                     {showAnswers && question.correctAnswer.toString().toLowerCase() === option.toLowerCase() && (
-                      <CheckCircle className="w-4 h-4 text-green-500 inline ml-2" />
+                      <CheckCircle className="w-4 h-4 text-success inline ml-2" />
                     )}
                   </div>
                 ))}
@@ -207,15 +207,15 @@ export default function QuizGenerator() {
             )}
             
             {question.type === 'short-answer' && showAnswers && (
-              <div className="p-3 rounded-lg border border-green-500/50 bg-green-500/10 mb-3">
+              <div className="p-3 rounded-lg border border-success/50 bg-success/10 mb-3">
                 <span className="text-sm font-medium">Sample Answer: </span>
                 <span className="text-sm">{question.correctAnswer}</span>
               </div>
             )}
             
             {showAnswers && question.explanation && (
-              <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                <span className="text-xs font-medium text-blue-400 block mb-1">EXPLANATION</span>
+              <div className="p-3 rounded-lg bg-info/10 border border-info/20">
+                <span className="text-xs font-medium text-info block mb-1">EXPLANATION</span>
                 <p className="text-sm text-muted-foreground">{question.explanation}</p>
               </div>
             )}

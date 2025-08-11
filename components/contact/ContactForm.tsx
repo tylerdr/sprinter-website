@@ -3,6 +3,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface FormData {
   name: string;
@@ -70,11 +81,12 @@ export default function ContactForm() {
           <Sparkles className="w-8 h-8 text-success" aria-hidden="true" />
         </div>
         <h2 className="text-2xl font-bold mb-2">Message Received!</h2>
-        <p className="text-gray-400 mb-4">
+        <p className="text-muted-foreground mb-4">
           Thanks for reaching out. We&apos;ll get back to you within 24 hours to
           discuss your AI project.
         </p>
-        <button
+        <Button
+          variant="link"
           onClick={() => {
             setSubmitted(false);
             setFormData({
@@ -85,10 +97,10 @@ export default function ContactForm() {
               projectType: "",
             });
           }}
-          className="text-info hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          className="text-info hover:text-foreground"
         >
           Send another message
-        </button>
+        </Button>
       </motion.div>
     );
   }
@@ -103,11 +115,9 @@ export default function ContactForm() {
       <h2 className="text-2xl font-bold mb-6">Start Your AI Journey</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-2">
-            Name *
-          </label>
-          <input
+        <div className="space-y-2">
+          <Label htmlFor="name">Name *</Label>
+          <Input
             type="text"
             id="name"
             name="name"
@@ -116,18 +126,16 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="name-required"
-            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
+            className="bg-background/50"
           />
           <span id="name-required" className="sr-only">
             Required field
           </span>
         </div>
 
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-2">
-            Email *
-          </label>
-          <input
+        <div className="space-y-2">
+          <Label htmlFor="email">Email *</Label>
+          <Input
             type="email"
             id="email"
             name="email"
@@ -136,7 +144,7 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="email-required"
-            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
+            className="bg-background/50"
           />
           <span id="email-required" className="sr-only">
             Required field
@@ -144,51 +152,49 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="mb-6">
-        <label htmlFor="company" className="block text-sm font-medium mb-2">
-          Company
-        </label>
-        <input
+      <div className="mb-6 space-y-2">
+        <Label htmlFor="company">Company</Label>
+        <Input
           type="text"
           id="company"
           name="company"
           value={formData.company}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors"
+          className="bg-background/50"
         />
       </div>
 
-      <div className="mb-6">
-        <label htmlFor="projectType" className="block text-sm font-medium mb-2">
-          What can we help you with? *
-        </label>
-        <select
-          id="projectType"
+      <div className="mb-6 space-y-2">
+        <Label htmlFor="projectType">What can we help you with? *</Label>
+        <Select
           name="projectType"
           value={formData.projectType}
-          onChange={handleChange}
+          onValueChange={(value) => 
+            setFormData((prev) => ({ ...prev, projectType: value }))
+          }
           required
           aria-required="true"
           aria-describedby="projectType-required"
-          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
         >
-          <option value="">Select an option</option>
-          <option value="discovery">AI Discovery Workshop</option>
-          <option value="development">Custom AI Development</option>
-          <option value="venture">Venture Partnership</option>
-          <option value="speaking">Speaking/Training</option>
-          <option value="other">Other</option>
-        </select>
+          <SelectTrigger id="projectType" className="bg-background/50">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="discovery">AI Discovery Workshop</SelectItem>
+            <SelectItem value="development">Custom AI Development</SelectItem>
+            <SelectItem value="venture">Venture Partnership</SelectItem>
+            <SelectItem value="speaking">Speaking/Training</SelectItem>
+            <SelectItem value="other">Other</SelectItem>
+          </SelectContent>
+        </Select>
         <span id="projectType-required" className="sr-only">
           Required field
         </span>
       </div>
 
-      <div className="mb-6">
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
-          Tell us about your project *
-        </label>
-        <textarea
+      <div className="mb-6 space-y-2">
+        <Label htmlFor="message">Tell us about your project *</Label>
+        <Textarea
           id="message"
           name="message"
           value={formData.message}
@@ -197,7 +203,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-describedby="message-required"
           rows={5}
-          className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-[color:var(--brand-start)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] transition-colors resize-none"
+          className="bg-background/50 resize-none"
           placeholder="Describe your vision, challenges, or ideas..."
         />
         <span id="message-required" className="sr-only">
@@ -205,15 +211,17 @@ export default function ContactForm() {
         </span>
       </div>
 
-      <button
+      <Button
         type="submit"
         disabled={isSubmitting}
-        className="flex items-center gap-2 px-8 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2"
+        variant="gradient"
+        size="lg"
+        className="w-full md:w-auto"
       >
         {isSubmitting ? (
           <>
             <div
-              className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
+              className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin mr-2"
               aria-hidden="true"
             />
             <span>Sending...</span>
@@ -221,11 +229,11 @@ export default function ContactForm() {
           </>
         ) : (
           <>
-            <Send className="w-5 h-5" aria-hidden="true" />
+            <Send className="w-5 h-5 mr-2" aria-hidden="true" />
             Send Message
           </>
         )}
-      </button>
+      </Button>
     </form>
   );
 }

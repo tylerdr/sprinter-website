@@ -187,12 +187,12 @@ export default function RoiCalculator() {
         <div className="space-y-6">
           {/* Key Metrics */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/20 rounded-xl p-4">
+            <div className="bg-gradient-to-br from-success/10 to-success/10 border border-success/20 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="w-5 h-5 text-green-500" />
+                <TrendingUp className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">Annual Savings</span>
               </div>
-              <div className="text-2xl font-bold text-green-500">
+              <div className="text-2xl font-bold text-success">
                 {formatCurrency(results.annualSavings)}
               </div>
             </div>
@@ -225,17 +225,17 @@ export default function RoiCalculator() {
               
               <div className="flex justify-between py-2 border-b border-border/30">
                 <span className="text-muted-foreground">Implementation Cost</span>
-                <span className="font-semibold text-red-500">-{formatCurrency(implementationCost)}</span>
+                <span className="font-semibold text-destructive">-{formatCurrency(implementationCost)}</span>
               </div>
               
               <div className="flex justify-between py-2 border-b border-border/30">
                 <span className="text-muted-foreground">Annual Savings</span>
-                <span className="font-semibold text-green-500">+{formatCurrency(results.annualSavings)}</span>
+                <span className="font-semibold text-success">+{formatCurrency(results.annualSavings)}</span>
               </div>
               
               <div className="flex justify-between py-2 font-bold text-lg">
                 <span>Net Benefit (Year 1)</span>
-                <span className={results.roiPercentage > 0 ? "text-green-500" : "text-red-500"}>
+                <span className={results.roiPercentage > 0 ? "text-success" : "text-destructive"}>
                   {formatCurrency(results.annualSavings - implementationCost)}
                 </span>
               </div>
@@ -274,7 +274,7 @@ export default function RoiCalculator() {
                   <div className="text-xs text-muted-foreground">Days to Break Even</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-500 mb-1">
+                  <div className="text-2xl font-bold text-success mb-1">
                     {formatNumber(results.productivityGain)}%
                   </div>
                   <div className="text-xs text-muted-foreground">Productivity Gain</div>

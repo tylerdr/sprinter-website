@@ -159,10 +159,10 @@ interface WorkflowBlock {
 }
 
 const categoryColors = {
-  input: 'border-blue-500/30 bg-blue-500/10',
-  processing: 'border-purple-500/30 bg-purple-500/10',
-  decision: 'border-green-500/30 bg-green-500/10',
-  output: 'border-orange-500/30 bg-orange-500/10'
+  input: 'border-info/30 bg-info/10',
+  processing: 'border-primary/30 bg-primary/10',
+  decision: 'border-success/30 bg-success/10',
+  output: 'border-warning/30 bg-warning/10'
 };
 
 const categoryNames = {
@@ -403,7 +403,7 @@ export default function AgentPlayground() {
                           left: block.position.x,
                           top: block.position.y
                         }}
-                        className={`absolute w-24 h-16 rounded-lg border-2 ${categoryColors[block.type.category]} cursor-move transition-all hover:scale-105 ${selectedBlock === block.id ? 'ring-2 ring-blue-500' : ''}`}
+                        className={`absolute w-24 h-16 rounded-lg border-2 ${categoryColors[block.type.category]} cursor-move transition-all hover:scale-105 ${selectedBlock === block.id ? 'ring-2 ring-info' : ''}`}
                         onClick={() => setSelectedBlock(selectedBlock === block.id ? null : block.id)}
                       >
                         <div className="p-2 h-full flex flex-col items-center justify-center">
@@ -420,13 +420,13 @@ export default function AgentPlayground() {
                             e.stopPropagation();
                             removeBlock(block.id);
                           }}
-                          className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                          className="absolute -top-2 -right-2 w-5 h-5 bg-destructive text-white rounded-full flex items-center justify-center hover:bg-destructive/90 transition-colors"
                         >
                           <Trash2 className="w-3 h-3" />
                         </button>
 
                         {/* Block number indicator */}
-                        <div className="absolute -top-2 -left-2 w-5 h-5 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                        <div className="absolute -top-2 -left-2 w-5 h-5 bg-info text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
                           {index + 1}
                         </div>
                       </motion.div>

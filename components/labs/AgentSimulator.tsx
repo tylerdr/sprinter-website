@@ -140,7 +140,7 @@ Total execution time: 6.2 seconds`);
             value={scenario}
             onChange={(e) => setScenario(e.target.value)}
             placeholder="e.g., Plan a product launch event"
-            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base touch-manipulation"
+            className="w-full px-4 py-3 rounded-lg bg-card/30 border border-border/20 focus:border-info focus:outline-none transition-colors text-sm sm:text-base touch-manipulation"
             disabled={isRunning}
           />
 
@@ -212,9 +212,9 @@ Total execution time: 6.2 seconds`);
                 transition={{ delay: index * 0.1 }}
                 className={`p-3 sm:p-4 rounded-lg border backdrop-blur-sm transition-all ${
                   agent.status === "working"
-                    ? "bg-blue-500/10 border-blue-500/30"
+                    ? "bg-info/10 border-info/30"
                     : agent.status === "done"
-                      ? "bg-green-500/10 border-green-500/30"
+                      ? "bg-success/10 border-success/30"
                       : "bg-card/20 border-border/30"
                 }`}
               >

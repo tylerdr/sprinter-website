@@ -434,8 +434,8 @@ export default function VoiceChat() {
         <div className={cn(
           "flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm",
           isConnected 
-            ? "bg-green-500/20 text-green-400 border border-green-500/30"
-            : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
+            ? "bg-success/20 text-success border border-success/30"
+            : "bg-muted/20 text-muted-foreground border border-muted/30"
         )}>
           {isConnected ? (
             <>
@@ -473,11 +473,11 @@ export default function VoiceChat() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="mb-6 p-4 rounded-lg bg-blue-500/10 border border-blue-500/20"
+                  className="mb-6 p-4 rounded-lg bg-info/10 border border-info/20"
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <User className="w-4 h-4 text-blue-400" />
-                    <span className="text-sm font-medium text-blue-400">You&apos;re saying:</span>
+                    <User className="w-4 h-4 text-info" />
+                    <span className="text-sm font-medium text-info">You&apos;re saying:</span>
                   </div>
                   <p className="text-white">{currentTranscript}</p>
                 </motion.div>
@@ -490,8 +490,8 @@ export default function VoiceChat() {
                 <div className={cn(
                   "flex items-center gap-2 px-3 py-2 rounded-lg text-sm",
                   isConnected 
-                    ? "bg-green-500/10 text-green-400"
-                    : "bg-gray-500/10 text-gray-400"
+                    ? "bg-success/10 text-success"
+                    : "bg-muted/10 text-muted-foreground"
                 )}>
                   {isConnected ? <Wifi className="w-4 h-4" /> : <WifiOff className="w-4 h-4" />}
                   {isConnected ? "Connected" : "Disconnected"}
@@ -530,7 +530,7 @@ export default function VoiceChat() {
                   <Button
                     onClick={disconnect}
                     variant="soft"
-                    className="bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20"
+                    className="bg-destructive/10 text-destructive hover:bg-destructive/20 border border-destructive/20"
                   >
                     <PhoneOff className="w-4 h-4 mr-2" />
                     Disconnect
@@ -542,7 +542,7 @@ export default function VoiceChat() {
                       variant={isListening ? "default" : "soft"}
                       className={cn(
                         isListening 
-                          ? "bg-blue-500 text-white" 
+                          ? "bg-info text-white" 
                           : "bg-muted/20 text-muted-foreground hover:text-foreground"
                       )}
                     >
@@ -559,7 +559,7 @@ export default function VoiceChat() {
                       className={cn(
                         "select-none",
                         isPushToTalkActive 
-                          ? "bg-blue-500 text-white" 
+                          ? "bg-info text-white" 
                           : "bg-muted/20 text-muted-foreground hover:text-foreground"
                       )}
                     >
@@ -699,16 +699,16 @@ export default function VoiceChat() {
                       className={cn(
                         "p-3 rounded-lg",
                         message.type === "user" 
-                          ? "bg-blue-500/10 border border-blue-500/20"
+                          ? "bg-info/10 border border-info/20"
                           : message.type === "assistant"
-                          ? "bg-purple-500/10 border border-purple-500/20"
-                          : "bg-yellow-500/10 border border-yellow-500/20"
+                          ? "bg-primary/10 border border-primary/20"
+                          : "bg-warning/10 border border-warning/20"
                       )}
                     >
                       <div className="flex items-start gap-2">
-                        {message.type === "user" && <User className="w-4 h-4 mt-0.5 text-blue-400" />}
-                        {message.type === "assistant" && <Bot className="w-4 h-4 mt-0.5 text-purple-400" />}
-                        {message.type === "system" && <Zap className="w-4 h-4 mt-0.5 text-yellow-400" />}
+                        {message.type === "user" && <User className="w-4 h-4 mt-0.5 text-info" />}
+                        {message.type === "assistant" && <Bot className="w-4 h-4 mt-0.5 text-primary" />}
+                        {message.type === "system" && <Zap className="w-4 h-4 mt-0.5 text-warning" />}
                         
                         <div className="flex-1 min-w-0">
                           {message.isTyping ? (
@@ -743,26 +743,26 @@ export default function VoiceChat() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="mt-8 p-6 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20"
+        className="mt-8 p-6 rounded-xl bg-gradient-to-r from-info/10 to-primary/10 border border-info/20"
       >
         <h3 className="text-lg font-semibold mb-4 text-center">🎯 Voice AI Features</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="text-center">
-            <Mic className="w-6 h-6 mx-auto mb-2 text-blue-400" />
+            <Mic className="w-6 h-6 mx-auto mb-2 text-info" />
             <h4 className="font-medium text-sm">Real-time Recognition</h4>
             <p className="text-xs text-muted-foreground mt-1">
               Natural speech processing with interruption handling
             </p>
           </div>
           <div className="text-center">
-            <Volume2 className="w-6 h-6 mx-auto mb-2 text-purple-400" />
+            <Volume2 className="w-6 h-6 mx-auto mb-2 text-primary" />
             <h4 className="font-medium text-sm">Lifelike Responses</h4>
             <p className="text-xs text-muted-foreground mt-1">
               Natural voice synthesis with emotional context
             </p>
           </div>
           <div className="text-center">
-            <Zap className="w-6 h-6 mx-auto mb-2 text-green-400" />
+            <Zap className="w-6 h-6 mx-auto mb-2 text-success" />
             <h4 className="font-medium text-sm">Low Latency</h4>
             <p className="text-xs text-muted-foreground mt-1">
               Under 100ms response time for natural flow

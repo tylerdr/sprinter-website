@@ -60,7 +60,7 @@ export default async function ArticlePage({
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -82,11 +82,11 @@ export default async function ArticlePage({
               {article.title}
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-400 mb-6">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-6">
               {article.excerpt}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 pb-6 border-b border-white/10">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground/80 pb-6 border-b border-border/30">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 <time dateTime={article.date}>
@@ -101,7 +101,7 @@ export default async function ArticlePage({
                 <Clock className="w-4 h-4" />
                 <span>{article.readTime}</span>
               </div>
-              <button className="ml-auto flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+              <button className="ml-auto flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/20 hover:bg-card/30 transition-colors">
                 <Share2 className="w-4 h-4" />
                 Share
               </button>
@@ -111,11 +111,11 @@ export default async function ArticlePage({
           <div className="prose prose-invert prose-lg max-w-none">
             {article.content.map((section, index) => (
               <section key={index} className="mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">
                   {section.heading}
                 </h2>
                 {section.paragraphs.map((p, i) => (
-                  <p key={i} className="text-gray-300 leading-relaxed mb-4">
+                  <p key={i} className="text-muted-foreground leading-relaxed mb-4">
                     {p}
                   </p>
                 ))}
@@ -123,12 +123,12 @@ export default async function ArticlePage({
             ))}
           </div>
 
-          <footer className="mt-12 pt-8 border-t border-white/10">
+          <footer className="mt-12 pt-8 border-t border-border/30">
             <div className="flex flex-wrap gap-2 mb-8">
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs rounded-full bg-white/5 text-gray-400"
+                  className="px-3 py-1 text-xs rounded-full bg-card/20 text-muted-foreground"
                 >
                   #{tag}
                 </span>
@@ -139,7 +139,7 @@ export default async function ArticlePage({
               <h3 className="text-xl sm:text-2xl font-bold mb-3">
                 Ready to implement these strategies?
               </h3>
-              <p className="text-gray-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Let&apos;s discuss how to apply these insights to your specific
                 business challenges.
               </p>
@@ -163,18 +163,18 @@ export default async function ArticlePage({
                     <Link
                       key={related.slug}
                       href={`/blog/${related.slug}`}
-                      className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+                      className="group p-4 rounded-lg bg-card/20 border border-border/30 hover:bg-card/30 transition-all"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
                           <h4 className="font-semibold mb-2 group-hover:text-brand transition-colors">
                             {related.title}
                           </h4>
-                          <p className="text-sm text-gray-500 line-clamp-2">
+                          <p className="text-sm text-muted-foreground/80 line-clamp-2">
                             {related.excerpt}
                           </p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-brand group-hover:translate-x-1 transition-all mt-1" />
+                        <ArrowRight className="w-4 h-4 text-muted-foreground/80 group-hover:text-brand group-hover:translate-x-1 transition-all mt-1" />
                       </div>
                     </Link>
                   ))}

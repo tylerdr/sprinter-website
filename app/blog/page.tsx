@@ -65,7 +65,7 @@ export default function BlogPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             AI <span className="gradient-text">Insights</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-2 sm:px-0">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
             Practical guides, case studies, and strategies for implementing AI
             in your business. No hype, just results.
           </p>
@@ -81,10 +81,10 @@ export default function BlogPage() {
                 {categories.map((category) => (
                   <button
                     key={category.name}
-                    className="w-full text-left px-3 sm:px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex justify-between items-center touch-manipulation min-h-[44px]"
+                    className="w-full text-left px-3 sm:px-4 py-2 rounded-lg bg-card/20 hover:bg-card/30 border border-border/30 transition-all flex justify-between items-center touch-manipulation min-h-[44px]"
                   >
                     <span className="text-xs sm:text-sm">{category.name}</span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-muted-foreground/80">
                       {category.count}
                     </span>
                   </button>
@@ -95,7 +95,7 @@ export default function BlogPage() {
                 <h4 className="font-semibold mb-3 text-sm sm:text-base">
                   Stay Updated
                 </h4>
-                <p className="text-xs sm:text-sm text-gray-400 mb-4 leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-4 leading-relaxed">
                   AI Insights newsletter coming soon. Get notified when we
                   launch.
                 </p>
@@ -116,7 +116,7 @@ export default function BlogPage() {
                 className={`group p-4 sm:p-6 rounded-xl border backdrop-blur-sm transition-all hover:scale-[1.01] ${
                   article.featured
                     ? "bg-brand-10 border-brand-30"
-                    : "bg-white/5 border-white/10 hover:bg-white/10"
+                    : "bg-card/20 border-border/30 hover:bg-card/30"
                 }`}
               >
                 <div className="flex flex-col gap-4 sm:gap-6">
@@ -127,12 +127,12 @@ export default function BlogPage() {
                           className={`px-2 sm:px-3 py-1 text-xs font-medium rounded-full inline-block w-fit ${
                             article.featured
                               ? "bg-brand-10 text-brand"
-                              : "bg-white/10 text-gray-400"
+                              : "bg-muted/20 text-muted-foreground"
                           }`}
                         >
                           {article.category}
                         </span>
-                        <div className="flex items-center gap-3 text-xs text-gray-500">
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground/80">
                           <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
                             {new Date(article.date).toLocaleDateString(
@@ -155,7 +155,7 @@ export default function BlogPage() {
                         {article.title}
                       </h2>
 
-                      <p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed">
+                      <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
                         {article.excerpt}
                       </p>
 
@@ -164,7 +164,7 @@ export default function BlogPage() {
                           {article.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400"
+                              className="text-xs px-2 py-1 rounded-full bg-muted/10 text-muted-foreground"
                             >
                               {tag}
                             </span>
@@ -184,7 +184,7 @@ export default function BlogPage() {
                     <div className="flex-shrink-0 order-first sm:order-last">
                       <div
                         className={`w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex items-center justify-center ${
-                          article.featured ? "bg-brand-gradient" : "bg-white/10"
+                          article.featured ? "bg-brand-gradient" : "bg-card/30"
                         }`}
                       >
                         <article.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -196,7 +196,7 @@ export default function BlogPage() {
             ))}
 
             <div className="text-center py-6 sm:py-8">
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base">
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-card/30 text-white font-medium rounded-lg hover:bg-card/40 transition-colors touch-manipulation min-h-[44px] text-sm sm:text-base">
                 Load More Articles
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -209,7 +209,7 @@ export default function BlogPage() {
             Ready to implement these{" "}
             <span className="gradient-text">strategies</span>?
           </h3>
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
             Don&apos;t just read about AI transformation—experience it.
             Let&apos;s discuss how these insights apply to your business.
           </p>

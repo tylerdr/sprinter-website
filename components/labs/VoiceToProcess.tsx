@@ -143,13 +143,13 @@ export default function VoiceToProcess() {
   const getStepColor = (type: string) => {
     switch (type) {
       case 'start':
-        return 'bg-green-500/20 text-green-400 border-green-500/30';
+        return 'bg-success/20 text-success border-success/30';
       case 'decision':
-        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
+        return 'bg-warning/20 text-warning border-warning/30';
       case 'end':
-        return 'bg-red-500/20 text-red-400 border-red-500/30';
+        return 'bg-destructive/20 text-destructive border-destructive/30';
       default:
-        return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
+        return 'bg-info/20 text-info border-info/30';
     }
   };
 
@@ -166,7 +166,7 @@ export default function VoiceToProcess() {
                 onClick={isRecording ? stopRecording : startRecording}
                 className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 flex items-center justify-center transition-all ${
                   isRecording 
-                    ? 'bg-red-500 border-red-400 animate-pulse' 
+                    ? 'bg-destructive border-destructive animate-pulse' 
                     : 'bg-brand-gradient border-brand hover:scale-105'
                 }`}
               >
@@ -287,7 +287,7 @@ export default function VoiceToProcess() {
               <ul className="space-y-3">
                 {processMap.optimizations.map((opt, index) => (
                   <li key={index} className="flex gap-2 text-sm">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="text-success font-bold">•</span>
                     <span className="text-muted-foreground leading-relaxed">{opt}</span>
                   </li>
                 ))}
