@@ -33,10 +33,10 @@ export function TrustedBy() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">
-            Working with Industry Leaders
+            Companies Our Team Has Worked With
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From Fortune 500 to high-growth startups, we partner with ambitious teams ready to lead with AI
+            Our team brings experience from leading organizations across technology, finance, and consulting
           </p>
         </motion.div>
 

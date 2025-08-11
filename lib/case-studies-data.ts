@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "The AI doesn't just help us manage Non-QM complexity—it turned it into our competitive advantage. We're closing loans 300% faster with the confidence of having a senior underwriter available 24/7.",
-    testimonialAuthor: "VP Operations, Pacific Coast Lending",
+    testimonialAuthor: "VP Operations, Mid-Market Lending Firm",
     features: [
       "Multi-agent parallel lender research",
       "Field normalization across divergent nomenclatures",
@@ -74,7 +74,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "This isn't just automation—it's transformation. We quote more options, close faster, and our designers focus on design instead of spreadsheets. The ROI was evident within weeks.",
-    testimonialAuthor: "Operations Director, Custom Cabinet Solutions",
+    testimonialAuthor: "Operations Director, Cabinet Manufacturer",
     features: [
       "Visual AI parser for PDFs and price lists",
       "Canonical SKU schema with semantic reconciliation",
@@ -109,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "The AI coach transformed our care model. Nurses now manage 5× more patients with better outcomes because they focus on those who need them most. We've avoided millions in penalties while improving both patient and staff satisfaction.",
-    testimonialAuthor: "Chief Nursing Officer, Regional Health Network",
+    testimonialAuthor: "Chief Nursing Officer, Regional Health System",
     features: [
       "Multi-modal patient engagement (voice, SMS, app)",
       "Clinical NLP for symptom extraction",
@@ -129,9 +129,9 @@ export const caseStudies: CaseStudy[] = [
     title: "Amble Innovation – Enterprise AI Workshop Platform",
     category: "Enterprise Software",
     description:
-      "How AI-powered innovation workshops scaled Accenture's consulting capacity by 10× globally",
+      "How AI-powered innovation workshops scaled consulting capacity by 10× globally",
     challenge:
-      "Accenture's innovation practice constrained by in-person workshop model: senior consultants traveling globally, manual synthesis taking weeks, insights trapped in sticky notes and whiteboards, inability to scale beyond 50 workshops/year. COVID-19 made traditional workshops impossible while client demand for transformation surged 300%.",
+      "Global consulting firm's innovation practice constrained by in-person workshop model: senior consultants traveling globally, manual synthesis taking weeks, insights trapped in sticky notes and whiteboards, inability to scale beyond 50 workshops/year. COVID-19 made traditional workshops impossible while client demand for transformation surged 300%.",
     solution:
       "Engineered AI-powered digital workshop platform enabling virtual collaboration with real-time transcription, intelligent clustering of ideas using NLP, automated insight extraction and theme identification, connection mapping between concepts, and integration with Accenture's knowledge bases. Platform supports async and sync sessions across time zones with multilingual capability.",
     results: [
@@ -144,7 +144,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "Amble didn't just digitize our workshops—it revolutionized our entire innovation practice. We can now run 10 workshops simultaneously across continents, with AI surfacing insights we would have missed. It's become our competitive differentiator.",
-    testimonialAuthor: "Managing Director, Innovation Practice Lead",
+    testimonialAuthor: "Managing Director, Global Consulting Firm",
     features: [
       "Real-time collaborative digital canvas",
       "AI-powered idea clustering and theme extraction",
@@ -179,7 +179,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     testimonial:
       "This AI engine accomplished in 3 months what would've taken our team 3 years and $2M. We went from invisible to dominating long-tail searches. The ROI is extraordinary—we're now the category leader in organic traffic.",
-    testimonialAuthor: "VP Growth, E-commerce Platform",
+    testimonialAuthor: "VP Growth, E-commerce Aggregator",
     features: [
       "Multi-source product data aggregation",
       "Review mining with sentiment analysis",

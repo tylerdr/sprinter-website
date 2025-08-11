@@ -5,6 +5,7 @@ import { MainNavigation } from "@/components/layout/main-navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
+import { ChatWidget } from "@/components/chat-widget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
@@ -77,6 +78,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <ThemeCustomizer />
+          <ChatWidget />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

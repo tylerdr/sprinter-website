@@ -24,7 +24,7 @@ export const articles: Article[] = [
     excerpt: "Real lessons from the trenches: the mistakes that cost us months, the patterns that saved us, and the unglamorous truths about shipping AI that actually works.",
     category: "AI Strategy",
     readTime: "10 min read",
-    date: "2024-01-20",
+    date: "2025-01-15",
     featured: true,
     tags: ["Production AI", "Lessons Learned", "Architecture", "Best Practices"],
     content: [
@@ -109,7 +109,7 @@ export const articles: Article[] = [
     excerpt: "Our proven methodology for going from AI idea to production deployment in 10 days. No hype, no months of research—just a systematic approach that works.",
     category: "How-To",
     readTime: "12 min read",
-    date: "2024-01-18",
+    date: "2025-01-12",
     featured: true,
     tags: ["Sprint Methodology", "Production AI", "Rapid Deployment", "Process"],
     content: [
@@ -225,7 +225,7 @@ export const articles: Article[] = [
     excerpt: "Learn how autonomous AI agents can handle complex tasks in parallel, reducing operational overhead by 95% while improving accuracy.",
     category: "AI Strategy",
     readTime: "8 min read",
-    date: "2024-01-15",
+    date: "2025-01-10",
     featured: true,
     tags: ["Agentic AI", "Automation", "Enterprise"],
     content: [
@@ -251,7 +251,7 @@ export const articles: Article[] = [
     excerpt: "A practical framework for calculating the real ROI of AI implementations, with case studies showing 300% returns in 60 days.",
     category: "Business Value",
     readTime: "6 min read",
-    date: "2024-01-10",
+    date: "2025-01-08",
     featured: true,
     tags: ["ROI", "Metrics", "Strategy"],
     content: [
@@ -270,7 +270,7 @@ export const articles: Article[] = [
     excerpt: "Understanding the difference between rule-based automation and intelligent AI agents, and how to choose the right approach.",
     category: "Technology",
     readTime: "5 min read",
-    date: "2024-01-08",
+    date: "2025-01-05",
     featured: false,
     tags: ["Technology", "Decision Making"],
     content: [
@@ -288,7 +288,7 @@ export const articles: Article[] = [
     excerpt: "Explore the pros and cons of different approaches to building AI capabilities in your organization.",
     category: "Leadership",
     readTime: "7 min read",
-    date: "2024-01-05",
+    date: "2025-01-03",
     featured: false,
     tags: ["Team Building", "Strategy"],
     content: [
@@ -306,7 +306,7 @@ export const articles: Article[] = [
     excerpt: "From patient monitoring to diagnosis assistance, see how AI is transforming healthcare delivery with concrete examples.",
     category: "Case Studies",
     readTime: "10 min read",
-    date: "2024-01-03",
+    date: "2024-12-28",
     featured: false,
     tags: ["Healthcare", "Case Studies"],
     content: [

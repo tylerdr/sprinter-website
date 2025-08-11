@@ -146,8 +146,8 @@ export function LabsPreview() {
           className="text-center"
         >
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold">20+ interactive demos</span> • No sign-up required • 
-            Experience the future of AI automation
+            <span className="font-semibold">Try one demo without signup</span> • 
+            Unlock everything with free signup • Experience the future of AI automation
           </p>
         </motion.div>
       </div>

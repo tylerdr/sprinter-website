@@ -23,18 +23,18 @@ const defaultMetrics: Metric[] = [
   {
     value: "100",
     suffix: "K+",
-    label: "Hours Reclaimed",
+    label: "Hours Returned",
     color: "gradient-text"
   },
   {
     value: "50",
     suffix: "+",
-    label: "Jobs Created", 
+    label: "Roles Created", 
     color: "gradient-text"
   },
   {
     value: "10",
-    label: "Days to Ship",
+    label: "Days to Prototype",
     color: "gradient-text"
   }
 ];

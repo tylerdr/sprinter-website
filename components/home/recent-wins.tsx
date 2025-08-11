@@ -7,21 +7,21 @@ import { TrendingUp, Clock, Users, DollarSign, ArrowRight } from "lucide-react";
 const recentWins = [
   {
     icon: DollarSign,
-    client: "Velocity Financial",
+    client: "Financial Services Client",
     result: "$2.4M additional revenue",
     timeframe: "in 6 months",
     description: "AI loan assistant processing 300% more applications",
   },
   {
     icon: Clock,
-    client: "Meridian Health Systems",
+    client: "Regional Healthcare Network",
     result: "5x patient capacity",
     timeframe: "in 90 days",
     description: "AI care coach managing routine check-ins",
   },
   {
     icon: Users,
-    client: "NextGen Commerce",
+    client: "E-commerce Platform",
     result: "10,000 pages created",
     timeframe: "in 3 months",
     description: "AI content engine driving 400% traffic growth",
@@ -55,8 +55,8 @@ export function RecentWins() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            This Month&apos;s{" "}
-            <span className="gradient-text">Success Stories</span>
+            Recent{" "}
+            <span className="gradient-text">Client Results</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
             Proof that focused AI execution compounds. Ship, measure, iterate.
@@ -110,13 +110,9 @@ export function RecentWins() {
             </h3>
           </div>
           <p className="text-foreground/80 mb-4 text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            We only take on{" "}
+            We limit our capacity to{" "}
             <strong>3 new AI transformation projects per month</strong> to
             ensure quality delivery.
-            <span className="text-warning font-semibold block sm:inline">
-              {" "}
-              2 spots remaining for this quarter.
-            </span>
           </p>
           <Link
             href="/contact"

@@ -367,7 +367,7 @@ function CardsAgainstAIGame() {
 function CardsAgainstAIContent() {
   const howItWorks = (
     <>
-      <h3>How Cards Against AI Works</h3>
+      <h3>How Prompt Party Works</h3>
       <p>
         A multiplayer party game where humans and AI compete with dark humor about 
         startups and tech. One player is the Card Czar who reads a black card with 
@@ -422,13 +422,13 @@ function CardsAgainstAIContent() {
 
   return (
     <LabWrapper
-      title="Cards Against AI"
+      title="Prompt Party"
       description="Multiplayer party game with dark startup humor"
       slug="cards-against-ai"
       howItWorks={howItWorks}
       examples={examples}
       techDetails={techDetails}
-      ctaText="Host Cards Against AI for your next team event"
+      ctaText="Host Prompt Party for your next team event"
     >
       <CardsAgainstAIGame />
     </LabWrapper>

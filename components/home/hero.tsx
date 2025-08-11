@@ -159,7 +159,7 @@ export function Hero() {
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 font-normal"
           >
             <Balancer>
-              We build AI that actually ships. In days, not quarters. Your team stays in control while AI handles the grunt work.
+              Ship a working prototype in 10 days. Go live in 4 weeks. Your team stays in control while AI handles the repetitive.
             </Balancer>
           </motion.p>
 

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { COMPANY_INFO } from "@/lib/constants";
 import { BrandLogo } from "@/components/logo/BrandLogo";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeMenu } from "@/components/theme-menu";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -224,7 +224,7 @@ export function MainNavigation() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <ThemeToggle />
+            <ThemeMenu />
 
             <Button asChild variant="gradient" size="sm">
               <Link href="/contact" className="group">
@@ -236,7 +236,7 @@ export function MainNavigation() {
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-3 md:hidden">
-            <ThemeToggle />
+            <ThemeMenu />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"

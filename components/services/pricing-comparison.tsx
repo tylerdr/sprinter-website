@@ -90,7 +90,7 @@ const packages = [
     name: "AI Sprint",
     price: "$25-75K",
     duration: "2-4 Weeks",
-    description: "Prototype in 10 days, deploy in 4 weeks, with real users and dashboards.",
+    description: "Ship a working prototype in 10 days. Go live in 4 weeks with real users and dashboards.",
     highlight: true,
     cta: "Start a 10-Day Sprint"
   },

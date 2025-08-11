@@ -72,7 +72,7 @@ export const industries: Industry[] = [
       "Regulatory compliance overhead"
     ],
     useCases: ["loan-underwriting", "fraud-detection", "kyc-automation", "portfolio-optimization"],
-    averageROI: "400% in 6 months",
+    averageROI: "120-250% typical ROI in 3-6 months",
     topTools: ["GPT-4", "Claude", "Custom ML Models", "Zapier AI"]
   },
   {
@@ -87,7 +87,7 @@ export const industries: Industry[] = [
       "Documentation burden"
     ],
     useCases: ["patient-monitoring", "medical-transcription", "appointment-scheduling", "diagnosis-assistance"],
-    averageROI: "5x efficiency gain",
+    averageROI: "2-3x efficiency improvement",
     topTools: ["Medical LLMs", "Vision AI", "NLP Models", "Voice AI"]
   },
   {
@@ -102,7 +102,7 @@ export const industries: Industry[] = [
       "Product discovery"
     ],
     useCases: ["personalized-recommendations", "inventory-optimization", "customer-support", "dynamic-pricing"],
-    averageROI: "300% revenue increase",
+    averageROI: "50-150% revenue improvement",
     topTools: ["Recommendation Engines", "ChatGPT", "Computer Vision", "Predictive Analytics"]
   },
   {
@@ -117,7 +117,7 @@ export const industries: Industry[] = [
       "Production inefficiencies"
     ],
     useCases: ["predictive-maintenance", "quality-inspection", "supply-chain", "production-planning"],
-    averageROI: "60% reduction in downtime",
+    averageROI: "30-50% reduction in downtime",
     topTools: ["IoT Analytics", "Computer Vision", "Time Series AI", "Digital Twins"]
   },
   {
@@ -132,7 +132,7 @@ export const industries: Industry[] = [
       "Compliance tracking"
     ],
     useCases: ["contract-analysis", "legal-research", "compliance-monitoring", "document-generation"],
-    averageROI: "70% time reduction",
+    averageROI: "40-60% time reduction",
     topTools: ["Legal LLMs", "NLP Models", "Document AI", "RAG Systems"]
   },
   {
@@ -147,7 +147,7 @@ export const industries: Industry[] = [
       "Property matching"
     ],
     useCases: ["property-valuation", "lead-scoring", "market-analysis", "virtual-tours"],
-    averageROI: "250% more qualified leads",
+    averageROI: "50-100% more qualified leads",
     topTools: ["Computer Vision", "Predictive Models", "ChatGPT", "Data Analytics"]
   }
 ]
@@ -263,7 +263,7 @@ export const useCases: UseCase[] = [
       "24/7 availability"
     ],
     implementation: "4-6 weeks with existing data",
-    roi: "300% ROI in 3 months",
+    roi: "100-200% typical ROI in 3-6 months",
     difficulty: "Medium",
     timeToValue: "30 days"
   },
@@ -282,7 +282,7 @@ export const useCases: UseCase[] = [
       "60% cost reduction"
     ],
     implementation: "2-3 weeks",
-    roi: "200% ROI in 2 months",
+    roi: "75-150% typical ROI in 3-4 months",
     difficulty: "Easy",
     timeToValue: "14 days"
   },
@@ -301,7 +301,7 @@ export const useCases: UseCase[] = [
       "Multi-language support"
     ],
     implementation: "1-2 weeks",
-    roi: "500% ROI in 6 months",
+    roi: "150-300% typical ROI in 3-6 months",
     difficulty: "Easy",
     timeToValue: "7 days"
   },
@@ -320,7 +320,7 @@ export const useCases: UseCase[] = [
       "Extended equipment life"
     ],
     implementation: "8-12 weeks",
-    roi: "400% ROI in 12 months",
+    roi: "150-250% typical ROI in 6-12 months",
     difficulty: "Advanced",
     timeToValue: "90 days"
   },
@@ -339,7 +339,7 @@ export const useCases: UseCase[] = [
       "Compliance checking"
     ],
     implementation: "4-6 weeks",
-    roi: "350% ROI in 6 months",
+    roi: "120-200% typical ROI in 4-6 months",
     difficulty: "Medium",
     timeToValue: "30 days"
   },
@@ -358,7 +358,7 @@ export const useCases: UseCase[] = [
       "Early risk detection"
     ],
     implementation: "3-4 weeks",
-    roi: "250% ROI in 4 months",
+    roi: "80-150% typical ROI in 3-6 months",
     difficulty: "Medium",
     timeToValue: "21 days"
   }

@@ -204,9 +204,9 @@ const labs = [
   // Multiplayer Category - New Collaborative AI Games
   {
     icon: Gamepad2,
-    title: "Cards Against AI",
+    title: "Prompt Party",
     description:
-      "Play Cards Against Humanity: Startup Edition with friends and AI players. Dark humor meets tech in this multiplayer party game.",
+      "Play the Startup Edition party game with friends and AI players. Dark humor meets tech innovation in this multiplayer experience.",
     href: "/labs/cards-against-ai",
     gradient: "from-purple-600 to-pink-600",
     category: "multiplayer",
