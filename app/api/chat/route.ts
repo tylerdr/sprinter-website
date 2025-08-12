@@ -1,29 +1,54 @@
-import { NextResponse } from 'next/server';
+import { openai } from '@ai-sdk/openai';
+import { streamText } from 'ai';
 
-export async function POST(request: Request) {
+// Allow streaming responses up to 30 seconds
+export const maxDuration = 30;
+
+export async function POST(req: Request) {
   try {
-    const { messages } = await request.json();
+    const { messages } = await req.json();
 
-    // For now, return a simple response
-    // In production, this would call OpenAI/Claude API
-    const responses = [
-      "That's a great question! Based on your industry, AI can help automate repetitive tasks and improve decision-making. Would you like to explore specific use cases?",
-      "We typically see 30-50% efficiency improvements in the first 90 days. The key is starting with high-impact, low-complexity automations. What's your biggest time sink right now?",
-      "Our 10-day sprint would be perfect for that. We'd build a working prototype that your team can test immediately. Want to see some similar case studies?",
-      "AI excels at pattern recognition, data processing, and generating content. The best approach is augmenting your team's capabilities, not replacing them. What tasks take the most time for your team?",
-      "Great question! We focus on practical AI that ships quickly. No lengthy consulting engagements - just working code in 10 days. What specific challenge would you want to tackle first?"
-    ];
+    const result = streamText({
+      model: openai('gpt-4-turbo'),
+      messages,
+      system: `You are a helpful AI assistant for Sprinter AI, a company specializing in AI consulting and development. 
+      Focus on practical AI solutions that can be implemented quickly. 
+      Emphasize the 10-day sprint approach and real-world case studies.
+      Be concise and action-oriented.`,
+      temperature: 0.7,
+      maxTokens: 500,
+    });
 
-    // Simple response selection based on message count
-    const responseIndex = Math.min(messages.length - 1, responses.length - 1);
-    const response = responses[responseIndex];
-
-    return NextResponse.json({ text: response });
+    return result.toDataStreamResponse();
   } catch (error) {
     console.error('Chat API error:', error);
-    return NextResponse.json(
-      { error: 'Failed to process chat message' },
-      { status: 500 }
-    );
+    
+    // Fallback to mock responses if API fails
+    const { messages } = await req.json();
+    const mockResponses = [
+      "That's a great question! Based on your industry, AI can help automate repetitive tasks and improve decision-making. Would you like to explore specific use cases?",
+      "We typically see 30-50% efficiency improvements in the first 90 days. The key is starting with high-impact, low-complexity automations.",
+      "Our 10-day sprint would be perfect for that. We'd build a working prototype that your team can test immediately.",
+    ];
+    
+    const responseIndex = Math.min(messages.length - 1, mockResponses.length - 1);
+    const response = mockResponses[Math.max(0, responseIndex)];
+    
+    // Return a mock stream response
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      start(controller) {
+        controller.enqueue(encoder.encode(`0:"${response}"\n`));
+        controller.close();
+      },
+    });
+
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
+    });
   }
 }

@@ -2,25 +2,28 @@
 
 import { openai } from "@ai-sdk/openai";
 import { anthropic } from "@ai-sdk/anthropic";
-import { streamText, generateText, CoreMessage } from "ai";
+import { generateText, CoreMessage } from "ai";
 
 export async function continueConversation(messages: CoreMessage[]) {
-  const result = await streamText({
-    model: openai("gpt-4"),
+  const result = await generateText({
+    model: openai("gpt-4-turbo"),
     messages,
+    system: `You are a helpful AI assistant for Sprinter AI. 
+    Focus on practical AI solutions that can be implemented quickly.
+    Be concise and action-oriented.`,
+    temperature: 0.7,
+    maxTokens: 500,
   });
-
-  const text = await result.text;
 
   return {
     messages: [
       ...messages,
       {
         role: "assistant" as const,
-        content: text,
+        content: result.text,
       },
     ],
-    newMessage: text,
+    newMessage: result.text,
   };
 }
 
