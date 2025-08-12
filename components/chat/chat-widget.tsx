@@ -6,7 +6,7 @@ import { MessageCircle, X, Send, Sparkles, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { supabase } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 
 interface Message {
   id: string;
@@ -112,6 +112,7 @@ export function ChatWidget() {
 
     // Track in Supabase (anonymous auth)
     try {
+      const supabase = createClient();
       await supabase.from("leads").insert({
         email,
         source: "chat_widget",

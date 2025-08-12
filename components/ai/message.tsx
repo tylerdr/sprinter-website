@@ -38,10 +38,10 @@ export function Message({ role, content, className, showAvatar = true }: Message
         )}
       >
         {role === 'assistant' ? (
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            className="prose prose-sm dark:prose-invert max-w-none"
-            components={{
+          <div className="prose prose-sm dark:prose-invert max-w-none">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
               a: ({ children, ...props }) => (
                 <a {...props} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                   {children}
@@ -71,6 +71,7 @@ export function Message({ role, content, className, showAvatar = true }: Message
           >
             {content}
           </ReactMarkdown>
+          </div>
         ) : (
           <p className="text-sm whitespace-pre-wrap">{content}</p>
         )}

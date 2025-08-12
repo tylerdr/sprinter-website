@@ -1,7 +1,5 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
-import { TextStreamChatTransport } from 'ai';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -15,43 +13,27 @@ interface ChatInterfaceProps {
   welcomeMessage?: string;
 }
 
+interface Message {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export function ChatInterface({ 
   className,
   placeholder = "Ask about AI implementation for your business...",
   welcomeMessage = "Hi! I'm here to help you explore AI opportunities for your business. What would you like to know?"
 }: ChatInterfaceProps) {
   const [input, setInput] = useState('');
-  const { messages, sendMessage, status, error } = useChat({
-    transport: new TextStreamChatTransport({
-      api: '/api/chat',
-    }),
-    messages: [
-      {
-        id: 'welcome',
-        role: 'assistant',
-        parts: [{ type: 'text', content: welcomeMessage }],
-      },
-    ],
-    onError: (error) => {
-      console.error('Chat error:', error);
-    },
-  });
-
-  const isLoading = status === 'pending';
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-    
-    const userInput = input;
-    setInput('');
-    
-    await sendMessage({
-      id: Date.now().toString(),
-      role: 'user',
-      parts: [{ type: 'text', content: userInput }],
-    });
-  };
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 'welcome',
+      role: 'assistant',
+      content: welcomeMessage,
+    }
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -60,6 +42,61 @@ export function ChatInterface({
       scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
     }
   }, [messages]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+    
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: input.trim(),
+    };
+    
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [...messages, userMessage].map(m => ({
+            role: m.role,
+            content: m.content
+          }))
+        })
+      });
+      
+      if (response.ok && response.body) {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let assistantMessage = '';
+        
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          
+          assistantMessage += decoder.decode(value);
+        }
+        
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: assistantMessage
+        }]);
+      } else {
+        throw new Error('Failed to get response');
+      }
+    } catch (err) {
+      console.error('Chat error:', err);
+      setError('An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className={cn("flex flex-col h-full", className)}>
@@ -87,9 +124,7 @@ export function ChatInterface({
                     : "bg-muted"
                 )}
               >
-                <p className="text-sm whitespace-pre-wrap">
-                  {message.parts?.map((part: any) => part.type === 'text' ? part.content : '').join('')}
-                </p>
+                <p className="text-sm whitespace-pre-wrap">{message.content}</p>
               </div>
               
               {message.role === 'user' && (
@@ -113,7 +148,7 @@ export function ChatInterface({
           
           {error && (
             <div className="text-sm text-destructive text-center">
-              An error occurred. Please try again.
+              {error}
             </div>
           )}
         </div>

@@ -88,7 +88,7 @@ export function ToolInvocation({
           </details>
         )}
         
-        {result && status === 'success' && (
+        {result !== undefined && result !== null && status === 'success' && (
           <details className="mt-2">
             <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
               Result

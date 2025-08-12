@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Lock, Mail, Sparkles, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { supabase } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 
 interface LabGateProps {
@@ -44,6 +44,7 @@ export function LabGate({ labId, labName, onUnlock, className }: LabGateProps) {
       localStorage.setItem("unlocked_labs", "all");
       
       // Track in Supabase
+      const supabase = createClient();
       await supabase.from("leads").insert({
         email,
         source: `lab_${labId}`,
