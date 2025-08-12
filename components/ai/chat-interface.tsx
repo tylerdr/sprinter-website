@@ -1,12 +1,13 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
+import { TextStreamChatTransport } from 'ai';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { Send, Loader2, Bot, User } from 'lucide-react';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 interface ChatInterfaceProps {
   className?: string;
@@ -19,19 +20,38 @@ export function ChatInterface({
   placeholder = "Ask about AI implementation for your business...",
   welcomeMessage = "Hi! I'm here to help you explore AI opportunities for your business. What would you like to know?"
 }: ChatInterfaceProps) {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
-    api: '/api/chat',
-    initialMessages: [
+  const [input, setInput] = useState('');
+  const { messages, sendMessage, status, error } = useChat({
+    transport: new TextStreamChatTransport({
+      api: '/api/chat',
+    }),
+    messages: [
       {
         id: 'welcome',
         role: 'assistant',
-        content: welcomeMessage,
+        parts: [{ type: 'text', content: welcomeMessage }],
       },
     ],
     onError: (error) => {
       console.error('Chat error:', error);
     },
   });
+
+  const isLoading = status === 'pending';
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+    
+    const userInput = input;
+    setInput('');
+    
+    await sendMessage({
+      id: Date.now().toString(),
+      role: 'user',
+      parts: [{ type: 'text', content: userInput }],
+    });
+  };
 
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -67,7 +87,9 @@ export function ChatInterface({
                     : "bg-muted"
                 )}
               >
-                <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                <p className="text-sm whitespace-pre-wrap">
+                  {message.parts?.map((part: any) => part.type === 'text' ? part.content : '').join('')}
+                </p>
               </div>
               
               {message.role === 'user' && (
@@ -101,7 +123,7 @@ export function ChatInterface({
         <div className="flex gap-2">
           <Input
             value={input}
-            onChange={handleInputChange}
+            onChange={(e) => setInput(e.target.value)}
             placeholder={placeholder}
             disabled={isLoading}
             className="flex-1"

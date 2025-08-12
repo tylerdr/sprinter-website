@@ -16,10 +16,10 @@ export async function POST(req: Request) {
       Emphasize the 10-day sprint approach and real-world case studies.
       Be concise and action-oriented.`,
       temperature: 0.7,
-      maxTokens: 500,
+      maxRetries: 2,
     });
 
-    return result.toDataStreamResponse();
+    return result.toTextStreamResponse();
   } catch (error) {
     console.error('Chat API error:', error);
     

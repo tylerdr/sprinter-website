@@ -12,7 +12,6 @@ export async function continueConversation(messages: CoreMessage[]) {
     Focus on practical AI solutions that can be implemented quickly.
     Be concise and action-oriented.`,
     temperature: 0.7,
-    maxTokens: 500,
   });
 
   return {

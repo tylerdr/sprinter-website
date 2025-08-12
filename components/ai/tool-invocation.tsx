@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 
 interface ToolInvocationProps {
   toolName: string;
-  args?: Record<string, any>;
-  result?: any;
+  args?: Record<string, unknown>;
+  result?: unknown;
   status: 'pending' | 'running' | 'success' | 'error';
   className?: string;
 }

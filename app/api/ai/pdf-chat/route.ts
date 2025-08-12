@@ -38,5 +38,5 @@ export async function POST(request: Request) {
     messages: enhancedMessages,
   });
 
-  return result.toDataStreamResponse();
+  return result.toTextStreamResponse();
 }

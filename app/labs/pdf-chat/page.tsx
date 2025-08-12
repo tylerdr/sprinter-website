@@ -16,7 +16,6 @@ import {
   User,
   Upload
 } from 'lucide-react';
-import { useChat } from '@ai-sdk/react';
 
 interface UploadedDocument {
   id: string;
@@ -33,12 +32,9 @@ export default function PDFChatPage() {
     document.title = 'PDF Document Chat - Sprinter AI Labs';
   }, []);
   
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
-    api: '/api/ai/pdf-chat',
-    body: {
-      documents: uploadedDocs
-    }
-  });
+  const [chatInput, setChatInput] = useState('');
+  const [messages, setMessages] = useState<Array<{ id: string; role: 'user' | 'assistant'; content: string }>>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
@@ -67,6 +63,50 @@ export default function PDFChatPage() {
 
   const removeDocument = (id: string) => {
     setUploadedDocs(prev => prev.filter(doc => doc.id !== id));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!chatInput.trim() || uploadedDocs.length === 0 || isLoading) return;
+    
+    const userMessage = { id: Date.now().toString(), role: 'user' as const, content: chatInput };
+    setMessages(prev => [...prev, userMessage]);
+    setChatInput('');
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('/api/ai/pdf-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [...messages, userMessage],
+          documents: uploadedDocs
+        })
+      });
+      
+      if (response.ok && response.body) {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let assistantMessage = '';
+        
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          
+          assistantMessage += decoder.decode(value);
+        }
+        
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: assistantMessage
+        }]);
+      }
+    } catch (error) {
+      console.error('Chat error:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -219,8 +259,8 @@ export default function PDFChatPage() {
                   <Paperclip className="w-4 h-4" />
                 </Button>
                 <Input
-                  value={input}
-                  onChange={handleInputChange}
+                  value={chatInput || ''}
+                  onChange={(e) => setChatInput(e.target.value)}
                   placeholder={
                     uploadedDocs.length > 0
                       ? "Ask about your documents..."
@@ -231,7 +271,7 @@ export default function PDFChatPage() {
                 />
                 <Button
                   type="submit"
-                  disabled={!input?.trim() || uploadedDocs.length === 0 || isLoading}
+                  disabled={!chatInput?.trim() || uploadedDocs.length === 0 || isLoading}
                   className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
                 >
                   {isLoading ? (
