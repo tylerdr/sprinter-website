@@ -3,22 +3,24 @@ import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
-const attributeSchema = z.array(
-  z.object({
-    id: z.string(),
-    name: z.string().describe('Short, clear name for the attribute'),
-    definition: z.string().describe('Clear definition of what this attribute represents'),
-    prompt: z.string().describe('Specific instruction for AI to extract this information'),
-    type: z.enum(['text', 'number', 'date', 'boolean', 'list']).describe('Data type of the attribute')
-  })
-);
+const attributeSchema = z.object({
+  attributes: z.array(
+    z.object({
+      id: z.string(),
+      name: z.string().describe('Short, clear name for the attribute'),
+      definition: z.string().describe('Clear definition of what this attribute represents'),
+      prompt: z.string().describe('Specific instruction for AI to extract this information'),
+      type: z.enum(['text', 'number', 'date', 'boolean', 'list']).describe('Data type of the attribute')
+    })
+  )
+});
 
 export async function POST(request: Request) {
   try {
     const { input } = await request.json();
 
     const { object } = await generateObject({
-      model: openai('gpt-5'),
+      model: openai('gpt-4o'),
       schema: attributeSchema,
       prompt: `
         Expand the following natural language attribute descriptions into structured extraction attributes.
@@ -32,10 +34,12 @@ export async function POST(request: Request) {
         ${input}
         
         Generate unique IDs for each attribute.
+        Return the attributes in an object with an 'attributes' array.
       `
     });
 
-    return NextResponse.json(object);
+    // Return just the attributes array for backward compatibility
+    return NextResponse.json(object.attributes);
   } catch (error) {
     console.error('Error expanding attributes:', error);
     return NextResponse.json(
