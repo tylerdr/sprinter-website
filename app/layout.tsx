@@ -8,6 +8,7 @@ import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
 import { ChatWidget } from "@/components/chat-widget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "sonner";
 import {
   generateMetadata as createSEOMetadata,
   generateOrganizationStructuredData,
@@ -79,6 +80,7 @@ export default function RootLayout({
           <Footer />
           <ThemeCustomizer />
           <ChatWidget />
+          <Toaster position="bottom-right" />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

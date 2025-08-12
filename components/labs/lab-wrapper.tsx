@@ -203,7 +203,6 @@ export function LabWrapper({
             Back to AI Labs
           </Link>
         </div>
-        </section>
       </article>
     </main>
   );
