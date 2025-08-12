@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star, Globe, BookOpen } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star, Globe, BookOpen, Database, MessagesSquare } from "lucide-react";
 import { useState } from "react";
 
 const labs = [
@@ -91,6 +91,27 @@ const labs = [
     gradient: "from-indigo-500 to-blue-600",
     category: "docs",
     actionVerb: "Upload",
+  },
+  {
+    icon: Database,
+    title: "PDF Attribute Extraction",
+    description:
+      "Define attributes, upload PDFs, and watch AI extract structured data in parallel. Perfect for invoices, contracts, and reports.",
+    href: "/labs/pdf-extractor",
+    gradient: "from-teal-500 to-cyan-600",
+    category: "docs",
+    actionVerb: "Extract",
+    featured: true,
+  },
+  {
+    icon: MessagesSquare,
+    title: "PDF Document Chat",
+    description:
+      "Upload PDFs and have intelligent conversations about their content. Ask questions, get summaries, and explore documents interactively.",
+    href: "/labs/pdf-chat",
+    gradient: "from-violet-500 to-indigo-600",
+    category: "docs",
+    actionVerb: "Chat",
   },
   
   // Data Category
