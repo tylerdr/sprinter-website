@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     }
 
     const { object } = await generateObject({
-      model: openai('gpt-4o'),
+      model: openai('gpt-5'),
       schema,
       messages: [
         {
