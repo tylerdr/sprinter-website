@@ -3,7 +3,6 @@
 import { openai } from "@ai-sdk/openai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { streamText, generateText, CoreMessage } from "ai";
-import { createStreamableValue } from "ai/rsc";
 
 export async function continueConversation(messages: CoreMessage[]) {
   const result = await streamText({
@@ -11,24 +10,17 @@ export async function continueConversation(messages: CoreMessage[]) {
     messages,
   });
 
-  const stream = createStreamableValue("");
-  
-  (async () => {
-    for await (const delta of result.textStream) {
-      stream.update(delta);
-    }
-    stream.done();
-  })();
+  const text = await result.text;
 
   return {
     messages: [
       ...messages,
       {
         role: "assistant" as const,
-        content: result.text,
+        content: text,
       },
     ],
-    newMessage: stream.value,
+    newMessage: text,
   };
 }
 

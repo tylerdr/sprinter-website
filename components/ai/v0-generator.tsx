@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,7 +12,6 @@ import { Badge } from "@/components/ui/badge";
 import { generateUIComponent } from "./actions";
 import { 
   Code2, 
-  Sparkles, 
   Copy, 
   Check, 
   RefreshCw,
@@ -21,8 +19,7 @@ import {
   Layout,
   Monitor,
   Smartphone,
-  ChevronRight,
-  Download
+  ChevronRight
 } from "lucide-react";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import { sandpackDark } from "@codesandbox/sandpack-themes";

@@ -3,7 +3,6 @@
 import { type CoreMessage } from "ai";
 import { useState } from "react";
 import { continueConversation } from "./actions";
-import { readStreamableValue } from "ai/rsc";
 
 export interface Message {
   id: string;
@@ -33,26 +32,20 @@ export default function AIChat() {
     setIsLoading(true);
 
     try {
-      const { messages: newMessages, newMessage } = await continueConversation([
+      const { newMessage } = await continueConversation([
         ...messages,
         userMessage,
       ] as CoreMessage[]);
 
-      let textContent = "";
-      for await (const delta of readStreamableValue(newMessage)) {
-        textContent = `${textContent}${delta}`;
-
-        setMessages([
-          ...messages,
-          userMessage,
-          {
-            id: Date.now().toString(),
-            role: "assistant",
-            content: textContent,
-            timestamp: new Date(),
-          },
-        ]);
-      }
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now().toString(),
+          role: "assistant",
+          content: newMessage,
+          timestamp: new Date(),
+        },
+      ]);
     } catch (error) {
       console.error("Chat error:", error);
       setMessages((prev) => [

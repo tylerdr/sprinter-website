@@ -9,8 +9,7 @@ import {
   DollarSign, 
   ArrowRight,
   Building2,
-  Award,
-  CheckCircle
+  Award
 } from "lucide-react";
 import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
 

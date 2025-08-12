@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { COMPANY_INFO } from "@/lib/constants";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { ThemeMenu } from "@/components/theme-menu";
 import { Button } from "@/components/ui/button";
