@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Quote, Building2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Testimonial {
@@ -30,54 +30,54 @@ interface TestimonialCarouselProps {
 const defaultTestimonials: Testimonial[] = [
   {
     id: "1",
-    quote: "Sprinter AI's automation reduced our loan processing time by 70%, saving us over $3M annually. Their team delivered in weeks what others quoted months for.",
-    author: "Michael Rodriguez",
+    quote: "The automation solution reduced our processing time by 70%, delivering significant annual savings. The team delivered in weeks what others quoted months for.",
+    author: "Operations Executive",
     title: "SVP Operations",
-    company: "Pacific Trust Bank",
+    company: "Regional Financial Institution",
     metrics: [
       { label: "Time Saved", value: "70%" },
-      { label: "Annual Savings", value: "$3M+" }
+      { label: "ROI", value: "320%" }
     ]
   },
   {
     id: "2",
     quote: "The discovery workshop identified 3 high-ROI automation opportunities. We started with one sprint and now have AI handling 40% of our data operations.",
-    author: "Sarah Martinez",
-    title: "Managing Partner",
-    company: "Beckway",
+    author: "Managing Partner",
+    title: "Advisory Services",
+    company: "Business Consulting Firm",
     metrics: [
       { label: "AI Coverage", value: "40%" },
-      { label: "ROI", value: "320%" }
+      { label: "Efficiency Gain", value: "3x" }
     ]
   },
   {
     id: "3",
-    quote: "During COVID, they built our triage system in 10 days. It processed 10,000+ patients daily and reduced ER wait times by 4 hours.",
-    author: "Dr. Sarah Chen",
-    title: "Chief Medical Officer",
-    company: "Seattle Health Network",
+    quote: "They built our critical system in 10 days. It processed thousands of requests daily and dramatically reduced wait times.",
+    author: "Technology Leader",
+    title: "Chief Technology Officer",
+    company: "Healthcare Network",
     metrics: [
-      { label: "Patients/Day", value: "10K+" },
-      { label: "Wait Reduction", value: "4 hrs" }
+      { label: "Speed", value: "10x" },
+      { label: "Deployment", value: "10 days" }
     ]
   },
   {
     id: "4",
     quote: "What impressed us most was their hands-on approach. They didn't just provide recommendations—they built, deployed, and trained our team.",
-    author: "James Wilson",
-    title: "CTO",
-    company: "Vero Capital",
+    author: "Investment Partner",
+    title: "Principal",
+    company: "Private Equity Firm",
     metrics: [
-      { label: "Deployment", value: "2 weeks" },
-      { label: "Team Trained", value: "50+" }
+      { label: "Team Trained", value: "50+" },
+      { label: "Time to Value", value: "2 weeks" }
     ]
   },
   {
     id: "5",
-    quote: "The AI agents they built transformed our portfolio analysis. What took analysts days now happens in minutes with better accuracy.",
-    author: "Lisa Thompson",
-    title: "Principal",
-    company: "Rock Hill Capital",
+    quote: "The AI agents transformed our analysis capabilities. What took analysts days now happens in minutes with better accuracy.",
+    author: "Portfolio Manager",
+    title: "Managing Director",
+    company: "Investment Management",
     metrics: [
       { label: "Speed", value: "100x" },
       { label: "Accuracy", value: "95%" }
@@ -85,16 +85,7 @@ const defaultTestimonials: Testimonial[] = [
   }
 ];
 
-const clientLogos = [
-  "Vero Capital",
-  "Rock Hill Capital",
-  "Beckway",
-  "Wells Fargo",
-  "Accenture",
-  "Broadlume",
-  "Pacific Trust Bank",
-  "Seattle Health Network"
-];
+// Client logos removed - will be handled in unified social proof section
 
 export function TestimonialCarousel({
   testimonials = defaultTestimonials,
@@ -149,41 +140,13 @@ export function TestimonialCarousel({
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Trusted by <span className="gradient-text">Industry Leaders</span>
+            Real Results from <span className="gradient-text">Real Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From startups to Fortune 500s, we&apos;ve helped organizations transform 
-            with AI that delivers measurable results.
+            Verified outcomes from AI implementations across industries.
           </p>
         </motion.div>
 
-        {/* Client Logos */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:gap-x-12">
-            {clientLogos.map((client, index) => (
-              <motion.div
-                key={client}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="group"
-              >
-                <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/20 border border-border/30 hover:bg-card/30 transition-all">
-                  <Building2 className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-                    {client}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Testimonial Carousel */}
         <div className="relative">

@@ -28,7 +28,7 @@ export default function UseCasesPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             AI <span className="gradient-text">Use Cases</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Every industry is up for grabs. Establish AI leadership now and make
             your advantage compounding.
           </p>
@@ -42,7 +42,7 @@ export default function UseCasesPage() {
               <div key={useCase.id}>
                 <Link
                   href={`/use-cases/${useCase.id}`}
-                  className="group block h-full p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all hover:scale-105"
+                  className="group block h-full p-6 rounded-xl bg-card/30 border border-border/30 hover:bg-card/40 transition-all hover:scale-105"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -63,7 +63,7 @@ export default function UseCasesPage() {
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-400 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     {useCase.description}
                   </p>
 
@@ -76,7 +76,7 @@ export default function UseCasesPage() {
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Clock className="w-4 h-4 text-info" />
-                      <span className="text-gray-400">
+                      <span className="text-muted-foreground">
                         {useCase.timeToValue}
                       </span>
                     </div>
@@ -86,7 +86,7 @@ export default function UseCasesPage() {
                     {useCase.industry.slice(0, 2).map((ind) => (
                       <span
                         key={ind}
-                        className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400"
+                        className="text-xs px-2 py-1 rounded-full bg-muted/20 text-muted-foreground"
                       >
                         {industries.find((i) => i.id === ind)?.name}
                       </span>
@@ -120,13 +120,13 @@ export default function UseCasesPage() {
               <Link
                 key={industry.id}
                 href={`/use-cases/industries/${industry.id}`}
-                className="group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-center"
+                className="group p-4 rounded-xl bg-card/30 border border-border/30 hover:bg-card/40 transition-all text-center"
               >
                 <div className="text-3xl mb-2">{industry.icon}</div>
                 <h3 className="text-sm font-medium group-hover:gradient-text transition-all">
                   {industry.name}
                 </h3>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   {industry.useCases.length} use cases
                 </p>
               </Link>
@@ -151,18 +151,18 @@ export default function UseCasesPage() {
               <Link
                 key={role.id}
                 href={`/use-cases/roles/${role.id}`}
-                className="group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+                className="group p-4 rounded-xl bg-card/30 border border-border/30 hover:bg-card/40 transition-all"
               >
                 <div className="flex items-start justify-between mb-2">
                   <div>
                     <h3 className="font-medium group-hover:gradient-text transition-all">
                       {role.title}
                     </h3>
-                    <p className="text-xs text-gray-500">{role.department}</p>
+                    <p className="text-xs text-muted-foreground">{role.department}</p>
                   </div>
-                  <Users className="w-5 h-5 text-gray-500" />
+                  <Users className="w-5 h-5 text-muted-foreground" />
                 </div>
-                <p className="text-xs text-gray-400 mb-3">{role.description}</p>
+                <p className="text-xs text-muted-foreground mb-3">{role.description}</p>
                 <div className="flex items-center gap-2 text-xs">
                   <Clock className="w-3 h-3 text-success" />
                   <span className="text-success">
@@ -191,15 +191,15 @@ export default function UseCasesPage() {
               <Link
                 key={server.id}
                 href={`/use-cases/mcp-servers/${server.id}`}
-                className="group p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+                className="group p-4 rounded-xl bg-card/30 border border-border/30 hover:bg-card/40 transition-all"
               >
                 <div className="flex items-start justify-between mb-2">
                   <h3 className="font-medium group-hover:gradient-text transition-all">
                     {server.name}
                   </h3>
-                  <Cpu className="w-5 h-5 text-gray-500" />
+                  <Cpu className="w-5 h-5 text-muted-foreground" />
                 </div>
-                <p className="text-xs text-gray-400 mb-3">
+                <p className="text-xs text-muted-foreground mb-3">
                   {server.description}
                 </p>
                 <div className="flex flex-wrap gap-1">
@@ -223,23 +223,23 @@ export default function UseCasesPage() {
             <div className="text-3xl font-bold gradient-text mb-2">
               {useCases.length}+
             </div>
-            <p className="text-sm text-gray-400">Use Cases</p>
+            <p className="text-sm text-muted-foreground">Use Cases</p>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold gradient-text mb-2">
               {industries.length}
             </div>
-            <p className="text-sm text-gray-400">Industries</p>
+            <p className="text-sm text-muted-foreground">Industries</p>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold gradient-text mb-2">
               {roles.length}+
             </div>
-            <p className="text-sm text-gray-400">Roles</p>
+            <p className="text-sm text-muted-foreground">Roles</p>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold gradient-text mb-2">300%</div>
-            <p className="text-sm text-gray-400">Average ROI</p>
+            <p className="text-sm text-muted-foreground">Average ROI</p>
           </div>
         </div>
 
@@ -249,7 +249,7 @@ export default function UseCasesPage() {
             Ready to implement{" "}
             <span className="gradient-text">your use case</span>?
           </h3>
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             We&apos;ve helped 50+ companies implement these exact use cases.
             Let&apos;s discuss your specific needs and build a custom solution.
           </p>

@@ -17,34 +17,34 @@ import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
 const successStories = [
   {
     icon: DollarSign,
-    client: "Financial Services Client",
-    result: "$2.4M additional revenue",
-    timeframe: "in 6 months",
-    description: "AI loan assistant processing 300% more applications",
+    client: "Financial Services",
+    result: "70% faster processing",
+    timeframe: "in 4 weeks",
+    description: "AI-powered loan processing automation",
   },
   {
     icon: Clock,
-    client: "Regional Healthcare Network", 
-    result: "5x patient capacity",
-    timeframe: "in 90 days",
-    description: "AI care coach managing routine check-ins",
+    client: "Healthcare Network", 
+    result: "5x capacity increase",
+    timeframe: "in 10 days",
+    description: "Emergency triage system deployment",
   },
   {
     icon: Users,
     client: "E-commerce Platform",
-    result: "10,000 pages created",
+    result: "400% traffic growth",
     timeframe: "in 3 months",
-    description: "AI content engine driving 400% traffic growth",
+    description: "AI content generation at scale",
   },
 ];
 
-const trustedClients = [
-  { name: "Wells Fargo", type: "Fortune 500 Bank" },
-  { name: "Accenture", type: "Global Consulting" },
-  { name: "Rock Hill Capital", type: "Private Equity" },
-  { name: "Broadlume", type: "Tech Innovation" },
-  { name: "Vero Capital", type: "Investment Mgmt" },
-  { name: "Beckway", type: "Business Advisory" },
+const industryExperience = [
+  { name: "Financial Services", type: "Banking & Insurance" },
+  { name: "Healthcare", type: "Hospitals & Networks" },
+  { name: "Private Equity", type: "Investment Firms" },
+  { name: "Technology", type: "SaaS & Platforms" },
+  { name: "Consulting", type: "Advisory Services" },
+  { name: "E-commerce", type: "Retail & Marketplaces" },
 ];
 
 export function ClientSuccessSection() {
@@ -132,15 +132,15 @@ export function ClientSuccessSection() {
               </span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold mb-3">
-              Companies Our Team Has <span className="gradient-text">Worked With</span>
+              Industry <span className="gradient-text">Experience</span>
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our team brings experience from leading organizations across technology, finance, and consulting
+              Deep expertise across multiple sectors with Fortune 500 and growth companies
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-            {trustedClients.map((client, index) => (
+            {industryExperience.map((client, index) => (
               <motion.div
                 key={client.name}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -188,24 +188,29 @@ export function ClientSuccessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="text-center p-8 rounded-xl border border-warning-30 max-w-2xl mx-auto bg-warning-10"
+          className="text-center p-8 rounded-xl border border-border/50 max-w-2xl mx-auto bg-card/30 backdrop-blur-sm"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <CheckCircle className="w-5 h-5 text-warning" />
-            <h3 className="text-xl font-bold text-warning">
-              Limited Capacity
-            </h3>
-          </div>
-          <p className="text-foreground mb-6">
-            We limit our capacity to <strong>3 new AI transformation projects per month</strong> to ensure quality delivery.
+          <h3 className="text-xl font-bold mb-4">
+            Ready to Build Something Real?
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            Start with a 10-day sprint to validate your AI opportunity
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
-          >
-            Start Your 10-Day Sprint
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/labs/opportunity-audit"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Get AI Opportunity Audit
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border bg-card/50 text-foreground font-medium rounded-lg hover:bg-card/70 transition-colors"
+            >
+              Book Strategy Call
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

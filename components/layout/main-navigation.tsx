@@ -20,9 +20,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const workItems = [
+const servicesItems = [
   {
-    title: "Services",
+    title: "AI Services",
     href: "/services",
     description: "AI consulting, development, and transformation services",
   },
@@ -30,11 +30,6 @@ const workItems = [
     title: "Use Cases",
     href: "/use-cases",
     description: "Industry-specific AI applications and solutions",
-  },
-  {
-    title: "Case Studies",
-    href: "/case-studies",
-    description: "Real-world success stories and client outcomes",
   },
 ];
 
@@ -168,10 +163,10 @@ export function MainNavigation() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Work</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {workItems.map((item) => (
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                      {servicesItems.map((item) => (
                         <ListItem
                           key={item.title}
                           title={item.title}
@@ -182,6 +177,14 @@ export function MainNavigation() {
                       ))}
                     </ul>
                   </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/case-studies" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Case Studies
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -273,13 +276,13 @@ export function MainNavigation() {
           >
             <div className="container mx-auto px-4 sm:px-6 py-4">
               <div className="space-y-4">
-                {/* Work Section */}
+                {/* Services Section */}
                 <div>
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-                    Work
+                    Services
                   </h3>
                   <div className="space-y-1">
-                    {workItems.map((item) => (
+                    {servicesItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
@@ -295,6 +298,22 @@ export function MainNavigation() {
                       </Link>
                     ))}
                   </div>
+                </div>
+
+                {/* Case Studies Link */}
+                <div>
+                  <Link
+                    href="/case-studies"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "block py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-card/30",
+                      pathname === "/case-studies"
+                        ? "text-foreground bg-card/30"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    Case Studies
+                  </Link>
                 </div>
 
                 {/* AI Labs Section */}

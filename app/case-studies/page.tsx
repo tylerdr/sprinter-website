@@ -64,7 +64,7 @@ export default function CaseStudiesPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             Case <span className="gradient-text">Studies</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-2 sm:px-0">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
             Real AI transformations delivering measurable ROI. See how
             we&apos;ve helped businesses 10x their efficiency and unlock
             millions in value.
@@ -74,11 +74,11 @@ export default function CaseStudiesPage() {
         <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {caseStudies.map((study) => (
             <article key={study.id} className="group">
-              <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all">
+              <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-card/30 border border-border/30 backdrop-blur-sm hover:bg-card/40 transition-all">
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
                   <div className="xl:col-span-2">
                     {/* Screenshot */}
-                    <div className="mb-6 rounded-xl overflow-hidden bg-white/5 border border-white/10">
+                    <div className="mb-6 rounded-xl overflow-hidden bg-card/30 border border-border/30">
                       <Image
                         src={study.screenshot}
                         alt={`${study.title} screenshot`}
@@ -103,13 +103,13 @@ export default function CaseStudiesPage() {
                             {study.title}
                           </Link>
                         </h3>
-                        <p className="text-xs sm:text-sm text-gray-400">
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           {study.category}
                         </p>
                       </div>
                     </div>
 
-                    <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                    <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                       {study.description}
                     </p>
 
@@ -118,7 +118,7 @@ export default function CaseStudiesPage() {
                         <h3 className="text-xs sm:text-sm font-semibold text-destructive mb-2">
                           THE CHALLENGE
                         </h3>
-                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                           {study.challenge}
                         </p>
                       </div>
@@ -126,14 +126,14 @@ export default function CaseStudiesPage() {
                         <h3 className="text-xs sm:text-sm font-semibold text-info mb-2">
                           OUR SOLUTION
                         </h3>
-                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                           {study.solution}
                         </p>
                       </div>
                     </div>
 
                     <div className="mb-4 sm:mb-6">
-                      <h3 className="text-xs sm:text-sm font-semibold text-gray-500 mb-3">
+                      <h3 className="text-xs sm:text-sm font-semibold text-muted-foreground mb-3">
                         KEY FEATURES
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -143,7 +143,7 @@ export default function CaseStudiesPage() {
                             className="flex items-center gap-2"
                           >
                             <div className="w-1.5 h-1.5 rounded-full bg-info" />
-                            <span className="text-xs sm:text-sm text-gray-400">
+                            <span className="text-xs sm:text-sm text-muted-foreground">
                               {feature}
                             </span>
                           </div>
@@ -152,10 +152,10 @@ export default function CaseStudiesPage() {
                     </div>
 
                     <blockquote className="p-3 sm:p-4 rounded-lg bg-card/20 border-l-2 border-info">
-                      <p className="italic text-gray-300 text-sm sm:text-base leading-relaxed mb-2">
+                      <p className="italic text-muted-foreground text-sm sm:text-base leading-relaxed mb-2">
                         &quot;{study.testimonial}&quot;
                       </p>
-                      <cite className="text-xs text-gray-500 not-italic font-medium">
+                      <cite className="text-xs text-muted-foreground not-italic font-medium">
                         — {study.testimonialAuthor}
                       </cite>
                     </blockquote>
@@ -205,7 +205,7 @@ export default function CaseStudiesPage() {
             Ready to become our next{" "}
             <span className="gradient-text">success story</span>?
           </h3>
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
             Join companies that have transformed their operations with AI. Most
             clients see ROI within 60 days.
           </p>

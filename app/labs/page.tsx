@@ -371,41 +371,38 @@ export default function LabsPage() {
             </div>
           )}
 
-          {/* Featured Lab (only show when viewing all) */}
+          {/* Featured Labs Grid (only show when viewing all) */}
           {activeCategory === "all" && featuredLabs.length > 0 && (
             <div className="mb-12">
-              {featuredLabs.map((lab) => (
-                <div key={lab.title} className="relative">
-                  <div className="absolute -top-3 left-6 z-10">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-500 text-black shadow-lg">
-                      <Star className="w-3 h-3" />
-                      FEATURED
-                    </span>
-                  </div>
+              <div className="text-center mb-8">
+                <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-600 dark:text-yellow-400">
+                  <Star className="w-4 h-4" />
+                  FEATURED EXPERIENCES
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {featuredLabs.map((lab) => (
                   <Link
+                    key={lab.title}
                     href={lab.href}
-                    className="group block p-8 rounded-2xl bg-gradient-to-br from-yellow-500/10 to-orange-600/10 border-2 border-yellow-500/30 backdrop-blur-sm hover:border-yellow-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-500/20"
+                    className="group block p-6 rounded-2xl bg-gradient-to-br from-yellow-500/5 to-orange-600/5 border-2 border-yellow-500/20 backdrop-blur-sm hover:border-yellow-500/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-yellow-500/10"
                   >
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${lab.gradient} group-hover:scale-110 transition-transform duration-300`}>
-                        <lab.icon className="w-10 h-10 text-primary-foreground" />
-                      </div>
-                      <div className="flex-1">
-                        <h2 className="text-3xl font-bold mb-3 group-hover:gradient-text transition-all duration-300">
-                          {lab.title}
-                        </h2>
-                        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
-                          {lab.description}
-                        </p>
-                        <div className="flex items-center gap-2 text-yellow-500 font-semibold text-lg">
-                          {lab.actionVerb} now
-                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </div>
-                      </div>
+                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${lab.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <lab.icon className="w-8 h-8 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 group-hover:gradient-text transition-all duration-300">
+                      {lab.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed line-clamp-2">
+                      {lab.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-yellow-600 dark:text-yellow-400 font-semibold">
+                      {lab.actionVerb} now
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </Link>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
 
