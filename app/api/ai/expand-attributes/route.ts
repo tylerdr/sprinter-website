@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { generateObject } from 'ai';
-import { google } from '@ai-sdk/google';
+import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
 const attributeSchema = z.array(
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     const { input } = await request.json();
 
     const { object } = await generateObject({
-      model: google('gemini-2.0-flash-exp'),
+      model: openai('gpt-4o'),
       schema: attributeSchema,
       prompt: `
         Expand the following natural language attribute descriptions into structured extraction attributes.

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { generateObject } from 'ai';
-import { google } from '@ai-sdk/google';
+import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
 export async function POST(request: Request) {
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     }
 
     const { object } = await generateObject({
-      model: google('gemini-2.0-flash-exp'),
+      model: openai('gpt-4o'),
       schema,
       messages: [
         {

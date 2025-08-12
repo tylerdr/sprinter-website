@@ -71,7 +71,13 @@ export default function PDFExtractorPage() {
         body: JSON.stringify({ input: attributeInput })
       });
 
-      const expandedAttributes = await response.json();
+      const data = await response.json();
+      // Handle both array response and object with nested array
+      const expandedAttributes = Array.isArray(data) ? data : (data.object || data);
+      if (!Array.isArray(expandedAttributes)) {
+        console.error('Invalid response format from expand-attributes API');
+        return;
+      }
       setAttributes(expandedAttributes);
       setCurrentStep(1);
     } catch (error) {
@@ -191,20 +197,27 @@ export default function PDFExtractorPage() {
           </div>
 
           {/* Progress Steps */}
-          <div className="flex justify-between mb-12 max-w-3xl mx-auto">
+          <div className="flex justify-between mb-12 max-w-4xl mx-auto">
             {steps.map((step, index) => (
-              <div key={index} className="flex items-center">
-                <div className={`
-                  flex items-center justify-center w-12 h-12 rounded-full
-                  ${currentStep >= index 
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' 
-                    : 'bg-gray-700 text-gray-400'}
-                `}>
-                  <step.icon className="w-6 h-6" />
+              <div key={index} className="flex items-center flex-1">
+                <div className="flex flex-col items-center">
+                  <div className={`
+                    flex items-center justify-center w-12 h-12 rounded-full mb-2
+                    ${currentStep >= index 
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' 
+                      : 'bg-gray-700 text-gray-400'}
+                  `}>
+                    <step.icon className="w-6 h-6" />
+                  </div>
+                  <span className={`text-xs text-center ${
+                    currentStep >= index ? 'text-white' : 'text-gray-500'
+                  }`}>
+                    {step.title}
+                  </span>
                 </div>
                 {index < steps.length - 1 && (
                   <div className={`
-                    w-full h-1 mx-2
+                    flex-1 h-1 mx-2 -mt-8
                     ${currentStep > index ? 'bg-blue-500' : 'bg-gray-700'}
                   `} />
                 )}
