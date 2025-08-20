@@ -87,6 +87,9 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
     return () => window.removeEventListener('beforeunload', handleUnload)
   }, [proposal.id, sessionId])
   
+  // Get sections early to avoid scope issues
+  const sections = proposal.content.sections || []
+  
   // Track section views
   useEffect(() => {
     viewedSectionsRef.current.add(activeSection)
@@ -145,7 +148,6 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
     return `${mins}:${secs.toString().padStart(2, '0')}`
   }
   
-  const sections = proposal.content.sections || []
   const currentSectionIndex = sections.findIndex(s => s.id === activeSection)
   const progress = ((currentSectionIndex + 1) / sections.length) * 100
   

@@ -6,7 +6,8 @@ export const documentTemplate: ProposalTemplate = {
   id: 'doc-onepager',
   name: 'One-Pager Document',
   description: 'Template for executive summary documents',
-  type: 'document',
+  type: 'custom',
+  contentType: 'document',
   contentSchema: {
     sections: [
       {
@@ -100,7 +101,8 @@ export const reportTemplate: ProposalTemplate = {
   id: 'doc-report',
   name: 'Analysis Report',
   description: 'Template for detailed analysis reports',
-  type: 'document',
+  type: 'custom',
+  contentType: 'document',
   contentSchema: {
     sections: [
       {
@@ -223,7 +225,8 @@ export const presentationTemplate: ProposalTemplate = {
   id: 'pres-pitch',
   name: 'Pitch Deck',
   description: 'Template for investor pitch presentations',
-  type: 'presentation',
+  type: 'custom',
+  contentType: 'presentation',
   contentSchema: {
     sections: [
       {

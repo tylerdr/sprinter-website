@@ -5,9 +5,7 @@ import {
   Text, 
   View, 
   StyleSheet, 
-  PDFDownloadLink,
-  Font,
-  Image
+  PDFDownloadLink
 } from '@react-pdf/renderer';
 
 // Register fonts (optional - for better typography)
@@ -316,7 +314,7 @@ export const AuditReportPDF: React.FC<AuditReportProps> = ({
 );
 
 // Helper function to generate PDF buffer (for server-side generation)
-export async function generatePDFBuffer(props: AuditReportProps): Promise<Buffer> {
+export async function generatePDFBuffer(_props: AuditReportProps): Promise<Buffer> {
   // This would be used server-side with react-pdf/renderer
   // For now, returning a placeholder
   return Buffer.from('PDF content would be here');
@@ -328,7 +326,7 @@ export const PDFDownloadButton: React.FC<AuditReportProps> = (props) => (
     document={<AuditReportPDF {...props} />}
     fileName={`AI-Opportunity-Audit-${props.company}-${props.reportId}.pdf`}
   >
-    {({ blob, url, loading, error }) =>
+    {({ loading }) =>
       loading ? 'Generating PDF...' : 'Download PDF Report'
     }
   </PDFDownloadLink>

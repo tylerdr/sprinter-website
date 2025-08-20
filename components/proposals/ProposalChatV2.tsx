@@ -78,7 +78,7 @@ export default function ProposalChatV2({
     
     const userMessage = {
       id: `msg-${Date.now()}`,
-      role: 'user' as 'user',
+      role: 'user' as const,
       content
     }
     
@@ -104,7 +104,7 @@ export default function ProposalChatV2({
       
       const assistantMsg = {
         id: `msg-${Date.now() + 1}`,
-        role: 'assistant' as 'assistant',
+        role: 'assistant' as const,
         content: ''
       }
       

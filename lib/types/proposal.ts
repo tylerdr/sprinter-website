@@ -162,6 +162,7 @@ export interface ProposalTemplate {
   name: string
   description?: string
   type: ProposalProjectType
+  contentType?: ContentType // For document and presentation templates
   contentSchema: {
     sections: Array<{
       id: string
@@ -174,7 +175,7 @@ export interface ProposalTemplate {
     variables: Array<{
       key: string
       label: string
-      type: 'text' | 'number' | 'date' | 'select' | 'textarea'
+      type: 'text' | 'number' | 'date' | 'select' | 'textarea' | 'array'
       required: boolean
       defaultValue?: unknown
       options?: Array<{ value: string; label: string }>
