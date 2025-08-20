@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Download, MessageSquare, Clock, CheckCircle, ChevronRight, Share2 } from 'lucide-react'
+import { Download, MessageSquare, Clock, CheckCircle, ChevronRight, Share2, Presentation, X, ChevronLeft, Maximize2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Progress } from '@/components/ui/progress'
-import ProposalChat from './ProposalChat'
+import ProposalChat from './ProposalChatV2'
 import ProposalRequirements from './ProposalRequirements'
 import ProposalSignature from './ProposalSignature'
 import ProposalUploads from './ProposalUploads'
@@ -46,6 +46,8 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
   const [activeSection, setActiveSection] = useState('overview')
   const [showChat, setShowChat] = useState(false)
   const [viewDuration, setViewDuration] = useState(0)
+  const [presentationMode, setPresentationMode] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const [sessionId] = useState(() => 
     typeof window !== 'undefined' 
       ? `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
@@ -90,6 +92,31 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
     viewedSectionsRef.current.add(activeSection)
     trackProposalEvent(proposal.id, 'section_viewed', sessionId, { section: activeSection })
   }, [activeSection, proposal.id, sessionId])
+  
+  // Keyboard navigation for presentation mode
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!presentationMode) return
+      
+      switch (e.key) {
+        case 'ArrowLeft':
+          setCurrentSlide(prev => Math.max(0, prev - 1))
+          break
+        case 'ArrowRight':
+          setCurrentSlide(prev => Math.min(sections.length - 1, prev + 1))
+          break
+        case 'Escape':
+          setPresentationMode(false)
+          if (document.fullscreenElement) {
+            document.exitFullscreen()
+          }
+          break
+      }
+    }
+    
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
+  }, [presentationMode, sections.length])
   
   const handleDownloadPDF = async () => {
     trackProposalEvent(proposal.id, 'pdf_download', sessionId)
@@ -159,6 +186,20 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
               >
                 <Download className="h-4 w-4" />
                 Download PDF
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setPresentationMode(true)
+                  setCurrentSlide(0)
+                  trackProposalEvent(proposal.id, 'presentation_started', sessionId)
+                }}
+                className="gap-2"
+              >
+                <Presentation className="h-4 w-4" />
+                Present
               </Button>
               
               <Button
@@ -313,6 +354,97 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
             sessionId={sessionId}
             onClose={() => setShowChat(false)}
           />
+        )}
+      </AnimatePresence>
+      
+      {/* Presentation Mode Overlay */}
+      <AnimatePresence>
+        {presentationMode && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-background flex flex-col"
+          >
+            {/* Presentation Header */}
+            <div className="flex justify-between items-center p-4 border-b">
+              <h2 className="text-xl font-semibold">{proposal.title}</h2>
+              <div className="flex items-center gap-4">
+                <span className="text-sm text-muted-foreground">
+                  {currentSlide + 1} / {sections.length}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    if (document.documentElement.requestFullscreen) {
+                      document.documentElement.requestFullscreen()
+                    }
+                  }}
+                >
+                  <Maximize2 className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setPresentationMode(false)
+                    trackProposalEvent(proposal.id, 'presentation_ended', sessionId)
+                  }}
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+            
+            {/* Presentation Content */}
+            <div className="flex-1 flex items-center justify-center p-8 overflow-auto">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                  className="max-w-4xl w-full"
+                >
+                  <Card className="p-12">
+                    <h1 className="text-3xl font-bold mb-6">
+                      {sections[currentSlide]?.title}
+                    </h1>
+                    <div className="text-lg leading-relaxed">
+                      <ProposalSection section={sections[currentSlide]} />
+                    </div>
+                  </Card>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            
+            {/* Presentation Footer Controls */}
+            <div className="flex justify-between items-center p-4 border-t">
+              <Button
+                variant="outline"
+                onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
+                disabled={currentSlide === 0}
+                className="gap-2"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                Previous
+              </Button>
+              
+              <Progress value={((currentSlide + 1) / sections.length) * 100} className="w-64" />
+              
+              <Button
+                onClick={() => setCurrentSlide(Math.min(sections.length - 1, currentSlide + 1))}
+                disabled={currentSlide === sections.length - 1}
+                className="gap-2"
+              >
+                Next
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+            
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

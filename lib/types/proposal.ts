@@ -3,13 +3,16 @@
 export type ProposalStatus = 'draft' | 'sent' | 'viewed' | 'accepted' | 'declined' | 'expired'
 export type ProposalAccessType = 'public' | 'password' | 'magic_link' | 'authenticated'
 export type ProposalProjectType = 'poc_sprint' | 'workshop' | 'transformation' | 'venture' | 'custom'
+export type ContentType = 'proposal' | 'document' | 'presentation'
 
 export interface ProposalSection {
   id: string
   title: string
-  type: 'text' | 'list' | 'table' | 'timeline' | 'pricing' | 'signature' | 'custom'
+  type: 'text' | 'list' | 'table' | 'timeline' | 'pricing' | 'signature' | 'custom' | 'slide' | 'bullet_points'
   content: unknown
   order: number
+  layout?: 'full' | 'half' | 'third' // For presentation layouts
+  background?: string // For slide backgrounds
 }
 
 export interface ProposalContent {
@@ -108,6 +111,7 @@ export interface Proposal {
   clientCompany?: string
   clientEmail: string
   projectType: ProposalProjectType
+  contentType?: ContentType // 'proposal' | 'document' | 'presentation'
   
   // Content
   content: ProposalContent

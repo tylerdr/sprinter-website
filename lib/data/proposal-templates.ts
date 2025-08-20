@@ -388,36 +388,58 @@ export function populateTemplate(
 ): string {
   let result = template
   
-  // Replace simple variables {{variable}}
+  // First, handle arrays and conditionals {{#key}}...{{/key}}
+  const blockPattern = /{{#(\w+)}}([\s\S]*?){{\/\1}}/g
+  const processedBlocks = new Set<string>()
+  
+  result = result.replace(blockPattern, (match, key, content) => {
+    const value = variables[key]
+    processedBlocks.add(key)
+    
+    // If it's an array, process it
+    if (Array.isArray(value)) {
+      return value.map(item => {
+        let itemContent = content
+        if (typeof item === 'object' && item !== null) {
+          Object.entries(item).forEach(([itemKey, itemValue]) => {
+            const itemRegex = new RegExp(`{{${itemKey}}}`, 'g')
+            itemContent = itemContent.replace(itemRegex, String(itemValue || ''))
+          })
+        } else {
+          itemContent = itemContent.replace(/{{\.}}/g, String(item))
+        }
+        return itemContent.trim()
+      }).join('\n')
+    }
+    
+    // Handle boolean conditionals (creditOption, etc.)
+    if (typeof value === 'boolean' || value === 'yes' || value === 'no') {
+      const isTrue = value === true || value === 'yes'
+      if (isTrue) {
+        // Process nested variables within the conditional block
+        let processedContent = content
+        Object.entries(variables).forEach(([nestedKey, nestedValue]) => {
+          if (nestedKey !== key) {
+            const nestedRegex = new RegExp(`{{${nestedKey}}}`, 'g')
+            processedContent = processedContent.replace(nestedRegex, String(nestedValue || ''))
+          }
+        })
+        return processedContent.trim()
+      }
+      return ''
+    }
+    
+    // For other truthy/falsy values
+    return value ? content.trim() : ''
+  })
+  
+  // Then replace simple variables {{variable}}
   Object.entries(variables).forEach(([key, value]) => {
+    // Skip if we already processed this as a block
+    if (processedBlocks.has(key)) return
+    
     const regex = new RegExp(`{{${key}}}`, 'g')
     result = result.replace(regex, String(value || ''))
-  })
-  
-  // Handle arrays {{#array}}...{{/array}}
-  const arrayPattern = /{{#(\w+)}}([\s\S]*?){{\/\1}}/g
-  result = result.replace(arrayPattern, (match, key, content) => {
-    const array = variables[key]
-    if (!Array.isArray(array)) return ''
-    
-    return array.map(item => {
-      let itemContent = content
-      if (typeof item === 'object' && item !== null) {
-        Object.entries(item).forEach(([itemKey, itemValue]) => {
-          const itemRegex = new RegExp(`{{${itemKey}}}`, 'g')
-          itemContent = itemContent.replace(itemRegex, String(itemValue || ''))
-        })
-      } else {
-        itemContent = itemContent.replace(/{{\.}}/g, String(item))
-      }
-      return itemContent.trim()
-    }).join('\n')
-  })
-  
-  // Handle conditionals {{#if}}...{{/if}}
-  const conditionalPattern = /{{#(\w+)}}([\s\S]*?){{\/\1}}/g
-  result = result.replace(conditionalPattern, (match, key, content) => {
-    return variables[key] ? content.trim() : ''
   })
   
   return result

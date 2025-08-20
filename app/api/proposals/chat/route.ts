@@ -1,62 +1,96 @@
-import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { openai } from '@ai-sdk/openai'
-import { generateText } from 'ai'
+import { streamText } from 'ai'
+
+type Message = {
+  role: 'system' | 'user' | 'assistant'
+  content: string
+}
 
 export async function POST(request: Request) {
   try {
-    const { proposalId, message, proposalContent, sessionId } = await request.json()
+    const body = await request.json()
+    const { messages, proposalId, proposalContent, sessionId } = body
     
-    if (!proposalId || !message) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
+    // Support both single message and messages array for compatibility
+    const userMessages: Message[] = messages || (body.message ? [
+      { role: 'user' as const, content: body.message }
+    ] : [])
+    
+    if (!proposalId || (!messages && !body.message)) {
+      return new Response(
+        JSON.stringify({ error: 'Missing required fields' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       )
     }
+    
+    // Get chat history for context
+    const supabase = await createClient()
+    const { data: chatHistory } = await supabase
+      .from('proposal_chats')
+      .select('role, content')
+      .eq('proposal_id', proposalId)
+      .eq('session_id', sessionId)
+      .order('created_at', { ascending: true })
+      .limit(10)
     
     // Create context from proposal content
     const context = createProposalContext(proposalContent)
     
-    // Generate AI response
-    const { text: response } = await generateText({
-      model: openai('gpt-4o-mini'),
-      system: `You are a helpful assistant for Sprinter AI proposals. You have access to the following proposal details:
+    // Build full messages array with system prompt and history
+    const fullMessages: Message[] = [
+      {
+        role: 'system' as const,
+        content: `You are an AI assistant for Sprinter AI proposals powered by GPT-5. You have access to the following proposal details:
           
 ${context}
 
-Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful.`,
-      prompt: message,
-      temperature: 0.7,
-      maxOutputTokens: 500
+Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful. Remember previous questions in this conversation for context.`
+      },
+      ...(chatHistory || []).map(msg => ({
+        role: msg.role as 'user' | 'assistant',
+        content: msg.content
+      })),
+      ...userMessages
+    ]
+    
+    // Generate AI response with streaming using GPT-5
+    const result = await streamText({
+      model: openai('gpt-5'),
+      messages: fullMessages,
+      temperature: 0.3,
+      maxTokens: 1500,
+      system: undefined // System message already in messages array
     })
     
-    // Store in database
-    const supabase = await createClient()
-    await supabase.from('proposal_chats').insert([
-      {
+    // Store user message immediately if single message format
+    if (body.message) {
+      await supabase.from('proposal_chats').insert({
         proposal_id: proposalId,
         session_id: sessionId,
         role: 'user',
-        content: message
-      },
-      {
+        content: body.message
+      })
+    }
+    
+    // Store assistant response after generation completes
+    result.onFinish(async ({ text }) => {
+      await supabase.from('proposal_chats').insert({
         proposal_id: proposalId,
         session_id: sessionId,
         role: 'assistant',
-        content: response,
-        metadata: { model: 'gpt-4o-mini' }
-      }
-    ])
-    
-    return NextResponse.json({
-      response,
-      metadata: { model: 'gpt-4o-mini' }
+        content: text,
+        metadata: { model: 'gpt-5' }
+      })
     })
+    
+    // Return streaming response
+    return result.toTextStreamResponse()
   } catch (error) {
     console.error('Chat error:', error)
-    return NextResponse.json(
-      { error: 'Failed to generate response' },
-      { status: 500 }
+    return new Response(
+      JSON.stringify({ error: 'Failed to generate response' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     )
   }
 }

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Save, Send, Eye } from 'lucide-react'
+import { Save, Send, Eye, Loader2, AlertCircle, Plus, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -12,7 +12,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Switch } from '@/components/ui/switch'
-import { createProposal, generateProposalContent } from '@/lib/services/proposal'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { createProposal } from '@/lib/services/proposal'
 import { populateTemplate } from '@/lib/data/proposal-templates'
 import type { ProposalTemplate, ProposalGenerationInput } from '@/lib/types/proposal'
 
@@ -24,6 +25,7 @@ interface ProposalCreatorProps {
 export default function ProposalCreator({ templates, userId }: ProposalCreatorProps) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [selectedTemplate, setSelectedTemplate] = useState<ProposalTemplate | null>(null)
   const [formData, setFormData] = useState<ProposalGenerationInput>({
     templateId: '',
@@ -64,6 +66,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
   const [variables, setVariables] = useState<Record<string, unknown>>({})
   const [aiAssist, setAiAssist] = useState(true)
   const [previewContent, setPreviewContent] = useState<string>('')
+  const [customSections, setCustomSections] = useState<Array<{ title: string; content: string }>>([])
   
   const handleTemplateSelect = (templateId: string) => {
     const template = templates.find(t => t.id === templateId)
@@ -152,22 +155,52 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
     if (!selectedTemplate) return
     
     setLoading(true)
+    setError(null)
     
     try {
-      // Generate proposal content
-      const proposalData = await generateProposalContent(formData, selectedTemplate)
+      // Include custom sections in formData
+      const inputWithCustomSections = {
+        ...formData,
+        customSections: customSections.filter(s => s.title && s.content)
+      }
+      
+      // Generate proposal content via API
+      const generateResponse = await fetch('/api/proposals/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          input: inputWithCustomSections,
+          template: selectedTemplate,
+          useAI: aiAssist
+        })
+      })
+      
+      if (!generateResponse.ok) {
+        throw new Error('Failed to generate proposal content')
+      }
+      
+      const { content } = await generateResponse.json()
       
       // Create proposal in database
       const proposal = await createProposal({
-        ...proposalData,
+        title: formData.projectDetails.title,
+        clientName: formData.clientInfo.name,
+        clientCompany: formData.clientInfo.company,
+        clientEmail: formData.clientInfo.email,
+        projectType: formData.projectDetails.type,
+        content,
+        templateId: selectedTemplate.id,
+        totalValue: formData.pricing.total,
+        currency: 'USD',
+        paymentTerms: formData.pricing.paymentTerms,
+        accessType: 'magic_link',
         status,
         createdBy: userId,
         ownerId: userId
       })
       
-      // Redirect to proposal page
+      // Send email if status is 'sent'
       if (status === 'sent') {
-        // Send email with proposal link
         await fetch('/api/proposals/send', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -182,6 +215,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
       router.push(`/admin/proposals/${proposal.id}`)
     } catch (error) {
       console.error('Failed to create proposal:', error)
+      setError(error instanceof Error ? error.message : 'Failed to create proposal. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -218,6 +252,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
             <TabsTrigger value="details">Project Details</TabsTrigger>
             <TabsTrigger value="scope">Scope & Timeline</TabsTrigger>
             <TabsTrigger value="pricing">Pricing</TabsTrigger>
+            <TabsTrigger value="custom">Custom Sections</TabsTrigger>
             <TabsTrigger value="variables">Template Variables</TabsTrigger>
             <TabsTrigger value="preview">Preview</TabsTrigger>
           </TabsList>
@@ -277,6 +312,20 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                     }))}
                   />
                 </div>
+              </div>
+              
+              <div className="flex items-center space-x-2 mt-4 p-4 bg-muted/50 rounded-lg">
+                <Switch
+                  id="ai-assist"
+                  checked={aiAssist}
+                  onCheckedChange={setAiAssist}
+                />
+                <Label htmlFor="ai-assist" className="cursor-pointer">
+                  <span className="font-medium">Use AI to enhance content</span>
+                  <span className="text-sm text-muted-foreground block">
+                    {aiAssist ? 'AI will generate professional, tailored content based on your inputs' : 'Content will be generated from template with your inputs only'}
+                  </span>
+                </Label>
               </div>
             </Card>
           </TabsContent>
@@ -448,6 +497,87 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
             </Card>
           </TabsContent>
           
+          <TabsContent value="custom">
+            <Card className="p-6 space-y-4">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="text-lg font-semibold">Custom Sections</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Add additional sections not covered by the template
+                  </p>
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCustomSections([...customSections, { title: '', content: '' }])}
+                  className="gap-2"
+                >
+                  <Plus className="h-4 w-4" />
+                  Add Section
+                </Button>
+              </div>
+              
+              {customSections.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  No custom sections added yet
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {customSections.map((section, index) => (
+                    <Card key={index} className="p-4 space-y-3">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1 space-y-3">
+                          <div>
+                            <Label htmlFor={`section-title-${index}`}>Section Title</Label>
+                            <Input
+                              id={`section-title-${index}`}
+                              value={section.title}
+                              onChange={(e) => {
+                                const newSections = [...customSections]
+                                newSections[index].title = e.target.value
+                                setCustomSections(newSections)
+                              }}
+                              placeholder="e.g., Technical Approach"
+                            />
+                          </div>
+                          
+                          <div>
+                            <Label htmlFor={`section-content-${index}`}>Content</Label>
+                            <Textarea
+                              id={`section-content-${index}`}
+                              value={section.content}
+                              onChange={(e) => {
+                                const newSections = [...customSections]
+                                newSections[index].content = e.target.value
+                                setCustomSections(newSections)
+                              }}
+                              placeholder="Describe the content for this section or provide a prompt for AI generation"
+                              rows={4}
+                            />
+                          </div>
+                        </div>
+                        
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => {
+                            const newSections = customSections.filter((_, i) => i !== index)
+                            setCustomSections(newSections)
+                          }}
+                          className="ml-2"
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </Card>
+          </TabsContent>
+          
           <TabsContent value="variables">
             <Card className="p-6 space-y-4">
               <h3 className="text-lg font-semibold">Template Variables</h3>
@@ -540,20 +670,38 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
               <Button
                 variant="outline"
                 onClick={() => handleSave('draft')}
-                disabled={loading}
+                disabled={loading || !formData.clientInfo.email || !formData.projectDetails.title}
                 className="gap-2"
               >
-                <Save className="h-4 w-4" />
-                Save Draft
+                {loading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Generating...
+                  </>
+                ) : (
+                  <>
+                    <Save className="h-4 w-4" />
+                    Save Draft
+                  </>
+                )}
               </Button>
               
               <Button
                 onClick={() => handleSave('sent')}
-                disabled={loading}
+                disabled={loading || !formData.clientInfo.email || !formData.projectDetails.title}
                 className="gap-2"
               >
-                <Send className="h-4 w-4" />
-                Create & Send
+                {loading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    {aiAssist ? 'AI Generating...' : 'Processing...'}
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    Create & Send
+                  </>
+                )}
               </Button>
             </div>
           </div>
