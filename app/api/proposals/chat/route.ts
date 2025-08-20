@@ -27,7 +27,7 @@ ${context}
 Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful.`,
       prompt: message,
       temperature: 0.7,
-      maxTokens: 500
+      maxOutputTokens: 500
     })
     
     // Store in database
