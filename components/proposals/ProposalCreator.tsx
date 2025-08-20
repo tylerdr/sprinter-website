@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Save, Send, Eye, Loader2, Plus, X } from 'lucide-react'
+import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -150,7 +151,24 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
   }
   
   const handleSave = async (status: 'draft' | 'sent' = 'draft') => {
-    if (!selectedTemplate) return
+    if (!selectedTemplate) {
+      toast.error('Please select a template')
+      return
+    }
+    
+    // Client-side validation for required fields
+    const errors = []
+    if (!formData.clientInfo.name) errors.push('Client name is required')
+    if (!formData.clientInfo.email) errors.push('Client email is required')
+    if (!formData.projectDetails.title) errors.push('Project title is required')
+    if (!formData.projectDetails.problem) errors.push('Problem statement is required')
+    if (!formData.projectDetails.opportunity) errors.push('Opportunity is required')
+    if (!formData.scope.approach) errors.push('Technical approach is required')
+    
+    if (errors.length > 0) {
+      toast.error(errors[0]) // Show first error
+      return
+    }
     
     setLoading(true)
     
@@ -209,10 +227,11 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
         })
       }
       
+      toast.success(status === 'sent' ? 'Proposal created and sent successfully!' : 'Proposal saved as draft')
       router.push(`/admin/proposals/${proposal.id}`)
     } catch (error) {
       console.error('Failed to create proposal:', error)
-      alert(error instanceof Error ? error.message : 'Failed to create proposal. Please try again.')
+      toast.error(error instanceof Error ? error.message : 'Failed to create proposal. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -263,6 +282,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="clientName">Client Name *</Label>
                   <Input
                     id="clientName"
+                    name="clientInfo.name"
                     value={formData.clientInfo.name}
                     onChange={(e) => setFormData(prev => ({
                       ...prev,
@@ -276,6 +296,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="clientCompany">Company</Label>
                   <Input
                     id="clientCompany"
+                    name="clientInfo.company"
                     value={formData.clientInfo.company}
                     onChange={(e) => setFormData(prev => ({
                       ...prev,
@@ -288,6 +309,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="clientEmail">Email *</Label>
                   <Input
                     id="clientEmail"
+                    name="clientInfo.email"
                     type="email"
                     value={formData.clientInfo.email}
                     onChange={(e) => setFormData(prev => ({
@@ -302,6 +324,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="contactName">Contact Name</Label>
                   <Input
                     id="contactName"
+                    name="clientInfo.contactName"
                     value={formData.clientInfo.contactName}
                     onChange={(e) => setFormData(prev => ({
                       ...prev,
@@ -335,6 +358,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                 <Label htmlFor="title">Project Title *</Label>
                 <Input
                   id="title"
+                  name="projectDetails.title"
                   value={formData.projectDetails.title}
                   onChange={(e) => setFormData(prev => ({
                     ...prev,
@@ -348,6 +372,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                 <Label htmlFor="problem">Problem Statement *</Label>
                 <Textarea
                   id="problem"
+                  name="projectDetails.problem"
                   value={formData.projectDetails.problem}
                   onChange={(e) => setFormData(prev => ({
                     ...prev,
@@ -362,6 +387,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                 <Label htmlFor="opportunity">Opportunity *</Label>
                 <Textarea
                   id="opportunity"
+                  name="projectDetails.opportunity"
                   value={formData.projectDetails.opportunity}
                   onChange={(e) => setFormData(prev => ({
                     ...prev,
@@ -390,6 +416,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                 <Label htmlFor="approach">Technical Approach *</Label>
                 <Textarea
                   id="approach"
+                  name="scope.approach"
                   value={formData.scope.approach}
                   onChange={(e) => setFormData(prev => ({
                     ...prev,
@@ -405,6 +432,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="duration">Duration</Label>
                   <Input
                     id="duration"
+                    name="timeline.duration"
                     value={formData.timeline.duration}
                     onChange={(e) => setFormData(prev => ({
                       ...prev,
@@ -417,6 +445,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="startDate">Start Date</Label>
                   <Input
                     id="startDate"
+                    name="timeline.startDate"
                     type="date"
                     value={formData.timeline.startDate}
                     onChange={(e) => setFormData(prev => ({
@@ -438,6 +467,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   <Label htmlFor="total">Total Value ($)</Label>
                   <Input
                     id="total"
+                    name="pricing.total"
                     type="number"
                     value={formData.pricing.total}
                     onChange={(e) => setFormData(prev => ({
@@ -472,6 +502,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                 <Label htmlFor="paymentTerms">Payment Terms</Label>
                 <Textarea
                   id="paymentTerms"
+                  name="pricing.paymentTerms"
                   value={formData.pricing.paymentTerms}
                   onChange={(e) => setFormData(prev => ({
                     ...prev,
@@ -507,7 +538,17 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
                   type="button"
                   variant="outline"
                   size="sm"
-                  onClick={() => setCustomSections([...customSections, { title: '', content: '' }])}
+                  onClick={() => {
+                    setCustomSections([...customSections, { title: '', content: '' }])
+                    // Auto-focus the new section's title field after React renders it
+                    setTimeout(() => {
+                      const newSectionTitle = document.getElementById(`section-title-${customSections.length}`)
+                      if (newSectionTitle) {
+                        newSectionTitle.focus()
+                        newSectionTitle.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                      }
+                    }, 100)
+                  }}
                   className="gap-2"
                 >
                   <Plus className="h-4 w-4" />

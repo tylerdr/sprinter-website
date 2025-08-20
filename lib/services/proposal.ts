@@ -305,6 +305,12 @@ export async function uploadProposalFile(
 ) {
   const supabase = createClient()
   
+  // Enforce 50MB file size limit
+  const MAX_FILE_SIZE = 50 * 1024 * 1024 // 50MB in bytes
+  if (file.size > MAX_FILE_SIZE) {
+    throw new Error('File size exceeds 50MB limit')
+  }
+  
   // Generate unique file path
   const fileExt = file.name.split('.').pop()
   const fileName = `${proposalId}/${uuidv4()}.${fileExt}`
@@ -352,11 +358,13 @@ export async function getProposalUploads(proposalId: string) {
 export async function getUploadUrl(storagePath: string) {
   const supabase = createClient()
   
-  const { data } = supabase.storage
+  // Use signed URL with 1 hour expiration for better security
+  const { data, error } = await supabase.storage
     .from('proposal-uploads')
-    .getPublicUrl(storagePath)
+    .createSignedUrl(storagePath, 3600) // 1 hour expiration
   
-  return data.publicUrl
+  if (error) throw error
+  return data.signedUrl
 }
 
 // Requirements functions

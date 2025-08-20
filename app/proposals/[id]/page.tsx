@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { headers } from 'next/headers'
+import { headers, cookies } from 'next/headers'
 import ProposalViewer from '@/components/proposals/ProposalViewer'
 import ProposalAccessGate from '@/components/proposals/ProposalAccessGate'
 import { getProposalServer } from '@/lib/services/proposal-server'
@@ -81,6 +81,15 @@ async function checkProposalAccess(
   // Check magic link token
   if (proposal.accessType === 'magic_link' && token === proposal.accessToken) {
     return true
+  }
+  
+  // Check password-protected access via cookie
+  if (proposal.accessType === 'password') {
+    const cookieStore = await cookies()
+    const accessCookie = cookieStore.get(`proposal_access_${proposal.id}`)
+    if (accessCookie?.value) {
+      return true
+    }
   }
   
   // Check if authenticated access and user is logged in

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Check, FileSignature } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -9,15 +9,18 @@ import { Label } from '@/components/ui/label'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { addProposalSignature } from '@/lib/services/proposal'
 import { cn } from '@/lib/utils'
+import type { ProposalStatus } from '@/lib/types/proposal'
 
 interface ProposalSignatureProps {
   proposalId: string
+  proposalStatus?: ProposalStatus
 }
 
-export default function ProposalSignature({ proposalId }: ProposalSignatureProps) {
+export default function ProposalSignature({ proposalId, proposalStatus }: ProposalSignatureProps) {
   const [open, setOpen] = useState(false)
   const [signing, setSigning] = useState(false)
   const [signed, setSigned] = useState(false)
+  const [isAlreadySigned, setIsAlreadySigned] = useState(proposalStatus === 'accepted')
   const [formData, setFormData] = useState({
     signerName: '',
     signerEmail: '',
@@ -25,6 +28,11 @@ export default function ProposalSignature({ proposalId }: ProposalSignatureProps
     signatureData: ''
   })
   const router = useRouter()
+  
+  // Update signed state when proposal status changes
+  useEffect(() => {
+    setIsAlreadySigned(proposalStatus === 'accepted')
+  }, [proposalStatus])
   
   const handleSign = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -54,12 +62,13 @@ export default function ProposalSignature({ proposalId }: ProposalSignatureProps
     <>
       <Button
         onClick={() => setOpen(true)}
+        disabled={isAlreadySigned || signed}
         className={cn(
           "gap-2",
-          signed && "bg-green-600 hover:bg-green-700"
+          (signed || isAlreadySigned) && "bg-green-600 hover:bg-green-700"
         )}
       >
-        {signed ? (
+        {(signed || isAlreadySigned) ? (
           <>
             <Check className="h-4 w-4" />
             Signed

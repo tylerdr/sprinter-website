@@ -48,6 +48,7 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
   const [viewDuration, setViewDuration] = useState(0)
   const [presentationMode, setPresentationMode] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const [sessionId] = useState(() => 
     typeof window !== 'undefined' 
       ? `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
@@ -55,6 +56,8 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
   )
   const startTimeRef = useRef(Date.now())
   const viewedSectionsRef = useRef<Set<string>>(new Set())
+  const presentationRef = useRef<HTMLDivElement>(null)
+  const sectionRefs = useRef<Map<string, HTMLElement>>(new Map())
   
   // Track view duration
   useEffect(() => {
@@ -95,6 +98,45 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
     viewedSectionsRef.current.add(activeSection)
     trackProposalEvent(proposal.id, 'section_viewed', sessionId, { section: activeSection })
   }, [activeSection, proposal.id, sessionId])
+  
+  // Handle fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement)
+    }
+    
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange)
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange)
+    
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
+    }
+  }, [])
+  
+  // Implement scrollspy
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100 // Offset for header
+      
+      for (const [sectionId, element] of sectionRefs.current) {
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   
   // Keyboard navigation for presentation mode
   useEffect(() => {
@@ -139,6 +181,20 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
       const shareUrl = `${url}?token=${proposal.accessToken}`
       navigator.clipboard.writeText(shareUrl)
       // Show toast notification
+    }
+  }
+  
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      if (presentationRef.current) {
+        await presentationRef.current.requestFullscreen().catch(err => {
+          console.error('Error attempting to enable fullscreen:', err)
+        })
+      }
+    } else {
+      await document.exitFullscreen().catch(err => {
+        console.error('Error attempting to exit fullscreen:', err)
+      })
     }
   }
   
@@ -193,10 +249,12 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => {
+                onClick={async () => {
                   setPresentationMode(true)
                   setCurrentSlide(0)
                   trackProposalEvent(proposal.id, 'presentation_started', sessionId)
+                  // Automatically enter fullscreen when starting presentation
+                  setTimeout(() => toggleFullscreen(), 100)
                 }}
                 className="gap-2"
               >
@@ -231,7 +289,13 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
                 {sections.map((section) => (
                   <button
                     key={section.id}
-                    onClick={() => setActiveSection(section.id)}
+                    onClick={() => {
+                      const element = document.getElementById(`section-${section.id}`)
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                        setActiveSection(section.id)
+                      }
+                    }}
                     className={cn(
                       "w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center gap-2",
                       activeSection === section.id
@@ -281,27 +345,47 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
                   transition={{ duration: 0.2 }}
                 >
                   <TabsContent value="overview" className="space-y-6">
-                    <ProposalSection
-                      section={sections.find(s => s.id === 'overview')}
-                    />
+                    <div 
+                      id="section-overview"
+                      ref={el => { if (el) sectionRefs.current.set('overview', el) }}
+                    >
+                      <ProposalSection
+                        section={sections.find(s => s.id === 'overview')}
+                      />
+                    </div>
                   </TabsContent>
                   
                   <TabsContent value="scope" className="space-y-6">
-                    <ProposalSection
-                      section={sections.find(s => s.id === 'scope')}
-                    />
+                    <div 
+                      id="section-scope"
+                      ref={el => { if (el) sectionRefs.current.set('scope', el) }}
+                    >
+                      <ProposalSection
+                        section={sections.find(s => s.id === 'scope')}
+                      />
+                    </div>
                   </TabsContent>
                   
                   <TabsContent value="timeline" className="space-y-6">
-                    <ProposalSection
-                      section={sections.find(s => s.id === 'timeline')}
-                    />
+                    <div 
+                      id="section-timeline"
+                      ref={el => { if (el) sectionRefs.current.set('timeline', el) }}
+                    >
+                      <ProposalSection
+                        section={sections.find(s => s.id === 'timeline')}
+                      />
+                    </div>
                   </TabsContent>
                   
                   <TabsContent value="pricing" className="space-y-6">
-                    <ProposalSection
-                      section={sections.find(s => s.id === 'pricing')}
-                    />
+                    <div 
+                      id="section-pricing"
+                      ref={el => { if (el) sectionRefs.current.set('pricing', el) }}
+                    >
+                      <ProposalSection
+                        section={sections.find(s => s.id === 'pricing')}
+                      />
+                    </div>
                   </TabsContent>
                   
                   <TabsContent value="requirements" className="space-y-6">
@@ -328,7 +412,7 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
                 </Button>
                 
                 {currentSectionIndex === sections.length - 1 ? (
-                  <ProposalSignature proposalId={proposal.id} />
+                  <ProposalSignature proposalId={proposal.id} proposalStatus={proposal.status} />
                 ) : (
                   <Button
                     onClick={() => {
@@ -363,6 +447,7 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
       <AnimatePresence>
         {presentationMode && (
           <motion.div
+            ref={presentationRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -378,11 +463,8 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => {
-                    if (document.documentElement.requestFullscreen) {
-                      document.documentElement.requestFullscreen()
-                    }
-                  }}
+                  onClick={toggleFullscreen}
+                  title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
                 >
                   <Maximize2 className="h-4 w-4" />
                 </Button>
@@ -391,6 +473,9 @@ export default function ProposalViewer({ proposal }: ProposalViewerProps) {
                   size="sm"
                   onClick={() => {
                     setPresentationMode(false)
+                    if (isFullscreen) {
+                      document.exitFullscreen()
+                    }
                     trackProposalEvent(proposal.id, 'presentation_ended', sessionId)
                   }}
                 >

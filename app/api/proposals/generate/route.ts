@@ -4,10 +4,18 @@ import { generateText } from 'ai'
 import type { ProposalGenerationInput, ProposalTemplate } from '@/lib/types/proposal'
 import { populateTemplate } from '@/lib/data/proposal-templates'
 
+// Configuration
+const MODEL_CONFIG = {
+  primary: process.env.AI_MODEL || 'gpt-4-turbo-preview',
+  fallback: 'gpt-4-turbo-preview',
+  maxOutputTokens: 2000,
+  temperature: 0.4
+}
+
 export async function POST(request: Request) {
   try {
     const { input, template, useAI = true } = await request.json() as {
-      input: ProposalGenerationInput
+      input: ProposalGenerationInput & { customSections?: Array<{ title: string; content: string }> }
       template: ProposalTemplate
       useAI: boolean
     }
@@ -29,24 +37,53 @@ export async function POST(request: Request) {
         // Use AI to enhance or generate content
         const sectionPrompt = createSectionPrompt(sectionSchema, input)
         
-        const { text } = await generateText({
-          model: openai('gpt-5'),
-          system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 
-          Generate professional, persuasive proposal content that:
-          - Speaks directly to the client's needs and pain points
-          - Highlights value and ROI clearly
-          - Uses clear, concise business language
-          - Maintains a confident yet approachable tone
-          - Focuses on outcomes and benefits
-          
-          Client Context:
-          Company: ${input.clientInfo.company || input.clientInfo.name}
-          Project Type: ${input.projectDetails.type}
-          Problem: ${input.projectDetails.problem}
-          Opportunity: ${input.projectDetails.opportunity}`,
-          prompt: sectionPrompt,
-          temperature: 0.4
-        })
+        let text = ''
+        try {
+          // Try primary model first (GPT-5 or configured model)
+          const result = await generateText({
+            model: openai(MODEL_CONFIG.primary),
+            system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 
+            Generate professional, persuasive proposal content that:
+            - Speaks directly to the client's needs and pain points
+            - Highlights value and ROI clearly
+            - Uses clear, concise business language
+            - Maintains a confident yet approachable tone
+            - Focuses on outcomes and benefits
+            
+            Client Context:
+            Company: ${input.clientInfo.company || input.clientInfo.name}
+            Project Type: ${input.projectDetails.type}
+            Problem: ${input.projectDetails.problem}
+            Opportunity: ${input.projectDetails.opportunity}`,
+            prompt: sectionPrompt,
+            temperature: MODEL_CONFIG.temperature,
+            maxOutputTokens: MODEL_CONFIG.maxOutputTokens
+          })
+          text = result.text
+        } catch (error) {
+          console.warn(`Primary model (${MODEL_CONFIG.primary}) failed, falling back to ${MODEL_CONFIG.fallback}:`, error)
+          // Fallback to GPT-4 if primary model fails
+          const result = await generateText({
+            model: openai(MODEL_CONFIG.fallback),
+            system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 
+            Generate professional, persuasive proposal content that:
+            - Speaks directly to the client's needs and pain points
+            - Highlights value and ROI clearly
+            - Uses clear, concise business language
+            - Maintains a confident yet approachable tone
+            - Focuses on outcomes and benefits
+            
+            Client Context:
+            Company: ${input.clientInfo.company || input.clientInfo.name}
+            Project Type: ${input.projectDetails.type}
+            Problem: ${input.projectDetails.problem}
+            Opportunity: ${input.projectDetails.opportunity}`,
+            prompt: sectionPrompt,
+            temperature: MODEL_CONFIG.temperature,
+            maxOutputTokens: MODEL_CONFIG.maxOutputTokens
+          })
+          text = result.text
+        }
         
         sectionContent = text
       } else {
@@ -62,6 +99,68 @@ export async function POST(request: Request) {
         content: sectionContent,
         order: sectionSchema.order
       })
+    }
+    
+    // Process custom sections if provided
+    if (input.customSections && input.customSections.length > 0) {
+      let orderIndex = sections.length
+      
+      for (const customSection of input.customSections) {
+        if (!customSection.title || !customSection.content) continue
+        
+        let sectionContent = customSection.content
+        
+        if (useAI) {
+          // Use AI to enhance the custom section content
+          let text = ''
+          try {
+            // Try primary model first
+            const result = await generateText({
+              model: openai(MODEL_CONFIG.primary),
+              system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 
+              Take the provided custom section content and enhance it to be professional and persuasive while maintaining the original intent.
+              Client Context:
+              Company: ${input.clientInfo.company || input.clientInfo.name}
+              Project Type: ${input.projectDetails.type}`,
+              prompt: `Enhance this custom section for a proposal. Section title: "${customSection.title}". 
+              Original content/instructions: ${customSection.content}
+              
+              Create professional content that fits seamlessly with the rest of the proposal.`,
+              temperature: MODEL_CONFIG.temperature,
+              maxOutputTokens: MODEL_CONFIG.maxOutputTokens
+            })
+            text = result.text
+          } catch (error) {
+            console.warn(`Primary model failed for custom section, using fallback:`, error)
+            // Fallback to GPT-4
+            const result = await generateText({
+              model: openai(MODEL_CONFIG.fallback),
+              system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 
+              Take the provided custom section content and enhance it to be professional and persuasive while maintaining the original intent.
+              Client Context:
+              Company: ${input.clientInfo.company || input.clientInfo.name}
+              Project Type: ${input.projectDetails.type}`,
+              prompt: `Enhance this custom section for a proposal. Section title: "${customSection.title}". 
+              Original content/instructions: ${customSection.content}
+              
+              Create professional content that fits seamlessly with the rest of the proposal.`,
+              temperature: MODEL_CONFIG.temperature,
+              maxOutputTokens: MODEL_CONFIG.maxOutputTokens
+            })
+            text = result.text
+          }
+          
+          sectionContent = text
+        }
+        
+        sections.push({
+          id: `custom-${orderIndex}`,
+          title: customSection.title,
+          type: 'custom',
+          content: sectionContent,
+          order: orderIndex++
+        })
+      }
     }
     
     // Construct final proposal content

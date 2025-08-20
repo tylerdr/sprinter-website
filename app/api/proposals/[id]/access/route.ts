@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import bcrypt from 'bcryptjs'
+import { cookies } from 'next/headers'
+import crypto from 'crypto'
 
 export async function POST(
   request: Request,
@@ -43,7 +45,19 @@ export async function POST(
       )
     }
     
-    // Set session cookie or return success
+    // Create a session token for this proposal access
+    const sessionToken = crypto.randomBytes(32).toString('hex')
+    const cookieStore = await cookies()
+    
+    // Set HTTP-only cookie that expires in 24 hours
+    cookieStore.set(`proposal_access_${id}`, sessionToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 86400 // 24 hours in seconds
+    })
+    
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Access check error:', error)

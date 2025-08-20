@@ -1,9 +1,18 @@
 import { openai } from '@ai-sdk/openai'
 import { streamText } from 'ai'
+import { createClient } from '@/lib/supabase/server'
+
+// Configuration - same as generate route
+const MODEL_CONFIG = {
+  primary: process.env.AI_MODEL || 'gpt-4-turbo-preview',
+  fallback: 'gpt-4-turbo-preview',
+  maxOutputTokens: 1500,
+  temperature: 0.3
+}
 
 export async function POST(request: Request) {
   try {
-    const { messages, proposalId, proposalContent } = await request.json()
+    const { messages, proposalId, proposalContent, sessionId } = await request.json()
     
     if (!messages || !proposalId) {
       return new Response(
@@ -30,12 +39,56 @@ Answer questions about this proposal accurately and concisely. If asked about so
       ? messages 
       : [systemMessage, ...messages]
     
-    // Generate AI response with streaming using GPT-5
-    const result = await streamText({
-      model: openai('gpt-5'),
-      messages: allMessages,
-      temperature: 0.3
-    })
+    // Save the user's latest message to the database
+    const supabase = await createClient()
+    const latestUserMessage = messages[messages.length - 1]
+    
+    if (latestUserMessage && latestUserMessage.role === 'user') {
+      await supabase.from('proposal_chats').insert({
+        proposal_id: proposalId,
+        session_id: sessionId || null,
+        role: 'user',
+        content: latestUserMessage.content
+      })
+    }
+    
+    // Try primary model first, fallback to GPT-4 if it fails
+    let result
+    try {
+      result = await streamText({
+        model: openai(MODEL_CONFIG.primary),
+        messages: allMessages,
+        temperature: MODEL_CONFIG.temperature,
+        maxOutputTokens: MODEL_CONFIG.maxOutputTokens,
+        onFinish: async ({ text }) => {
+          // Save the assistant's response to the database
+          await supabase.from('proposal_chats').insert({
+            proposal_id: proposalId,
+            session_id: sessionId || null,
+            role: 'assistant',
+            content: text
+          })
+        }
+      })
+    } catch (error) {
+      console.warn(`Primary model (${MODEL_CONFIG.primary}) failed, falling back to ${MODEL_CONFIG.fallback}:`, error)
+      // Fallback to GPT-4
+      result = await streamText({
+        model: openai(MODEL_CONFIG.fallback),
+        messages: allMessages,
+        temperature: MODEL_CONFIG.temperature,
+        maxOutputTokens: MODEL_CONFIG.maxOutputTokens,
+        onFinish: async ({ text }) => {
+          // Save the assistant's response to the database
+          await supabase.from('proposal_chats').insert({
+            proposal_id: proposalId,
+            session_id: sessionId || null,
+            role: 'assistant',
+            content: text
+          })
+        }
+      })
+    }
     
     // Return streaming response
     return result.toTextStreamResponse()
