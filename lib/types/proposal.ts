@@ -171,11 +171,13 @@ export interface ProposalTemplate {
       template: string // Template with {{variables}}
       required: boolean
       order: number
+      layout?: string // For presentation slides
+      background?: string // For presentation slides
     }>
     variables: Array<{
       key: string
       label: string
-      type: 'text' | 'number' | 'date' | 'select' | 'textarea' | 'array'
+      type: 'text' | 'number' | 'date' | 'select' | 'textarea' | 'array' | 'email'
       required: boolean
       defaultValue?: unknown
       options?: Array<{ value: string; label: string }>
