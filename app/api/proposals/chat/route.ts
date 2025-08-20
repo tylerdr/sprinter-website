@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
-import OpenAI from 'openai'
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-})
+import { openai } from '@ai-sdk/openai'
+import { generateText } from 'ai'
 
 export async function POST(request: Request) {
   try {
@@ -21,27 +18,17 @@ export async function POST(request: Request) {
     const context = createProposalContext(proposalContent)
     
     // Generate AI response
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'system',
-          content: `You are a helpful assistant for Sprinter AI proposals. You have access to the following proposal details:
+    const { text: response } = await generateText({
+      model: openai('gpt-4o-mini'),
+      system: `You are a helpful assistant for Sprinter AI proposals. You have access to the following proposal details:
           
 ${context}
 
-Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful.`
-        },
-        {
-          role: 'user',
-          content: message
-        }
-      ],
+Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful.`,
+      prompt: message,
       temperature: 0.7,
-      max_tokens: 500
+      maxTokens: 500
     })
-    
-    const response = completion.choices[0].message.content || 'I apologize, but I was unable to generate a response.'
     
     // Store in database
     const supabase = await createClient()
