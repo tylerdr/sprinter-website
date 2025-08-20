@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Save, Send, Eye, Loader2, AlertCircle, Plus, X } from 'lucide-react'
+import { Save, Send, Eye, Loader2, Plus, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Switch } from '@/components/ui/switch'
-import { Alert, AlertDescription } from '@/components/ui/alert'
 import { createProposal } from '@/lib/services/proposal'
 import { populateTemplate } from '@/lib/data/proposal-templates'
 import type { ProposalTemplate, ProposalGenerationInput } from '@/lib/types/proposal'
@@ -25,7 +24,6 @@ interface ProposalCreatorProps {
 export default function ProposalCreator({ templates, userId }: ProposalCreatorProps) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
   const [selectedTemplate, setSelectedTemplate] = useState<ProposalTemplate | null>(null)
   const [formData, setFormData] = useState<ProposalGenerationInput>({
     templateId: '',
@@ -155,7 +153,6 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
     if (!selectedTemplate) return
     
     setLoading(true)
-    setError(null)
     
     try {
       // Include custom sections in formData
@@ -215,7 +212,7 @@ export default function ProposalCreator({ templates, userId }: ProposalCreatorPr
       router.push(`/admin/proposals/${proposal.id}`)
     } catch (error) {
       console.error('Failed to create proposal:', error)
-      setError(error instanceof Error ? error.message : 'Failed to create proposal. Please try again.')
+      alert(error instanceof Error ? error.message : 'Failed to create proposal. Please try again.')
     } finally {
       setLoading(false)
     }

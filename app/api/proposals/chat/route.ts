@@ -1,87 +1,40 @@
-import { createClient } from '@/lib/supabase/server'
 import { openai } from '@ai-sdk/openai'
 import { streamText } from 'ai'
 
-type Message = {
-  role: 'system' | 'user' | 'assistant'
-  content: string
-}
-
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { messages, proposalId, proposalContent, sessionId } = body
+    const { messages, proposalId, proposalContent } = await request.json()
     
-    // Support both single message and messages array for compatibility
-    const userMessages: Message[] = messages || (body.message ? [
-      { role: 'user' as const, content: body.message }
-    ] : [])
-    
-    if (!proposalId || (!messages && !body.message)) {
+    if (!messages || !proposalId) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       )
     }
     
-    // Get chat history for context
-    const supabase = await createClient()
-    const { data: chatHistory } = await supabase
-      .from('proposal_chats')
-      .select('role, content')
-      .eq('proposal_id', proposalId)
-      .eq('session_id', sessionId)
-      .order('created_at', { ascending: true })
-      .limit(10)
-    
     // Create context from proposal content
     const context = createProposalContext(proposalContent)
     
-    // Build full messages array with system prompt and history
-    const fullMessages: Message[] = [
-      {
-        role: 'system' as const,
-        content: `You are an AI assistant for Sprinter AI proposals powered by GPT-5. You have access to the following proposal details:
+    // Add system message with proposal context to the beginning if not present
+    const systemMessage = {
+      role: 'system' as const,
+      content: `You are an AI assistant for Sprinter AI proposals powered by GPT-5. You have access to the following proposal details:
           
 ${context}
 
-Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful. Remember previous questions in this conversation for context.`
-      },
-      ...(chatHistory || []).map(msg => ({
-        role: msg.role as 'user' | 'assistant',
-        content: msg.content
-      })),
-      ...userMessages
-    ]
+Answer questions about this proposal accurately and concisely. If asked about something not in the proposal, politely indicate that the information isn't available in the current proposal. Be professional and helpful.`
+    }
+    
+    // Ensure system message is first
+    const allMessages = messages[0]?.role === 'system' 
+      ? messages 
+      : [systemMessage, ...messages]
     
     // Generate AI response with streaming using GPT-5
     const result = await streamText({
       model: openai('gpt-5'),
-      messages: fullMessages,
-      temperature: 0.3,
-      maxTokens: 1500,
-      system: undefined // System message already in messages array
-    })
-    
-    // Store user message immediately if single message format
-    if (body.message) {
-      await supabase.from('proposal_chats').insert({
-        proposal_id: proposalId,
-        session_id: sessionId,
-        role: 'user',
-        content: body.message
-      })
-    }
-    
-    // Store assistant response after generation completes
-    result.onFinish(async ({ text }) => {
-      await supabase.from('proposal_chats').insert({
-        proposal_id: proposalId,
-        session_id: sessionId,
-        role: 'assistant',
-        content: text,
-        metadata: { model: 'gpt-5' }
-      })
+      messages: allMessages,
+      temperature: 0.3
     })
     
     // Return streaming response

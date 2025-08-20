@@ -1,14 +1,12 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { useChat } from '@ai-sdk/react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { X, Send, Bot, User, Loader2, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Badge } from '@/components/ui/badge'
 import { trackProposalEvent } from '@/lib/services/proposal'
 import type { ProposalContent } from '@/lib/types/proposal'
 import { cn } from '@/lib/utils'
@@ -49,27 +47,19 @@ export default function ProposalChatV2({
 }: ProposalChatProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   
-  const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages } = useChat({
-    api: '/api/proposals/chat',
-    body: {
-      proposalId,
-      proposalContent,
-      sessionId
-    },
-    initialMessages: [
-      {
-        id: 'welcome',
-        role: 'assistant',
-        content: "Hi! I'm here to help answer any questions you have about this proposal. You can ask about pricing, timeline, deliverables, or any other details."
-      }
-    ],
-    onResponse: () => {
-      trackProposalEvent(proposalId, 'question_asked', sessionId)
-    },
-    onError: (error) => {
-      console.error('Chat error:', error)
+  const [input, setInput] = useState('')
+  const [messages, setMessages] = useState<Array<{
+    id: string
+    role: 'user' | 'assistant'
+    content: string
+  }>>([
+    {
+      id: 'welcome',
+      role: 'assistant',
+      content: "Hi! I'm here to help answer any questions you have about this proposal. You can ask about pricing, timeline, deliverables, or any other details."
     }
-  })
+  ])
+  const [isLoading, setIsLoading] = useState(false)
   
   const suggestedQuestions = getSuggestedQuestions(proposalContent)
   
@@ -83,21 +73,79 @@ export default function ProposalChatV2({
     }
   }
   
-  const handleSuggestionClick = (question: string) => {
-    const fakeEvent = {
-      preventDefault: () => {},
-      currentTarget: {
-        querySelector: () => ({
-          value: question
+  const sendMessage = async (content: string) => {
+    if (!content.trim() || isLoading) return
+    
+    const userMessage = {
+      id: `msg-${Date.now()}`,
+      role: 'user' as 'user',
+      content
+    }
+    
+    setMessages(prev => [...prev, userMessage])
+    setIsLoading(true)
+    
+    try {
+      const response = await fetch('/api/proposals/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [...messages, userMessage],
+          proposalId,
+          proposalContent
         })
+      })
+      
+      if (!response.ok) throw new Error('Failed to get response')
+      
+      const reader = response.body?.getReader()
+      const decoder = new TextDecoder()
+      let assistantMessage = ''
+      
+      const assistantMsg = {
+        id: `msg-${Date.now() + 1}`,
+        role: 'assistant' as 'assistant',
+        content: ''
       }
-    } as React.FormEvent<HTMLFormElement>
+      
+      setMessages(prev => [...prev, assistantMsg])
+      
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+          
+          const chunk = decoder.decode(value)
+          assistantMessage += chunk
+          
+          setMessages(prev => prev.map(msg => 
+            msg.id === assistantMsg.id 
+              ? { ...msg, content: assistantMessage }
+              : msg
+          ))
+        }
+      }
+    } catch (error) {
+      console.error('Chat error:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!input.trim() || isLoading) return
     
-    handleInputChange({
-      target: { value: question }
-    } as React.ChangeEvent<HTMLInputElement>)
+    trackProposalEvent(proposalId, 'question_asked', sessionId)
+    await sendMessage(input)
+    setInput('')
+  }
+  
+  const handleSuggestionClick = async (question: string) => {
+    if (isLoading) return
     
-    setTimeout(() => handleSubmit(fakeEvent), 100)
+    trackProposalEvent(proposalId, 'question_asked', sessionId)
+    await sendMessage(question)
   }
   
   return (
@@ -219,7 +267,7 @@ export default function ProposalChatV2({
             <div className="flex gap-2">
               <Input
                 value={input}
-                onChange={handleInputChange}
+                onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask a question about this proposal..."
                 disabled={isLoading}
                 className="flex-1"

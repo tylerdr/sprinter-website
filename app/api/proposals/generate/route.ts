@@ -45,8 +45,7 @@ export async function POST(request: Request) {
           Problem: ${input.projectDetails.problem}
           Opportunity: ${input.projectDetails.opportunity}`,
           prompt: sectionPrompt,
-          temperature: 0.4,
-          maxTokens: 800
+          temperature: 0.4
         })
         
         sectionContent = text
