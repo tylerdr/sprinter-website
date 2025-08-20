@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import ProposalCreator from '@/components/proposals/ProposalCreator'
-import { listTemplates } from '@/lib/services/proposal'
+import { listTemplatesServer } from '@/lib/services/proposal-server'
 import { requireAuth } from '@/lib/supabase/utils'
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default async function CreateProposalPage() {
   const { user } = await requireAuth()
   
   // Load available templates
-  const templates = await listTemplates()
+  const templates = await listTemplatesServer()
   
   return (
     <div className="min-h-screen bg-background">

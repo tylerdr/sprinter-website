@@ -1,0 +1,204 @@
+
+> sprinter-website@0.1.0 build
+> next build
+
+   ▲ Next.js 15.4.6
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 73s
+   Linting and checking validity of types ...
+
+./app/about/page.tsx
+84:33  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/auth/signin/page.tsx
+36:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+50:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/auth/signup/page.tsx
+44:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/agent-battle/actions.ts
+3:10  Warning: 'streamText' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/agent-battle/page.tsx
+11:10  Warning: 'Tabs' is defined but never used.  @typescript-eslint/no-unused-vars
+11:16  Warning: 'TabsContent' is defined but never used.  @typescript-eslint/no-unused-vars
+11:29  Warning: 'TabsList' is defined but never used.  @typescript-eslint/no-unused-vars
+11:39  Warning: 'TabsTrigger' is defined but never used.  @typescript-eslint/no-unused-vars
+20:3  Warning: 'MessageSquare' is defined but never used.  @typescript-eslint/no-unused-vars
+21:3  Warning: 'BarChart3' is defined but never used.  @typescript-eslint/no-unused-vars
+22:3  Warning: 'Clock' is defined but never used.  @typescript-eslint/no-unused-vars
+23:3  Warning: 'DollarSign' is defined but never used.  @typescript-eslint/no-unused-vars
+27:3  Warning: 'Pause' is defined but never used.  @typescript-eslint/no-unused-vars
+360:48  Warning: 'idx' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/ai-telestrations/client.tsx
+371:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+397:41  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/labs/opportunity-audit/actions.ts
+122:42  Warning: 'input' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/opportunity-audit/sample/page.tsx
+9:10  Warning: 'Separator' is defined but never used.  @typescript-eslint/no-unused-vars
+13:3  Warning: 'TrendingUp' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/page.tsx
+323:9  Warning: 'regularLabs' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/pdf-extractor/page.tsx
+83:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+166:18  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+455:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/labs/storyboarding/actions.ts
+262:17  Warning: 'savedJourney' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/storyboarding/page.tsx
+27:10  Warning: 'Tabs' is defined but never used.  @typescript-eslint/no-unused-vars
+27:16  Warning: 'TabsContent' is defined but never used.  @typescript-eslint/no-unused-vars
+27:29  Warning: 'TabsList' is defined but never used.  @typescript-eslint/no-unused-vars
+27:39  Warning: 'TabsTrigger' is defined but never used.  @typescript-eslint/no-unused-vars
+28:10  Warning: 'Select' is defined but never used.  @typescript-eslint/no-unused-vars
+28:18  Warning: 'SelectContent' is defined but never used.  @typescript-eslint/no-unused-vars
+28:33  Warning: 'SelectItem' is defined but never used.  @typescript-eslint/no-unused-vars
+28:45  Warning: 'SelectTrigger' is defined but never used.  @typescript-eslint/no-unused-vars
+28:60  Warning: 'SelectValue' is defined but never used.  @typescript-eslint/no-unused-vars
+33:3  Warning: 'MessageSquare' is defined but never used.  @typescript-eslint/no-unused-vars
+36:3  Warning: 'Share2' is defined but never used.  @typescript-eslint/no-unused-vars
+37:3  Warning: 'Plus' is defined but never used.  @typescript-eslint/no-unused-vars
+39:3  Warning: 'Edit' is defined but never used.  @typescript-eslint/no-unused-vars
+40:3  Warning: 'Save' is defined but never used.  @typescript-eslint/no-unused-vars
+45:3  Warning: 'AlertCircle' is defined but never used.  @typescript-eslint/no-unused-vars
+46:3  Warning: 'ArrowRight' is defined but never used.  @typescript-eslint/no-unused-vars
+51:3  Warning: 'Smartphone' is defined but never used.  @typescript-eslint/no-unused-vars
+55:31  Warning: 'analyzeJourney' is defined but never used.  @typescript-eslint/no-unused-vars
+272:9  Warning: 'reactFlowInstance' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/tiny-town/actions.ts
+5:10  Warning: 'streamText' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/tiny-town/page.tsx
+8:10  Warning: 'Textarea' is defined but never used.  @typescript-eslint/no-unused-vars
+9:29  Warning: 'CardDescription' is defined but never used.  @typescript-eslint/no-unused-vars
+11:10  Warning: 'Tabs' is defined but never used.  @typescript-eslint/no-unused-vars
+11:16  Warning: 'TabsContent' is defined but never used.  @typescript-eslint/no-unused-vars
+11:29  Warning: 'TabsList' is defined but never used.  @typescript-eslint/no-unused-vars
+11:39  Warning: 'TabsTrigger' is defined but never used.  @typescript-eslint/no-unused-vars
+19:3  Warning: 'Users' is defined but never used.  @typescript-eslint/no-unused-vars
+24:3  Warning: 'Zap' is defined but never used.  @typescript-eslint/no-unused-vars
+25:3  Warning: 'Brain' is defined but never used.  @typescript-eslint/no-unused-vars
+26:3  Warning: 'MessageSquare' is defined but never used.  @typescript-eslint/no-unused-vars
+27:3  Warning: 'TrendingUp' is defined but never used.  @typescript-eslint/no-unused-vars
+28:3  Warning: 'AlertCircle' is defined but never used.  @typescript-eslint/no-unused-vars
+29:3  Warning: 'Info' is defined but never used.  @typescript-eslint/no-unused-vars
+31:3  Warning: 'Share2' is defined but never used.  @typescript-eslint/no-unused-vars
+37:3  Warning: 'Heart' is defined but never used.  @typescript-eslint/no-unused-vars
+42:10  Warning: 'cn' is defined but never used.  @typescript-eslint/no-unused-vars
+137:23  Warning: 'setSelectedNPC' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+318:13  Warning: 'npcType' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+356:6  Warning: React Hook useEffect has a missing dependency: 'updateSimulation'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./app/labs/vibe-coding/actions.ts
+4:24  Warning: 'streamText' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/labs/vibe-coding/page.tsx
+20:3  Warning: 'Palette' is defined but never used.  @typescript-eslint/no-unused-vars
+21:3  Warning: 'Sparkles' is defined but never used.  @typescript-eslint/no-unused-vars
+22:3  Warning: 'Play' is defined but never used.  @typescript-eslint/no-unused-vars
+24:3  Warning: 'Share2' is defined but never used.  @typescript-eslint/no-unused-vars
+25:3  Warning: 'Zap' is defined but never used.  @typescript-eslint/no-unused-vars
+26:3  Warning: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+27:3  Warning: 'Type' is defined but never used.  @typescript-eslint/no-unused-vars
+34:3  Warning: 'Settings' is defined but never used.  @typescript-eslint/no-unused-vars
+38:10  Warning: 'cn' is defined but never used.  @typescript-eslint/no-unused-vars
+39:31  Warning: 'analyzeDesignSystem' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/ai-elements/branch.tsx
+85:9  Warning: The 'childrenArray' conditional could make the dependencies of useEffect Hook (at line 92) change on every render. To fix this, wrap the initialization of 'childrenArray' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+
+./components/ai-elements/image.tsx
+11:3  Warning: 'uint8Array' is defined but never used.  @typescript-eslint/no-unused-vars
+15:3  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/ai-elements/reasoning.tsx
+120:5  Warning: 'title' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/ai-elements/response.tsx
+110:11  Warning: 'codeBlockPattern' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/ai-elements/source.tsx
+26:3  Warning: 'className' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/chat-widget.tsx
+35:9  Warning: 'handleMessageSent' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/contact/ContactForm.tsx
+53:14  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/labs/AdCreator.tsx
+305:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/labs/CodeReviewAssistant.tsx
+4:17  Warning: 'Upload' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/labs/DocumentIntelligence.tsx
+4:63  Warning: 'Download' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/labs/IdeationLab.tsx
+7:3  Warning: 'Zap' is defined but never used.  @typescript-eslint/no-unused-vars
+13:3  Warning: 'Gamepad2' is defined but never used.  @typescript-eslint/no-unused-vars
+25:7  Warning: 'categories' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+47:10  Warning: 'raceWinner' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+48:10  Warning: 'scattergoriesPrompt' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+51:10  Warning: 'aiAnswer' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+52:10  Warning: 'timeLeft' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+106:9  Warning: 'runIdeaRace' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+121:9  Warning: 'playScattergories' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/labs/QuizGenerator.tsx
+81:10  Warning: 'exportFormat' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+81:24  Warning: 'setExportFormat' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/labs/SketchStudio.tsx
+7:3  Warning: 'RefreshCw' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/labs/WorkflowTool.tsx
+6:3  Warning: 'Workflow' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/layout/enhanced-navigation.tsx
+7:68  Warning: 'Mic' is defined but never used.  @typescript-eslint/no-unused-vars
+9:22  Warning: 'COMPANY_INFO' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/proposals/ProposalCreator.tsx
+101:9  Warning: 'handleAddArrayItem' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+122:9  Warning: 'handleRemoveArrayItem' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/realtime/realtime-cursor.tsx
+29:13  Warning: '_userName' is defined but never used.  @typescript-eslint/no-unused-vars
+30:14  Warning: '_userColor' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./components/shared/testimonial-carousel.tsx
+172:23  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/theme-toggle.tsx
+21:5  Warning: The attribute aria-pressed is not supported by the role switch.  jsx-a11y/role-supports-aria-props
+
+./components/ui/product-carousel.tsx
+47:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./lib/pdf-generator.tsx
+317:41  Warning: '_props' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/96) ...
+   Generating static pages (24/96) 
+   Generating static pages (48/96) 
+   Generating static pages (72/96) 
+ ✓ Generating static pages (96/96)
+   Finalizing page optimization ...
+   Collecting build traces ...

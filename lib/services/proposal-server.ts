@@ -1,6 +1,7 @@
 // Server-side proposal functions
 import { createClient } from '@/lib/supabase/server'
-import type { Proposal } from '@/lib/types/proposal'
+import { proposalTemplates } from '@/lib/data/proposal-templates'
+import type { Proposal, ProposalTemplate } from '@/lib/types/proposal'
 
 export async function createProposalServer(input: Partial<Proposal>) {
   const supabase = await createClient()
@@ -34,6 +35,33 @@ export async function getProposalServer(id: string) {
   
   if (error) throw error
   return data as Proposal
+}
+
+export async function listTemplatesServer(type?: string) {
+  const supabase = await createClient()
+  
+  let query = supabase
+    .from('proposal_templates')
+    .select('*')
+    .eq('is_active', true)
+  
+  if (type) {
+    query = query.eq('type', type)
+  }
+  
+  const { data, error } = await query.order('created_at', { ascending: false })
+  
+  // If error or no data, return hardcoded templates
+  if (error || !data || data.length === 0) {
+    // Filter by type if specified
+    if (type) {
+      return proposalTemplates.filter(t => t.type === type)
+    }
+    
+    return proposalTemplates
+  }
+  
+  return data as ProposalTemplate[]
 }
 
 function generateAccessToken(): string {

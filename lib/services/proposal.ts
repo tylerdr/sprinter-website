@@ -130,7 +130,19 @@ export async function listTemplates(type?: string) {
   
   const { data, error } = await query.order('created_at', { ascending: false })
   
-  if (error) throw error
+  // If error or no data, return hardcoded templates
+  if (error || !data || data.length === 0) {
+    // Import the hardcoded templates
+    const { proposalTemplates } = await import('@/lib/data/proposal-templates')
+    
+    // Filter by type if specified
+    if (type) {
+      return proposalTemplates.filter(t => t.type === type)
+    }
+    
+    return proposalTemplates
+  }
+  
   return data as ProposalTemplate[]
 }
 

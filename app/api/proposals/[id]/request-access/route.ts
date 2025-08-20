@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(
   request: Request,
@@ -56,6 +56,14 @@ export async function POST(
     
     // Send the email
     try {
+      if (!resend) {
+        console.warn('Resend API key not configured, skipping email send')
+        return NextResponse.json({ 
+          success: true,
+          message: 'Access link generated (email disabled in development)' 
+        })
+      }
+      
       await resend.emails.send({
         from: 'proposals@sprinter.ai',
         to: email,
