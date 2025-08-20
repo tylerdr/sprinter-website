@@ -5,8 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { listProposals, getProposalAnalytics } from '@/lib/services/proposal'
-import { createClient } from '@/lib/supabase/server'
-import { redirect } from 'next/navigation'
+import { requireAuth } from '@/lib/supabase/utils'
 
 export const metadata: Metadata = {
   title: 'Proposals Dashboard | Sprinter AI Admin',
@@ -15,13 +14,8 @@ export const metadata: Metadata = {
 }
 
 export default async function ProposalsPage() {
-  // Check authentication
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  
-  if (!user) {
-    redirect('/auth/signin?redirect=/admin/proposals')
-  }
+  // Check authentication with getClaims
+  const { user } = await requireAuth()
   
   // Load proposals
   const proposals = await listProposals({ ownerId: user.id })

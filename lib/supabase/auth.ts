@@ -132,6 +132,18 @@ export async function getUser() {
   return { user }
 }
 
+export async function getClaims() {
+  const supabase = createClient()
+  
+  const { data, error } = await supabase.auth.getClaims()
+
+  if (error) {
+    return { error: { message: error.message } }
+  }
+
+  return { claims: data }
+}
+
 export function onAuthStateChange(callback: (event: string, session: unknown) => void) {
   const supabase = createClient()
   

@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 import ProposalCreator from '@/components/proposals/ProposalCreator'
 import { listTemplates } from '@/lib/services/proposal'
-import { createClient } from '@/lib/supabase/server'
-import { redirect } from 'next/navigation'
+import { requireAuth } from '@/lib/supabase/utils'
 
 export const metadata: Metadata = {
   title: 'Create Proposal | Sprinter AI Admin',
@@ -11,13 +10,8 @@ export const metadata: Metadata = {
 }
 
 export default async function CreateProposalPage() {
-  // Check authentication
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  
-  if (!user) {
-    redirect('/auth/signin?redirect=/admin/proposals/create')
-  }
+  // Check authentication with getClaims
+  const { user } = await requireAuth()
   
   // Load available templates
   const templates = await listTemplates()

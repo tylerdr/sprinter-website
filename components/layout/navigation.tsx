@@ -6,9 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { NAVIGATION, COMPANY_INFO } from "@/lib/constants";
+import { NAVIGATION } from "@/lib/constants";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/logo/BrandLogo";
+import { NavigationAuth } from "./navigation-auth";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -58,6 +59,7 @@ export function Navigation() {
                 )}
               </Link>
             ))}
+            <NavigationAuth />
             <ThemeToggle />
           </div>
 
