@@ -8,7 +8,7 @@ import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
 import { ChatWidget } from "@/components/chat-widget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { GoogleAnalyticsWrapper } from "@/components/analytics/google-analytics-wrapper";
 import { Toaster } from "sonner";
 import {
   generateMetadata as createSEOMetadata,
@@ -82,7 +82,7 @@ export default function RootLayout({
           <ThemeCustomizer />
           <ChatWidget />
           <Toaster position="bottom-right" />
-          <GoogleAnalytics />
+          <GoogleAnalyticsWrapper />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
