@@ -17,10 +17,10 @@ import {
 
 export const metadata: Metadata = {
   title: "AI Opportunity Sprint - 5 Days to Your First AI Win | Sprinter AI",
-  description: "Get a custom AI strategy and working prototype in just 5 days. Fixed price $2,500. 100% money-back guarantee if we don't deliver 10x value.",
+  description: "Get a custom AI strategy and working prototype in just 5 days. 100% satisfaction guarantee with proven ROI.",
   openGraph: {
     title: "AI Opportunity Sprint - From Strategy to Prototype in 5 Days",
-    description: "Get a custom AI strategy and working prototype for your PE firm. Fixed $2,500 investment with 100% money-back guarantee.",
+    description: "Get a custom AI strategy and working prototype for your PE firm. Guaranteed ROI with proven results.",
     type: "website",
   },
 }
@@ -90,15 +90,11 @@ export default function AISprintPage() {
             Stop talking about AI. Start implementing it. Get a custom solution for your firm's #1 opportunity with guaranteed ROI.
           </p>
 
-          {/* Price and Guarantee */}
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
-            <div className="flex items-center gap-2">
-              <CurrencyDollarIcon className="h-6 w-6 text-green-400" />
-              <span className="text-2xl font-bold">$2,500 Fixed Price</span>
-            </div>
+          {/* Guarantee */}
+          <div className="mt-8 flex justify-center">
             <div className="flex items-center gap-2">
               <ShieldCheckIcon className="h-6 w-6 text-blue-400" />
-              <span className="text-lg">100% Money-Back Guarantee</span>
+              <span className="text-xl font-semibold">100% Satisfaction Guarantee</span>
             </div>
           </div>
           
@@ -131,7 +127,7 @@ export default function AISprintPage() {
             </div>
             <div>
               <div className="mb-4 text-4xl font-bold text-green-400">Zero Risk</div>
-              <p className="text-gray-400">Fixed price. Clear deliverables. Apply the cost to any larger engagement.</p>
+              <p className="text-gray-400">Clear deliverables. Proven methodology. Apply sprint learnings to any larger engagement.</p>
             </div>
           </div>
         </div>
@@ -183,14 +179,11 @@ export default function AISprintPage() {
               </div>
               
               <div className="mt-8 rounded-lg bg-blue-500/10 p-6">
-                <p className="text-center text-lg font-semibold text-blue-400">
-                  Total Value: $25,000+
+                <p className="text-center text-xl font-bold text-white">
+                  Enterprise-Grade Value, Startup Speed
                 </p>
-                <p className="mt-2 text-center text-2xl font-bold text-white">
-                  Your Investment: Only $2,500
-                </p>
-                <p className="mt-2 text-center text-sm text-gray-400">
-                  (Applied as credit toward any implementation project)
+                <p className="mt-2 text-center text-gray-400">
+                  Sprint learnings can be applied toward any implementation project
                 </p>
               </div>
             </CardContent>
@@ -231,7 +224,7 @@ export default function AISprintPage() {
               <p className="mb-6 text-lg italic text-gray-300">
                 "In just 5 days, Sprinter identified an AI-driven deal sourcing approach that found 47 off-market targets we had completely missed. 
                 The ROI was immediate - we're now evaluating 3 potential acquisitions from that list. 
-                The $2,500 investment paid for itself 100x over."
+                The sprint paid for itself 100x over."
               </p>
               <div>
                 <p className="font-semibold">Managing Partner</p>
@@ -276,13 +269,12 @@ export default function AISprintPage() {
 
               {/* Stripe Checkout Button */}
               <form action="/api/checkout/ai-sprint" method="POST">
-                <input type="hidden" name="priceId" value="price_ai_sprint_2500" />
                 <Button 
                   type="submit"
                   size="lg"
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-lg hover:from-purple-700 hover:to-blue-700"
                 >
-                  Book Sprint Now - $2,500
+                  Book Your Sprint Now
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Button>
               </form>

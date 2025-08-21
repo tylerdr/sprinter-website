@@ -47,7 +47,7 @@ export function InteractiveDemo() {
   }, []);
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 noise-bg opacity-50" />
 
       <div className="container mx-auto px-4 relative z-10">

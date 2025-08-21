@@ -48,7 +48,7 @@ const industryExperience = [
 
 export function ClientSuccessSection() {
   return (
-    <section className="py-16 sm:py-24 relative overflow-hidden">
+    <section className="py-20 sm:py-32 relative overflow-hidden">
       <div
         className="absolute inset-0"
         style={{

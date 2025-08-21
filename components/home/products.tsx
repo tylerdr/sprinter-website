@@ -90,7 +90,7 @@ const products = [
 export function Products() {
   return (
     <section
-      className="py-16 md:py-24 relative overflow-hidden"
+      className="py-20 sm:py-32 relative overflow-hidden"
       aria-labelledby="products-heading"
     >
       {/* Background gradient */}

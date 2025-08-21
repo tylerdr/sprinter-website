@@ -28,7 +28,7 @@ export function PEHero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20"
       aria-label="Private Equity AI Hero"
     >
       {/* Dynamic gradient following mouse */}
@@ -139,7 +139,7 @@ export function PEHero() {
             <Button asChild size="lg" variant="outline" className="text-base">
               <Link href="/ai-sprint" className="group">
                 <Sparkles className="mr-2 w-5 h-5" aria-hidden="true" />
-                5-Day AI Sprint ($2,500)
+                5-Day AI Sprint
               </Link>
             </Button>
           </motion.div>
