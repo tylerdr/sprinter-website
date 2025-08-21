@@ -24,27 +24,27 @@ export const SOCIAL_LINKS = {
 
 export const NAVIGATION = {
   main: [
-    { href: "/products", label: "Products" },
-    { href: "/services", label: "Services" },
+    { href: "/ai-assessment", label: "Free Assessment" },
+    { href: "/ai-sprint", label: "AI Sprint" },
+    { href: "/ai-partnership", label: "Partnership" },
     { href: "/case-studies", label: "Case Studies" },
+    { href: "/services", label: "Services" },
     { href: "/labs", label: "AI Labs" },
-    { href: "/blog", label: "Insights" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Start a 10-Day Sprint" },
+    { href: "/contact", label: "Contact" },
   ],
   footer: {
     products: [
-      { href: "/products", label: "All Products" },
-      { href: "/case-studies/ai-mortgage-assistant", label: "MortgageQ" },
-      { href: "/case-studies/ai-cabinet-automation", label: "Cab-O-Matic" },
-      { href: "/case-studies/amble-ideation", label: "Amble Ideation" },
+      { href: "/ai-assessment", label: "AI Readiness Assessment" },
+      { href: "/ai-sprint", label: "5-Day AI Sprint" },
+      { href: "/ai-partnership", label: "AI Partnership Program" },
+      { href: "/products", label: "All AI Solutions" },
     ],
     services: [
       { href: "/services", label: "All Services" },
-      { href: "/services#workshops", label: "Workshops" },
-      { href: "/services#sprint", label: "AI Sprint" },
-      { href: "/services#enterprise", label: "Enterprise" },
-      { href: "/services#venture", label: "Venture Partnership" },
+      { href: "/services/enterprise", label: "Enterprise AI" },
+      { href: "/services/venture", label: "Venture Studio" },
+      { href: "/services/discovery", label: "Discovery Workshop" },
+      { href: "/services/sprint", label: "10-Day Sprint" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },

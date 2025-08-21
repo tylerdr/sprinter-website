@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/home/hero";
+import { PEHero } from "@/components/home/pe-hero";
 import { LabsPreview } from "@/components/home/labs-preview";
 import { Products } from "@/components/home/products";
 import { ServicesPreview } from "@/components/home/services-preview";
@@ -12,7 +12,7 @@ export const metadata: Metadata = getPageMetadata("home");
 export default function Home() {
   return (
     <>
-      <Hero />
+      <PEHero />
       <ClientSuccessSection />
       <ServicesPreview />
       <LabsPreview />
