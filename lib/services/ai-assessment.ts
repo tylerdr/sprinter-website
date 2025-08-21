@@ -1,9 +1,6 @@
-import { OpenAI } from "openai"
+import { openai } from "@ai-sdk/openai"
+import { generateText } from "ai"
 import { createClient } from "@/lib/supabase/server"
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
 
 interface AssessmentData {
   firstName: string
@@ -22,39 +19,29 @@ interface AssessmentData {
 export async function generateAIAssessmentReport(data: AssessmentData): Promise<string> {
   try {
     // Generate assessment insights using AI
-    const analysis = await openai.chat.completions.create({
-      model: "gpt-4",
+    const { text: assessmentContent } = await generateText({
+      model: openai("gpt-5"),
       temperature: 0.7,
-      messages: [
-        {
-          role: "system",
-          content: `You are an AI strategy consultant specializing in private equity. 
-          Generate a comprehensive AI readiness assessment based on the provided information.
-          Be specific, actionable, and focus on ROI and quick wins.
-          Use industry benchmarks and realistic estimates.`
-        },
-        {
-          role: "user",
-          content: `Generate an AI readiness assessment for:
-          Company: ${data.company}
-          AUM: ${data.aum}
-          Portfolio Size: ${data.portfolio_size}
-          Current AI Adoption: ${data.ai_adoption}
-          Biggest Challenge: ${data.biggest_challenge}
-          Primary Interest: ${data.primary_interest}
-          
-          Provide:
-          1. AI Readiness Score (0-100) with justification
-          2. Three specific quick-win AI opportunities with ROI estimates
-          3. Implementation timeline for each opportunity
-          4. Industry comparison and benchmarks
-          5. Recommended next steps`
-        }
-      ],
-      max_tokens: 2000,
+      maxRetries: 3,
+      system: `You are an AI strategy consultant specializing in private equity. 
+        Generate a comprehensive AI readiness assessment based on the provided information.
+        Be specific, actionable, and focus on ROI and quick wins.
+        Use industry benchmarks and realistic estimates.`,
+      prompt: `Generate an AI readiness assessment for:
+        Company: ${data.company}
+        AUM: ${data.aum}
+        Portfolio Size: ${data.portfolio_size}
+        Current AI Adoption: ${data.ai_adoption}
+        Biggest Challenge: ${data.biggest_challenge}
+        Primary Interest: ${data.primary_interest}
+        
+        Provide:
+        1. AI Readiness Score (0-100) with justification
+        2. Three specific quick-win AI opportunities with ROI estimates
+        3. Implementation timeline for each opportunity
+        4. Industry comparison and benchmarks
+        5. Recommended next steps`
     })
-
-    const assessmentContent = analysis.choices[0].message.content || ""
 
     // Parse the AI response to extract key metrics
     const readinessScore = extractReadinessScore(assessmentContent)
@@ -268,7 +255,7 @@ function generateReportHTML(data: any): string {
       <div class="opportunities">
         <h2 style="margin-bottom: 20px;">Your Top 3 AI Opportunities</h2>
         
-        ${opportunities.map((opp, idx) => `
+        ${opportunities.map((opp: string, idx: number) => `
           <div class="opportunity-card">
             <div class="opportunity-title">${idx + 1}. ${opp}</div>
             <div class="opportunity-roi">Potential ROI: ${(idx + 1) * 3}x within 6 months</div>

@@ -3,7 +3,8 @@ import { createClient } from "@/lib/supabase/server"
 import { Resend } from "resend"
 import { generateAIAssessmentReport } from "@/lib/services/ai-assessment"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(request: NextRequest) {
   try {
@@ -52,7 +53,8 @@ export async function POST(request: NextRequest) {
     generateAIAssessmentReport(assessmentData)
       .then(async (reportUrl) => {
         // Send email with report
-        await resend.emails.send({
+        if (resend) {
+          await resend.emails.send({
           from: "Sprinter AI <hello@sprinter.ai>",
           to: assessmentData.email,
           subject: `Your AI Readiness Assessment for ${assessmentData.company}`,
@@ -106,7 +108,8 @@ export async function POST(request: NextRequest) {
               </p>
             </div>
           `,
-        })
+          })
+        }
 
         // Update lead status
         if (lead?.id) {
@@ -123,7 +126,8 @@ export async function POST(request: NextRequest) {
       .catch(console.error)
 
     // Send immediate confirmation email
-    await resend.emails.send({
+    if (resend) {
+      await resend.emails.send({
       from: "Sprinter AI <hello@sprinter.ai>",
       to: assessmentData.email,
       subject: "We've received your AI Assessment request",
@@ -158,10 +162,12 @@ export async function POST(request: NextRequest) {
           </p>
         </div>
       `,
-    })
+      })
+    }
 
     // Notify internal team
-    await resend.emails.send({
+    if (resend) {
+      await resend.emails.send({
       from: "Sprinter AI <hello@sprinter.ai>",
       to: "hello@sprinter.ai", // Or use a dedicated sales email
       subject: `New AI Assessment Lead: ${assessmentData.company}`,
@@ -179,7 +185,8 @@ export async function POST(request: NextRequest) {
         <hr>
         <p>The AI assessment report is being generated and will be sent automatically.</p>
       `,
-    })
+      })
+    }
 
     // Redirect to thank you page
     return NextResponse.redirect(new URL("/ai-assessment/thank-you", request.url))

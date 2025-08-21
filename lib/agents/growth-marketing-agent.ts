@@ -1,14 +1,13 @@
-import { OpenAI } from "openai"
+import { openai } from "@ai-sdk/openai"
+import { generateText, generateObject } from "ai"
+import { z } from "zod"
 import { createClient } from "@/lib/supabase/server"
 import { Resend } from "resend"
 import { EmailCampaignManager, personalizeEmail, peOutreachTemplates } from "@/lib/services/email-templates"
 import { LeadNurtureService } from "@/lib/services/lead-nurture"
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 interface AgentAction {
   type: "email" | "nurture" | "score" | "analyze" | "schedule"
@@ -120,21 +119,25 @@ export class GrowthMarketingAgent {
     5. Update lead scores based on engagement
     
     Prioritize actions that will maximize conversions to AI Sprint ($2,500) or Partnership ($5-10K/mo).
-    Return a JSON array of actions with type, target, priority (1-10), and reasoning.
+    Return a JSON object with an 'actions' array containing objects with type, target, priority (1-10), and reasoning.
     `
     
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: [
-        { role: "system", content: "You are a growth marketing AI agent. Return valid JSON only." },
-        { role: "user", content: prompt }
-      ],
-      temperature: 0.7,
-      response_format: { type: "json_object" }
+    const { object } = await generateObject({
+      model: openai("gpt-5"),
+      schema: z.object({
+        actions: z.array(z.object({
+          type: z.enum(["email", "nurture", "score", "analyze", "schedule"]),
+          target: z.string().optional(),
+          priority: z.number(),
+          reasoning: z.string(),
+          data: z.record(z.string(), z.any()).optional()
+        }))
+      }),
+      system: "You are a growth marketing AI agent analyzing metrics and planning actions.",
+      prompt
     })
     
-    const response = JSON.parse(completion.choices[0].message.content || "{}")
-    return response.actions || []
+    return object.actions as AgentAction[] || []
   }
 
   private async executeAction(action: AgentAction) {
@@ -180,12 +183,16 @@ export class GrowthMarketingAgent {
     const emailContent = await this.generatePersonalizedEmail(lead, action.data.context)
     
     // Send email
-    await resend.emails.send({
-      from: "Sprinter AI <hello@sprinter.ai>",
-      to: lead.email,
-      subject: emailContent.subject,
-      html: emailContent.html
-    })
+    if (resend) {
+      await resend.emails.send({
+        from: "Sprinter AI <hello@sprinter.ai>",
+        to: lead.email,
+        subject: emailContent.subject,
+        html: emailContent.html
+      })
+    } else {
+      console.log("Resend not configured - skipping email send")
+    }
     
     // Track in campaigns table
     await supabase.from("email_campaigns").insert({
@@ -218,20 +225,19 @@ export class GrowthMarketingAgent {
     - One compelling PE + AI stat
     - Clear call to action
     
-    Return as JSON with 'subject' and 'body' fields.
+    Return a JSON object with 'subject' and 'body' string fields.
     `
     
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: [
-        { role: "system", content: "You are an expert B2B email copywriter for PE firms." },
-        { role: "user", content: prompt }
-      ],
-      temperature: 0.8,
-      response_format: { type: "json_object" }
+    const { object: email } = await generateObject({
+      model: openai("gpt-5"),
+      schema: z.object({
+        subject: z.string(),
+        body: z.string()
+      }),
+      system: "You are an expert B2B email copywriter for PE firms.",
+      prompt,
+      temperature: 0.8
     })
-    
-    const email = JSON.parse(completion.choices[0].message.content || "{}")
     
     return {
       subject: email.subject || "Quick question about AI at " + lead.company,
@@ -381,52 +387,58 @@ export class GrowthMarketingAgent {
     Keep it concise (5-6 bullet points).
     `
     
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: [
-        { role: "system", content: "You are a growth marketing analyst." },
-        { role: "user", content: prompt }
-      ],
+    const { text } = await generateText({
+      model: openai("gpt-5"),
+      system: "You are a growth marketing analyst.",
+      prompt,
       temperature: 0.7,
-      max_tokens: 500
+      maxRetries: 2
     })
     
-    return completion.choices[0].message.content || "No insights generated"
+    return text || "No insights generated"
   }
 
   private async sendInsightsReport(insights: string) {
     // Send daily insights to team
-    await resend.emails.send({
-      from: "Growth Agent <hello@sprinter.ai>",
-      to: "hello@sprinter.ai", // Or specific team members
-      subject: `Growth Agent Daily Report - ${new Date().toLocaleDateString()}`,
-      html: `
-        <h2>🤖 Growth Marketing Agent Report</h2>
-        <pre style="font-family: monospace; background: #f3f4f6; padding: 16px; border-radius: 8px;">
+    if (resend) {
+      await resend.emails.send({
+        from: "Growth Agent <hello@sprinter.ai>",
+        to: "hello@sprinter.ai", // Or specific team members
+        subject: `Growth Agent Daily Report - ${new Date().toLocaleDateString()}`,
+        html: `
+          <h2>🤖 Growth Marketing Agent Report</h2>
+          <pre style="font-family: monospace; background: #f3f4f6; padding: 16px; border-radius: 8px;">
 ${insights}
-        </pre>
-        <p style="color: #6b7280; font-size: 14px; margin-top: 24px;">
-          This report was generated automatically by the Growth Marketing Agent.
-        </p>
-      `
-    })
+          </pre>
+          <p style="color: #6b7280; font-size: 14px; margin-top: 24px;">
+            This report was generated automatically by the Growth Marketing Agent.
+          </p>
+        `
+      })
+    } else {
+      console.log("Insights report:", insights)
+    }
   }
 
   private async notifyHotLead(email: string, score: number) {
-    await resend.emails.send({
-      from: "Growth Agent <hello@sprinter.ai>",
-      to: "hello@sprinter.ai",
-      subject: `🔥 Hot Lead Alert: ${email} (Score: ${score})`,
-      html: `
-        <h3>High-Intent Lead Detected!</h3>
-        <p>Email: ${email}</p>
-        <p>Lead Score: ${score}/100</p>
-        <p>Recommended Action: Immediate personal outreach</p>
-        <a href="mailto:${email}" style="display: inline-block; padding: 8px 16px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px;">
-          Contact Now
-        </a>
-      `
-    })
+    if (resend) {
+      await resend.emails.send({
+        from: "Growth Agent <hello@sprinter.ai>",
+        to: "hello@sprinter.ai",
+        subject: `🔥 Hot Lead Alert: ${email} (Score: ${score})`,
+        html: `
+          <h3>High-Intent Lead Detected!</h3>
+          <p>Email: ${email}</p>
+          <p>Lead Score: ${score}/100</p>
+          <p>Recommended Action: Immediate personal outreach</p>
+          <a href="mailto:${email}" style="display: inline-block; padding: 8px 16px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px;">
+            Contact Now
+          </a>
+        `
+      })
+    } else {
+      console.log(`🔥 Hot Lead Alert: ${email} (Score: ${score})`)
+    }
   }
 
   private async notifyError(error: any) {

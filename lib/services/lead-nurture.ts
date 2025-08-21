@@ -2,7 +2,8 @@ import { createClient } from "@/lib/supabase/server"
 import { Resend } from "resend"
 import { personalizeEmail, peOutreachTemplates } from "./email-templates"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 interface Lead {
   email: string
@@ -236,12 +237,16 @@ export class LeadNurtureService {
     const personalizedBody = this.personalizeText(emailConfig.template, personalizationData)
 
     try {
-      await resend.emails.send({
-        from: "Sprinter AI <hello@sprinter.ai>",
-        to: sequence.lead_email,
-        subject: personalizedSubject,
-        html: this.formatEmailHtml(personalizedBody),
-      })
+      if (resend) {
+        await resend.emails.send({
+          from: "Sprinter AI <hello@sprinter.ai>",
+          to: sequence.lead_email,
+          subject: personalizedSubject,
+          html: this.formatEmailHtml(personalizedBody),
+        })
+      } else {
+        console.log("Resend not configured - skipping nurture email send")
+      }
 
       // Update sequence
       const supabase = await createClient()

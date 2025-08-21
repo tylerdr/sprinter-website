@@ -284,10 +284,11 @@ export class EmailCampaignManager {
         campaign.status === 'sent' && 
         campaign.nextFollowUpDate && 
         campaign.nextFollowUpDate <= now &&
+        'followUps' in template &&
         template.followUps &&
         campaign.followUpsSent < template.followUps.length
       ) {
-        const followUp = template.followUps[campaign.followUpsSent]
+        const followUp = template.followUps![campaign.followUpsSent]
         emailsToSend.push({
           campaign,
           email: {
@@ -312,8 +313,8 @@ export class EmailCampaignManager {
     
     // Schedule next follow-up if available
     const template = peOutreachTemplates[campaign.templateKey]
-    if (template.followUps && campaign.followUpsSent < template.followUps.length) {
-      const nextFollowUp = template.followUps[campaign.followUpsSent]
+    if ('followUps' in template && template.followUps && campaign.followUpsSent < template.followUps.length) {
+      const nextFollowUp = template.followUps![campaign.followUpsSent]
       const nextDate = new Date()
       nextDate.setDate(nextDate.getDate() + nextFollowUp.days)
       campaign.nextFollowUpDate = nextDate

@@ -8,7 +8,7 @@ import {
   ClockIcon, 
   CurrencyDollarIcon,
   RocketLaunchIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon,
   BuildingOfficeIcon
 } from "@heroicons/react/24/outline"
 
@@ -93,7 +93,7 @@ const commonUseCases = [
     impact: "80% time reduction",
   },
   {
-    icon: TrendingUpIcon,
+    icon: ArrowTrendingUpIcon,
     title: "Portfolio Value Creation",
     description: "Deploy AI across portfolio companies for operational improvements",
     impact: "$1-5M per company",

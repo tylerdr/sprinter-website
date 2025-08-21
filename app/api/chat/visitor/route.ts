@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
-import { OpenAI } from "openai"
+import { openai } from "@ai-sdk/openai"
+import { generateText } from "ai"
 import { createClient } from "@/lib/supabase/server"
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
 
 // System prompt for the PE-focused chat assistant
 const SYSTEM_PROMPT = `You are an AI assistant for Sprinter AI, specializing in helping private equity firms leverage AI for competitive advantage.
@@ -55,26 +52,19 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Prepare messages for OpenAI
-    const openAIMessages = [
-      { role: "system" as const, content: SYSTEM_PROMPT },
-      ...messages.map((msg: any) => ({
-        role: msg.role as "user" | "assistant",
-        content: msg.content,
-      })),
-    ]
+    // Prepare conversation history
+    const conversationHistory = messages.map((msg: any) => 
+      `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`
+    ).join('\n')
 
     // Get AI response
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: openAIMessages,
+    const { text: aiResponse } = await generateText({
+      model: openai("gpt-5"),
       temperature: 0.7,
-      max_tokens: 500,
-      presence_penalty: 0.1,
-      frequency_penalty: 0.1,
+      maxRetries: 2,
+      system: SYSTEM_PROMPT,
+      prompt: conversationHistory + "\nAssistant:",
     })
-
-    const aiResponse = completion.choices[0].message.content || "I'm here to help! How can I assist you with AI for your PE firm?"
 
     // Detect intent for lead scoring
     const lastUserMessage = messages[messages.length - 1]?.content || ""

@@ -1,16 +1,19 @@
 import { NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2024-11-20.acacia",
-})
+// Initialize Stripe only if API key is available
+const stripe = process.env.STRIPE_SECRET_KEY 
+  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2025-07-30.basil",
+    })
+  : null
 
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
     const priceId = formData.get("priceId") as string
     
-    if (!process.env.STRIPE_SECRET_KEY) {
+    if (!stripe) {
       // If Stripe is not configured, redirect to contact form
       return NextResponse.redirect(new URL("/contact?product=ai-sprint", request.url))
     }
