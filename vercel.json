@@ -1,0 +1,19 @@
+{
+  "crons": [
+    {
+      "path": "/api/agents/growth",
+      "schedule": "0 9 * * *"
+    }
+  ],
+  "functions": {
+    "app/api/agents/growth/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/ai-assessment/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/chat/visitor/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}
