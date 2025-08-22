@@ -6,48 +6,83 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { 
-  ChartBar,
-  Rocket, 
-  TrendingUp,
-  Handshake,
+  Compass,
+  Zap, 
+  Waves,
+  Sailboat,
   ArrowRight,
   CheckCircle,
-  Target
+  Target,
+  Footprints,
+  Rocket,
+  TrendingUp,
+  Users
 } from "lucide-react";
-import { FUNNEL_STAGES, FUNNEL_TRANSITIONS } from "@/lib/funnel-config";
+import { getThemedFunnel, THEME_HEADLINES, THEME_STYLES } from "@/lib/funnel-themes";
 
-const funnelStages = [
-  {
-    step: "1",
-    stage: FUNNEL_STAGES.ASSESS,
-    icon: ChartBar,
-    badge: "Start Here",
-    highlight: false,
+// Icon mapping for themes
+const themeIcons = {
+  adventure: {
+    ASSESS: Footprints,
+    SPRINT: Zap,
+    SCALE: Waves,
+    PARTNER: Sailboat
   },
-  {
-    step: "2",
-    stage: FUNNEL_STAGES.SPRINT,
-    icon: Rocket,
-    badge: "Most Popular",
-    highlight: true,
+  asap: {
+    ASSESS: Target,
+    SPRINT: Zap,
+    SCALE: Rocket,
+    PARTNER: TrendingUp
   },
-  {
-    step: "3",
-    stage: FUNNEL_STAGES.SCALE,
-    icon: TrendingUp,
-    badge: "Best Value",
-    highlight: false,
-  },
-  {
-    step: "4",
-    stage: FUNNEL_STAGES.PARTNER,
-    icon: Handshake,
-    badge: "Enterprise",
-    highlight: false,
+  motion: {
+    ASSESS: Compass,
+    SPRINT: Zap,
+    SCALE: Rocket,
+    PARTNER: Users
   }
-];
+};
 
 export function ServicesPreview() {
+  const funnel = getThemedFunnel();
+  const headlines = THEME_HEADLINES[funnel.theme];
+  const styles = THEME_STYLES[funnel.theme];
+  const icons = themeIcons[funnel.theme];
+  
+  const funnelStages = [
+    {
+      key: "ASSESS",
+      step: "1",
+      stage: funnel.stages.ASSESS,
+      icon: icons.ASSESS,
+      badge: funnel.theme === "adventure" ? "Start Here" : "Step 1",
+      highlight: false,
+    },
+    {
+      key: "SPRINT", 
+      step: "2",
+      stage: funnel.stages.SPRINT,
+      icon: icons.SPRINT,
+      badge: "Most Popular",
+      highlight: true,
+    },
+    {
+      key: "SCALE",
+      step: "3",
+      stage: funnel.stages.SCALE,
+      icon: icons.SCALE,
+      badge: funnel.theme === "adventure" ? "Catch the Wave" : "Scale Fast",
+      highlight: false,
+    },
+    {
+      key: "PARTNER",
+      step: "4",
+      stage: funnel.stages.PARTNER,
+      icon: icons.PARTNER,
+      badge: "Enterprise",
+      highlight: false,
+    }
+  ];
+
   return (
     <section className="py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
@@ -63,45 +98,54 @@ export function ServicesPreview() {
           <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
             <Target className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
-              Your AI Journey: Assess → Sprint → Scale → Partner
+              {funnel.theme === "adventure" && "Your AI Adventure"}
+              {funnel.theme === "asap" && "The ASAP Method"}
+              {funnel.theme === "motion" && "Transform Your Velocity"}
             </span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Four Steps to <span className="gradient-text">AI Leadership</span>
+            {headlines.hero}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Start with a free assessment. Sprint to prove value. Scale across your portfolio. Partner for the long term.
+            {headlines.subhero}
           </p>
+          
+          {/* Show progression for ASAP theme */}
+          {funnel.theme === "asap" && (
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
+              {funnel.progression.map((step, idx) => (
+                <span key={idx} className="text-sm text-muted-foreground">
+                  {step}
+                  {idx < funnel.progression.length - 1 && " →"}
+                </span>
+              ))}
+            </div>
+          )}
         </motion.div>
 
         {/* Visual Journey Path - Desktop Only */}
         <div className="hidden lg:block max-w-6xl mx-auto mb-12">
           <div className="relative">
-            {/* Connection line */}
-            <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-blue-500 via-purple-500 to-yellow-500" />
+            {/* Connection line with theme gradient */}
+            <div className={`absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r ${styles.gradient}`} />
             
-            {/* Stage indicators */}
+            {/* Stage indicators with emojis */}
             <div className="relative flex justify-between">
-              {funnelStages.map((stage, index) => (
+              {funnelStages.map((item, index) => (
                 <motion.div
-                  key={stage.step}
+                  key={item.step}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, type: "spring" }}
                   className="flex flex-col items-center"
                 >
-                  <div className={`w-16 h-16 rounded-full bg-background border-4 flex items-center justify-center font-bold text-lg
-                    ${index === 0 ? 'border-green-500 text-green-500' : ''}
-                    ${index === 1 ? 'border-blue-500 text-blue-500' : ''}
-                    ${index === 2 ? 'border-purple-500 text-purple-500' : ''}
-                    ${index === 3 ? 'border-yellow-500 text-yellow-500' : ''}
-                  `}>
-                    {stage.step}
+                  <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center text-2xl">
+                    {item.stage.icon}
                   </div>
-                  <span className="text-sm font-medium mt-2">{stage.stage.verb}</span>
-                  <span className="text-xs text-muted-foreground">{stage.stage.price}</span>
+                  <span className="text-sm font-medium mt-2">{item.stage.verb}</span>
+                  <span className="text-xs text-muted-foreground">{item.stage.price}</span>
                 </motion.div>
               ))}
             </div>
@@ -140,14 +184,21 @@ export function ServicesPreview() {
                       </div>
                     </div>
                   </div>
+                  
                   <CardTitle className="text-lg group-hover:text-primary transition-colors">
                     {item.stage.title}
                   </CardTitle>
+                  
+                  {/* Metaphor tagline */}
+                  <p className="text-xs text-primary/70 italic">
+                    {item.stage.metaphor}
+                  </p>
+                  
                   <div className="flex items-baseline gap-2 mt-2">
                     <span className="text-2xl font-bold text-primary">
                       {item.stage.price}
                     </span>
-                    {item.stage.priceNote && (
+                    {'priceNote' in item.stage && item.stage.priceNote && (
                       <span className="text-sm text-muted-foreground">
                         {item.stage.priceNote}
                       </span>
@@ -163,7 +214,7 @@ export function ServicesPreview() {
                 
                 <CardContent className="flex-grow flex flex-col">
                   <div className="space-y-2 mb-6 flex-grow">
-                    {item.stage.deliverables.slice(0, 4).map((feature, idx) => (
+                    {item.stage.deliverables.slice(0, 3).map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                         <span className="text-xs text-muted-foreground">
@@ -171,9 +222,9 @@ export function ServicesPreview() {
                         </span>
                       </div>
                     ))}
-                    {item.stage.deliverables.length > 4 && (
+                    {item.stage.deliverables.length > 3 && (
                       <span className="text-xs text-muted-foreground/60 italic">
-                        +{item.stage.deliverables.length - 4} more...
+                        +{item.stage.deliverables.length - 3} more...
                       </span>
                     )}
                   </div>
@@ -185,7 +236,15 @@ export function ServicesPreview() {
                     size="sm"
                   >
                     <Link href={item.stage.href}>
-                      {item.stage.cta.primary}
+                      {item.stage.verb === "Amble" && "Start Ambling"}
+                      {item.stage.verb === "Sprint" && "Book Sprint"}
+                      {item.stage.verb === "Surf" && "Catch the Wave"}
+                      {item.stage.verb === "Accelerate" && "Accelerate Now"}
+                      {item.stage.verb === "Sail" && "Set Sail"}
+                      {item.stage.verb === "Perform" && "Achieve Peak"}
+                      {item.stage.verb === "Orient" && "Get Oriented"}
+                      {item.stage.verb === "Ignite" && "Ignite Now"}
+                      {item.stage.verb === "Cruise" && "Engage Cruise"}
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
@@ -195,45 +254,88 @@ export function ServicesPreview() {
           ))}
         </div>
 
-        {/* Value Progression */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 p-6 bg-gradient-to-r from-green-500/5 via-blue-500/5 to-purple-500/5 rounded-2xl border border-border/50 max-w-4xl mx-auto"
-        >
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-4">
-              Each Step Builds on the Last
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div>
-                <div className="text-2xl font-bold text-green-500">Free</div>
-                <div className="text-sm text-muted-foreground">Assessment</div>
-                <div className="text-xs mt-1">Zero risk start</div>
+        {/* Theme-specific value prop */}
+        {funnel.theme === "adventure" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 p-6 bg-gradient-to-r from-emerald-500/5 via-blue-500/5 via-cyan-500/5 to-purple-500/5 rounded-2xl border border-border/50 max-w-4xl mx-auto"
+          >
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-4">
+                🗺️ Your Adventure Map
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div>
+                  <div className="text-2xl mb-1">🚶</div>
+                  <div className="text-lg font-bold text-emerald-500">Amble</div>
+                  <div className="text-xs text-muted-foreground">Explore freely</div>
+                </div>
+                <div>
+                  <div className="text-2xl mb-1">🏃</div>
+                  <div className="text-lg font-bold text-blue-500">Sprint</div>
+                  <div className="text-xs text-muted-foreground">Push hard</div>
+                </div>
+                <div>
+                  <div className="text-2xl mb-1">🏄</div>
+                  <div className="text-lg font-bold text-cyan-500">Surf</div>
+                  <div className="text-xs text-muted-foreground">Ride the wave</div>
+                </div>
+                <div>
+                  <div className="text-2xl mb-1">⛵</div>
+                  <div className="text-lg font-bold text-purple-500">Sail</div>
+                  <div className="text-xs text-muted-foreground">Navigate far</div>
+                </div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-blue-500">$10K/wk</div>
-                <div className="text-sm text-muted-foreground">Sprint</div>
-                <div className="text-xs mt-1">Prove the value</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-500">$50K/qtr</div>
-                <div className="text-sm text-muted-foreground">Scale</div>
-                <div className="text-xs mt-1">Portfolio impact</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-yellow-500">$100K+/mo</div>
-                <div className="text-sm text-muted-foreground">Partner</div>
-                <div className="text-xs mt-1">Full transformation</div>
-              </div>
+              <p className="text-sm text-muted-foreground mt-4 italic">
+                "The journey of a thousand miles begins with a single step" - or in our case, a casual amble
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Average client progresses from Assessment to Partnership in 6 months
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
+
+        {funnel.theme === "asap" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 p-6 bg-gradient-to-r from-green-500/5 via-blue-500/5 via-orange-500/5 to-yellow-500/5 rounded-2xl border border-border/50 max-w-4xl mx-auto"
+          >
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-4">
+                Why ASAP?
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div>
+                  <div className="text-3xl font-bold text-green-500">A</div>
+                  <div className="text-sm font-medium">Amble</div>
+                  <div className="text-xs text-muted-foreground">Explore</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-blue-500">S</div>
+                  <div className="text-sm font-medium">Sprint</div>
+                  <div className="text-xs text-muted-foreground">Execute</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-orange-500">A</div>
+                  <div className="text-sm font-medium">Accelerate</div>
+                  <div className="text-xs text-muted-foreground">Scale</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-yellow-500">P</div>
+                  <div className="text-sm font-medium">Perform</div>
+                  <div className="text-xs text-muted-foreground">Excel</div>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4 font-semibold">
+                Your competition is moving ASAP. Are you?
+              </p>
+            </div>
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -243,18 +345,18 @@ export function ServicesPreview() {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground mb-4">
-            95% of Assessment participants move to Sprint. 80% of Sprint clients upgrade to Scale or Partner.
+            {headlines.value}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild variant="gradient" size="lg">
               <Link href="/ai-assessment">
-                Start with Free Assessment
+                {headlines.cta}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/contact">
-                Talk to Our PE Team
+                Talk to Our Team
               </Link>
             </Button>
           </div>

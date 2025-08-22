@@ -53,9 +53,9 @@ export async function POST(request: NextRequest) {
     }
     
     try {
-      // Create Stripe checkout session
+      // Create Stripe checkout session (default to 1-week sprint)
       const session = await createCheckoutSession(
-        "AI_SPRINT",
+        "SPRINT_1_WEEK",
         {
           ...metadata,
           utm_source: request.headers.get("referer") || "direct",

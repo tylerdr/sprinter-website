@@ -266,7 +266,6 @@ export function ChatWidget() {
                 className="flex-1"
                 placeholder="Ask about AI for your portfolio..."
                 welcomeMessage={getWelcomeMessage()}
-                onMessageSent={handleMessageSent}
               />
               {!emailCaptured && messageCount > 0 && (
                 <div className="border-t bg-blue-50 px-4 py-2">

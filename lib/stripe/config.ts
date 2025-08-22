@@ -181,7 +181,7 @@ export async function createCheckoutSession(
   const isSprint = product.startsWith('SPRINT_');
 
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card', 'ach_debit', 'us_bank_account'],
+    payment_method_types: ['card', 'us_bank_account'],
     line_items: [
       {
         price_data: {
