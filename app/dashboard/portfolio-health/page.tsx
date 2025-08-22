@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   BuildingOfficeIcon,
   ChartBarIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon,
   ExclamationTriangleIcon,
   CheckCircleIcon,
   SparklesIcon,
@@ -195,7 +195,7 @@ export default function PortfolioHealthDashboard() {
             <div className="p-4 rounded-xl bg-card/50 backdrop-blur-xl border border-border/50">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-muted-foreground">Total Revenue</span>
-                <TrendingUpIcon className="w-4 h-4 text-green-400" />
+                <ArrowTrendingUpIcon className="w-4 h-4 text-green-400" />
               </div>
               <div className="text-2xl font-bold">
                 ${(portfolioMetrics.totalRevenue / 1000000).toFixed(0)}M

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChartBarIcon,
   BuildingOfficeIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon,
   ExclamationTriangleIcon,
   CheckCircleIcon,
   XCircleIcon,
@@ -361,7 +361,7 @@ export default function DealFlowAnalyzerPage() {
                   <ul className="space-y-3">
                     {analysis.strengths.map((strength, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <TrendingUpIcon className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                        <ArrowTrendingUpIcon className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{strength}</span>
                       </li>
                     ))}
