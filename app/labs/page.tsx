@@ -28,6 +28,28 @@ const labs = [
     actionVerb: "Play",
     featured: true,
   },
+  {
+    icon: Sparkles,
+    title: "AI Industry Blueprint",
+    description:
+      "Generate comprehensive AI transformation blueprints for any industry. Get specific use cases, vendor recommendations, and ROI projections in seconds.",
+    href: "/labs/industry-blueprint",
+    gradient: "from-purple-500 to-indigo-600",
+    category: "advisory",
+    actionVerb: "Generate",
+    featured: true,
+  },
+  {
+    icon: Bot,
+    title: "Just Hire AI",
+    description:
+      "See how AI agents can augment or replace any role. Get honest analysis of capabilities, costs, and implementation strategies for workforce automation.",
+    href: "/labs/just-hire-ai",
+    gradient: "from-orange-500 to-red-600",
+    category: "advisory",
+    actionVerb: "Analyze",
+    featured: true,
+  },
   // Agents Category
   {
     icon: Bot,
