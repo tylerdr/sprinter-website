@@ -1,105 +1,90 @@
-import { NextRequest, NextResponse } from "next/server"
-import Stripe from "stripe"
-
-// Initialize Stripe only if API key is available
-const stripe = process.env.STRIPE_SECRET_KEY 
-  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: "2025-07-30.basil",
-    })
-  : null
+import { NextRequest, NextResponse } from "next/server";
+import { createCheckoutSession } from "@/lib/stripe/config";
+import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const formData = await request.formData()
-    const priceId = formData.get("priceId") as string
+    // Get form data if any
+    const contentType = request.headers.get("content-type");
+    let email: string | undefined;
+    let metadata: Record<string, string> = {};
     
-    if (!stripe) {
-      // If Stripe is not configured, redirect to contact form
-      return NextResponse.redirect(new URL("/contact?product=ai-sprint", request.url))
+    if (contentType?.includes("application/json")) {
+      const body = await request.json();
+      email = body.email;
+      metadata = body.metadata || {};
+    } else if (contentType?.includes("multipart/form-data")) {
+      const formData = await request.formData();
+      email = formData.get("email") as string | undefined;
+      // Collect any metadata from form
+      formData.forEach((value, key) => {
+        if (key !== "email" && typeof value === "string") {
+          metadata[key] = value;
+        }
+      });
     }
 
-    // Create Stripe checkout session
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: "AI Opportunity Sprint",
-              description: "5-day AI implementation sprint for Private Equity firms. Includes custom AI strategy, working prototype, and implementation roadmap.",
-              images: ["https://sprinter.ai/images/ai-sprint-product.png"],
-            },
-            unit_amount: 250000, // $2,500 in cents
-          },
-          quantity: 1,
+    // Track intent in Supabase before redirect
+    if (email) {
+      const supabase = await createClient();
+      await supabase.from("leads").upsert({
+        email,
+        source: "sprint_checkout_intent",
+        source_page: "/ai-sprint",
+        lifecycle_stage: "opportunity",
+        metadata: {
+          checkout_initiated: new Date().toISOString(),
+          ...metadata,
         },
-      ],
-      mode: "payment",
-      success_url: `${request.headers.get("origin")}/ai-sprint/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${request.headers.get("origin")}/ai-sprint`,
-      metadata: {
-        product: "ai-sprint",
-        source: "website",
-      },
-      customer_email: undefined, // Will be collected in checkout
-      allow_promotion_codes: true,
-      billing_address_collection: "required",
-      shipping_address_collection: {
-        allowed_countries: ["US", "CA", "GB", "AU", "DE", "FR"],
-      },
-      custom_fields: [
-        {
-          key: "company_name",
-          label: {
-            type: "custom",
-            custom: "Company Name",
-          },
-          type: "text",
-        },
-        {
-          key: "preferred_focus",
-          label: {
-            type: "custom",
-            custom: "Preferred Sprint Focus",
-          },
-          type: "dropdown",
-          dropdown: {
-            options: [
-              {
-                label: "Deal Sourcing & Market Analysis",
-                value: "deal_sourcing",
-              },
-              {
-                label: "Due Diligence Automation",
-                value: "due_diligence",
-              },
-              {
-                label: "Portfolio Operations",
-                value: "portfolio_ops",
-              },
-              {
-                label: "Value Creation Strategy",
-                value: "value_creation",
-              },
-              {
-                label: "Other (we'll discuss)",
-                value: "other",
-              },
-            ],
-          },
-        },
-      ],
-    })
+      }, {
+        onConflict: "email",
+      });
 
-    // Redirect to Stripe checkout
-    return NextResponse.redirect(session.url!, { status: 303 })
+      // Add high-value lead scoring event
+      await supabase.from("lead_scoring_events").insert({
+        lead_id: (await supabase.from("leads").select("id").eq("email", email).single()).data?.id,
+        event_type: "checkout_initiated",
+        event_value: 50, // High score for checkout intent
+        event_data: {
+          product: "ai_sprint",
+          value: 50000,
+        },
+      });
+    }
+    
+    try {
+      // Create Stripe checkout session
+      const session = await createCheckoutSession(
+        "AI_SPRINT",
+        {
+          ...metadata,
+          utm_source: request.headers.get("referer") || "direct",
+        },
+        email
+      );
+
+      // Redirect to Stripe checkout
+      return NextResponse.redirect(session.url!, { status: 303 });
+      
+    } catch (stripeError) {
+      console.error("Stripe checkout error:", stripeError);
+      
+      // If Stripe is not configured or fails, redirect to contact form
+      const contactUrl = new URL("/contact", request.url);
+      contactUrl.searchParams.set("product", "ai-sprint");
+      contactUrl.searchParams.set("intent", "purchase");
+      if (email) contactUrl.searchParams.set("email", email);
+      
+      return NextResponse.redirect(contactUrl, { status: 303 });
+    }
     
   } catch (error) {
-    console.error("Stripe checkout error:", error)
-    return NextResponse.redirect(
-      new URL("/ai-sprint?error=checkout_failed", request.url),
-      { status: 303 }
-    )
+    console.error("Checkout error:", error);
+    
+    // Redirect back with error
+    const errorUrl = new URL("/ai-sprint", request.url);
+    errorUrl.searchParams.set("error", "checkout_failed");
+    
+    return NextResponse.redirect(errorUrl, { status: 303 });
   }
 }
