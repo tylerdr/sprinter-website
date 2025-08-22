@@ -91,7 +91,7 @@ Current game state:
 
 Portfolio companies:
 ${gameState.portfolio.map(c => 
-  `- ${c.name}: ${c.industry}, Rev $${c.revenue.toFixed(1)}M, EBITDA $${c.ebitda.toFixed(1)}M, Multiple ${c.entryMultiple}x`
+  `- ${c.name}: ${c.industry}, Rev $${c.revenue.toFixed(1)}M, EBITDA $${(c.ebitda || 0).toFixed(1)}M, Multiple ${c.entryMultiple}x`
 ).join('\n')}
 
 Available companies to buy:

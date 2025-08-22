@@ -346,9 +346,9 @@ export default function PETycoonPage() {
                 <div
                   key={idx}
                   className={`px-3 py-2 rounded-lg text-xs whitespace-nowrap ${
-                    event.impact > 0 
+                    typeof event.impact === 'number' && event.impact > 0 
                       ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                      : event.impact < 0
+                      : typeof event.impact === 'number' && event.impact < 0
                       ? "bg-red-500/20 text-red-400 border border-red-500/30"
                       : "bg-white/10 text-white/60 border border-white/10"
                   }`}

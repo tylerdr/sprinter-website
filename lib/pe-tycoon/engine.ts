@@ -246,7 +246,10 @@ export function randomEvent(pos: Position, rng: () => number): RandomEvent | nul
 }
 
 function applyOpsPrograms(pos: Position, month: number) {
-  for (const { prog, startMonth } of pos.opsPrograms) {
+  for (const item of pos.opsPrograms) {
+    // Handle both string and object formats
+    if (typeof item === 'string') continue;
+    const { prog, startMonth } = item;
     const t = month - startMonth;
     if (t >= prog.monthsToImpact) {
       if (prog.opexDeltaPct) {
@@ -268,7 +271,7 @@ function serviceDebt(pos: Position, state: FundState) {
   
   for (const d of pos.debt) {
     interest += d.principal * d.rate / 12;
-    amort += d.principal * d.amortPct / 12;
+    amort += d.principal * (d.amortPct || 0) / 12;
   }
   
   // cash sweep on FCF
@@ -277,7 +280,7 @@ function serviceDebt(pos: Position, state: FundState) {
   const fcf = Math.max(0, ebitda - interest - capex - wc);
   
   for (const d of pos.debt) {
-    sweep += fcf * d.cashSweepPct;
+    sweep += fcf * (d.cashSweepPct || 0);
   }
 
   const debtSvc = interest + amort + sweep;
@@ -302,7 +305,7 @@ function serviceDebt(pos: Position, state: FundState) {
   
   // reduce principal
   for (const d of pos.debt) {
-    const paid = (d.principal * d.amortPct / 12) + (sweep * (d.cashSweepPct || 0));
+    const paid = (d.principal * (d.amortPct || 0) / 12) + (sweep * (d.cashSweepPct || 0));
     d.principal = Math.max(0, d.principal - paid);
   }
 }
