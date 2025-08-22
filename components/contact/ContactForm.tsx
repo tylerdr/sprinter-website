@@ -19,6 +19,10 @@ interface FormData {
   name: string;
   email: string;
   company: string;
+  role: string;
+  fundSize: string;
+  portfolioCount: string;
+  timeline: string;
   message: string;
   projectType: string;
 }
@@ -28,6 +32,10 @@ export default function ContactForm() {
     name: "",
     email: "",
     company: "",
+    role: "",
+    fundSize: "",
+    portfolioCount: "",
+    timeline: "",
     message: "",
     projectType: "",
   });
@@ -93,6 +101,10 @@ export default function ContactForm() {
               name: "",
               email: "",
               company: "",
+              role: "",
+              fundSize: "",
+              portfolioCount: "",
+              timeline: "",
               message: "",
               projectType: "",
             });
@@ -152,16 +164,89 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="mb-6 space-y-2">
-        <Label htmlFor="company">Company</Label>
-        <Input
-          type="text"
-          id="company"
-          name="company"
-          value={formData.company}
-          onChange={handleChange}
-          className="bg-background/50"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="space-y-2">
+          <Label htmlFor="company">Company / Fund</Label>
+          <Input
+            type="text"
+            id="company"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            className="bg-background/50"
+            placeholder="Vista Equity Partners"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="role">Your Role</Label>
+          <Select
+            name="role"
+            value={formData.role}
+            onValueChange={(value) => 
+              setFormData((prev) => ({ ...prev, role: value }))
+            }
+          >
+            <SelectTrigger id="role" className="bg-background/50">
+              <SelectValue placeholder="Select role" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="partner">Partner / Managing Director</SelectItem>
+              <SelectItem value="principal">Principal / VP</SelectItem>
+              <SelectItem value="associate">Associate / Analyst</SelectItem>
+              <SelectItem value="operating">Operating Partner</SelectItem>
+              <SelectItem value="portfolio">Portfolio Company Exec</SelectItem>
+              <SelectItem value="other">Other</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="space-y-2">
+          <Label htmlFor="fundSize">Fund Size (AUM)</Label>
+          <Select
+            name="fundSize"
+            value={formData.fundSize}
+            onValueChange={(value) => 
+              setFormData((prev) => ({ ...prev, fundSize: value }))
+            }
+          >
+            <SelectTrigger id="fundSize" className="bg-background/50">
+              <SelectValue placeholder="Select range" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="&lt;500M">&lt; $500M</SelectItem>
+              <SelectItem value="500M-1B">$500M - $1B</SelectItem>
+              <SelectItem value="1B-5B">$1B - $5B</SelectItem>
+              <SelectItem value="5B-10B">$5B - $10B</SelectItem>
+              <SelectItem value="10B+">$10B+</SelectItem>
+              <SelectItem value="not-pe">Not a PE firm</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="portfolioCount">Portfolio Companies</Label>
+          <Select
+            name="portfolioCount"
+            value={formData.portfolioCount}
+            onValueChange={(value) => 
+              setFormData((prev) => ({ ...prev, portfolioCount: value }))
+            }
+          >
+            <SelectTrigger id="portfolioCount" className="bg-background/50">
+              <SelectValue placeholder="Select range" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1-5">1-5 companies</SelectItem>
+              <SelectItem value="6-15">6-15 companies</SelectItem>
+              <SelectItem value="16-30">16-30 companies</SelectItem>
+              <SelectItem value="30+">30+ companies</SelectItem>
+              <SelectItem value="n/a">Not applicable</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <div className="mb-6 space-y-2">
@@ -180,16 +265,41 @@ export default function ContactForm() {
             <SelectValue placeholder="Select an option" />
           </SelectTrigger>
           <SelectContent>
+            <SelectItem value="portfolio-ai">Portfolio AI Transformation</SelectItem>
+            <SelectItem value="deal-sourcing">Deal Sourcing Automation</SelectItem>
+            <SelectItem value="due-diligence">Due Diligence Acceleration</SelectItem>
+            <SelectItem value="value-creation">Portfolio Value Creation</SelectItem>
+            <SelectItem value="operating-partner">Operating Partnership</SelectItem>
+            <SelectItem value="lp-reporting">LP Reporting Automation</SelectItem>
             <SelectItem value="discovery">AI Discovery Workshop</SelectItem>
-            <SelectItem value="development">Custom AI Development</SelectItem>
-            <SelectItem value="venture">Venture Partnership</SelectItem>
-            <SelectItem value="speaking">Speaking/Training</SelectItem>
             <SelectItem value="other">Other</SelectItem>
           </SelectContent>
         </Select>
         <span id="projectType-required" className="sr-only">
           Required field
         </span>
+      </div>
+
+      <div className="mb-6 space-y-2">
+        <Label htmlFor="timeline">Timeline</Label>
+        <Select
+          name="timeline"
+          value={formData.timeline}
+          onValueChange={(value) => 
+            setFormData((prev) => ({ ...prev, timeline: value }))
+          }
+        >
+          <SelectTrigger id="timeline" className="bg-background/50">
+            <SelectValue placeholder="When do you need this?" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="immediate">Immediate (This quarter)</SelectItem>
+            <SelectItem value="q1-2025">Q1 2025</SelectItem>
+            <SelectItem value="q2-2025">Q2 2025</SelectItem>
+            <SelectItem value="h2-2025">H2 2025</SelectItem>
+            <SelectItem value="exploring">Just exploring</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="mb-6 space-y-2">
