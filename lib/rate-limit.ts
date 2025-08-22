@@ -24,7 +24,7 @@ export function rateLimit(options: RateLimitOptions = {
     handler: (req: NextRequest) => Promise<NextResponse>
   ): Promise<NextResponse> {
     // Get identifier (IP address or user ID)
-    const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
     const identifier = `${request.nextUrl.pathname}:${ip}`
     
     const now = Date.now()

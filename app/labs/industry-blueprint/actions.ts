@@ -199,7 +199,7 @@ function generateDefaultROI(companySize: string, focusArea: string): any {
     }
   };
   
-  return focusROI[focusArea] || focusROI.efficiency;
+  return focusROI[focusArea as keyof typeof focusROI] || focusROI.efficiency;
 }
 
 function generateMockBlueprint(industry: string, companySize: string, focusArea: string) {

@@ -28,7 +28,7 @@ If asked about specific pricing or detailed implementation, encourage them to bo
       model: anthropic('claude-3-5-sonnet-20241022'),
       system: systemPrompt,
       prompt: message,
-      maxTokens: 200,
+      maxRetries: 2,
     })
 
     return text
