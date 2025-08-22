@@ -2,7 +2,7 @@
 
 import Script from "next/script"
 import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect, Suspense } from "react"
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
@@ -102,8 +102,8 @@ export const trackPurchase = (
   })
 }
 
-// Component to initialize GA
-export function GoogleAnalytics() {
+// Internal component that uses useSearchParams
+function GoogleAnalyticsInner() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -139,8 +139,20 @@ export function GoogleAnalytics() {
     return null
   }
 
+  return null
+}
+
+// Component to initialize GA
+export function GoogleAnalytics() {
+  if (!GA_MEASUREMENT_ID) {
+    return null
+  }
+
   return (
     <>
+      <Suspense fallback={null}>
+        <GoogleAnalyticsInner />
+      </Suspense>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
