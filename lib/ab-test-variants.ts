@@ -10,7 +10,7 @@ export const heroVariants = {
       line1: "Scale Your Portfolio",
       line2: "with AI"
     },
-    subheadline: "Transform deal sourcing, due diligence, and portfolio operations. Deploy AI across your entire portfolio in days, not months. Guaranteed 10× ROI or your money back."
+    subheadline: "Transform deal sourcing, due diligence, and portfolio operations. Deploy AI agents across your entire portfolio to achieve 20-40% EBITDA improvement. See results in weeks, not years."
   },
   need: {
     headline: {
@@ -37,16 +37,16 @@ export const heroVariants = {
 
 export const ctaVariants = {
   blueprint: {
-    primary: "Get Your Portfolio AI Blueprint",
-    secondary: "Book Executive Briefing"
+    primary: "Get Portfolio AI Blueprint →",
+    secondary: "Book Partner Meeting"
   },
   assessment: {
-    primary: "Get Free AI Readiness Assessment",
-    secondary: "Schedule Strategy Call"
+    primary: "Get Free Portfolio Assessment",
+    secondary: "Schedule LP Briefing"
   },
   readiness: {
-    primary: "Start Your AI Journey",
-    secondary: "Explore Partnership"
+    primary: "Assess Portfolio AI Readiness",
+    secondary: "Explore Operating Partnership"
   },
   audit: {
     primary: "Get Free Portfolio AI Audit",

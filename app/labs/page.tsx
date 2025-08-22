@@ -50,6 +50,17 @@ const labs = [
     actionVerb: "Analyze",
     featured: true,
   },
+  {
+    icon: BarChart3,
+    title: "PE Deal-Flow Analyzer",
+    description:
+      "Instantly analyze potential acquisitions with AI. Get investment scores, valuation guidance, AI value creation opportunities, and exit scenario modeling.",
+    href: "/labs/deal-flow-analyzer",
+    gradient: "from-green-500 to-blue-600",
+    category: "advisory",
+    actionVerb: "Analyze",
+    featured: true,
+  },
   // Agents Category
   {
     icon: Bot,
