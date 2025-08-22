@@ -28,50 +28,55 @@ export const metadata: Metadata = {
 
 const programTiers = [
   {
-    name: "Essentials",
-    price: "$5,000",
+    name: "Advisory",
+    price: "$35,000",
     period: "/month",
-    description: "Perfect for firms starting their AI journey",
+    description: "Strategic AI advisory for selective deployments",
     features: [
-      "1 AI implementation per quarter",
-      "Monthly AI insights report",
-      "Email support (48hr response)",
-      "Access to AI tools library",
-      "Quarterly strategy review",
+      "Quarterly AI implementation",
+      "Monthly portfolio opportunity analysis",
+      "Weekly office hours with AI experts",
+      "Access to proprietary AI tools",
+      "Quarterly board presentations",
+      "Portfolio company assessments",
     ],
-    cta: "Start Essentials",
+    cta: "Start Advisory",
     popular: false,
   },
   {
-    name: "Growth",
-    price: "$10,000",
+    name: "Transformation",
+    price: "$85,000",
     period: "/month",
-    description: "For firms ready to scale AI across portfolios",
+    description: "Full-scale AI transformation across your portfolio",
     features: [
-      "1 AI implementation per month",
-      "Weekly portfolio AI analytics",
-      "Priority support (24hr response)",
-      "Custom AI agent development",
-      "Monthly strategy sessions",
-      "Team training included",
+      "Monthly AI implementations (up to 3)",
+      "Dedicated AI team (3 specialists)",
+      "Weekly portfolio monitoring",
+      "Custom AI platform development",
+      "Unlimited advisory calls",
+      "Due diligence automation suite",
+      "Deal sourcing AI tools",
+      "LP reporting support",
     ],
-    cta: "Start Growth",
+    cta: "Transform Portfolio",
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "Full-scale AI transformation",
+    name: "Operating Partner",
+    price: "$200,000+",
+    period: "/month",
+    description: "Virtual AI operating partner for your fund",
     features: [
       "Unlimited AI implementations",
-      "Real-time AI monitoring",
-      "Dedicated AI team",
-      "24/7 priority support",
-      "Weekly executive briefings",
-      "White-label solutions",
+      "Dedicated team (5+ AI specialists)",
+      "Board seat or observer rights",
+      "Custom AI venture studio",
+      "White-label AI products",
+      "Co-investment opportunities",
+      "Revenue share on AI exits",
+      "Proprietary deal flow network",
     ],
-    cta: "Contact Us",
+    cta: "Engage Partner",
     popular: false,
   },
 ]
@@ -442,9 +447,9 @@ export default function AIPartnershipPage() {
           <div className="grid gap-8 md:grid-cols-3">
             <div>
               <ShieldCheckIcon className="mx-auto mb-4 h-12 w-12 text-green-400" />
-              <h3 className="mb-2 font-semibold">ROI Guarantee</h3>
+              <h3 className="mb-2 font-semibold">5× ROI Guarantee</h3>
               <p className="text-sm text-gray-400">
-                5x return within 12 months or we work free until achieved
+                5× return within 12 months or we work free until achieved
               </p>
             </div>
             

@@ -79,22 +79,28 @@ export default function AISprintPage() {
           </div>
 
           <h1 className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-            From AI Strategy to Working Prototype in 5 Days
+            Build Your First AI Solution in 5 Days
           </h1>
           
           <p className="mt-6 text-center text-xl leading-8 text-gray-300">
-            The AI Opportunity Sprint for Private Equity
+            From Concept to Working Prototype - Guaranteed 10× ROI
           </p>
           
           <p className="mt-4 text-center text-lg text-gray-400">
-            Stop talking about AI. Start implementing it. Get a custom solution for your firm's #1 opportunity with guaranteed ROI.
+            Stop talking about AI. Start implementing it. Fixed price: $50,000. If we don't identify 10× that value, you get a full refund.
           </p>
 
-          {/* Guarantee */}
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2">
-              <ShieldCheckIcon className="h-6 w-6 text-blue-400" />
-              <span className="text-xl font-semibold">100% Satisfaction Guarantee</span>
+          {/* Guarantee and Price */}
+          <div className="mt-8 space-y-4">
+            <div className="flex justify-center">
+              <div className="flex items-center gap-2">
+                <ShieldCheckIcon className="h-6 w-6 text-green-400" />
+                <span className="text-xl font-semibold">10× ROI Guarantee or Full Refund</span>
+              </div>
+            </div>
+            <div className="text-center">
+              <span className="text-3xl font-bold text-white">$50,000</span>
+              <span className="ml-2 text-lg text-gray-400">fixed investment</span>
             </div>
           </div>
           
@@ -122,8 +128,8 @@ export default function AISprintPage() {
               <p className="text-gray-400">Not months. We deliver real results before your next partners meeting.</p>
             </div>
             <div>
-              <div className="mb-4 text-4xl font-bold text-blue-400">10x ROI</div>
-              <p className="text-gray-400">Guaranteed to identify 10x value or your money back. No questions asked.</p>
+              <div className="mb-4 text-4xl font-bold text-blue-400">$50,000</div>
+              <p className="text-gray-400">Fixed investment. Guaranteed 10× ROI or your money back. No questions asked.</p>
             </div>
             <div>
               <div className="mb-4 text-4xl font-bold text-green-400">Zero Risk</div>
@@ -263,7 +269,10 @@ export default function AISprintPage() {
                   Limited to 5 sprints per month to ensure quality delivery
                 </p>
                 <p className="text-2xl font-bold">
-                  Only <span className="text-red-400">2 spots</span> remaining for December
+                  Investment: <span className="text-green-400">$50,000</span> (guaranteed 10× ROI)
+                </p>
+                <p className="text-lg">
+                  Only <span className="text-red-400">2 spots</span> remaining this month
                 </p>
               </div>
 
@@ -332,7 +341,7 @@ export default function AISprintPage() {
                 <p className="text-gray-400">
                   You'll have everything needed to implement independently. 
                   Or, engage us for ongoing support through our AI Partnership Program. 
-                  The $2,500 sprint fee is credited toward any continued engagement.
+                  The $50,000 sprint fee is credited toward any continued engagement.
                 </p>
               </CardContent>
             </Card>

@@ -4,52 +4,72 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { 
+  ChartBar,
   Rocket, 
-  Lightbulb, 
-  Code,
+  Users,
   ArrowRight,
   Target,
-  Zap
+  CheckCircle,
+  TrendingUp
 } from "lucide-react";
 
-const services = [
+const funnelStages = [
   {
-    icon: Lightbulb,
-    title: "AI Discovery Workshop",
-    shortTitle: "Discovery",
-    description: "Identify high-ROI AI opportunities in your business. One day to transform your perspective.",
-    features: ["1 Day", "$5,000", "3-5 Opportunities"],
-    href: "/services/discovery",
+    step: "1",
+    icon: ChartBar,
+    title: "AI Readiness Assessment",
+    price: "FREE",
+    duration: "24 hours",
+    description: "Get a custom Portfolio AI Blueprint identifying your highest-ROI opportunities",
+    features: [
+      "Portfolio-wide AI opportunity analysis",
+      "ROI projections for each use case",
+      "Implementation roadmap",
+      "Risk assessment & mitigation"
+    ],
+    href: "/ai-assessment",
+    cta: "Start Free Assessment",
+    badge: "No Risk",
+    highlight: false,
+  },
+  {
+    step: "2",
+    icon: Rocket,
+    title: "5-Day AI Sprint", 
+    price: "$50,000",
+    duration: "5 days",
+    description: "Build and deploy your first AI solution with guaranteed 10× ROI",
+    features: [
+      "Working AI prototype",
+      "Full source code & documentation",
+      "Team training included",
+      "90-day support"
+    ],
+    href: "/ai-sprint",
+    cta: "Book Your Sprint",
     badge: "Most Popular",
     highlight: true,
   },
   {
-    icon: Zap,
-    title: "10-Day AI Sprint", 
-    shortTitle: "Sprint",
-    description: "From idea to production AI in 10 days. We build, deploy, and train your team.",
-    features: ["10 Days", "$25-50K", "Production Ready"],
-    href: "/services/sprint",
-    badge: "Fast Track",
-  },
-  {
-    icon: Code,
-    title: "Enterprise Transformation",
-    shortTitle: "Transform",
-    description: "Full-scale AI integration across your organization. Strategic, systematic, scalable.",
-    features: ["3-6 Months", "$150K+", "Company-Wide"],
-    href: "/services/enterprise",
-  },
-  {
-    icon: Rocket,
-    title: "Venture Partnership",
-    shortTitle: "Venture",
-    description: "We become your technical co-founder. Build breakthrough AI products together.",
-    features: ["Ongoing", "Equity-Based", "Co-Creation"],
-    href: "/services/venture",
-    badge: "Exclusive",
-  },
+    step: "3",
+    icon: Users,
+    title: "AI Partnership Program",
+    price: "$35-200K/mo",
+    duration: "Ongoing",
+    description: "Virtual AI operating partner for your entire portfolio",
+    features: [
+      "Monthly AI implementations",
+      "Dedicated AI team",
+      "Board-level advisory",
+      "10× ROI guarantee"
+    ],
+    href: "/ai-partnership",
+    cta: "Explore Partnership",
+    badge: "Enterprise",
+    highlight: false,
+  }
 ];
 
 export function ServicesPreview() {
@@ -68,104 +88,168 @@ export function ServicesPreview() {
           <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
             <Target className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
-              How We Work
+              Your Path to AI Success
             </span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Choose Your <span className="gradient-text">AI Journey</span>
+            Simple 3-Step <span className="gradient-text">Growth Journey</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            From rapid prototypes to enterprise transformation. Pick the path that fits your timeline and ambition.
+            From assessment to implementation to scale. A proven path that PE firms trust.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => (
+        {/* Visual Progress Bar */}
+        <div className="hidden lg:block max-w-5xl mx-auto mb-12">
+          <div className="relative">
+            <div className="absolute top-1/2 transform -translate-y-1/2 w-full h-0.5 bg-border" />
+            <div className="relative flex justify-between">
+              {funnelStages.map((stage, index) => (
+                <motion.div
+                  key={stage.step}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, type: "spring" }}
+                  className="flex flex-col items-center"
+                >
+                  <div className="w-12 h-12 rounded-full bg-background border-2 border-primary flex items-center justify-center font-bold text-primary">
+                    {stage.step}
+                  </div>
+                  <span className="text-sm text-muted-foreground mt-2">{stage.title}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {funnelStages.map((stage, index) => (
             <motion.div
-              key={service.title}
+              key={stage.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="h-full"
             >
-              <Link href={service.href} className="block h-full">
-                <Card className={`h-full hover:border-primary/50 transition-all duration-300 group relative ${
-                  service.highlight ? 'border-primary/30 bg-primary/5' : ''
-                }`}>
-                  {service.badge && (
-                    <div className="absolute -top-3 left-4">
-                      <Badge variant="default" className="text-xs">
-                        {service.badge}
-                      </Badge>
-                    </div>
-                  )}
-                  
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between mb-3">
+              <Card className={`h-full hover:border-primary/50 transition-all duration-300 group relative flex flex-col ${
+                stage.highlight ? 'border-primary/30 bg-primary/5 scale-105' : ''
+              }`}>
+                {stage.badge && (
+                  <div className="absolute -top-3 left-4">
+                    <Badge variant={stage.highlight ? "default" : "secondary"} className="text-xs">
+                      {stage.badge}
+                    </Badge>
+                  </div>
+                )}
+                
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
                       <div className="p-2 rounded-lg bg-background/50 border border-border">
-                        <service.icon className="w-5 h-5 text-primary" />
+                        <stage.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="text-3xl font-bold text-muted-foreground/30">
+                        {stage.step}
                       </div>
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="mt-2">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="pt-0">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {service.features.map((feature, idx) => (
-                        <span
-                          key={idx}
-                          className="text-xs px-2 py-1 rounded-full bg-muted/50 text-muted-foreground"
-                        >
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    {stage.title}
+                  </CardTitle>
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="text-2xl font-bold text-primary">
+                      {stage.price}
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      {stage.duration}
+                    </span>
+                  </div>
+                  <CardDescription className="mt-3">
+                    {stage.description}
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardContent className="flex-grow flex flex-col">
+                  <div className="space-y-2 mb-6 flex-grow">
+                    {stage.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">
                           {feature}
                         </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center gap-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span>Learn more</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button 
+                    asChild 
+                    variant={stage.highlight ? "gradient" : "outline"}
+                    className="w-full group"
+                  >
+                    <Link href={stage.href}>
+                      {stage.cta}
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
+
+        {/* Success Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-16 p-6 bg-gradient-to-r from-green-500/5 to-blue-500/5 rounded-2xl border border-border/50 max-w-4xl mx-auto"
+        >
+          <div className="text-center">
+            <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-4">
+              Proven Results for PE Firms
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <div className="text-2xl font-bold text-primary">95%</div>
+                <div className="text-sm text-muted-foreground">Time Saved</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">20×</div>
+                <div className="text-sm text-muted-foreground">Average ROI</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">$2.3M</div>
+                <div className="text-sm text-muted-foreground">Avg Savings</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">5 Days</div>
+                <div className="text-sm text-muted-foreground">To Deploy</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.6 }}
           className="text-center mt-12"
         >
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/services">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
-              >
-                Compare All Options
-              </motion.button>
-            </Link>
+          <p className="text-muted-foreground mb-4">
+            Not sure where to start? Our AI experts are here to help.
+          </p>
+          <Button asChild variant="outline" size="lg">
             <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border border-border rounded-lg font-medium hover:bg-card/50 transition-colors"
-              >
-                Schedule a Call
-              </motion.button>
+              Schedule a Call with Our Team
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
-          </div>
+          </Button>
         </motion.div>
       </div>
     </section>

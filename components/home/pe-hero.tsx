@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Building2, ChartBar, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
+import { getCurrentVariants } from "@/lib/ab-test-variants";
 
 const stats = [
   { value: "40%", label: "of PE firms have AI strategies" },
@@ -16,6 +17,7 @@ const stats = [
 
 export function PEHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const variants = getCurrentVariants();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -104,8 +106,8 @@ export function PEHero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight"
           >
             <Balancer>
-              Your Portfolio Companies Need AI.{" "}
-              <span className="gradient-text block mt-2">We Make It Happen.</span>
+              {variants.hero.headline.line1}{" "}
+              <span className="gradient-text block mt-2">{variants.hero.headline.line2}</span>
             </Balancer>
           </motion.h1>
 
@@ -117,8 +119,7 @@ export function PEHero() {
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             <Balancer>
-              From deal sourcing to portfolio optimization. Get enterprise AI capabilities 
-              without the overhead. See ROI in weeks, not years.
+              {variants.hero.subheadline}
             </Balancer>
           </motion.p>
 
@@ -132,14 +133,14 @@ export function PEHero() {
             <Button asChild size="lg" variant="gradient" className="text-base">
               <Link href="/ai-assessment" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                Get Free AI Readiness Assessment
+                {variants.cta.primary}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base">
               <Link href="/ai-sprint" className="group">
                 <Sparkles className="mr-2 w-5 h-5" aria-hidden="true" />
-                5-Day AI Sprint
+                {variants.cta.secondary}
               </Link>
             </Button>
           </motion.div>
@@ -198,13 +199,13 @@ export function PEHero() {
           >
             <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-4" />
             <p className="text-lg font-semibold mb-2">
-              Don't Get Left Behind
+              {variants.valueProp.headline}
             </p>
             <p className="text-muted-foreground">
-              While competitors use AI to find deals in minutes, are you still doing it the old way?
+              {variants.valueProp.description}
               <br />
               <span className="text-blue-400 font-medium">
-                Start with a free assessment. Know your opportunities in 24 hours.
+                {variants.valueProp.cta}
               </span>
             </p>
           </motion.div>
