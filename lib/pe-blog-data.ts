@@ -179,6 +179,7 @@ export const peArticles: PEArticle[] = [
     category: "How-To Guides",
     readTime: "20 min read",
     date: "2025-01-15",
+    featured: false,
     author: {
       name: "David Park",
       role: "DD Technology Specialist"
@@ -262,6 +263,7 @@ export const peArticles: PEArticle[] = [
     category: "Value Creation",
     readTime: "18 min read",
     date: "2025-01-12",
+    featured: false,
     author: {
       name: "Jennifer Martinez",
       role: "Portfolio Operations Partner"

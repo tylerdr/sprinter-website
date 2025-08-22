@@ -17,6 +17,17 @@ const labs = [
     actionVerb: "Start",
     featured: true,
   },
+  {
+    icon: Gamepad2,
+    title: "PE Tycoon",
+    description:
+      "Run a private equity fund with AI assistance. Chat naturally to acquire companies, launch operations programs, and build your portfolio empire in real-time.",
+    href: "/labs/pe-tycoon",
+    gradient: "from-emerald-500 to-teal-600",
+    category: "play",
+    actionVerb: "Play",
+    featured: true,
+  },
   // Agents Category
   {
     icon: Bot,
