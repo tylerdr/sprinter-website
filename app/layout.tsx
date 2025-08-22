@@ -5,10 +5,11 @@ import { MainNavigation } from "@/components/layout/main-navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
-import { ChatWidget } from "@/components/chat-widget";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalyticsWrapper } from "@/components/analytics/google-analytics-wrapper";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import { Toaster } from "sonner";
 import {
   generateMetadata as createSEOMetadata,
@@ -74,11 +75,13 @@ export default function RootLayout({
             Skip to navigation
           </a>
 
-          <MainNavigation />
-          <main id="main-content" className="flex-1 pt-16">
-            {children}
-          </main>
-          <Footer />
+          <AnalyticsProvider>
+            <MainNavigation />
+            <main id="main-content" className="flex-1 pt-16">
+              {children}
+            </main>
+            <Footer />
+          </AnalyticsProvider>
           <ThemeCustomizer />
           <ChatWidget />
           <Toaster position="bottom-right" />

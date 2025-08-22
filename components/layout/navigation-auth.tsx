@@ -45,10 +45,10 @@ export function NavigationAuth() {
   }
 
   return user ? (
-    <Link href="/admin/proposals">
+    <Link href="/dashboard/portfolio-health">
       <Button variant="outline" size="sm" className="gap-2">
         <User className="h-4 w-4" />
-        Dashboard
+        Portfolio Health
       </Button>
     </Link>
   ) : (

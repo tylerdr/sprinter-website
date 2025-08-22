@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
+import { withRateLimit } from "@/lib/rate-limit"
 
-export async function POST(req: Request) {
+export const POST = withRateLimit(async (req: NextRequest) => {
   try {
     const data = await req.json()
     const { name, email, company, message, projectType, phone, source } = data || {}
@@ -135,4 +136,7 @@ export async function POST(req: Request) {
     console.error("Contact form error:", err)
     return NextResponse.json({ error: "Failed to submit" }, { status: 500 })
   }
-}
+}, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 submissions per minute per IP
+})

@@ -1,41 +1,87 @@
 'use client';
 
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star, Globe, BookOpen, Database, MessagesSquare } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star, Globe, BookOpen, Database, MessagesSquare, Building2 } from "lucide-react";
 import { useState } from "react";
 
+const peCategories = [
+  { id: "portfolio", name: "Portfolio Operations", icon: Building2 },
+  { id: "deals", name: "Deal Intelligence", icon: BarChart3 },
+  { id: "strategy", name: "AI Strategy", icon: Sparkles },
+  { id: "automation", name: "Process Automation", icon: Bot },
+  { id: "docs", name: "Document Analysis", icon: FileText },
+  { id: "creative", name: "Creative Tools", icon: Palette },
+];
+
 const labs = [
-  // Featured - High-value lead magnets
+  // Portfolio Operations - For managing portfolio companies
+  {
+    icon: BarChart3,
+    title: "Portfolio Health Dashboard",
+    description:
+      "Monitor AI readiness and opportunities across your entire portfolio. Track implementation progress and value creation in real-time.",
+    href: "/dashboard/portfolio-health",
+    gradient: "from-blue-600 to-purple-700",
+    category: "portfolio",
+    actionVerb: "Monitor",
+    featured: true,
+    requiresAuth: true,
+  },
+  {
+    icon: BookOpen,
+    title: "AI Playbook Builder",
+    description:
+      "Generate comprehensive, board-ready AI strategies for any portfolio company. Get implementation roadmaps, ROI projections, and resource plans.",
+    href: "/labs/ai-playbook",
+    gradient: "from-purple-600 to-indigo-700",
+    category: "portfolio",
+    actionVerb: "Generate",
+    featured: true,
+    requiresAuth: true,
+  },
+  {
+    icon: Gamepad2,
+    title: "PE Tycoon Game",
+    description:
+      "Run a virtual PE fund with AI assistance. Practice deal-making, portfolio operations, and exit strategies in a risk-free environment.",
+    href: "/labs/pe-tycoon",
+    gradient: "from-emerald-600 to-teal-700",
+    category: "portfolio",
+    actionVerb: "Play",
+    featured: true,
+  },
+  // Deal Intelligence - For sourcing and diligence
+  {
+    icon: BarChart3,
+    title: "PE Deal-Flow Analyzer",
+    description:
+      "Instantly analyze potential acquisitions with AI. Get investment scores, valuation guidance, and AI value creation opportunities.",
+    href: "/labs/deal-flow-analyzer",
+    gradient: "from-green-600 to-blue-700",
+    category: "deals",
+    actionVerb: "Analyze",
+    featured: true,
+  },
   {
     icon: Sparkles,
     title: "AI Opportunity Audit",
     description:
-      "Get a personalized AI roadmap with your top 3 opportunities, ROI projections, and 30-day action plan. Takes 10 minutes.",
+      "Assess any company's AI potential in 10 minutes. Get prioritized opportunities, ROI projections, and implementation roadmap.",
     href: "/labs/opportunity-audit",
-    gradient: "from-yellow-500 to-orange-600",
-    category: "advisory",
-    actionVerb: "Start",
+    gradient: "from-yellow-600 to-orange-700",
+    category: "deals",
+    actionVerb: "Assess",
     featured: true,
   },
-  {
-    icon: Gamepad2,
-    title: "PE Tycoon",
-    description:
-      "Run a private equity fund with AI assistance. Chat naturally to acquire companies, launch operations programs, and build your portfolio empire in real-time.",
-    href: "/labs/pe-tycoon",
-    gradient: "from-emerald-500 to-teal-600",
-    category: "play",
-    actionVerb: "Play",
-    featured: true,
-  },
+  // AI Strategy - For planning transformations
   {
     icon: Sparkles,
     title: "AI Industry Blueprint",
     description:
-      "Generate comprehensive AI transformation blueprints for any industry. Get specific use cases, vendor recommendations, and ROI projections in seconds.",
+      "Generate industry-specific AI transformation strategies. Get use cases, vendor analysis, and competitive benchmarking.",
     href: "/labs/industry-blueprint",
-    gradient: "from-purple-500 to-indigo-600",
-    category: "advisory",
+    gradient: "from-purple-600 to-pink-700",
+    category: "strategy",
     actionVerb: "Generate",
     featured: true,
   },
@@ -43,25 +89,13 @@ const labs = [
     icon: Bot,
     title: "Just Hire AI",
     description:
-      "See how AI agents can augment or replace any role. Get honest analysis of capabilities, costs, and implementation strategies for workforce automation.",
+      "Analyze workforce automation potential. See which roles AI can augment or replace with cost-benefit analysis.",
     href: "/labs/just-hire-ai",
-    gradient: "from-orange-500 to-red-600",
-    category: "advisory",
+    gradient: "from-orange-600 to-red-700",
+    category: "strategy",
     actionVerb: "Analyze",
-    featured: true,
   },
-  {
-    icon: BarChart3,
-    title: "PE Deal-Flow Analyzer",
-    description:
-      "Instantly analyze potential acquisitions with AI. Get investment scores, valuation guidance, AI value creation opportunities, and exit scenario modeling.",
-    href: "/labs/deal-flow-analyzer",
-    gradient: "from-green-500 to-blue-600",
-    category: "advisory",
-    actionVerb: "Analyze",
-    featured: true,
-  },
-  // Agents Category
+  // Process Automation - For operational efficiency
   {
     icon: Bot,
     title: "Agent Simulator",
@@ -69,7 +103,7 @@ const labs = [
       "Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.",
     href: "/labs/agent-simulator",
     gradient: "from-blue-500 to-cyan-600",
-    category: "agents",
+    category: "automation",
     actionVerb: "Watch",
     featured: true,
   },
@@ -80,7 +114,7 @@ const labs = [
       "Build AI agent workflows visually by snapping together blocks for reading, processing, deciding, and outputting. See how agents work together.",
     href: "/labs/agent-playground",
     gradient: "from-indigo-500 to-purple-600",
-    category: "agents",
+    category: "automation",
     actionVerb: "Build",
   },
   {
@@ -90,7 +124,7 @@ const labs = [
       "Experience our sophisticated AI assistant with specialized agents, tool calling capabilities, and intelligent reasoning. Choose your agent and see Sprinter's AI in action.",
     href: "/labs/ai-assistant",
     gradient: "from-cyan-500 to-blue-600",
-    category: "agents",
+    category: "automation",
     actionVerb: "Chat",
   },
   {
@@ -100,12 +134,12 @@ const labs = [
       "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
     href: "/labs/workflow-tool",
     gradient: "from-purple-500 to-pink-600",
-    category: "agents",
+    category: "automation",
     actionVerb: "Build",
     featured: true,
   },
   
-  // Docs Category
+  // Document Analysis - For due diligence and operations
   {
     icon: FileText,
     title: "Document Intelligence",

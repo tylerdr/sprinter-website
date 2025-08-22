@@ -74,13 +74,63 @@ export const METRICS = {
 }
 
 export const PRICING = {
+  // PE-focused tiers
+  assessment: {
+    name: "AI Readiness Assessment",
+    price: "$10,000",
+    duration: "1 Week",
+    description: "Comprehensive portfolio AI audit with actionable roadmap",
+    includes: [
+      "Portfolio-wide AI maturity assessment",
+      "Top 10 AI opportunities with ROI projections",
+      "Implementation roadmap and timeline",
+      "Vendor recommendations",
+      "Board-ready presentation"
+    ]
+  },
+  sprint: {
+    name: "AI Implementation Sprint",
+    price: "$50,000",
+    duration: "5 Days",
+    description: "Rapid prototype to production with guaranteed ROI",
+    includes: [
+      "Working AI prototype in 5 days",
+      "Full production deployment",
+      "Team training and handoff",
+      "90-day support included",
+      "10x ROI guarantee or money back"
+    ]
+  },
+  surf: {
+    name: "AI Operations Partner",
+    price: "$50,000/month",
+    duration: "Quarterly commitment",
+    description: "Ongoing AI expertise for continuous value creation",
+    includes: [
+      "Dedicated AI strategist",
+      "3 implementations per quarter",
+      "Weekly office hours",
+      "Cross-portfolio best practices",
+      "24/7 technical support"
+    ]
+  },
+  sail: {
+    name: "Enterprise Partnership",
+    price: "Custom",
+    duration: "Annual commitment",
+    description: "Full AI transformation partnership for large portfolios",
+    includes: [
+      "Dedicated AI team (3+ experts)",
+      "Unlimited implementations",
+      "Custom AI platform development",
+      "Board and LP reporting",
+      "On-site workshops and training"
+    ]
+  },
+  // Legacy pricing for other services
   workshop: {
     price: "$5,000",
     duration: "1 Day",
-  },
-  sprint: {
-    price: "$25,000 - $50,000",
-    duration: "2-4 Weeks",
   },
   transformation: {
     price: "$150,000+",

@@ -19,6 +19,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isOAuthLoading, setIsOAuthLoading] = useState<string | null>(null)
+  const [isDemoLoading, setIsDemoLoading] = useState(false)
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -146,6 +147,48 @@ export default function SignInPage() {
               Google
             </Button>
           </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <Separator className="w-full bg-neutral-800" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-neutral-900 px-2 text-neutral-400">Or</span>
+            </div>
+          </div>
+
+          <Button
+            variant="outline"
+            onClick={async () => {
+              setIsDemoLoading(true)
+              try {
+                const { error } = await signIn({ 
+                  email: 'demo@sprinter.ai', 
+                  password: 'demo123456' 
+                })
+                if (error) {
+                  toast.error('Demo access unavailable. Please contact support.')
+                } else {
+                  toast.success('Welcome to the demo!')
+                  router.push('/dashboard/portfolio-health')
+                  router.refresh()
+                }
+              } catch (error) {
+                toast.error('Demo access unavailable')
+              } finally {
+                setIsDemoLoading(false)
+              }
+            }}
+            disabled={isDemoLoading || isLoading || isOAuthLoading !== null}
+            className="w-full bg-blue-600/10 border-blue-600/30 hover:bg-blue-600/20 text-blue-400"
+          >
+            {isDemoLoading ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <Mail className="mr-2 h-4 w-4" />
+            )}
+            Try Demo Access
+          </Button>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
           <div className="text-sm text-neutral-400 text-center">
