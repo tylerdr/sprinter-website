@@ -1,0 +1,285 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- link "Skip to navigation":
+  - /url: "#navigation"
+- navigation:
+  - link "Sprinter AI Home":
+    - /url: /
+    - img "Sprinter AI"
+  - switch "Switch to light theme": Toggle between light and dark theme
+  - button "Open menu"
+- main:
+  - region "Private Equity AI Hero":
+    - text: AI Solutions for Private Equity
+    - heading "Scale Your Portfolio with AI" [level=1]
+    - paragraph: Transform deal sourcing, due diligence, and portfolio operations. Deploy AI agents across your entire portfolio to achieve 20-40% EBITDA improvement. See results in weeks, not years.
+    - link "Get Portfolio AI Blueprint →":
+      - /url: /ai-assessment
+    - link "Book Partner Meeting":
+      - /url: /ai-sprint
+    - paragraph: Trusted by leading PE firms including
+    - text: Vero Capital Rock Hill Capital Mid-Market Leaders 40% of PE firms have AI strategies 80% faster due diligence with AI 3x more deals found via AI sourcing $2.3M avg. savings per portfolio company
+    - paragraph: PE Firms Using AI See 3× More Off-Market Deals
+    - paragraph: Your competitors are already automating deal sourcing, due diligence, and portfolio reporting. Get your custom Portfolio AI Blueprint in 24 hours. 100% free, no strings attached.
+  - text: Proven Results
+  - heading "Real Impact for Real Companies" [level=2]
+  - paragraph: From Fortune 500 to high-growth startups, we deliver AI that ships fast and scales.
+  - text: Financial Services 70% faster processing in 4 weeks
+  - paragraph: AI-powered loan processing automation
+  - text: Healthcare Network 5x capacity increase in 10 days
+  - paragraph: Emergency triage system deployment
+  - text: E-commerce Platform 400% traffic growth in 3 months
+  - paragraph: AI content generation at scale
+  - text: Trusted Partners
+  - heading "Industry Experience" [level=3]
+  - paragraph: Deep expertise across multiple sectors with Fortune 500 and growth companies
+  - text: Financial Services Banking & Insurance Healthcare Hospitals & Networks Private Equity Investment Firms Technology SaaS & Platforms Consulting Advisory Services E-commerce Retail & Marketplaces
+  - heading "What Clients Say" [level=3]
+  - paragraph: Real feedback from teams shipping AI in production
+  - text: Client Success Stories
+  - heading "Real Results from Real Projects" [level=2]
+  - paragraph: Verified outcomes from AI implementations across industries.
+  - blockquote: “What impressed us most was their hands-on approach. They didn't just provide recommendations—they built, deployed, and trained our team.”
+  - text: IP Investment Partner Principal Private Equity Firm
+  - heading "Impact Metrics" [level=3]
+  - text: 50+ Team Trained 2 weeks Time to Value
+  - button "Previous testimonial"
+  - button "Next testimonial"
+  - button "Go to testimonial 1"
+  - button "Go to testimonial 2"
+  - button "Go to testimonial 3"
+  - button "Go to testimonial 4"
+  - button "Go to testimonial 5"
+  - heading "Ready to Build Something Real?" [level=3]
+  - paragraph: Start with a 10-day sprint to validate your AI opportunity
+  - link "Get AI Opportunity Audit":
+    - /url: /labs/opportunity-audit
+  - link "Book Strategy Call":
+    - /url: /contact
+  - text: Your AI Adventure
+  - heading "Start Your AI Adventure" [level=2]
+  - paragraph: From a casual amble to sailing the high seas of innovation
+  - text: Start Here 1 Amble Assessment
+  - paragraph: Explore the terrain
+  - text: FREE 24 hours Take a leisurely walk through your AI opportunities. No rush, just discovery. Portfolio-wide AI opportunity analysis ROI projections for top 10 use cases Implementation roadmap & timeline +2 more...
+  - link "Start Ambling":
+    - /url: /ai-assessment
+  - text: Most Popular 2 AI Sprint
+  - paragraph: Run fast, achieve quickly
+  - text: $10,000 per week 1-4 weeks Push hard for rapid results. Intense but rewarding burst of progress. Working AI prototype or MVP Full source code & documentation Team training & knowledge transfer +2 more...
+  - link "Book Sprint":
+    - /url: /ai-sprint
+  - text: Catch the Wave 3 Surf Program
+  - paragraph: Ride the wave
+  - text: $50,000 per month Monthly When you find what works, double down Monthly AI implementations Portfolio-wide deployment strategy Dedicated success manager +2 more...
+  - link "Catch the Wave":
+    - /url: /ai-scale
+  - text: Enterprise 4 Sailing Partnership
+  - paragraph: Navigate with a crew
+  - text: $100K+ per month Ongoing Command your yacht with an expert crew. Go further, faster, together. Unlimited AI implementations Dedicated team (3-8 specialists) Board-level advisory +2 more...
+  - link "Set Sail":
+    - /url: /ai-partnership
+  - heading "🗺️ Your Adventure Map" [level=3]
+  - text: 🚶 Amble Explore freely 🏃 Sprint Push hard 🏄 Surf Ride the wave ⛵ Sail Navigate far
+  - paragraph: "\"The journey of a thousand miles begins with a single step\" - or in our case, a casual amble"
+  - paragraph: Every adventure starts with a single step
+  - link "Begin Your Journey":
+    - /url: /ai-assessment
+  - link "Talk to Our Team":
+    - /url: /contact
+  - text: AI Labs
+  - heading "Experience Agentic AI in Action" [level=2]
+  - paragraph: Interactive demos showcasing autonomous AI agents, workflow automation, and intelligent collaboration. See what's possible when AI works for you.
+  - link "Explore All Labs":
+    - /url: /labs
+    - button "Explore All Labs"
+  - link "Get Your AI Audit":
+    - /url: /labs/opportunity-audit
+    - button "Get Your AI Audit"
+  - link "Most Popular AI Opportunity Audit Get a personalized report on AI opportunities in your business Try it now":
+    - /url: /labs/opportunity-audit
+  - link "Live Demo Agent Simulator Watch autonomous AI agents collaborate to solve complex problems Try it now":
+    - /url: /labs/agent-simulator
+  - link "Interactive Workflow Designer Build and visualize multi-agent AI workflows in real-time Try it now":
+    - /url: /labs/workflow-tool
+  - link "Creative Ideation Engine Generate and evaluate business ideas with AI brainstorming Try it now":
+    - /url: /labs/ideation
+  - paragraph: Try one demo without signup • Unlock everything with free signup • Experience the future of AI automation
+  - region "Live Products. Real Results.":
+    - text: Core Products
+    - heading "Live Products. Real Results." [level=2]
+    - paragraph: Experience our AI solutions in action. From live SaaS products to custom development services.
+    - text: Live Product
+    - img "MortgageQ.ai interface showing AI-powered lending guideline comparisons"
+    - heading "MortgageQ.ai" [level=3]
+    - paragraph: AI guideline intelligence for Non-QM lending. Instant, evidence-backed answers with per-lender comparisons.
+    - list:
+      - listitem: 90% time savings
+      - listitem: Answers in seconds vs hours
+      - listitem: Evidence-backed responses
+      - listitem: Multi-lender comparisons
+    - link "Try MortgageQ.ai":
+      - /url: https://mortgageq.ai
+    - text: Live Product
+    - img "Cabomatic interface showing CAD-to-quote AI processing"
+    - heading "Cabomatic.com" [level=3]
+    - paragraph: AI-driven SKU mapping for cabinet manufacturers. Turn one CAD export into multi-manufacturer quotes instantly.
+    - list:
+      - listitem: 10x faster quoting
+      - listitem: Zero manual SKU matching
+      - listitem: Multi-manufacturer quotes
+      - listitem: CAD export integration
+    - link "Visit Cabomatic":
+      - /url: https://cabomatic.com
+    - text: Live Product
+    - img "Amble Ideation workshop interface with AI clustering visualization"
+    - heading "AmbleIdeation.com" [level=3]
+    - paragraph: AI-powered workshop platform for discovery, clustering and insights. Run collaborative ideation sessions at scale.
+    - list:
+      - listitem: 100+ ideas per session
+      - listitem: Instant theme extraction
+      - listitem: Collaborative workshops
+      - listitem: AI-driven clustering
+    - link "Start Ideating":
+      - /url: https://ambleideation.com
+    - heading "Custom AI Solutions" [level=3]
+    - paragraph: Tailored AI platforms and services for your unique business needs.
+    - heading "AI Document Processing Platform" [level=3]
+    - paragraph: Extract insights from any document type with advanced AI processing and intelligent data extraction.
+    - list:
+      - listitem: Multi-format support
+      - listitem: Intelligent extraction
+      - listitem: Real-time processing
+      - listitem: Custom workflows
+    - link "Process Documents":
+      - /url: /contact?product=document-processing
+    - heading "Predictive Analytics Engine" [level=3]
+    - paragraph: Turn historical data into future predictions with advanced machine learning models and forecasting.
+    - list:
+      - listitem: Historical data analysis
+      - listitem: Future predictions
+      - listitem: ML-powered insights
+      - listitem: Custom forecasting
+    - link "Predict Trends":
+      - /url: /contact?product=predictive-analytics
+    - heading "Not sure which product fits your needs?" [level=3]
+    - paragraph: Schedule a free 30-minute consultation to explore the best AI solution for your business.
+    - link "Get Free Consultation":
+      - /url: /contact
+  - heading "Experience AI in Action" [level=2]
+  - paragraph: Interactive demos showcasing our AI capabilities. Try them yourself!
+  - link "Agent Simulator Watch AI agents work in parallel 🤖 → 📊 → ✅":
+    - /url: /labs/agent-simulator
+    - heading "Agent Simulator" [level=3]
+    - paragraph: Watch AI agents work in parallel
+    - text: 🤖 → 📊 → ✅
+  - link "Workflow Designer Map & augment your processes with AI 📝 → 🤖 → 🚀":
+    - /url: /labs/workflow-tool
+    - heading "Workflow Designer" [level=3]
+    - paragraph: Map & augment your processes with AI
+    - text: 📝 → 🤖 → 🚀
+  - link "Ideation Lab AI-powered brainstorming games 💡 → 🏃 → 🏆":
+    - /url: /labs/ideation
+    - heading "Ideation Lab" [level=3]
+    - paragraph: AI-powered brainstorming games
+    - text: 💡 → 🏃 → 🏆
+  - link "AI Sketch Studio Transform sketches with AI magic ✏️ → ✨ → 🎨":
+    - /url: /labs/sketch-studio
+    - heading "AI Sketch Studio" [level=3]
+    - paragraph: Transform sketches with AI magic
+    - text: ✏️ → ✨ → 🎨
+  - heading "Workflow Designer" [level=3]
+  - paragraph: Map & augment your processes with AI
+  - link "Try Demo →":
+    - /url: /labs/workflow-tool
+  - text: "Tip: Demos auto-rotate every 3s. Tap bullets to switch on mobile."
+  - button
+  - button
+  - button
+  - button
+- contentinfo:
+  - img "Sprinter Consulting logo"
+  - paragraph: Build at the pace of AI.
+  - list "Social media links":
+    - link "Follow us on GitHub (opens in new window)":
+      - /url: https://github.com/sprinterhq
+    - link "Follow us on X (Twitter) (opens in new window)":
+      - /url: https://x.com/sprinter_hq
+    - link "Connect with us on LinkedIn (opens in new window)":
+      - /url: https://www.linkedin.com/company/sprinterconsulting/
+    - link "Send us an email":
+      - /url: mailto:hello@sprinter.ai
+  - navigation "Products":
+    - heading "Products" [level=3]
+    - list:
+      - listitem:
+        - link "AI Readiness Assessment":
+          - /url: /ai-assessment
+      - listitem:
+        - link "5-Day AI Sprint":
+          - /url: /ai-sprint
+      - listitem:
+        - link "AI Partnership Program":
+          - /url: /ai-partnership
+      - listitem:
+        - link "All AI Solutions":
+          - /url: /products
+  - navigation "Services":
+    - heading "Services" [level=3]
+    - list:
+      - listitem:
+        - link "All Services":
+          - /url: /services
+      - listitem:
+        - link "Enterprise AI":
+          - /url: /services/enterprise
+      - listitem:
+        - link "Venture Studio":
+          - /url: /services/venture
+      - listitem:
+        - link "Discovery Workshop":
+          - /url: /services/discovery
+      - listitem:
+        - link "10-Day Sprint":
+          - /url: /services/sprint
+  - navigation "Resources":
+    - heading "Resources" [level=3]
+    - list:
+      - listitem:
+        - link "Case Studies":
+          - /url: /case-studies
+      - listitem:
+        - link "AI Labs":
+          - /url: /labs
+      - listitem:
+        - link "Use Cases":
+          - /url: /use-cases
+      - listitem:
+        - link "Insights":
+          - /url: /blog
+  - navigation "Company":
+    - heading "Company" [level=3]
+    - list:
+      - listitem:
+        - link "About":
+          - /url: /about
+      - listitem:
+        - link "Contact":
+          - /url: /contact
+      - listitem:
+        - link "Privacy":
+          - /url: /privacy
+      - listitem:
+        - link "Terms":
+          - /url: /terms
+  - link "Start a 10-Day Sprint":
+    - /url: /contact
+  - paragraph: © 2025 Sprinter AI. All rights reserved.
+- button "Open theme customizer"
+- button "Open chat"
+- region "Notifications alt+T"
+- alert
+```
