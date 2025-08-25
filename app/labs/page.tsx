@@ -13,7 +13,20 @@ const peCategories = [
   { id: "creative", name: "Creative Tools", icon: Palette },
 ];
 
-const labs = [
+interface Lab {
+  icon: any;
+  title: string;
+  description: string;
+  href: string;
+  gradient: string;
+  category: string;
+  actionVerb: string;
+  featured?: boolean;
+  requiresAuth?: boolean;
+  comingSoon?: boolean;
+}
+
+const labs: Lab[] = [
   // Portfolio Operations - For managing portfolio companies
   {
     icon: BarChart3,
