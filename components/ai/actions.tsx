@@ -6,7 +6,7 @@ import { generateText, CoreMessage } from "ai";
 
 export async function continueConversation(messages: CoreMessage[]) {
   const result = await generateText({
-    model: openai("gpt-4-turbo"),
+    model: openai("gpt-5"),
     messages,
     system: `You are a helpful AI assistant for Sprinter AI. 
     Focus on practical AI solutions that can be implemented quickly.
@@ -64,7 +64,7 @@ Return ONLY the component code, no explanations.`;
   try {
     const model = creativity > 0.7 
       ? anthropic("claude-3-opus-20240229") 
-      : openai("gpt-4");
+      : openai("gpt-5");
     
     const response = await generateText({
       model,
@@ -79,7 +79,7 @@ Return ONLY the component code, no explanations.`;
       style,
       v0Url: `https://v0.dev/t/${encodeURIComponent(prompt.slice(0, 100))}-${framework}`,
       metadata: {
-        model: creativity > 0.7 ? "claude-3-opus" : "gpt-4",
+        model: creativity > 0.7 ? "claude-3-opus" : "gpt-5",
         temperature: 0.3 + (creativity * 0.7),
         timestamp: Date.now(),
       },

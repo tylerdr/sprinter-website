@@ -143,7 +143,7 @@ export const articles: Article[] = [
         heading: "Days 5-6: Model and Core Logic",
         paragraphs: [
           "This is where most teams want to spend their entire timeline. We limit ourselves to two days because perfect is the enemy of good enough.",
-          "Day 5: proof of concept with the simplest possible approach. For language tasks, that usually means prompt engineering with GPT-4. For traditional ML, that means scikit-learn or cloud APIs.",
+          "Day 5: proof of concept with the simplest possible approach. For language tasks, that usually means prompt engineering with GPT-5. For traditional ML, that means scikit-learn or cloud APIs.",
           "Day 6: basic error handling, edge case management, and performance optimization. We're not building production-ready systems yet—we're validating that the approach works.",
           "The key insight: users care about outcomes, not algorithms. A simple system that works is infinitely better than a sophisticated system that doesn't."
         ]
@@ -170,7 +170,7 @@ export const articles: Article[] = [
         heading: "The Tools That Make This Possible",
         paragraphs: [
           "This sprint methodology only works with the right tools. We standardize on a boring, reliable stack:",
-          "- OpenAI API for language tasks (GPT-4 for complex reasoning, GPT-3.5 for simple tasks)",
+          "- OpenAI API for language tasks (GPT-5 for complex reasoning, GPT-5 Mini for simple tasks)",
           "- Google Cloud AI Platform or AWS SageMaker for traditional ML",
           "- Standard web frameworks (FastAPI for Python, Express for Node.js)",
           "- Postgres for data storage, Redis for caching",

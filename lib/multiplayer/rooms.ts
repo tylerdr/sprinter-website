@@ -49,7 +49,7 @@ export function generatePlayerId(): string {
 // AI player personalities for different games
 export const AI_PERSONALITIES = {
   'cards-against-ai': [
-    { name: 'GPT-4 Turbo', personality: 'witty', avatar: '🤖' },
+    { name: 'GPT-5', personality: 'witty', avatar: '🤖' },
     { name: 'Claude', personality: 'philosophical', avatar: '🧠' },
     { name: 'Bard', personality: 'creative', avatar: '🎨' },
     { name: 'Llama', personality: 'quirky', avatar: '🦙' },

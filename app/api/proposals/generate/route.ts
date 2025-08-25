@@ -6,8 +6,8 @@ import { populateTemplate } from '@/lib/data/proposal-templates'
 
 // Configuration
 const MODEL_CONFIG = {
-  primary: process.env.AI_MODEL || 'gpt-4-turbo-preview',
-  fallback: 'gpt-4-turbo-preview',
+  primary: process.env.AI_MODEL || 'gpt-5',
+  fallback: 'gpt-5',
   maxOutputTokens: 2000,
   temperature: 0.4
 }
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
           text = result.text
         } catch (error) {
           console.warn(`Primary model (${MODEL_CONFIG.primary}) failed, falling back to ${MODEL_CONFIG.fallback}:`, error)
-          // Fallback to GPT-4 if primary model fails
+          // Fallback to GPT-5 if primary model fails
           const result = await generateText({
             model: openai(MODEL_CONFIG.fallback),
             system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 
@@ -132,7 +132,7 @@ export async function POST(request: Request) {
             text = result.text
           } catch (error) {
             console.warn(`Primary model failed for custom section, using fallback:`, error)
-            // Fallback to GPT-4
+            // Fallback to GPT-5
             const result = await generateText({
               model: openai(MODEL_CONFIG.fallback),
               system: `You are an expert business proposal writer for Sprinter AI, an AI consulting firm. 

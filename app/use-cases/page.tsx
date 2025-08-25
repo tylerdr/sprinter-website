@@ -89,7 +89,7 @@ const topPEUseCases = [
     timeToValue: "< 30 days",
     difficulty: "Easy",
     impact: "3x more qualified deals",
-    tools: ["GPT-4", "Web Scraping", "CRM Integration"],
+    tools: ["GPT-5", "Web Scraping", "CRM Integration"],
     caseStudy: "Vista Equity increased deal flow by 280%",
   },
   {

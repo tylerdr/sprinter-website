@@ -15,16 +15,16 @@ export const BattleConfigSchema = z.object({
   judgeCriteria: z.array(z.enum(["accuracy", "cost", "latency", "clarity", "creativity", "practicality"]))
     .default(["accuracy", "clarity", "practicality"]),
   agentA: z.object({
-    model: z.enum(["gpt-4", "gpt-3.5-turbo", "claude-3-opus", "claude-3-sonnet"]).default("gpt-4"),
+    model: z.enum(["gpt-5", "gpt-5-mini", "claude-3-opus", "claude-3-sonnet"]).default("gpt-5"),
     name: z.string().default("Agent Alpha"),
     style: z.enum(["analytical", "creative", "pragmatic", "theoretical"]).default("analytical"),
   }),
   agentB: z.object({
-    model: z.enum(["gpt-4", "gpt-3.5-turbo", "claude-3-opus", "claude-3-sonnet"]).default("claude-3-opus"),
+    model: z.enum(["gpt-5", "gpt-5-mini", "claude-3-opus", "claude-3-sonnet"]).default("claude-3-opus"),
     name: z.string().default("Agent Beta"),
     style: z.enum(["analytical", "creative", "pragmatic", "theoretical"]).default("pragmatic"),
   }),
-  judgeModel: z.enum(["gpt-4", "claude-3-opus"]).default("gpt-4"),
+  judgeModel: z.enum(["gpt-5", "claude-3-opus"]).default("gpt-5"),
 });
 
 export type BattleConfig = z.infer<typeof BattleConfigSchema>;
@@ -90,7 +90,6 @@ function getModel(modelName: string) {
     return anthropic(modelName);
   }
   throw new Error(`Unknown model: ${modelName}`);
-}
 
 // Style prompts for agents
 function getStylePrompt(style: string): string {
@@ -310,8 +309,8 @@ Provide a comprehensive final verdict. Return ONLY valid JSON:
 // Cost estimation (rough estimates)
 function estimateCost(model: string, tokens: number): number {
   const costPer1kTokens: Record<string, number> = {
-    "gpt-4": 0.03,
-    "gpt-3.5-turbo": 0.002,
+    "gpt-5": 0.03,
+    "gpt-5-mini": 0.002,
     "claude-3-opus": 0.03,
     "claude-3-sonnet": 0.015,
   };

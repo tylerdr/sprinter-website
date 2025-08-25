@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     const result = streamText({
-      model: openai('gpt-4-turbo'),
+      model: openai('gpt-5'),
       messages,
       system: `You are a helpful AI assistant for Sprinter AI, a company specializing in AI consulting and development. 
       Focus on practical AI solutions that can be implemented quickly. 

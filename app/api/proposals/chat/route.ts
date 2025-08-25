@@ -4,8 +4,8 @@ import { createClient } from '@/lib/supabase/server'
 
 // Configuration - same as generate route
 const MODEL_CONFIG = {
-  primary: process.env.AI_MODEL || 'gpt-4-turbo-preview',
-  fallback: 'gpt-4-turbo-preview',
+  primary: process.env.AI_MODEL || 'gpt-5',
+  fallback: 'gpt-5',
   maxOutputTokens: 1500,
   temperature: 0.3
 }
@@ -52,7 +52,7 @@ Answer questions about this proposal accurately and concisely. If asked about so
       })
     }
     
-    // Try primary model first, fallback to GPT-4 if it fails
+    // Try primary model first, fallback to GPT-5 if it fails
     let result
     try {
       result = await streamText({
@@ -72,7 +72,7 @@ Answer questions about this proposal accurately and concisely. If asked about so
       })
     } catch (error) {
       console.warn(`Primary model (${MODEL_CONFIG.primary}) failed, falling back to ${MODEL_CONFIG.fallback}:`, error)
-      // Fallback to GPT-4
+      // Fallback to GPT-5
       result = await streamText({
         model: openai(MODEL_CONFIG.fallback),
         messages: allMessages,

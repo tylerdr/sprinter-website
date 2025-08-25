@@ -159,7 +159,7 @@ export function LabWrapper({
                   <h3 className="text-lg font-semibold mb-4">Technical Details</h3>
                   <ul className="space-y-2 text-sm">
                     <li>• Built with Next.js and React</li>
-                    <li>• Powered by OpenAI GPT-4</li>
+                    <li>• Powered by OpenAI GPT-5</li>
                     <li>• Real-time processing</li>
                     <li>• Secure and scalable</li>
                   </ul>

@@ -68,7 +68,7 @@ Create 5-10 nodes with appropriate connections. Space nodes nicely (x: 100-1000,
 
   try {
     const response = await generateText({
-      model: openai("gpt-4"),
+      model: openai("gpt-5"),
       system: systemPrompt,
       prompt: userPrompt,
     });
@@ -132,7 +132,7 @@ Provide UX insights and recommendations. Return ONLY valid JSON:
 
   try {
     const response = await generateText({
-      model: openai("gpt-3.5-turbo"),
+      model: openai("gpt-5-mini"),
       prompt,
     });
 
@@ -202,7 +202,7 @@ Return ONLY valid JSON with UI elements:
 
   try {
     const response = await generateText({
-      model: openai("gpt-3.5-turbo"),
+      model: openai("gpt-5-mini"),
       prompt,
     });
 
@@ -342,7 +342,7 @@ Trace the most likely path and identify issues. Return ONLY valid JSON:
 
   try {
     const response = await generateText({
-      model: openai("gpt-4"),
+      model: openai("gpt-5"),
       prompt,
     });
 

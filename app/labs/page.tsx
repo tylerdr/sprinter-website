@@ -296,7 +296,7 @@ const labs: Lab[] = [
     icon: Gamepad2,
     title: "Agent Battle",
     description:
-      "Two AI agents debate head-to-head on any topic. Watch GPT-4 vs Claude compete while an AI judge scores each round. Export transcripts and insights.",
+      "Two AI agents debate head-to-head on any topic. Watch GPT-5 vs Claude compete while an AI judge scores each round. Export transcripts and insights.",
     href: "/labs/agent-battle",
     gradient: "from-red-500 to-pink-600",
     category: "play",

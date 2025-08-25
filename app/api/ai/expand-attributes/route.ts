@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const { input } = await request.json();
 
     const { object } = await generateObject({
-      model: openai('gpt-4o'),
+      model: openai('gpt-5'),
       schema: attributeSchema,
       prompt: `
         Expand the following natural language attribute descriptions into structured extraction attributes.

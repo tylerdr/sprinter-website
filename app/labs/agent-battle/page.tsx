@@ -65,9 +65,9 @@ export default function AgentBattlePage() {
     topic: "",
     rounds: 3,
     judgeCriteria: ["accuracy", "clarity", "practicality"],
-    agentA: { model: "gpt-4", name: "Agent Alpha", style: "analytical" },
+    agentA: { model: "gpt-5", name: "Agent Alpha", style: "analytical" },
     agentB: { model: "claude-3-opus", name: "Agent Beta", style: "pragmatic" },
-    judgeModel: "gpt-4",
+    judgeModel: "gpt-5",
   });
 
   const [battle, setBattle] = useState<BattleState | null>(null);
@@ -191,7 +191,7 @@ export default function AgentBattlePage() {
                         onValueChange={(value) => 
                           setConfig(prev => ({ 
                             ...prev, 
-                            agentA: { ...prev.agentA!, model: value as "gpt-4" | "gpt-3.5-turbo" | "claude-3-opus" | "claude-3-sonnet" }
+                            agentA: { ...prev.agentA!, model: value as "gpt-5" | "gpt-5-mini" | "claude-3-opus" | "claude-3-sonnet" }
                           }))
                         }
                       >
@@ -199,8 +199,8 @@ export default function AgentBattlePage() {
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="gpt-4">GPT-4</SelectItem>
-                          <SelectItem value="gpt-3.5-turbo">GPT-3.5 Turbo</SelectItem>
+                          <SelectItem value="gpt-5">GPT-5</SelectItem>
+                          <SelectItem value="gpt-5-mini">GPT-5 Mini</SelectItem>
                           <SelectItem value="claude-3-opus">Claude 3 Opus</SelectItem>
                           <SelectItem value="claude-3-sonnet">Claude 3 Sonnet</SelectItem>
                         </SelectContent>
@@ -242,7 +242,7 @@ export default function AgentBattlePage() {
                         onValueChange={(value) => 
                           setConfig(prev => ({ 
                             ...prev, 
-                            agentB: { ...prev.agentB!, model: value as "gpt-4" | "gpt-3.5-turbo" | "claude-3-opus" | "claude-3-sonnet" }
+                            agentB: { ...prev.agentB!, model: value as "gpt-5" | "gpt-5-mini" | "claude-3-opus" | "claude-3-sonnet" }
                           }))
                         }
                       >
@@ -250,8 +250,8 @@ export default function AgentBattlePage() {
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="gpt-4">GPT-4</SelectItem>
-                          <SelectItem value="gpt-3.5-turbo">GPT-3.5 Turbo</SelectItem>
+                          <SelectItem value="gpt-5">GPT-5</SelectItem>
+                          <SelectItem value="gpt-5-mini">GPT-5 Mini</SelectItem>
                           <SelectItem value="claude-3-opus">Claude 3 Opus</SelectItem>
                           <SelectItem value="claude-3-sonnet">Claude 3 Sonnet</SelectItem>
                         </SelectContent>

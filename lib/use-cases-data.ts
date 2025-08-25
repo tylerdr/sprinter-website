@@ -73,7 +73,7 @@ export const industries: Industry[] = [
     ],
     useCases: ["loan-underwriting", "fraud-detection", "kyc-automation", "portfolio-optimization"],
     averageROI: "120-250% typical ROI in 3-6 months",
-    topTools: ["GPT-4", "Claude", "Custom ML Models", "Zapier AI"]
+    topTools: ["GPT-5", "Claude", "Custom ML Models", "Zapier AI"]
   },
   {
     id: "healthcare",
@@ -254,7 +254,7 @@ export const useCases: UseCase[] = [
     description: "Automate loan application review and risk assessment with intelligent document processing and decision engines",
     industry: ["finance"],
     roles: ["operations-manager", "ceo"],
-    tools: ["Document AI", "Risk Models", "GPT-4"],
+    tools: ["Document AI", "Risk Models", "GPT-5"],
     mcpServers: ["filesystem", "postgres", "slack"],
     benefits: [
       "95% faster processing",
@@ -292,7 +292,7 @@ export const useCases: UseCase[] = [
     description: "Generate high-quality content at scale for marketing, documentation, and communications",
     industry: ["retail", "real-estate", "legal"],
     roles: ["marketing-director", "operations-manager"],
-    tools: ["GPT-4", "Claude", "Jasper"],
+    tools: ["GPT-5", "Claude", "Jasper"],
     mcpServers: ["filesystem", "wordpress", "notion"],
     benefits: [
       "10x content output",
@@ -442,7 +442,7 @@ export const mcpServers: MCPServer[] = [
 export const aiTools: AITool[] = [
   {
     id: "gpt4",
-    name: "GPT-4",
+    name: "GPT-5",
     category: "Large Language Model",
     description: "OpenAI's most advanced language model for complex reasoning and generation",
     useCases: ["content-generation", "code-generation", "customer-support"],

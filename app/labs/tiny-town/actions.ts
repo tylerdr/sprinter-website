@@ -11,7 +11,7 @@ export const SimulationConfigSchema = z.object({
   npcs: z.number().min(1).max(100),
   buildings: z.array(z.string()),
   duration: z.number().min(10).max(600), // seconds
-  aiModel: z.enum(["gpt-4", "gpt-3.5-turbo"]).default("gpt-3.5-turbo"),
+  aiModel: z.enum(["gpt-5", "gpt-5-mini"]).default("gpt-5-mini"),
   realtime: z.boolean().default(false),
 });
 
@@ -154,7 +154,7 @@ Decide your next action. Return ONLY valid JSON:
 
   try {
     const response = await generateText({
-      model: openai("gpt-3.5-turbo"),
+      model: openai("gpt-5-mini"),
       prompt,
     });
 
@@ -203,7 +203,7 @@ Determine the interaction outcome. Return ONLY valid JSON:
 
   try {
     const response = await generateText({
-      model: openai("gpt-3.5-turbo"),
+      model: openai("gpt-5-mini"),
       prompt,
     });
 
@@ -270,7 +270,7 @@ Provide operational insights. Return ONLY valid JSON:
 
   try {
     const response = await generateText({
-      model: openai("gpt-4"),
+      model: openai("gpt-5"),
       prompt,
     });
 

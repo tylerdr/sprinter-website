@@ -117,19 +117,19 @@ function getDefaultTools(jobTitle: string): string[] {
     "Customer Support Rep": [
       "Zendesk or Intercom for ticketing",
       "DialogFlow or Rasa for NLU",
-      "GPT-4 for response generation",
+      "GPT-5 for response generation",
       "Slack/Teams for escalation",
       "CRM integration (Salesforce, HubSpot)"
     ],
     "Content Writer": [
-      "GPT-4 or Claude for content generation",
+      "GPT-5 or Claude for content generation",
       "Jasper.ai or Copy.ai for marketing",
       "Grammarly for editing",
       "SEMrush for SEO optimization",
       "Canva API for visual content"
     ],
     "default": [
-      "Foundation model (GPT-4, Claude)",
+      "Foundation model (GPT-5, Claude)",
       "Workflow automation (Zapier, Make)",
       "Data integration platform",
       "Monitoring and analytics dashboard",

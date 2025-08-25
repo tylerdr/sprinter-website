@@ -45,7 +45,7 @@ Return ONLY the component code, no explanations.`;
 
   try {
     // Use different models based on creativity level
-    const model = creativity > 0.7 ? anthropic("claude-3-opus-20240229") : openai("gpt-4");
+    const model = creativity > 0.7 ? anthropic("claude-3-opus-20240229") : openai("gpt-5");
     
     const response = await generateText({
       model,
@@ -63,7 +63,7 @@ Return ONLY the component code, no explanations.`;
       style,
       v0Url,
       metadata: {
-        model: creativity > 0.7 ? "claude-3-opus" : "gpt-4",
+        model: creativity > 0.7 ? "claude-3-opus" : "gpt-5",
         temperature: 0.3 + (creativity * 0.7),
         timestamp: Date.now(),
       },
@@ -259,7 +259,7 @@ Return ONLY valid JSON:
 
   try {
     const response = await generateText({
-      model: openai("gpt-3.5-turbo"),
+      model: openai("gpt-5-mini"),
       prompt,
     });
 
@@ -297,7 +297,7 @@ Return ONLY the modified component code.`;
 
     try {
       const response = await generateText({
-        model: openai("gpt-3.5-turbo"),
+        model: openai("gpt-5-mini"),
         prompt,
         temperature: 0.8,
       });
