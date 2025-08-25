@@ -26,7 +26,6 @@ const labs = [
     actionVerb: "Monitor",
     featured: true,
     requiresAuth: true,
-    comingSoon: true,
   },
   {
     icon: BookOpen,
@@ -117,7 +116,6 @@ const labs = [
     gradient: "from-indigo-500 to-purple-600",
     category: "automation",
     actionVerb: "Build",
-    comingSoon: true,
   },
   {
     icon: MessageSquare,
@@ -128,7 +126,6 @@ const labs = [
     gradient: "from-cyan-500 to-blue-600",
     category: "automation",
     actionVerb: "Chat",
-    comingSoon: true,
   },
   {
     icon: Workflow,
@@ -140,7 +137,6 @@ const labs = [
     category: "automation",
     actionVerb: "Build",
     featured: true,
-    comingSoon: true,
   },
   
   // Document Analysis - For due diligence and operations
@@ -228,7 +224,6 @@ const labs = [
     gradient: "from-violet-500 to-purple-600",
     category: "voice",
     actionVerb: "Chat",
-    comingSoon: true,
   },
   {
     icon: Mic,
