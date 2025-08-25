@@ -9,10 +9,10 @@ import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 
 const stats = [
-  { value: "40%", label: "of PE firms have AI strategies" },
-  { value: "80%", label: "faster due diligence with AI" },
-  { value: "3x", label: "more deals found via AI sourcing" },
-  { value: "$2.3M", label: "avg. savings per portfolio company" },
+  { value: "40%", label: "of PE firms actively using AI" },
+  { value: "50%", label: "faster due diligence" },
+  { value: "2x", label: "more deals analyzed" },
+  { value: "23%", label: "EBITDA improvement (Vista case)" },
 ];
 
 export function PEHero() {

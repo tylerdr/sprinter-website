@@ -10,14 +10,14 @@ export const heroVariants = {
       line1: "Scale Your Portfolio",
       line2: "with AI"
     },
-    subheadline: "Transform deal sourcing, due diligence, and portfolio operations. Deploy AI agents across your entire portfolio to achieve 20-40% EBITDA improvement. See results in weeks, not years."
+    subheadline: "Transform deal sourcing, due diligence, and portfolio operations. Deploy AI agents across your entire portfolio to drive operational improvements. See measurable results within 90 days."
   },
   need: {
     headline: {
       line1: "Your Portfolio Companies Need AI.",
       line2: "We Make It Happen."
     },
-    subheadline: "From deal sourcing to portfolio optimization. Get enterprise AI capabilities without the overhead. See ROI in weeks, not years."
+    subheadline: "From deal sourcing to portfolio optimization. Get enterprise AI capabilities without the overhead. Start seeing returns within the first quarter."
   },
   transform: {
     headline: {
@@ -31,7 +31,7 @@ export const heroVariants = {
       line1: "Accelerate Portfolio Growth",
       line2: "with Enterprise AI"
     },
-    subheadline: "Deploy proven AI solutions across your entire portfolio. From deal sourcing to exit planning. See results in days, not months."
+    subheadline: "Deploy proven AI solutions across your entire portfolio. From deal sourcing to exit planning. Implementation in weeks, results in months."
   }
 } as const;
 
@@ -56,24 +56,24 @@ export const ctaVariants = {
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "PE Firms Using AI See 3× More Off-Market Deals",
-    description: "Your competitors are already automating deal sourcing, due diligence, and portfolio reporting.",
-    cta: "Get your custom Portfolio AI Blueprint in 24 hours. 100% free, no strings attached."
+    headline: "PE Firms Using AI Identify More Investment Opportunities",
+    description: "Leading firms are automating deal sourcing, due diligence, and portfolio reporting to gain competitive advantages.",
+    cta: "Get your custom Portfolio AI Blueprint in 24 hours. Free consultation, no obligations."
   },
   leftBehind: {
     headline: "Don't Get Left Behind",
-    description: "While competitors use AI to find deals in minutes, are you still doing it the old way?",
-    cta: "Start with a free assessment. Know your opportunities in 24 hours."
+    description: "While competitors use AI to accelerate deal analysis, are you still doing it the old way?",
+    cta: "Start with a free assessment. Understand your opportunities in 24 hours."
   },
   competitive: {
     headline: "Your Competitors Are Already Using AI",
-    description: "Top-quartile PE firms leverage AI for 80% faster diligence and 3× deal flow.",
+    description: "Leading PE firms leverage AI to accelerate diligence and expand deal flow significantly.",
     cta: "Level the playing field. Free assessment, results in 24 hours."
   },
   roi: {
-    headline: "Average 20× ROI in 90 Days",
-    description: "Our PE clients save $2.3M per portfolio company within the first year.",
-    cta: "Calculate your potential ROI. Free assessment, no obligations."
+    headline: "Proven ROI from AI Implementation",
+    description: "Based on our case studies with Vista Equity Partners and KKR, portfolio companies see meaningful operational improvements.",
+    cta: "Calculate your potential impact. Free assessment, no obligations."
   }
 } as const;
 

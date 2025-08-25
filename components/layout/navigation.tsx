@@ -125,6 +125,12 @@ export function Navigation() {
                     </Link>
                   </motion.div>
                 ))}
+                {/* Mobile Auth */}
+                <div className="pt-4 mt-4 border-t border-border/30">
+                  <div className="px-4">
+                    <NavigationAuth />
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
