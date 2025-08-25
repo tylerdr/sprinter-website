@@ -58,6 +58,12 @@ export async function generatePlaybook(formData: {
   budget: string
   priorities: string
 }) {
+  // For demo purposes, always use the sample generator
+  // In production, you would uncomment the API call below
+  return generateSamplePlaybook(formData)
+  
+  /* 
+  // Uncomment this block to use actual AI generation when API is configured
   try {
     const prompt = `Generate a comprehensive AI transformation playbook for:
 Company: ${formData.company}
@@ -94,6 +100,7 @@ Consider their budget constraints and company size when making recommendations.`
     // Return a comprehensive sample playbook
     return generateSamplePlaybook(formData)
   }
+  */
 }
 
 function generateSamplePlaybook(formData: {

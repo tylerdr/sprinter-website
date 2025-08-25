@@ -4,6 +4,7 @@ import { LabsPreview } from "@/components/home/labs-preview";
 import { Products } from "@/components/home/products";
 import { ServicesPreview } from "@/components/home/services-preview";
 import { ClientSuccessSection } from "@/components/home/client-success-section";
+import { PortfolioLogos } from "@/components/home/portfolio-logos";
 import { InteractiveDemo } from "@/components/home/interactive-demo";
 import { getPageMetadata } from "@/lib/seo";
 
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <PEHero />
       <ClientSuccessSection />
+      <PortfolioLogos />
       <ServicesPreview />
       <LabsPreview />
       <Products />

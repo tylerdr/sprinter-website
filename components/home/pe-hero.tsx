@@ -7,6 +7,7 @@ import { ArrowRight, TrendingUp, Building2, ChartBar, Sparkles } from "lucide-re
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
+import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
   { value: "40%", label: "of PE firms actively using AI" },
@@ -130,17 +131,16 @@ export function PEHero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <Button asChild size="lg" variant="gradient" className="text-base">
+            <BookDemoButton 
+              size="lg" 
+              text="Book Partner Meeting"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+            />
+            <Button asChild size="lg" variant="outline" className="text-base">
               <Link href="/ai-assessment" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                {variants.cta.primary}
+                Get AI Assessment
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/ai-sprint" className="group">
-                <Sparkles className="mr-2 w-5 h-5" aria-hidden="true" />
-                {variants.cta.secondary}
               </Link>
             </Button>
           </motion.div>

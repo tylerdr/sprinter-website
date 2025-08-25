@@ -80,6 +80,8 @@ function generateDemoLeaderboard() {
 export default function PETycoonClient() {
   const [loading, setLoading] = useState(true);
   const [gameState, setGameState] = useState<GameState | null>(null);
+  const [selectedCompany, setSelectedCompany] = useState<any>(null);
+  const [showDealModal, setShowDealModal] = useState(false);
 
   // Initialize game with demo data
   useEffect(() => {
@@ -112,6 +114,137 @@ export default function PETycoonClient() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Handle buying a company
+  const handleBuyCompany = (company: any) => {
+    if (!gameState) return;
+    
+    const price = company.content.asking_price;
+    if (gameState.fund.content.cash >= price) {
+      // Update game state
+      setGameState(prev => {
+        if (!prev) return prev;
+        
+        const newPosition = {
+          id: `p${Date.now()}`,
+          content: {
+            company_name: company.content.name,
+            sector: company.content.sector,
+            current_revenue: company.content.revenue,
+            ltm_ebitda: company.content.revenue * company.content.ebitda_margin,
+            entry_multiple: price / (company.content.revenue * company.content.ebitda_margin),
+            hold_months: 0,
+            covenant_headroom: 0.5,
+            breach_status: false,
+            ops_programs: []
+          }
+        };
+        
+        return {
+          ...prev,
+          fund: {
+            ...prev.fund,
+            content: {
+              ...prev.fund.content,
+              cash: prev.fund.content.cash - price,
+              irr: prev.fund.content.irr + (Math.random() * 2 - 0.5), // Simulate IRR impact
+            }
+          },
+          positions: [...prev.positions, newPosition],
+          availableCompanies: prev.availableCompanies.filter(c => c.id !== company.id),
+          events: [
+            { content: { 
+              title: 'Deal Closed', 
+              description: `Acquired ${company.content.name} for $${(price/1e6).toFixed(0)}M`,
+              severity: 'good' 
+            }},
+            ...prev.events.slice(0, 2)
+          ]
+        };
+      });
+      
+      setShowDealModal(false);
+      setSelectedCompany(null);
+    }
+  };
+
+  // Handle selling a position
+  const handleSellPosition = (position: any) => {
+    if (!gameState) return;
+    
+    // Calculate exit value (simulate multiple expansion)
+    const exitMultiple = position.content.entry_multiple * (1 + Math.random() * 0.5);
+    const exitValue = position.content.ltm_ebitda * exitMultiple * 1.3; // Assume 30% EBITDA growth
+    
+    setGameState(prev => {
+      if (!prev) return prev;
+      
+      return {
+        ...prev,
+        fund: {
+          ...prev.fund,
+          content: {
+            ...prev.fund.content,
+            cash: prev.fund.content.cash + exitValue,
+            irr: prev.fund.content.irr + (Math.random() * 3), // Simulate IRR boost
+          }
+        },
+        positions: prev.positions.filter(p => p.id !== position.id),
+        events: [
+          { content: { 
+            title: 'Exit Completed', 
+            description: `Sold ${position.content.company_name} for $${(exitValue/1e6).toFixed(0)}M`,
+            severity: 'good' 
+          }},
+          ...prev.events.slice(0, 2)
+        ]
+      };
+    });
+  };
+
+  // Simulate market movement
+  useEffect(() => {
+    if (!gameState || loading) return;
+    
+    const interval = setInterval(() => {
+      setGameState(prev => {
+        if (!prev) return prev;
+        
+        // Update month and generate new companies occasionally
+        const newMonth = prev.fund.content.month + 1;
+        const shouldAddCompany = Math.random() > 0.7 && prev.availableCompanies.length < 5;
+        
+        return {
+          ...prev,
+          fund: {
+            ...prev.fund,
+            content: {
+              ...prev.fund.content,
+              month: newMonth,
+              focus_points: Math.min(prev.fund.content.max_focus_points, prev.fund.content.focus_points + 1)
+            }
+          },
+          availableCompanies: shouldAddCompany ? [
+            ...prev.availableCompanies,
+            {
+              id: `c${Date.now()}`,
+              content: {
+                name: `${['Cloud', 'Data', 'AI', 'Cyber'][Math.floor(Math.random() * 4)]}Corp ${Math.floor(Math.random() * 100)}`,
+                sector: ['Software', 'Healthcare', 'Consumer'][Math.floor(Math.random() * 3)],
+                asking_price: 200000000 + Math.random() * 400000000,
+                revenue: 50000000 + Math.random() * 100000000,
+                ebitda_margin: 0.2 + Math.random() * 0.3,
+                growth_rate: 0.1 + Math.random() * 0.3,
+                quality_score: 0.6 + Math.random() * 0.4
+              }
+            }
+          ] : prev.availableCompanies
+        };
+      });
+    }, 5000); // Update every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [gameState, loading]);
 
   if (loading) {
     return (
@@ -180,6 +313,12 @@ export default function PETycoonClient() {
                     <h3 className="font-semibold text-lg text-white">{position.content.company_name}</h3>
                     <p className="text-sm text-white/60">{position.content.sector}</p>
                   </div>
+                  <button
+                    onClick={() => handleSellPosition(position)}
+                    className="px-3 py-1 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-sm font-medium transition-all"
+                  >
+                    Exit Position
+                  </button>
                 </div>
                 <div className="grid grid-cols-4 gap-3 text-sm">
                   <div>
@@ -218,13 +357,25 @@ export default function PETycoonClient() {
               <h3 className="font-bold text-white mb-4">Available Deals</h3>
               <div className="space-y-2">
                 {gameState.availableCompanies.map((company: any) => (
-                  <div key={company.id} className="p-2 rounded-lg bg-blue-500/10 border border-white/10">
+                  <button
+                    key={company.id}
+                    onClick={() => {
+                      setSelectedCompany(company);
+                      setShowDealModal(true);
+                    }}
+                    className="w-full p-2 rounded-lg bg-blue-500/10 border border-white/10 hover:bg-blue-500/20 hover:border-blue-400/50 transition-all text-left"
+                  >
                     <div className="font-medium text-white text-sm">{company.content.name}</div>
                     <div className="text-xs text-white/60">{company.content.sector}</div>
-                    <div className="text-green-400 font-medium text-sm">
-                      ${(company.content.asking_price / 1e6).toFixed(0)}M
+                    <div className="flex justify-between items-center mt-1">
+                      <div className="text-green-400 font-medium text-sm">
+                        ${(company.content.asking_price / 1e6).toFixed(0)}M
+                      </div>
+                      <div className="text-xs text-purple-400">
+                        {(company.content.growth_rate * 100).toFixed(0)}% growth
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -244,6 +395,82 @@ export default function PETycoonClient() {
           </div>
         </div>
       </div>
+
+      {/* Deal Modal */}
+      {showDealModal && selectedCompany && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-slate-900 border border-white/20 rounded-2xl p-6 max-w-md w-full">
+            <h3 className="text-xl font-bold text-white mb-4">Deal Analysis</h3>
+            
+            <div className="space-y-3 mb-6">
+              <div>
+                <div className="text-sm text-white/60">Company</div>
+                <div className="text-lg font-semibold text-white">{selectedCompany.content.name}</div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <div className="text-sm text-white/60">Asking Price</div>
+                  <div className="text-green-400 font-semibold">
+                    ${(selectedCompany.content.asking_price / 1e6).toFixed(0)}M
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-white/60">Revenue</div>
+                  <div className="text-blue-400 font-semibold">
+                    ${(selectedCompany.content.revenue / 1e6).toFixed(0)}M
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-white/60">EBITDA Margin</div>
+                  <div className="text-purple-400 font-semibold">
+                    {(selectedCompany.content.ebitda_margin * 100).toFixed(0)}%
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-white/60">Growth Rate</div>
+                  <div className="text-yellow-400 font-semibold">
+                    {(selectedCompany.content.growth_rate * 100).toFixed(0)}%
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <div className="text-sm text-white/60">Entry Multiple</div>
+                <div className="text-white font-semibold">
+                  {(selectedCompany.content.asking_price / (selectedCompany.content.revenue * selectedCompany.content.ebitda_margin)).toFixed(1)}x EBITDA
+                </div>
+              </div>
+              
+              <div>
+                <div className="text-sm text-white/60">Available Cash</div>
+                <div className={`font-semibold ${gameState.fund.content.cash >= selectedCompany.content.asking_price ? 'text-green-400' : 'text-red-400'}`}>
+                  ${(gameState.fund.content.cash / 1e6).toFixed(0)}M
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex gap-3">
+              <button
+                onClick={() => handleBuyCompany(selectedCompany)}
+                disabled={gameState.fund.content.cash < selectedCompany.content.asking_price}
+                className="flex-1 px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 disabled:opacity-50 text-white rounded-lg font-medium transition-all"
+              >
+                Acquire Company
+              </button>
+              <button
+                onClick={() => {
+                  setShowDealModal(false);
+                  setSelectedCompany(null);
+                }}
+                className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg font-medium transition-all"
+              >
+                Pass on Deal
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

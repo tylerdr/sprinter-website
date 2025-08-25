@@ -26,6 +26,7 @@ const labs = [
     actionVerb: "Monitor",
     featured: true,
     requiresAuth: true,
+    comingSoon: true,
   },
   {
     icon: BookOpen,
@@ -116,6 +117,7 @@ const labs = [
     gradient: "from-indigo-500 to-purple-600",
     category: "automation",
     actionVerb: "Build",
+    comingSoon: true,
   },
   {
     icon: MessageSquare,
@@ -126,6 +128,7 @@ const labs = [
     gradient: "from-cyan-500 to-blue-600",
     category: "automation",
     actionVerb: "Chat",
+    comingSoon: true,
   },
   {
     icon: Workflow,
@@ -137,6 +140,7 @@ const labs = [
     category: "automation",
     actionVerb: "Build",
     featured: true,
+    comingSoon: true,
   },
   
   // Document Analysis - For due diligence and operations
@@ -224,6 +228,7 @@ const labs = [
     gradient: "from-violet-500 to-purple-600",
     category: "voice",
     actionVerb: "Chat",
+    comingSoon: true,
   },
   {
     icon: Mic,
@@ -491,6 +496,11 @@ export default function LabsPage() {
                     </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:gradient-text transition-all duration-300">
                       {lab.title}
+                      {lab.comingSoon && (
+                        <span className="ml-2 text-xs font-medium px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30">
+                          Coming Soon
+                        </span>
+                      )}
                     </h3>
                     <p className="text-muted-foreground mb-4 text-sm leading-relaxed line-clamp-2">
                       {lab.description}
@@ -521,11 +531,17 @@ export default function LabsPage() {
                   <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" 
                        style={{backgroundImage: `linear-gradient(135deg, ${lab.gradient.replace('from-', '').replace(' to-', ', ')})`}} />
                   
-                  {/* Action Verb Badge */}
+                  {/* Action Verb Badge or Coming Soon */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${lab.gradient} text-white shadow-lg`}>
-                      {lab.actionVerb}
-                    </span>
+                    {lab.comingSoon ? (
+                      <span className="px-2 py-1 text-xs font-medium rounded-full bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30">
+                        Coming Soon
+                      </span>
+                    ) : (
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${lab.gradient} text-white shadow-lg`}>
+                        {lab.actionVerb}
+                      </span>
+                    )}
                   </div>
 
                   <div
@@ -537,6 +553,11 @@ export default function LabsPage() {
                   
                   <h2 className="text-xl sm:text-2xl font-bold mb-3 group-hover:gradient-text transition-all duration-300">
                     {lab.title}
+                    {lab.comingSoon && (
+                      <span className="block mt-2 text-xs font-medium px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30 inline-block">
+                        Coming Soon
+                      </span>
+                    )}
                   </h2>
                   
                   <p className="text-muted-foreground mb-6 text-sm sm:text-base leading-relaxed line-clamp-3">
