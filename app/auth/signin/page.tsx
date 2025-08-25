@@ -197,12 +197,13 @@ export default function SignInPage() {
               Sign up
             </Link>
           </div>
+          {/* TODO: Implement reset password page
           <Link 
             href="/auth/reset-password" 
             className="text-sm text-neutral-400 hover:text-neutral-300 underline"
           >
             Forgot password?
-          </Link>
+          </Link> */}
         </CardFooter>
       </Card>
     </div>

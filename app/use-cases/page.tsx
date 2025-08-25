@@ -417,25 +417,25 @@ export default function UseCasesPage() {
             <div>
               <h3 className="font-semibold mb-4">By Fund Size</h3>
               <ul className="space-y-2">
-                <li><Link href="/use-cases/small-funds" className="text-sm text-muted-foreground hover:text-primary">Small Funds (&lt;$500M)</Link></li>
-                <li><Link href="/use-cases/mid-market" className="text-sm text-muted-foreground hover:text-primary">Mid-Market ($500M-$5B)</Link></li>
-                <li><Link href="/use-cases/large-funds" className="text-sm text-muted-foreground hover:text-primary">Large Funds (&gt;$5B)</Link></li>
+                <li><Link href="/case-studies/pe" className="text-sm text-muted-foreground hover:text-primary">Small Funds (&lt;$500M)</Link></li>
+                <li><Link href="/case-studies/pe" className="text-sm text-muted-foreground hover:text-primary">Mid-Market ($500M-$5B)</Link></li>
+                <li><Link href="/case-studies/pe" className="text-sm text-muted-foreground hover:text-primary">Large Funds (&gt;$5B)</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">By Strategy</h3>
               <ul className="space-y-2">
-                <li><Link href="/use-cases/growth-equity" className="text-sm text-muted-foreground hover:text-primary">Growth Equity</Link></li>
-                <li><Link href="/use-cases/buyout" className="text-sm text-muted-foreground hover:text-primary">Buyout</Link></li>
-                <li><Link href="/use-cases/venture" className="text-sm text-muted-foreground hover:text-primary">Venture/Growth</Link></li>
+                <li><Link href="/case-studies/pe" className="text-sm text-muted-foreground hover:text-primary">Growth Equity</Link></li>
+                <li><Link href="/case-studies/pe" className="text-sm text-muted-foreground hover:text-primary">Buyout</Link></li>
+                <li><Link href="/case-studies/pe" className="text-sm text-muted-foreground hover:text-primary">Venture/Growth</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li><Link href="/case-studies" className="text-sm text-muted-foreground hover:text-primary">PE Case Studies</Link></li>
-                <li><Link href="/ai-readiness" className="text-sm text-muted-foreground hover:text-primary">AI Readiness Checklist</Link></li>
-                <li><Link href="/implementation-guide" className="text-sm text-muted-foreground hover:text-primary">Implementation Guide</Link></li>
+                <li><Link href="/ai-assessment" className="text-sm text-muted-foreground hover:text-primary">AI Readiness Checklist</Link></li>
+                <li><Link href="/insights" className="text-sm text-muted-foreground hover:text-primary">Implementation Guide</Link></li>
               </ul>
             </div>
           </div>
