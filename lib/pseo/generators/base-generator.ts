@@ -1,4 +1,5 @@
-import { OpenAI } from 'openai';
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
 
 export interface PageContent {
   title: string;
@@ -25,27 +26,18 @@ export interface Subsection {
 }
 
 export class BaseGenerator {
-  protected openai: OpenAI;
-
-  constructor() {
-    this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
-  }
 
   protected async generateWithAI(prompt: string, systemPrompt: string): Promise<string> {
     try {
-      const response = await this.openai.chat.completions.create({
-        model: 'gpt-5-mini',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: prompt },
-        ],
+      const { text } = await generateText({
+        model: openai('gpt-5-mini'),
+        system: systemPrompt,
+        prompt: prompt,
         temperature: 0.7,
-        max_completion_tokens: 2000,
+        maxRetries: 2,
       });
 
-      return response.choices[0].message.content || '';
+      return text;
     } catch (error) {
       console.error('AI generation error:', error);
       throw new Error('Failed to generate content with AI');
