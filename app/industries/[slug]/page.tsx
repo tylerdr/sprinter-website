@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { INDUSTRIES } from '@/lib/pseo/config/industries';
-import { IndustryPageGenerator } from '@/lib/pseo/generators/industry-generator';
+// import { IndustryPageGenerator } from '@/lib/pseo/generators/industry-generator';
 import { PageContent } from '@/lib/pseo/generators/base-generator';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -15,10 +15,63 @@ async function getIndustryContent(slug: string): Promise<PageContent | null> {
   const industry = INDUSTRIES.find(i => i.slug === slug);
   if (!industry) return null;
   
-  // In production, fetch from database
-  // For now, generate on-demand
-  const generator = new IndustryPageGenerator();
-  return await generator.generateIndustryPage(industry);
+  // Return static content for now to avoid AI generation at build time
+  // In production, this should fetch from pre-generated database
+  return {
+    title: `AI Solutions for ${industry.name} | Sprinter AI`,
+    metaDescription: `Transform your ${industry.name} business with AI. ${industry.metrics.avgROI} average ROI. Expert consulting, rapid implementation, proven results.`,
+    h1: `AI Transformation for ${industry.name}`,
+    introduction: industry.description,
+    sections: [
+      {
+        title: "Industry Overview",
+        content: industry.description,
+        subsections: [
+          {
+            title: "Key Challenges",
+            content: `The ${industry.name} industry faces critical challenges that AI can address:`,
+            bullets: industry.challenges,
+          },
+          {
+            title: "AI Opportunities",
+            content: "Transform these challenges into competitive advantages with our AI solutions:",
+            bullets: industry.solutions,
+          },
+        ],
+      },
+      {
+        title: "Expected ROI",
+        content: `Our ${industry.name} clients typically see:`,
+        subsections: [
+          {
+            title: "Financial Impact",
+            content: `Average ROI of ${industry.metrics.avgROI} within ${industry.metrics.timeToValue}.`,
+            bullets: [
+              `${industry.metrics.avgROI} return on investment`,
+              `Time to value: ${industry.metrics.timeToValue}`,
+              ...Object.entries(industry.metrics)
+                .filter(([key]) => key !== 'avgROI' && key !== 'timeToValue')
+                .map(([_, value]) => `${value} improvement`),
+            ],
+          },
+        ],
+      },
+    ],
+    keywords: industry.keywords,
+    slug: `/industries/${industry.slug}/`,
+    canonical: `https://sprinter.ai/industries/${industry.slug}/`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: `AI Consulting for ${industry.name}`,
+      provider: {
+        '@type': 'Organization',
+        name: 'Sprinter AI',
+      },
+      description: `Transform your ${industry.name} business with AI.`,
+      areaServed: 'United States',
+    },
+  };
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

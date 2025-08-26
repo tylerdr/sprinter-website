@@ -155,7 +155,7 @@ export class IndustryPageGenerator extends BaseGenerator {
     return this.batchGenerate(
       INDUSTRIES,
       (industry) => this.generateIndustryPage(industry),
-      3 // Process 3 industries at a time
+      1 // Process 1 industry at a time to avoid rate limits
     );
   }
 }

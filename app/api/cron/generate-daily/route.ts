@@ -6,10 +6,10 @@ import { headers } from 'next/headers';
 // { "crons": [{ "path": "/api/cron/generate-daily", "schedule": "0 9 * * *" }] }
 
 const GENERATION_SCHEDULE = {
-  monday: { type: 'industry', count: 2 },
-  tuesday: { type: 'use-case', count: 5 },
-  wednesday: { type: 'location', count: 3 },
-  thursday: { type: 'comparison', count: 2 },
+  monday: { type: 'industry', count: 1 },
+  tuesday: { type: 'use-case', count: 2 },
+  wednesday: { type: 'location', count: 1 },
+  thursday: { type: 'comparison', count: 1 },
   friday: { type: 'tool', count: 1 },
 };
 
