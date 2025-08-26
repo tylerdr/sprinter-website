@@ -81,6 +81,11 @@
     "uuid": "^10.0.0",
     "zod": "^4.0.15"
   },
+  "overrides": {
+    "openai": {
+      "zod": "$zod"
+    }
+  },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
     "@eslint/eslintrc": "^3",
