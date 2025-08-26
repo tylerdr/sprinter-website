@@ -90,6 +90,7 @@ function getModel(modelName: string) {
     return anthropic(modelName);
   }
   throw new Error(`Unknown model: ${modelName}`);
+}
 
 // Style prompts for agents
 function getStylePrompt(style: string): string {
