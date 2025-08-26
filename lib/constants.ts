@@ -24,12 +24,64 @@ export const SOCIAL_LINKS = {
 
 export const NAVIGATION = {
   main: [
-    { href: "/ai-assessment", label: "Free Assessment" },
-    { href: "/ai-sprint", label: "AI Sprint" },
-    { href: "/ai-partnership", label: "Partnership" },
-    { href: "/case-studies", label: "Case Studies" },
-    { href: "/services", label: "Services" },
-    { href: "/labs", label: "AI Labs" },
+    {
+      href: "/solutions",
+      label: "Solutions",
+      type: "mega",
+      sections: [
+        {
+          title: "By Industry",
+          items: [
+            { href: "/industries/private-equity", label: "Private Equity", description: "AI for portfolio companies" },
+            { href: "/industries/healthcare", label: "Healthcare", description: "Medical AI solutions" },
+            { href: "/industries/financial-services", label: "Financial Services", description: "Fintech automation" },
+            { href: "/industries/manufacturing", label: "Manufacturing", description: "Smart factory AI" },
+            { href: "/industries/retail", label: "Retail & E-commerce", description: "Customer experience AI" },
+            { href: "/industries", label: "View All Industries →", description: "" },
+          ],
+        },
+        {
+          title: "By Use Case",
+          items: [
+            { href: "/use-cases/automation", label: "Process Automation", description: "Automate repetitive tasks" },
+            { href: "/use-cases/analytics", label: "Predictive Analytics", description: "Data-driven insights" },
+            { href: "/use-cases/customer-service", label: "Customer Service", description: "AI chatbots & support" },
+            { href: "/use-cases/document-processing", label: "Document Intelligence", description: "Extract & analyze documents" },
+            { href: "/use-cases", label: "View All Use Cases →", description: "" },
+          ],
+        },
+        {
+          title: "By Company Size",
+          items: [
+            { href: "/solutions/enterprise", label: "Enterprise", description: "Fortune 500 solutions" },
+            { href: "/solutions/mid-market", label: "Mid-Market", description: "Growth company AI" },
+            { href: "/solutions/startup", label: "Startups", description: "AI for rapid scaling" },
+          ],
+        },
+      ],
+    },
+    {
+      href: "/products",
+      label: "Products",
+      type: "dropdown",
+      items: [
+        { href: "/ai-assessment", label: "AI Readiness Assessment", description: "Free 1-week evaluation" },
+        { href: "/ai-sprint", label: "5-Day AI Sprint", description: "Rapid prototype to production" },
+        { href: "/ai-partnership", label: "AI Partnership", description: "Long-term transformation" },
+      ],
+    },
+    {
+      href: "/resources",
+      label: "Resources",
+      type: "dropdown",
+      items: [
+        { href: "/case-studies", label: "Case Studies", description: "Client success stories" },
+        { href: "/labs", label: "AI Labs", description: "Interactive demos" },
+        { href: "/blog", label: "Blog", description: "Latest insights" },
+        { href: "/tools", label: "Tools & Calculators", description: "ROI calculators" },
+      ],
+    },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ],
   footer: {
