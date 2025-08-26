@@ -36,7 +36,7 @@ export class BaseGenerator {
   protected async generateWithAI(prompt: string, systemPrompt: string): Promise<string> {
     try {
       const response = await this.openai.chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: 'gpt-5-mini',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: prompt },
