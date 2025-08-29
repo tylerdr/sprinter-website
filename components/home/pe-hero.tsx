@@ -10,10 +10,10 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "40%", label: "of PE firms actively using AI" },
-  { value: "50%", label: "faster due diligence" },
-  { value: "2x", label: "more deals analyzed" },
-  { value: "23%", label: "EBITDA improvement (Vista case)" },
+  { value: "30-45", label: "day wins guaranteed" },
+  { value: "≥60%", label: "touchless invoices" },
+  { value: "42%", label: "faster quote cycles" },
+  { value: "No API?", label: "No problem" },
 ];
 
 export function PEHero() {
@@ -95,7 +95,7 @@ export function PEHero() {
           >
             <Building2 className="w-4 h-4 text-blue-400" aria-hidden="true" />
             <span className="text-sm font-medium text-blue-400">
-              AI Solutions for Private Equity
+              AI Operating Partner for Private Equity
             </span>
           </motion.div>
 
@@ -133,13 +133,13 @@ export function PEHero() {
           >
             <BookDemoButton 
               size="lg" 
-              text="Book Partner Meeting"
+              text="Book 90-Minute OP Workshop"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
             />
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/ai-assessment" className="group">
+              <Link href="/operating-partner#ap-brief" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                Get AI Assessment
+                Download AP Accelerator Brief
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
@@ -153,12 +153,12 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              Trusted by leading PE firms including
+              Trusted by lower-middle-market PE leaders
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
               <span className="font-semibold">Vero Capital</span>
               <span className="font-semibold">Rock Hill Capital</span>
-              <span className="font-semibold">Mid-Market Leaders</span>
+              <span className="font-semibold">Beckway</span>
             </div>
           </motion.div>
 

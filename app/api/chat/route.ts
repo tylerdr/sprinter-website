@@ -1,54 +1,70 @@
+/**
+ * Chat API endpoint - AI Sprinter Foundation
+ * Supports agents with tools, streaming, and persistence
+ */
+
+import { NextRequest } from "next/server";
 import { openai } from '@ai-sdk/openai';
-import { streamText } from 'ai';
+import { 
+  streamText,
+  convertToModelMessages, 
+  stepCountIs,
+  UIMessage 
+} from "ai";
 
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
+// Allow streaming responses up to 60 seconds
+export const maxDuration = 60;
 
-export async function POST(req: Request) {
+type Body = {
+  id?: string;            // chatId (threadId)
+  messages: UIMessage[];  // UI messages from useChat
+  agentId?: string;       // Selected agent (optional, defaults to basic)
+  workspaceId?: string;   // Optional workspace scope
+  tenantId?: string;      // Tenant ID for multi-tenancy
+};
+
+export async function POST(req: NextRequest) {
   try {
-    const { messages } = await req.json();
+    const body = (await req.json()) as Body;
+    const { messages, agentId = "default" } = body;
 
-    const result = streamText({
-      model: openai('gpt-5'),
-      messages,
-      system: `You are a helpful AI assistant for Sprinter AI, a company specializing in AI consulting and development. 
-      Focus on practical AI solutions that can be implemented quickly. 
-      Emphasize the 10-day sprint approach and real-world case studies.
-      Be concise and action-oriented.`,
+    // For now, use a simple default agent configuration
+    // In production, load from database based on agentId
+    const agentConfig = {
+      model: openai('gpt-4o-mini'),
+      system: `You are a helpful AI assistant for Sprinter AI, specializing in AI Operating Partner services for Private Equity.
+      Focus on practical, 30-45 day implementations with clear acceptance criteria.
+      Emphasize AP automation, Quote Intelligence, and 3PL operations.
+      Be concise, action-oriented, and governance-focused.`,
       temperature: 0.7,
       maxRetries: 2,
+      // Add tools here when implemented
+      // tools: await buildToolsetForAgent(agentId),
+    };
+
+    // Stream the response
+    const result = streamText({
+      ...agentConfig,
+      messages: convertToModelMessages(messages),
+      // Control multi-step loops
+      stopWhen: stepCountIs(4),
     });
 
+    // Return UI message stream response
     return result.toTextStreamResponse();
+    
   } catch (error) {
     console.error('Chat API error:', error);
     
-    // Fallback to mock responses if API fails
-    const { messages } = await req.json();
-    const mockResponses = [
-      "That's a great question! Based on your industry, AI can help automate repetitive tasks and improve decision-making. Would you like to explore specific use cases?",
-      "We typically see 30-50% efficiency improvements in the first 90 days. The key is starting with high-impact, low-complexity automations.",
-      "Our 10-day sprint would be perfect for that. We'd build a working prototype that your team can test immediately.",
-    ];
-    
-    const responseIndex = Math.min(messages.length - 1, mockResponses.length - 1);
-    const response = mockResponses[Math.max(0, responseIndex)];
-    
-    // Return a mock stream response
-    const encoder = new TextEncoder();
-    const stream = new ReadableStream({
-      start(controller) {
-        controller.enqueue(encoder.encode(`0:"${response}"\n`));
-        controller.close();
-      },
-    });
-
-    return new Response(stream, {
-      headers: {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-      },
-    });
+    // Fallback response for errors
+    return new Response(
+      JSON.stringify({ 
+        error: error instanceof Error ? error.message : "Internal server error" 
+      }),
+      { 
+        status: 500,
+        headers: { "Content-Type": "application/json" }
+      }
+    );
   }
 }

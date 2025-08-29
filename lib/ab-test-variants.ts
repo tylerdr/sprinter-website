@@ -7,31 +7,31 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   scale: {
     headline: {
-      line1: "Scale Your Portfolio",
-      line2: "with AI"
+      line1: "Your AI Operating Partner",
+      line2: "for Private Equity"
     },
-    subheadline: "Transform deal sourcing, due diligence, and portfolio operations. Deploy AI agents across your entire portfolio to drive operational improvements. See measurable results within 90 days."
+    subheadline: "Boringly reliable 30-45 day wins (AP/expense, Quote Intelligence, 3PL Ops) with fund-level governance you can defend to LPs. No API? No problem. We build the safe middle layer for QBO/Sage/desktop."
   },
   need: {
     headline: {
-      line1: "Your Portfolio Companies Need AI.",
-      line2: "We Make It Happen."
+      line1: "Make AI Boring.",
+      line2: "Ship Portfolio Wins in 45 Days."
     },
-    subheadline: "From deal sourcing to portfolio optimization. Get enterprise AI capabilities without the overhead. Start seeing returns within the first quarter."
+    subheadline: "The AI Operating Partner for PE. Governance first, hype last. Touchless AP, faster quotes, accurate 3PL billing—auditable, repeatable, defensible."
   },
   transform: {
     headline: {
-      line1: "Transform Your Portfolio",
-      line2: "Into an AI Powerhouse"
+      line1: "Be the OP Who Shipped It.",
+      line2: "Not the One Still Evaluating."
     },
-    subheadline: "While your competitors use AI to find deals faster, accelerate due diligence, and optimize operations. Don't get left behind."
+    subheadline: "30-45 day wedges with clear acceptance criteria. Options memos, not vendor pushes. We choose what's right for each portco. No rewires, no drama."
   },
   accelerate: {
     headline: {
-      line1: "Accelerate Portfolio Growth",
-      line2: "with Enterprise AI"
+      line1: "No API? No Problem.",
+      line2: "We Drive QBO/Sage/Desktop."
     },
-    subheadline: "Deploy proven AI solutions across your entire portfolio. From deal sourcing to exit planning. Implementation in weeks, results in months."
+    subheadline: "Your AI Operating Partner for lower-middle-market PE. Upload-only Sage? We ship the CSV spec and automations. Desktop app? We build the agentic middle layer."
   }
 } as const;
 
@@ -56,24 +56,24 @@ export const ctaVariants = {
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "PE Firms Using AI Identify More Investment Opportunities",
-    description: "Leading firms are automating deal sourcing, due diligence, and portfolio reporting to gain competitive advantages.",
-    cta: "Get your custom Portfolio AI Blueprint in 24 hours. Free consultation, no obligations."
+    headline: "AP touchless rate to 64% in 30 days (QBO; 18k invoices/yr)",
+    description: "Quote cycle time ↓42% after 6 weeks (RFPs→Avontus). 3PL billing accuracy ↑18 pts with upload-only Sage.",
+    cta: "If we miss the acceptance criteria, we work the next sprint at our cost to close the gap."
   },
   leftBehind: {
-    headline: "Don't Get Left Behind",
-    description: "While competitors use AI to accelerate deal analysis, are you still doing it the old way?",
-    cta: "Start with a free assessment. Understand your opportunities in 24 hours."
+    headline: "Your ERP is ancient? Upload-only Sage/Biz?",
+    description: "We ship CSV specs + automations. No rewires. Your champion approves, not executes.",
+    cta: "Book the 90-Minute OP Workshop. Leave with a pilot plan and options memo."
   },
   competitive: {
-    headline: "Your Competitors Are Already Using AI",
-    description: "Leading PE firms leverage AI to accelerate diligence and expand deal flow significantly.",
-    cta: "Level the playing field. Free assessment, results in 24 hours."
+    headline: "Fee-offset optics. Security pack. Vendor neutrality.",
+    description: "Governance you can defend. Least-privilege access, redacted docs, full audit logs. We bring the policy pack.",
+    cta: "Download the Governance Pack PDF. See what your CFO and counsel will sign."
   },
   roi: {
-    headline: "Proven ROI from AI Implementation",
-    description: "Based on our case studies with Vista Equity Partners and KKR, portfolio companies see meaningful operational improvements.",
-    cta: "Calculate your potential impact. Free assessment, no obligations."
+    headline: "30-45 day AP win you can replicate across portcos",
+    description: "Acceptance criteria: ≥60% touchless invoices, exception SLA <48h, full audit trail. For upload-only Sage/Biz, we ship the CSV spec.",
+    cta: "Want the 1-page pilot brief and governance pack? 90-minute OP Workshop next week."
   }
 } as const;
 
