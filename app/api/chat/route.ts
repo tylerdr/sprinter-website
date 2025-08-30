@@ -11,6 +11,7 @@ import {
   stepCountIs,
   UIMessage 
 } from "ai";
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
 
 // Allow streaming responses up to 60 seconds
 export const maxDuration = 60;
@@ -24,6 +25,12 @@ type Body = {
 };
 
 export async function POST(req: NextRequest) {
+  // Apply rate limiting
+  const { success, reset } = await rateLimit(req, 'chat')
+  if (!success) {
+    return rateLimitResponse(reset)
+  }
+
   try {
     const body = (await req.json()) as Body;
     const { messages, agentId = "default" } = body;

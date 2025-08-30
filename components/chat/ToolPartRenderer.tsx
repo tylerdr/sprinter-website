@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2, CheckCircle, XCircle } from "lucide-react";
 
 type Props = {
-  part: UIMessagePart;
+  part: UIMessagePart<any, any>;
   addToolResult: (args: { 
     tool: string; 
     toolCallId: string; 
@@ -23,13 +23,12 @@ type Props = {
 /**
  * Extract tool name from typed part ("tool-<key>") or dynamic tool
  */
-function extractToolKey(part: UIMessagePart): string | null {
+function extractToolKey(part: UIMessagePart<any, any>): string | null {
   if (part.type.startsWith("tool-")) {
     return part.type.slice("tool-".length);
   }
   if (part.type === "dynamic-tool") {
-    // @ts-ignore - dynamic tool has toolName
-    return part.toolName ?? null;
+    return (part as any).toolName ?? null;
   }
   return null;
 }

@@ -5,7 +5,7 @@
 
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import {
   DefaultChatTransport,
@@ -41,10 +41,10 @@ export default function ChatPane(props: ChatPaneProps) {
     [threadId, agentId, workspaceId, tenantId]
   );
 
+  const [input, setInput] = useState("");
+  
   const {
     messages,
-    input,
-    setInput,
     sendMessage,
     addToolResult,
     regenerate,
@@ -194,7 +194,7 @@ export default function ChatPane(props: ChatPaneProps) {
                 {messages.length > 0 && (
                   <Button
                     type="button"
-                    onClick={regenerate}
+                    onClick={() => regenerate()}
                     variant="outline"
                     size="icon"
                     title="Regenerate last response"

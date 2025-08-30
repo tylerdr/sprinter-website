@@ -162,12 +162,16 @@ export default function SignInPage() {
             onClick={async () => {
               setIsDemoLoading(true)
               try {
-                const { error } = await signIn({ 
-                  email: 'demo@sprinter.ai', 
-                  password: 'demo123456' 
+                // Call secure demo login endpoint
+                const response = await fetch('/api/auth/demo', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' }
                 })
-                if (error) {
-                  toast.error('Demo access unavailable. Please contact support.')
+                
+                const data = await response.json()
+                
+                if (!response.ok) {
+                  toast.error(data.error || 'Demo access unavailable. Please contact support.')
                 } else {
                   toast.success('Welcome to the demo!')
                   router.push('/dashboard/portfolio-health')
@@ -197,13 +201,12 @@ export default function SignInPage() {
               Sign up
             </Link>
           </div>
-          {/* TODO: Implement reset password page
           <Link 
             href="/auth/reset-password" 
-            className="text-sm text-neutral-400 hover:text-neutral-300 underline"
+            className="text-sm text-neutral-400 hover:text-neutral-300 underline text-center"
           >
             Forgot password?
-          </Link> */}
+          </Link>
         </CardFooter>
       </Card>
     </div>

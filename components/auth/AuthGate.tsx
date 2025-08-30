@@ -31,7 +31,7 @@ export function AuthGate({ children, feature = 'this feature', requireAuth = fal
         const { data: { user } } = await supabase.auth.getUser()
         setUser(user)
 
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
           setUser(session?.user ?? null)
         })
 

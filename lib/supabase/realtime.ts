@@ -35,8 +35,7 @@ class RealtimeManager {
     const channel = this.supabase
       .channel(channelName)
       .on(
-        // @ts-expect-error - Supabase types issue
-        'postgres_changes',
+        'postgres_changes' as any,
         {
           event: config.event as ('INSERT' | 'UPDATE' | 'DELETE' | '*'),
           schema: config.schema || 'public',

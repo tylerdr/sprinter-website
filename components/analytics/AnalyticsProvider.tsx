@@ -91,7 +91,7 @@ function AnalyticsTracking() {
         }
 
         // Listen for auth changes
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((event: any, session) => {
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event: any, session: any) => {
           if (session?.user) {
             analytics.identify(session.user.id, {
               email: session.user.email

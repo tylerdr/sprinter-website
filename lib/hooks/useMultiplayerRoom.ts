@@ -52,16 +52,16 @@ export function useMultiplayerRoom({
         const playersList = Object.values(state).flat() as unknown as Player[];
         onPresenceSync?.(playersList);
       })
-      .on('presence', { event: 'join' }, ({ key, newPresences }) => {
+      .on('presence', { event: 'join' }, ({ key, newPresences }: any) => {
         console.log('Player joined:', key, newPresences);
       })
-      .on('presence', { event: 'leave' }, ({ key, leftPresences }) => {
+      .on('presence', { event: 'leave' }, ({ key, leftPresences }: any) => {
         console.log('Player left:', key, leftPresences);
       })
-      .on('broadcast', { event: '*' }, ({ event, payload }) => {
+      .on('broadcast', { event: '*' }, ({ event, payload }: any) => {
         onBroadcast?.(event, payload);
       })
-      .subscribe(async (status) => {
+      .subscribe(async (status: any) => {
         if (status === 'SUBSCRIBED') {
           setIsConnected(true);
           // Track this player's presence after subscription

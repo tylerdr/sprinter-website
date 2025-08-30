@@ -228,18 +228,18 @@ export async function getProposalAnalytics(proposalId: string): Promise<Proposal
   if (eventsError) throw eventsError
   
   // Calculate analytics
-  const uniqueViewers = new Set(views?.map(v => v.session_id)).size
+  const uniqueViewers = new Set(views?.map((v: any) => v.session_id)).size
   const totalViews = views?.length || 0
   const averageViewDuration = views?.length 
-    ? views.reduce((acc, v) => acc + (v.duration_seconds || 0), 0) / views.length
+    ? views.reduce((acc: any, v: any) => acc + (v.duration_seconds || 0), 0) / views.length
     : 0
   const lastViewedAt = views?.length
-    ? views.sort((a, b) => new Date(b.viewed_at).getTime() - new Date(a.viewed_at).getTime())[0].viewed_at
+    ? views.sort((a: any, b: any) => new Date(b.viewed_at).getTime() - new Date(a.viewed_at).getTime())[0].viewed_at
     : undefined
   
-  const downloadCount = events?.filter(e => e.event_type === 'pdf_download').length || 0
-  const chatInteractions = events?.filter(e => e.event_type === 'question_asked').length || 0
-  const fileUploads = events?.filter(e => e.event_type === 'file_uploaded').length || 0
+  const downloadCount = events?.filter((e: any) => e.event_type === 'pdf_download').length || 0
+  const chatInteractions = events?.filter((e: any) => e.event_type === 'question_asked').length || 0
+  const fileUploads = events?.filter((e: any) => e.event_type === 'file_uploaded').length || 0
   
   // Calculate engagement score (0-100)
   const engagementScore = calculateEngagementScore({

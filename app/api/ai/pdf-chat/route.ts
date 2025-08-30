@@ -1,7 +1,15 @@
 import { streamText } from 'ai';
 import { google } from '@ai-sdk/google';
+import { NextRequest } from 'next/server';
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Apply rate limiting for AI endpoints
+  const { success, reset } = await rateLimit(request, 'ai')
+  if (!success) {
+    return rateLimitResponse(reset)
+  }
+
   const { messages, documents } = await request.json();
 
   // Prepare the context with uploaded documents

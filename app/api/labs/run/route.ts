@@ -1,7 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Apply rate limiting for AI lab endpoints
+  const { success, reset } = await rateLimit(request, 'ai')
+  if (!success) {
+    return rateLimitResponse(reset)
+  }
+
   try {
     const { lab } = await request.json();
 

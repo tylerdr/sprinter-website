@@ -296,6 +296,14 @@ export function PENavigation() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <Link href="/pricing" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Pricing
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
@@ -317,8 +325,9 @@ export function PENavigation() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors"
+              className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors relative z-50"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              data-testid="mobile-menu-toggle"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -333,7 +342,7 @@ export function PENavigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border"
+            className="lg:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border z-50"
           >
             <div className="container mx-auto px-4 py-4 space-y-4">
               {/* Mobile Solutions */}
@@ -404,6 +413,13 @@ export function PENavigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Partnership
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="px-3 py-2 text-sm font-medium hover:text-foreground text-muted-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Pricing
                 </Link>
                 <Link
                   href="/contact"

@@ -38,8 +38,8 @@ export default function SignUpPage() {
       if (error) {
         toast.error(error.message)
       } else {
-        toast.success('Check your email to confirm your account')
-        router.push('/auth/signin')
+        toast.success('Account created! Check your email to confirm.')
+        router.push('/auth/confirm-email')
       }
     } catch (error) {
       toast.error('An unexpected error occurred')
