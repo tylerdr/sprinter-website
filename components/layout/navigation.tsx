@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NAVIGATION } from "@/lib/constants";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
 
@@ -60,12 +59,10 @@ export function Navigation() {
               </Link>
             ))}
             <NavigationAuth />
-            <ThemeToggle />
           </div>
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-3 md:hidden">
-            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"

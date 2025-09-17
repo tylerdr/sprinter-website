@@ -1,9 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, Twitter, Linkedin, Mail, Palette } from "lucide-react";
 import { COMPANY_INFO, SOCIAL_LINKS, NAVIGATION } from "@/lib/constants";
+import { useState } from "react";
+import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
+  const [showThemeCustomizer, setShowThemeCustomizer] = useState(false);
   return (
     <footer
       role="contentinfo"
@@ -101,6 +107,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/governance"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors block py-1 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+                >
+                  Governance & Security
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -153,13 +167,29 @@ export function Footer() {
           </Link>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-border/30 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
-          <p className="text-xs sm:text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
-          </p>
+        {/* Copyright and Theme Customizer */}
+        <div className="border-t border-border/30 mt-6 sm:mt-8 pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setShowThemeCustomizer(!showThemeCustomizer)}
+              className="gap-2"
+            >
+              <Palette className="w-4 h-4" />
+              Customize Theme
+            </Button>
+          </div>
         </div>
       </div>
+      {showThemeCustomizer && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <ThemeCustomizer />
+        </div>
+      )}
     </footer>
   );
 }

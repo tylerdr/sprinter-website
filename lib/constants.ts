@@ -3,8 +3,8 @@
 export const COMPANY_INFO = {
   name: "Sprinter AI",
   tagline: "Your AI Operating Partner for Private Equity.",
-  description: "The AI Operating Partner for lower-middle-market PE. We deliver boringly reliable 30-45 day wins (AP/expense, Quote Intelligence, 3PL Ops) and fund-level governance to defend those wins to LPs.",
-  philosophy: "Make AI boring. Ship portfolio wins in 45 days—no rewires, no drama. Governance first, hype last.",
+  description: "The AI Operating Partner for lower-middle-market PE. Real AI builders with a library of prebuilt solutions delivering value from the first sprint. We ship portfolio wins in 30-45 days—no rewires, no drama.",
+  philosophy: "Make AI boring. Ship portfolio wins in 45 days with battle-tested solutions. Real builders, real products, real results.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",
@@ -39,12 +39,12 @@ export const NAVIGATION = {
           ],
         },
         {
-          title: "Wedge Solutions",
+          title: "Prebuilt Solutions",
           items: [
-            { href: "/solutions/ap-automation", label: "AP & Expense Automation", description: "QBO/Sage, 60% touchless" },
+            { href: "/solutions/ap-automation", label: "Financial Process Automation", description: "AP, expense, reconciliation" },
             { href: "/solutions/quote-intelligence", label: "Quote Intelligence", description: "RFP to quote draft" },
             { href: "/solutions/3pl-ops", label: "3PL Ops & Billing", description: "Quote to billing accuracy" },
-            { href: "/governance", label: "Governance & Security", description: "Fee-offset optics, audit trail" },
+            { href: "/solutions", label: "View All Solutions", description: "20+ prebuilt AI products" },
           ],
         },
         {
@@ -62,10 +62,10 @@ export const NAVIGATION = {
       label: "Solutions",
       type: "dropdown",
       items: [
-        { href: "/solutions/ap-automation", label: "AP & Expense Automation", description: "30-45 day wins" },
+        { href: "/solutions/ap-automation", label: "Financial Process Automation", description: "30-45 day wins" },
         { href: "/solutions/quote-intelligence", label: "Quote Intelligence", description: "42% faster cycles" },
         { href: "/solutions/3pl-ops", label: "3PL Ops & Billing", description: "18pt accuracy gain" },
-        { href: "/use-cases", label: "All Use Cases →", description: "Industry solutions" },
+        { href: "/use-cases", label: "All Use Cases →", description: "20+ prebuilt solutions" },
       ],
     },
     {
@@ -79,15 +79,49 @@ export const NAVIGATION = {
         { href: "/tools/quote-estimator", label: "Quote Throughput Estimator", description: "RFP capacity" },
       ],
     },
-    { href: "/governance", label: "Governance" },
+    {
+      href: "/insights",
+      label: "Insights",
+      type: "mega",
+      sections: [
+        {
+          title: "AI Strategy",
+          items: [
+            { href: "/insights/ai-models", label: "AI Models", description: "Latest model capabilities" },
+            { href: "/insights/trends", label: "AI Trends", description: "Market trends & analysis" },
+            { href: "/insights/how-to-win", label: "How to Win with AI", description: "Strategic playbooks" },
+            { href: "/insights/software-3", label: "Software 3.0", description: "The AI-native future" },
+          ],
+        },
+        {
+          title: "Industries",
+          items: [
+            { href: "/industries/manufacturing", label: "Manufacturing", description: "AI in production" },
+            { href: "/industries/logistics", label: "Logistics & 3PL", description: "Supply chain AI" },
+            { href: "/industries/healthcare", label: "Healthcare", description: "Medical AI applications" },
+            { href: "/industries/financial-services", label: "Financial Services", description: "Fintech & banking AI" },
+          ],
+        },
+        {
+          title: "Products & Use Cases",
+          items: [
+            { href: "/products", label: "AI Products", description: "Our product portfolio" },
+            { href: "/use-cases", label: "Use Cases", description: "Industry applications" },
+            { href: "/insights/key-terms", label: "AI Glossary", description: "Key terms explained" },
+            { href: "/insights/implementation", label: "Implementation Guide", description: "Best practices" },
+          ],
+        },
+      ],
+    },
     { href: "/contact", label: "Book Workshop" },
   ],
   footer: {
     products: [
       { href: "/operating-partner", label: "AI Operating Partnership" },
-      { href: "/solutions/ap-automation", label: "AP & Expense Automation" },
+      { href: "/solutions/ap-automation", label: "Financial Process Automation" },
       { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
       { href: "/solutions/3pl-ops", label: "3PL Ops & Billing" },
+      { href: "/solutions", label: "All Prebuilt Solutions" },
     ],
     services: [
       { href: "/operating-partner#workshop", label: "90-Minute OP Workshop" },

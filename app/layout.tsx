@@ -4,8 +4,7 @@ import "./globals.css";
 import { NavigationEnhanced } from "@/components/layout/navigation-enhanced";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
-import { ChatWidget } from "@/components/chat/ChatWidget";
+import { AgentChat } from "@/components/ai/agent-chat";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalyticsWrapper } from "@/components/analytics/google-analytics-wrapper";
@@ -82,8 +81,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </AnalyticsProvider>
-          <ThemeCustomizer />
-          <ChatWidget />
+          <AgentChat />
           <Toaster position="bottom-right" />
           <GoogleAnalyticsWrapper />
           <Analytics />

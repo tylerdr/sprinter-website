@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import { handleCheckoutComplete, handleSubscriptionUpdate, handleSubscriptionCanceled } from './webhook-handlers';
 
 // Initialize Stripe with proper configuration
 export const stripe = process.env.STRIPE_SECRET_KEY 
@@ -266,20 +267,23 @@ export async function handleWebhookEvent(event: Stripe.Event) {
     case 'checkout.session.completed':
       // Handle successful payment/subscription
       const session = event.data.object as Stripe.Checkout.Session;
-      // TODO: Update lead status, send welcome email, etc.
+      // Update lead status and send welcome email
+      await handleCheckoutComplete(session);
       break;
       
     case 'customer.subscription.created':
     case 'customer.subscription.updated':
       // Handle subscription changes
       const subscription = event.data.object as Stripe.Subscription;
-      // TODO: Update subscription status in database
+      // Update subscription status in database
+      await handleSubscriptionUpdate(subscription);
       break;
       
     case 'customer.subscription.deleted':
       // Handle cancellation
       const cancelledSub = event.data.object as Stripe.Subscription;
-      // TODO: Update status, trigger offboarding
+      // Update status and trigger offboarding
+      await handleSubscriptionCanceled(cancelledSub);
       break;
   }
 }

@@ -4,7 +4,6 @@
  */
 
 import { NextRequest } from "next/server";
-import { openai } from '@ai-sdk/openai';
 import { 
   streamText,
   convertToModelMessages, 
@@ -12,6 +11,8 @@ import {
   UIMessage 
 } from "ai";
 import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
+import { AgentManager } from '@/lib/agents/manager';
+import { nanoid } from 'nanoid';
 
 // Allow streaming responses up to 60 seconds
 export const maxDuration = 60;
@@ -19,9 +20,19 @@ export const maxDuration = 60;
 type Body = {
   id?: string;            // chatId (threadId)
   messages: UIMessage[];  // UI messages from useChat
-  agentId?: string;       // Selected agent (optional, defaults to basic)
-  workspaceId?: string;   // Optional workspace scope
-  tenantId?: string;      // Tenant ID for multi-tenancy
+  agentId?: string;       // Selected agent (optional, defaults to customer-support)
+  context?: {
+    isAdmin?: boolean;
+    pageContext?: {
+      url: string;
+      title: string;
+      section?: string;
+    };
+    userProfile?: {
+      email?: string;
+      role?: string;
+    };
+  };
 };
 
 export async function POST(req: NextRequest) {
@@ -33,29 +44,23 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = (await req.json()) as Body;
-    const { messages, agentId = "default" } = body;
+    const { messages, agentId = "customer-support", context = {} } = body;
 
-    // For now, use a simple default agent configuration
-    // In production, load from database based on agentId
-    const agentConfig = {
-      model: openai('gpt-4o-mini'),
-      system: `You are a helpful AI assistant for Sprinter AI, specializing in AI Operating Partner services for Private Equity.
-      Focus on practical, 30-45 day implementations with clear acceptance criteria.
-      Emphasize AP automation, Quote Intelligence, and 3PL operations.
-      Be concise, action-oriented, and governance-focused.`,
-      temperature: 0.7,
-      maxRetries: 2,
-      // Add tools here when implemented
-      // tools: await buildToolsetForAgent(agentId),
+    // Create agent context
+    const agentContext = {
+      threadId: body.id || nanoid(),
+      agentId,
+      isAdmin: context.isAdmin || false,
+      pageContext: context.pageContext,
+      userProfile: context.userProfile,
+      userId: context.userProfile?.email,
     };
 
-    // Stream the response
-    const result = streamText({
-      ...agentConfig,
-      messages: convertToModelMessages(messages),
-      // Control multi-step loops
-      stopWhen: stepCountIs(4),
-    });
+    // Initialize agent manager
+    const agentManager = new AgentManager(agentContext);
+
+    // Stream the response using the agent manager
+    const result = await agentManager.streamResponse(messages);
 
     // Return UI message stream response
     return result.toTextStreamResponse();
