@@ -48,20 +48,20 @@ function BadgeVariant(variant: string) {
 
 function FeatureCard({ feature }: { feature: NavFeature }) {
   return (
-    <div className="col-span-full">
+    <div className="col-span-full mb-2">
       <NavigationMenuLink asChild>
         <Link
           href={feature.href}
-          className="flex items-start gap-4 rounded-lg border border-border/50 bg-gradient-to-br from-accent/20 via-background to-accent/10 p-4 hover:border-brand/50 hover:from-accent/30 hover:to-accent/20 transition-all"
+          className="flex items-start gap-3 rounded-lg border border-border/50 bg-muted/50 p-3 hover:bg-accent hover:border-accent-foreground/20 transition-colors"
         >
           {feature.icon && (
-            <div className="rounded-lg bg-brand/10 p-2.5 text-brand">
-              <feature.icon className="h-5 w-5" />
+            <div className="rounded-md bg-background p-2 text-muted-foreground">
+              <feature.icon className="h-4 w-4" />
             </div>
           )}
           <div className="flex-1 space-y-1">
             <div className="flex items-center gap-2">
-              <h3 className="text-sm font-semibold">{feature.title}</h3>
+              <h3 className="text-sm font-medium">{feature.title}</h3>
               {feature.badge && (
                 <Badge variant={BadgeVariant(feature.badge.variant)} className="text-xs">
                   {feature.badge.text}
@@ -91,14 +91,14 @@ function NavItemContent({ item, onAction }: { item: NavItem; onAction?: (item: N
         href={item.href}
         onClick={handleClick}
         className={cn(
-          "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all",
-          "hover:bg-accent/80 hover:text-accent-foreground",
+          "group block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors",
+          "hover:bg-accent hover:text-accent-foreground",
           "focus:bg-accent focus:text-accent-foreground"
         )}
       >
         <div className="flex items-start gap-3">
           {item.icon && (
-            <div className="rounded-md bg-accent/50 p-1.5 group-hover:bg-background/20">
+            <div className="rounded-md bg-muted p-1.5 group-hover:bg-accent">
               <item.icon className="h-3.5 w-3.5" />
             </div>
           )}
@@ -128,11 +128,11 @@ function NavItemContent({ item, onAction }: { item: NavItem; onAction?: (item: N
 
 function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: NavItem) => void }) {
   return (
-    <NavigationMenuContent className="w-[900px]">
-      <div className="grid gap-3 p-6">
+    <NavigationMenuContent className="w-auto">
+      <div className="grid gap-3 p-4 min-w-[500px] max-w-[600px]">
         {item.featured && <FeatureCard feature={item.featured} />}
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-2">
           {item.sections?.map((section, idx) => (
             <div key={idx} className="space-y-3">
               {section.title && (
@@ -157,8 +157,8 @@ function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: 
 
 function StandardMenuContent({ items, onAction }: { items: NavItem[]; onAction?: (item: NavItem) => void }) {
   return (
-    <NavigationMenuContent>
-      <ul className="grid w-[500px] gap-2 p-4 md:grid-cols-2">
+    <NavigationMenuContent className="w-auto">
+      <ul className="grid gap-2 p-4 min-w-[300px] max-w-[400px]">
         {items.map((item) => (
           <li key={item.href}>
             <NavItemContent item={item} onAction={onAction} />
@@ -187,9 +187,7 @@ export function EnhancedNavigation() {
   };
 
   const handleNavAction = useCallback((item: NavItem) => {
-    if (item.type === "action" && item.label === "Theme Studio") {
-      setThemeStudioOpen(true);
-    }
+    // Handle navigation actions if needed
   }, []);
 
   return (

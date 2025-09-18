@@ -123,15 +123,15 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           items: [
             {
               label: "Fund-Level Orchestration",
-              href: "/operating-partner#orchestration",
+              href: "/operating-partner",
               icon: Shield,
               description: "Coordinated portfolio transformation",
             },
             {
-              label: "Proven Playbooks",
-              href: "/operating-partner#playbooks",
+              label: "Case Studies",
+              href: "/case-studies",
               icon: BookOpen,
-              description: "20+ prebuilt solutions ready to deploy",
+              description: "Proven portfolio wins",
             },
           ],
         },
@@ -178,23 +178,22 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           title: "By Function",
           items: [
             {
-              label: "Operations",
-              href: "/use-cases#operations",
-              icon: Settings,
-              description: "Streamline core processes",
-            },
-            {
-              label: "Finance",
-              href: "/use-cases#finance",
-              icon: TrendingUp,
-              description: "Automate financial workflows",
-            },
-            {
-              label: "All PE Use Cases",
+              label: "All Use Cases",
               href: "/use-cases",
+              icon: Settings,
+              description: "Browse all solutions",
+            },
+            {
+              label: "By Industry",
+              href: "/use-cases/industries",
+              icon: TrendingUp,
+              description: "Industry-specific solutions",
+            },
+            {
+              label: "By Role",
+              href: "/use-cases/roles",
               icon: Layers,
-              description: "20+ prebuilt solutions",
-              badge: { text: "View All", variant: "outline" },
+              description: "Role-based solutions",
             },
           ],
         },
@@ -210,17 +209,11 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           title: "Focus Sectors",
           items: [
             {
-              label: "Manufacturing",
-              href: "/industries/manufacturing",
+              label: "Private Equity",
+              href: "/industries/private-equity",
               icon: Factory,
-              description: "AI on the factory floor",
-              badge: { text: "15+ Wins", variant: "secondary" },
-            },
-            {
-              label: "Logistics & 3PL",
-              href: "/industries/logistics",
-              icon: Truck,
-              description: "Supply chain automation",
+              description: "PE-focused solutions",
+              badge: { text: "Featured", variant: "secondary" },
             },
             {
               label: "Healthcare",
@@ -233,6 +226,12 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               href: "/industries/financial-services",
               icon: Banknote,
               description: "Fintech & banking AI",
+            },
+            {
+              label: "View All",
+              href: "/industries",
+              icon: Building2,
+              description: "Browse all sectors",
             },
           ],
         },
@@ -291,37 +290,6 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               description: "Private equity AI analysis",
             },
           ],
-        },
-      ],
-    },
-    {
-      label: "Design",
-      href: "/design",
-      type: "dropdown",
-      icon: Palette,
-      items: [
-        {
-          label: "Theme Studio",
-          href: "#theme-studio",
-          icon: Wand2,
-          description: "Customize your experience",
-          badge: { text: "Interactive", variant: "new" },
-          type: "action",
-          action: () => {
-            // Action will be handled by the navigation component
-          },
-        },
-        {
-          label: "Brand Guidelines",
-          href: "/brand",
-          icon: Code,
-          description: "Colors, typography, and more",
-        },
-        {
-          label: "Component Gallery",
-          href: "/components",
-          icon: Layers,
-          description: "Explore our design system",
         },
       ],
     },
