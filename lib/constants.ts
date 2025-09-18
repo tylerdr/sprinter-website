@@ -292,6 +292,12 @@ export const PAGE_SEO = {
     keywords: "AI demos, human-AI collaboration, interactive AI, AI prototypes, autonomous agents demo, AI tools, purposeful technology",
     ogTitle: "AI Labs - Human-AI Collaboration in Action",
   },
+  resources: {
+    title: "PE AI Resources - Tools, Calculators & Case Studies | Sprinter AI",
+    description: "Everything you need to evaluate, implement, and scale AI across your portfolio. Interactive demos, ROI calculators, and battle-tested playbooks.",
+    keywords: "AI resources, PE tools, ROI calculator, case studies, AI playbooks, portfolio transformation, AI demos",
+    ogTitle: "PE AI Resources Hub - Sprinter AI",
+  },
   blog: {
     title: "AI Insights - Building Technology for Human Flourishing | Sprinter AI Blog",
     description: "Expert insights on building AI that enables human potential. Learn how to create abundance through human-centered AI development.",
