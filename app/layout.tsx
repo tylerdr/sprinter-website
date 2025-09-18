@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/layout/navigation";
+import { EnhancedNavigation } from "@/components/layout/enhanced-navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeCustomizer } from "@/components/theme-controls/ThemeCustomizer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -76,13 +75,12 @@ export default function RootLayout({
           </a>
 
           <AnalyticsProvider>
-            <Navigation />
+            <EnhancedNavigation />
             <main id="main-content" className="flex-1 pt-16">
               {children}
             </main>
             <Footer />
           </AnalyticsProvider>
-          <ThemeCustomizer />
           <ChatWidget />
           <Toaster position="bottom-right" />
           <GoogleAnalyticsWrapper />
