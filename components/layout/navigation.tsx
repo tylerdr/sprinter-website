@@ -11,11 +11,14 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -50,88 +53,93 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div
-            className="hidden md:flex items-center space-x-6 lg:space-x-8"
-            role="list"
-          >
-            {NAVIGATION.main.map((item) => (
-              <div key={item.href}>
-                {"dropdown" in item && item.dropdown ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <button
-                        className={cn(
-                          "relative flex items-center gap-1 text-sm font-medium transition-colors hover:text-foreground py-2 px-1 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm",
-                          pathname.startsWith(item.href)
-                            ? "text-foreground"
-                            : "text-muted-foreground"
-                        )}
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                      >
-                        {item.label}
-                        <ChevronDown className="w-3 h-3" />
-                        {pathname.startsWith(item.href) && (
-                          <motion.div
-                            layoutId="navbar-underline"
-                            className="absolute -bottom-5 left-0 right-0 h-0.5 bg-brand-gradient"
-                            aria-hidden="true"
-                          />
-                        )}
-                      </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-56">
-                      {item.dropdown.map((dropdownItem) => (
-                        <DropdownMenuItem key={dropdownItem.href} asChild>
-                          <Link
-                            href={dropdownItem.href}
-                            className="flex items-center w-full"
+          <div className="hidden md:flex items-center gap-2">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {NAVIGATION.main.map((item) => {
+                  const hasDropdown = "dropdown" in item && item.dropdown;
+                  const dropdownItems = "items" in item ? item.items : item.dropdown;
+
+                  return (
+                    <NavigationMenuItem key={item.href}>
+                      {hasDropdown ? (
+                        <>
+                          <NavigationMenuTrigger
+                            className={cn(
+                              "h-9 px-3 py-2 text-sm font-medium",
+                              pathname.startsWith(item.href)
+                                ? "text-foreground"
+                                : "text-muted-foreground"
+                            )}
                           >
-                            {dropdownItem.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "relative text-sm font-medium transition-colors hover:text-foreground py-2 px-1 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm",
-                      pathname === item.href
-                        ? "text-foreground"
-                        : "text-muted-foreground"
-                    )}
-                    aria-current={pathname === item.href ? "page" : undefined}
-                  >
-                    {item.label}
-                    {pathname === item.href && (
-                      <motion.div
-                        layoutId="navbar-underline"
-                        className="absolute -bottom-5 left-0 right-0 h-0.5 bg-brand-gradient"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </Link>
-                )}
-              </div>
-            ))}
-            {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => (
-              <Link
-                key={cta.href}
-                href={cta.href}
-                className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
-                  cta.variant === "outline"
-                    ? "border border-border hover:bg-accent hover:text-accent-foreground"
-                    : "bg-primary text-primary-foreground hover:bg-primary/90"
-                )}
-              >
-                {cta.label}
-              </Link>
-            ))}
-            <NavigationAuth />
-            <ThemeToggle />
+                            {item.label}
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                              {dropdownItems?.map((subItem) => (
+                                <li key={subItem.href}>
+                                  <NavigationMenuLink asChild>
+                                    <Link
+                                      href={subItem.href}
+                                      className={cn(
+                                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                        pathname === subItem.href && "bg-accent/50"
+                                      )}
+                                    >
+                                      <div className="text-sm font-medium leading-none">
+                                        {subItem.label}
+                                      </div>
+                                      {"description" in subItem && subItem.description && (
+                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                          {subItem.description}
+                                        </p>
+                                      )}
+                                    </Link>
+                                  </NavigationMenuLink>
+                                </li>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </>
+                      ) : (
+                        <Link href={item.href} legacyBehavior passHref>
+                          <NavigationMenuLink
+                            className={cn(
+                              navigationMenuTriggerStyle(),
+                              "h-9 px-3 py-2 text-sm font-medium",
+                              pathname === item.href
+                                ? "text-foreground bg-accent/50"
+                                : "text-muted-foreground"
+                            )}
+                          >
+                            {item.label}
+                          </NavigationMenuLink>
+                        </Link>
+                      )}
+                    </NavigationMenuItem>
+                  );
+                })}
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <div className="flex items-center gap-2 ml-2">
+              {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className={cn(
+                    "px-4 py-2 text-sm font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                    cta.variant === "outline"
+                      ? "border border-border hover:bg-accent hover:text-accent-foreground"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
+                  )}
+                >
+                  {cta.label}
+                </Link>
+              ))}
+              <NavigationAuth />
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Controls */}
