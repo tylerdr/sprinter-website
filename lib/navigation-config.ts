@@ -82,10 +82,10 @@ export interface NavigationConfig {
 export const NAVIGATION_CONFIG: NavigationConfig = {
   main: [
     {
-      label: "Operating Partner",
-      href: "/operating-partner",
+      label: "Solutions",
+      href: "/solutions",
       type: "mega",
-      icon: Briefcase,
+      icon: Sparkles,
       featured: {
         title: "AI Operating Partner Program",
         description: "Transform your portfolio with battle-tested AI solutions. Get measurable wins in 30-45 days.",
@@ -94,6 +94,38 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
         badge: { text: "Popular", variant: "success" },
       },
       sections: [
+        {
+          title: "Private Equity Solutions",
+          items: [
+            {
+              label: "Operating Partner Program",
+              href: "/operating-partner",
+              icon: Briefcase,
+              description: "Fund-level AI orchestration",
+              badge: { text: "Featured", variant: "success" },
+            },
+            {
+              label: "Financial Process Automation",
+              href: "/solutions/ap-automation",
+              icon: DollarSign,
+              description: "AP, expense, reconciliation",
+              badge: { text: "ROI: 250%", variant: "success" },
+            },
+            {
+              label: "Quote Intelligence",
+              href: "/solutions/quote-intelligence",
+              icon: FileCode,
+              description: "RFP to quote draft in minutes",
+              badge: { text: "New", variant: "new" },
+            },
+            {
+              label: "3PL Ops & Billing",
+              href: "/solutions/3pl-ops",
+              icon: Truck,
+              description: "Quote-to-billing accuracy",
+            },
+          ],
+        },
         {
           title: "Program Options",
           items: [
@@ -119,63 +151,7 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           ],
         },
         {
-          title: "Why Partners Choose Us",
-          items: [
-            {
-              label: "Fund-Level Orchestration",
-              href: "/operating-partner",
-              icon: Shield,
-              description: "Coordinated portfolio transformation",
-            },
-            {
-              label: "Case Studies",
-              href: "/case-studies",
-              icon: BookOpen,
-              description: "Proven portfolio wins",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      label: "Solutions",
-      href: "/solutions",
-      type: "mega",
-      icon: Sparkles,
-      featured: {
-        title: "Prebuilt AI Solutions",
-        description: "Deploy battle-tested AI that drives immediate portfolio value. No rewires, no drama.",
-        href: "/solutions",
-        icon: Package,
-      },
-      sections: [
-        {
-          title: "Top Solutions",
-          items: [
-            {
-              label: "Financial Process Automation",
-              href: "/solutions/ap-automation",
-              icon: DollarSign,
-              description: "AP, expense, reconciliation",
-              badge: { text: "ROI: 250%", variant: "success" },
-            },
-            {
-              label: "Quote Intelligence",
-              href: "/solutions/quote-intelligence",
-              icon: FileCode,
-              description: "RFP to quote draft in minutes",
-              badge: { text: "New", variant: "new" },
-            },
-            {
-              label: "3PL Ops & Billing",
-              href: "/solutions/3pl-ops",
-              icon: Truck,
-              description: "Quote-to-billing accuracy",
-            },
-          ],
-        },
-        {
-          title: "By Function",
+          title: "Browse Solutions",
           items: [
             {
               label: "All Use Cases",

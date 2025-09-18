@@ -129,10 +129,10 @@ function NavItemContent({ item, onAction }: { item: NavItem; onAction?: (item: N
 function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: NavItem) => void }) {
   return (
     <NavigationMenuContent className="w-auto">
-      <div className="grid gap-3 p-4 min-w-[500px] max-w-[600px]">
+      <div className="grid gap-3 p-4 min-w-[700px] max-w-[800px]">
         {item.featured && <FeatureCard feature={item.featured} />}
 
-        <div className="grid gap-4 grid-cols-2">
+        <div className="grid gap-4 grid-cols-3">
           {item.sections?.map((section, idx) => (
             <div key={idx} className="space-y-3">
               {section.title && (
