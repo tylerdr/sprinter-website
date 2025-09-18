@@ -1,9 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
-import { Resend } from "resend"
 import { personalizeEmail, peOutreachTemplates } from "./email-templates"
-
-// Initialize Resend only if API key is available
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 interface Lead {
   email: string
@@ -237,7 +233,10 @@ export class LeadNurtureService {
     const personalizedBody = this.personalizeText(emailConfig.template, personalizationData)
 
     try {
-      if (resend) {
+      const resendKey = process.env.RESEND_API_KEY
+      if (resendKey) {
+        const { Resend } = await import("resend")
+        const resend = new Resend(resendKey)
         await resend.emails.send({
           from: "Sprinter AI <hello@sprinter.ai>",
           to: sequence.lead_email,

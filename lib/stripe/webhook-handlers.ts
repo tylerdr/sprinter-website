@@ -1,8 +1,5 @@
 import Stripe from 'stripe';
 import { createClient } from '@/lib/supabase/server';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 /**
  * Handle successful checkout session completion
@@ -90,7 +87,11 @@ export async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
 
     // Send welcome email
     if (metadata.source === 'workshop') {
-      const { error: emailError } = await resend.emails.send({
+      const resendKey = process.env.RESEND_API_KEY;
+      if (resendKey) {
+        const { Resend } = await import('resend');
+        const resend = new Resend(resendKey);
+        const { error: emailError } = await resend.emails.send({
         from: 'Sprinter AI <hello@sprinter.ai>',
         to: customerEmail,
         subject: 'Welcome to Sprinter AI - Workshop Registration Confirmed',
@@ -115,11 +116,11 @@ export async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
           <p>If you have any questions, reply to this email or call us at +1 (615) 601-0782.</p>
           <p>Best regards,<br>The Sprinter AI Team</p>
         `,
-      });
+        });
 
-      if (emailError) {
-        console.error('Error sending welcome email:', emailError);
-      } else {
+        if (emailError) {
+          console.error('Error sending welcome email:', emailError);
+        } else {
         // Log email sent
         await supabase
           .from('email_communications')
@@ -129,7 +130,8 @@ export async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
             subject: 'Welcome to Sprinter AI - Workshop Registration Confirmed',
             status: 'sent',
             sent_at: new Date().toISOString(),
-          });
+            });
+        }
       }
     }
   } catch (error) {
@@ -245,7 +247,11 @@ export async function handleSubscriptionCanceled(subscription: Stripe.Subscripti
 
     if (lead) {
       // Send offboarding email
-      const { error: emailError } = await resend.emails.send({
+      const resendKey = process.env.RESEND_API_KEY;
+      if (resendKey) {
+        const { Resend } = await import('resend');
+        const resend = new Resend(resendKey);
+        const { error: emailError } = await resend.emails.send({
         from: 'Sprinter AI <hello@sprinter.ai>',
         to: lead.email,
         subject: 'Subscription Canceled - We\'re Here to Help',
@@ -264,11 +270,11 @@ export async function handleSubscriptionCanceled(subscription: Stripe.Subscripti
           <p>Thank you for being part of the Sprinter AI journey.</p>
           <p>Best regards,<br>The Sprinter AI Team</p>
         `,
-      });
+        });
 
-      if (!emailError) {
-        // Log email
-        await supabase
+        if (!emailError) {
+          // Log email
+          await supabase
           .from('email_communications')
           .insert({
             lead_id: lead.id,
@@ -276,7 +282,8 @@ export async function handleSubscriptionCanceled(subscription: Stripe.Subscripti
             subject: 'Subscription Canceled - We\'re Here to Help',
             status: 'sent',
             sent_at: new Date().toISOString(),
-          });
+            });
+        }
       }
 
       // Log cancellation activity

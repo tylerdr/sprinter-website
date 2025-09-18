@@ -10,21 +10,21 @@ export const heroVariants = {
       line1: "Your AI Operating Partner",
       line2: "for Private Equity"
     },
-    subheadline: "Boringly reliable 30-45 day wins (AP/expense, Quote Intelligence, 3PL Ops) with fund-level governance you can defend to LPs. No API? No problem. We build the safe middle layer for QBO/Sage/desktop."
+    subheadline: "Build and deploy AI across your portfolio in 30-45 days. Focus on measurable ROI with governance you can defend to LPs. No API? No problem."
   },
   need: {
     headline: {
-      line1: "Make AI Boring.",
-      line2: "Ship Portfolio Wins in 45 Days."
+      line1: "Ship AI That Actually Works.",
+      line2: "In Weeks, Not Quarters."
     },
-    subheadline: "The AI Operating Partner for PE. Governance first, hype last. Touchless AP, faster quotes, accurate 3PL billing—auditable, repeatable, defensible."
+    subheadline: "The AI Operating Partner for PE. Real implementations that drive efficiency gains. From pilot to production—auditable, repeatable, defensible."
   },
   transform: {
     headline: {
-      line1: "Be the OP Who Shipped It.",
-      line2: "Not the One Still Evaluating."
+      line1: "Transform Portfolio Operations.",
+      line2: "With AI That Ships."
     },
-    subheadline: "30-45 day wedges with clear acceptance criteria. Options memos, not vendor pushes. We choose what's right for each portco. No rewires, no drama."
+    subheadline: "Hands-on execution with measurable impact. Build the AI layer your portfolio companies need. Clear deliverables in 30-45 days."
   },
   accelerate: {
     headline: {
@@ -56,9 +56,9 @@ export const ctaVariants = {
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "AP touchless rate to 64% in 30 days (QBO; 18k invoices/yr)",
-    description: "Quote cycle time ↓42% after 6 weeks (RFPs→Avontus). 3PL billing accuracy ↑18 pts with upload-only Sage.",
-    cta: "If we miss the acceptance criteria, we work the next sprint at our cost to close the gap."
+    headline: "Real Results: AP touchless rate to 60%+ in 30 days",
+    description: "Quote cycle time ↓42%. Working capital optimization. Measurable impact you can track and scale across portfolio companies.",
+    cta: "Get started with a 10-day AI Sprint. See results fast."
   },
   leftBehind: {
     headline: "Your ERP is ancient? Upload-only Sage/Biz?",

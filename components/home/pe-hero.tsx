@@ -10,10 +10,10 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "30-45", label: "day wins guaranteed" },
-  { value: "≥60%", label: "touchless invoices" },
-  { value: "42%", label: "faster quote cycles" },
+  { value: "30-45", label: "days to first value" },
+  { value: "60%+", label: "automation rate" },
   { value: "No API?", label: "No problem" },
+  { value: "10-Day", label: "sprint delivery" },
 ];
 
 export function PEHero() {
@@ -131,15 +131,15 @@ export function PEHero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <BookDemoButton 
-              size="lg" 
-              text="Book 90-Minute OP Workshop"
+            <BookDemoButton
+              size="lg"
+              text="Get Portfolio AI Assessment"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
             />
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/operating-partner#ap-brief" className="group">
+              <Link href="/pe-services" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                Download AP Accelerator Brief
+                See PE Value Creation Playbook
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
@@ -153,12 +153,12 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              Trusted by lower-middle-market PE leaders
+              Built for PE-backed companies and operating partners
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
-              <span className="font-semibold">Vero Capital</span>
-              <span className="font-semibold">Rock Hill Capital</span>
-              <span className="font-semibold">Beckway</span>
+              <span className="font-semibold">Lower Middle Market</span>
+              <span className="font-semibold">Growth Equity</span>
+              <span className="font-semibold">Venture Studios</span>
             </div>
           </motion.div>
 

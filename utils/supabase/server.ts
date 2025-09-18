@@ -1,0 +1,1 @@
+/home/sprinter/sprinter-website/lib/supabase/server.ts

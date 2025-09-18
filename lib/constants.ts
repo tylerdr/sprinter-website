@@ -275,6 +275,12 @@ export const PAGE_SEO = {
     keywords: "AI consulting services, human-centered AI, AI workshops, rapid prototyping, AI transformation, venture studio, purposeful work",
     ogTitle: "AI Services That Enable Human Potential - Sprinter AI",
   },
+  peServices: {
+    title: "PE Services - AI Operating Partner for Private Equity | Sprinter AI",
+    description: "Drive 23% EBITDA improvement across your portfolio with proven AI implementations. 100+ PE firms trust Sprinter as their AI Operating Partner.",
+    keywords: "private equity AI, PE operating partner, portfolio value creation, EBITDA improvement, AI transformation, portfolio optimization",
+    ogTitle: "AI Operating Partner for Private Equity - Sprinter AI",
+  },
   useCases: {
     title: "AI Use Cases - Automation That Creates Human Opportunity | Sprinter AI",
     description: "Discover how AI can handle repetitive tasks across industries, freeing people for creative and strategic work. Real examples of human-centered AI.",

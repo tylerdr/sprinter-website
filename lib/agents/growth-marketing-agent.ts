@@ -2,12 +2,8 @@ import { openai } from "@ai-sdk/openai"
 import { generateText, generateObject } from "ai"
 import { z } from "zod"
 import { createClient } from "@/lib/supabase/server"
-import { Resend } from "resend"
 import { EmailCampaignManager, personalizeEmail, peOutreachTemplates } from "@/lib/services/email-templates"
 import { LeadNurtureService } from "@/lib/services/lead-nurture"
-
-// Initialize Resend only if API key is available
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 interface AgentAction {
   type: "email" | "nurture" | "score" | "analyze" | "schedule"
@@ -183,7 +179,10 @@ export class GrowthMarketingAgent {
     const emailContent = await this.generatePersonalizedEmail(lead, action.data.context)
     
     // Send email
-    if (resend) {
+    const resendKey = process.env.RESEND_API_KEY
+    if (resendKey) {
+      const { Resend } = await import("resend")
+      const resend = new Resend(resendKey)
       await resend.emails.send({
         from: "Sprinter AI <hello@sprinter.ai>",
         to: lead.email,
@@ -400,7 +399,10 @@ export class GrowthMarketingAgent {
 
   private async sendInsightsReport(insights: string) {
     // Send daily insights to team
-    if (resend) {
+    const resendKey = process.env.RESEND_API_KEY
+    if (resendKey) {
+      const { Resend } = await import("resend")
+      const resend = new Resend(resendKey)
       await resend.emails.send({
         from: "Growth Agent <hello@sprinter.ai>",
         to: "hello@sprinter.ai", // Or specific team members
@@ -421,7 +423,10 @@ ${insights}
   }
 
   private async notifyHotLead(email: string, score: number) {
-    if (resend) {
+    const resendKey = process.env.RESEND_API_KEY
+    if (resendKey) {
+      const { Resend } = await import("resend")
+      const resend = new Resend(resendKey)
       await resend.emails.send({
         from: "Growth Agent <hello@sprinter.ai>",
         to: "hello@sprinter.ai",

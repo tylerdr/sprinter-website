@@ -49,16 +49,18 @@ export const InlineCitationCard = (props: InlineCitationCardProps) => (
 
 export type InlineCitationCardTriggerProps = ComponentProps<'button'> & {
   sources: string[];
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline';
 };
 
 export const InlineCitationCardTrigger = ({
   sources,
   className,
+  variant = 'secondary',
   ...props
 }: InlineCitationCardTriggerProps) => (
   <HoverCardTrigger asChild>
     <Badge
-      variant="secondary"
+      variant={variant}
       className={cn('ml-1 rounded-full', className)}
       {...props}
     >
