@@ -4,15 +4,33 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { NAVIGATION } from "@/lib/constants";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedMobileItems, setExpandedMobileItems] = useState<Set<string>>(new Set());
+
+  const toggleMobileItem = (href: string) => {
+    const newExpanded = new Set(expandedMobileItems);
+    if (newExpanded.has(href)) {
+      newExpanded.delete(href);
+    } else {
+      newExpanded.add(href);
+    }
+    setExpandedMobileItems(newExpanded);
+  };
 
   return (
     <nav
@@ -37,32 +55,88 @@ export function Navigation() {
             role="list"
           >
             {NAVIGATION.main.map((item) => (
+              <div key={item.href}>
+                {"dropdown" in item && item.dropdown ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        className={cn(
+                          "relative flex items-center gap-1 text-sm font-medium transition-colors hover:text-foreground py-2 px-1 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm",
+                          pathname.startsWith(item.href)
+                            ? "text-foreground"
+                            : "text-muted-foreground"
+                        )}
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                      >
+                        {item.label}
+                        <ChevronDown className="w-3 h-3" />
+                        {pathname.startsWith(item.href) && (
+                          <motion.div
+                            layoutId="navbar-underline"
+                            className="absolute -bottom-5 left-0 right-0 h-0.5 bg-brand-gradient"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-56">
+                      {item.dropdown.map((dropdownItem) => (
+                        <DropdownMenuItem key={dropdownItem.href} asChild>
+                          <Link
+                            href={dropdownItem.href}
+                            className="flex items-center w-full"
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "relative text-sm font-medium transition-colors hover:text-foreground py-2 px-1 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm",
+                      pathname === item.href
+                        ? "text-foreground"
+                        : "text-muted-foreground"
+                    )}
+                    aria-current={pathname === item.href ? "page" : undefined}
+                  >
+                    {item.label}
+                    {pathname === item.href && (
+                      <motion.div
+                        layoutId="navbar-underline"
+                        className="absolute -bottom-5 left-0 right-0 h-0.5 bg-brand-gradient"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </Link>
+                )}
+              </div>
+            ))}
+            {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => (
               <Link
-                key={item.href}
-                href={item.href}
+                key={cta.href}
+                href={cta.href}
                 className={cn(
-                  "relative text-sm font-medium transition-colors hover:text-foreground py-2 px-1 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background rounded-sm",
-                  pathname === item.href
-                    ? "text-foreground"
-                    : "text-muted-foreground"
+                  "px-4 py-2 text-sm font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                  cta.variant === "outline"
+                    ? "border border-border hover:bg-accent hover:text-accent-foreground"
+                    : "bg-primary text-primary-foreground hover:bg-primary/90"
                 )}
-                aria-current={pathname === item.href ? "page" : undefined}
               >
-                {item.label}
-                {pathname === item.href && (
-                  <motion.div
-                    layoutId="navbar-underline"
-                    className="absolute -bottom-5 left-0 right-0 h-0.5 bg-brand-gradient"
-                    aria-hidden="true"
-                  />
-                )}
+                {cta.label}
               </Link>
             ))}
             <NavigationAuth />
+            <ThemeToggle />
           </div>
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
@@ -107,27 +181,93 @@ export function Navigation() {
                     transition={{ delay: index * 0.05 }}
                     role="listitem"
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={cn(
-                        "block py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/40 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
-                        pathname === item.href
-                          ? "text-foreground bg-card/30"
-                          : "text-muted-foreground"
-                      )}
-                      aria-current={pathname === item.href ? "page" : undefined}
-                    >
-                      {item.label}
-                    </Link>
+                    {"dropdown" in item && item.dropdown ? (
+                      <div>
+                        <button
+                          onClick={() => toggleMobileItem(item.href)}
+                          className={cn(
+                            "flex items-center justify-between w-full py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/40 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                            pathname.startsWith(item.href)
+                              ? "text-foreground bg-card/30"
+                              : "text-muted-foreground"
+                          )}
+                          aria-expanded={expandedMobileItems.has(item.href)}
+                        >
+                          {item.label}
+                          <ChevronDown
+                            className={cn(
+                              "w-4 h-4 transition-transform",
+                              expandedMobileItems.has(item.href) && "rotate-180"
+                            )}
+                          />
+                        </button>
+                        {expandedMobileItems.has(item.href) && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-4 space-y-1"
+                          >
+                            {item.dropdown.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.href}
+                                href={dropdownItem.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={cn(
+                                  "block py-2 px-4 text-sm transition-colors hover:text-foreground hover:bg-card/40 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                                  pathname === dropdownItem.href
+                                    ? "text-foreground bg-card/30"
+                                    : "text-muted-foreground"
+                                )}
+                                aria-current={pathname === dropdownItem.href ? "page" : undefined}
+                              >
+                                {dropdownItem.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={cn(
+                          "block py-3 px-4 text-base font-medium transition-colors hover:text-foreground hover:bg-card/40 rounded-lg touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                          pathname === item.href
+                            ? "text-foreground bg-card/30"
+                            : "text-muted-foreground"
+                        )}
+                        aria-current={pathname === item.href ? "page" : undefined}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
-                {/* Mobile Auth */}
-                <div className="pt-4 mt-4 border-t border-border/30">
-                  <div className="px-4">
-                    <NavigationAuth />
-                  </div>
-                </div>
+                {NAVIGATION.ctas && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: NAVIGATION.main.length * 0.05 }}
+                    className="flex flex-col gap-2 pt-4 border-t border-border"
+                  >
+                    {NAVIGATION.ctas.map((cta) => (
+                      <Link
+                        key={cta.href}
+                        href={cta.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={cn(
+                          "block py-3 px-4 text-base font-medium rounded-lg text-center transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                          cta.variant === "outline"
+                            ? "border border-border hover:bg-accent hover:text-accent-foreground"
+                            : "bg-primary text-primary-foreground hover:bg-primary/90"
+                        )}
+                      >
+                        {cta.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
               </div>
             </div>
           </motion.div>

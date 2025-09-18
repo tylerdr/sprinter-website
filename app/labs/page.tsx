@@ -1,17 +1,8 @@
 'use client';
 
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Mic, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, FileQuestion, Megaphone, Music, Sparkles, Star, Globe, BookOpen, Database, MessagesSquare, Building2 } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, Megaphone, Music, Sparkles, Star, BookOpen, Database } from "lucide-react";
 import { useState } from "react";
-
-const peCategories = [
-  { id: "portfolio", name: "Portfolio Operations", icon: Building2 },
-  { id: "deals", name: "Deal Intelligence", icon: BarChart3 },
-  { id: "strategy", name: "AI Strategy", icon: Sparkles },
-  { id: "automation", name: "Process Automation", icon: Bot },
-  { id: "docs", name: "Document Analysis", icon: FileText },
-  { id: "creative", name: "Creative Tools", icon: Palette },
-];
 
 interface Lab {
   icon: any;
@@ -27,12 +18,12 @@ interface Lab {
 }
 
 const labs: Lab[] = [
-  // Portfolio Operations - For managing portfolio companies
+  // Portfolio Ops
   {
     icon: BarChart3,
     title: "Portfolio Health Dashboard",
     description:
-      "Monitor AI readiness and opportunities across your entire portfolio. Track implementation progress and value creation in real-time.",
+      "Monitor AI readiness, track value creation, and keep LP updates in one live command center.",
     href: "/dashboard/portfolio-health",
     gradient: "from-blue-600 to-purple-700",
     category: "portfolio",
@@ -44,34 +35,43 @@ const labs: Lab[] = [
     icon: BookOpen,
     title: "AI Playbook Builder",
     description:
-      "Generate comprehensive, board-ready AI strategies for any portfolio company. Get implementation roadmaps, ROI projections, and resource plans.",
+      "Generate board-ready AI playbooks with implementation roadmap, governance, and ROI projections in minutes.",
     href: "/labs/ai-playbook",
-    gradient: "from-purple-600 to-indigo-700",
+    gradient: "from-indigo-600 to-purple-700",
     category: "portfolio",
     actionVerb: "Generate",
     featured: true,
-    requiresAuth: true,
   },
   {
     icon: Gamepad2,
-    title: "PE Tycoon Game",
+    title: "PE Tycoon",
     description:
-      "Run a virtual PE fund with AI assistance. Practice deal-making, portfolio operations, and exit strategies in a risk-free environment.",
+      "Simulate a fund, test operating decisions, and see how AI systems compound value across hypothetical portfolios.",
     href: "/labs/pe-tycoon",
     gradient: "from-emerald-600 to-teal-700",
     category: "portfolio",
     actionVerb: "Play",
-    featured: true,
   },
-  // Deal Intelligence - For sourcing and diligence
+  {
+    icon: Sparkles,
+    title: "Just Hire AI",
+    description:
+      "Quantify automation potential by role and location. Build the ops case before you walk into the IC.",
+    href: "/labs/just-hire-ai",
+    gradient: "from-orange-500 to-red-600",
+    category: "portfolio",
+    actionVerb: "Analyze",
+  },
+
+  // Deal Intelligence
   {
     icon: BarChart3,
     title: "PE Deal-Flow Analyzer",
     description:
-      "Instantly analyze potential acquisitions with AI. Get investment scores, valuation guidance, and AI value creation opportunities.",
+      "Score incoming deals, surface red flags, and highlight AI value creation levers before IOIs are due.",
     href: "/labs/deal-flow-analyzer",
     gradient: "from-green-600 to-blue-700",
-    category: "deals",
+    category: "deal",
     actionVerb: "Analyze",
     featured: true,
   },
@@ -79,41 +79,29 @@ const labs: Lab[] = [
     icon: Sparkles,
     title: "AI Opportunity Audit",
     description:
-      "Assess any company's AI potential in 10 minutes. Get prioritized opportunities, ROI projections, and implementation roadmap.",
+      "Run a 10-minute diligence sprint on any company. Prioritize automation plays with modeled ROI and effort.",
     href: "/labs/opportunity-audit",
-    gradient: "from-yellow-600 to-orange-700",
-    category: "deals",
+    gradient: "from-yellow-500 to-orange-600",
+    category: "deal",
     actionVerb: "Assess",
-    featured: true,
   },
-  // AI Strategy - For planning transformations
   {
-    icon: Sparkles,
+    icon: BookOpen,
     title: "AI Industry Blueprint",
     description:
-      "Generate industry-specific AI transformation strategies. Get use cases, vendor analysis, and competitive benchmarking.",
+      "Compare vendors, map competitor moves, and export an industry-specific AI thesis your partners can run with.",
     href: "/labs/industry-blueprint",
-    gradient: "from-purple-600 to-pink-700",
-    category: "strategy",
+    gradient: "from-purple-500 to-pink-600",
+    category: "deal",
     actionVerb: "Generate",
-    featured: true,
   },
-  {
-    icon: Bot,
-    title: "Just Hire AI",
-    description:
-      "Analyze workforce automation potential. See which roles AI can augment or replace with cost-benefit analysis.",
-    href: "/labs/just-hire-ai",
-    gradient: "from-orange-600 to-red-700",
-    category: "strategy",
-    actionVerb: "Analyze",
-  },
-  // Process Automation - For operational efficiency
+
+  // Process Automation
   {
     icon: Bot,
     title: "Agent Simulator",
     description:
-      "Watch multiple AI agents collaborate in parallel to solve complex tasks. See how agentic workflows handle real-world scenarios.",
+      "Watch autonomous agents orchestrate complex back-office tasks in parallel. Stress test your next automation before build.",
     href: "/labs/agent-simulator",
     gradient: "from-blue-500 to-cyan-600",
     category: "automation",
@@ -124,7 +112,7 @@ const labs: Lab[] = [
     icon: Blocks,
     title: "Agent Playground",
     description:
-      "Build AI agent workflows visually by snapping together blocks for reading, processing, deciding, and outputting. See how agents work together.",
+      "Drag-and-drop an agent workflow, chain tools, and deploy working prototypes without touching code.",
     href: "/labs/agent-playground",
     gradient: "from-indigo-500 to-purple-600",
     category: "automation",
@@ -134,7 +122,7 @@ const labs: Lab[] = [
     icon: MessageSquare,
     title: "AI Assistant",
     description:
-      "Experience our sophisticated AI assistant with specialized agents, tool calling capabilities, and intelligent reasoning. Choose your agent and see Sprinter's AI in action.",
+      "Route tasks to specialized Sprinter agents with tool calling, retrieval, and guardrails tuned for PE-backed teams.",
     href: "/labs/ai-assistant",
     gradient: "from-cyan-500 to-blue-600",
     category: "automation",
@@ -144,42 +132,32 @@ const labs: Lab[] = [
     icon: Workflow,
     title: "Workflow Designer",
     description:
-      "Map your business processes and discover where AI can augment or automate steps. Get a personalized AI transformation roadmap.",
+      "Map processes end-to-end, tag automation candidates, and export the sprint backlog directly into your PM tool.",
     href: "/labs/workflow-tool",
     gradient: "from-purple-500 to-pink-600",
     category: "automation",
-    actionVerb: "Build",
+    actionVerb: "Design",
     featured: true,
   },
-  
-  // Document Analysis - For due diligence and operations
+  {
+    icon: Calculator,
+    title: "AI ROI Calculator",
+    description:
+      "Model savings, payback period, and sensitivity in minutes using real workload data from your operators.",
+    href: "/labs/roi-calculator",
+    gradient: "from-green-500 to-emerald-600",
+    category: "automation",
+    actionVerb: "Calculate",
+  },
+
+  // Document Intelligence
   {
     icon: FileText,
     title: "Document Intelligence",
     description:
-      "Upload PDFs, reports, or documents and extract key insights, summaries, and answer specific questions about the content.",
+      "Ingest diligence docs, contracts, and board packs. Ask questions with citations and route insights to the right people.",
     href: "/labs/document-intelligence",
     gradient: "from-amber-500 to-orange-600",
-    category: "docs",
-    actionVerb: "Upload",
-  },
-  {
-    icon: FileQuestion,
-    title: "PDF Quiz Generator",
-    description:
-      "Upload any PDF and automatically generate customized quizzes with multiple choice, true/false, and short answer questions.",
-    href: "/labs/quiz-generator",
-    gradient: "from-purple-500 to-violet-600",
-    category: "docs",
-    actionVerb: "Upload",
-  },
-  {
-    icon: Code2,
-    title: "AI Code Review Assistant",
-    description:
-      "Paste your code and get AI-powered suggestions for improvements, security fixes, and best practice recommendations.",
-    href: "/labs/code-review",
-    gradient: "from-indigo-500 to-blue-600",
     category: "docs",
     actionVerb: "Upload",
   },
@@ -187,7 +165,7 @@ const labs: Lab[] = [
     icon: Database,
     title: "PDF Attribute Extraction",
     description:
-      "Define attributes, upload PDFs, and watch AI extract structured data in parallel. Perfect for invoices, contracts, and reports.",
+      "Extract structured data from invoices, SOC reports, or QBR decks with reusable schemas and confidence scoring.",
     href: "/labs/pdf-extractor",
     gradient: "from-teal-500 to-cyan-600",
     category: "docs",
@@ -195,88 +173,44 @@ const labs: Lab[] = [
     featured: true,
   },
   {
-    icon: MessagesSquare,
+    icon: MessageSquare,
     title: "PDF Document Chat",
     description:
-      "Upload PDFs and have intelligent conversations about their content. Ask questions, get summaries, and explore documents interactively.",
+      "Hold a conversation with any diligence binder or OPCO SOP. Get summarized answers with instant follow-ups.",
     href: "/labs/pdf-chat",
     gradient: "from-violet-500 to-indigo-600",
     category: "docs",
     actionVerb: "Chat",
   },
-  
-  // Data Category
   {
-    icon: BarChart3,
-    title: "AI Data Analyzer",
+    icon: Code2,
+    title: "AI Code Review Assistant",
     description:
-      "Upload CSV or Excel files and get instant insights, visualizations, and predictions. Turn raw data into actionable intelligence.",
-    href: "/labs/data-analyzer",
-    gradient: "from-emerald-500 to-cyan-600",
-    category: "data",
-    actionVerb: "Analyze",
+      "Audit engineering output, vendor drops, or automation scripts for quality, security, and maintainability.",
+    href: "/labs/code-review",
+    gradient: "from-indigo-500 to-blue-600",
+    category: "docs",
+    actionVerb: "Review",
   },
   {
     icon: Calculator,
-    title: "AI ROI Calculator",
+    title: "AI Data Analyzer",
     description:
-      "Calculate your potential savings from AI automation. See breakeven timeline, productivity gains, and annual cost savings for your team.",
-    href: "/labs/roi-calculator",
-    gradient: "from-green-500 to-emerald-600",
-    category: "data",
-    actionVerb: "Calculate",
+      "Drop in CSVs or Excel models and generate trends, visualizations, and recommendations on the fly.",
+    href: "/labs/data-analyzer",
+    gradient: "from-emerald-500 to-cyan-600",
+    category: "docs",
+    actionVerb: "Analyze",
   },
-  
-  // Voice Category
-  {
-    icon: Mic,
-    title: "Voice to Process",
-    description:
-      "Describe your business workflow verbally and watch AI create a detailed process map with optimization suggestions.",
-    href: "/labs/voice-to-process",
-    gradient: "from-violet-500 to-purple-600",
-    category: "voice",
-    actionVerb: "Chat",
-  },
-  {
-    icon: Mic,
-    title: "Realtime Voice Chat",
-    description:
-      "Experience natural AI conversations with real-time speech recognition, interruption handling, and lifelike voice responses. The future of voice AI.",
-    href: "/labs/voice-chat",
-    gradient: "from-pink-500 to-rose-600",
-    category: "voice",
-    actionVerb: "Chat",
-  },
-  
-  // Creative Category
-  {
-    icon: Gamepad2,
-    title: "Ideation Lab",
-    description:
-      "Play creative AI games: brainstorm ideas, race concepts, and compete in startup Scattergories. Fun meets innovation.",
-    href: "/labs/ideation",
-    gradient: "from-green-500 to-teal-600",
-    category: "creative",
-    actionVerb: "Create",
-  },
+
+  // Creative & Play
   {
     icon: Palette,
-    title: "AI Sketch Studio",
+    title: "Ideation Lab",
     description:
-      "Draw rough sketches and watch AI transform them into polished artwork. Experience the magic of AI-enhanced creativity.",
-    href: "/labs/sketch-studio",
-    gradient: "from-orange-500 to-red-600",
-    category: "creative",
-    actionVerb: "Design",
-  },
-  {
-    icon: Music,
-    title: "AI Music Studio",
-    description:
-      "Create original music tracks with AI. Describe your desired genre, mood, and instruments to generate custom compositions in seconds.",
-    href: "/labs/music-studio",
-    gradient: "from-purple-500 to-indigo-600",
+      "Warm up the team with lightning-fast ideation games that spark backlog-worthy automation ideas.",
+    href: "/labs/ideation",
+    gradient: "from-green-500 to-teal-600",
     category: "creative",
     actionVerb: "Create",
   },
@@ -284,127 +218,41 @@ const labs: Lab[] = [
     icon: Megaphone,
     title: "AI Ad Creator",
     description:
-      "Generate professional social media ads for all platforms instantly. Create Instagram, Facebook, Twitter, LinkedIn content with AI-powered design.",
+      "Spin up multi-channel creative for portfolio GTM experiments without waiting on design resources.",
     href: "/labs/ad-creator",
     gradient: "from-pink-500 to-purple-600",
     category: "creative",
-    actionVerb: "Create",
+    actionVerb: "Launch",
   },
-  
-  // Play Category - Fun & Interactive Experiences
+  {
+    icon: Music,
+    title: "AI Music Studio",
+    description:
+      "Generate on-brand audio beds and stingers for content teams or podcast launches in seconds.",
+    href: "/labs/music-studio",
+    gradient: "from-purple-500 to-indigo-600",
+    category: "creative",
+    actionVerb: "Compose",
+  },
   {
     icon: Gamepad2,
     title: "Agent Battle",
     description:
-      "Two AI agents debate head-to-head on any topic. Watch GPT-5 vs Claude compete while an AI judge scores each round. Export transcripts and insights.",
+      "Put model choices head-to-head in a moderated debate to decide which one belongs in your next automation.",
     href: "/labs/agent-battle",
     gradient: "from-red-500 to-pink-600",
-    category: "play",
+    category: "creative",
     actionVerb: "Battle",
-    featured: false,
   },
-  {
-    icon: Blocks,
-    title: "Tiny Town",
-    description:
-      "Simulate a miniature world with AI-powered NPCs. Watch agents interact, optimize workflows, and discover bottlenecks in real-time operations.",
-    href: "/labs/tiny-town",
-    gradient: "from-emerald-500 to-teal-600",
-    category: "play",
-    actionVerb: "Simulate",
-    featured: false,
-  },
-  
-  // Multiplayer Category - New Collaborative AI Games
-  {
-    icon: Gamepad2,
-    title: "Prompt Party",
-    description:
-      "Play the Startup Edition party game with friends and AI players. Dark humor meets tech innovation in this multiplayer experience.",
-    href: "/labs/cards-against-ai",
-    gradient: "from-purple-600 to-pink-600",
-    category: "multiplayer",
-    actionVerb: "Play",
-    featured: false,
-  },
-  {
-    icon: Palette,
-    title: "AI Telestrations",
-    description:
-      "Draw, guess, and laugh as your sketches transform through a hilarious chain of human and AI interpretations.",
-    href: "/labs/ai-telestrations",
-    gradient: "from-orange-500 to-pink-500",
-    category: "multiplayer",
-    actionVerb: "Draw",
-    featured: false,
-  },
-  {
-    icon: BookOpen,
-    title: "Story Adventure",
-    description:
-      "Choose your own adventure where AI writes the story and players vote on choices. Every decision shapes the narrative!",
-    href: "/labs/story-adventure",
-    gradient: "from-indigo-500 to-purple-600",
-    category: "multiplayer",
-    actionVerb: "Create",
-    featured: false,
-  },
-  {
-    icon: Globe,
-    title: "Future Scenarios",
-    description:
-      "Build future worlds together with AI. Collaborate on scenarios and explore humanity's AI-driven future through worldbuilding.",
-    href: "/labs/future-scenarios",
-    gradient: "from-cyan-500 to-blue-600",
-    category: "multiplayer",
-    actionVerb: "Build",
-    featured: false,
-  },
-  {
-    icon: Palette,
-    title: "Vibe Coding",
-    description:
-      "Describe any UI component and watch AI generate production-ready code instantly. Choose framework, style, and export to your project.",
-    href: "/labs/vibe-coding",
-    gradient: "from-purple-500 to-indigo-600",
-    category: "creative",
-    actionVerb: "Generate",
-    featured: false,
-  },
-  {
-    icon: Workflow,
-    title: "Storyboarding & ConstrUX",
-    description:
-      "Map user journeys visually with React Flow, design wireframes for each screen, and simulate the complete experience flow with AI assistance.",
-    href: "/labs/storyboarding",
-    gradient: "from-blue-500 to-cyan-600",
-    category: "creative",
-    actionVerb: "Design",
-    featured: false,
-  },
-  {
-    icon: Blocks,
-    title: "Component Studio",
-    description:
-      "Build AI-powered React components visually. Drag, drop, and configure to create custom UI elements with intelligent behavior.",
-    href: "/labs/component-studio",
-    gradient: "from-indigo-500 to-purple-600",
-    category: "creative",
-    actionVerb: "Build",
-  },
-  
 ];
 
 const categories = [
-  { id: "all", name: "All", description: "View all AI demos" },
-  { id: "advisory", name: "Advisory", description: "Strategic AI assessments and planning" },
-  { id: "agents", name: "Agents", description: "AI agent workflows and automation" },
-  { id: "docs", name: "Docs", description: "Document processing and analysis" },
-  { id: "data", name: "Data", description: "Data analysis and calculations" },
-  { id: "voice", name: "Voice", description: "Voice AI and conversation" },
-  { id: "creative", name: "Creative", description: "Creative AI tools and games" },
-  { id: "play", name: "Play", description: "Fun AI games and challenges" },
-  { id: "multiplayer", name: "Multiplayer", description: "Collaborative AI games with friends" },
+  { id: "all", name: "All", description: "View every Sprinter lab" },
+  { id: "portfolio", name: "Portfolio Ops", description: "Operating partner command centers" },
+  { id: "deal", name: "Deal Intelligence", description: "Diligence and sourcing accelerators" },
+  { id: "automation", name: "Process Automation", description: "Agent workflows and ROI tools" },
+  { id: "docs", name: "Document Intelligence", description: "Extraction, chat, and analysis" },
+  { id: "creative", name: "Creative & Play", description: "Labs for innovation and team energy" },
 ];
 
 export default function LabsPage() {
@@ -430,11 +278,10 @@ export default function LabsPage() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
-            AI <span className="gradient-text">Labs</span>
+            Sprinter <span className="gradient-text">Labs</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
-            Interactive demonstrations of our AI capabilities. Experience the
-            future of intelligent automation through hands-on tools and games.
+            Test the portfolio operating system before you deploy it. Explore diligence analyzers, agent workflows, and automation proofs of concept built for private equity.
           </p>
         </div>
 
@@ -588,17 +435,16 @@ export default function LabsPage() {
         {/* CTA Section */}
         <div className="text-center mt-16 sm:mt-20 p-6 sm:p-8 rounded-2xl border border-brand-30 bg-brand-10 max-w-4xl mx-auto">
           <h3 className="text-xl sm:text-2xl font-bold mb-4">
-            Ready to build something amazing?
+            Ready to pilot this inside a portfolio company?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            These demos showcase just a fraction of what we can build together.
-            Let&apos;s discuss your AI vision.
+            Pick the labs you want to prove out. We&apos;ll run a 10-day sprint with your operators and deliver production-ready automations.
           </p>
           <Link
-            href="/contact"
+            href="/contact?type=pilot"
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation min-h-[44px] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
           >
-            Start a Project
+            Book a Portfolio Sprint
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>

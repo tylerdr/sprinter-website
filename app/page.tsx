@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { PEHero } from "@/components/home/pe-hero";
-import { LabsPreview } from "@/components/home/labs-preview";
-import { Products } from "@/components/home/products";
-import { ServicesPreview } from "@/components/home/services-preview";
 import { ClientSuccessSection } from "@/components/home/client-success-section";
 import { PortfolioLogos } from "@/components/home/portfolio-logos";
-import { InteractiveDemo } from "@/components/home/interactive-demo";
+import { LabsPreview } from "@/components/home/labs-preview";
+import { ValuePillars } from "@/components/home/value-pillars";
+import { HowItWorks } from "@/components/home/how-it-works";
+import { ForYourWorld } from "@/components/home/for-your-world";
+import { ProofMetrics } from "@/components/home/proof-metrics";
+import { FinalCTA } from "@/components/home/final-cta";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("home");
@@ -16,10 +18,12 @@ export default function Home() {
       <PEHero />
       <ClientSuccessSection />
       <PortfolioLogos />
-      <ServicesPreview />
+      <ValuePillars />
+      <HowItWorks />
+      <ForYourWorld />
+      <ProofMetrics />
       <LabsPreview />
-      <Products />
-      <InteractiveDemo />
+      <FinalCTA />
     </>
   );
 }
