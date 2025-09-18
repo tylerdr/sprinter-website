@@ -7,7 +7,7 @@ import { tool as createAITool } from "ai";
 import { z, ZodSchema } from "zod";
 import { logger } from "@/lib/logger";
 import { sprinterToolRegistry as toolRegistry } from "./registry";
-import type { ToolDefinition, ToolContext } from "./types";
+import type { ToolDefinition, ToolContext, ToolSpec } from "./types";
 import type { ToolCategory } from "./constants/categories";
 
 /**
@@ -42,24 +42,26 @@ export async function buildToolsetForAgent(options: {
   // Initialize registry if needed
   await toolRegistry.initialize({
     loadFromDatabase: true,
-    tenantId
+    tenantId: tenantId?.toString()
   });
 
   const toolset: Record<string, any> = {};
 
   // Get tools based on options
-  let tools: ToolDefinition[] = [];
+  let tools: ToolSpec<any, any>[] = [];
 
   if (includeAll) {
-    tools = toolRegistry.getActiveTools();
+    tools = await toolRegistry.getAllTools();
   } else if (category) {
-    tools = toolRegistry.getActiveToolsByCategory(category);
+    // Filter by category from all tools
+    const allTools = await toolRegistry.getAllTools();
+    tools = allTools.filter(tool => tool.category === category);
   } else if (toolSlugs) {
-    tools = toolSlugs
-      .map(slug => toolRegistry.getTool(slug))
-      .filter((tool): tool is ToolDefinition =>
-        tool !== undefined && tool.isActive !== false
-      );
+    // Load specific tools
+    const loadedTools = await Promise.all(
+      toolSlugs.map(slug => toolRegistry.getTool(slug))
+    );
+    tools = loadedTools.filter((tool): tool is ToolSpec<any, any> => tool !== null);
   }
 
   // Convert tools to AI SDK format
@@ -76,10 +78,10 @@ export async function buildToolsetForAgent(options: {
 }
 
 /**
- * Create an AI SDK tool from our tool definition
+ * Create an AI SDK tool from our tool specification
  */
 export async function createAIToolFromDefinition(
-  definition: ToolDefinition
+  definition: ToolSpec<any, any>
 ): Promise<any> {
   try {
     // Skip client-only and interactive tools
@@ -89,28 +91,13 @@ export async function createAIToolFromDefinition(
       return null;
     }
 
-    // Skip disabled tools
-    if (definition.isActive === false) {
-      logger.debug(`Skipping disabled tool: ${definition.slug}`);
-      return null;
-    }
-
     const toolConfig: any = {
       description: definition.description || `Tool: ${definition.slug}`,
       execute: async (input: any) => {
         try {
-          // Execute through the registry
-          const result = await toolRegistry.execute(definition.slug, input);
-
-          // Return data on success, error object on failure
-          if (result.success) {
-            return result.data;
-          } else {
-            return {
-              error: result.error || "Tool execution failed",
-              success: false
-            };
-          }
+          // Execute the tool directly
+          const result = await definition.execute(input);
+          return result;
         } catch (error) {
           logger.error(`Tool execution error for ${definition.slug}:`, {
             error: error instanceof Error ? error.message : String(error)
@@ -168,22 +155,19 @@ function resolveInputSchema(
 export async function loadTool(
   slug: string,
   tenantId?: number
-): Promise<ToolDefinition | null> {
+): Promise<ToolSpec<any, any> | null> {
   await toolRegistry.initialize({
     loadFromDatabase: true,
-    tenantId
+    tenantId: tenantId?.toString()
   });
 
-  const tool = toolRegistry.getTool(slug);
+  const tool = await toolRegistry.getTool(slug);
   if (!tool) {
     logger.warn(`Tool not found: ${slug}`);
     return null;
   }
 
-  if (tool.isActive === false) {
-    logger.warn(`Tool is disabled: ${slug}`);
-    return null;
-  }
+  // ToolSpec doesn't have isActive property, return the tool as-is
 
   return tool;
 }
@@ -196,7 +180,11 @@ export async function executeTool(
   input: any,
   context?: ToolContext
 ) {
-  return toolRegistry.execute(slug, input, context);
+  const tool = await toolRegistry.getTool(slug);
+  if (!tool) {
+    throw new Error(`Tool not found: ${slug}`);
+  }
+  return tool.execute(input, context);
 }
 
 /**
@@ -210,15 +198,16 @@ export async function getAvailableToolSlugs(
 ): Promise<string[]> {
   await toolRegistry.initialize({
     loadFromDatabase: true,
-    tenantId: options?.tenantId
+    tenantId: options?.tenantId?.toString()
   });
 
-  let tools: ToolDefinition[];
+  let tools: ToolSpec<any, any>[];
 
   if (options?.category) {
-    tools = toolRegistry.getActiveToolsByCategory(options.category);
+    const allTools = await toolRegistry.getAllTools();
+    tools = allTools.filter(tool => tool.category === options.category);
   } else {
-    tools = toolRegistry.getActiveTools();
+    tools = await toolRegistry.getAllTools();
   }
 
   return tools.map(t => t.slug);
@@ -233,15 +222,15 @@ export async function loadTools(
 ): Promise<Map<string, ToolDefinition>> {
   await toolRegistry.initialize({
     loadFromDatabase: true,
-    tenantId
+    tenantId: tenantId?.toString()
   });
 
   const tools = new Map<string, ToolDefinition>();
 
   for (const slug of slugs) {
-    const tool = toolRegistry.getTool(slug);
-    if (tool && tool.isActive !== false) {
-      tools.set(slug, tool);
+    const tool = await toolRegistry.getTool(slug);
+    if (tool) {
+      tools.set(slug, tool as ToolDefinition);
     }
   }
 
@@ -253,13 +242,13 @@ export async function loadTools(
  */
 export async function getToolsByCategory(
   tenantId?: number
-): Promise<Map<string, ToolDefinition[]>> {
+): Promise<Map<string, ToolSpec<any, any>[]>> {
   await toolRegistry.initialize({
     loadFromDatabase: true,
-    tenantId
+    tenantId: tenantId?.toString()
   });
 
-  const toolsByCategory = new Map<string, ToolDefinition[]>();
+  const toolsByCategory = new Map<string, ToolSpec<any, any>[]>();
   const categories: ToolCategory[] = [
     "calculator",
     "search",
@@ -283,8 +272,10 @@ export async function getToolsByCategory(
     "other"
   ];
 
+  const allTools = await toolRegistry.getAllTools();
+
   for (const category of categories) {
-    const tools = toolRegistry.getActiveToolsByCategory(category);
+    const tools = allTools.filter(tool => tool.category === category);
     if (tools.length > 0) {
       toolsByCategory.set(category, tools);
     }

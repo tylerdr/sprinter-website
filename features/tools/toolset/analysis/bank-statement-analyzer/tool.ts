@@ -677,18 +677,36 @@ const bankStatementAnalyzer: ToolSpec<
         fileSize: fileBuffer.length
       });
 
-      const { path: storagePath, signedUrl } = await uploadToBucket({
-        data: fileBuffer,
-        filename,
-        userId,
-        chatId: context?.sessionId,
-        options: {
+      // Generate storage path
+      const storagePath = `${userId}/${context?.sessionId || 'default'}/${filename}`;
+
+      // Upload file
+      const uploadResult = await uploadToBucket(
+        CHAT_ATTACHMENTS_BUCKET,
+        storagePath,
+        fileBuffer,
+        {
           contentType: input.fileType || "application/pdf",
-          cacheControl: DEFAULT_EXPIRATION_SECONDS.toString(),
-          upsert: false,
-          signedUrlExpiresIn: DEFAULT_EXPIRATION_SECONDS
+          upsert: false
         }
-      });
+      );
+
+      if (uploadResult.error) {
+        throw new Error(`Failed to upload file: ${uploadResult.error.message || 'Unknown error'}`);
+      }
+
+      // Get signed URL
+      const signedUrlResult = await getSignedUrl(
+        CHAT_ATTACHMENTS_BUCKET,
+        storagePath,
+        DEFAULT_EXPIRATION_SECONDS
+      );
+
+      if (signedUrlResult.error) {
+        throw new Error(`Failed to get signed URL: ${signedUrlResult.error.message || 'Unknown error'}`);
+      }
+
+      const signedUrl = signedUrlResult.data?.signedUrl;
 
       if (!signedUrl) {
         throw new Error("Failed to upload PDF file. Please try again.");

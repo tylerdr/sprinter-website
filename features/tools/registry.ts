@@ -100,10 +100,9 @@ export function toolExists(slug: string): boolean {
 export function createToolFromSpec<I extends ZodSchema, O extends ZodSchema>(
   spec: ToolSpec<I, O>
 ) {
-  return createAITool({
+  const toolConfig: any = {
     description: spec.description,
-    parameters: spec.inputSchema,
-    execute: async (args) => {
+    execute: async (args: any) => {
       try {
         // Validate input
         const validatedInput = spec.inputSchema.parse(args);
@@ -123,7 +122,12 @@ export function createToolFromSpec<I extends ZodSchema, O extends ZodSchema>(
         throw error;
       }
     }
-  });
+  };
+
+  // Set the input schema
+  toolConfig.inputSchema = spec.inputSchema;
+
+  return createAITool(toolConfig);
 }
 
 /**
@@ -204,6 +208,22 @@ class SprinterToolRegistry {
     for (const [slug, tool] of Object.entries(tools)) {
       this.loadedTools.set(slug, tool);
     }
+  }
+
+  /**
+   * Get all tools (loads them if not already loaded)
+   */
+  async getAllTools(): Promise<ToolSpec<any, any>[]> {
+    const slugs = getAvailableTools();
+    const tools = await loadTools(slugs);
+    return Object.values(tools);
+  }
+
+  /**
+   * Get a single tool by slug
+   */
+  async getTool(slug: string): Promise<ToolSpec<any, any> | null> {
+    return loadTool(slug);
   }
 }
 

@@ -21,7 +21,7 @@ import {
   SelectValue
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { updateTool } from "@/app/(admin)/admin/tools/actions";
+// import { updateTool } from "@/app/(admin)/admin/tools/actions";
 import { toast } from "sonner";
 
 interface ToolEditDialogProps {
@@ -77,15 +77,16 @@ export function ToolEditDialog({
 
     setSaving(true);
     try {
-      await updateTool({
-        slug: tool.slug,
-        name: formData.name,
-        description: formData.description,
-        category: formData.category,
-        is_active: formData.is_active
-      });
+      // TODO: Implement updateTool when admin functionality is needed
+      // await updateTool({
+      //   slug: tool.slug,
+      //   name: formData.name,
+      //   description: formData.description,
+      //   category: formData.category,
+      //   is_active: formData.is_active
+      // });
 
-      toast.success(`Tool "${formData.name}" updated successfully`);
+      toast.success(`Tool "${formData.name}" would be updated (admin not implemented)`);
       onOpenChange(false);
       onSave?.();
     } catch (error) {

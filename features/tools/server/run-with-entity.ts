@@ -35,8 +35,8 @@ export async function runToolWithEntityAction({
   await toolRegistry.initialize({ loadFromDatabase: true });
   await entityRegistry.initialize();
 
-  const tool = toolRegistry.getTool(slug);
-  if (!tool) return { ok: false as const, error: "Tool not found" };
+  const toolCheck = await toolRegistry.getTool(slug);
+  if (!toolCheck) return { ok: false as const, error: "Tool not found" };
 
   let entityState: Record<string, any> = {};
   let entityVersion: number = 1;
@@ -132,14 +132,21 @@ export async function runToolWithEntityAction({
     }
   };
 
-  const exec = await toolRegistry.execute(slug, values, ctx);
+  // Get and execute the tool
+  const tool = await toolRegistry.getTool(slug);
+  if (!tool) {
+    return { ok: false as const, error: `Tool not found: ${slug}` };
+  }
 
-  if (!exec.success) {
-    return { ok: false as const, error: exec.error ?? "Execution failed" };
+  let execResult: any;
+  try {
+    execResult = await tool.execute(values, ctx);
+  } catch (error) {
+    return { ok: false as const, error: error instanceof Error ? error.message : "Execution failed" };
   }
 
   // Check if tool returned artifacts or patches
-  const toolResult = exec.data as any;
+  const toolResult = execResult;
 
   if (persist && entityId && entitySlug && toolResult) {
     // Validate write access before persisting
@@ -229,7 +236,7 @@ export async function runToolWithEntityAction({
     user_id: user?.id ?? null,
     tool_slug: slug,
     input: values,
-    output: exec.data ?? null,
+    output: execResult ?? null,
     entity_id: entityId ?? null,
     tenant_id: userProfile?.current_tenant?.id ?? null,
     metadata: {
@@ -243,10 +250,10 @@ export async function runToolWithEntityAction({
     toolSlug: slug,
     entityId,
     entitySlug,
-    success: exec.success
+    success: true
   });
 
-  return { ok: true as const, data: exec.data ?? null };
+  return { ok: true as const, data: execResult ?? null };
 }
 
 /**

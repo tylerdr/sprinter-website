@@ -296,7 +296,7 @@ Starting template: ${template}`;
       }
 
       // Generate content with AI
-      const model = getModel({ fast: true });
+      const model = getModel();
       const result = await generateText({
         model,
         messages: [

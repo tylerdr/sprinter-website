@@ -73,7 +73,14 @@ export async function getUserProfileWithCurrentTenant(): Promise<UserProfileWith
     };
   }
 
-  return profile as UserProfileWithCurrentTenant;
+  return {
+    ...profile,
+    current_tenant: Array.isArray(profile.current_tenant) ? profile.current_tenant[0] : profile.current_tenant,
+    user_tenants: profile.user_tenants?.map((ut: any) => ({
+      ...ut,
+      tenant: Array.isArray(ut.tenant) ? ut.tenant[0] : ut.tenant
+    })) || []
+  } as UserProfileWithCurrentTenant;
 }
 
 export type { UserProfileWithCurrentTenant as UserProfile };

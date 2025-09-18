@@ -83,7 +83,7 @@ const tool: ToolSpec<typeof Input, typeof Output> = {
       const targetWords = wordTargets[input.targetLength];
 
       // Generate content with AI
-      const model = getModel({ fast: false });
+      const model = getModel();
       const systemPrompt = `You are a mortgage industry expert writing blog content.
 Target audience: ${input.audience}
 Tone: ${input.tone}

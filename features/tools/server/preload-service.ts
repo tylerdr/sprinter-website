@@ -91,7 +91,7 @@ export const fetchPrograms = cache(
 
       if (error) throw error;
 
-      return data?.map(program => ({
+      return data?.map((program: any) => ({
         id: program.id,
         name: program.name,
         lenderId: program.lender_id,

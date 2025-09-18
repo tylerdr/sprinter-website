@@ -5,6 +5,8 @@
 
 export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
+export type Tables<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Row'];
+
 export type TablesInsert<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Insert'];
 
 export interface Database {
@@ -78,6 +80,24 @@ export interface Database {
           created_at: string;
           updated_at: string;
         };
+        Insert: {
+          id?: string;
+          email: string;
+          full_name?: string;
+          avatar_url?: string;
+          current_tenant_id?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          full_name?: string;
+          avatar_url?: string;
+          current_tenant_id?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
       };
       tenants: {
         Row: {
@@ -88,6 +108,22 @@ export interface Database {
           created_at: string;
           updated_at: string;
         };
+        Insert: {
+          id?: number;
+          name: string;
+          slug: string;
+          settings?: any;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: number;
+          name?: string;
+          slug?: string;
+          settings?: any;
+          created_at?: string;
+          updated_at?: string;
+        };
       };
       user_tenants: {
         Row: {
@@ -96,12 +132,34 @@ export interface Database {
           role: string;
           created_at: string;
         };
+        Insert: {
+          user_id: string;
+          tenant_id: number;
+          role: string;
+          created_at?: string;
+        };
+        Update: {
+          user_id?: string;
+          tenant_id?: number;
+          role?: string;
+          created_at?: string;
+        };
       };
       ai_agent_tools: {
         Row: {
           agent_id: string;
           tool_id: string;
           created_at: string;
+        };
+        Insert: {
+          agent_id: string;
+          tool_id: string;
+          created_at?: string;
+        };
+        Update: {
+          agent_id?: string;
+          tool_id?: string;
+          created_at?: string;
         };
       };
       ai_tools: {
@@ -118,6 +176,34 @@ export interface Database {
           category?: string;
           created_at: string;
           updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          name: string;
+          description?: string;
+          input_schema?: any;
+          output_schema?: any;
+          execution_mode?: string;
+          is_active?: boolean;
+          metadata?: any;
+          category?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          slug?: string;
+          name?: string;
+          description?: string;
+          input_schema?: any;
+          output_schema?: any;
+          execution_mode?: string;
+          is_active?: boolean;
+          metadata?: any;
+          category?: string;
+          created_at?: string;
+          updated_at?: string;
         };
       };
       ai_tool_events: {
@@ -136,6 +222,22 @@ export interface Database {
           tool_id?: string | null;
           tool_slug?: string;
           user_id: string;
+          input?: any;
+          output?: any;
+          error?: string | null;
+          duration_ms?: number | null;
+          metadata?: any;
+          chat_id?: string | null;
+          message_id?: string | null;
+          tool_call_id?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          tool_id?: string | null;
+          tool_slug?: string;
+          user_id?: string;
           input?: any;
           output?: any;
           error?: string | null;

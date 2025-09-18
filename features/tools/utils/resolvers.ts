@@ -227,7 +227,7 @@ export async function resolveProgram(
         status: 'resolved',
         id: data.id,
         name: data.name,
-        metadata: { lenderId: data.lender_id, lenderName: data.lenders?.name }
+        metadata: { lenderId: data.lender_id, lenderName: (data as any).lenders?.name }
       };
       setCache(cacheKey, result);
       return result;
@@ -283,7 +283,7 @@ export async function resolveProgram(
         name: exactMatch[0].name,
         metadata: {
           lenderId: exactMatch[0].lender_id,
-          lenderName: exactMatch[0].lenders?.name
+          lenderName: (exactMatch[0] as any).lenders?.name
         }
       };
       setCache(cacheKey, result);
@@ -299,7 +299,7 @@ export async function resolveProgram(
           name: p.name,
           metadata: {
             lenderId: p.lender_id,
-            lenderName: p.lenders?.name
+            lenderName: (p as any).lenders?.name
           }
         }))
       };
@@ -323,7 +323,7 @@ export async function resolveProgram(
         name: partialMatch[0].name,
         metadata: {
           lenderId: partialMatch[0].lender_id,
-          lenderName: partialMatch[0].lenders?.name
+          lenderName: (partialMatch[0] as any).lenders?.name
         }
       };
       setCache(cacheKey, result);
@@ -339,7 +339,7 @@ export async function resolveProgram(
         name: p.name,
         metadata: {
           lenderId: p.lender_id,
-          lenderName: p.lenders?.name
+          lenderName: (p as any).lenders?.name
         }
       }))
     };

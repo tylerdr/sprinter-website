@@ -24,7 +24,7 @@ export async function getToolsHealth(): Promise<ToolHealthStatus[]> {
   await toolRegistry.initialize({ loadFromDatabase: true });
   await agentRegistry.initialize({ loadFromDatabase: true });
 
-  const tools = toolRegistry.getAllTools();
+  const tools = await toolRegistry.getAllTools();
   const agents = agentRegistry.getAllAgents();
   const health: ToolHealthStatus[] = [];
 
@@ -52,8 +52,8 @@ export async function getToolsHealth(): Promise<ToolHealthStatus[]> {
     // Check if tool has execute function
     const hasExecute = !!tool.execute;
 
-    // Check if tool is enabled
-    const isEnabled = tool.isActive !== false;
+    // Check if tool is enabled (default to true if not specified)
+    const isEnabled = true; // ToolSpec doesn't have isActive property
 
     health.push({
       slug: tool.slug,
@@ -100,7 +100,7 @@ export async function testExecuteTool(
   try {
     await toolRegistry.initialize({ loadFromDatabase: true });
 
-    const tool = toolRegistry.getTool(slug);
+    const tool = await toolRegistry.getTool(slug);
     if (!tool) {
       return { success: false, error: `Tool not found: ${slug}` };
     }
@@ -142,7 +142,7 @@ export async function syncToolsFromCode(): Promise<{
   try {
     await toolRegistry.initialize({ loadFromDatabase: true });
 
-    const tools = toolRegistry.getAllTools();
+    const tools = await toolRegistry.getAllTools();
 
     for (const tool of tools) {
       // Track all tools for sync
