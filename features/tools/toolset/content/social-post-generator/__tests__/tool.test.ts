@@ -3,7 +3,7 @@ import tool from '../tool';
 import type { ToolContext } from '../../../types';
 
 // Mock external dependencies
-vi.mock('@/utils/supabase/server', () => ({
+vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(() => ({
     from: vi.fn(() => ({
       select: vi.fn().mockReturnThis(),
@@ -97,7 +97,7 @@ describe('Social Post Generator Tool', () => {
       };
       
       // Mock a database error
-      const { createClient } = await import('@/utils/supabase/server');
+      const { createClient } = await import('@/lib/supabase/server');
       (createClient as any).mockImplementationOnce(() => ({
         from: vi.fn(() => ({
           select: vi.fn(() => Promise.reject(new Error('Database error'))),

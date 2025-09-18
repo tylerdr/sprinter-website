@@ -1,1 +1,2 @@
-/home/sprinter/sprinter-website/lib/supabase/server.ts
+// Re-export from lib/supabase for backward compatibility
+export * from '@/lib/supabase/server';

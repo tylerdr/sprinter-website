@@ -14,7 +14,7 @@ import {
 } from '../server/workspace-service';
 
 // Mock Supabase and other dependencies
-vi.mock('@/utils/supabase/server', () => ({
+vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(() => ({
     from: vi.fn((table) => ({
       select: vi.fn(() => ({
@@ -113,7 +113,7 @@ describe('WorkspaceService', () => {
 
   describe('getOrCreateChatWorkspaceAction', () => {
     it('should return existing workspace if chat already has one', async () => {
-      const mockSupabase = (await import('@/utils/supabase/server')).createClient as any;
+      const mockSupabase = (await import('@/lib/supabase/server')).createClient as any;
       mockSupabase.mockReturnValueOnce({
         from: vi.fn(() => ({
           select: vi.fn(() => ({
@@ -170,7 +170,7 @@ describe('WorkspaceService', () => {
     });
 
     it('should return workspace with entities if exists', async () => {
-      const mockSupabase = (await import('@/utils/supabase/server')).createClient as any;
+      const mockSupabase = (await import('@/lib/supabase/server')).createClient as any;
       mockSupabase.mockReturnValueOnce({
         from: vi.fn(() => ({
           select: vi.fn(() => ({
@@ -252,7 +252,7 @@ describe('WorkspaceService', () => {
     });
 
     it('should find entity by type slug variations', async () => {
-      const mockSupabase = (await import('@/utils/supabase/server')).createClient as any;
+      const mockSupabase = (await import('@/lib/supabase/server')).createClient as any;
       mockSupabase.mockReturnValueOnce({
         from: vi.fn(() => ({
           select: vi.fn(() => ({

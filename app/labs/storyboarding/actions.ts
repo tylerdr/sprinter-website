@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 
 // Journey schema
 export const JourneySchema = z.object({

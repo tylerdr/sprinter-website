@@ -16,7 +16,7 @@ import { z } from "zod";
 import { agentRegistry } from "@/features/agents/registry";
 import { sprinterToolRegistry as toolRegistry } from "@/features/tools/registry";
 import { getModelById } from "@/features/ai/models";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { chatService } from "@/features/chat/services/chat-service";
 import crypto from "crypto";
 // Removed custom citation pipeline – rely on native UI parts from AI SDK v5

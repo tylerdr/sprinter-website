@@ -8,8 +8,8 @@
  * 4. Support database-only dynamic agents/tools
  */
 
-import { createClient } from "@/utils/supabase/server";
-import { createClient as createAdminClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
+import { createClient as createAdminClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 import type { AgentConfig } from "@/features/agents/registry";
 import type { ToolDefinition } from "@/features/tools/types";

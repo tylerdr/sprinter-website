@@ -34,7 +34,7 @@ const AGENT_NAMESPACE = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"; // Standard name
 
 // Dynamic import for Supabase client to work in both Node and Next.js contexts
 async function getSupabaseClient() {
-  const { createClient } = await import("@/utils/supabase/server");
+  const { createClient } = await import("@/lib/supabase/server");
   return await createClient();
 }
 

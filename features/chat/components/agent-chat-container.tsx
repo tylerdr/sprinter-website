@@ -1,6 +1,6 @@
 import type { AgentConfig } from "@/features/agents/registry";
 import { UserProfileWithCurrentTenant } from "@/lib/profiles";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { checkSystemAdmin } from "@/utils/checkUserPermissions";
 import { agentRegistry } from "@/features/agents/registry";
 import { DEFAULT_AGENT_ID } from "@/features/ai";

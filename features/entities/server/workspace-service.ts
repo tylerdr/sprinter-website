@@ -5,7 +5,7 @@
  * Manages chat-entity relationships and workspace lifecycle
  */
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { getUserProfileWithCurrentTenant } from "@/lib/profiles";
 import { entityRegistry } from "@/features/entities/registry";
 import {

@@ -2,7 +2,7 @@
  * Tenant configuration and utilities
  */
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 
 export interface TenantConfig {
   id: number;

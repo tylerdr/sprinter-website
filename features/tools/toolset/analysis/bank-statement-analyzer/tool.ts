@@ -7,7 +7,7 @@ import { z } from "zod";
 import { ToolSpec } from "@/features/tools/types";
 import { generateObject } from "ai";
 import { google } from "@ai-sdk/google";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 import { uploadToBucket, getSignedUrl } from "@/lib/file-upload/file-utils";
 import {

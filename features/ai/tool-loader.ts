@@ -3,7 +3,7 @@
  * Part of AI Sprinter Stage 6 implementation
  */
 
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import { cache } from 'react';
 
 export interface Tool {

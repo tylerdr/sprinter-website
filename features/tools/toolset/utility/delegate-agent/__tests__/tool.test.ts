@@ -3,7 +3,7 @@ import tool from '../tool';
 import type { ToolContext } from '../../../types';
 
 // Mock external dependencies
-vi.mock('@/utils/supabase/server', () => ({
+vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(() => ({
     from: vi.fn(() => ({
       select: vi.fn().mockReturnThis(),

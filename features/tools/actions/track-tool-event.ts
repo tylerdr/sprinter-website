@@ -1,8 +1,8 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { waitUntil } from "@vercel/functions";
-import type { TablesInsert, Json } from "@/utils/supabase/generated.types";
+import type { TablesInsert, Json } from "@/lib/supabase/generated.types";
 import type { ToolEventData } from "@/features/tools/types";
 
 export async function trackToolEvent(data: ToolEventData) {
