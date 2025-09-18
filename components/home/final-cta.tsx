@@ -8,7 +8,7 @@ import Balancer from "react-wrap-balancer";
 
 export function FinalCTA() {
   return (
-    <section className="py-20 sm:py-32 relative overflow-hidden">
+    <section className="py-24 sm:py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
 
       <div className="absolute inset-0" aria-hidden="true">

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Bot, Workflow, Palette, Gamepad2, BarChart3, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, Megaphone, Music, Sparkles, Star, BookOpen, Database } from "lucide-react";
+import { Bot, Workflow, Palette, Gamepad2, BarChart3, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, Megaphone, Music, Sparkles, Star, BookOpen, Database, Mic, FileQuestion, Globe, Lightbulb } from "lucide-react";
 import { useState } from "react";
 
 interface Lab {
@@ -244,6 +244,170 @@ const labs: Lab[] = [
     category: "creative",
     actionVerb: "Battle",
   },
+
+  // Voice & Conversation
+  {
+    icon: Mic,
+    title: "Realtime Voice Chat",
+    description:
+      "Experience natural AI conversations with real-time speech recognition and lifelike voice responses.",
+    href: "/labs/voice-chat",
+    gradient: "from-pink-500 to-rose-600",
+    category: "voice",
+    actionVerb: "Chat",
+    featured: true,
+  },
+  {
+    icon: Mic,
+    title: "Voice to Process",
+    description:
+      "Describe your workflow verbally and watch AI create detailed process maps with optimization suggestions.",
+    href: "/labs/voice-to-process",
+    gradient: "from-violet-500 to-purple-600",
+    category: "voice",
+    actionVerb: "Speak",
+  },
+
+  // Advanced Creative Tools
+  {
+    icon: Palette,
+    title: "AI Sketch Studio",
+    description:
+      "Draw rough sketches and watch AI transform them into polished artwork for presentations and decks.",
+    href: "/labs/sketch-studio",
+    gradient: "from-orange-500 to-red-600",
+    category: "creative",
+    actionVerb: "Design",
+    featured: true,
+  },
+  {
+    icon: Code2,
+    title: "Vibe Coding",
+    description:
+      "Describe any UI component and get production-ready code instantly with framework selection.",
+    href: "/labs/vibe-coding",
+    gradient: "from-purple-500 to-indigo-600",
+    category: "creative",
+    actionVerb: "Generate",
+  },
+  {
+    icon: Workflow,
+    title: "Storyboarding & ConstrUX",
+    description:
+      "Map user journeys visually, design wireframes, and simulate complete experience flows.",
+    href: "/labs/storyboarding",
+    gradient: "from-blue-500 to-cyan-600",
+    category: "creative",
+    actionVerb: "Design",
+  },
+  {
+    icon: Blocks,
+    title: "Component Studio",
+    description:
+      "Build AI-powered React components visually with drag-drop configuration and intelligent behavior.",
+    href: "/labs/component-studio",
+    gradient: "from-indigo-500 to-purple-600",
+    category: "creative",
+    actionVerb: "Build",
+  },
+
+  // Interactive Games & Simulations
+  {
+    icon: Blocks,
+    title: "Tiny Town",
+    description:
+      "Simulate miniature worlds with AI NPCs to test workflows and discover operational bottlenecks.",
+    href: "/labs/tiny-town",
+    gradient: "from-emerald-500 to-teal-600",
+    category: "play",
+    actionVerb: "Simulate",
+  },
+  {
+    icon: Gamepad2,
+    title: "Prompt Party",
+    description:
+      "Play the Startup Edition party game with friends and AI players for team building sessions.",
+    href: "/labs/cards-against-ai",
+    gradient: "from-purple-600 to-pink-600",
+    category: "play",
+    actionVerb: "Play",
+  },
+  {
+    icon: Palette,
+    title: "AI Telestrations",
+    description:
+      "Draw, guess, and laugh as sketches transform through human and AI interpretations.",
+    href: "/labs/ai-telestrations",
+    gradient: "from-orange-500 to-pink-500",
+    category: "play",
+    actionVerb: "Draw",
+  },
+  {
+    icon: BookOpen,
+    title: "Story Adventure",
+    description:
+      "Choose-your-own-adventure where AI writes the story and teams vote on strategic decisions.",
+    href: "/labs/story-adventure",
+    gradient: "from-indigo-500 to-purple-600",
+    category: "play",
+    actionVerb: "Create",
+  },
+  {
+    icon: Globe,
+    title: "Future Scenarios",
+    description:
+      "Build future worlds together with AI to explore strategic scenarios and market evolution.",
+    href: "/labs/future-scenarios",
+    gradient: "from-cyan-500 to-blue-600",
+    category: "play",
+    actionVerb: "Build",
+  },
+
+  // Additional Document Tools
+  {
+    icon: FileQuestion,
+    title: "PDF Quiz Generator",
+    description:
+      "Upload training materials and automatically generate quizzes for onboarding and compliance.",
+    href: "/labs/quiz-generator",
+    gradient: "from-purple-500 to-violet-600",
+    category: "docs",
+    actionVerb: "Generate",
+  },
+
+  // Portfolio-Specific Tools
+  {
+    icon: BookOpen,
+    title: "Portfolio AI Blueprint",
+    description:
+      "Generate comprehensive AI transformation roadmaps tailored to your portfolio composition.",
+    href: "/labs/portfolio-ai-blueprint",
+    gradient: "from-blue-600 to-indigo-700",
+    category: "portfolio",
+    actionVerb: "Generate",
+  },
+  {
+    icon: BarChart3,
+    title: "Lead Gen Visualizer",
+    description:
+      "Map and optimize your portfolio companies' lead generation funnels with AI insights.",
+    href: "/labs/lead-gen-visualizer",
+    gradient: "from-green-500 to-blue-600",
+    category: "portfolio",
+    actionVerb: "Visualize",
+  },
+
+  // Demo & Testing
+  {
+    icon: Lightbulb,
+    title: "AI Elements Demo",
+    description:
+      "Explore our complete library of AI UI components and interaction patterns.",
+    href: "/labs/ai-elements-demo",
+    gradient: "from-yellow-500 to-orange-600",
+    category: "demo",
+    actionVerb: "Explore",
+  },
 ];
 
 const categories = [
@@ -252,7 +416,10 @@ const categories = [
   { id: "deal", name: "Deal Intelligence", description: "Diligence and sourcing accelerators" },
   { id: "automation", name: "Process Automation", description: "Agent workflows and ROI tools" },
   { id: "docs", name: "Document Intelligence", description: "Extraction, chat, and analysis" },
-  { id: "creative", name: "Creative & Play", description: "Labs for innovation and team energy" },
+  { id: "voice", name: "Voice AI", description: "Natural language and voice interactions" },
+  { id: "creative", name: "Creative Tools", description: "Design, code, and content generation" },
+  { id: "play", name: "Games & Simulations", description: "Interactive team experiences" },
+  { id: "demo", name: "Demos", description: "Component libraries and showcases" },
 ];
 
 export default function LabsPage() {
