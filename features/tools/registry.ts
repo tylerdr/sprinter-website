@@ -56,6 +56,18 @@ export const TOOL_IMPORTS: Record<
     import("./toolset/communications/email-drafter/tool").then(m => ({
       tool: m.default
     })),
+
+  // Analysis Tools
+  "bank-statement-analyzer": () =>
+    import("./toolset/analysis/bank-statement-analyzer/tool").then(m => ({
+      tool: m.default
+    })),
+
+  // Qualifier Tools
+  "qualifier-wizard": () =>
+    import("./toolset/utility/qualifier-wizard/tool").then(m => ({
+      tool: m.default
+    })),
 };
 
 /**
