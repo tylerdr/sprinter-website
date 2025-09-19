@@ -48,11 +48,11 @@ function BadgeVariant(variant: string) {
 
 function FeatureCard({ feature }: { feature: NavFeature }) {
   return (
-    <div className="col-span-full mb-2">
+    <div className="col-span-full">
       <NavigationMenuLink asChild>
         <Link
           href={feature.href}
-          className="flex items-start gap-3 rounded-lg border border-border/50 bg-muted/50 p-3 hover:bg-accent hover:border-accent-foreground/20 transition-colors"
+          className="block rounded-lg border bg-muted/50 p-4 hover:bg-accent transition-colors"
         >
           {feature.icon && (
             <div className="rounded-md bg-background p-2 text-muted-foreground">
@@ -128,11 +128,11 @@ function NavItemContent({ item, onAction }: { item: NavItem; onAction?: (item: N
 
 function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: NavItem) => void }) {
   return (
-    <NavigationMenuContent className="w-auto">
-      <div className="grid gap-3 p-4 min-w-[700px] max-w-[800px]">
+    <NavigationMenuContent>
+      <div className="p-6">
         {item.featured && <FeatureCard feature={item.featured} />}
 
-        <div className="grid gap-4 grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {item.sections?.map((section, idx) => (
             <div key={idx} className="space-y-3">
               {section.title && (
@@ -157,8 +157,8 @@ function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: 
 
 function StandardMenuContent({ items, onAction }: { items: NavItem[]; onAction?: (item: NavItem) => void }) {
   return (
-    <NavigationMenuContent className="w-auto">
-      <ul className="grid gap-2 p-4 min-w-[300px] max-w-[400px]">
+    <NavigationMenuContent>
+      <ul className="grid gap-3 p-6 md:grid-cols-2">
         {items.map((item) => (
           <li key={item.href}>
             <NavItemContent item={item} onAction={onAction} />
