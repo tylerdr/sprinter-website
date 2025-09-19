@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { 
   Globe, 
   Users, 
@@ -21,7 +22,8 @@ import {
   CheckCircle,
   Lightbulb,
   Brain,
-  Rocket
+  Rocket,
+  Plug
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateRoomCode, generatePlayerId, AI_PERSONALITIES } from "@/lib/multiplayer/rooms";
@@ -93,7 +95,7 @@ function FutureScenariosGame() {
   const [copied, setCopied] = useState(false);
   const [currentPrompt, setCurrentPrompt] = useState("");
 
-  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+  const { trackPlayer, broadcast, isConnected, isConfigured } = useMultiplayerRoom({
     roomCode,
     playerId,
     playerName,
@@ -220,6 +222,15 @@ function FutureScenariosGame() {
 
   return (
     <div className="h-[600px] flex flex-col">
+      {!isConfigured && (
+        <Alert className="mb-4 border-yellow-500/30 bg-yellow-500/5 text-yellow-200">
+          <Plug className="h-4 w-4" />
+          <AlertTitle>Realtime collaboration offline</AlertTitle>
+          <AlertDescription>
+            Supabase Realtime is not configured, so multiplayer world-building runs in preview mode only. Add the required environment variables to enable shared sessions.
+          </AlertDescription>
+        </Alert>
+      )}
       {/* Header */}
       <div className="p-4 border-b flex items-center justify-between">
         <div className="flex items-center gap-4">

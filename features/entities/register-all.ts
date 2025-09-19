@@ -14,19 +14,19 @@ export async function registerAllEntityTypes() {
   // These will override database definitions if they exist
   for (const [slug, entityType] of Object.entries(entityTypes)) {
     try {
-      // Convert to registry format
+      // Convert to registry format using the new entity structure
       const registryType = {
-        slug: entityType.slug,
-        name: entityType.name,
-        namespace: entityType.namespace,
-        parentSlug: entityType.parentSlug,
-        isWorkspace: entityType.isWorkspace || false,
-        schema: entityType.schema as any,
-        uiConfig: entityType.uiConfig || {},
-        entityMapping: entityType.entityMapping || {},
-        version: entityType.version || 1
+        slug: entityType.name, // Use name as slug
+        name: (entityType as any).displayName || entityType.name,
+        namespace: "sprinter-ai",
+        parentSlug: undefined,
+        isWorkspace: false,
+        schema: (entityType as any).schema || entityType,
+        uiConfig: (entityType as any).ui || {},
+        entityMapping: {},
+        version: 1
       };
-      
+
       entityRegistry.registerEntityType(registryType);
       console.log(`Registered entity type: ${slug}`);
     } catch (error) {

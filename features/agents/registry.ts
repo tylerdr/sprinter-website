@@ -24,6 +24,7 @@ import type {
   DatabaseAgent
 } from "./types";
 import { MORTGAGE_RESEARCHER_AGENT } from "./mortgage-researcher";
+import { pSEOContentGeneratorAgent } from "./pseo-content-generator";
 
 // Re-export types for backward compatibility
 export type { AgentConfig, AgentContext, AgentExecutionResult } from "./types";
@@ -566,6 +567,7 @@ class AgentRegistry {
    */
   private registerCoreAgents(): void {
     this.register(MORTGAGE_RESEARCHER_AGENT);
+    this.register(pSEOContentGeneratorAgent);
 
     // Marketplace Agent - Primary agent for multi-lender search
     this.register({

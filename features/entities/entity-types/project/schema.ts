@@ -85,9 +85,13 @@ export const ProjectSchema = z.object({
   tenant_id: z.number().optional()
 });
 
+// Create and Update schemas
+export const CreateProjectSchema = ProjectSchema.omit({ id: true, created_at: true, updated_at: true });
+export const UpdateProjectSchema = CreateProjectSchema.partial();
+
 // Export types
 export type Project = z.infer<typeof ProjectSchema>;
-export type CreateProject = z.infer<typeof ProjectSchema>;
-export type UpdateProject = Partial<CreateProject>;
+export type CreateProject = z.infer<typeof CreateProjectSchema>;
+export type UpdateProject = z.infer<typeof UpdateProjectSchema>;
 export type ProjectStatus = z.infer<typeof ProjectStatus>;
 export type ProjectPriority = z.infer<typeof ProjectPriority>;

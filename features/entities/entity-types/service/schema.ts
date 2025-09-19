@@ -124,8 +124,8 @@ export const MetricsSchema = z.object({
   financial: FinancialMetricsSchema.optional()
 });
 
-// Use case schema
-export const UseCaseSchema = z.object({
+// Service use case schema
+export const ServiceUseCaseSchema = z.object({
   title: z.string(),
   industry: z.string().optional(),
   challenge: z.string(),
@@ -241,7 +241,7 @@ export const CreateServiceSchema = z.object({
   capabilities: z.array(CapabilitySchema).optional(),
   implementation: ImplementationSchema.optional(),
   metrics: MetricsSchema.optional(),
-  useCases: z.array(UseCaseSchema).optional(),
+  useCases: z.array(ServiceUseCaseSchema).optional(),
   pricing: z.object({
     tiers: z.array(PricingTierSchema)
   }).optional(),

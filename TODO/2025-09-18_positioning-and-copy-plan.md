@@ -9,6 +9,11 @@ Sprinter must communicate a portfolio-wide AI transformation story for lower-mid
 - Produce persuasive, defensible copy for case studies, industries, and governance content that resonates with PE buyers and frontline operators.
 - Embed the AI transformation arc across all surface areas, weaving in the People → Process → Projects → Product philosophy and document intelligence as signature pillars.
 
+## Status (2025-09-18 Audit)
+- No checklist items completed yet; hero, packages, and industry copy still reflect legacy positioning.
+- Pricing tiers and guarantees remain mismatched with docs (`/ai-sprint` still advertises $50k offer).
+- Dependencies: need approved messaging guide and case study source data before drafting.
+
 ## Checklist
 - [ ] Approve master messaging guide (hero, taglines, repeatable copy anchors).
 - [ ] Finalize package copy (Operating Partner Retainer, Transformation Partner tiers, AI Sprint, Education & Enablement) with pricing tables and guarantees.

@@ -119,9 +119,13 @@ export const WorkflowSchema = z.object({
   tenant_id: z.number().optional()
 });
 
+// Create and Update schemas
+export const CreateWorkflowSchema = WorkflowSchema.omit({ id: true, created_at: true, updated_at: true });
+export const UpdateWorkflowSchema = CreateWorkflowSchema.partial();
+
 // Export types
 export type Workflow = z.infer<typeof WorkflowSchema>;
-export type CreateWorkflow = z.infer<typeof WorkflowSchema>;
-export type UpdateWorkflow = Partial<CreateWorkflow>;
+export type CreateWorkflow = z.infer<typeof CreateWorkflowSchema>;
+export type UpdateWorkflow = z.infer<typeof UpdateWorkflowSchema>;
 export type WorkflowStatus = z.infer<typeof WorkflowStatus>;
 export type TriggerType = z.infer<typeof TriggerType>;

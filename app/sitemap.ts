@@ -11,7 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Core pages with high priority
   const coreRoutes = [
     { path: "/", priority: 1.0, changeFrequency: "daily" as const },
+    { path: "/approach", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/operating-partner", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/opportunity-atlas", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/ai-assessment", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/contact", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/partnership", priority: 0.85, changeFrequency: "monthly" as const },

@@ -74,9 +74,13 @@ export const CustomerSchema = z.object({
   tenant_id: z.number().optional()
 });
 
+// Create and Update schemas
+export const CreateCustomerSchema = CustomerSchema.omit({ id: true, created_at: true, updated_at: true });
+export const UpdateCustomerSchema = CreateCustomerSchema.partial();
+
 // Export types
 export type Customer = z.infer<typeof CustomerSchema>;
-export type CreateCustomer = z.infer<typeof CustomerSchema>;
-export type UpdateCustomer = Partial<CreateCustomer>;
+export type CreateCustomer = z.infer<typeof CreateCustomerSchema>;
+export type UpdateCustomer = z.infer<typeof UpdateCustomerSchema>;
 export type CustomerStatus = z.infer<typeof CustomerStatus>;
 export type CustomerType = z.infer<typeof CustomerType>;

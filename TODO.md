@@ -1,7 +1,12 @@
 # Sprinter Website - TODO List
 *Generated from Playwright testing on live site: https://sprinter-website.vercel.app/*
-*Test Date: 2025-08-30*
-*Last Updated: 2025-08-30 - Added Auth & AI Labs testing*
+*Test Date: 2025-09-18 (manual audit & local build)*
+*Last Updated: 2025-09-18 - Navigation/auth updates verified, new security follow-ups logged*
+
+## Status Snapshot (2025-09-19)
+- Completed: Auth flows functional, labs restored, navigation fixed, security hardened, AI Sprint page live, new Opportunity Atlas page created.
+- Critical gaps: Homepage lacks PE-focused positioning, pricing not transparent across all packages, missing core pages (/approach, /governance, /education), no interactive tools or newsletter.
+- Validation: `npm run lint`, `npm run build` both pass locally (2025-09-19).
 
 ## 2025-09-18 Strategic Plans
 - [ ] [2025-09-18_sprinter-website-master-plan.md](./TODO/2025-09-18_sprinter-website-master-plan.md)
@@ -13,56 +18,41 @@
 ## 🔴 Critical Security Issues
 
 ### 1. Remove Hardcoded Demo Credentials
-- **Location**: `/app/auth/signin/page.tsx`
-- **Issue**: Demo credentials (`demo@sprinter.ai` / `demo123456`) exposed in client-side code
-- **Fix**: Move to server-side environment variables or remove entirely
-- **Security Risk**: HIGH - Exposed credentials could be exploited
-- **User Impact**: Security vulnerability
+- **Status**: ✅ Completed — demo endpoint now fails closed when `DEMO_EMAIL`/`DEMO_PASSWORD` are missing and is wrapped in rate limiting (`app/api/auth/demo/route.ts`).
+- **Current State**: Credentials remain server-only; clients receive a 503 with helpful messaging when demo login is not configured.
+- **Next Step**: Add Playwright smoke test once Supabase environment is available in CI.
+- **Security Risk**: Mitigated.
+- **User Impact**: Demo access only works when explicitly configured, preventing unintended exposure.
 
 ### 2. Implement API Rate Limiting
-- **Location**: All `/api/` routes, especially AI endpoints
-- **Issue**: No visible rate limiting on AI API calls
-- **Fix**: Add rate limiting middleware to prevent abuse
-- **Security Risk**: HIGH - Potential for API abuse and cost overruns
-- **User Impact**: Service availability and costs
+- **Status**: ✅ Completed — `withRateLimit` middleware wraps chat, labs, proposals, image, and assessment endpoints (`lib/rate-limit.ts`, `app/api/**/route.ts`).
+- **Next Step**: Configure Upstash Redis in production and surface rate-limit headers for observability.
+- **Security Risk**: Mitigated.
+- **User Impact**: Prevents runaway usage and cost spikes.
 
 ## 🟨 High Priority Fixes
 
 ### 1. Add Pricing Link to Main Navigation
-- **Location**: Header navigation component
-- **File**: `/components/layout/pe-navigation.tsx` or similar navigation component
-- **Issue**: Pricing page exists at `/pricing` but no navigation link
-- **Fix**: Add "Pricing" link to main navigation menu
-- **User Impact**: Users cannot easily find pricing information
+- **Status**: ✅ Completed — `components/layout/pe-navigation.tsx` now includes `/pricing` in both desktop and mobile menus (2025-09-18 audit).
+- **Follow-up**: Keep pricing CTA in hero aligned with packages once copy refresh lands.
 
 ### 2. Fix Mobile Navigation Menu
-- **Location**: Mobile responsive navigation
-- **File**: Navigation component with hamburger menu
-- **Issue**: Mobile menu button not detected/accessible on mobile viewports
-- **Fix**: Ensure hamburger menu button is properly implemented and accessible
-- **User Impact**: Mobile users may have difficulty navigating the site
+- **Status**: ✅ Completed — hamburger toggle is accessible (`data-testid="mobile-menu-toggle"`) with animated drawer states (2025-09-18 check).
+- **Follow-up**: Add mobile GA event tracking once analytics plan is in place.
 
 ### 3. Implement Password Reset Functionality
-- **Location**: `/app/auth/signin/page.tsx`
-- **Issue**: Password reset is commented out with TODO
-- **Fix**: Implement full password reset flow with email verification
-- **User Impact**: Users cannot recover forgotten passwords
+- **Status**: ✅ Completed — dedicated reset flow lives at `/auth/reset-password` with Supabase email handoff and success state.
+- **Follow-up**: Add integration test covering happy/error paths once Supabase env available in CI.
 
 ### 4. Add Email Verification Flow
-- **Location**: `/app/auth/signup/page.tsx`
-- **Issue**: Sign-up mentions "check email" but no actual verification process
-- **Fix**: Implement email confirmation with Supabase auth
-- **User Impact**: No account verification, potential for fake accounts
+- **Status**: ✅ Completed — sign-up triggers Supabase email confirmation and routes to `/auth/confirm-email` with resend support.
+- **Follow-up**: Ensure transactional email template matches new branding once Resend credentials wired.
 
 ### 5. Fix Incomplete AI Labs
-- **Location**: Various `/app/labs/` pages
-- **Issue**: Several labs show "Loading..." or placeholder content
-- **Files with issues**:
-  - `/app/labs/pe-tycoon/page.tsx` - Initialization problems
-  - `/app/labs/cards-against-ai/page.tsx` - Multiplayer not working
-  - Several labs showing 0 available items
-- **Fix**: Complete implementations or remove from production
-- **User Impact**: Poor user experience with non-functional features
+- **Status**: ⚠️ Partially resolved.
+- **Current Findings**: `pe-tycoon` now ships a self-contained demo. Multiplayer labs (`cards-against-ai`, `future-scenarios`, etc.) now surface configuration warnings instead of crashing, but still require Supabase env vars; Opportunity Audit depends on Exa/Firecrawl keys without graceful fallbacks.
+- **Next Step**: Add environment guards, offline/demo modes, and QA coverage so public site degrades gracefully.
+- **User Impact**: Labs fail silently in production without full platform configuration, undermining trust.
 
 ## 🟡 Medium Priority Improvements
 
@@ -76,20 +66,12 @@
 - **User Impact**: Chat may fail without clear feedback
 
 ### 2. Add Session Management & Logout
-- **Location**: Navigation components and auth pages
-- **Issue**: No visible logout functionality or session timeout handling
-- **Fix**: Add logout button, session expiry, and auto-logout
-- **User Impact**: Users cannot properly sign out
+- **Status**: ✅ Completed — `components/layout/navigation-auth.tsx` exposes a dropdown with `Sign Out` and redirects home after Supabase sign-out.
+- **Follow-up**: Still need session timeout/refresh logic and tests once Supabase fully configured.
 
 ### 3. Fix Multiple Main Elements in Lab Pages
-- **Location**: Lab page layouts
-- **Files**: 
-  - `/app/labs/agent-simulator/page.tsx`
-  - `/app/labs/workflow-tool/page.tsx`
-  - `/app/labs/sketch-studio/page.tsx`
-- **Issue**: Multiple `<main>` elements per page causing semantic HTML issues
-- **Fix**: Ensure only one `<main>` element per page, use `<section>` or `<div>` for other containers
-- **Impact**: SEO and accessibility best practices
+- **Status**: ✅ Completed — labs now render via layout/client components without nested `<main>` tags (2025-09-18 audit).
+- **Follow-up**: Run automated accessibility checks once Playwright axe suite is back online.
 
 ### 4. Add Newsletter Signup Form
 - **Location**: Homepage or footer
@@ -155,6 +137,7 @@
 - Protected routes redirect correctly
 - Toast notifications for errors
 - Loading states during authentication
+- Password reset and email confirmation flows verified (2025-09-18).
 
 ### AI Chat Widget
 - Context-aware welcome messages
@@ -178,6 +161,7 @@
 - Responsive design works on all viewports
 - Page performance excellent (< 2s load time)
 - Professional dark theme consistent throughout
+- `npm run lint` and `npm run build` succeed locally (2025-09-18).
 
 ## 📊 Updated Test Summary
 
@@ -190,13 +174,13 @@
 - **Auth Features Tested**: 8 (signin, signup, OAuth, validation, etc.)
 - **AI Labs Tested**: 30+ individual labs
 - **Chat Widget Tests**: 5 (context, lead capture, auto-open, etc.)
-- **Security Issues Found**: 2 critical (hardcoded credentials, no rate limiting)
-- **UX Issues Found**: 7 high priority items
+- **Security Issues Found**: 0 critical (demo login now requires configured credentials and rate limiting)
+- **UX Issues Found**: 1 high priority item remaining (lab resilience without platform services)
 
 ### Overall Assessment
 - **Previous Grade**: B+ (Good functionality)
 - **Updated Grade**: B (Good foundation, security concerns need attention)
-- **Main Concerns**: Security vulnerabilities, incomplete features, missing auth flows
+- **Main Concerns**: Fragile lab dependencies, missing analytics instrumentation, outdated positioning copy
 - **Strengths**: Professional design, comprehensive AI labs, good performance
 
 ## 🚀 Recommended Action Plan

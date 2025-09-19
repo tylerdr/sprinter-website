@@ -13,16 +13,15 @@ import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-// Form components need to be created
-// import {
-//   Form,
-//   FormControl,
-//   FormDescription,
-//   FormField,
-//   FormItem,
-//   FormLabel,
-//   FormMessage,
-// } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   Eye, Save, X, Plus, Trash2, Copy, ExternalLink,
   AlertCircle, CheckCircle, FileText, Settings,
@@ -162,7 +161,7 @@ export function ServiceForm({
   onSubmit,
   onCancel
 }: EntityFormProps<Service, CreateService, UpdateService>) {
-  const form = useForm<CreateService>({
+  const form = useForm({
     resolver: zodResolver(mode === "create" ? CreateServiceSchema : UpdateServiceSchema),
     defaultValues: initialData || {
       status: "active",
@@ -195,7 +194,7 @@ export function ServiceForm({
   });
 
   return (
-    // <Form {...form}>
+    <Form {...form}>
       <form onSubmit={handleSubmit} className="space-y-6">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsList className="grid grid-cols-6 w-full">

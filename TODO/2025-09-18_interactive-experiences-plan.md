@@ -9,6 +9,11 @@ Interactive, people-first experiences are core to demonstrating Sprinter’s AI 
 - Ensure tools persist outputs as entities/artifacts, enabling the AI Opportunity Atlas to grow programmatically.
 - Instrument analytics to measure usage, conversions, and content generation effectiveness.
 
+## Status (2025-09-18 Audit)
+- Labs catalogue restored, but tool roster/specs remain undocumented in `/features/tools/toolset`.
+- No gating or analytics wiring yet; current experiences rely on ad-hoc server actions with external dependencies.
+- Next priority: author specs, add demo/offline modes, and define placement map before building additional tools.
+
 ## Checklist
 - [ ] Define tool roster, ownership, and placement map across templates.
 - [ ] Author tool specs (inputSchema, execute, outputSchema, gating mode, permissions) in `/features/tools/toolset` for:

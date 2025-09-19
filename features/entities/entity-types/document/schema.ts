@@ -98,9 +98,13 @@ export const DocumentSchema = z.object({
   tenant_id: z.number().optional()
 });
 
+// Create and Update schemas
+export const CreateDocumentSchema = DocumentSchema.omit({ id: true, created_at: true, updated_at: true });
+export const UpdateDocumentSchema = CreateDocumentSchema.partial();
+
 // Export types
 export type Document = z.infer<typeof DocumentSchema>;
-export type CreateDocument = z.infer<typeof DocumentSchema>;
-export type UpdateDocument = Partial<CreateDocument>;
+export type CreateDocument = z.infer<typeof CreateDocumentSchema>;
+export type UpdateDocument = z.infer<typeof UpdateDocumentSchema>;
 export type DocumentType = z.infer<typeof DocumentType>;
 export type DocumentStatus = z.infer<typeof DocumentStatus>;

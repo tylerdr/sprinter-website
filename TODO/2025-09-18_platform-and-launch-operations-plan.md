@@ -8,6 +8,11 @@ To launch the new Sprinter site successfully we must align the AI Sprinter Platf
 - Ensure the marketing application remains type-safe, performant, and secure.
 - Establish comprehensive QA, analytics, and observability systems for launch and post-launch monitoring.
 
+## Status (2025-09-18 Audit)
+- Rate limiting middleware, Supabase auth flows, and chat persistence tables are in place.
+- Entity schemas, analytics instrumentation, workflow automation, and launch runbook items remain untouched.
+- Testing currently limited to manual build/lint; Playwright regression and Lighthouse checks still pending.
+
 ## Checklist
 - [ ] Define and migrate database schemas for new entity types (use cases, pain points, goals, technologies, models, frameworks, libraries, document types, industries, companies, products, ideas, compositions, ROI estimates, governance packs).
 - [ ] Update AI Sprinter Platform registries: entity type registry, view registry, tool registry, agent definitions, workflow specs.

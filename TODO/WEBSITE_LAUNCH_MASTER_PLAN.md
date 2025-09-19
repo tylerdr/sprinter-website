@@ -3,6 +3,11 @@
 ## Executive Summary
 This document outlines all required improvements to launch the Sprinter AI website as the premier AI Operating Partner for Lower-Mid and Mid-Market Private Equity firms. Based on competitive analysis of leading firms (Tenex, Cadre AI, IBM, Accenture) and comprehensive site audit.
 
+## Status (2025-09-18 Audit)
+- Navigation refresh, Supabase auth flows, and lab restorations landed, but core positioning, IA, tool specs, and analytics workstreams remain outstanding.
+- Security follow-up: demo login now fails closed; add monitoring and smoke coverage before launch.
+- Next sprint should prioritize hero/pitch rewrite and entity schema foundation before layering additional tools.
+
 ## 🎯 Critical Positioning Updates
 
 ### Homepage Hero Messaging
@@ -133,8 +138,8 @@ This document outlines all required improvements to launch the Sprinter AI websi
 ## 🧹 Technical Cleanup
 
 ### Remove Redundant Files:
-- [ ] Delete `/app/labs/pe-tycoon/page-old.tsx`
-- [ ] Clean up `/app/labs/vibe-coding/page-new.tsx`
+- [x] Delete `/app/labs/pe-tycoon/page-old.tsx`
+- [x] Clean up `/app/labs/vibe-coding/page-new.tsx`
 - [ ] Consolidate navigation configs
 
 ### Complete TODOs:

@@ -109,10 +109,14 @@ export const TeamMemberSchema = z.object({
   tenant_id: z.number().optional()
 });
 
+// Create and Update schemas
+export const CreateTeamMemberSchema = TeamMemberSchema.omit({ id: true, created_at: true, updated_at: true });
+export const UpdateTeamMemberSchema = CreateTeamMemberSchema.partial();
+
 // Export types
 export type TeamMember = z.infer<typeof TeamMemberSchema>;
-export type CreateTeamMember = z.infer<typeof TeamMemberSchema>;
-export type UpdateTeamMember = Partial<CreateTeamMember>;
+export type CreateTeamMember = z.infer<typeof CreateTeamMemberSchema>;
+export type UpdateTeamMember = z.infer<typeof UpdateTeamMemberSchema>;
 export type TeamMemberRole = z.infer<typeof TeamMemberRole>;
 export type TeamMemberStatus = z.infer<typeof TeamMemberStatus>;
 export type Department = z.infer<typeof Department>;

@@ -30,6 +30,10 @@ export const TOOL_IMPORTS: Record<
     import("./toolset/content/social-post-generator/tool").then(m => ({
       tool: m.default
     })),
+  "pseo-page-generator": () =>
+    import("./toolset/content/pseo-page-generator/tool").then(m => ({
+      tool: m.default
+    })),
 
   // Utility Tools
   "ai-image-generator": () =>

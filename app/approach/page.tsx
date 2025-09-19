@@ -8,11 +8,11 @@ import { WhatWeMeasure } from "@/components/approach/what-we-measure";
 import { HowToStart } from "@/components/approach/how-to-start";
 
 export const metadata: Metadata = {
-  title: "People-First AI Approach | Sprinter AI",
-  description: "Technology isn't the hard part—adoption is. We start small with a use case that improves everyday work. When employees feel the win, momentum takes care of the rest.",
+  title: "People-First AI Operating Partner for Private Equity | Sprinter AI",
+  description: "AI done FOR people, not TO people. Our proven methodology: People → Process → Projects → Product. Start small, win early, expand systematically. 30-45 day wins guaranteed.",
   openGraph: {
-    title: "People-First AI Approach | Sprinter AI",
-    description: "Start with one document type your team will love. Expand to end-to-end automation. AI done FOR people, not TO people.",
+    title: "People-First AI Operating Partner for Private Equity",
+    description: "Start with one document type your team will love. Expand to end-to-end automation. ≥60% touchless processing with fund-level AI governance.",
     images: ["/images/og/approach.jpg"],
   },
 };

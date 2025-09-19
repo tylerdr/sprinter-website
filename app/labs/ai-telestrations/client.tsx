@@ -7,13 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { 
   Users, 
   Bot,
   Copy,
   CheckCircle,
   Timer,
-  Eraser
+  Eraser,
+  Plug
 } from "lucide-react";
 import { generateRoomCode, generatePlayerId, AI_PERSONALITIES } from "@/lib/multiplayer/rooms";
 import { useMultiplayerRoom } from "@/lib/hooks/useMultiplayerRoom";
@@ -185,7 +187,7 @@ function AITelestrationsGame() {
     setPlayerId(id);
   }, [roomCode, router]);
 
-  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+  const { trackPlayer, broadcast, isConnected, isConfigured } = useMultiplayerRoom({
     roomCode,
     playerId,
     playerName,
@@ -284,6 +286,15 @@ function AITelestrationsGame() {
 
   return (
     <div className="h-[600px] flex flex-col">
+      {!isConfigured && (
+        <Alert className="mb-4 border-yellow-500/30 bg-yellow-500/5 text-yellow-200">
+          <Plug className="h-4 w-4" />
+          <AlertTitle>Realtime drawing disabled</AlertTitle>
+          <AlertDescription>
+            Supabase Realtime credentials are required for shared sessions. Configure them to enable multiplayer; this view will operate in preview mode until then.
+          </AlertDescription>
+        </Alert>
+      )}
       {/* Header */}
       <div className="p-4 border-b flex items-center justify-between">
         <div className="flex items-center gap-4">

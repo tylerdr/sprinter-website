@@ -7,10 +7,10 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "Your AI Operating Partner",
+      line1: "People-First AI Operating Partner",
       line2: "for Private Equity"
     },
-    subheadline: "Document intelligence that achieves ≥60% touchless processing. End-to-end automation in 30-45 days. Fund-level governance you can defend to LPs. No API? No problem."
+    subheadline: "Start with one document type your team will love. Expand to end-to-end automation. 30-45 day wins guaranteed. ≥60% touchless processing with fund-level AI governance."
   },
   scale: {
     headline: {

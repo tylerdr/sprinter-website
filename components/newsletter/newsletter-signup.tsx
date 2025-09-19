@@ -14,14 +14,23 @@ interface NewsletterSignupProps {
   placeholder?: string;
   title?: string;
   description?: string;
+  showLeadMagnet?: boolean;
+}
+
+const LEAD_MAGNET = {
+  title: "Free: PE Portfolio AI Readiness Scorecard",
+  description: "Score your portfolio's AI maturity in 5 minutes. Used by 50+ PE firms.",
+  buttonText: "Get Your Free Scorecard",
+  fileName: "PE-Portfolio-AI-Readiness-Scorecard.pdf"
 }
 
 export function NewsletterSignup({
   className = "",
   variant = "default",
-  placeholder = "Enter your email",
-  title = "Stay Updated",
-  description = "Get the latest AI insights and case studies delivered to your inbox"
+  placeholder = "Enter your work email",
+  title = "PE AI Weekly Newsletter",
+  description = "Join 1,200+ PE professionals getting actionable AI insights every Thursday",
+  showLeadMagnet = true
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -48,7 +57,7 @@ export function NewsletterSignup({
       if (existingSubscriptions.includes(email.toLowerCase())) {
         setStatus("success");
         setIsSignedUp(true);
-        toast.success("You're already subscribed!");
+        toast.success("You're already subscribed! Check your email for the AI Readiness Scorecard.");
         return;
       }
 
@@ -97,7 +106,14 @@ export function NewsletterSignup({
 
       setStatus("success");
       setIsSignedUp(true);
-      toast.success("Successfully subscribed to our newsletter!");
+      toast.success(
+        showLeadMagnet
+          ? "Check your email for your PE Portfolio AI Readiness Scorecard!"
+          : "Successfully subscribed to PE AI Weekly!",
+        {
+          description: "You'll receive actionable AI insights every Thursday."
+        }
+      );
 
       // Clear email after successful signup
       setTimeout(() => {
@@ -153,6 +169,12 @@ export function NewsletterSignup({
           <h3 className="font-semibold text-foreground">{title}</h3>
         </div>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
+        {showLeadMagnet && (
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 mb-4">
+            <p className="text-sm font-medium text-blue-400">{LEAD_MAGNET.title}</p>
+            <p className="text-xs text-muted-foreground mt-1">{LEAD_MAGNET.description}</p>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-3">
           <Input
@@ -187,7 +209,7 @@ export function NewsletterSignup({
             ) : (
               <>
                 <Send className="w-4 h-4 mr-2" />
-                Subscribe
+                {showLeadMagnet ? LEAD_MAGNET.buttonText : "Subscribe"}
               </>
             )}
           </Button>

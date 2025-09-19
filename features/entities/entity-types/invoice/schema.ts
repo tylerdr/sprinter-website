@@ -103,8 +103,12 @@ export const InvoiceSchema = z.object({
   tenant_id: z.number().optional()
 });
 
+// Create and Update schemas
+export const CreateInvoiceSchema = InvoiceSchema.omit({ id: true, created_at: true, updated_at: true });
+export const UpdateInvoiceSchema = CreateInvoiceSchema.partial();
+
 // Export types
 export type Invoice = z.infer<typeof InvoiceSchema>;
-export type CreateInvoice = z.infer<typeof InvoiceSchema>;
-export type UpdateInvoice = Partial<CreateInvoice>;
+export type CreateInvoice = z.infer<typeof CreateInvoiceSchema>;
+export type UpdateInvoice = z.infer<typeof UpdateInvoiceSchema>;
 export type InvoiceStatus = z.infer<typeof InvoiceStatus>;
