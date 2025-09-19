@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Sparkles, Trophy, Rocket, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { NAVIGATION } from "@/lib/constants";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -53,7 +54,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-3">
             <NavigationMenu>
               <NavigationMenuList>
                 {NAVIGATION.main.map((item) => {
@@ -66,7 +67,8 @@ export function Navigation() {
                         <>
                           <NavigationMenuTrigger
                             className={cn(
-                              "h-9 px-3 py-2 text-sm font-medium",
+                              "h-10 px-4 py-2 text-sm font-medium transition-all duration-200",
+                              "hover:text-foreground",
                               pathname.startsWith(item.href)
                                 ? "text-foreground"
                                 : "text-muted-foreground"
@@ -75,29 +77,57 @@ export function Navigation() {
                             {item.label}
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                              {dropdownItems?.map((subItem) => (
-                                <li key={subItem.href}>
-                                  <NavigationMenuLink asChild>
-                                    <Link
-                                      href={subItem.href}
-                                      className={cn(
-                                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                                        pathname === subItem.href && "bg-accent/50"
-                                      )}
-                                    >
-                                      <div className="text-sm font-medium leading-none">
-                                        {subItem.label}
-                                      </div>
-                                      {"description" in subItem && subItem.description && (
-                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                          {subItem.description}
-                                        </p>
-                                      )}
-                                    </Link>
-                                  </NavigationMenuLink>
-                                </li>
-                              ))}
+                            <ul className={cn(
+                              "grid gap-2 p-4",
+                              item.label === "Solutions" ? "w-[650px] md:grid-cols-2" : "w-[550px] md:grid-cols-2"
+                            )}>
+                              {dropdownItems?.map((subItem) => {
+                                const IconComponent =
+                                  "icon" in subItem && subItem.icon === "rocket" ? Rocket :
+                                  "icon" in subItem && subItem.icon === "trophy" ? Trophy : null;
+                                const isFeatured = "featured" in subItem && subItem.featured;
+
+                                return (
+                                  <li key={subItem.href} className={cn(
+                                    isFeatured && "md:col-span-2"
+                                  )}>
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        href={subItem.href}
+                                        className={cn(
+                                          "group block select-none space-y-1.5 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200",
+                                          "hover:bg-accent/60 hover:shadow-sm",
+                                          "focus:bg-accent focus:text-accent-foreground focus:shadow-sm",
+                                          pathname === subItem.href && "bg-accent/40",
+                                          isFeatured && "border border-border/50 bg-gradient-to-br from-accent/20 to-transparent"
+                                        )}
+                                      >
+                                        <div className="flex items-center gap-2">
+                                          {IconComponent && (
+                                            <IconComponent className={cn(
+                                              "h-4 w-4 transition-colors",
+                                              isFeatured ? "text-primary" : "text-muted-foreground group-hover:text-primary"
+                                            )} />
+                                          )}
+                                          <div className="text-sm font-semibold leading-none group-hover:text-foreground">
+                                            {subItem.label}
+                                          </div>
+                                          {isFeatured && (
+                                            <span className="ml-auto text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                                              Popular
+                                            </span>
+                                          )}
+                                        </div>
+                                        {"description" in subItem && subItem.description && (
+                                          <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground group-hover:text-muted-foreground/90">
+                                            {subItem.description}
+                                          </p>
+                                        )}
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </li>
+                                );
+                              })}
                             </ul>
                           </NavigationMenuContent>
                         </>
@@ -106,10 +136,10 @@ export function Navigation() {
                           <NavigationMenuLink
                             className={cn(
                               navigationMenuTriggerStyle(),
-                              "h-9 px-3 py-2 text-sm font-medium",
+                              "h-10 px-4 py-2 text-sm font-medium",
                               pathname === item.href
                                 ? "text-foreground bg-accent/50"
-                                : "text-muted-foreground"
+                                : "text-muted-foreground hover:text-foreground"
                             )}
                           >
                             {item.label}
@@ -122,23 +152,40 @@ export function Navigation() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="flex items-center gap-2 ml-2">
-              {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => (
-                <Link
-                  key={cta.href}
-                  href={cta.href}
-                  className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
-                    cta.variant === "outline"
-                      ? "border border-border hover:bg-accent hover:text-accent-foreground"
-                      : "bg-primary text-primary-foreground hover:bg-primary/90"
-                  )}
-                >
-                  {cta.label}
-                </Link>
-              ))}
+            <div className="flex items-center gap-2 ml-4">
               <NavigationAuth />
               <ThemeToggle />
+              {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => {
+                const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
+                return (
+                  <Link
+                    key={cta.href}
+                    href={cta.href}
+                  >
+                    <Button
+                      variant={cta.variant}
+                      size="default"
+                      className={cn(
+                        "group relative overflow-hidden transition-all duration-300",
+                        cta.variant === "default" && [
+                          "bg-gradient-to-r from-primary to-primary/90",
+                          "hover:from-primary/90 hover:to-primary",
+                          "shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30",
+                          "border-0"
+                        ]
+                      )}
+                    >
+                      <span className="flex items-center gap-2">
+                        {cta.label}
+                        <IconComponent className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                      {cta.variant === "default" && (
+                        <span className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/20 to-primary/10 blur-2xl" />
+                      )}
+                    </Button>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -257,23 +304,28 @@ export function Navigation() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: NAVIGATION.main.length * 0.05 }}
-                    className="flex flex-col gap-2 pt-4 border-t border-border"
+                    className="flex flex-col gap-3 pt-4 mt-4 border-t border-border"
                   >
-                    {NAVIGATION.ctas.map((cta) => (
-                      <Link
-                        key={cta.href}
-                        href={cta.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className={cn(
-                          "block py-3 px-4 text-base font-medium rounded-lg text-center transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
-                          cta.variant === "outline"
-                            ? "border border-border hover:bg-accent hover:text-accent-foreground"
-                            : "bg-primary text-primary-foreground hover:bg-primary/90"
-                        )}
-                      >
-                        {cta.label}
-                      </Link>
-                    ))}
+                    <NavigationAuth />
+                    {NAVIGATION.ctas.map((cta) => {
+                      const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
+                      return (
+                        <Link
+                          key={cta.href}
+                          href={cta.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={cn(
+                            "flex items-center justify-center gap-2 py-3 px-4 text-base font-medium rounded-lg text-center transition-all duration-200 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
+                            cta.variant === "outline"
+                              ? "border border-border hover:bg-accent hover:text-accent-foreground"
+                              : "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:from-primary/90 hover:to-primary shadow-lg"
+                          )}
+                        >
+                          {cta.label}
+                          <IconComponent className="h-4 w-4" />
+                        </Link>
+                      );
+                    })}
                   </motion.div>
                 )}
               </div>

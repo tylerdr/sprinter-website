@@ -27,37 +27,50 @@ export const SOCIAL_LINKS = {
 export const NAVIGATION = {
   main: [
     {
-      href: "/operating-partner",
-      label: "Operating Partner",
-      type: "dropdown",
-      dropdown: [
-        { href: "/operating-partner", label: "Overview" },
-        { href: "/operating-partner#workshop", label: "90-Minute Workshop" },
-        { href: "/operating-partner#pilot", label: "30-45 Day Pilot" },
-        { href: "/operating-partner#scoreboard", label: "Portfolio Scoreboard" },
-      ],
-      items: [
-        { href: "/operating-partner", label: "Overview", description: "Fund-level orchestration" },
-        { href: "/operating-partner#workshop", label: "90-Minute Workshop", description: "Get pilot plan & options memo" },
-        { href: "/operating-partner#pilot", label: "30-45 Day Pilot", description: "Ship measurable value fast" },
-        { href: "/operating-partner#scoreboard", label: "Portfolio Scoreboard", description: "Dashboards for LP transparency" },
-      ],
-    },
-    {
       href: "/solutions",
       label: "Solutions",
       type: "dropdown",
       dropdown: [
+        { href: "/operating-partner", label: "AI Operating Partner" },
         { href: "/solutions/ap-automation", label: "Financial Process Automation" },
         { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
         { href: "/solutions/3pl-ops", label: "3PL Ops & Billing" },
-        { href: "/use-cases", label: "All PE Use Cases" },
+        { href: "/partnership", label: "Partnership Program" },
+        { href: "/pe-services", label: "All Services" },
       ],
       items: [
-        { href: "/solutions/ap-automation", label: "Financial Process Automation", description: "AP, expense, reconciliation" },
-        { href: "/solutions/quote-intelligence", label: "Quote Intelligence", description: "RFP to quote draft" },
-        { href: "/solutions/3pl-ops", label: "3PL Ops & Billing", description: "Quote-to-billing accuracy" },
-        { href: "/use-cases", label: "All PE Use Cases", description: "20+ prebuilt solutions" },
+        {
+          href: "/operating-partner",
+          label: "AI Operating Partner",
+          description: "Fund-level AI orchestration & portfolio wins",
+          featured: true,
+          icon: "rocket"
+        },
+        {
+          href: "/solutions/ap-automation",
+          label: "Financial Process Automation",
+          description: "AP, expense, reconciliation - 85% touchless"
+        },
+        {
+          href: "/solutions/quote-intelligence",
+          label: "Quote Intelligence",
+          description: "RFP to quote draft in minutes, not hours"
+        },
+        {
+          href: "/solutions/3pl-ops",
+          label: "3PL Ops & Billing",
+          description: "Quote-to-billing accuracy, automated"
+        },
+        {
+          href: "/partnership",
+          label: "Partnership Program",
+          description: "For PE firms & consultants"
+        },
+        {
+          href: "/pe-services",
+          label: "All Services",
+          description: "20+ prebuilt AI solutions for PE"
+        },
       ],
     },
     {
@@ -71,10 +84,61 @@ export const NAVIGATION = {
         { href: "/industries/financial-services", label: "Financial Services" },
       ],
       items: [
-        { href: "/industries/manufacturing", label: "Manufacturing", description: "AI on the factory floor" },
-        { href: "/industries/logistics", label: "Logistics & 3PL", description: "Supply chain automation" },
-        { href: "/industries/healthcare", label: "Healthcare", description: "Clinical & admin AI" },
-        { href: "/industries/financial-services", label: "Financial Services", description: "Fintech & banking AI" },
+        {
+          href: "/industries/manufacturing",
+          label: "Manufacturing",
+          description: "AI on the factory floor - quality, scheduling, maintenance"
+        },
+        {
+          href: "/industries/logistics",
+          label: "Logistics & 3PL",
+          description: "Supply chain automation, routing, documentation"
+        },
+        {
+          href: "/industries/healthcare",
+          label: "Healthcare",
+          description: "Clinical documentation, RCM, patient experience"
+        },
+        {
+          href: "/industries/financial-services",
+          label: "Financial Services",
+          description: "Underwriting, compliance, customer service"
+        },
+      ],
+    },
+    {
+      href: "/proven-results",
+      label: "Proven Results",
+      type: "dropdown",
+      dropdown: [
+        { href: "/case-studies", label: "Portfolio Wins" },
+        { href: "/operating-partner#scoreboard", label: "Impact Dashboard" },
+        { href: "/tools/roi-calculator", label: "ROI Calculator" },
+        { href: "/downloads/no-api-cookbook", label: "Implementation Guides" },
+      ],
+      items: [
+        {
+          href: "/case-studies",
+          label: "Portfolio Wins",
+          description: "$10M+ value created, anonymized case studies",
+          featured: true,
+          icon: "trophy"
+        },
+        {
+          href: "/operating-partner#scoreboard",
+          label: "Impact Dashboard",
+          description: "Real-time portfolio health & AI adoption metrics"
+        },
+        {
+          href: "/tools/roi-calculator",
+          label: "ROI Calculator",
+          description: "Quantify your AI opportunity in 2 minutes"
+        },
+        {
+          href: "/downloads/no-api-cookbook",
+          label: "Implementation Guides",
+          description: "Battle-tested playbooks & frameworks"
+        },
       ],
     },
     {
@@ -82,25 +146,48 @@ export const NAVIGATION = {
       label: "Resources",
       type: "dropdown",
       dropdown: [
-        { href: "/case-studies", label: "Case Studies" },
-        { href: "/labs", label: "AI Labs" },
+        { href: "/labs", label: "Interactive Demos" },
         { href: "/tools", label: "Tools & Calculators" },
-        { href: "/downloads/no-api-cookbook", label: "Downloads" },
-        { href: "/blog", label: "Insights" },
+        { href: "/blog", label: "PE AI Insights" },
+        { href: "/ai-assessment", label: "Free Assessment" },
+        { href: "/downloads/governance-pack", label: "Governance Pack" },
       ],
       items: [
-        { href: "/case-studies", label: "Case Studies", description: "Anonymized portfolio wins" },
-        { href: "/labs", label: "AI Labs", description: "Interactive demos" },
-        { href: "/tools", label: "Tools & Calculators", description: "Quantify ROI" },
-        { href: "/downloads/no-api-cookbook", label: "Downloads", description: "Playbooks & briefs" },
-        { href: "/blog", label: "Insights", description: "Private equity AI analysis" },
+        {
+          href: "/labs",
+          label: "Interactive Demos",
+          description: "Try our AI tools live - no signup required"
+        },
+        {
+          href: "/tools",
+          label: "Tools & Calculators",
+          description: "ROI, readiness, and impact assessments"
+        },
+        {
+          href: "/blog",
+          label: "PE AI Insights",
+          description: "Private equity AI analysis & trends"
+        },
+        {
+          href: "/ai-assessment",
+          label: "Free Assessment",
+          description: "Get your personalized AI roadmap"
+        },
+        {
+          href: "/downloads/governance-pack",
+          label: "Governance Pack",
+          description: "Security, compliance & board templates"
+        },
       ],
     },
-    { href: "/partnership", label: "Partnership" },
   ],
   ctas: [
-    { href: "/ai-assessment", label: "Get Free Assessment", variant: "outline" as const },
-    { href: "/contact", label: "Start a 10-Day Sprint", variant: "default" as const },
+    {
+      href: "/contact",
+      label: "Start Your Sprint",
+      variant: "default" as const,
+      icon: "sparkles"
+    }
   ],
   footer: {
     products: [
