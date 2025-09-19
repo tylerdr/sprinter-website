@@ -274,14 +274,45 @@ class AgentRegistry {
       const toolCalls = result.toolCalls;
       if (toolCalls && Array.isArray(toolCalls)) {
         for (const toolCall of toolCalls) {
-          // TODO: Update to use new tool system
-          // Tool execution is temporarily disabled during migration
-          const toolResult = {
-            success: false,
-            error: "Tool execution not yet implemented in new system",
-            data: null
-          };
-          toolResults.push(toolResult);
+          try {
+            // Import tool registry for execution
+            const { sprinterToolRegistry } = await import('@/features/tools/registry');
+
+            // Get the tool from registry
+            const tool = await sprinterToolRegistry.getTool(toolCall.toolName);
+
+            if (!tool || !tool.execute) {
+              toolResults.push({
+                success: false,
+                error: `Tool not found or not executable: ${toolCall.toolName}`,
+                data: null
+              });
+              continue;
+            }
+
+            // Execute the tool with provided arguments
+            const toolContext = {
+              preloaded: {
+                fieldOptions: {},
+                datasets: {}
+              },
+              getOptions: () => [],
+              getDataset: () => []
+            };
+            const toolExecutionResult = await tool.execute(toolCall.args, toolContext);
+
+            toolResults.push({
+              success: true,
+              error: null,
+              data: toolExecutionResult
+            });
+          } catch (toolError) {
+            toolResults.push({
+              success: false,
+              error: toolError instanceof Error ? toolError.message : String(toolError),
+              data: null
+            });
+          }
         }
       }
 

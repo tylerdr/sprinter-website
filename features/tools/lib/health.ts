@@ -35,14 +35,21 @@ export async function getToolsHealth(): Promise<ToolHealthStatus[]> {
     // Check if tool is registered in code (has no execute function)
     const notRegistered = !tool.execute;
 
-    // Check if tool is in database (simplified - would need database flag)
-    const notInDb = false; // TODO: Add database presence check
+    // Check if tool is in database
+    // Tools loaded from database will have metadata.fromDatabase flag
+    const notInDb = !tool.metadata?.fromDatabase;
 
-    // Check for schema mismatches (simplified check)
-    const schemaMismatch = false; // TODO: Implement proper schema comparison
+    // Check for schema mismatches
+    // Compare database schema with code schema if both exist
+    const schemaMismatch = tool.metadata?.dbSchema && tool.inputSchema
+      ? JSON.stringify(tool.metadata.dbSchema) !== JSON.stringify(tool.inputSchema)
+      : false;
 
     // Check for execution mode mismatches
-    const modeMismatch = false; // TODO: Implement mode comparison
+    // Compare database mode with code mode if both exist
+    const modeMismatch = tool.metadata?.dbExecutionMode && tool.executionMode
+      ? tool.metadata.dbExecutionMode !== tool.executionMode
+      : false
 
     // Find which agents use this tool
     const usedByAgents = agents
