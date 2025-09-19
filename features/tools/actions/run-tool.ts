@@ -48,7 +48,7 @@ export async function runTool(slug: string, values: unknown) {
   trackToolEventInBackground({
     id: eventId,
     toolSlug: slug,
-    toolId: tool.id,
+    toolId: undefined, // ToolSpec doesn't have id, only ToolDefinition does
     input: input,
     output: result,
     error: executionError,

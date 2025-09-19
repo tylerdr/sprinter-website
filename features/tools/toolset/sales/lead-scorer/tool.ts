@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { ToolSpec } from "@/features/tools/types";
-import { openai } from "@/lib/ai/openai-client";
+import { getModel } from "@/lib/ai-utils";
+import { generateText } from "ai";
 
 // Input schema for lead scoring
 export const inputSchema = z.object({
@@ -49,7 +50,7 @@ const tool: ToolSpec<typeof inputSchema, typeof outputSchema> = {
   slug: "lead-scorer",
   name: "AI Lead Scorer",
   description: "Score and qualify leads using AI-powered analysis",
-  category: "sales",
+  category: "marketing",
   inputSchema,
   outputSchema,
   executionMode: "server",
@@ -278,18 +279,24 @@ async function analyzeWithAI(input: Input, score: number): Promise<{
     3. Concerns to address (2-3 points)
     4. Opportunities to explore (2-3 points)
 
-    Format as JSON with keys: recommendations, strengths, concerns, opportunities (all arrays of strings)
+    Return as valid JSON with this exact structure:
+    {
+      "recommendations": ["recommendation1", "recommendation2", ...],
+      "strengths": ["strength1", "strength2", ...],
+      "concerns": ["concern1", "concern2", ...],
+      "opportunities": ["opportunity1", "opportunity2", ...]
+    }
     `;
 
-    const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: prompt }],
-      response_format: { type: "json_object" },
+    const model = getModel("gpt-4o-mini");
+    const { text } = await generateText({
+      model,
+      prompt,
       temperature: 0.7,
-      max_tokens: 500
+      maxTokens: 500
     });
 
-    const result = JSON.parse(response.choices[0]?.message?.content || "{}");
+    const result = JSON.parse(text);
 
     return {
       recommendations: result.recommendations || ["Schedule discovery call", "Send case study", "Connect on LinkedIn"],

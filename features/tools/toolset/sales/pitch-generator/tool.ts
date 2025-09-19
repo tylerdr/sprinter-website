@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { ToolSpec } from "@/features/tools/types";
-import { openai } from "@/lib/ai/openai-client";
+import { getModel } from "@/lib/ai-utils";
+import { generateText } from "ai";
 
 // Input schema for sales pitch generation
 export const inputSchema = z.object({
@@ -64,7 +65,7 @@ const tool: ToolSpec<typeof inputSchema, typeof outputSchema> = {
   slug: "pitch-generator",
   name: "Sales Pitch Generator",
   description: "Generate personalized sales pitches with AI-powered insights",
-  category: "sales",
+  category: "marketing",
   inputSchema,
   outputSchema,
   executionMode: "server",
@@ -139,17 +140,16 @@ Requirements:
 - End with a clear, compelling call-to-action
 - Keep it ${input.length.toLowerCase()} in length`;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: userPrompt }
-    ],
+  const model = getModel("gpt-4o-mini");
+  const { text } = await generateText({
+    model,
+    system: systemPrompt,
+    prompt: userPrompt,
     temperature: 0.8,
-    max_tokens: 1000
+    maxTokens: 1000
   });
 
-  return response.choices[0]?.message?.content || "Unable to generate pitch";
+  return text || "Unable to generate pitch";
 }
 
 async function generateSubjectLine(input: Input): Promise<string> {
@@ -158,14 +158,15 @@ Product: ${input.productName}
 Type: ${input.pitchType}
 Make it attention-grabbing, personalized, and under 60 characters.`;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [{ role: "user", content: prompt }],
+  const model = getModel("gpt-4o-mini");
+  const { text } = await generateText({
+    model,
+    prompt,
     temperature: 0.9,
-    max_tokens: 50
+    maxTokens: 50
   });
 
-  return response.choices[0]?.message?.content || `${input.productName} for ${input.prospectName}`;
+  return text || `${input.productName} for ${input.prospectName}`;
 }
 
 async function generateAlternatives(input: Input, originalPitch: string): Promise<string[]> {
@@ -178,14 +179,15 @@ Generate 2 alternative versions with different approaches:
 
 Keep the same core message but vary the style and opening.`;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [{ role: "user", content: prompt }],
+  const model = getModel("gpt-4o-mini");
+  const { text } = await generateText({
+    model,
+    prompt,
     temperature: 0.85,
-    max_tokens: 800
+    maxTokens: 800
   });
 
-  const content = response.choices[0]?.message?.content || "";
+  const content = text || "";
   // Split the response into alternatives
   const alternatives = content.split(/\n\n/).filter(alt => alt.length > 50);
 
@@ -201,16 +203,16 @@ Prospect: ${input.prospectName}
 
 Format as a JSON array of strings.`;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [{ role: "user", content: prompt }],
-    response_format: { type: "json_object" },
+  const model = getModel("gpt-4o-mini");
+  const { text } = await generateText({
+    model,
+    prompt: prompt + "\n\nReturn as valid JSON.",
     temperature: 0.7,
-    max_tokens: 300
+    maxTokens: 300
   });
 
   try {
-    const result = JSON.parse(response.choices[0]?.message?.content || "{}");
+    const result = JSON.parse(text || "{}");
     return result.talking_points || [
       `How ${input.productName} solves their specific challenges`,
       `ROI and value proposition`,
@@ -240,16 +242,16 @@ Consider:
 
 Format as JSON with structure: { "objections": [{"objection": "", "response": ""}] }`;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [{ role: "user", content: prompt }],
-    response_format: { type: "json_object" },
+  const model = getModel("gpt-4o-mini");
+  const { text } = await generateText({
+    model,
+    prompt: prompt + "\n\nReturn as valid JSON.",
     temperature: 0.7,
-    max_tokens: 600
+    maxTokens: 600
   });
 
   try {
-    const result = JSON.parse(response.choices[0]?.message?.content || "{}");
+    const result = JSON.parse(text || "{}");
     return result.objections || getDefaultObjections(input.productName);
   } catch {
     return getDefaultObjections(input.productName);
