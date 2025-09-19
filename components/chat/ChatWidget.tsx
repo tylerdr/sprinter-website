@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { MessageCircle, X, Send, Bot, User, Sparkles, Zap, TrendingUp, DollarSign, Users, BarChart3, Loader2 } from 'lucide-react'
+import { MessageCircle, X, Send, Bot, User, Sparkles, Zap, TrendingUp, DollarSign, Users, BarChart3, Loader2, WifiOff, AlertCircle, RefreshCw } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { sendChatMessage } from './actions'
+import { ChatErrorBoundary } from './ChatErrorBoundary'
 
 interface Message {
   id: string
@@ -36,8 +37,13 @@ export function ChatWidget() {
   ])
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
+  const [isOffline, setIsOffline] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [retryCount, setRetryCount] = useState(0)
+  const [pendingMessages, setPendingMessages] = useState<string[]>([])
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const maxRetries = 3
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -51,6 +57,85 @@ export function ChatWidget() {
     }
   }, [isOpen])
 
+  // Monitor online/offline status
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOffline(false)
+      setError(null)
+      // Process pending messages when back online
+      if (pendingMessages.length > 0) {
+        pendingMessages.forEach(msg => processPendingMessage(msg))
+        setPendingMessages([])
+      }
+    }
+
+    const handleOffline = () => {
+      setIsOffline(true)
+      setError('You\'re offline. Messages will be queued and sent when connection is restored.')
+    }
+
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+
+    // Check initial status
+    setIsOffline(!navigator.onLine)
+
+    return () => {
+      window.removeEventListener('online', handleOnline)
+      window.removeEventListener('offline', handleOffline)
+    }
+  }, [pendingMessages])
+
+  const processPendingMessage = async (messageContent: string) => {
+    await sendMessageWithRetry(messageContent)
+  }
+
+  const sendMessageWithRetry = async (messageContent: string, attempt: number = 0): Promise<void> => {
+    setIsTyping(true)
+    setError(null)
+
+    try {
+      const response = await sendChatMessage(messageContent)
+
+      const assistantMessage: Message = {
+        id: (Date.now() + Math.random()).toString(),
+        role: 'assistant',
+        content: response,
+        timestamp: new Date()
+      }
+
+      setMessages(prev => [...prev, assistantMessage])
+      setRetryCount(0)
+    } catch (error) {
+      console.error('Chat message failed:', error)
+
+      if (attempt < maxRetries && !isOffline) {
+        setError(`Connection issue. Retrying... (${attempt + 1}/${maxRetries})`)
+        setRetryCount(attempt + 1)
+
+        // Exponential backoff
+        const delay = Math.min(1000 * Math.pow(2, attempt), 10000)
+        setTimeout(() => {
+          sendMessageWithRetry(messageContent, attempt + 1)
+        }, delay)
+      } else {
+        const errorMessage: Message = {
+          id: (Date.now() + Math.random()).toString(),
+          role: 'assistant',
+          content: isOffline
+            ? "I'm offline right now. Your message will be processed when connection is restored."
+            : "I'm having trouble connecting right now. Please try again or contact us at hello@sprinter.ai",
+          timestamp: new Date()
+        }
+        setMessages(prev => [...prev, errorMessage])
+        setError(isOffline ? 'Offline - messages queued' : 'Connection failed after retries')
+        setRetryCount(0)
+      }
+    } finally {
+      setIsTyping(false)
+    }
+  }
+
   const handleSend = async () => {
     if (!input.trim()) return
 
@@ -62,30 +147,25 @@ export function ChatWidget() {
     }
 
     setMessages(prev => [...prev, userMessage])
+    const messageContent = input
     setInput('')
-    setIsTyping(true)
 
-    try {
-      const response = await sendChatMessage(input)
-      
-      const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: response,
-        timestamp: new Date()
+    if (isOffline) {
+      // Queue message for when back online
+      setPendingMessages(prev => [...prev, messageContent])
+      setError('Message queued - will send when online')
+      return
+    }
+
+    await sendMessageWithRetry(messageContent)
+  }
+
+  const handleRetry = () => {
+    if (messages.length > 1) {
+      const lastUserMessage = [...messages].reverse().find(m => m.role === 'user')
+      if (lastUserMessage) {
+        sendMessageWithRetry(lastUserMessage.content)
       }
-      
-      setMessages(prev => [...prev, assistantMessage])
-    } catch (error) {
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: "I'm having trouble connecting right now. Please try again or contact us at hello@sprinter.ai",
-        timestamp: new Date()
-      }
-      setMessages(prev => [...prev, errorMessage])
-    } finally {
-      setIsTyping(false)
     }
   }
 
@@ -138,22 +218,43 @@ export function ChatWidget() {
                     <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
                       <Bot className="h-5 w-5 text-white" />
                     </div>
-                    <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-neutral-900"></span>
+                    <span className={cn(
+                      "absolute bottom-0 right-0 block h-3 w-3 rounded-full ring-2 ring-neutral-900",
+                      isOffline ? "bg-red-500" : "bg-green-500"
+                    )}></span>
                   </div>
                   <div>
                     <h3 className="font-semibold">AI Advisor</h3>
-                    <p className="text-xs text-muted-foreground">Always here to help</p>
+                    <p className="text-xs text-muted-foreground">
+                      {isOffline ? 'Offline' : 'Always here to help'}
+                    </p>
                   </div>
                 </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setIsOpen(false)}
-                  className="h-8 w-8 p-0"
-                >
-                  <X className="h-4 w-4" />
-                  <span className="sr-only">Close chat</span>
-                </Button>
+                <div className="flex items-center gap-2">
+                  {isOffline && (
+                    <WifiOff className="h-4 w-4 text-red-500" />
+                  )}
+                  {error && !isOffline && retryCount > 0 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleRetry}
+                      className="h-8 w-8 p-0"
+                    >
+                      <RefreshCw className="h-4 w-4" />
+                      <span className="sr-only">Retry</span>
+                    </Button>
+                  )}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsOpen(false)}
+                    className="h-8 w-8 p-0"
+                  >
+                    <X className="h-4 w-4" />
+                    <span className="sr-only">Close chat</span>
+                  </Button>
+                </div>
               </div>
 
               {/* Messages */}
@@ -221,6 +322,39 @@ export function ChatWidget() {
                 <div ref={messagesEndRef} />
               </div>
 
+              {/* Error Banner */}
+              {error && (
+                <div className={cn(
+                  "px-4 py-2 border-b border-neutral-800",
+                  isOffline ? "bg-yellow-900/20" : "bg-red-900/20"
+                )}>
+                  <div className="flex items-center gap-2">
+                    {isOffline ? (
+                      <WifiOff className="h-4 w-4 text-yellow-400" />
+                    ) : (
+                      <AlertCircle className="h-4 w-4 text-red-400" />
+                    )}
+                    <p className={cn(
+                      "text-xs",
+                      isOffline ? "text-yellow-400" : "text-red-400"
+                    )}>
+                      {error}
+                    </p>
+                    {retryCount > 0 && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleRetry}
+                        className="ml-auto h-6 px-2 text-xs"
+                      >
+                        <RefreshCw className="h-3 w-3 mr-1" />
+                        Retry
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {/* Suggested Questions */}
               {messages.length === 1 && (
                 <div className="px-4 pb-2">
@@ -274,7 +408,13 @@ export function ChatWidget() {
                   </Button>
                 </form>
                 <p className="text-xs text-muted-foreground mt-2 text-center">
-                  Powered by AI • Instant responses 24/7
+                  {isOffline ? (
+                    "Offline • Messages will be sent when connected"
+                  ) : pendingMessages.length > 0 ? (
+                    `${pendingMessages.length} message(s) queued`
+                  ) : (
+                    "Powered by AI • Instant responses 24/7"
+                  )}
                 </p>
               </div>
             </Card>
@@ -282,5 +422,14 @@ export function ChatWidget() {
         )}
       </AnimatePresence>
     </>
+  )
+}
+
+// Wrap the ChatWidget with error boundary
+export function ChatWidgetWithErrorBoundary() {
+  return (
+    <ChatErrorBoundary>
+      <ChatWidget />
+    </ChatErrorBoundary>
   )
 }

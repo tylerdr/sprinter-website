@@ -1,14 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
 import { generateAIAssessmentReport } from "@/lib/services/ai-assessment"
-import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit'
+import { withRateLimit } from '@/lib/rate-limit'
 
-export async function POST(request: NextRequest) {
-  // Apply rate limiting
-  const { success, reset } = await rateLimit(request, 'ai');
-  if (!success) {
-    return rateLimitResponse(reset);
-  }
+async function handlePOST(request: NextRequest) {
 
   try {
     const formData = await request.formData()
@@ -201,7 +196,7 @@ export async function POST(request: NextRequest) {
 
     // Redirect to thank you page
     return NextResponse.redirect(new URL("/ai-assessment/thank-you", request.url))
-    
+
   } catch (error) {
     console.error("AI Assessment submission error:", error)
     return NextResponse.json(
@@ -210,3 +205,9 @@ export async function POST(request: NextRequest) {
     )
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})

@@ -2,6 +2,7 @@
 
 import { anthropic } from '@ai-sdk/anthropic'
 import { generateText } from 'ai'
+import { cachedServerAIRequest } from '@/lib/server-ai-cache'
 
 export async function sendChatMessage(message: string): Promise<string> {
   const systemPrompt = `You are an AI advisor for Sprinter AI, specializing in helping Private Equity firms leverage AI for portfolio value creation.
@@ -24,14 +25,30 @@ Keep responses concise (2-3 sentences max), friendly, and focused on value creat
 If asked about specific pricing or detailed implementation, encourage them to book a discovery call.`
 
   try {
-    const { text } = await generateText({
-      model: anthropic('claude-3-5-sonnet-20241022'),
-      system: systemPrompt,
-      prompt: message,
-      maxRetries: 2,
-    })
+    // Use cached AI request with 15 minute TTL for chat responses
+    const response = await cachedServerAIRequest(
+      message,
+      async () => {
+        const { text } = await generateText({
+          model: anthropic('claude-3-5-sonnet-20241022'),
+          system: systemPrompt,
+          prompt: message,
+          maxRetries: 2,
+        });
+        return text;
+      },
+      {
+        ttl: 15 * 60 * 1000, // 15 minutes
+        cacheKey: { type: 'chat', system: 'pe_advisor' },
+        metadata: {
+          model: 'claude-3-5-sonnet',
+          type: 'chat_response',
+          timestamp: Date.now()
+        }
+      }
+    );
 
-    return text
+    return response;
   } catch (error) {
     console.error('Chat error:', error)
     return "I'm having trouble processing that request. Please feel free to email us at hello@sprinter.ai or book a discovery call to discuss your needs directly."

@@ -21,8 +21,8 @@ export function rateLimit(options: RateLimitOptions = {
 }) {
   return async function rateLimitMiddleware(
     request: NextRequest,
-    handler: (req: NextRequest) => Promise<NextResponse>
-  ): Promise<NextResponse> {
+    handler: (req: NextRequest) => Promise<NextResponse | Response>
+  ): Promise<NextResponse | Response> {
     // Get identifier (IP address or user ID)
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
     const identifier = `${request.nextUrl.pathname}:${ip}`
@@ -73,12 +73,21 @@ export function rateLimit(options: RateLimitOptions = {
     headers.set('X-RateLimit-Limit', limit.toString())
     headers.set('X-RateLimit-Remaining', (limit - record.count).toString())
     headers.set('X-RateLimit-Reset', record.resetTime.toString())
-    
-    return new NextResponse(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers
-    })
+
+    // Return appropriate response type
+    if (response instanceof NextResponse) {
+      return new NextResponse(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers
+      })
+    } else {
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers
+      })
+    }
   }
 }
 
@@ -94,7 +103,7 @@ setInterval(() => {
 
 // Helper function for API routes
 export function withRateLimit(
-  handler: (req: NextRequest) => Promise<NextResponse>,
+  handler: (req: NextRequest) => Promise<NextResponse | Response>,
   options?: RateLimitOptions
 ) {
   const limiter = rateLimit(options)

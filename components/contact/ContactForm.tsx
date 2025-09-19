@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Send, Sparkles } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Send, Sparkles, Lightbulb, Wand2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,6 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { LoadingSpinner } from "@/components/ui/loading-states";
 
 interface FormData {
   name: string;
@@ -41,6 +43,10 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [aiSuggestions, setAiSuggestions] = useState<string[]>([]);
+  const [isGeneratingSuggestions, setIsGeneratingSuggestions] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Partial<FormData>>({});
+  const [completionScore, setCompletionScore] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,15 +71,132 @@ export default function ContactForm() {
     }
   };
 
+  // Calculate form completion score
+  const calculateCompletionScore = useMemo(() => {
+    const requiredFields = ['name', 'email', 'message', 'projectType'];
+    const optionalFields = ['company', 'role', 'fundSize', 'portfolioCount', 'timeline'];
+
+    const requiredFilled = requiredFields.filter(field =>
+      formData[field as keyof FormData].trim() !== ''
+    ).length;
+    const optionalFilled = optionalFields.filter(field =>
+      formData[field as keyof FormData].trim() !== ''
+    ).length;
+
+    const requiredScore = (requiredFilled / requiredFields.length) * 60; // 60% for required
+    const optionalScore = (optionalFilled / optionalFields.length) * 40; // 40% for optional
+
+    return Math.round(requiredScore + optionalScore);
+  }, [formData]);
+
+  useEffect(() => {
+    setCompletionScore(calculateCompletionScore);
+  }, [calculateCompletionScore]);
+
+  // AI-powered form validation
+  const validateField = (name: string, value: string) => {
+    const errors: Partial<FormData> = {};
+
+    switch (name) {
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (value && !emailRegex.test(value)) {
+          errors.email = 'Please enter a valid email address';
+        }
+        break;
+      case 'message':
+        if (value.length > 0 && value.length < 10) {
+          errors.message = 'Please provide more details (at least 10 characters)';
+        }
+        break;
+    }
+
+    setValidationErrors(prev => ({ ...prev, [name]: errors[name as keyof FormData] }));
+  };
+
+  // Generate AI suggestions based on selected project type
+  const generateAISuggestions = async (projectType: string) => {
+    if (!projectType || projectType === 'other') return;
+
+    setIsGeneratingSuggestions(true);
+
+    try {
+      // Simulate AI suggestion generation with predefined suggestions
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      const suggestionMap: Record<string, string[]> = {
+        'portfolio-ai': [
+          'Implement automated data extraction from portfolio company reports',
+          'Create AI-powered performance dashboards for real-time insights',
+          'Develop predictive models for identifying value creation opportunities'
+        ],
+        'deal-sourcing': [
+          'Build automated deal screening using market data and criteria',
+          'Create AI-powered market analysis for sector opportunities',
+          'Implement intelligent CRM integration for deal flow management'
+        ],
+        'due-diligence': [
+          'Automate document review and data room analysis',
+          'Create risk assessment models using historical data',
+          'Implement automated reference checking and verification'
+        ],
+        'value-creation': [
+          'Develop operational efficiency optimization algorithms',
+          'Create predictive analytics for revenue growth opportunities',
+          'Implement automated benchmarking against industry peers'
+        ],
+        'operating-partner': [
+          'Build portfolio company performance monitoring systems',
+          'Create automated reporting and insights generation',
+          'Implement AI-driven operational improvement recommendations'
+        ],
+        'lp-reporting': [
+          'Automate quarterly report generation and formatting',
+          'Create dynamic performance visualization dashboards',
+          'Implement real-time portfolio valuation tracking'
+        ],
+        'discovery': [
+          'Conduct AI readiness assessment across your portfolio',
+          'Identify high-impact automation opportunities',
+          'Create custom AI implementation roadmap'
+        ]
+      };
+
+      setAiSuggestions(suggestionMap[projectType] || []);
+    } catch (error) {
+      console.error('Failed to generate suggestions:', error);
+    } finally {
+      setIsGeneratingSuggestions(false);
+    }
+  };
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+
+    // Validate field on change
+    validateField(name, value);
+
+    // Generate suggestions when project type changes
+    if (name === 'projectType' && value) {
+      generateAISuggestions(value);
+    }
+  };
+
+  const applySuggestion = (suggestion: string) => {
+    const currentMessage = formData.message;
+    const newMessage = currentMessage
+      ? `${currentMessage}\n\n${suggestion}`
+      : suggestion;
+
+    setFormData(prev => ({ ...prev, message: newMessage }));
   };
 
   if (submitted) {
@@ -124,7 +247,21 @@ export default function ContactForm() {
       noValidate
       aria-label="Contact form"
     >
-      <h2 className="text-2xl font-bold mb-6">Start Your AI Journey</h2>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-2xl font-bold">Start Your AI Journey</h2>
+        <div className="flex items-center gap-2">
+          <div className="text-sm text-muted-foreground">Progress</div>
+          <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-brand-gradient"
+              initial={{ width: 0 }}
+              animate={{ width: `${completionScore}%` }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
+          <div className="text-sm font-medium text-brand">{completionScore}%</div>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
@@ -156,8 +293,13 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="email-required"
-            className="bg-background/50"
+            className={`bg-background/50 ${
+              validationErrors.email ? 'border-destructive' : ''
+            }`}
           />
+          {validationErrors.email && (
+            <p className="text-sm text-destructive">{validationErrors.email}</p>
+          )}
           <span id="email-required" className="sr-only">
             Required field
           </span>
@@ -313,13 +455,67 @@ export default function ContactForm() {
           aria-required="true"
           aria-describedby="message-required"
           rows={5}
-          className="bg-background/50 resize-none"
+          className={`bg-background/50 resize-none ${
+            validationErrors.message ? 'border-destructive' : ''
+          }`}
           placeholder="Describe your vision, challenges, or ideas..."
         />
+        {validationErrors.message && (
+          <p className="text-sm text-destructive">{validationErrors.message}</p>
+        )}
         <span id="message-required" className="sr-only">
           Required field
         </span>
       </div>
+
+      {/* AI Suggestions */}
+      <AnimatePresence>
+        {(isGeneratingSuggestions || aiSuggestions.length > 0) && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="mb-6 p-4 rounded-lg bg-info/5 border border-info/20"
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <Wand2 className="w-4 h-4 text-info" />
+              <h3 className="text-sm font-medium text-info">AI Suggestions</h3>
+              {isGeneratingSuggestions && <LoadingSpinner size="sm" />}
+            </div>
+
+            {isGeneratingSuggestions ? (
+              <p className="text-sm text-muted-foreground">Generating personalized suggestions...</p>
+            ) : (
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground mb-3">
+                  Based on your project type, here are some ideas you might want to include:
+                </p>
+                {aiSuggestions.map((suggestion, index) => (
+                  <motion.button
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    type="button"
+                    onClick={() => applySuggestion(suggestion)}
+                    className="flex items-start gap-2 p-3 rounded-lg bg-background/50 hover:bg-background/70 transition-colors text-left w-full group"
+                  >
+                    <Lightbulb className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
+                    <div className="flex-1">
+                      <p className="text-sm group-hover:text-foreground transition-colors">
+                        {suggestion}
+                      </p>
+                    </div>
+                    <Badge variant="outline" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                      Add
+                    </Badge>
+                  </motion.button>
+                ))}
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Button
         type="submit"

@@ -3,7 +3,7 @@ import { openai } from '@ai-sdk/openai'
 import { generateText } from 'ai'
 import type { ProposalGenerationInput, ProposalTemplate } from '@/lib/types/proposal'
 import { populateTemplate } from '@/lib/data/proposal-templates'
-import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit'
+import { withRateLimit } from '@/lib/rate-limit'
 
 // Configuration
 const MODEL_CONFIG = {
@@ -13,12 +13,7 @@ const MODEL_CONFIG = {
   temperature: 0.4
 }
 
-export async function POST(request: NextRequest) {
-  // Apply rate limiting
-  const { success, reset } = await rateLimit(request, 'ai');
-  if (!success) {
-    return rateLimitResponse(reset);
-  }
+async function handlePOST(request: NextRequest) {
 
   try {
     const { input, template, useAI = true } = await request.json() as {
@@ -205,6 +200,12 @@ export async function POST(request: NextRequest) {
     )
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})
 
 interface SectionSchema {
   id: string

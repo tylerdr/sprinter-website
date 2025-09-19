@@ -1,14 +1,9 @@
 import { streamText } from 'ai';
 import { google } from '@ai-sdk/google';
 import { NextRequest } from 'next/server';
-import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
+import { withRateLimit } from '@/lib/rate-limit';
 
-export async function POST(request: NextRequest) {
-  // Apply rate limiting for AI endpoints
-  const { success, reset } = await rateLimit(request, 'ai')
-  if (!success) {
-    return rateLimitResponse(reset)
-  }
+async function handlePOST(request: NextRequest) {
 
   const { messages, documents } = await request.json();
 
@@ -48,3 +43,9 @@ export async function POST(request: NextRequest) {
 
   return result.toTextStreamResponse();
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})

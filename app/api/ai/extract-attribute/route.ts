@@ -2,14 +2,9 @@ import { NextResponse, NextRequest } from 'next/server';
 import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
-import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
+import { withRateLimit } from '@/lib/rate-limit';
 
-export async function POST(request: NextRequest) {
-  // Apply rate limiting
-  const { success, reset } = await rateLimit(request, 'ai');
-  if (!success) {
-    return rateLimitResponse(reset);
-  }
+async function handlePOST(request: NextRequest) {
 
   try {
     const { fileBase64, attribute } = await request.json();
@@ -69,3 +64,9 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})

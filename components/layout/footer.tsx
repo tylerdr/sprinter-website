@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 import { COMPANY_INFO, SOCIAL_LINKS, NAVIGATION } from "@/lib/constants";
+import { NewsletterSignup } from "@/components/newsletter/newsletter-signup";
 
 const footerSections: Array<{
   title: string;
@@ -44,9 +45,9 @@ export function Footer() {
   return (
     <footer role="contentinfo" className="bg-background border-t border-border/30">
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Image
                 src="/logo-no-background.png"
@@ -121,6 +122,16 @@ export function Footer() {
                 </ul>
               </nav>
             ))}
+
+          {/* Newsletter Signup */}
+          <div className="sm:col-span-2 lg:col-span-2">
+            <NewsletterSignup
+              variant="footer"
+              title="AI Insights Newsletter"
+              description="Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox."
+              placeholder="your@company.com"
+            />
+          </div>
         </div>
 
         {/* Call to Action */}

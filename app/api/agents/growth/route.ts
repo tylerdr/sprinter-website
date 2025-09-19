@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 import { runGrowthAgent } from "@/lib/agents/growth-marketing-agent"
+import { withRateLimit } from '@/lib/rate-limit'
 
 // This route can be called by a cron job (e.g., Vercel Cron, GitHub Actions, or external service)
-export async function POST(request: NextRequest) {
+async function handlePOST(request: NextRequest) {
   try {
     // Verify the request is authorized (simple token check)
     const authHeader = request.headers.get("authorization")
@@ -36,6 +37,12 @@ export async function POST(request: NextRequest) {
     )
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})
 
 // GET endpoint for health check
 export async function GET() {

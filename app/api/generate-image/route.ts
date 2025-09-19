@@ -1,15 +1,10 @@
 import { NextResponse, NextRequest } from "next/server";
-import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
+import { withRateLimit } from '@/lib/rate-limit';
 
 // This endpoint would integrate with Gemini 2.5 Flash Image API
 // For demonstration, it returns placeholder images with metadata
 
-export async function POST(request: NextRequest) {
-  // Apply rate limiting
-  const { success, reset } = await rateLimit(request, 'ai');
-  if (!success) {
-    return rateLimitResponse(reset);
-  }
+async function handlePOST(request: NextRequest) {
 
   try {
     const { prompt, model, purpose } = await request.json();
@@ -135,8 +130,14 @@ function detectImageStyle(prompt: string): string {
   return "modern";
 }
 
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})
+
 // This endpoint could also handle batch image generation
-export async function PUT(request: Request) {
+async function handlePUT(request: NextRequest) {
   try {
     const { prompts, purpose } = await request.json();
     
@@ -159,7 +160,7 @@ export async function PUT(request: Request) {
     );
     
     return NextResponse.json({ images });
-    
+
   } catch (error) {
     console.error("Batch image generation error:", error);
     return NextResponse.json(
@@ -168,3 +169,9 @@ export async function PUT(request: Request) {
     );
   }
 }
+
+// Apply rate limiting to PUT endpoint as well
+export const PUT = withRateLimit(handlePUT, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})

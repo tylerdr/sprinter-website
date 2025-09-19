@@ -4,13 +4,13 @@
  */
 
 import { NextRequest } from "next/server";
-import { 
+import {
   streamText,
-  convertToModelMessages, 
+  convertToModelMessages,
   stepCountIs,
-  UIMessage 
+  UIMessage
 } from "ai";
-import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
+import { withRateLimit } from '@/lib/rate-limit';
 import { AgentManager } from '@/lib/agents/manager';
 import { nanoid } from 'nanoid';
 
@@ -35,12 +35,7 @@ type Body = {
   };
 };
 
-export async function POST(req: NextRequest) {
-  // Apply rate limiting
-  const { success, reset } = await rateLimit(req, 'chat')
-  if (!success) {
-    return rateLimitResponse(reset)
-  }
+async function handlePOST(req: NextRequest) {
 
   try {
     const body = (await req.json()) as Body;
@@ -80,3 +75,9 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+// Apply rate limiting for chat endpoints (20 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 20 // 20 requests per minute (less restrictive for chat)
+})
