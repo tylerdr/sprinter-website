@@ -21,6 +21,12 @@ export const TOOL_IMPORTS: Record<
   string,
   () => Promise<{ tool: ToolSpec<any, any> }>
 > = {
+  // Sales Tools
+  "lead-scorer": () =>
+    import("./toolset/sales/lead-scorer/tool").then(m => ({
+      tool: m.default
+    })),
+
   // Content Generation Tools
   "blog-generator": () =>
     import("./toolset/content/blog-generator/tool").then(m => ({
