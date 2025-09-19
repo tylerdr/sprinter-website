@@ -1119,3 +1119,423 @@ Import trace for requested module:
 ./node_modules/@supabase/ssr/dist/module/index.js
 ./utils/supabase/client.ts
 ./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/signup/signup-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/signup/signup-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./components/sign-out-button.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx
+ ⨯ ./node_modules/cookie/dist/index.js
+Error: ENOENT: no such file or directory, open '/home/sprinter/mortgageq/node_modules/cookie/dist/index.js'
+
+Import trace for requested module:
+./node_modules/cookie/dist/index.js
+./node_modules/@supabase/ssr/dist/module/cookies.js
+./node_modules/@supabase/ssr/dist/module/createBrowserClient.js
+./node_modules/@supabase/ssr/dist/module/index.js
+./utils/supabase/client.ts
+./app/(auth)/login/login-form.tsx

@@ -31,7 +31,7 @@ export class ChatErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('Chat Widget Error:', error, errorInfo);
     this.setState({
-      errorInfo: errorInfo.componentStack,
+      errorInfo: errorInfo.componentStack || undefined,
     });
 
     // Log to analytics/monitoring service
