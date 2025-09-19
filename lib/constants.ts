@@ -153,7 +153,7 @@ export const METRICS = {
 }
 
 export const PRICING = {
-  // PE-focused tiers
+  // PE-focused tiers - updated with competitive positioning
   assessment: {
     name: "AI Readiness Assessment",
     price: "$10,000",
@@ -167,54 +167,90 @@ export const PRICING = {
       "Board-ready presentation"
     ]
   },
-  sprint: {
-    name: "AI Implementation Sprint",
-    price: "$50,000",
-    duration: "5 Days",
-    description: "Rapid prototype to production with guaranteed ROI",
-    includes: [
-      "Working AI prototype in 5 days",
-      "Full production deployment",
-      "Team training and handoff",
-      "90-day support included",
-      "10x ROI guarantee or money back"
-    ]
-  },
-  surf: {
-    name: "AI Operations Partner",
-    price: "$50,000/month",
-    duration: "Quarterly commitment",
-    description: "Ongoing AI expertise for continuous value creation",
-    includes: [
-      "Dedicated AI strategist",
-      "3 implementations per quarter",
-      "Weekly office hours",
-      "Cross-portfolio best practices",
-      "24/7 technical support"
-    ]
-  },
-  sail: {
-    name: "Enterprise Partnership",
-    price: "Custom",
-    duration: "Annual commitment",
-    description: "Full AI transformation partnership for large portfolios",
-    includes: [
-      "Dedicated AI team (3+ experts)",
-      "Unlimited implementations",
-      "Custom AI platform development",
-      "Board and LP reporting",
-      "On-site workshops and training"
-    ]
-  },
-  // Legacy pricing for other services
   workshop: {
-    price: "$5,000",
-    duration: "1 Day",
+    name: "90-Minute OP Workshop",
+    price: "$1,500",
+    duration: "90 minutes",
+    description: "Interactive session to identify high-impact wedges and build buy-in",
+    includes: [
+      "AI Opportunity Roadmap",
+      "Top 3 wedge candidates",
+      "Adoption playbook",
+      "ROI projections",
+      "Applied as credit to any package within 30 days"
+    ]
+  },
+  wedgeSprint: {
+    name: "2-Week Wedge Sprint",
+    price: "$20,000",
+    duration: "2 weeks",
+    description: "Pick one document type, deliver a working solution, prove the value",
+    includes: [
+      "Production-ready automation",
+      "Clear acceptance criteria",
+      "≥60% touchless processing target",
+      "Training & documentation",
+      "30-day support",
+      "If we miss criteria, remedial sprint at our cost"
+    ]
+  },
+  retainer: {
+    name: "AI Operating Partner Retainer",
+    price: "$12k-25k/month",
+    duration: "Monthly (6-month minimum)",
+    description: "Fund-level AI orchestration and portfolio-wide implementation",
+    includes: [
+      "Portfolio AI PMO & prioritization",
+      "Monthly exec enablement",
+      "Governance framework & policies",
+      "Quarterly portfolio reviews",
+      "Diligence support (24hr turnaround)",
+      "Best practices sharing across portcos"
+    ]
   },
   transformation: {
-    price: "$150,000+",
-    duration: "3-6 Months",
+    name: "Transformation Partner",
+    price: "$50k-125k/month",
+    duration: "Monthly (3-month minimum)",
+    description: "Outcome-based execution with dedicated squad",
+    includes: [
+      "Fixed-capacity AI squad (PM + engineers)",
+      "2-4 sprints per month",
+      "Backlog management",
+      "Bi-weekly demos",
+      "Full documentation & enablement",
+      "Pay for outcomes, not hours"
+    ]
   },
+  // Education & Enablement
+  education: {
+    name: "Education & Enablement",
+    executiveBootcamp: {
+      name: "Executive AI Bootcamp",
+      price: "$9,500",
+      duration: "Half-day",
+      description: "For leadership teams (up to 12)"
+    },
+    managerLab: {
+      name: "Manager Enablement Lab",
+      price: "$2,500/person",
+      duration: "Full day",
+      description: "Hands-on training for operators"
+    },
+    portfolioDay: {
+      name: "Portfolio AI Day",
+      price: "$15,000",
+      duration: "1 day onsite",
+      description: "Up to 3 sessions for entire portfolio"
+    },
+    governanceWorkshop: {
+      name: "AI Governance Workshop",
+      price: "$7,500",
+      duration: "Half-day",
+      description: "Develop responsible AI policies"
+    }
+  },
+  // Legacy pricing
   venture: {
     price: "Equity-based",
     duration: "Ongoing",

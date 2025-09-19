@@ -30,6 +30,9 @@ import {
   FileCode,
   Rocket,
   Star,
+  UserCheck,
+  Workflow,
+  GraduationCap,
   LucideIcon,
 } from "lucide-react";
 
@@ -176,6 +179,46 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
       ],
     },
     {
+      label: "Services",
+      href: "/services",
+      type: "link",
+      icon: Sparkles,
+    },
+    {
+      label: "Approach",
+      href: "/approach",
+      type: "dropdown",
+      icon: UserCheck,
+      items: [
+        {
+          label: "People-First AI",
+          href: "/approach",
+          icon: Heart,
+          description: "Our human-centered methodology",
+          badge: { text: "Featured", variant: "success" },
+        },
+        {
+          label: "Find Your Wedge",
+          href: "/approach/wedge",
+          icon: Target,
+          description: "5-minute assessment tool",
+          badge: { text: "Interactive", variant: "new" },
+        },
+        {
+          label: "The 4 Ps Framework",
+          href: "/approach#four-pillars",
+          icon: Workflow,
+          description: "People → Process → Projects → Product",
+        },
+        {
+          label: "Change Playbook",
+          href: "/approach#change-playbook",
+          icon: Users,
+          description: "Turn skeptics into champions",
+        },
+      ],
+    },
+    {
       label: "Industries",
       href: "/industries",
       type: "mega",
@@ -264,6 +307,30 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               href: "/blog",
               icon: Lightbulb,
               description: "Private equity AI analysis",
+            },
+          ],
+        },
+        {
+          title: "Training & Education",
+          items: [
+            {
+              label: "AI Education Programs",
+              href: "/education",
+              icon: GraduationCap,
+              description: "Upskill your portfolio",
+              badge: { text: "New", variant: "new" },
+            },
+            {
+              label: "Executive Bootcamp",
+              href: "/education#executive",
+              icon: Trophy,
+              description: "C-suite AI literacy",
+            },
+            {
+              label: "Portfolio AI Day",
+              href: "/education#portfolio",
+              icon: Building2,
+              description: "Fund-wide kickoff event",
             },
           ],
         },

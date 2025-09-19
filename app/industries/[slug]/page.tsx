@@ -5,7 +5,7 @@ import { INDUSTRIES } from '@/lib/pseo/config/industries';
 import { PageContent } from '@/lib/pseo/generators/base-generator';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, TrendingUp, Clock, DollarSign } from 'lucide-react';
+import { ArrowRight, CheckCircle2, TrendingUp, Clock, DollarSign, FileText } from 'lucide-react';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -168,12 +168,12 @@ export default async function IndustryPage({ params }: PageProps) {
               </div>
               <div className="space-y-2">
                 <div className="flex items-center justify-center gap-2">
-                  <DollarSign className="h-5 w-5 text-yellow-500" />
+                  <FileText className="h-5 w-5 text-purple-500" />
                   <span className="text-3xl font-bold">
-                    {Object.values(industry.metrics)[2]}
+                    {industry.metrics.documentProcessing || '≥60%'}
                   </span>
                 </div>
-                <p className="text-muted-foreground">Key Impact Metric</p>
+                <p className="text-muted-foreground">Document Automation</p>
               </div>
             </div>
           </div>

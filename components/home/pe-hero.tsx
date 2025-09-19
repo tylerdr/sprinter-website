@@ -11,9 +11,9 @@ import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
   { value: "30-45", label: "days to first value" },
-  { value: "60%+", label: "automation rate" },
+  { value: "≥60%", label: "touchless processing" },
+  { value: "42%", label: "faster quote cycles" },
   { value: "No API?", label: "No problem" },
-  { value: "10-Day", label: "sprint delivery" },
 ];
 
 export function PEHero() {
@@ -133,13 +133,13 @@ export function PEHero() {
           >
             <BookDemoButton
               size="lg"
-              text="Get Portfolio AI Assessment"
+              text="Book 90-Minute OP Workshop"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
             />
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/pe-services" className="group">
+              <Link href="/pricing" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                See PE Value Creation Playbook
+                See Transparent Pricing
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>

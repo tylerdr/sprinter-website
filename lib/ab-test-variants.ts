@@ -1,10 +1,17 @@
 // A/B Test Variants for Hero and CTA Copy
 // This file allows easy switching between different messaging variants for testing
 
-export type HeroVariant = "scale" | "need" | "transform" | "accelerate";
+export type HeroVariant = "peoplefirst" | "scale" | "need" | "transform" | "accelerate";
 export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 
 export const heroVariants = {
+  peoplefirst: {
+    headline: {
+      line1: "Your AI Operating Partner",
+      line2: "for Private Equity"
+    },
+    subheadline: "Document intelligence that achieves ≥60% touchless processing. End-to-end automation in 30-45 days. Fund-level governance you can defend to LPs. No API? No problem."
+  },
   scale: {
     headline: {
       line1: "Your AI Operating Partner",
@@ -80,7 +87,7 @@ export const valuePropsVariants = {
 // Function to get current variant based on environment variable or random selection
 export function getCurrentVariants() {
   // These could be set via environment variables for controlled A/B testing
-  const heroVariant = (process.env.NEXT_PUBLIC_HERO_VARIANT as HeroVariant) || "scale";
+  const heroVariant = (process.env.NEXT_PUBLIC_HERO_VARIANT as HeroVariant) || "peoplefirst";
   const ctaVariant = (process.env.NEXT_PUBLIC_CTA_VARIANT as CTAVariant) || "blueprint";
   const valuePropsVariant = process.env.NEXT_PUBLIC_VALUE_PROP_VARIANT || "offMarket";
   
