@@ -59,7 +59,8 @@ export function Navigation() {
               <NavigationMenuList>
                 {NAVIGATION.main.map((item) => {
                   const hasDropdown = "dropdown" in item && item.dropdown;
-                  const dropdownItems = "items" in item ? item.items : item.dropdown;
+                  const dropdownItems = "items" in item && item.items ? item.items :
+                                       "dropdown" in item && item.dropdown ? item.dropdown : [];
 
                   return (
                     <NavigationMenuItem key={item.href}>
@@ -85,11 +86,11 @@ export function Navigation() {
                                 const IconComponent =
                                   "icon" in subItem && subItem.icon === "rocket" ? Rocket :
                                   "icon" in subItem && subItem.icon === "trophy" ? Trophy : null;
-                                const isFeatured = "featured" in subItem && subItem.featured;
+                                const isFeatured = "featured" in subItem && subItem.featured === true;
 
                                 return (
                                   <li key={subItem.href} className={cn(
-                                    isFeatured && "md:col-span-2"
+                                    isFeatured ? "md:col-span-2" : ""
                                   )}>
                                     <NavigationMenuLink asChild>
                                       <Link
@@ -99,7 +100,7 @@ export function Navigation() {
                                           "hover:bg-accent/60 hover:shadow-sm",
                                           "focus:bg-accent focus:text-accent-foreground focus:shadow-sm",
                                           pathname === subItem.href && "bg-accent/40",
-                                          isFeatured && "border border-border/50 bg-gradient-to-br from-accent/20 to-transparent"
+                                          isFeatured ? "border border-border/50 bg-gradient-to-br from-accent/20 to-transparent" : ""
                                         )}
                                       >
                                         <div className="flex items-center gap-2">
@@ -118,11 +119,11 @@ export function Navigation() {
                                             </span>
                                           )}
                                         </div>
-                                        {"description" in subItem && subItem.description && (
+                                        {"description" in subItem && subItem.description ? (
                                           <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground group-hover:text-muted-foreground/90">
-                                            {subItem.description}
+                                            {String(subItem.description)}
                                           </p>
-                                        )}
+                                        ) : null}
                                       </Link>
                                     </NavigationMenuLink>
                                   </li>
@@ -263,7 +264,8 @@ export function Navigation() {
                             exit={{ opacity: 0, height: 0 }}
                             className="pl-4 space-y-1"
                           >
-                            {item.dropdown.map((dropdownItem) => (
+                            {(("items" in item && item.items ? item.items :
+                              "dropdown" in item && item.dropdown ? item.dropdown : [])).map((dropdownItem) => (
                               <Link
                                 key={dropdownItem.href}
                                 href={dropdownItem.href}
@@ -316,9 +318,7 @@ export function Navigation() {
                           onClick={() => setMobileMenuOpen(false)}
                           className={cn(
                             "flex items-center justify-center gap-2 py-3 px-4 text-base font-medium rounded-lg text-center transition-all duration-200 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
-                            cta.variant === "outline"
-                              ? "border border-border hover:bg-accent hover:text-accent-foreground"
-                              : "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:from-primary/90 hover:to-primary shadow-lg"
+                            "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:from-primary/90 hover:to-primary shadow-lg"
                           )}
                         >
                           {cta.label}
