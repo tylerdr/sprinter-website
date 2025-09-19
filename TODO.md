@@ -10,9 +10,6 @@
 - [ ] [2025-09-18_interactive-experiences-plan.md](./TODO/2025-09-18_interactive-experiences-plan.md)
 - [ ] [2025-09-18_visual-and-ux-plan.md](./TODO/2025-09-18_visual-and-ux-plan.md)
 - [ ] [2025-09-18_platform-and-launch-operations-plan.md](./TODO/2025-09-18_platform-and-launch-operations-plan.md)
-- [ ] [model-registry-plan.md](./TODO/model-registry-plan.md)
-
-
 ## 🔴 Critical Security Issues
 
 ### 1. Remove Hardcoded Demo Credentials

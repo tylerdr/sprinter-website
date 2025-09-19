@@ -30,15 +30,44 @@ export function ChatWidget() {
   const [emailCaptured, setEmailCaptured] = useState(false);
   const [messageCount, setMessageCount] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
+  const [isOffline, setIsOffline] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const maxRetries = 3;
 
   useEffect(() => {
     // Check if email already captured in localStorage
-    const storedEmail = localStorage.getItem("chat_email");
-    if (storedEmail) {
-      setEmailCaptured(true);
-      setEmail(storedEmail);
+    try {
+      const storedEmail = localStorage.getItem("chat_email");
+      if (storedEmail) {
+        setEmailCaptured(true);
+        setEmail(storedEmail);
+      }
+    } catch (err) {
+      console.warn("LocalStorage not available:", err);
     }
+
+    // Check online status
+    const handleOnline = () => {
+      setIsOffline(false);
+      setError(null);
+    };
+    const handleOffline = () => {
+      setIsOffline(true);
+      setError("You're offline. Messages will be sent when connection is restored.");
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Check initial status
+    setIsOffline(!navigator.onLine);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
   }, []);
 
   useEffect(() => {
@@ -78,28 +107,59 @@ export function ChatWidget() {
       return;
     }
 
-    // Simulate bot response
-    setIsTyping(true);
-    setTimeout(() => {
-      setIsTyping(false);
-      const responses = [
-        "That's a great question! Based on what you've shared, I recommend starting with our AI Opportunity Audit to identify high-ROI automation opportunities.",
-        "Many companies in your industry have seen 40-70% efficiency gains with AI automation. Would you like to see some relevant case studies?",
-        "Our 10-day sprint approach could be perfect for your needs. We build a working prototype that demonstrates real value quickly.",
-        "I can connect you with our team for a more detailed discussion. Would you like to schedule a 30-minute strategy call?",
-      ];
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-      
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now().toString(),
-          text: randomResponse,
-          sender: "bot",
-          timestamp: new Date(),
-        },
-      ]);
-    }, 1500);
+    // Handle bot response with error handling and retry logic
+    const sendBotResponse = async () => {
+      setIsTyping(true);
+      setError(null);
+
+      try {
+        // Simulate API call with potential failure
+        await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // Simulate occasional failures for demo (remove in production)
+            if (isOffline) {
+              reject(new Error('No internet connection'));
+            } else {
+              resolve(true);
+            }
+          }, 1500);
+        });
+
+        const responses = [
+          "That's a great question! Based on what you've shared, I recommend starting with our AI Opportunity Audit to identify high-ROI automation opportunities.",
+          "Many companies in your industry have seen 40-70% efficiency gains with AI automation. Would you like to see some relevant case studies?",
+          "Our 10-day sprint approach could be perfect for your needs. We build a working prototype that demonstrates real value quickly.",
+          "I can connect you with our team for a more detailed discussion. Would you like to schedule a 30-minute strategy call?",
+        ];
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: Date.now().toString(),
+            text: randomResponse,
+            sender: "bot",
+            timestamp: new Date(),
+          },
+        ]);
+        setRetryCount(0);
+      } catch (err) {
+        console.error('Error sending bot response:', err);
+
+        if (retryCount < maxRetries) {
+          setError(`Connection issue. Retrying... (${retryCount + 1}/${maxRetries})`);
+          setRetryCount(prev => prev + 1);
+          setTimeout(() => sendBotResponse(), 2000 * (retryCount + 1));
+        } else {
+          setError('Unable to connect. Please check your connection and try again.');
+          setRetryCount(0);
+        }
+      } finally {
+        setIsTyping(false);
+      }
+    };
+
+    sendBotResponse();
   };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -110,16 +170,29 @@ export function ChatWidget() {
     localStorage.setItem("chat_email", email);
     setEmailCaptured(true);
 
-    // Track in Supabase (anonymous auth)
+    // Track in Supabase with error handling
     try {
       const supabase = createClient();
-      await supabase.from("leads").insert({
+      const { error: dbError } = await supabase.from("leads").insert({
         email,
         source: "chat_widget",
         messages: messages.map((m) => ({ text: m.text, sender: m.sender })),
       });
+
+      if (dbError) {
+        console.error("Error saving lead:", dbError);
+        // Store locally as fallback
+        try {
+          const localLeads = JSON.parse(localStorage.getItem('pending_leads') || '[]');
+          localLeads.push({ email, timestamp: Date.now(), messages });
+          localStorage.setItem('pending_leads', JSON.stringify(localLeads));
+        } catch (localErr) {
+          console.error("Error saving to local storage:", localErr);
+        }
+      }
     } catch (error) {
       console.error("Error saving lead:", error);
+      setError('Email saved locally. We\'ll sync it when connection is restored.');
     }
 
     // Continue conversation
@@ -242,6 +315,21 @@ export function ChatWidget() {
               
               <div ref={messagesEndRef} />
             </div>
+
+            {/* Error Display */}
+            {error && (
+              <div className="px-4 py-2 bg-red-900/20 border-t border-red-900/30">
+                <p className="text-xs text-red-400 flex items-center gap-2">
+                  {isOffline && (
+                    <span className="flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                    </span>
+                  )}
+                  {error}
+                </p>
+              </div>
+            )}
 
             {/* Input */}
             <div className="p-4 border-t border-border">

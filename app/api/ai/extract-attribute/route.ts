@@ -1,9 +1,16 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const { success, reset } = await rateLimit(request, 'ai');
+  if (!success) {
+    return rateLimitResponse(reset);
+  }
+
   try {
     const { fileBase64, attribute } = await request.json();
 

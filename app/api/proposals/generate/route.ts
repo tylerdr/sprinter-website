@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 import { openai } from '@ai-sdk/openai'
 import { generateText } from 'ai'
 import type { ProposalGenerationInput, ProposalTemplate } from '@/lib/types/proposal'
 import { populateTemplate } from '@/lib/data/proposal-templates'
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit'
 
 // Configuration
 const MODEL_CONFIG = {
@@ -12,7 +13,13 @@ const MODEL_CONFIG = {
   temperature: 0.4
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const { success, reset } = await rateLimit(request, 'ai');
+  if (!success) {
+    return rateLimitResponse(reset);
+  }
+
   try {
     const { input, template, useAI = true } = await request.json() as {
       input: ProposalGenerationInput & { customSections?: Array<{ title: string; content: string }> }

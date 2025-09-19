@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
 import { generateAIAssessmentReport } from "@/lib/services/ai-assessment"
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit'
 
 export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const { success, reset } = await rateLimit(request, 'ai');
+  if (!success) {
+    return rateLimitResponse(reset);
+  }
+
   try {
     const formData = await request.formData()
     

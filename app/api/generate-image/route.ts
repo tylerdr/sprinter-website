@@ -1,9 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
+import { rateLimit, rateLimitResponse } from '@/lib/middleware/rate-limit';
 
 // This endpoint would integrate with Gemini 2.5 Flash Image API
 // For demonstration, it returns placeholder images with metadata
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const { success, reset } = await rateLimit(request, 'ai');
+  if (!success) {
+    return rateLimitResponse(reset);
+  }
+
   try {
     const { prompt, model, purpose } = await request.json();
 
