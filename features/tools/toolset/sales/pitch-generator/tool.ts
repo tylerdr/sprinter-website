@@ -61,7 +61,6 @@ type Input = z.infer<typeof inputSchema>;
 type Output = z.infer<typeof outputSchema>;
 
 const tool: ToolSpec<typeof inputSchema, typeof outputSchema> = {
-  id: "pitch-generator",
   slug: "pitch-generator",
   name: "Sales Pitch Generator",
   description: "Generate personalized sales pitches with AI-powered insights",
@@ -146,7 +145,7 @@ Requirements:
     system: systemPrompt,
     prompt: userPrompt,
     temperature: 0.8,
-    maxTokens: 1000
+    // AI SDK v3 doesn't support maxTokens in generateText
   });
 
   return text || "Unable to generate pitch";
@@ -163,7 +162,7 @@ Make it attention-grabbing, personalized, and under 60 characters.`;
     model,
     prompt,
     temperature: 0.9,
-    maxTokens: 50
+    // AI SDK v3 doesn't support maxTokens in generateText
   });
 
   return text || `${input.productName} for ${input.prospectName}`;
@@ -184,7 +183,7 @@ Keep the same core message but vary the style and opening.`;
     model,
     prompt,
     temperature: 0.85,
-    maxTokens: 800
+    // AI SDK v3 doesn't support maxTokens in generateText
   });
 
   const content = text || "";
@@ -208,7 +207,7 @@ Format as a JSON array of strings.`;
     model,
     prompt: prompt + "\n\nReturn as valid JSON.",
     temperature: 0.7,
-    maxTokens: 300
+    // AI SDK v3 doesn't support maxTokens in generateText
   });
 
   try {
@@ -247,7 +246,7 @@ Format as JSON with structure: { "objections": [{"objection": "", "response": ""
     model,
     prompt: prompt + "\n\nReturn as valid JSON.",
     temperature: 0.7,
-    maxTokens: 600
+    // AI SDK v3 doesn't support maxTokens in generateText
   });
 
   try {

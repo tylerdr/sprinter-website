@@ -46,7 +46,6 @@ type Input = z.infer<typeof inputSchema>;
 type Output = z.infer<typeof outputSchema>;
 
 const tool: ToolSpec<typeof inputSchema, typeof outputSchema> = {
-  id: "lead-scorer",
   slug: "lead-scorer",
   name: "AI Lead Scorer",
   description: "Score and qualify leads using AI-powered analysis",
@@ -292,8 +291,7 @@ async function analyzeWithAI(input: Input, score: number): Promise<{
     const { text } = await generateText({
       model,
       prompt,
-      temperature: 0.7,
-      maxTokens: 500
+      temperature: 0.7
     });
 
     const result = JSON.parse(text);

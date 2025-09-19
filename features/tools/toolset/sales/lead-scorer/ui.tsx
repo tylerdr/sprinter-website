@@ -19,26 +19,26 @@ import {
 } from "lucide-react";
 
 const UI: ToolUI<typeof Input, typeof Output> = {
-  InputForm: ({ onSubmit, isLoading, lastInput }) => {
+  InputForm: ({ onSubmit, isLoading }) => {
     const [formData, setFormData] = useState({
-      companyName: lastInput?.companyName || "",
-      industry: lastInput?.industry || "",
-      companySize: lastInput?.companySize || "51-200",
-      annualRevenue: lastInput?.annualRevenue || undefined,
-      contactRole: lastInput?.contactRole || "Manager",
-      contactDepartment: lastInput?.contactDepartment || "Sales",
-      engagementHistory: lastInput?.engagementHistory || {
+      companyName: "",
+      industry: "",
+      companySize: "51-200" as const,
+      annualRevenue: undefined,
+      contactRole: "Manager" as const,
+      contactDepartment: "Sales" as const,
+      engagementHistory: {
         websiteVisits: 0,
         emailsOpened: 0,
         contentDownloads: 0,
         demoRequested: false,
         pricingViewed: false
       },
-      currentTools: lastInput?.currentTools || [],
-      painPoints: lastInput?.painPoints || "",
-      budget: lastInput?.budget || undefined,
-      timeline: lastInput?.timeline || undefined,
-      competitorInterest: lastInput?.competitorInterest || []
+      currentTools: [],
+      painPoints: "",
+      budget: undefined,
+      timeline: undefined,
+      competitorInterest: []
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -562,14 +562,14 @@ const UI: ToolUI<typeof Input, typeof Output> = {
     </div>
   ),
 
-  Error: ({ error }) => (
+  Error: ({ message }) => (
     <Card className="border-destructive">
       <CardContent className="pt-6">
         <div className="flex items-center gap-2 text-destructive">
           <AlertCircle className="w-5 h-5" />
           <p className="font-semibold">Error scoring lead</p>
         </div>
-        <p className="text-sm text-muted-foreground mt-2">{error}</p>
+        <p className="text-sm text-muted-foreground mt-2">{message}</p>
       </CardContent>
     </Card>
   )
