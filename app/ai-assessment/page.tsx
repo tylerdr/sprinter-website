@@ -180,12 +180,12 @@ export default function AIAssessmentPage() {
 
                 {/* Optional: Biggest Challenge */}
                 <div>
-                  <Label htmlFor="challenge">
+                  <Label htmlFor="biggest_challenge">
                     Biggest Challenge <span className="text-muted-foreground">(Optional)</span>
                   </Label>
                   <Input 
-                    id="challenge" 
-                    name="challenge"
+                    id="biggest_challenge" 
+                    name="biggest_challenge"
                     className="mt-1"
                     placeholder="e.g., Deal sourcing, due diligence, reporting..."
                   />

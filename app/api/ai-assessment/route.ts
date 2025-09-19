@@ -7,19 +7,42 @@ async function handlePOST(request: NextRequest) {
 
   try {
     const formData = await request.formData()
-    
+
+    const getValue = (key: string) => {
+      const raw = formData.get(key)
+      return typeof raw === "string" ? raw.trim() : ""
+    }
+
+    const parseName = (input: string) => {
+      if (!input) {
+        return { firstName: "", lastName: "" }
+      }
+
+      const parts = input.trim().split(/\s+/)
+      if (parts.length === 0) {
+        return { firstName: "", lastName: "" }
+      }
+
+      const [first, ...rest] = parts
+      const last = rest.join(" ")
+      return {
+        firstName: first,
+        lastName: last || "Unknown",
+      }
+    }
+
     // Extract form fields
     const assessmentData = {
-      firstName: formData.get("firstName") as string,
-      lastName: formData.get("lastName") as string,
-      email: formData.get("email") as string,
-      company: formData.get("company") as string,
-      role: formData.get("role") as string,
-      aum: formData.get("aum") as string,
-      portfolio_size: formData.get("portfolio_size") as string,
-      ai_adoption: formData.get("ai_adoption") as string,
-      biggest_challenge: formData.get("biggest_challenge") as string,
-      primary_interest: formData.get("primary_interest") as string,
+      firstName: getValue("firstName") || parseName(getValue("name")).firstName,
+      lastName: getValue("lastName") || parseName(getValue("name")).lastName,
+      email: getValue("email"),
+      company: getValue("company"),
+      role: getValue("role") || "Not specified",
+      aum: getValue("aum") || "Not provided",
+      portfolio_size: getValue("portfolio_size") || "Not provided",
+      ai_adoption: getValue("ai_adoption") || "Unknown",
+      biggest_challenge: getValue("biggest_challenge") || getValue("challenge"),
+      primary_interest: getValue("primary_interest") || "general",
     }
 
     // Validate required fields

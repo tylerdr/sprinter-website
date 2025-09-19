@@ -1,5 +1,11 @@
 # Agent-Based System Implementation Plan
 
+## Status Update (2025-09-18)
+- Tool execution remains disabled (`lib/tools/index.ts` returns an empty array); agents cannot call the admin/general tools defined in the plan.
+- Chat persistence migrations (`supabase/migrations/20250918093000_chat_tables.sql`) now provide `threads`, `messages`, and `tool_executions`, but the runtime still needs to swap to the server Supabase client to use them reliably.
+- The chat API uses the browser Supabase client, which fails server-side when env vars are missing; persistence is currently a no-op.
+- UI scaffolding for multi-agent flows exists, but orchestration, DB-backed registries, and workflow automation are pending.
+
 ## Current State Analysis
 
 ### Issues Identified

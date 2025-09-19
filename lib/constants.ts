@@ -1,5 +1,7 @@
 // Centralized constants and configuration for the entire site
 
+export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-0000-000000000000";
+
 export const COMPANY_INFO = {
   name: "Sprinter AI",
   tagline: "Your AI Operating Partner for Private Equity.",

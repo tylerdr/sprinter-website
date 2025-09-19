@@ -25,6 +25,7 @@ To launch the new Sprinter site successfully we must align the AI Sprinter Platf
 ## Detailed Plan
 ### 1. Database & Schema Work
 - Write migrations for new entity tables with relations and publication metadata.
+- [x] Add chat persistence tables (`threads`, `messages`, `tool_executions`) and ensure `ai_tool_events` is present for workflow logging.
 - Enforce constraints (unique slugs, foreign keys for relations, quality score fields).
 - Seed reference data (taxonomy picklists) based on information architecture plan.
 
@@ -34,6 +35,7 @@ To launch the new Sprinter site successfully we must align the AI Sprinter Platf
 - Register tools with gating metadata and moderation policies.
 - Define agents (Planner, Researcher, Writer, Evaluator, Publisher) with tool allow-lists and stop conditions.
 - Specify workflows (content_seed, stale_refresh, idea_roulette_publish) in YAML/JSON with audit logging.
+- Represent lead nurture sequences as AI Sprinter workflows and log execution via `ai_tool_events`/`lead_activities` instead of bespoke tables.
 
 ### 3. Application Integration
 - Implement data fetching layer (server components, caching) respecting multi-tenant context.
@@ -83,3 +85,10 @@ Completing this plan ensures the technical foundation, governance, and operation
 - Ensure publications leverage entity-driven routes with canonical metadata; retire hardcoded markdown pages.
 - Review current analytics instrumentation for compliance with standard tool/agent/workflow observability contracts.
 - Capture all findings in a `platform.sprinter_alignment` entity, including severity, recommended fix, and owner.
+
+### 9. Schema Assets Provided (2025-09-20)
+- [ ] Add the supplied entity schemas (`knowledge.use_case`, `knowledge.pain_point`, `knowledge.goal`, `capability.*`, `market.*`, `solution.product`, `content.idea`, `content.composition`, `analysis.*`, `policy.governance_pack`) to the `entity_types` registry with versioning and metadata.
+- [ ] Scaffold the eight tool specs (`idea-roulette`, `wedge-spec-generate`, `roi-calc`, `goal-fit`, `stack-compose`, `doc-field-template`, `product-fit`, `gov-checklist`) under `features/tools/toolset/**` using typed `inputSchema/execute/outputSchema` and entity-aware mappings.
+- [ ] Register the five agents (`seo-planner-agent`, `researcher-agent`, `writer-agent`, `evaluator-agent`, `publisher-agent`) with system instructions, tool allow-lists, context policies, and bounded loop settings.
+- [ ] Create workflow definitions for `content-seed` and `idea-roulette-publish`, expose them via the workflow runner, and enforce eval/approval gates per quality requirements.
+- [ ] Ensure DB overrides and tool discovery hooks persist artifacts and emit the `data-entity_*` parts expected by the AI Sprinter platform.
