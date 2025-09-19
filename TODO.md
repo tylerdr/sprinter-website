@@ -3,6 +3,16 @@
 *Test Date: 2025-08-30*
 *Last Updated: 2025-08-30 - Added Auth & AI Labs testing*
 
+## 2025-09-18 Strategic Plans
+- [ ] [2025-09-18_sprinter-website-master-plan.md](./TODO/2025-09-18_sprinter-website-master-plan.md)
+- [ ] [2025-09-18_positioning-and-copy-plan.md](./TODO/2025-09-18_positioning-and-copy-plan.md)
+- [ ] [2025-09-18_information-architecture-and-content-plan.md](./TODO/2025-09-18_information-architecture-and-content-plan.md)
+- [ ] [2025-09-18_interactive-experiences-plan.md](./TODO/2025-09-18_interactive-experiences-plan.md)
+- [ ] [2025-09-18_visual-and-ux-plan.md](./TODO/2025-09-18_visual-and-ux-plan.md)
+- [ ] [2025-09-18_platform-and-launch-operations-plan.md](./TODO/2025-09-18_platform-and-launch-operations-plan.md)
+- [ ] [model-registry-plan.md](./TODO/model-registry-plan.md)
+
+
 ## 🔴 Critical Security Issues
 
 ### 1. Remove Hardcoded Demo Credentials

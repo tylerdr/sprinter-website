@@ -4,11 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown, ChevronRight, Palette } from "lucide-react";
+import { Menu, X, ChevronDown, Palette } from "lucide-react";
 import { useState, useCallback } from "react";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
-import { Badge } from "@/components/ui/badge";
 import dynamic from "next/dynamic";
 
 const ThemeStudio = dynamic(
@@ -31,126 +30,48 @@ import {
   type NavFeature,
 } from "@/lib/navigation-config";
 
-function BadgeVariant(variant: string) {
-  switch (variant) {
-    case "success":
-      return "default";
-    case "warning":
-      return "secondary";
-    case "new":
-      return "default";
-    case "beta":
-      return "outline";
-    default:
-      return variant as any;
-  }
-}
-
-function FeatureCard({ feature }: { feature: NavFeature }) {
-  return (
-    <div className="col-span-full">
-      <NavigationMenuLink asChild>
-        <Link
-          href={feature.href}
-          className="block rounded-lg border bg-muted/50 p-4 hover:bg-accent transition-colors"
-        >
-          {feature.icon && (
-            <div className="rounded-md bg-background p-2 text-muted-foreground">
-              <feature.icon className="h-4 w-4" />
-            </div>
-          )}
-          <div className="flex-1 space-y-1">
-            <div className="flex items-center gap-2">
-              <h3 className="text-sm font-medium">{feature.title}</h3>
-              {feature.badge && (
-                <Badge variant={BadgeVariant(feature.badge.variant)} className="text-xs">
-                  {feature.badge.text}
-                </Badge>
-              )}
-            </div>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              {feature.description}
-            </p>
-          </div>
-          <ChevronRight className="h-4 w-4 text-muted-foreground" />
-        </Link>
-      </NavigationMenuLink>
-    </div>
-  );
-}
-
-function NavItemContent({ item, onAction }: { item: NavItem; onAction?: (item: NavItem) => void }) {
-  const handleClick = item.type === "action" ? (e: React.MouseEvent) => {
-    e.preventDefault();
-    onAction?.(item);
-  } : undefined;
-
-  return (
-    <NavigationMenuLink asChild>
-      <Link
-        href={item.href}
-        onClick={handleClick}
-        className={cn(
-          "group block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors",
-          "hover:bg-accent hover:text-accent-foreground",
-          "focus:bg-accent focus:text-accent-foreground"
-        )}
-      >
-        <div className="flex items-start gap-3">
-          {item.icon && (
-            <div className="rounded-md bg-muted p-1.5 group-hover:bg-accent">
-              <item.icon className="h-3.5 w-3.5" />
-            </div>
-          )}
-          <div className="flex-1 space-y-1">
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium leading-none">{item.label}</span>
-              {item.badge && (
-                <Badge
-                  variant={BadgeVariant(item.badge.variant)}
-                  className="h-5 text-[10px] px-1.5"
-                >
-                  {item.badge.text}
-                </Badge>
-              )}
-            </div>
-            {item.description && (
-              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                {item.description}
-              </p>
-            )}
-          </div>
-        </div>
-      </Link>
-    </NavigationMenuLink>
-  );
-}
 
 function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: NavItem) => void }) {
   return (
     <NavigationMenuContent>
-      <div className="p-6">
-        {item.featured && <FeatureCard feature={item.featured} />}
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {item.sections?.map((section, idx) => (
-            <div key={idx} className="space-y-3">
-              {section.title && (
-                <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  {section.title}
-                </h4>
-              )}
-              <ul className="space-y-1">
-                {section.items.map((subItem) => (
-                  <li key={subItem.href}>
-                    <NavItemContent item={subItem} onAction={onAction} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ul className="grid w-[600px] gap-3 p-4 md:w-[700px] md:grid-cols-3 lg:w-[800px]">
+        {item.featured && (
+          <li className="col-span-full">
+            <NavigationMenuLink asChild>
+              <Link
+                href={item.featured.href}
+                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+              >
+                <div className="mb-2 text-lg font-medium">
+                  {item.featured.title}
+                </div>
+                <p className="text-sm leading-tight text-muted-foreground">
+                  {item.featured.description}
+                </p>
+              </Link>
+            </NavigationMenuLink>
+          </li>
+        )}
+        {item.sections?.map((section) =>
+          section.items.map((subItem) => (
+            <li key={subItem.href}>
+              <NavigationMenuLink asChild>
+                <Link
+                  href={subItem.href}
+                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                >
+                  <div className="text-sm font-medium leading-none">{subItem.label}</div>
+                  {subItem.description && (
+                    <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                      {subItem.description}
+                    </p>
+                  )}
+                </Link>
+              </NavigationMenuLink>
+            </li>
+          ))
+        )}
+      </ul>
     </NavigationMenuContent>
   );
 }
@@ -158,10 +79,22 @@ function MegaMenuContent({ item, onAction }: { item: NavItem; onAction?: (item: 
 function StandardMenuContent({ items, onAction }: { items: NavItem[]; onAction?: (item: NavItem) => void }) {
   return (
     <NavigationMenuContent>
-      <ul className="grid gap-3 p-6 md:grid-cols-2">
+      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
         {items.map((item) => (
           <li key={item.href}>
-            <NavItemContent item={item} onAction={onAction} />
+            <NavigationMenuLink asChild>
+              <Link
+                href={item.href}
+                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+              >
+                <div className="text-sm font-medium leading-none">{item.label}</div>
+                {item.description && (
+                  <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                    {item.description}
+                  </p>
+                )}
+              </Link>
+            </NavigationMenuLink>
           </li>
         ))}
       </ul>
@@ -275,14 +208,6 @@ export function EnhancedNavigation() {
                   >
                     {cta.icon && <cta.icon className="h-3.5 w-3.5" />}
                     {cta.label}
-                    {cta.badge && (
-                      <Badge
-                        variant={BadgeVariant(cta.badge.variant)}
-                        className="ml-1 h-5 text-[10px] px-1.5"
-                      >
-                        {cta.badge.text}
-                      </Badge>
-                    )}
                   </Link>
                 ))}
                 <NavigationAuth />
@@ -415,14 +340,6 @@ export function EnhancedNavigation() {
                                   >
                                     {dropdownItem.icon && <dropdownItem.icon className="h-3.5 w-3.5" />}
                                     <span className="flex-1">{dropdownItem.label}</span>
-                                    {dropdownItem.badge && (
-                                      <Badge
-                                        variant={BadgeVariant(dropdownItem.badge.variant)}
-                                        className="h-5 text-[10px] px-1.5"
-                                      >
-                                        {dropdownItem.badge.text}
-                                      </Badge>
-                                    )}
                                   </Link>
                                 ))}
                               </motion.div>
@@ -470,14 +387,6 @@ export function EnhancedNavigation() {
                         >
                           {cta.icon && <cta.icon className="h-4 w-4" />}
                           {cta.label}
-                          {cta.badge && (
-                            <Badge
-                              variant={BadgeVariant(cta.badge.variant)}
-                              className="ml-1 h-5 text-[10px] px-1.5"
-                            >
-                              {cta.badge.text}
-                            </Badge>
-                          )}
                         </Link>
                       ))}
                     </motion.div>

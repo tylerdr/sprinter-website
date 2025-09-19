@@ -1,0 +1,1061 @@
+yarn run v1.22.22
+$ next dev
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.31
+  - Local:        http://localhost:3001
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ✓ Compiled /middleware in 375ms (190 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 41.6s (10246 modules)
+Langfuse secret key was not passed to constructor or not set as 'LANGFUSE_SECRET_KEY' environment variable. No observability data will be sent to Langfuse.
+Langfuse secret key was not passed to constructor or not set as 'LANGFUSE_SECRET_KEY' environment variable. No observability data will be sent to Langfuse.
+[2025-09-18T21:28:59.168Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:28:59.170Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:28:59.170Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:28:59.171Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:28:59.171Z] DEBUG: [getUserProfile] No user session found
+[2025-09-18T21:28:59.171Z] DEBUG: [getUserProfile] No user session found
+Image with src "/landing-page/lender-picker.svg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "/landing-page/knowledge-hub.svg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ GET / 200 in 44427ms
+ ✓ Compiled in 3.5s (4539 modules)
+ ○ Compiling /login ...
+ ✓ Compiled /login in 8s (10123 modules)
+[2025-09-18T21:29:27.649Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:29:27.650Z] DEBUG: [getUserProfile] No user session found
+Image with src "/login-image.svg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "/login-image.svg" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ GET /login 200 in 8610ms
+ POST /login 303 in 407ms
+[2025-09-18T21:30:14.352Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:30:14.352Z] DEBUG: [getUserProfile] No user session found
+ GET /login?message=Could%20not%20authenticate%20user 200 in 59ms
+ ○ Compiling /signup ...
+ ✓ Compiled /signup in 15.9s (5952 modules)
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 3.4s (7898 modules)
+Langfuse secret key was not passed to constructor or not set as 'LANGFUSE_SECRET_KEY' environment variable. No observability data will be sent to Langfuse.
+[2025-09-18T21:31:31.237Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at runNextTicks (node:internal/process/task_queues:65:5)
+      at process.processTimers (node:internal/timers:520:9)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processTimers (node:internal/timers:520:9)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:31:31.239Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at runNextTicks (node:internal/process/task_queues:65:5)
+      at process.processTimers (node:internal/timers:520:9)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processTimers (node:internal/timers:520:9)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:31:31.239Z] DEBUG: [getUserProfile] No user session found
+[2025-09-18T21:31:31.239Z] DEBUG: [getUserProfile] No user session found
+ GET /admin 307 in 4182ms
+[2025-09-18T21:31:31.536Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:31:31.536Z] DEBUG: [getUserProfile] No user session found
+Image with src "/login-image.svg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "/login-image.svg" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ GET /login 200 in 129ms
+[2025-09-18T21:33:25.842Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:33:25.842Z] DEBUG: [getUserProfile] No user session found
+ ✓ Compiled in 4.6s (6208 modules)
+ ○ Compiling /test-models ...
+ ✓ Compiled /test-models in 1327ms (6026 modules)
+[2025-09-18T21:33:31.026Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at runNextTicks (node:internal/process/task_queues:69:3)
+      at process.processTimers (node:internal/timers:520:9)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:520:9)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:33:31.026Z] DEBUG: [getUserProfile] No user session found
+[2025-09-18T21:33:31.178Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at runNextTicks (node:internal/process/task_queues:65:5)
+      at listOnTimeout (node:internal/timers:549:9)
+      at process.processTimers (node:internal/timers:523:7)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:549:9)
+    at process.processTimers (node:internal/timers:523:7)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:33:31.178Z] DEBUG: [getUserProfile] No user session found
+ GET /test-models 200 in 1928ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4.4s (6211 modules)
+[2025-09-18T21:36:24.154Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:36:24.155Z] DEBUG: [getUserProfile] No user session found
+[2025-09-18T21:36:24.181Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:36:24.181Z] DEBUG: [getUserProfile] No user session found
+[2025-09-18T21:36:24.351Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-18T21:36:24.352Z] DEBUG: [getUserProfile] No user session found
+ GET /test-models 404 in 244ms
+ ○ Compiling / ...
+ ✓ Compiled / in 10.7s (5602 modules)
+Langfuse secret key was not passed to constructor or not set as 'LANGFUSE_SECRET_KEY' environment variable. No observability data will be sent to Langfuse.
+Langfuse secret key was not passed to constructor or not set as 'LANGFUSE_SECRET_KEY' environment variable. No observability data will be sent to Langfuse.
+[2025-09-19T00:37:44.623Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:44.624Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:44.624Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:44.625Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:44.625Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:44.625Z] DEBUG: [getUserProfile] No user session found
+Image with src "/landing-page/lender-picker.svg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "/landing-page/knowledge-hub.svg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ GET / 200 in 12172ms
+[2025-09-19T00:37:45.060Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:45.061Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:45.061Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:45.061Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:45.061Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:45.061Z] DEBUG: [getUserProfile] No user session found
+ GET / 200 in 90ms
+[2025-09-19T00:37:52.490Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.490Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.490Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.491Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.491Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:52.491Z] DEBUG: [getUserProfile] No user session found
+ GET / 200 in 110ms
+[2025-09-19T00:37:52.592Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.593Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.593Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.593Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:52.593Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:52.593Z] DEBUG: [getUserProfile] No user session found
+ GET / 200 in 85ms
+[2025-09-19T00:37:53.545Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.545Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.546Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.546Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.546Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:53.546Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:53.750Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.751Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.751Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.751Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.751Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:53.751Z] DEBUG: [getUserProfile] No user session found
+ GET / 200 in 379ms
+[2025-09-19T00:37:53.929Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.929Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.929Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.930Z] WARN: Auth error in getUserSession {
+  error: AuthSessionMissingError: Auth session missing!
+      at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+      at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+      at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+      at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+    __isAuthError: true,
+    status: 400,
+    code: undefined
+  }
+}
+AuthSessionMissingError: Auth session missing!
+    at eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1103:59)
+    at SupabaseAuthClient._useSession (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:991:26)
+    at async SupabaseAuthClient._getUser (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1095:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:1082:20)
+    at async eval (webpack-internal:///(rsc)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:936:28) {
+  __isAuthError: true,
+  status: 400,
+  code: undefined
+}
+[2025-09-19T00:37:53.930Z] DEBUG: [getUserProfile] No user session found
+[2025-09-19T00:37:53.930Z] DEBUG: [getUserProfile] No user session found
+ GET / 200 in 627ms
+ GET / 200 in 673ms
