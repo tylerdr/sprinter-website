@@ -60,6 +60,10 @@ export const TOOL_IMPORTS: Record<
     import("./toolset/calculators/roi-calculator/tool").then(m => ({
       tool: m.default
     })),
+  "working-capital-optimizer": () =>
+    import("./toolset/calculators/working-capital/tool").then(m => ({
+      tool: m.default
+    })),
 
   // Communications Tools
   "email-drafter": () =>
@@ -70,6 +74,46 @@ export const TOOL_IMPORTS: Record<
   // Analysis Tools
   "bank-statement-analyzer": () =>
     import("./toolset/analysis/bank-statement-analyzer/tool").then(m => ({
+      tool: m.default
+    })),
+  "data-analyzer": () =>
+    import("./toolset/analysis/data-analyzer/tool").then(m => ({
+      tool: m.default
+    })),
+  "sentiment-analyzer": () =>
+    import("./toolset/analysis/sentiment-analyzer/tool").then(m => ({
+      tool: m.default
+    })),
+  "competitive-intelligence": () =>
+    import("./toolset/analysis/competitive-intelligence/tool").then(m => ({
+      tool: m.default
+    })),
+
+  // Document Generation Tools
+  "proposal-generator": () =>
+    import("./toolset/generation/proposal-generator/tool").then(m => ({
+      tool: m.default
+    })),
+  "contract-builder": () =>
+    import("./toolset/generation/contract-builder/tool").then(m => ({
+      tool: m.default
+    })),
+  "report-builder": () =>
+    import("./toolset/generation/report-builder/tool").then(m => ({
+      tool: m.default
+    })),
+
+  // Workflow Tools
+  "process-builder": () =>
+    import("./toolset/workflow/process-builder/tool").then(m => ({
+      tool: m.default
+    })),
+  "document-processor": () =>
+    import("./toolset/workflow/document-processor/tool").then(m => ({
+      tool: m.default
+    })),
+  "email-automation": () =>
+    import("./toolset/workflow/email-automation/tool").then(m => ({
       tool: m.default
     })),
 
