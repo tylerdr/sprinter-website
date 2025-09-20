@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ClipboardCheck, Rocket, Layers, ArrowRight } from "lucide-react";
+import { ScrollFloat } from "@/components/ScrollFloat";
 
 const steps = [
   {
@@ -38,20 +39,14 @@ export function HowItWorks() {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden bg-muted/20">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+        <ScrollFloat className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             From Workshop to Wins in Weeks
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             A repeatable operating partner playbook that keeps momentum across every company in the fund.
           </p>
-        </motion.div>
+        </ScrollFloat>
 
         <div className="hidden lg:block max-w-6xl mx-auto mb-12">
           <div className="relative">

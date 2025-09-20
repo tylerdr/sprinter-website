@@ -8,6 +8,14 @@ import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
+import SwooshText from "@/components/kokonutui/swoosh-text";
+import { AttractButton } from "@/components/kokonutui/attract-button";
+import ScrollFloat from "@/components/ScrollFloat";
+import GlitchText from "@/components/GlitchText";
+import TrueFocus from "@/components/TrueFocus";
+import { SparklesCore } from "@/components/ui/sparkles";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { TextShift } from "@/components/text-shift";
 
 const stats = [
   { value: "30-45", label: "days to first value" },
@@ -34,6 +42,19 @@ export function PEHero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20"
       aria-label="Private Equity AI Hero"
     >
+      {/* Sparkles Background */}
+      <div className="absolute inset-0 h-full w-full">
+        <SparklesCore
+          id="hero-sparkles"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+      </div>
+
       {/* Dynamic gradient following mouse */}
       <div
         className="absolute inset-0 opacity-20 transition-opacity duration-300"
@@ -100,17 +121,26 @@ export function PEHero() {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight"
-          >
-            <Balancer>
-              {variants.hero.headline.line1}{" "}
-              <span className="gradient-text block mt-2">{variants.hero.headline.line2}</span>
-            </Balancer>
-          </motion.h1>
+          <ScrollFloat delay={0.3} className="mb-6">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+              <Balancer>
+                {variants.hero.headline.line1}{" "}
+                <div className="block mt-2">
+                  <SwooshText
+                    text={variants.hero.headline.line2}
+                    className="gradient-text"
+                    shadowColors={{
+                      first: "rgba(59, 130, 246, 0.5)",
+                      second: "rgba(147, 51, 234, 0.4)",
+                      third: "rgba(236, 72, 153, 0.3)",
+                      fourth: "rgba(251, 146, 60, 0.2)",
+                      glow: "rgba(147, 51, 234, 0.1)"
+                    }}
+                  />
+                </div>
+              </Balancer>
+            </div>
+          </ScrollFloat>
 
           {/* Subheadline */}
           <motion.p

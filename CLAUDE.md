@@ -65,3 +65,39 @@ Required for full functionality:
 ## TypeScript Configuration
 
 Strict mode enabled with path alias `@/` for imports. All components and pages use TypeScript.
+
+## React Bits Integration
+
+This project uses React Bits (https://reactbits.dev) for advanced UI animations. When working with animations:
+
+### Installation
+Always install React Bits components using the shadcn CLI with TypeScript + Tailwind version:
+```bash
+npx shadcn@latest add https://reactbits.dev/r/ComponentName-TS-TW
+```
+
+### Currently Available Components
+- **Hyperspeed**: Space warp background (hero sections)
+- **BlurText**: Animated text reveals (headings)
+- **StarBorder**: Glowing border animation (CTAs)
+- **ShinyText**: Shimmer effect (buttons)
+- **SplashCursor**: Click ripples (global)
+- **ScrollFloat**: Scroll-triggered animations (content)
+- **MagicBento**: Interactive grid (features)
+- **LogoLoop**: Infinite carousel (partners)
+- **TrueFocus**: Text emphasis (key points)
+- **GlitchText**: Digital glitch (tech sections)
+- **ScrollStack**: Stacked cards (testimonials)
+
+### Usage Guidelines
+1. Import from `@/components/ComponentName`
+2. Limit heavy animations to 1-2 per page
+3. Always test on mobile devices
+4. Add required animations to `app/globals.css` if missing
+5. Respect `prefers-reduced-motion` for accessibility
+
+### Performance Tips
+- Use ScrollFloat for most reveal animations (intersection-based)
+- Reserve Hyperspeed for hero sections only
+- Test animations on low-end devices
+- Consider disabling complex animations on mobile

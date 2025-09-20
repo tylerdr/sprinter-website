@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { Bot, Workflow, Palette, Gamepad2, BarChart3, Code2, FileText, MessageSquare, Calculator, ArrowRight, Blocks, Megaphone, Music, Sparkles, Star, BookOpen, Database, Mic, FileQuestion, Globe, Lightbulb } from "lucide-react";
 import { useState } from "react";
+import ScrollFloat from "@/components/ScrollFloat";
+import SwooshText from "@/components/kokonutui/swoosh-text";
 
 interface Lab {
   icon: any;

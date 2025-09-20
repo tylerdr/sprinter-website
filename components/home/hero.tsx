@@ -8,6 +8,11 @@ import { ImpactMetrics } from "@/components/shared/impact-metrics";
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { AnimatedGradientBackground } from "./animated-gradient-background";
+import Hyperspeed from "@/components/Hyperspeed";
+import { BlurText } from "@/components/BlurText";
+import { ShinyText } from "@/components/ShinyText";
+import { SplashCursor } from "@/components/SplashCursor";
+import StarBorder from "@/components/StarBorder";
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -42,8 +47,17 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero section"
     >
-      {/* New Animated Gradient Background */}
-      <AnimatedGradientBackground />
+      {/* Hyperspeed Background - Click and hold to accelerate */}
+      <div className="absolute inset-0 z-0">
+        <Hyperspeed
+          className="absolute inset-0"
+          onSpeedUp={() => {}}
+          onSlowDown={() => {}}
+        />
+      </div>
+
+      {/* Splash Cursor Effect */}
+      <SplashCursor />
 
       {/* Mouse-following spotlight effect */}
       <div
@@ -92,17 +106,23 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
-          >
-            <Balancer>
-              Build at the{" "}
-              <span className="gradient-text block sm:inline">pace of AI</span>
-            </Balancer>
-          </motion.h1>
+          <div className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+            <BlurText
+              text="Build at the"
+              animateBy="words"
+              direction="top"
+              delay={0.3}
+              className="inline"
+            />
+            {" "}
+            <BlurText
+              text="pace of AI"
+              animateBy="words"
+              direction="bottom"
+              delay={0.5}
+              className="gradient-text block sm:inline"
+            />
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -122,19 +142,25 @@ export function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0 mb-12 sm:mb-16"
           >
-            <Button asChild variant="gradient" className="px-8 py-4 text-base">
-              <Link href="/labs/opportunity-audit" className="group">
+            <StarBorder
+              as={Link}
+              href="/labs/opportunity-audit"
+              className="group"
+              color="hsl(var(--primary))"
+              speed="3s"
+            >
+              <div className="flex items-center">
                 <Sparkles
                   className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
                   aria-hidden="true"
                 />
-                Get an AI Opportunity Audit
+                <ShinyText text="Get an AI Opportunity Audit" />
                 <ArrowRight
                   className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   aria-hidden="true"
                 />
-              </Link>
-            </Button>
+              </div>
+            </StarBorder>
             <Button asChild variant="glass" className="px-8 py-4 text-base">
               <Link href="/contact" className="group">
                 Start a 10-Day Sprint
