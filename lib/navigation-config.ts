@@ -213,9 +213,16 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
         },
         {
           label: "ROI Calculator",
-          href: "/tools/roi-calculator",
+          href: "/labs/roi-calculator",
           icon: Calculator,
           description: "Quantify AI value for your portfolio in 2 minutes",
+        },
+        {
+          label: "Implementation Guides",
+          href: "/downloads/no-api-cookbook",
+          icon: BookOpen,
+          description: "Battle-tested playbooks from 100+ deployments",
+          badge: { text: "Download", variant: "outline" },
         },
       ],
     },
@@ -282,7 +289,19 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               description: "Fintech & banking AI",
             },
             {
-              label: "View All",
+              label: "Manufacturing",
+              href: "/industries/manufacturing",
+              icon: Factory,
+              description: "Quality, scheduling & maintenance",
+            },
+            {
+              label: "Logistics & 3PL",
+              href: "/industries/logistics",
+              icon: Truck,
+              description: "Supply chain & routing automation",
+            },
+            {
+              label: "View All Industries",
               href: "/industries",
               icon: Building2,
               description: "Browse all sectors",
