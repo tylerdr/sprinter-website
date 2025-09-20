@@ -171,8 +171,9 @@ export function EnhancedNavigation() {
                             )}
                           </>
                         ) : (
-                          <Link href={item.href} legacyBehavior passHref>
-                            <NavigationMenuLink
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href={item.href}
                               className={cn(
                                 navigationMenuTriggerStyle(),
                                 "h-9 px-3 py-2 text-sm font-medium gap-1.5",
@@ -183,8 +184,8 @@ export function EnhancedNavigation() {
                             >
                               {item.icon && <item.icon className="h-3.5 w-3.5" />}
                               {item.label}
-                            </NavigationMenuLink>
-                          </Link>
+                            </Link>
+                          </NavigationMenuLink>
                         )}
                       </NavigationMenuItem>
                     );
@@ -192,25 +193,7 @@ export function EnhancedNavigation() {
                 </NavigationMenuList>
               </NavigationMenu>
 
-              <div className="flex items-center gap-2 ml-2">
-                {config.ctas.map((cta) => (
-                  <Link
-                    key={cta.href}
-                    href={cta.href}
-                    className={cn(
-                      "px-4 py-2 text-sm font-medium rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand/50 focus:ring-offset-2 focus:ring-offset-background flex items-center gap-2",
-                      cta.variant === "outline"
-                        ? "border border-border hover:bg-accent hover:text-accent-foreground"
-                        : cta.variant === "gradient"
-                        ? "bg-brand-gradient text-primary-foreground hover:opacity-90 shadow-lg shadow-brand/20"
-                        : "bg-primary text-primary-foreground hover:bg-primary/90"
-                    )}
-                  >
-                    {cta.icon && <cta.icon className="h-3.5 w-3.5" />}
-                    {cta.label}
-                  </Link>
-                ))}
-                <NavigationAuth />
+              <div className="flex items-center gap-2 ml-3 pl-3 border-l border-border/30">
                 <button
                   onClick={() => setThemeStudioOpen(true)}
                   className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
@@ -218,6 +201,24 @@ export function EnhancedNavigation() {
                 >
                   <Palette className="h-4 w-4" />
                 </button>
+                <NavigationAuth />
+                {config.ctas.map((cta) => (
+                  <Link
+                    key={cta.href}
+                    href={cta.href}
+                    className={cn(
+                      "px-5 py-2 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background flex items-center gap-2",
+                      cta.variant === "outline"
+                        ? "border border-border hover:bg-accent hover:text-accent-foreground"
+                        : cta.variant === "gradient"
+                        ? "bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground hover:shadow-xl hover:shadow-primary/25 hover:scale-[1.02] border border-primary/20"
+                        : "bg-primary text-primary-foreground hover:bg-primary/90"
+                    )}
+                  >
+                    {cta.icon && <cta.icon className="h-4 w-4" />}
+                    {cta.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
