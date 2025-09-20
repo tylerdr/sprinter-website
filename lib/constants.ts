@@ -42,34 +42,78 @@ export const NAVIGATION = {
         {
           href: "/operating-partner",
           label: "AI Operating Partner",
-          description: "Fund-level AI orchestration & portfolio wins",
+          description: "Transform your portfolio with fund-level AI orchestration",
           featured: true,
-          icon: "rocket"
+          icon: "rocket",
+          badge: "Most Popular"
         },
         {
           href: "/solutions/ap-automation",
           label: "Financial Process Automation",
-          description: "AP, expense, reconciliation - 85% touchless"
+          description: "85% touchless AP, expense & reconciliation automation",
+          icon: "calculator"
         },
         {
           href: "/solutions/quote-intelligence",
           label: "Quote Intelligence",
-          description: "RFP to quote draft in minutes, not hours"
+          description: "Generate accurate quotes in minutes, not hours",
+          icon: "zap"
         },
         {
           href: "/solutions/3pl-ops",
-          label: "3PL Ops & Billing",
-          description: "Quote-to-billing accuracy, automated"
+          label: "3PL Operations & Billing",
+          description: "End-to-end automation from quote to cash",
+          icon: "truck"
         },
         {
           href: "/partnership",
-          label: "Partnership Program",
-          description: "For PE firms & consultants"
+          label: "Partner With Us",
+          description: "Joint ventures for PE firms & consultants",
+          icon: "handshake"
         },
         {
           href: "/pe-services",
-          label: "All Services",
-          description: "20+ prebuilt AI solutions for PE"
+          label: "View All Solutions",
+          description: "20+ battle-tested AI solutions ready to deploy",
+          icon: "grid"
+        },
+      ],
+    },
+    {
+      href: "/case-studies",
+      label: "Results",
+      type: "dropdown",
+      dropdown: [
+        { href: "/case-studies", label: "Portfolio Wins" },
+        { href: "/operating-partner#scoreboard", label: "Impact Dashboard" },
+        { href: "/tools/roi-calculator", label: "ROI Calculator" },
+      ],
+      items: [
+        {
+          href: "/case-studies",
+          label: "Portfolio Wins",
+          description: "$10M+ value created across 50+ deployments",
+          featured: true,
+          icon: "trophy",
+          badge: "Real Results"
+        },
+        {
+          href: "/operating-partner#scoreboard",
+          label: "Live Impact Dashboard",
+          description: "Track portfolio AI adoption & ROI in real-time",
+          icon: "chart"
+        },
+        {
+          href: "/tools/roi-calculator",
+          label: "Calculate Your ROI",
+          description: "Quantify AI value for your portfolio in 2 minutes",
+          icon: "calculator"
+        },
+        {
+          href: "/downloads/no-api-cookbook",
+          label: "Implementation Playbooks",
+          description: "Proven frameworks from 100+ successful sprints",
+          icon: "book"
         },
       ],
     },
@@ -87,57 +131,26 @@ export const NAVIGATION = {
         {
           href: "/industries/manufacturing",
           label: "Manufacturing",
-          description: "AI on the factory floor - quality, scheduling, maintenance"
+          description: "Quality control, predictive maintenance, production optimization",
+          icon: "factory"
         },
         {
           href: "/industries/logistics",
           label: "Logistics & 3PL",
-          description: "Supply chain automation, routing, documentation"
+          description: "Route optimization, documentation, warehouse automation",
+          icon: "truck"
         },
         {
           href: "/industries/healthcare",
           label: "Healthcare",
-          description: "Clinical documentation, RCM, patient experience"
+          description: "Clinical documentation, RCM, patient engagement",
+          icon: "heart"
         },
         {
           href: "/industries/financial-services",
           label: "Financial Services",
-          description: "Underwriting, compliance, customer service"
-        },
-      ],
-    },
-    {
-      href: "/proven-results",
-      label: "Proven Results",
-      type: "dropdown",
-      dropdown: [
-        { href: "/case-studies", label: "Portfolio Wins" },
-        { href: "/operating-partner#scoreboard", label: "Impact Dashboard" },
-        { href: "/tools/roi-calculator", label: "ROI Calculator" },
-        { href: "/downloads/no-api-cookbook", label: "Implementation Guides" },
-      ],
-      items: [
-        {
-          href: "/case-studies",
-          label: "Portfolio Wins",
-          description: "$10M+ value created, anonymized case studies",
-          featured: true,
-          icon: "trophy"
-        },
-        {
-          href: "/operating-partner#scoreboard",
-          label: "Impact Dashboard",
-          description: "Real-time portfolio health & AI adoption metrics"
-        },
-        {
-          href: "/tools/roi-calculator",
-          label: "ROI Calculator",
-          description: "Quantify your AI opportunity in 2 minutes"
-        },
-        {
-          href: "/downloads/no-api-cookbook",
-          label: "Implementation Guides",
-          description: "Battle-tested playbooks & frameworks"
+          description: "Underwriting automation, compliance, customer service",
+          icon: "bank"
         },
       ],
     },
@@ -146,37 +159,37 @@ export const NAVIGATION = {
       label: "Resources",
       type: "dropdown",
       dropdown: [
-        { href: "/labs", label: "Interactive Demos" },
-        { href: "/tools", label: "Tools & Calculators" },
+        { href: "/labs", label: "Try AI Tools" },
+        { href: "/ai-assessment", label: "Free AI Assessment" },
         { href: "/blog", label: "PE AI Insights" },
-        { href: "/ai-assessment", label: "Free Assessment" },
         { href: "/downloads/governance-pack", label: "Governance Pack" },
       ],
       items: [
         {
           href: "/labs",
-          label: "Interactive Demos",
-          description: "Try our AI tools live - no signup required"
+          label: "Try AI Tools Live",
+          description: "Interactive demos - no signup required",
+          featured: true,
+          icon: "play",
+          badge: "Try Now"
         },
         {
-          href: "/tools",
-          label: "Tools & Calculators",
-          description: "ROI, readiness, and impact assessments"
+          href: "/ai-assessment",
+          label: "Free AI Assessment",
+          description: "Get your personalized AI roadmap in 5 minutes",
+          icon: "clipboard"
         },
         {
           href: "/blog",
           label: "PE AI Insights",
-          description: "Private equity AI analysis & trends"
-        },
-        {
-          href: "/ai-assessment",
-          label: "Free Assessment",
-          description: "Get your personalized AI roadmap"
+          description: "Industry analysis, trends & best practices",
+          icon: "newspaper"
         },
         {
           href: "/downloads/governance-pack",
-          label: "Governance Pack",
-          description: "Security, compliance & board templates"
+          label: "Governance Templates",
+          description: "Board-ready security & compliance docs",
+          icon: "shield"
         },
       ],
     },
@@ -184,7 +197,7 @@ export const NAVIGATION = {
   ctas: [
     {
       href: "/contact",
-      label: "Start Your Sprint",
+      label: "Get Started",
       variant: "default" as const,
       icon: "sparkles"
     }

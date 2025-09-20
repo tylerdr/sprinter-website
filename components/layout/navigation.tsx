@@ -4,7 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown, Sparkles, Trophy, Rocket, ArrowRight } from "lucide-react";
+import {
+  Menu, X, ChevronDown, Sparkles, Trophy, Rocket, ArrowRight,
+  Calculator, Zap, Truck, Users, Grid3x3, BarChart3, BookOpen,
+  Factory, Heart, Building, Play, ClipboardCheck, Newspaper, Shield,
+  LogIn
+} from "lucide-react";
 import { useState } from "react";
 import { NAVIGATION } from "@/lib/constants";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -68,62 +73,101 @@ export function Navigation() {
                         <>
                           <NavigationMenuTrigger
                             className={cn(
-                              "h-10 px-4 py-2 text-sm font-medium transition-all duration-200",
-                              "hover:text-foreground",
+                              "h-9 px-3 py-2 text-sm font-semibold transition-all duration-200",
+                              "hover:text-foreground data-[state=open]:text-foreground",
+                              "data-[state=open]:bg-accent/30",
                               pathname.startsWith(item.href)
                                 ? "text-foreground"
-                                : "text-muted-foreground"
+                                : "text-muted-foreground/90"
                             )}
                           >
                             {item.label}
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className={cn(
-                              "grid gap-2 p-4",
-                              item.label === "Solutions" ? "w-[650px] md:grid-cols-2" : "w-[550px] md:grid-cols-2"
+                              "grid gap-1 p-3",
+                              item.label === "Solutions" ? "w-[700px] grid-cols-2" :
+                              item.label === "Results" ? "w-[600px] grid-cols-1" :
+                              "w-[500px] grid-cols-1"
                             )}>
                               {dropdownItems?.map((subItem) => {
-                                const IconComponent =
-                                  "icon" in subItem && subItem.icon === "rocket" ? Rocket :
-                                  "icon" in subItem && subItem.icon === "trophy" ? Trophy : null;
+                                const getIcon = () => {
+                                  if (!("icon" in subItem)) return null;
+                                  switch(subItem.icon) {
+                                    case "rocket": return Rocket;
+                                    case "trophy": return Trophy;
+                                    case "calculator": return Calculator;
+                                    case "zap": return Zap;
+                                    case "truck": return Truck;
+                                    case "handshake": return Users;
+                                    case "grid": return Grid3x3;
+                                    case "chart": return BarChart3;
+                                    case "book": return BookOpen;
+                                    case "factory": return Factory;
+                                    case "heart": return Heart;
+                                    case "bank": return Building;
+                                    case "play": return Play;
+                                    case "clipboard": return ClipboardCheck;
+                                    case "newspaper": return Newspaper;
+                                    case "shield": return Shield;
+                                    default: return null;
+                                  }
+                                };
+                                const IconComponent = getIcon();
                                 const isFeatured = "featured" in subItem && subItem.featured === true;
+                                const badge = "badge" in subItem && typeof subItem.badge === 'string' ? subItem.badge : null;
 
                                 return (
                                   <li key={subItem.href} className={cn(
-                                    isFeatured ? "md:col-span-2" : ""
+                                    isFeatured && item.label === "Solutions" ? "col-span-2" : "",
+                                    isFeatured && item.label === "Results" ? "col-span-1" : "",
+                                    isFeatured && item.label === "Resources" ? "col-span-1" : ""
                                   )}>
                                     <NavigationMenuLink asChild>
                                       <Link
                                         href={subItem.href}
                                         className={cn(
-                                          "group block select-none space-y-1.5 rounded-lg p-4 leading-none no-underline outline-none transition-all duration-200",
-                                          "hover:bg-accent/60 hover:shadow-sm",
-                                          "focus:bg-accent focus:text-accent-foreground focus:shadow-sm",
-                                          pathname === subItem.href && "bg-accent/40",
-                                          isFeatured ? "border border-border/50 bg-gradient-to-br from-accent/20 to-transparent" : ""
+                                          "group relative flex select-none gap-3 rounded-xl px-3 py-3 leading-none no-underline outline-none transition-all duration-200",
+                                          "hover:bg-accent/50 hover:shadow-md",
+                                          "focus:bg-accent focus:shadow-md",
+                                          pathname === subItem.href && "bg-accent/30",
+                                          isFeatured && "bg-gradient-to-br from-primary/5 via-transparent to-transparent border border-primary/10 hover:border-primary/20"
                                         )}
                                       >
-                                        <div className="flex items-center gap-2">
-                                          {IconComponent && (
+                                        {IconComponent && (
+                                          <div className={cn(
+                                            "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-all duration-200",
+                                            isFeatured ? "bg-primary/10 group-hover:bg-primary/20" : "bg-muted/50 group-hover:bg-muted"
+                                          )}>
                                             <IconComponent className={cn(
-                                              "h-4 w-4 transition-colors",
-                                              isFeatured ? "text-primary" : "text-muted-foreground group-hover:text-primary"
+                                              "h-5 w-5 transition-all duration-200",
+                                              isFeatured ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
                                             )} />
-                                          )}
-                                          <div className="text-sm font-semibold leading-none group-hover:text-foreground">
-                                            {subItem.label}
                                           </div>
-                                          {isFeatured && (
-                                            <span className="ml-auto text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                                              Popular
+                                        )}
+                                        <div className="flex flex-col gap-0.5 flex-1">
+                                          <div className="flex items-center gap-2">
+                                            <span className="text-sm font-semibold leading-none text-foreground">
+                                              {subItem.label}
                                             </span>
-                                          )}
+                                            {badge && (
+                                              <span className={cn(
+                                                "text-[10px] font-semibold px-1.5 py-0.5 rounded-full",
+                                                isFeatured ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"
+                                              )}>
+                                                {badge}
+                                              </span>
+                                            )}
+                                          </div>
+                                          {"description" in subItem && subItem.description ? (
+                                            <p className="line-clamp-1 text-xs leading-snug text-muted-foreground mt-0.5">
+                                              {String(subItem.description)}
+                                            </p>
+                                          ) : null}
                                         </div>
-                                        {"description" in subItem && subItem.description ? (
-                                          <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground group-hover:text-muted-foreground/90">
-                                            {String(subItem.description)}
-                                          </p>
-                                        ) : null}
+                                        {isFeatured && (
+                                          <ArrowRight className="h-4 w-4 shrink-0 text-primary/60 transition-transform duration-200 group-hover:translate-x-0.5" />
+                                        )}
                                       </Link>
                                     </NavigationMenuLink>
                                   </li>
@@ -133,19 +177,20 @@ export function Navigation() {
                           </NavigationMenuContent>
                         </>
                       ) : (
-                        <Link href={item.href} legacyBehavior passHref>
-                          <NavigationMenuLink
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
                             className={cn(
                               navigationMenuTriggerStyle(),
-                              "h-10 px-4 py-2 text-sm font-medium",
+                              "h-9 px-3 py-2 text-sm font-semibold",
                               pathname === item.href
-                                ? "text-foreground bg-accent/50"
-                                : "text-muted-foreground hover:text-foreground"
+                                ? "text-foreground bg-accent/40"
+                                : "text-muted-foreground/90 hover:text-foreground hover:bg-accent/30"
                             )}
                           >
                             {item.label}
-                          </NavigationMenuLink>
-                        </Link>
+                          </Link>
+                        </NavigationMenuLink>
                       )}
                     </NavigationMenuItem>
                   );
@@ -153,9 +198,9 @@ export function Navigation() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="flex items-center gap-2 ml-4">
-              <NavigationAuth />
+            <div className="flex items-center gap-2 ml-3 pl-3 border-l border-border/30">
               <ThemeToggle />
+              <NavigationAuth />
               {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => {
                 const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
                 return (
@@ -167,21 +212,24 @@ export function Navigation() {
                       variant={cta.variant}
                       size="default"
                       className={cn(
-                        "group relative overflow-hidden transition-all duration-300",
+                        "group relative overflow-hidden transition-all duration-300 px-5",
                         cta.variant === "default" && [
-                          "bg-gradient-to-r from-primary to-primary/90",
-                          "hover:from-primary/90 hover:to-primary",
-                          "shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30",
-                          "border-0"
+                          "bg-gradient-to-r from-primary via-primary to-primary/90",
+                          "hover:shadow-xl hover:shadow-primary/25 hover:scale-[1.02]",
+                          "border border-primary/20",
+                          "text-primary-foreground font-semibold"
                         ]
                       )}
                     >
-                      <span className="flex items-center gap-2">
+                      <span className="relative z-10 flex items-center gap-2">
                         {cta.label}
-                        <IconComponent className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                        <IconComponent className="h-4 w-4 transition-all duration-300 group-hover:translate-x-0.5 group-hover:scale-110" />
                       </span>
                       {cta.variant === "default" && (
-                        <span className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/20 to-primary/10 blur-2xl" />
+                        <>
+                          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          <span className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/30 to-primary/20 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
+                        </>
                       )}
                     </Button>
                   </Link>
@@ -306,26 +354,32 @@ export function Navigation() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: NAVIGATION.main.length * 0.05 }}
-                    className="flex flex-col gap-3 pt-4 mt-4 border-t border-border"
+                    className="flex flex-col gap-2 pt-4 mt-4 border-t border-border"
                   >
-                    <NavigationAuth />
-                    {NAVIGATION.ctas.map((cta) => {
-                      const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
-                      return (
-                        <Link
-                          key={cta.href}
-                          href={cta.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className={cn(
-                            "flex items-center justify-center gap-2 py-3 px-4 text-base font-medium rounded-lg text-center transition-all duration-200 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background",
-                            "bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:from-primary/90 hover:to-primary shadow-lg"
-                          )}
-                        >
-                          {cta.label}
-                          <IconComponent className="h-4 w-4" />
-                        </Link>
-                      );
-                    })}
+                    <div className="flex gap-2">
+                      <div className="flex-1">
+                        <NavigationAuth />
+                      </div>
+                      {NAVIGATION.ctas.map((cta) => {
+                        const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
+                        return (
+                          <Link
+                            key={cta.href}
+                            href={cta.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={cn(
+                              "flex items-center justify-center gap-2 py-2.5 px-5 text-sm font-semibold rounded-lg text-center transition-all duration-200 touch-manipulation",
+                              "bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground",
+                              "hover:shadow-lg active:scale-[0.98]",
+                              "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+                            )}
+                          >
+                            {cta.label}
+                            <IconComponent className="h-3.5 w-3.5" />
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </motion.div>
                 )}
               </div>
