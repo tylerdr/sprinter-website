@@ -9,13 +9,13 @@ import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 import SwooshText from "@/components/kokonutui/swoosh-text";
-import { AttractButton } from "@/components/kokonutui/attract-button";
+import AttractButton from "@/components/kokonutui/attract-button";
 import ScrollFloat from "@/components/ScrollFloat";
 import GlitchText from "@/components/GlitchText";
 import TrueFocus from "@/components/TrueFocus";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { TextShift } from "@/components/text-shift";
+import TextShift from "@/components/text-shift";
 
 const stats = [
   { value: "30-45", label: "days to first value" },

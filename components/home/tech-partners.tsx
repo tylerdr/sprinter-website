@@ -5,7 +5,6 @@ import ScrollFloat from "@/components/ScrollFloat";
 import {
   SiOpenai,
   SiAmazon,
-  SiMicrosoft,
   SiGoogle,
   SiVercel,
   SiSupabase,
@@ -36,7 +35,8 @@ const aiProviders = [
 
 const techStack = [
   { name: "AWS", icon: SiAmazon },
-  { name: "Azure", icon: SiMicrosoft },
+  { name: "Azure", icon: Cloud },
+  { name: "Microsoft", icon: Cloud },
   { name: "Google Cloud", icon: SiGoogle },
   { name: "Vercel", icon: SiVercel },
   { name: "Supabase", icon: SiSupabase },

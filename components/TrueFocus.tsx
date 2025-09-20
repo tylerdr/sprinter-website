@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 
 interface TrueFocusProps {
   sentence?: string;
+  triggerWord?: string;
+  className?: string;
   manualMode?: boolean;
   blurAmount?: number;
   borderColor?: string;
@@ -20,6 +22,8 @@ interface FocusRect {
 
 const TrueFocus: React.FC<TrueFocusProps> = ({
   sentence = 'True Focus',
+  triggerWord,
+  className = '',
   manualMode = false,
   blurAmount = 5,
   borderColor = 'green',
@@ -28,7 +32,13 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   pauseBetweenAnimations = 1
 }) => {
   const words = sentence.split(' ');
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(() => {
+    if (triggerWord) {
+      const index = words.findIndex(word => word.toLowerCase() === triggerWord.toLowerCase());
+      return index >= 0 ? index : 0;
+    }
+    return 0;
+  });
   const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
@@ -76,7 +86,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   };
 
   return (
-    <div className="relative flex gap-4 justify-center items-center flex-wrap" ref={containerRef}>
+    <div className={`relative flex gap-4 justify-center items-center flex-wrap ${className}`} ref={containerRef}>
       {words.map((word, index) => {
         const isActive = index === currentIndex;
         return (

@@ -19,9 +19,11 @@ export type LogoItem =
     };
 
 export interface LogoLoopProps {
-  logos: LogoItem[];
+  logos?: LogoItem[];
+  items?: Array<{id: string; content: React.ReactNode}>;
   speed?: number;
   direction?: 'left' | 'right';
+  reverse?: boolean;
   width?: number | string;
   logoHeight?: number;
   gap?: number;
@@ -186,8 +188,10 @@ const useAnimationLoop = (
 export const LogoLoop = React.memo<LogoLoopProps>(
   ({
     logos,
+    items,
     speed = 120,
     direction = 'left',
+    reverse = false,
     width = '100%',
     logoHeight = 28,
     gap = 32,
@@ -199,6 +203,18 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     className,
     style
   }) => {
+    // Handle both logos and items props
+    const effectiveLogos = useMemo(() => {
+      if (items) {
+        return items.map(item => ({
+          node: item.content,
+          title: item.id,
+          ariaLabel: item.id
+        } as LogoItem));
+      }
+      return logos || [];
+    }, [logos, items]);
+
     const containerRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const seqRef = useRef<HTMLUListElement>(null);
@@ -211,8 +227,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
       const magnitude = Math.abs(speed);
       const directionMultiplier = direction === 'left' ? 1 : -1;
       const speedMultiplier = speed < 0 ? -1 : 1;
-      return magnitude * directionMultiplier * speedMultiplier;
-    }, [speed, direction]);
+      const reverseMultiplier = reverse ? -1 : 1;
+      return magnitude * directionMultiplier * speedMultiplier * reverseMultiplier;
+    }, [speed, direction, reverse]);
 
     const updateDimensions = useCallback(() => {
       const containerWidth = containerRef.current?.clientWidth ?? 0;
@@ -225,9 +242,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
       }
     }, []);
 
-    useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, gap, logoHeight]);
+    useResizeObserver(updateDimensions, [containerRef, seqRef], [effectiveLogos, gap, logoHeight]);
 
-    useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight]);
+    useImageLoader(seqRef, updateDimensions, [effectiveLogos, gap, logoHeight]);
 
     useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover);
 
@@ -351,10 +368,10 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >
-            {logos.map((item, itemIndex) => renderLogoItem(item, `${copyIndex}-${itemIndex}`))}
+            {effectiveLogos.map((item, itemIndex) => renderLogoItem(item, `${copyIndex}-${itemIndex}`))}
           </ul>
         )),
-      [copyCount, logos, renderLogoItem]
+      [copyCount, effectiveLogos, renderLogoItem]
     );
 
     const containerStyle = useMemo(

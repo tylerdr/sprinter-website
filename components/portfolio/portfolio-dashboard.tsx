@@ -1,6 +1,6 @@
 "use client";
 
-import { DraggableDashboard } from "@/components/draggable-dashboard";
+import DraggableDashboard from "@/components/draggable-dashboard";
 import { Card } from "@/components/ui/card";
 import { BarChart, Users, DollarSign, TrendingUp, Building2, Zap } from "lucide-react";
 

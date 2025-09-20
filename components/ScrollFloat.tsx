@@ -9,6 +9,8 @@ interface ScrollFloatProps {
   scrollContainerRef?: RefObject<HTMLElement>;
   containerClassName?: string;
   textClassName?: string;
+  className?: string;
+  delay?: number;
   animationDuration?: number;
   ease?: string;
   scrollStart?: string;
@@ -21,13 +23,15 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   scrollContainerRef,
   containerClassName = '',
   textClassName = '',
+  className = '',
+  delay = 0,
   animationDuration = 1,
   ease = 'back.inOut(2)',
   scrollStart = 'center bottom+=50%',
   scrollEnd = 'bottom bottom-=40%',
   stagger = 0.03
 }) => {
-  const containerRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const splitText = useMemo(() => {
     const text = typeof children === 'string' ? children : '';
@@ -63,6 +67,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         yPercent: 0,
         scaleY: 1,
         scaleX: 1,
+        delay: delay,
         stagger: stagger,
         scrollTrigger: {
           trigger: el,
@@ -73,12 +78,12 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         }
       }
     );
-  }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
+  }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger, delay]);
 
   return (
-    <h2 ref={containerRef} className={`my-5 overflow-hidden ${containerClassName}`}>
+    <div ref={containerRef} className={`my-5 overflow-hidden ${containerClassName} ${className}`}>
       <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>{splitText}</span>
-    </h2>
+    </div>
   );
 };
 

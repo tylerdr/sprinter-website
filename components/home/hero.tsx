@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { AnimatedGradientBackground } from "./animated-gradient-background";
 import Hyperspeed from "@/components/Hyperspeed";
-import { BlurText } from "@/components/BlurText";
-import { ShinyText } from "@/components/ShinyText";
-import { SplashCursor } from "@/components/SplashCursor";
+import BlurText from "@/components/BlurText";
+import ShinyText from "@/components/ShinyText";
+import SplashCursor from "@/components/SplashCursor";
 import StarBorder from "@/components/StarBorder";
 
 export function Hero() {

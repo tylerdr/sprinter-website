@@ -11,6 +11,15 @@ export interface BentoCardProps {
 }
 
 export interface BentoProps {
+  items?: Array<{
+    id: string;
+    title: string;
+    description: string;
+    icon?: React.ReactNode;
+    className?: string;
+    backgroundColor?: string;
+  }>;
+  className?: string;
   textAutoHide?: boolean;
   enableStars?: boolean;
   enableSpotlight?: boolean;
@@ -516,6 +525,8 @@ const useMobileDetection = () => {
 };
 
 const MagicBento: React.FC<BentoProps> = ({
+  items,
+  className = '',
   textAutoHide = true,
   enableStars = true,
   enableSpotlight = true,
@@ -531,6 +542,9 @@ const MagicBento: React.FC<BentoProps> = ({
   const gridRef = useRef<HTMLDivElement>(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
+
+  // Use provided items or fallback to default cardData
+  const effectiveCards = items || cardData;
 
   return (
     <>
@@ -672,14 +686,14 @@ const MagicBento: React.FC<BentoProps> = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-2">
-          {cardData.map((card, index) => {
+        <div className={`card-responsive grid gap-2 ${className}`}>
+          {effectiveCards.map((card, index) => {
             const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
 
             const cardStyle = {
-              backgroundColor: card.color || 'var(--background-dark)',
+              backgroundColor: ('color' in card ? (card as any).color : (card as any).backgroundColor) || 'var(--background-dark)',
               borderColor: 'var(--border-color)',
               color: 'var(--white)',
               '--glow-x': '50%',
@@ -702,7 +716,12 @@ const MagicBento: React.FC<BentoProps> = ({
                   enableMagnetism={enableMagnetism}
                 >
                   <div className="card__header flex justify-between gap-3 relative text-white">
-                    <span className="card__label text-base">{card.label}</span>
+                    {'icon' in card && card.icon && (
+                      <div className="card__icon mb-4">{card.icon}</div>
+                    )}
+                    {'label' in card && card.label && (
+                      <span className="card__label text-base">{card.label}</span>
+                    )}
                   </div>
                   <div className="card__content flex flex-col relative text-white">
                     <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
@@ -834,7 +853,12 @@ const MagicBento: React.FC<BentoProps> = ({
                 }}
               >
                 <div className="card__header flex justify-between gap-3 relative text-white">
-                  <span className="card__label text-base">{card.label}</span>
+                  {'icon' in card && card.icon && (
+                    <div className="card__icon mb-4">{card.icon}</div>
+                  )}
+                  {'label' in card && card.label && (
+                    <span className="card__label text-base">{card.label}</span>
+                  )}
                 </div>
                 <div className="card__content flex flex-col relative text-white">
                   <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>

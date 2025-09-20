@@ -1,7 +1,8 @@
 import { FC, CSSProperties } from 'react';
 
 interface GlitchTextProps {
-  children: string;
+  children?: string;
+  text?: string;
   speed?: number;
   enableShadows?: boolean;
   enableOnHover?: boolean;
@@ -17,11 +18,13 @@ interface CustomCSSProperties extends CSSProperties {
 
 const GlitchText: FC<GlitchTextProps> = ({
   children,
+  text,
   speed = 0.5,
   enableShadows = true,
   enableOnHover = false,
   className = ''
 }) => {
+  const displayText = text || children || '';
   const inlineStyles: CustomCSSProperties = {
     '--after-duration': `${speed * 3}s`,
     '--before-duration': `${speed * 2}s`,
@@ -42,12 +45,13 @@ const GlitchText: FC<GlitchTextProps> = ({
   const combinedClasses = `${baseClasses} ${pseudoClasses} ${className}`;
 
   return (
-    <div style={inlineStyles} data-text={children} className={combinedClasses}>
-      {children}
+    <div style={inlineStyles} data-text={displayText} className={combinedClasses}>
+      {displayText}
     </div>
   );
 };
 
+export { GlitchText };
 export default GlitchText;
 
 // tailwind.config.js

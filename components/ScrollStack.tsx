@@ -21,6 +21,8 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, item
 interface ScrollStackProps {
   className?: string;
   children: ReactNode;
+  offset?: number;
+  scaleFactor?: number;
   itemDistance?: number;
   itemScale?: number;
   itemStackDistance?: number;
@@ -37,6 +39,8 @@ interface ScrollStackProps {
 const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className = '',
+  offset = 0,
+  scaleFactor = 1,
   itemDistance = 100,
   itemScale = 0.03,
   itemStackDistance = 30,

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ClipboardCheck, Rocket, Layers, ArrowRight } from "lucide-react";
-import { ScrollFloat } from "@/components/ScrollFloat";
+import ScrollFloat from "@/components/ScrollFloat";
 
 const steps = [
   {

@@ -46,7 +46,14 @@ interface DraggableWrapperProps {
 }
 
 interface DraggableDashboardProps {
-  children: ReactNode
+  children?: ReactNode
+  widgets?: Array<{
+    id: string;
+    title: string;
+    content: React.ReactNode;
+    icon?: React.ReactNode;
+    size?: { width: number; height: number };
+  }>
   className?: string
   showLockToggle?: boolean
   showHandles?: boolean
@@ -147,6 +154,7 @@ function DragOverlayWrapper({ children }: { children: ReactNode }) {
 
 export default function DraggableDashboard({
   children,
+  widgets,
   className,
   showLockToggle = true,
   showHandles = true,
@@ -168,11 +176,32 @@ export default function DraggableDashboard({
 
   const availableCols = windowWidth >= 1024 ? gridCols : windowWidth >= 768 ? 2 : 1
 
-  const childrenArray = useMemo(() => Children.toArray(children), [children])
-  const initialIds = useMemo(() => childrenArray.map((child, index) => {
-    if (isValidElement(child) && child.props && typeof child.props === 'object' && 'id' in child.props) return child.props.id as string
-    return `item-${index}`
-  }), [childrenArray])
+  const childrenArray = useMemo(() => {
+    if (widgets) {
+      return widgets.map(widget => (
+        <DraggableWrapper key={widget.id} id={widget.id}>
+          <div className="p-4 bg-card rounded-lg border">
+            <div className="flex items-center gap-2 mb-2">
+              {widget.icon}
+              <h3 className="font-semibold">{widget.title}</h3>
+            </div>
+            {widget.content}
+          </div>
+        </DraggableWrapper>
+      ))
+    }
+    return Children.toArray(children)
+  }, [children, widgets])
+
+  const initialIds = useMemo(() => {
+    if (widgets) {
+      return widgets.map(widget => widget.id)
+    }
+    return childrenArray.map((child, index) => {
+      if (isValidElement(child) && child.props && typeof child.props === 'object' && 'id' in child.props) return child.props.id as string
+      return `item-${index}`
+    })
+  }, [childrenArray, widgets])
   const [itemOrder, setItemOrder] = useState<string[]>(initialIds)
   useEffect(() => {
     if (typeof window === 'undefined') return

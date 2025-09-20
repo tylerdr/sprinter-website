@@ -1,6 +1,6 @@
 "use client";
 
-import { MagicBento } from "@/components/MagicBento";
+import MagicBento from "@/components/MagicBento";
 import {
   Zap,
   Layers,

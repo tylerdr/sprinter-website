@@ -11,7 +11,7 @@ import {
   TimelineTitle,
 } from "@/components/ui/timeline";
 import ScrollFloat from "@/components/ScrollFloat";
-import { GlitchText } from "@/components/GlitchText";
+import GlitchText from "@/components/GlitchText";
 import { Zap, Code2, Rocket, CheckCircle2, Users, TrendingUp } from "lucide-react";
 
 const sprintSteps = [

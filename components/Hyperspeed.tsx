@@ -55,6 +55,9 @@ interface HyperspeedOptions {
 
 interface HyperspeedProps {
   effectOptions?: Partial<HyperspeedOptions>;
+  className?: string;
+  onSpeedUp?: () => void;
+  onSlowDown?: () => void;
 }
 
 const defaultOptions: HyperspeedOptions = {
@@ -1216,10 +1219,12 @@ class App {
   }
 }
 
-const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {} }) => {
+const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {}, className = '', onSpeedUp, onSlowDown }) => {
   const mergedOptions: HyperspeedOptions = {
     ...defaultOptions,
-    ...effectOptions
+    ...effectOptions,
+    ...(onSpeedUp && { onSpeedUp }),
+    ...(onSlowDown && { onSlowDown })
   };
   const hyperspeed = useRef<HTMLDivElement>(null);
   const appRef = useRef<App | null>(null);
@@ -1254,7 +1259,7 @@ const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {} }) => {
     };
   }, [mergedOptions]);
 
-  return <div id="lights" className="w-full h-full" ref={hyperspeed}></div>;
+  return <div id="lights" className={`w-full h-full ${className}`} ref={hyperspeed}></div>;
 };
 
 export default Hyperspeed;
