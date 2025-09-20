@@ -7,6 +7,7 @@ import { ArrowRight, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
+import { AnimatedGradientBackground } from "./animated-gradient-background";
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -41,11 +42,14 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero section"
     >
-      {/* Mouse-following gradient */}
+      {/* New Animated Gradient Background */}
+      <AnimatedGradientBackground />
+
+      {/* Mouse-following spotlight effect */}
       <div
-        className="absolute inset-0 opacity-20 transition-opacity duration-300"
+        className="absolute inset-0 opacity-10 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, color-mix(in oklch, var(--brand-start) 15%, transparent), transparent 40%)`,
+          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(var(--primary-rgb), 0.1), transparent 40%)`,
         }}
         aria-hidden="true"
       />
@@ -55,69 +59,17 @@ export function Hero() {
         <motion.div
           key={ripple.id}
           className="absolute pointer-events-none"
-          initial={{ width: 0, height: 0, opacity: 0.5 }}
-          animate={{ width: 400, height: 400, opacity: 0 }}
+          initial={{ width: 0, height: 0, opacity: 0.3 }}
+          animate={{ width: 600, height: 600, opacity: 0 }}
           transition={{ duration: 2, ease: "easeOut" }}
           style={{
-            left: ripple.x - 200,
-            top: ripple.y - 200,
-            background: `radial-gradient(circle, color-mix(in oklch, var(--brand-start) 30%, transparent), transparent)`,
+            left: ripple.x - 300,
+            top: ripple.y - 300,
+            background: `radial-gradient(circle, rgba(var(--primary-rgb), 0.2), transparent 60%)`,
             borderRadius: "50%",
           }}
         />
       ))}
-
-      {/* Floating particles */}
-      <div className="absolute inset-0" aria-hidden="true">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-brand/20 rounded-full"
-            initial={{ 
-              x: `${Math.random() * 100}%`,
-              y: `${Math.random() * 100}%` 
-            }}
-            animate={{
-              x: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
-              y: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
-            }}
-            transition={{
-              duration: 20 + i * 5,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "linear",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Gradient orbs */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <motion.div 
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 bg-brand-10"
-        />
-        <motion.div 
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-10 bg-brand-10"
-        />
-      </div>
       
       <div className="absolute inset-0 noise-bg opacity-30" aria-hidden="true" />
 

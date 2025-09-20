@@ -152,8 +152,9 @@ export function NavigationEnhanced() {
                   } else {
                     return (
                       <NavigationMenuItem key={item.href}>
-                        <Link href={item.href} legacyBehavior passHref>
-                          <NavigationMenuLink
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
                             className={cn(
                               navigationMenuTriggerStyle(),
                               "bg-transparent",
@@ -161,8 +162,8 @@ export function NavigationEnhanced() {
                             )}
                           >
                             {item.label}
-                          </NavigationMenuLink>
-                        </Link>
+                          </Link>
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                     );
                   }

@@ -99,6 +99,8 @@
   --brand-start: #1d7dff; /* matches Sprinter blue */
   --brand-end: #0a3bcf;   /* deeper Sprinter blue */
   --brand-angle: 90deg;
+  /* RGB values for gradient effects */
+  --primary-rgb: 29, 125, 255; /* Sprinter blue in RGB */
 }
 
 .dark {
@@ -144,6 +146,8 @@
   --brand-start: #6aa6ff;
   --brand-end: #1b4ae1;
   --brand-angle: 90deg;
+  /* RGB values for gradient effects */
+  --primary-rgb: 106, 166, 255; /* Brighter blue in RGB for dark mode */
 }
 
 @layer base {

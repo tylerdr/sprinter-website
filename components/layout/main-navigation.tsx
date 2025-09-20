@@ -179,11 +179,11 @@ export function MainNavigation() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/case-studies" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink asChild>
+                    <Link href="/case-studies" className={navigationMenuTriggerStyle()}>
                       Case Studies
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
