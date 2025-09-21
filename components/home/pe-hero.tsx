@@ -43,14 +43,14 @@ export function PEHero() {
       aria-label="Private Equity AI Hero"
     >
       {/* Sparkles Background */}
-      <div className="absolute inset-0 h-full w-full">
+      <div className="absolute inset-0 h-full w-full z-0">
         <SparklesCore
           id="hero-sparkles"
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
           particleDensity={100}
-          className="w-full h-full"
+          className="w-full h-full opacity-100"
           particleColor="#FFFFFF"
         />
       </div>
@@ -121,7 +121,12 @@ export function PEHero() {
           </motion.div>
 
           {/* Main Headline */}
-          <ScrollFloat delay={0.3} className="mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mb-6"
+          >
             <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
               <Balancer>
                 {variants.hero.headline.line1}{" "}
@@ -140,7 +145,7 @@ export function PEHero() {
                 </div>
               </Balancer>
             </div>
-          </ScrollFloat>
+          </motion.div>
 
           {/* Subheadline */}
           <motion.p
