@@ -138,9 +138,9 @@ export function Footer() {
         <div className="border-t border-border/30 mt-8 pt-8 text-center">
           <Link
             href="/contact"
-            className="px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity touch-manipulation text-sm inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"
+            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all touch-manipulation text-sm inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
           >
-            Start a 10-Day Sprint
+            Run the 10-Day Portfolio Sprint
           </Link>
         </div>
 

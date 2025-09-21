@@ -5,12 +5,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Building2, Shield, Clock, CheckCircle } from "lucide-react";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
+import { COPY } from "@/lib/copy-config";
 
 export function OperatingPartnerHero() {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-background py-20 pt-32">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
+      {/* Enhanced background with better contrast */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background" />
+      </div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
@@ -28,7 +32,7 @@ export function OperatingPartnerHero() {
           >
             <Building2 className="w-4 h-4 text-blue-400" />
             <span className="text-sm font-medium text-blue-400">
-              Fund-Level AI Orchestration
+              {COPY.operatingPartner.badge}
             </span>
           </motion.div>
 
@@ -39,8 +43,18 @@ export function OperatingPartnerHero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight"
           >
-            Your AI Operating Partner
-            <span className="gradient-text block mt-2">for Private Equity</span>
+            {COPY.operatingPartner.headline.line1}
+            <span className="block mt-2">
+              <span className="relative">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold">
+                  {COPY.operatingPartner.headline.line2}
+                </span>
+                {/* Add a subtle shadow/outline for better visibility */}
+                <span className="absolute inset-0 text-foreground/10 font-bold blur-lg" aria-hidden="true">
+                  for Private Equity
+                </span>
+              </span>
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -50,8 +64,10 @@ export function OperatingPartnerHero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
-            Fund-level orchestration and <strong>boringly reliable</strong> 30-45 day wins—starting with AP & expense automation, Quote Intelligence, and 3PL Ops. 
-            <span className="block mt-2 text-lg">No API? No problem. We build the safe middle layer for QBO/Sage/desktop.</span>
+            {COPY.operatingPartner.subheadline.main.split('boringly reliable').map((part, index) =>
+              index === 0 ? part : <><strong>boringly reliable</strong>{part}</>
+            )}
+            <span className="block mt-2 text-lg">{COPY.operatingPartner.subheadline.secondary}</span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -63,12 +79,12 @@ export function OperatingPartnerHero() {
           >
             <BookDemoButton 
               size="lg" 
-              text="Book 90-Minute OP Workshop"
+              text={COPY.operatingPartner.cta.primary}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
             />
             <Button asChild size="lg" variant="outline" className="text-base">
               <Link href="#ap-brief" className="group">
-                Download AP Accelerator Brief
+                {COPY.operatingPartner.cta.secondary}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

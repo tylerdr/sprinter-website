@@ -74,15 +74,15 @@ export default function AIAssessmentPage() {
       {/* Hero Section - Simplified */}
       <section className="relative overflow-hidden px-6 py-16 sm:py-24 lg:px-8">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 blur-3xl dark:from-blue-600/20 dark:via-purple-600/20 dark:to-pink-600/20" />
         </div>
         
         <div className="mx-auto max-w-4xl">
           {/* Trust Badge */}
           <div className="mb-6 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm border border-primary/30">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm border border-primary/20 backdrop-blur-sm">
               <SparklesIcon className="h-4 w-4 text-primary" />
-              <span className="text-primary font-medium">Free AI Opportunity Analysis</span>
+              <span className="text-foreground font-medium">Free AI Opportunity Analysis</span>
             </div>
           </div>
 
@@ -90,11 +90,11 @@ export default function AIAssessmentPage() {
             Find $1M+ in AI Opportunities
           </h1>
           
-          <p className="mt-6 text-center text-xl leading-8 text-gray-300">
+          <p className="mt-6 text-center text-xl leading-8 text-muted-foreground">
             Get Your Custom PE AI Roadmap in 24 Hours
           </p>
-          
-          <p className="mt-4 text-center text-lg text-gray-400">
+
+          <p className="mt-4 text-center text-lg text-muted-foreground/80">
             See exactly where AI can transform your deal flow, due diligence, and portfolio operations.
             Takes 2 minutes. 100% free. No sales call required.
           </p>
@@ -116,11 +116,11 @@ export default function AIAssessmentPage() {
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-6 md:grid-cols-3">
             {benefits.map((benefit) => (
-              <Card key={benefit.title} className="border-gray-800 bg-gray-900/50 backdrop-blur">
+              <Card key={benefit.title} className="border-border bg-card/50 backdrop-blur">
                 <CardContent className="p-6 text-center">
                   <benefit.icon className="mx-auto h-8 w-8 text-primary mb-3" />
-                  <h3 className="mb-2 font-semibold text-white">{benefit.title}</h3>
-                  <p className="text-sm text-gray-400">{benefit.description}</p>
+                  <h3 className="mb-2 font-semibold text-foreground">{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -131,7 +131,7 @@ export default function AIAssessmentPage() {
       {/* Simple Form - Only Essential Fields */}
       <section id="assessment-form" className="px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-xl">
-          <Card className="border-primary/20 bg-gray-900/50 backdrop-blur">
+          <Card className="border-primary/20 bg-card/50 backdrop-blur">
             <CardContent className="p-8">
               <div className="mb-6 text-center">
                 <h2 className="text-2xl font-bold mb-2">Start Your Free Assessment</h2>
@@ -227,17 +227,17 @@ export default function AIAssessmentPage() {
           
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="border-gray-800 bg-gray-900/50 backdrop-blur">
+              <Card key={idx} className="border-border bg-card/50 backdrop-blur">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-2 mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-yellow-500">★</span>
+                      <span key={i} className="text-yellow-500 dark:text-yellow-400">★</span>
                     ))}
                   </div>
-                  <p className="mb-4 italic text-gray-300">"{testimonial.quote}"</p>
+                  <p className="mb-4 italic text-muted-foreground">"{testimonial.quote}"</p>
                   <div className="text-sm">
-                    <p className="font-semibold text-white">{testimonial.author}</p>
-                    <p className="text-gray-500">{testimonial.company}</p>
+                    <p className="font-semibold text-foreground">{testimonial.author}</p>
+                    <p className="text-muted-foreground">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -249,16 +249,16 @@ export default function AIAssessmentPage() {
       {/* Urgency Section */}
       <section className="bg-gradient-to-b from-transparent via-primary/5 to-transparent px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 mb-6">
-            <BoltIcon className="h-4 w-4 text-orange-500" />
-            <span className="text-sm font-medium text-orange-500">Limited Time Offer</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+            <BoltIcon className="h-4 w-4 text-orange-500 dark:text-orange-400" />
+            <span className="text-sm font-medium text-orange-500 dark:text-orange-400">Limited Time Offer</span>
           </div>
           
           <h2 className="mb-4 text-2xl font-bold">Why PE Firms Choose Our Assessment</h2>
           
           <div className="grid gap-4 text-left max-w-xl mx-auto">
             <div className="flex items-start gap-3">
-              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+              <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5" />
               <div>
                 <p className="font-medium">No Generic Advice</p>
                 <p className="text-sm text-muted-foreground">
@@ -267,7 +267,7 @@ export default function AIAssessmentPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+              <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5" />
               <div>
                 <p className="font-medium">Actionable Roadmap</p>
                 <p className="text-sm text-muted-foreground">
@@ -276,7 +276,7 @@ export default function AIAssessmentPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+              <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5" />
               <div>
                 <p className="font-medium">ROI Projections</p>
                 <p className="text-sm text-muted-foreground">
@@ -291,7 +291,7 @@ export default function AIAssessmentPage() {
       {/* Final CTA */}
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-purple-600/10">
+          <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-purple-600/5 dark:from-primary/10 dark:to-purple-600/10">
             <CardContent className="p-8">
               <ShieldCheckIcon className="mx-auto h-12 w-12 text-primary mb-4" />
               <h2 className="mb-4 text-2xl font-bold">

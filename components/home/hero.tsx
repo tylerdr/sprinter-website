@@ -7,11 +7,10 @@ import { ArrowRight, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
 import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
-import { AnimatedGradientBackground } from "./animated-gradient-background";
+import { COPY } from "@/lib/copy-config";
 import Hyperspeed from "@/components/Hyperspeed";
 import BlurText from "@/components/BlurText";
 import ShinyText from "@/components/ShinyText";
-import SplashCursor from "@/components/SplashCursor";
 import StarBorder from "@/components/StarBorder";
 
 export function Hero() {
@@ -47,23 +46,43 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero section"
     >
-      {/* Hyperspeed Background - Click and hold to accelerate */}
-      <div className="absolute inset-0 z-0">
+      {/* Hyperspeed Background */}
+      <div className="absolute inset-0">
         <Hyperspeed
           className="absolute inset-0"
-          onSpeedUp={() => {}}
-          onSlowDown={() => {}}
+          effectOptions={{
+            distortion: 'turbulentDistortion',
+            length: 400,
+            roadWidth: 10,
+            islandWidth: 2,
+            lanesPerRoad: 3,
+            fov: 90,
+            fovSpeedUp: 150,
+            speedUp: 2,
+            carLightsFade: 0.4,
+            totalSideLightSticks: 15,
+            colors: {
+              roadColor: 0x080808,
+              islandColor: 0x0a0a0a,
+              background: 0x000000,
+              shoulderLines: 0x131313,
+              brokenLines: 0x131313,
+              leftCars: [0xd856bf, 0x6750a2, 0xc247ac],
+              rightCars: [0x03b3c3, 0x0e5ea5, 0x324555],
+              sticks: 0x03b3c3
+            }
+          }}
         />
       </div>
 
-      {/* Splash Cursor Effect */}
-      <SplashCursor />
+      {/* Dark gradient overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90 z-10" />
 
-      {/* Mouse-following spotlight effect */}
+      {/* Subtle spotlight effect that follows the mouse */}
       <div
-        className="absolute inset-0 opacity-10 transition-opacity duration-500 pointer-events-none"
+        className="absolute inset-0 opacity-20 transition-opacity duration-500 pointer-events-none z-15"
         style={{
-          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(var(--primary-rgb), 0.1), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.05), transparent 40%)`,
         }}
         aria-hidden="true"
       />
@@ -87,7 +106,7 @@ export function Hero() {
       
       <div className="absolute inset-0 noise-bg opacity-30" aria-hidden="true" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,13 +121,13 @@ export function Hero() {
           >
             <Zap className="w-4 h-4 text-warning" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium">
-              Real AI in Production • Not Just Another Deck
+              {COPY.hero.badge}
             </span>
           </motion.div>
 
           <div className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
             <BlurText
-              text="Build at the"
+              text={COPY.hero.headline.line1}
               animateBy="words"
               direction="top"
               delay={0.3}
@@ -116,7 +135,7 @@ export function Hero() {
             />
             {" "}
             <BlurText
-              text="pace of AI"
+              text={COPY.hero.headline.line2}
               animateBy="words"
               direction="bottom"
               delay={0.5}
@@ -131,7 +150,7 @@ export function Hero() {
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 font-normal"
           >
             <Balancer>
-              Ship a working prototype in 10 days. Go live in 4 weeks. Your team stays in control while AI handles the repetitive.
+              {COPY.hero.subheadline}
             </Balancer>
           </motion.p>
 
@@ -154,7 +173,7 @@ export function Hero() {
                   className="mr-2 inline-block w-4 h-4 sm:w-5 sm:h-5"
                   aria-hidden="true"
                 />
-                <ShinyText text="Get an AI Opportunity Audit" />
+                <ShinyText text={COPY.hero.cta.primary} />
                 <ArrowRight
                   className="ml-1 inline-block w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   aria-hidden="true"
@@ -163,7 +182,7 @@ export function Hero() {
             </StarBorder>
             <Button asChild variant="glass" className="px-8 py-4 text-base">
               <Link href="/contact" className="group">
-                Start a 10-Day Sprint
+                {COPY.hero.cta.secondary}
               </Link>
             </Button>
           </motion.div>
