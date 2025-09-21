@@ -104,7 +104,7 @@ export const NAVIGATION = {
           icon: "chart"
         },
         {
-          href: "/tools/roi-calculator",
+          href: "/labs/roi-calculator",
           label: "Calculate Your ROI",
           description: "Quantify AI value for your portfolio in 2 minutes",
           icon: "calculator"
