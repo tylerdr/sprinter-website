@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
-import SwooshText from "@/components/kokonutui/swoosh-text";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import AttractButton from "@/components/kokonutui/attract-button";
 import ScrollFloat from "@/components/ScrollFloat";
 import GlitchText from "@/components/GlitchText";
@@ -131,17 +131,9 @@ export function PEHero() {
               <Balancer>
                 {variants.hero.headline.line1}{" "}
                 <div className="block mt-2">
-                  <SwooshText
-                    text={variants.hero.headline.line2}
-                    className="gradient-text"
-                    shadowColors={{
-                      first: "rgba(59, 130, 246, 0.5)",
-                      second: "rgba(147, 51, 234, 0.4)",
-                      third: "rgba(236, 72, 153, 0.3)",
-                      fourth: "rgba(251, 146, 60, 0.2)",
-                      glow: "rgba(147, 51, 234, 0.1)"
-                    }}
-                  />
+                  <div className="inline-block w-full">
+                    <TextHoverEffect text={variants.hero.headline.line2} duration={0.3} />
+                  </div>
                 </div>
               </Balancer>
             </div>

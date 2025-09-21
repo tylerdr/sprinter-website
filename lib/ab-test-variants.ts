@@ -10,35 +10,35 @@ export const heroVariants = {
       line1: "AI Operating Partner",
       line2: "for Private Equity"
     },
-    subheadline: "Start with one document type your team will love. Expand to end-to-end automation. 30-45 day wins guaranteed. ≥60% touchless processing with fund-level AI governance."
+    subheadline: "Transform portfolio operations with production-ready AI. From pilot to scale in 30-45 days. Measurable ROI, board-ready governance, zero infrastructure required."
   },
   scale: {
     headline: {
       line1: "Your AI Operating Partner",
       line2: "for Private Equity"
     },
-    subheadline: "Build and deploy AI across your portfolio in 30-45 days. Focus on measurable ROI with governance you can defend to LPs. No API? No problem."
+    subheadline: "Deploy battle-tested AI solutions across your portfolio. Real implementations that drive 60%+ automation rates. From zero to production in 30-45 days."
   },
   need: {
     headline: {
       line1: "Ship AI That Actually Works.",
       line2: "In Weeks, Not Quarters."
     },
-    subheadline: "The AI Operating Partner for PE. Real implementations that drive efficiency gains. From pilot to production—auditable, repeatable, defensible."
+    subheadline: "The AI Operating Partner that ships. Real implementations, measurable impact, LP-ready governance. Your portfolio companies see results in weeks, not quarters."
   },
   transform: {
     headline: {
       line1: "Transform Portfolio Operations.",
       line2: "With AI That Ships."
     },
-    subheadline: "Hands-on execution with measurable impact. Build the AI layer your portfolio companies need. Clear deliverables in 30-45 days."
+    subheadline: "Hands-on AI implementation that actually works. We build, deploy, and scale solutions tailored to your portfolio. First value in 30 days, full ROI in 90."
   },
   accelerate: {
     headline: {
       line1: "No API? No Problem.",
       line2: "We Drive QBO/Sage/Desktop."
     },
-    subheadline: "Your AI Operating Partner for lower-middle-market PE. Upload-only Sage? We ship the CSV spec and automations. Desktop app? We build the agentic middle layer."
+    subheadline: "AI that works with your legacy systems. We automate workflows for any ERP—even desktop and upload-only. Your portfolio gets enterprise AI without enterprise upgrades."
   }
 } as const;
 
