@@ -7,80 +7,80 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "AI Operating Partner",
-      line2: "for Private Equity"
+      line1: "AI Scoping Workshop",
+      line2: "for Private Equity Portcos"
     },
-    subheadline: "Transform portfolio operations with production-ready AI. From pilot to scale in 30-45 days. Measurable ROI, board-ready governance, zero infrastructure required."
+    subheadline: "Fixed-fee AI readiness assessment and implementation roadmap. 2-week diagnostic with clear deliverables: options memo, pilot SOW, and ROI model. Built specifically for PE portfolio operations."
   },
   scale: {
     headline: {
-      line1: "Your AI Operating Partner",
-      line2: "for Private Equity"
+      line1: "Your GenAI Implementation Partner",
+      line2: "for Portfolio Companies"
     },
-    subheadline: "Deploy battle-tested AI solutions across your portfolio. Real implementations that drive 60%+ automation rates. From zero to production in 30-45 days."
+    subheadline: "Deploy production-ready AI across your portfolio. From AP automation to quote intelligence systems. 60%+ touchless processing in 30-45 days with full governance and audit trails."
   },
   need: {
     headline: {
-      line1: "Ship AI That Actually Works.",
-      line2: "In Weeks, Not Quarters."
+      line1: "AI Due Diligence & Value Creation",
+      line2: "for Private Equity"
     },
-    subheadline: "The AI Operating Partner that ships. Real implementations, measurable impact, LP-ready governance. Your portfolio companies see results in weeks, not quarters."
+    subheadline: "Technical due diligence, AI readiness assessments, and hands-on implementation. We help Operating Partners and Value Creation teams ship real AI wins. Portfolio-wide playbooks included."
   },
   transform: {
     headline: {
-      line1: "Transform Portfolio Operations.",
-      line2: "With AI That Ships."
+      line1: "Boutique AI Consulting",
+      line2: "for PE Portfolio Ops"
     },
-    subheadline: "Hands-on AI implementation that actually works. We build, deploy, and scale solutions tailored to your portfolio. First value in 30 days, full ROI in 90."
+    subheadline: "Fixed-fee sprints that deliver working AI in production. No PowerPoints, just pilots. From 3PL operations to portfolio reporting—we've automated it for 100+ portcos."
   },
   accelerate: {
     headline: {
-      line1: "No API? No Problem.",
-      line2: "We Drive QBO/Sage/Desktop."
+      line1: "AI Strategy Workshop",
+      line2: "for Operating Partners"
     },
-    subheadline: "AI that works with your legacy systems. We automate workflows for any ERP—even desktop and upload-only. Your portfolio gets enterprise AI without enterprise upgrades."
+    subheadline: "2-week sprint to assess, scope, and pilot AI across your portfolio. Vendor-neutral recommendations with build vs. buy analysis. Clear acceptance criteria and LP-ready governance docs."
   }
 } as const;
 
 export const ctaVariants = {
   blueprint: {
-    primary: "Get Portfolio AI Blueprint →",
-    secondary: "Book Partner Meeting"
+    primary: "Book AI Scoping Workshop →",
+    secondary: "Download RFP Template"
   },
   assessment: {
-    primary: "Get Free Portfolio Assessment",
-    secondary: "Schedule LP Briefing"
+    primary: "Get AI Readiness Assessment",
+    secondary: "View Fixed-Fee Pricing"
   },
   readiness: {
-    primary: "Assess Portfolio AI Readiness",
-    secondary: "Explore Operating Partnership"
+    primary: "Schedule Discovery Sprint",
+    secondary: "See Portfolio Case Studies"
   },
   audit: {
-    primary: "Get Free Portfolio AI Audit",
-    secondary: "Discuss Your Portfolio"
+    primary: "Book 2-Week Diagnostic",
+    secondary: "Get Options Memo Template"
   }
 } as const;
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "Real Results: AP touchless rate to 60%+ in 30 days",
-    description: "Quote cycle time ↓42%. Working capital optimization. Measurable impact you can track and scale across portfolio companies.",
-    cta: "Get started with a 10-day AI Sprint. See results fast."
+    headline: "Portfolio-Wide AI Implementation in 90 Days",
+    description: "Start with one portco, scale to all. AP automation hitting 60%+ touchless. Quote intelligence cutting cycle time by 42%. Full playbooks for replication.",
+    cta: "Book your AI Scoping Workshop today. Fixed fee, clear deliverables."
   },
   leftBehind: {
-    headline: "Your ERP is ancient? Upload-only Sage/Biz?",
-    description: "We ship CSV specs + automations. No rewires. Your champion approves, not executes.",
-    cta: "Book the 90-Minute OP Workshop. Leave with a pilot plan and options memo."
+    headline: "AI Due Diligence for Tech & Data Risk",
+    description: "5-10 day assessment packages. Model risk, data governance, vendor analysis, TCO projections. Board-ready reports that actually inform deal decisions.",
+    cta: "Schedule Due Diligence Consultation. See sample reports and pricing."
   },
   competitive: {
-    headline: "Fee-offset optics. Security pack. Vendor neutrality.",
-    description: "Governance you can defend. Least-privilege access, redacted docs, full audit logs. We bring the policy pack.",
-    cta: "Download the Governance Pack PDF. See what your CFO and counsel will sign."
+    headline: "Operating Partner AI Enablement",
+    description: "Equip your OPs with AI playbooks tailored to portfolio verticals. From pricing optimization to procurement analytics. Hands-on workshops, not theory.",
+    cta: "Book Operating Partner Workshop. 90 minutes to transform your approach."
   },
   roi: {
-    headline: "30-45 day AP win you can replicate across portcos",
-    description: "Acceptance criteria: ≥60% touchless invoices, exception SLA <48h, full audit trail. For upload-only Sage/Biz, we ship the CSV spec.",
-    cta: "Want the 1-page pilot brief and governance pack? 90-minute OP Workshop next week."
+    headline: "Fixed-Fee Implementation, Clear Acceptance Criteria",
+    description: "No hourly billing surprises. 2-week diagnostic, 30-day pilot, 90-day scale. Every engagement includes SOW, success metrics, and governance framework.",
+    cta: "View pricing and engagement models. Transparent fees, proven results."
   }
 } as const;
 

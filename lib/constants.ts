@@ -31,45 +31,60 @@ export const NAVIGATION = {
       label: "Solutions",
       type: "dropdown",
       dropdown: [
+        { href: "/ai-scoping-workshop", label: "AI Scoping Workshop" },
+        { href: "/ai-implementation-partner", label: "Implementation Partner" },
+        { href: "/ai-due-diligence-consulting", label: "Due Diligence" },
         { href: "/operating-partner", label: "AI Operating Partner" },
-        { href: "/solutions/ap-automation", label: "Financial Process Automation" },
+        { href: "/solutions/ap-automation", label: "Financial Automation" },
         { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
-        { href: "/solutions/3pl-ops", label: "3PL Ops & Billing" },
-        { href: "/partnership", label: "Partnership Program" },
+        { href: "/solutions/3pl-ops", label: "3PL Operations" },
         { href: "/pe-services", label: "All Services" },
       ],
       items: [
         {
+          href: "/ai-scoping-workshop",
+          label: "AI Scoping Workshop",
+          description: "2-week diagnostic with options memo, pilot SOW, and ROI model",
+          featured: true,
+          icon: "rocket",
+          badge: "Fixed Fee"
+        },
+        {
+          href: "/ai-implementation-partner",
+          label: "Implementation Partner",
+          description: "Your boutique AI consulting firm for portfolio companies",
+          icon: "users",
+          badge: "100+ Portcos"
+        },
+        {
+          href: "/ai-due-diligence-consulting",
+          label: "Due Diligence",
+          description: "Technical AI & data assessment for M&A transactions",
+          icon: "shield"
+        },
+        {
           href: "/operating-partner",
           label: "AI Operating Partner",
           description: "Transform your portfolio with fund-level AI orchestration",
-          featured: true,
-          icon: "rocket",
-          badge: "Most Popular"
+          icon: "rocket"
         },
         {
           href: "/solutions/ap-automation",
-          label: "Financial Process Automation",
-          description: "85% touchless AP, expense & reconciliation automation",
+          label: "Financial Automation",
+          description: "60%+ touchless AP, expense & reconciliation automation",
           icon: "calculator"
         },
         {
           href: "/solutions/quote-intelligence",
           label: "Quote Intelligence",
-          description: "Generate accurate quotes in minutes, not hours",
+          description: "42% faster quote cycles with AI-powered pricing",
           icon: "zap"
         },
         {
           href: "/solutions/3pl-ops",
-          label: "3PL Operations & Billing",
+          label: "3PL Operations",
           description: "End-to-end automation from quote to cash",
           icon: "truck"
-        },
-        {
-          href: "/partnership",
-          label: "Partner With Us",
-          description: "Joint ventures for PE firms & consultants",
-          icon: "handshake"
         },
         {
           href: "/pe-services",
@@ -204,16 +219,17 @@ export const NAVIGATION = {
   ],
   footer: {
     products: [
+      { href: "/ai-scoping-workshop", label: "Scoping Workshop" },
+      { href: "/ai-implementation-partner", label: "Implementation Partner" },
+      { href: "/ai-due-diligence-consulting", label: "Due Diligence" },
       { href: "/operating-partner", label: "Operating Partner" },
-      { href: "/ai-sprint", label: "AI Sprint" },
-      { href: "/ai-assessment", label: "AI Assessment" },
-      { href: "/pe-services", label: "PE Services" },
+      { href: "/pe-services", label: "All Services" },
     ],
     solutions: [
-      { href: "/solutions/ap-automation", label: "Financial Process Automation" },
+      { href: "/solutions/ap-automation", label: "AP Automation" },
       { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
-      { href: "/solutions/3pl-ops", label: "3PL Ops & Billing" },
-      { href: "/solutions", label: "All Prebuilt Solutions" },
+      { href: "/solutions/3pl-ops", label: "3PL Operations" },
+      { href: "/solutions", label: "All Solutions" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },

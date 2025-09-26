@@ -45,17 +45,12 @@ interface BentoItem {
     feature?:
         | "chart"
         | "counter"
-        | "code"
         | "timeline"
         | "spotlight"
         | "icons"
-        | "typing"
         | "metrics";
     spotlightItems?: string[];
     timeline?: Array<{ year: string; event: string }>;
-    code?: string;
-    codeLang?: string;
-    typingText?: string;
     metrics?: Array<{
         label: string;
         value: number;
@@ -93,13 +88,16 @@ const bentoItems: BentoItem[] = [
     },
     {
         id: "stat1",
-        title: "Boringly Reliable Automation",
+        title: "Fixed-Fee Scoping Workshops",
         description:
-            "60%+ touchless processing, <48h exception handling, full audit trail. No drama, just results.",
-        href: "/solutions/ap-automation",
-        feature: "typing",
-        typingText:
-            "// 30-45 day implementation\nconst pilot = await sprinter.launch({\n  target: 'AP_AUTOMATION',\n  touchless: '>=60%',\n  exceptions: '<48h',\n  audit: 'FULL_TRAIL'\n});\n\n// Clear acceptance criteria\nawait pilot.validate();",
+            "2-week diagnostics with clear deliverables. Options memo, pilot SOW, and ROI model included. No surprises.",
+        href: "/ai-scoping-workshop",
+        feature: "metrics",
+        metrics: [
+            { label: "Diagnostic Complete", value: 100, suffix: "%", color: "emerald" },
+            { label: "Options Delivered", value: 3, suffix: "+", color: "blue" },
+            { label: "ROI Clarity", value: 100, suffix: "%", color: "violet" },
+        ],
         size: "md",
         className: "col-span-2 row-span-1 col-start-1 col-end-3",
     },
@@ -330,52 +328,7 @@ const TimelineFeature = ({
     );
 };
 
-const TypingCodeFeature = ({ text }: { text: string }) => {
-    const [displayedText, setDisplayedText] = useState("");
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const terminalRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (currentIndex < text.length) {
-            const timeout = setTimeout(() => {
-                setDisplayedText((prev) => prev + text[currentIndex]);
-                setCurrentIndex((prev) => prev + 1);
-
-                if (terminalRef.current) {
-                    terminalRef.current.scrollTop =
-                        terminalRef.current.scrollHeight;
-                }
-            }, Math.random() * 30 + 10); // Random typing speed for realistic effect
-
-            return () => clearTimeout(timeout);
-        }
-    }, [currentIndex, text]);
-
-    // Reset animation when component unmounts and remounts
-    useEffect(() => {
-        setDisplayedText("");
-        setCurrentIndex(0);
-    }, []);
-
-    return (
-        <div className="mt-3 relative">
-            <div className="flex items-center gap-2 mb-2">
-                <div className="text-xs text-neutral-500 dark:text-neutral-400">
-                    server.ts
-                </div>
-            </div>
-            <div
-                ref={terminalRef}
-                className="bg-neutral-900 dark:bg-black text-neutral-100 p-3 rounded-md text-xs font-mono h-[150px] overflow-y-auto"
-            >
-                <pre className="whitespace-pre-wrap">
-                    {displayedText}
-                    <span className="animate-pulse">|</span>
-                </pre>
-            </div>
-        </div>
-    );
-};
+// Removed TypingCodeFeature - no longer needed
 
 const MetricsFeature = ({
     metrics,
@@ -685,10 +638,6 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
                         )}
 
                         {item.feature === "icons" && <IconsFeature />}
-
-                        {item.feature === "typing" && item.typingText && (
-                            <TypingCodeFeature text={item.typingText} />
-                        )}
 
                         {item.feature === "metrics" && item.metrics && (
                             <MetricsFeature metrics={item.metrics} />

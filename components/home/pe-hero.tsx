@@ -3,17 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Building2, ChartBar, Sparkles } from "lucide-react";
+import { ArrowRight, TrendingUp, Building2, ChartBar } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import AttractButton from "@/components/kokonutui/attract-button";
-import ScrollFloat from "@/components/ScrollFloat";
-import GlitchText from "@/components/GlitchText";
-import TrueFocus from "@/components/TrueFocus";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import TextShift from "@/components/text-shift";
+import BlurText from "@/components/BlurText";
 
 const stats = [
   { value: "30-45", label: "days to first value" },
@@ -60,23 +54,23 @@ export function PEHero() {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="mb-6"
-          >
-            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              <Balancer>
-                {variants.hero.headline.line1}{" "}
-                <div className="block mt-2">
-                  <div className="inline-block w-full">
-                    <TextHoverEffect text={variants.hero.headline.line2} duration={0.3} />
-                  </div>
-                </div>
-              </Balancer>
-            </div>
-          </motion.div>
+          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
+            <BlurText
+              text={variants.hero.headline.line1}
+              animateBy="words"
+              direction="top"
+              delay={0.3}
+              className="inline"
+            />
+            {" "}
+            <BlurText
+              text={variants.hero.headline.line2}
+              animateBy="words"
+              direction="bottom"
+              delay={0.5}
+              className="gradient-text block sm:inline"
+            />
+          </div>
 
           {/* Subheadline */}
           <motion.p
