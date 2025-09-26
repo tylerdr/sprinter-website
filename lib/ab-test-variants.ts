@@ -7,10 +7,10 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "AI Scoping Workshop",
-      line2: "for Private Equity Portcos"
+      line1: "AI Operating Partner",
+      line2: "for Private Equity"
     },
-    subheadline: "Fixed-fee AI readiness assessment and implementation roadmap. 2-week diagnostic with clear deliverables: options memo, pilot SOW, and ROI model. Built specifically for PE portfolio operations."
+    subheadline: "Transform portfolio operations with production-ready AI. From pilot to scale in 30-45 days. Measurable ROI, board-ready governance, zero infrastructure required."
   },
   scale: {
     headline: {
