@@ -7,7 +7,6 @@ import { ArrowRight, TrendingUp, Building2, ChartBar } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
-import BlurText from "@/components/BlurText";
 
 const stats = [
   { value: "30-45", label: "days to first value" },
@@ -54,23 +53,20 @@ export function PEHero() {
           </motion.div>
 
           {/* Main Headline */}
-          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
-            <BlurText
-              text={variants.hero.headline.line1}
-              animateBy="words"
-              direction="top"
-              delay={0.3}
-              className="inline"
-            />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight"
+          >
+            <span className="block sm:inline">
+              {variants.hero.headline.line1}
+            </span>
             {" "}
-            <span className="relative">
-              <BlurText
-                text={variants.hero.headline.line2}
-                animateBy="words"
-                direction="bottom"
-                delay={0.5}
-                className="gradient-text font-bold block sm:inline"
-              />
+            <span className="relative inline-block">
+              <span className="gradient-text font-bold">
+                {variants.hero.headline.line2}
+              </span>
               {/* Add subtle shadow for better visibility in dark mode */}
               <span
                 className="absolute inset-0 text-foreground/5 font-bold blur-xl -z-10"
@@ -79,7 +75,7 @@ export function PEHero() {
                 {variants.hero.headline.line2}
               </span>
             </span>
-          </div>
+          </motion.div>
 
           {/* Subheadline */}
           <motion.p

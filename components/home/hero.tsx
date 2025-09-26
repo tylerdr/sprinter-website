@@ -7,7 +7,6 @@ import { ArrowRight, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
 import Balancer from "react-wrap-balancer";
 import { COPY } from "@/lib/copy-config";
-import BlurText from "@/components/BlurText";
 import ShinyText from "@/components/ShinyText";
 import StarBorder from "@/components/StarBorder";
 
@@ -45,23 +44,20 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <div className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
-            <BlurText
-              text={COPY.hero.headline.line1}
-              animateBy="words"
-              direction="top"
-              delay={0.3}
-              className="inline"
-            />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"
+          >
+            <span className="block sm:inline">
+              {COPY.hero.headline.line1}
+            </span>
             {" "}
-            <BlurText
-              text={COPY.hero.headline.line2}
-              animateBy="words"
-              direction="bottom"
-              delay={0.5}
-              className="gradient-text block sm:inline"
-            />
-          </div>
+            <span className="gradient-text font-bold block sm:inline">
+              {COPY.hero.headline.line2}
+            </span>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
