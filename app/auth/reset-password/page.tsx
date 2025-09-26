@@ -39,13 +39,13 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-neutral-900/50 border-neutral-800">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-card/50 border-border">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Reset Password
           </CardTitle>
-          <CardDescription className="text-neutral-400">
+          <CardDescription className="text-muted-foreground">
             {isSuccess 
               ? "Check your email for the reset link"
               : "Enter your email to receive a password reset link"
@@ -56,7 +56,7 @@ export default function ResetPasswordPage() {
           {!isSuccess ? (
             <form onSubmit={handleResetPassword} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-neutral-200">
+                <Label htmlFor="email" className="text-foreground">
                   Email
                 </Label>
                 <Input
@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
                   placeholder="you@example.com"
                   required
                   disabled={isLoading}
-                  className="bg-neutral-800/50 border-neutral-700 text-white placeholder:text-neutral-500"
+                  className="bg-muted/50 border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
 
@@ -95,7 +95,7 @@ export default function ResetPasswordPage() {
                 <p className="text-green-400">
                   We've sent a password reset link to <strong>{email}</strong>
                 </p>
-                <p className="text-sm text-neutral-400 mt-2">
+                <p className="text-sm text-muted-foreground mt-2">
                   Please check your email and follow the instructions to reset your password.
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function ResetPasswordPage() {
                   setIsSuccess(false)
                   setEmail('')
                 }}
-                className="w-full bg-neutral-800/50 border-neutral-700 hover:bg-neutral-800"
+                className="w-full bg-muted/50 border-border hover:bg-muted"
               >
                 Send Another Link
               </Button>
@@ -115,7 +115,7 @@ export default function ResetPasswordPage() {
           <div className="text-center text-sm">
             <Link
               href="/auth/signin"
-              className="text-neutral-400 hover:text-white inline-flex items-center"
+              className="text-muted-foreground hover:text-foreground inline-flex items-center"
             >
               <ArrowLeft className="mr-1 h-3 w-3" />
               Back to Sign In

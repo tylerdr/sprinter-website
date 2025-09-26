@@ -276,17 +276,16 @@ export default function AISprintPage() {
                 </p>
               </div>
 
-              {/* Stripe Checkout Button */}
-              <form action="/api/checkout/ai-sprint" method="POST">
-                <Button 
-                  type="submit"
+              {/* Contact Form Button (fallback for missing Stripe config) */}
+              <Link href="/contact?product=ai-sprint&intent=purchase">
+                <Button
                   size="lg"
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-lg hover:from-purple-700 hover:to-blue-700"
                 >
                   Book Your Sprint Now
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Button>
-              </form>
+              </Link>
 
               <div className="mt-6 space-y-2 text-center text-sm text-gray-500">
                 <p>✓ Instant confirmation</p>

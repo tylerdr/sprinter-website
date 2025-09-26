@@ -49,11 +49,11 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-neutral-900 to-black">
-      <Card className="w-full max-w-md bg-neutral-900/50 backdrop-blur-xl border-neutral-800">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted">
+      <Card className="w-full max-w-md bg-card/50 backdrop-blur-xl border-border">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
-          <CardDescription className="text-center text-neutral-400">
+          <CardDescription className="text-center text-muted-foreground">
             Enter your email below to create your account
           </CardDescription>
         </CardHeader>
@@ -69,7 +69,7 @@ export default function SignUpPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
-                className="bg-neutral-800/50 border-neutral-700"
+                className="bg-muted/50 border-border"
               />
             </div>
             <div className="space-y-2">
@@ -82,7 +82,7 @@ export default function SignUpPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={isLoading}
-                className="bg-neutral-800/50 border-neutral-700"
+                className="bg-muted/50 border-border"
               />
             </div>
             <div className="space-y-2">
@@ -95,7 +95,7 @@ export default function SignUpPage() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 disabled={isLoading}
-                className="bg-neutral-800/50 border-neutral-700"
+                className="bg-muted/50 border-border"
               />
             </div>
             <Button
@@ -118,9 +118,9 @@ export default function SignUpPage() {
           </form>
         </CardContent>
         <CardFooter>
-          <div className="text-sm text-neutral-400 text-center w-full">
+          <div className="text-sm text-muted-foreground text-center w-full">
             Already have an account?{' '}
-            <Link href="/auth/signin" className="text-blue-400 hover:text-blue-300 underline">
+            <Link href="/auth/signin" className="text-primary hover:text-primary/80 underline">
               Sign in
             </Link>
           </div>
