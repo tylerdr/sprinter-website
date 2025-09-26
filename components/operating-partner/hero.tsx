@@ -45,13 +45,13 @@ export function OperatingPartnerHero() {
           >
             {COPY.operatingPartner.headline.line1}
             <span className="block mt-2">
-              <span className="relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold">
+              <span className="relative inline-block">
+                <span className="gradient-text font-bold">
                   {COPY.operatingPartner.headline.line2}
                 </span>
                 {/* Add a subtle shadow/outline for better visibility */}
-                <span className="absolute inset-0 text-foreground/10 font-bold blur-lg" aria-hidden="true">
-                  for Private Equity
+                <span className="absolute inset-0 text-foreground/5 font-bold blur-xl -z-10" aria-hidden="true">
+                  {COPY.operatingPartner.headline.line2}
                 </span>
               </span>
             </span>

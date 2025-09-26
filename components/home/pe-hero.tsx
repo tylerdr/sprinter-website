@@ -63,13 +63,22 @@ export function PEHero() {
               className="inline"
             />
             {" "}
-            <BlurText
-              text={variants.hero.headline.line2}
-              animateBy="words"
-              direction="bottom"
-              delay={0.5}
-              className="gradient-text block sm:inline"
-            />
+            <span className="relative">
+              <BlurText
+                text={variants.hero.headline.line2}
+                animateBy="words"
+                direction="bottom"
+                delay={0.5}
+                className="gradient-text font-bold block sm:inline"
+              />
+              {/* Add subtle shadow for better visibility in dark mode */}
+              <span
+                className="absolute inset-0 text-foreground/5 font-bold blur-xl -z-10"
+                aria-hidden="true"
+              >
+                {variants.hero.headline.line2}
+              </span>
+            </span>
           </div>
 
           {/* Subheadline */}
