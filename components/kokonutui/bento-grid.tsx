@@ -76,59 +76,59 @@ interface BentoItem {
 const bentoItems: BentoItem[] = [
     {
         id: "main",
-        title: "Building tomorrow's technology",
+        title: "PE-Native AI Solutions",
         description:
-            "We architect and develop enterprise-grade applications that scale seamlessly with cloud-native technologies and microservices.",
-        href: "#",
+            "Purpose-built AI for private equity operations. From deal sourcing to portfolio optimization, we deliver production-ready solutions in weeks.",
+        href: "/operating-partner",
         feature: "spotlight",
         spotlightItems: [
-            "Microservices architecture",
-            "Serverless computing",
-            "Container orchestration",
-            "API-first design",
-            "Event-driven systems",
+            "AP & Invoice Automation",
+            "Quote Intelligence Systems",
+            "3PL Operations Optimization",
+            "Deal Flow Analysis",
+            "Portfolio Reporting",
         ],
         size: "lg",
         className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
     },
     {
         id: "stat1",
-        title: "AI Agents & Automation",
+        title: "Boringly Reliable Automation",
         description:
-            "Intelligent agents that learn, adapt, and automate complex workflows",
-        href: "#",
+            "60%+ touchless processing, <48h exception handling, full audit trail. No drama, just results.",
+        href: "/solutions/ap-automation",
         feature: "typing",
         typingText:
-            "const createAgent = async () => {\n  const agent = new AIAgent({\n    model: 'gpt-4-turbo',\n    tools: [codeAnalysis, dataProcessing],\n    memory: new ConversationalMemory()\n  });\n\n  // Train on domain knowledge\n  await agent.learn(domainData);\n\n  return agent;\n};",
+            "// 30-45 day implementation\nconst pilot = await sprinter.launch({\n  target: 'AP_AUTOMATION',\n  touchless: '>=60%',\n  exceptions: '<48h',\n  audit: 'FULL_TRAIL'\n});\n\n// Clear acceptance criteria\nawait pilot.validate();",
         size: "md",
         className: "col-span-2 row-span-1 col-start-1 col-end-3",
     },
     {
         id: "partners",
-        title: "Trusted partners",
+        title: "Vendor Neutral",
         description:
-            "Working with the leading AI and cloud providers to deliver cutting-edge solutions",
+            "We recommend, not resell. Build, buy, or hybrid - we show all options with clear trade-offs.",
         icons: true,
-        href: "#",
+        href: "/governance",
         feature: "icons",
         size: "md",
         className: "col-span-1 row-span-1",
     },
     {
         id: "innovation",
-        title: "Innovation timeline",
+        title: "Proven PE Track Record",
         description:
-            "Pioneering the future of AI and cloud computing with breakthrough innovations",
-        href: "#",
+            "100+ portfolio companies transformed. From mid-market to enterprise, we've been there.",
+        href: "/case-studies",
         feature: "timeline",
         timeline: [
-            { year: "2020", event: "Launch of Cloud-Native Platform" },
-            { year: "2021", event: "Advanced AI Integration & LLM APIs" },
-            { year: "2022", event: "Multi-Agent Systems & RAG Architecture" },
-            { year: "2023", event: "Autonomous AI Agents & Neural Networks" },
+            { year: "Day 1-10", event: "Diagnostic & Options Memo" },
+            { year: "Day 11-45", event: "Pilot with Acceptance Criteria" },
+            { year: "Day 46-60", event: "Validation & Optimization" },
+            { year: "Day 61-90", event: "Portfolio Replication" },
             {
-                year: "2024",
-                event: "AGI-Ready Infrastructure & Edge Computing",
+                year: "Day 90+",
+                event: "LP Reporting & Governance",
             },
         ],
         size: "sm",
@@ -171,7 +171,7 @@ const SpotlightFeature = ({ items }: { items: string[] }) => {
                     className="flex items-center gap-2"
                 >
                     <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400 flex-shrink-0" />
-                    <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                    <span className="text-sm text-foreground">
                         {item}
                     </span>
                 </motion.li>
@@ -618,22 +618,13 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
                 href={item.href || "#"}
                 className={`
                     group relative flex flex-col gap-4 h-full rounded-xl p-5
-                    bg-gradient-to-b from-neutral-50/60 via-neutral-50/40 to-neutral-50/30 
-                    dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-900/30
-                    border border-neutral-200/60 dark:border-neutral-800/60
-                    before:absolute before:inset-0 before:rounded-xl
-                    before:bg-gradient-to-b before:from-white/10 before:via-white/20 before:to-transparent 
-                    dark:before:from-black/10 dark:before:via-black/20 dark:before:to-transparent
-                    before:opacity-100 before:transition-opacity before:duration-500
-                    after:absolute after:inset-0 after:rounded-xl after:bg-neutral-50/70 dark:after:bg-neutral-900/70 after:z-[-1]
-                    backdrop-blur-[4px]
-                    shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)]
-                    hover:border-neutral-300/50 dark:hover:border-neutral-700/50
-                    hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]
-                    hover:backdrop-blur-[6px]
-                    hover:bg-gradient-to-b hover:from-neutral-50/60 hover:via-neutral-50/30 hover:to-neutral-50/20
-                    dark:hover:from-neutral-800/60 dark:hover:via-neutral-800/30 dark:hover:to-neutral-800/20
-                    transition-all duration-500 ease-out ${item.className}
+                    bg-card/50 backdrop-blur-sm
+                    border border-border
+                    shadow-sm
+                    hover:border-primary/20
+                    hover:shadow-lg hover:shadow-primary/5
+                    hover:bg-card/80
+                    transition-all duration-300 ${item.className}
                 `}
                 tabIndex={0}
                 aria-label={`${item.title} - ${item.description}`}
@@ -644,15 +635,15 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
                 >
                     <div className="space-y-2 flex-1 flex flex-col">
                         <div className="flex items-center justify-between">
-                            <h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
+                            <h3 className="text-xl font-semibold tracking-tight text-foreground transition-colors duration-300">
                                 {item.title}
                             </h3>
-                            <div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                            <div className="text-muted-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                                 <ArrowUpRight className="h-5 w-5" />
                             </div>
                         </div>
 
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400 tracking-tight">
+                        <p className="text-sm text-muted-foreground tracking-tight">
                             {item.description}
                         </p>
 

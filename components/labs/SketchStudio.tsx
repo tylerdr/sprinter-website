@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import {
   Download,
   RefreshCw,
@@ -31,6 +32,7 @@ const examplePrompts = [
 ];
 
 export default function SketchStudio() {
+  const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [prompt, setPrompt] = useState("");
@@ -70,7 +72,8 @@ export default function SketchStudio() {
 
     ctx.lineWidth = brushSize;
     ctx.lineCap = "round";
-    ctx.strokeStyle = "#ffffff";
+    // Use theme-aware colors for drawing
+    ctx.strokeStyle = theme === "dark" ? "#ffffff" : "#000000";
     ctx.lineTo(x, y);
     ctx.stroke();
   };
@@ -86,7 +89,8 @@ export default function SketchStudio() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    ctx.fillStyle = "#1a1a1a";
+    // Use theme-aware background color
+    ctx.fillStyle = theme === "dark" ? "#1a1a1a" : "#f5f5f5";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     setGeneratedImage(null);
   };

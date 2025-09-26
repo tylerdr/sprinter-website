@@ -4,10 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown, Palette } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useCallback } from "react";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
+import { ThemeToggle } from "@/components/theme-toggle";
 import dynamic from "next/dynamic";
 
 const ThemeStudio = dynamic(
@@ -194,13 +195,7 @@ export function EnhancedNavigation() {
               </NavigationMenu>
 
               <div className="flex items-center gap-2 ml-3 pl-3 border-l border-border/30">
-                <button
-                  onClick={() => setThemeStudioOpen(true)}
-                  className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                  aria-label="Open theme studio"
-                >
-                  <Palette className="h-4 w-4" />
-                </button>
+                <ThemeToggle />
                 <NavigationAuth />
                 {config.ctas.map((cta) => (
                   <Link
@@ -224,13 +219,7 @@ export function EnhancedNavigation() {
 
             {/* Mobile Controls */}
             <div className="flex items-center gap-3 md:hidden">
-              <button
-                onClick={() => setThemeStudioOpen(true)}
-                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                aria-label="Open theme studio"
-              >
-                <Palette className="h-4 w-4" />
-              </button>
+              <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"

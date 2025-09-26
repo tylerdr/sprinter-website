@@ -10,6 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalyticsWrapper } from "@/components/analytics/google-analytics-wrapper";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import { Toaster } from "sonner";
+import { ErrorBoundary } from "@/components/error-boundary";
 import {
   generateMetadata as createSEOMetadata,
   generateOrganizationStructuredData,
@@ -77,7 +78,9 @@ export default function RootLayout({
           <AnalyticsProvider>
             <EnhancedNavigation />
             <main id="main-content" className="flex-1 pt-16">
-              {children}
+              <ErrorBoundary>
+                {children}
+              </ErrorBoundary>
             </main>
             <Footer />
           </AnalyticsProvider>

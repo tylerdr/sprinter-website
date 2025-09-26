@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Building2, ChartBar, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
@@ -13,7 +12,6 @@ import AttractButton from "@/components/kokonutui/attract-button";
 import ScrollFloat from "@/components/ScrollFloat";
 import GlitchText from "@/components/GlitchText";
 import TrueFocus from "@/components/TrueFocus";
-import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import TextShift from "@/components/text-shift";
 
@@ -25,80 +23,21 @@ const stats = [
 ];
 
 export function PEHero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const variants = getCurrentVariants();
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20"
       aria-label="Private Equity AI Hero"
     >
-      {/* Sparkles Background */}
-      <div className="absolute inset-0 h-full w-full z-0">
-        <SparklesCore
-          id="hero-sparkles"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full opacity-100"
-          particleColor="#FFFFFF"
-        />
-      </div>
 
-      {/* Dynamic gradient following mouse */}
-      <div
-        className="absolute inset-0 opacity-20 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, color-mix(in oklch, var(--brand-start) 20%, transparent), transparent 40%)`,
-        }}
-        aria-hidden="true"
-      />
 
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <motion.div 
-          animate={{
-            x: [0, 150, 0],
-            y: [0, -100, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-20 left-10 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 bg-blue-600"
-        />
-        <motion.div 
-          animate={{
-            x: [0, -150, 0],
-            y: [0, 100, 0],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 bg-purple-600"
-        />
+      {/* Clean gradient background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 dark:from-blue-600/10 dark:via-transparent dark:to-purple-600/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background" />
       </div>
       
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div

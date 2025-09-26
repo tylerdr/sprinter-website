@@ -5,106 +5,26 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Sparkles } from "lucide-react";
 import { ImpactMetrics } from "@/components/shared/impact-metrics";
-import { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { COPY } from "@/lib/copy-config";
-import Hyperspeed from "@/components/Hyperspeed";
 import BlurText from "@/components/BlurText";
 import ShinyText from "@/components/ShinyText";
 import StarBorder from "@/components/StarBorder";
 
 export function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [clickRipples, setClickRipples] = useState<{ x: number; y: number; id: number }[]>([]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
-    const handleClick = (e: MouseEvent) => {
-      const newRipple = { x: e.clientX, y: e.clientY, id: Date.now() };
-      setClickRipples(prev => [...prev, newRipple]);
-      
-      // Remove ripple after animation
-      setTimeout(() => {
-        setClickRipples(prev => prev.filter(r => r.id !== newRipple.id));
-      }, 2000);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("click", handleClick);
-    
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("click", handleClick);
-    };
-  }, []);
 
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero section"
     >
-      {/* Hyperspeed Background */}
+      {/* Clean gradient background */}
       <div className="absolute inset-0">
-        <Hyperspeed
-          className="absolute inset-0"
-          effectOptions={{
-            distortion: 'turbulentDistortion',
-            length: 400,
-            roadWidth: 10,
-            islandWidth: 2,
-            lanesPerRoad: 3,
-            fov: 90,
-            fovSpeedUp: 150,
-            speedUp: 2,
-            carLightsFade: 0.4,
-            totalSideLightSticks: 15,
-            colors: {
-              roadColor: 0x080808,
-              islandColor: 0x0a0a0a,
-              background: 0x000000,
-              shoulderLines: 0x131313,
-              brokenLines: 0x131313,
-              leftCars: [0xd856bf, 0x6750a2, 0xc247ac],
-              rightCars: [0x03b3c3, 0x0e5ea5, 0x324555],
-              sticks: 0x03b3c3
-            }
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-600/5 dark:from-primary/10 dark:via-transparent dark:to-purple-600/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background" />
       </div>
 
-      {/* Dark gradient overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90 z-10" />
 
-      {/* Subtle spotlight effect that follows the mouse */}
-      <div
-        className="absolute inset-0 opacity-20 transition-opacity duration-500 pointer-events-none z-15"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.05), transparent 40%)`,
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Click ripples */}
-      {clickRipples.map(ripple => (
-        <motion.div
-          key={ripple.id}
-          className="absolute pointer-events-none"
-          initial={{ width: 0, height: 0, opacity: 0.3 }}
-          animate={{ width: 600, height: 600, opacity: 0 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          style={{
-            left: ripple.x - 300,
-            top: ripple.y - 300,
-            background: `radial-gradient(circle, rgba(var(--primary-rgb), 0.2), transparent 60%)`,
-            borderRadius: "50%",
-          }}
-        />
-      ))}
-      
-      <div className="absolute inset-0 noise-bg opacity-30" aria-hidden="true" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-20">
         <motion.div
