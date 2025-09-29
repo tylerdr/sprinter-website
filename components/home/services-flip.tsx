@@ -16,44 +16,44 @@ import {
 const services = [
   {
     title: "Agentic AI Systems",
-    subtitle: "Put AI to work",
-    description: "Deploy autonomous agents that handle complex workflows across your portfolio.",
-    features: ["Agent Architecture", "Multi-Agent Coordination", "Tool Integration", "Repeatable Playbooks"],
+    subtitle: "Your competitive edge",
+    description: "Get autonomous agents handling your complex workflows. Your team focuses on strategy while AI executes.",
+    features: ["Your Custom Architecture", "Multi-Agent Coordination", "Seamless Tool Integration", "Your Repeatable Playbooks"],
     icon: Brain,
   },
   {
-    title: "Off-the-Shelf + Custom",
-    subtitle: "Best of both worlds",
-    description: "Integrate proven tools when smart, build custom when needed. Pragmatic AI.",
-    features: ["Tool Evaluation", "API Integration", "Custom Development", "Hybrid Solutions"],
+    title: "Your Choice: Build or Buy",
+    subtitle: "Smart flexibility",
+    description: "You choose: proven off-the-shelf tools or custom-built solutions. Your goals drive the decision.",
+    features: ["Expert Tool Recommendations", "Smooth API Integration", "Custom When You Need It", "Hybrid Solutions for You"],
     icon: Layers,
   },
   {
-    title: "No-API Automation",
-    subtitle: "Legacy system specialists",
-    description: "Automate systems without API access. 70%+ of our work requires zero APIs.",
-    features: ["Document Intelligence", "Screen Automation", "Process Mining", "Workflow Orchestration"],
+    title: "No-API? No Problem.",
+    subtitle: "Your legacy systems work",
+    description: "Your old systems without APIs? We automate them. 70%+ of deployments need zero API access.",
+    features: ["Document Intelligence for You", "Screen Automation", "Your Process Mining", "Workflow Orchestration"],
     icon: Zap,
   },
   {
-    title: "Portfolio Playbooks",
-    subtitle: "Scale across portcos",
-    description: "Repeatable frameworks that accelerate each deployment. 2nd portco is 50% faster.",
-    features: ["Proven Templates", "Best Practices", "Knowledge Base", "Cross-Portfolio Learnings"],
+    title: "Your Portfolio Playbooks",
+    subtitle: "Scale your wins",
+    description: "Your 2nd deployment is 50% faster. Your 3rd is 70% faster. You compound your advantage.",
+    features: ["Your Proven Templates", "Best Practices Library", "Your Knowledge Base", "Cross-Portfolio Wins"],
     icon: Globe,
   },
   {
-    title: "45-Day Sprints",
-    subtitle: "Ship portfolio wins fast",
-    description: "From discovery to production in 30-45 days. Real systems with measurable ROI.",
-    features: ["Sprint Methodology", "Production Deployment", "Real Data Integration", "User Training"],
+    title: "10-Day Sprints",
+    subtitle: "You ship fast",
+    description: "Your AI system goes from discovery to production in 10 days. Real results, real ROI.",
+    features: ["Your Sprint Schedule", "Production Deployment", "Your Real Data", "Your Team Training"],
     icon: Rocket,
   },
   {
-    title: "Operator Enablement",
-    subtitle: "Build internal capability",
-    description: "Train your operators to sustain and expand AI after we're gone.",
-    features: ["Hands-on Training", "Documentation", "Internal Champions", "Ongoing Support"],
+    title: "Your Operators, Empowered",
+    subtitle: "Own your AI future",
+    description: "Your operators learn to own and expand the AI. You build lasting capability, not dependency.",
+    features: ["Hands-on Training", "Complete Documentation", "Your Internal Champions", "Ongoing Support"],
     icon: Users,
   },
 ];
@@ -70,11 +70,11 @@ export function ServicesFlip() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            Agentic AI <span className="gradient-text">Capabilities</span>
+            What <span className="gradient-text">You Get</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Custom development, off-the-shelf integrations, and repeatable playbooks.
-            We identify the highest-ROI AI opportunities and ship portfolio wins in 45 days.
+            Your choice: custom development or off-the-shelf integrations. Your repeatable playbooks.
+            You identify the opportunities. You ship portfolio wins in 10 days. You own the results.
           </p>
         </motion.div>
 

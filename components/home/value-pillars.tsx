@@ -13,31 +13,31 @@ import {
 const pillars = [
   {
     icon: Brain,
-    title: "Agentic AI Mastery",
-    description: "World-class expertise",
+    title: "Your AI Advantage",
+    description: "Deep expertise at your service",
     details:
-      "We know agentic AI and autonomous systems as well as anyone in the world. This depth lets us identify the highest-ROI opportunities and architect solutions that actually work.",
+      "You get world-class agentic AI expertise to identify your highest-ROI opportunities. Your competitive advantage comes from solutions that actually work in your environment.",
   },
   {
     icon: Layers,
-    title: "Pragmatic Approach",
-    description: "Custom + off-the-shelf",
+    title: "Your Choice, Your Way",
+    description: "Build or buy on your terms",
     details:
-      "Integrate proven tools when smart, build custom when needed. Repeatable playbooks that accelerate each deployment. The 2nd portco implementation is 50% faster, the 3rd is 70% faster.",
+      "You decide: proven tools or custom builds. Your playbooks accelerate every deployment. Your 2nd portco is 50% faster, your 3rd is 70% faster. You compound your advantages.",
   },
   {
     icon: Rocket,
-    title: "Portfolio Wins in 45 Days",
-    description: "Ship real systems fast",
+    title: "Your Wins in 10 Days",
+    description: "Real systems, real fast",
     details:
-      "We don't deliver PowerPoints or proofs-of-concept. Every engagement ships production systems with real users, real data, and measurable ROI within 30-45 days. Make AI boring.",
+      "You get production systems, not PowerPoints. Your real users, your real data, your measurable ROI—all within 10 days. That's how you make AI work.",
   },
   {
     icon: Users,
-    title: "Operator Enablement",
-    description: "Build internal capability",
+    title: "Your Team, Empowered",
+    description: "Own your AI future",
     details:
-      "We build WITH your operators, not for them. Full training, documentation, and repeatable playbooks ensure your team can sustain and expand AI capabilities independently.",
+      "You build lasting capability. Your operators learn to sustain and expand AI independently. You own the knowledge, not just the system.",
   },
 ];
 
@@ -55,10 +55,10 @@ export function ValuePillars() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Why <span className="gradient-text">Sprinter</span> for Agentic AI?
+            Why <span className="gradient-text">Your Portfolio</span> Needs This
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            World-class agentic AI expertise meets battle-tested portfolio execution. Real builders, real products, real results.
+            Your competitive edge comes from AI that ships fast and works immediately. Here's what you get.
           </p>
         </motion.div>
 

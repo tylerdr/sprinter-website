@@ -69,7 +69,7 @@ export default function CardFlip({
                                             "rounded-[140px]",
                                             "animate-[scale_3s_linear_infinite]",
                                             "opacity-0",
-                                            "shadow-[0_0_50px_rgba(255,165,0,0.5)]",
+                                            "shadow-[0_0_50px_hsl(var(--primary)/0.5)]",
                                             "group-hover:animate-[scale_2s_linear_infinite]"
                                         )}
                                         style={{
@@ -95,10 +95,10 @@ export default function CardFlip({
                                 <div
                                     className={cn(
                                         "absolute inset-[-8px] rounded-lg transition-opacity duration-300",
-                                        "bg-gradient-to-br from-orange-500/20 via-orange-500/10 to-transparent"
+                                        "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent"
                                     )}
                                 />
-                                <Repeat2 className="relative z-10 w-4 h-4 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110 group-hover/icon:-rotate-12" />
+                                <Repeat2 className="relative z-10 w-4 h-4 text-primary transition-transform duration-300 group-hover/icon:scale-110 group-hover/icon:-rotate-12" />
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@ export default function CardFlip({
                                         }ms`,
                                     }}
                                 >
-                                    <ArrowRight className="w-3 h-3 text-orange-500" />
+                                    <ArrowRight className="w-3 h-3 text-primary" />
                                     <span>{feature}</span>
                                 </div>
                             ))}
@@ -160,23 +160,23 @@ export default function CardFlip({
                                 "transition-all duration-300",
                                 "bg-gradient-to-r from-zinc-100 via-zinc-100 to-zinc-100",
                                 "dark:from-zinc-800 dark:via-zinc-800 dark:to-zinc-800",
-                                "hover:from-orange-500/10 hover:from-0% hover:via-orange-500/5 hover:via-100% hover:to-transparent hover:to-100%",
-                                "dark:hover:from-orange-500/20 dark:hover:from-0% dark:hover:via-orange-500/10 dark:hover:via-100% dark:hover:to-transparent dark:hover:to-100%",
+                                "hover:from-primary/10 hover:from-0% hover:via-primary/5 hover:via-100% hover:to-transparent hover:to-100%",
+                                "dark:hover:from-primary/20 dark:hover:from-0% dark:hover:via-primary/10 dark:hover:via-100% dark:hover:to-transparent dark:hover:to-100%",
                                 "hover:scale-[1.02] hover:cursor-pointer"
                             )}
                         >
-                            <span className="text-sm font-medium text-zinc-900 dark:text-white transition-colors duration-300 group-hover/start:text-orange-600 dark:group-hover/start:text-orange-400">
-                                Start today
+                            <span className="text-sm font-medium text-zinc-900 dark:text-white transition-colors duration-300 group-hover/start:text-primary">
+                                Learn more
                             </span>
                             <div className="relative group/icon">
                                 <div
                                     className={cn(
                                         "absolute inset-[-6px] rounded-lg transition-all duration-300",
-                                        "bg-gradient-to-br from-orange-500/20 via-orange-500/10 to-transparent",
+                                        "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent",
                                         "opacity-0 group-hover/start:opacity-100 scale-90 group-hover/start:scale-100"
                                     )}
                                 />
-                                <ArrowRight className="relative z-10 w-4 h-4 text-orange-500 transition-all duration-300 group-hover/start:translate-x-0.5 group-hover/start:scale-110" />
+                                <ArrowRight className="relative z-10 w-4 h-4 text-primary transition-all duration-300 group-hover/start:translate-x-0.5 group-hover/start:scale-110" />
                             </div>
                         </div>
                     </div>
@@ -188,17 +188,17 @@ export default function CardFlip({
                     0% {
                         transform: scale(2);
                         opacity: 0;
-                        box-shadow: 0px 0px 50px rgba(255, 165, 0, 0.5);
+                        box-shadow: 0px 0px 50px hsl(var(--primary) / 0.5);
                     }
                     50% {
                         transform: translate(0px, -5px) scale(1);
                         opacity: 1;
-                        box-shadow: 0px 8px 20px rgba(255, 165, 0, 0.5);
+                        box-shadow: 0px 8px 20px hsl(var(--primary) / 0.5);
                     }
                     100% {
                         transform: translate(0px, 5px) scale(0.1);
                         opacity: 0;
-                        box-shadow: 0px 10px 20px rgba(255, 165, 0, 0);
+                        box-shadow: 0px 10px 20px hsl(var(--primary) / 0);
                     }
                 }
             `}</style>

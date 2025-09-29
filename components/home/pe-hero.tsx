@@ -9,9 +9,9 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "7+ Years", label: "AI expertise" },
-  { value: "50+", label: "AI implementations" },
-  { value: "30-45", label: "days to production" },
+  { value: "50+", label: "Portfolio wins" },
+  { value: "10 Days", label: "To production" },
+  { value: "250%", label: "Average ROI" },
   { value: "No API?", label: "No problem" },
 ];
 
@@ -118,12 +118,12 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              Serving lower-middle-market PE, growth equity, and venture-backed portfolio companies
+              For lower-middle-market PE, growth equity, and venture-backed portfolio companies
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
-              <span className="font-semibold">Agentic AI Specialists</span>
-              <span className="font-semibold">Repeatable Playbooks</span>
-              <span className="font-semibold">Portfolio Wins</span>
+              <span className="font-semibold">Your AI Advantage</span>
+              <span className="font-semibold">Your Playbooks</span>
+              <span className="font-semibold">Your Portfolio Wins</span>
             </div>
           </motion.div>
 

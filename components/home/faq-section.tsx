@@ -13,43 +13,43 @@ import { useState } from "react";
 const faqs = [
   {
     id: "1",
-    question: "How is Sprinter different from traditional consulting?",
-    answer: "We're agentic AI specialists first, consultants second. World-class expertise in autonomous systems combined with repeatable playbooks proven across portfolios. Custom development when needed, off-the-shelf integrations when smart. We ship portfolio wins in 30-45 days with measurable ROI—no PowerPoints, no drama."
+    question: "How is this different from traditional consulting?",
+    answer: "You get specialists who ship production systems in 10 days, not consultants who deliver PowerPoints in 45. Your choice of custom or off-the-shelf. Your repeatable playbooks. Your measurable ROI. No drama, just results."
   },
   {
     id: "2",
     question: "What if our portfolio companies don't have APIs?",
-    answer: "No API? No problem. We specialize in automation without integration dependencies. Using advanced screen scraping, document processing, and intelligent workflows, we can automate legacy systems that traditional approaches can't touch. Over 70% of our implementations require zero API access."
+    answer: "No API? No problem. You get automation that works with your legacy systems. 70%+ of deployments need zero API access. Your old systems become automated using document intelligence, screen automation, and smart workflows. You don't need to replace anything."
   },
   {
     id: "3",
-    question: "How do you ensure adoption across portfolio companies?",
-    answer: "We build WITH your operators, not for them. Every sprint includes hands-on training, documentation, and change management. We establish internal champions who can identify and implement new AI opportunities independently. Our 'train-the-trainer' approach ensures sustainable, scalable adoption."
+    question: "How do you ensure adoption across our portfolio companies?",
+    answer: "You build WITH your operators, never for them. Your team gets hands-on training, complete documentation, and change management support. Your internal champions learn to identify and implement new opportunities independently. You own the capability."
   },
   {
     id: "4",
-    question: "What's included in a 30-45 day sprint?",
-    answer: "Week 1-2: Discovery, process mapping, and AI opportunity assessment. Week 3-4: Build and test production system with real data. Week 5-6: Deploy to production with monitoring, training, and handover. You get a working production system, not a proof of concept, with full documentation and ongoing support."
+    question: "What's included in a 10-day sprint?",
+    answer: "Day 1-3: Your discovery, process mapping, and opportunity assessment. Day 4-7: Your production system built and tested with your real data. Day 8-10: Your deployment with monitoring, training, and handover. You get a working production system with full documentation and support."
   },
   {
     id: "5",
-    question: "How do you measure ROI?",
-    answer: "We establish clear KPIs upfront: time saved, accuracy improvements, cost reduction, and process acceleration. Our portfolio dashboard tracks these metrics in real-time across all deployments. Typical results include 20+ hours/week saved per team, 42% faster quote cycles, and 60%+ touchless processing rates."
+    question: "How do we measure ROI?",
+    answer: "You establish clear KPIs upfront: your time saved, your accuracy improvements, your cost reduction, your process acceleration. You track these metrics in real-time across all your deployments. Typical results: 20+ hours/week saved per team, 42% faster quote cycles, 60%+ touchless processing."
   },
   {
     id: "6",
-    question: "Can you work with our existing tech stack?",
-    answer: "Absolutely. We integrate with your current tools - Salesforce, SAP, Microsoft, custom systems - without requiring replacements. Our approach is additive, enhancing what you have rather than ripping and replacing. We support cloud, on-premise, and hybrid deployments."
+    question: "Can this work with our existing tech stack?",
+    answer: "Yes. You keep your current tools—Salesforce, SAP, Microsoft, custom systems. You don't replace anything. You enhance what you have. Your AI integrates additively. You choose: cloud, on-premise, or hybrid. Your infrastructure, your way."
   },
   {
     id: "7",
     question: "What about data security and compliance?",
-    answer: "Security first, always. We support HIPAA/GDPR requirements and can deploy within your infrastructure. All data stays within your environment. We provide full audit trails, encryption at rest and in transit, and role-based access controls. We follow enterprise-grade security best practices in every engagement."
+    answer: "You stay compliant. Your data stays in your environment. You get full audit trails, encryption at rest and in transit, role-based access controls. Your HIPAA/GDPR requirements are met. Your security standards drive every decision."
   },
   {
     id: "8",
-    question: "How do you scale across a portfolio?",
-    answer: "Start with one high-impact use case, prove value, then templatize and deploy across sister companies. Our playbook approach means the second deployment is 50% faster, the third is 70% faster. We maintain a portfolio-wide knowledge base of successful automations and best practices."
+    question: "How do we scale across our portfolio?",
+    answer: "You start with one high-impact use case. You prove value. You templatize and deploy across sister companies. Your 2nd deployment is 50% faster. Your 3rd is 70% faster. You maintain a portfolio-wide knowledge base. Your wins compound."
   }
 ];
 

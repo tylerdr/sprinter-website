@@ -7,17 +7,17 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "Agentic AI Experts",
-      line2: "for Private Equity"
+      line1: "Put AI to Work",
+      line2: "Across Your Portfolio"
     },
-    subheadline: "World-class agentic AI and autonomous systems expertise for lower-middle-market and growth equity portfolios. We put AI to work—custom development, off-the-shelf integrations, repeatable playbooks. Ship portfolio wins in 30-45 days."
+    subheadline: "Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage starts here."
   },
   scale: {
     headline: {
       line1: "Your GenAI Implementation Partner",
       line2: "for Portfolio Companies"
     },
-    subheadline: "Deploy production-ready AI across your portfolio. From AP automation to quote intelligence systems. 60%+ touchless processing in 30-45 days with full governance and audit trails."
+    subheadline: "Deploy production-ready AI across your portfolio. From AP automation to quote intelligence systems. 60%+ touchless processing in 10 days with full governance and audit trails."
   },
   need: {
     headline: {
@@ -63,8 +63,8 @@ export const ctaVariants = {
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "Agentic AI Expertise Meets Portfolio Execution",
-    description: "Real AI builders with repeatable playbooks proven across portfolios. Custom development when needed, off-the-shelf integrations when smart. From AP automation to quote intelligence—we ship portfolio wins in 45 days with measurable ROI.",
+    headline: "Your Portfolio. Powered by AI. In 10 Days.",
+    description: "You get repeatable playbooks proven across 50+ portfolio companies. Choose custom development or off-the-shelf integrations based on your needs. From AP automation to quote intelligence—achieve measurable ROI in your first sprint.",
     cta: "Book your AI Scoping Workshop today. Fixed fee, clear deliverables."
   },
   leftBehind: {
