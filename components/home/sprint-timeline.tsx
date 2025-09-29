@@ -10,7 +10,7 @@ import {
   TimelineSeparator,
   TimelineTitle,
 } from "@/components/ui/timeline";
-import ScrollFloat from "@/components/ScrollFloat";
+import { motion } from "framer-motion";
 import GlitchText from "@/components/GlitchText";
 import { Zap, Code2, Rocket, CheckCircle2, Users, TrendingUp } from "lucide-react";
 
@@ -63,14 +63,20 @@ export function SprintTimeline() {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             <GlitchText text="10-Day Sprint Process" />
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             From zero to production AI in 10 days. Every sprint follows our proven playbook.
           </p>
-        </ScrollFloat>
+        </motion.div>
 
         {/* Desktop Timeline */}
         <div className="hidden lg:block max-w-6xl mx-auto">

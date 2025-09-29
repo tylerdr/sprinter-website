@@ -1,7 +1,7 @@
 "use client";
 
 import CardFlip from "@/components/kokonutui/card-flip";
-import ScrollFloat from "@/components/ScrollFloat";
+import { motion } from "framer-motion";
 import {
   Zap,
   Brain,
@@ -62,7 +62,13 @@ export function ServicesFlip() {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden bg-muted/10">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Agentic AI <span className="gradient-text">Capabilities</span>
           </h2>
@@ -70,20 +76,25 @@ export function ServicesFlip() {
             Custom development, off-the-shelf integrations, and repeatable playbooks.
             We identify the highest-ROI AI opportunities and ship portfolio wins in 45 days.
           </p>
-        </ScrollFloat>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <ScrollFloat key={service.title} delay={index * 0.1}>
-              <div className="flex justify-center">
-                <CardFlip
-                  title={service.title}
-                  subtitle={service.subtitle}
-                  description={service.description}
-                  features={service.features}
-                />
-              </div>
-            </ScrollFloat>
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="flex justify-center"
+            >
+              <CardFlip
+                title={service.title}
+                subtitle={service.subtitle}
+                description={service.description}
+                features={service.features}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

@@ -62,7 +62,7 @@ const testimonials = [
 
 export function ClientSuccessSection() {
   return (
-    <section className="py-20 sm:py-24 relative overflow-hidden bg-gradient-to-b from-background via-muted/5 to-background">
+    <section className="py-24 sm:py-28 relative overflow-hidden bg-gradient-to-b from-background via-muted/5 to-background">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div

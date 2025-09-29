@@ -101,3 +101,4 @@ npx shadcn@latest add https://reactbits.dev/r/ComponentName-TS-TW
 - Reserve Hyperspeed for hero sections only
 - Test animations on low-end devices
 - Consider disabling complex animations on mobile
+- Before sending an image, ensure it fits within the allowed size (<8000 pixels).

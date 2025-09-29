@@ -7,7 +7,7 @@ import {
   AccordionContent,
   AccordionItem,
 } from "@/components/ui/accordion";
-import ScrollFloat from "@/components/ScrollFloat";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const faqs = [
@@ -59,14 +59,20 @@ export function FAQSection() {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden bg-muted/20">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Everything you need to know about partnering with Sprinter.
           </p>
-        </ScrollFloat>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto">
           <Accordion
@@ -75,7 +81,13 @@ export function FAQSection() {
             onValueChange={setOpenItems}
           >
             {faqs.map((faq, index) => (
-              <ScrollFloat key={faq.id} delay={index * 0.05}>
+              <motion.div
+                key={faq.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+              >
                 <AccordionItem value={faq.id} className="mb-4">
                   <AccordionPrimitive.Header className="flex">
                     <AccordionPrimitive.Trigger className="flex w-full items-center justify-between p-4 text-left font-medium transition-all hover:bg-muted/50 rounded-lg">
@@ -93,7 +105,7 @@ export function FAQSection() {
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
-              </ScrollFloat>
+              </motion.div>
             ))}
           </Accordion>
         </div>

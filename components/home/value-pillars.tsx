@@ -7,7 +7,7 @@ import {
   Zap,
   Users,
   Rocket,
-  Layers,
+  Layers
 } from "lucide-react";
 
 const pillars = [

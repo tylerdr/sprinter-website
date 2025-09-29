@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollStack from "@/components/ScrollStack";
-import ScrollFloat from "@/components/ScrollFloat";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 
@@ -47,14 +47,20 @@ export function TestimonialsStack() {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Trusted by Operating Partners
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Real results from portfolio companies across industries.
           </p>
-        </ScrollFloat>
+        </motion.div>
 
         <div className="max-w-4xl mx-auto">
           <ScrollStack offset={40} scaleFactor={0.02}>

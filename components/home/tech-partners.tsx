@@ -1,7 +1,7 @@
 "use client";
 
 import { LogoLoop } from "@/components/LogoLoop";
-import ScrollFloat from "@/components/ScrollFloat";
+import { motion } from "framer-motion";
 import { Cloud } from "lucide-react";
 import {
   SiOpenai,
@@ -53,16 +53,22 @@ const allPartners = [
 
 export function TechPartners() {
   return (
-    <section className="py-20 sm:py-24 relative overflow-hidden">
+    <section className="py-24 sm:py-28 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             AI & Technology <span className="gradient-text">Partners</span> We Work With
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Leveraging best-in-class AI models and enterprise infrastructure to deliver production-ready solutions
           </p>
-        </ScrollFloat>
+        </motion.div>
 
         <div className="max-w-6xl mx-auto">
           <LogoLoop

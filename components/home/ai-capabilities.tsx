@@ -1,14 +1,20 @@
 "use client";
 
 import BentoGrid from "@/components/kokonutui/bento-grid";
-import ScrollFloat from "@/components/ScrollFloat";
+import { motion } from "framer-motion";
 import SwooshText from "@/components/kokonutui/swoosh-text";
 
 export function AICapabilities() {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <SwooshText
             text="Put Agentic AI to Work"
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
@@ -25,11 +31,17 @@ export function AICapabilities() {
             off-the-shelf integrations when smart. Repeatable playbooks proven across portfolios.
             Ship production systems fast.
           </p>
-        </ScrollFloat>
+        </motion.div>
 
-        <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="max-w-7xl mx-auto"
+        >
           <BentoGrid />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
