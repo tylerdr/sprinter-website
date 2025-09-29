@@ -11,7 +11,6 @@ export const COMPANY_INFO = {
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",
   location: {
-    city: "Brentwood",
     state: "TN",
     country: "United States",
   },
@@ -133,43 +132,6 @@ export const NAVIGATION = {
       ],
     },
     {
-      href: "/industries",
-      label: "Industries",
-      type: "dropdown",
-      dropdown: [
-        { href: "/industries/manufacturing", label: "Manufacturing" },
-        { href: "/industries/logistics", label: "Logistics & 3PL" },
-        { href: "/industries/healthcare", label: "Healthcare" },
-        { href: "/industries/financial-services", label: "Financial Services" },
-      ],
-      items: [
-        {
-          href: "/industries/manufacturing",
-          label: "Manufacturing",
-          description: "Quality control, predictive maintenance, production optimization",
-          icon: "factory"
-        },
-        {
-          href: "/industries/logistics",
-          label: "Logistics & 3PL",
-          description: "Route optimization, documentation, warehouse automation",
-          icon: "truck"
-        },
-        {
-          href: "/industries/healthcare",
-          label: "Healthcare",
-          description: "Clinical documentation, RCM, patient engagement",
-          icon: "heart"
-        },
-        {
-          href: "/industries/financial-services",
-          label: "Financial Services",
-          description: "Underwriting automation, compliance, customer service",
-          icon: "bank"
-        },
-      ],
-    },
-    {
       href: "/resources",
       label: "Resources",
       type: "dropdown",
@@ -178,6 +140,7 @@ export const NAVIGATION = {
         { href: "/ai-assessment", label: "Free AI Assessment" },
         { href: "/blog", label: "PE AI Insights" },
         { href: "/downloads/governance-pack", label: "Governance Pack" },
+        { href: "/industries", label: "Industries" },
       ],
       items: [
         {
@@ -205,6 +168,12 @@ export const NAVIGATION = {
           label: "Governance Templates",
           description: "Board-ready security & compliance docs",
           icon: "shield"
+        },
+        {
+          href: "/industries",
+          label: "Industries",
+          description: "AI solutions tailored for specific sectors",
+          icon: "factory"
         },
       ],
     },
@@ -243,15 +212,8 @@ export const NAVIGATION = {
       { href: "/partnership", label: "Partnership" },
       { href: "/contact", label: "Contact" },
       { href: "/governance", label: "Governance" },
-    ],
-    legal: [
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
-    ],
-    trust: [
-      { href: "/governance", label: "Security & Compliance" },
-      { href: "/downloads/governance-pack", label: "Governance Pack" },
-      { href: "/downloads/ap-brief", label: "AP Accelerator Brief" },
     ],
   },
 };

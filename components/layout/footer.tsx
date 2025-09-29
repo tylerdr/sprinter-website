@@ -29,23 +29,23 @@ const footerSections: Array<{
     links: NAVIGATION.footer.company,
     ariaLabel: "Company",
   },
-  {
-    title: "Legal",
-    links: NAVIGATION.footer.legal,
-    ariaLabel: "Legal",
-  },
-  {
-    title: "Trust Center",
-    links: NAVIGATION.footer.trust,
-    ariaLabel: "Trust Center",
-  },
 ];
 
 export function Footer() {
   return (
     <footer role="contentinfo" className="bg-background border-t border-border/30">
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8">
+        {/* Newsletter Section - Horizontal */}
+        <div className="border-b border-border/30 pb-8 mb-8">
+          <NewsletterSignup
+            variant="footer"
+            title="AI Insights Newsletter"
+            description="Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox."
+            placeholder="your@company.com"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
@@ -60,7 +60,6 @@ export function Footer() {
               {COMPANY_INFO.tagline}
             </p>
             <div className="text-xs text-muted-foreground">
-              <p>{COMPANY_INFO.location.city}, {COMPANY_INFO.location.state}</p>
               <p>{COMPANY_INFO.email}</p>
             </div>
             <div className="flex space-x-4 mt-4" role="list" aria-label="Social media links">
@@ -122,30 +121,10 @@ export function Footer() {
                 </ul>
               </nav>
             ))}
-
-          {/* Newsletter Signup */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <NewsletterSignup
-              variant="footer"
-              title="AI Insights Newsletter"
-              description="Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox."
-              placeholder="your@company.com"
-            />
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="border-t border-border/30 mt-8 pt-8 text-center">
-          <Link
-            href="/contact"
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all touch-manipulation text-sm inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
-          >
-            Run the 10-Day Portfolio Sprint
-          </Link>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-border/30 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center space-y-2">
+        <div className="border-t border-border/30 mt-8 pt-6 sm:pt-8 text-center space-y-2">
           <p className="text-xs sm:text-sm text-muted-foreground">
             © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
           </p>

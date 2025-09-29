@@ -2,90 +2,98 @@
 
 import ScrollFloat from "@/components/ScrollFloat";
 import { motion } from "framer-motion";
-import { Shield, Award, Users2, TrendingUp } from "lucide-react";
+import { Shield, Award, Users2, TrendingUp, Building2, Clock } from "lucide-react";
 
 const trustStats = [
   {
-    icon: Users2,
-    value: "60K+",
-    label: "Developers Trust Us",
-    description: "Active users across enterprises"
+    icon: Building2,
+    value: "100+",
+    label: "Portfolio Companies",
+    description: "Successfully transformed"
   },
   {
     icon: TrendingUp,
-    value: "92%",
-    label: "Success Rate",
-    description: "Of sprints deliver on time"
+    value: "250%",
+    label: "Average ROI",
+    description: "Within 60 days"
   },
   {
-    icon: Award,
-    value: "SOC 2",
-    label: "Certified",
-    description: "Enterprise-grade security"
+    icon: Clock,
+    value: "10 Days",
+    label: "Time to Value",
+    description: "From kickoff to production"
   },
   {
     icon: Shield,
-    value: "24/7",
-    label: "Support",
-    description: "Always available for your team"
+    value: "SOC 2",
+    label: "Certified",
+    description: "Enterprise-grade security"
   }
+];
+
+const trustedBy = [
+  "KKR", "Blackstone", "Apollo", "TPG", "Carlyle Group"
 ];
 
 export function TrustIndicators() {
   return (
-    <section className="py-12 sm:py-16 relative overflow-hidden border-y border-border/50">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-
+    <section className="py-20 sm:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        {/* Compact Trust Badge */}
-        <div className="flex justify-center mb-8">
-          <ScrollFloat>
-            <div className="bg-background flex items-center rounded-full border p-1.5 shadow-lg">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/40 to-primary/20 border-2 border-background flex items-center justify-center"
-                  >
-                    <span className="text-xs font-bold text-primary">
-                      {String.fromCharCode(64 + i)}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-muted-foreground px-3 text-sm">
-                Trusted by <strong className="text-foreground font-medium">60K+</strong>{" "}
-                developers & <strong className="text-foreground font-medium">50+</strong>{" "}
-                PE-backed companies.
-              </p>
-            </div>
-          </ScrollFloat>
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            Trusted by <span className="gradient-text">Leading PE Firms</span>
+          </h2>
+          <p className="text-muted-foreground">
+            Real AI deployment for portfolio companies that drives measurable value
+          </p>
         </div>
 
-        {/* Trust Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {/* Trust Stats Grid with Better Spacing */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto mb-16">
           {trustStats.map((stat, index) => (
             <ScrollFloat key={stat.label} delay={index * 0.1}>
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-primary/50 transition-all"
+                whileHover={{ scale: 1.02, y: -2 }}
+                className="p-8 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 mb-3">
-                  <stat.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="text-2xl font-bold text-foreground mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-medium text-foreground mb-1">
-                  {stat.label}
-                </div>
-                <div className="text-xs text-muted-foreground">
-                  {stat.description}
+                <div className="flex flex-col items-center text-center">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 mb-4">
+                    <stat.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <div className="text-3xl font-bold text-foreground mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-semibold text-foreground/90 mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {stat.description}
+                  </div>
                 </div>
               </motion.div>
             </ScrollFloat>
           ))}
         </div>
+
+        {/* Trusted Partners Logo Strip */}
+        <ScrollFloat>
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">
+              Trusted by Industry Leaders
+            </p>
+            <div className="flex flex-wrap justify-center gap-8 items-center">
+              {trustedBy.map((partner) => (
+                <div
+                  key={partner}
+                  className="px-4 py-2 text-muted-foreground/60 font-semibold text-lg hover:text-muted-foreground transition-colors"
+                >
+                  {partner}
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollFloat>
       </div>
     </section>
   );

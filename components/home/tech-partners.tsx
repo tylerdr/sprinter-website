@@ -2,6 +2,7 @@
 
 import { LogoLoop } from "@/components/LogoLoop";
 import ScrollFloat from "@/components/ScrollFloat";
+import { Cloud } from "lucide-react";
 import {
   SiOpenai,
   SiAmazon,
@@ -17,95 +18,74 @@ import {
   SiTailwindcss,
   SiPostgresql,
   SiRedis,
-  SiDocker
+  SiDocker,
+  SiMongodb,
+  SiKubernetes,
+  SiTerraform,
+  SiGithub
 } from 'react-icons/si';
-import { Brain, Sparkles, Cpu, Database, Cloud, Layers } from 'lucide-react';
 
-// AI Provider logos with actual icons
-const aiProviders = [
-  { name: "OpenAI", icon: SiOpenai },
-  { name: "Anthropic", icon: Brain },
-  { name: "Google AI", icon: Sparkles },
-  { name: "Mistral", icon: Cpu },
-  { name: "Cohere", icon: Brain },
-  { name: "Hugging Face", icon: SiHuggingface },
-  { name: "Stability AI", icon: Sparkles },
-  { name: "Meta AI", icon: SiMeta },
-];
-
-const techStack = [
-  { name: "AWS", icon: SiAmazon },
-  { name: "Azure", icon: Cloud },
-  { name: "Microsoft", icon: Cloud },
-  { name: "Google Cloud", icon: SiGoogle },
-  { name: "Vercel", icon: SiVercel },
-  { name: "Supabase", icon: SiSupabase },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "React", icon: SiReact },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "Python", icon: SiPython },
-  { name: "Tailwind", icon: SiTailwindcss },
-  { name: "PostgreSQL", icon: SiPostgresql },
-  { name: "Redis", icon: SiRedis },
-  { name: "Docker", icon: SiDocker },
+// Combined AI & Tech partners
+const allPartners = [
+  // AI Providers
+  { name: "OpenAI", icon: SiOpenai, category: "ai" },
+  { name: "Anthropic", icon: SiGoogle, category: "ai" },  // Using Google icon as placeholder
+  { name: "Google AI", icon: SiGoogle, category: "ai" },
+  { name: "Meta AI", icon: SiMeta, category: "ai" },
+  { name: "Hugging Face", icon: SiHuggingface, category: "ai" },
+  { name: "Microsoft Azure", icon: Cloud, category: "ai" },
+  // Infrastructure
+  { name: "AWS", icon: SiAmazon, category: "infra" },
+  { name: "Vercel", icon: SiVercel, category: "infra" },
+  { name: "Supabase", icon: SiSupabase, category: "infra" },
+  { name: "Docker", icon: SiDocker, category: "infra" },
+  { name: "Kubernetes", icon: SiKubernetes, category: "infra" },
+  // Development
+  { name: "Python", icon: SiPython, category: "dev" },
+  { name: "TypeScript", icon: SiTypescript, category: "dev" },
+  { name: "React", icon: SiReact, category: "dev" },
+  { name: "Next.js", icon: SiNextdotjs, category: "dev" },
+  // Data
+  { name: "PostgreSQL", icon: SiPostgresql, category: "data" },
+  { name: "MongoDB", icon: SiMongodb, category: "data" },
+  { name: "Redis", icon: SiRedis, category: "data" },
 ];
 
 export function TechPartners() {
   return (
-    <section className="py-24 sm:py-28 relative overflow-hidden bg-muted/10">
+    <section className="py-20 sm:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <ScrollFloat className="text-center mb-16">
+        <ScrollFloat className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Powered by Best-in-Class AI
+            AI & Technology <span className="gradient-text">Partners</span> We Work With
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We work with leading AI providers and infrastructure partners to deliver production-ready solutions.
+            Leveraging best-in-class AI models and enterprise infrastructure to deliver production-ready solutions
           </p>
         </ScrollFloat>
 
-        <div className="space-y-12">
-          <div>
-            <h3 className="text-xl font-semibold text-center mb-8 text-muted-foreground">
-              AI Providers
-            </h3>
-            <LogoLoop
-              items={aiProviders.map(p => ({
-                id: p.name,
-                content: (
-                  <div className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm rounded-lg border border-border/30 hover:border-primary/50 transition-all hover:bg-primary/5 group">
-                    <p.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-                      {p.name}
-                    </span>
-                  </div>
-                )
-              }))}
-              speed={30}
-              gap={24}
-            />
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <LogoLoop
+            items={allPartners.map(p => ({
+              id: p.name,
+              content: (
+                <div className="flex items-center gap-3 px-5 py-3 bg-card/60 backdrop-blur-sm rounded-xl border border-border/40 hover:border-primary/40 transition-all hover:bg-primary/5 hover:shadow-md group">
+                  <p.icon className="w-7 h-7 text-muted-foreground/70 group-hover:text-primary transition-colors" />
+                  <span className="text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors whitespace-nowrap">
+                    {p.name}
+                  </span>
+                </div>
+              )
+            }))}
+            speed={30}
+            gap={20}
+          />
+        </div>
 
-          <div>
-            <h3 className="text-xl font-semibold text-center mb-8 text-muted-foreground">
-              Technology Stack
-            </h3>
-            <LogoLoop
-              items={techStack.map(t => ({
-                id: t.name,
-                content: (
-                  <div className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm rounded-lg border border-border/30 hover:border-primary/50 transition-all hover:bg-primary/5 group">
-                    <t.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-                      {t.name}
-                    </span>
-                  </div>
-                )
-              }))}
-              speed={35}
-              gap={24}
-              reverse
-            />
-          </div>
+        <div className="text-center mt-12">
+          <p className="text-sm text-muted-foreground">
+            Vendor-neutral approach • We recommend, not resell • Your success drives our choices
+          </p>
         </div>
       </div>
     </section>
