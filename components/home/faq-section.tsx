@@ -14,7 +14,7 @@ const faqs = [
   {
     id: "1",
     question: "How is Sprinter different from traditional consulting?",
-    answer: "We ship working AI in production within 10 days, not PowerPoint decks. Our team consists of operators who've built and scaled AI at companies like Wells Fargo and Accenture. We focus on immediate value creation with touchless automation rates of 60%+ and measurable ROI within 30-45 days."
+    answer: "We're agentic AI specialists first, consultants second. World-class expertise in autonomous systems combined with repeatable playbooks proven across portfolios. Custom development when needed, off-the-shelf integrations when smart. We ship portfolio wins in 30-45 days with measurable ROI—no PowerPoints, no drama."
   },
   {
     id: "2",
@@ -28,8 +28,8 @@ const faqs = [
   },
   {
     id: "4",
-    question: "What's included in a 10-day sprint?",
-    answer: "Day 1-2: Discovery and process mapping. Day 3-5: Build and test AI prototype with real data. Day 6-8: Deploy to production with monitoring. Day 9-10: Team training and handover. You get a working solution, not a proof of concept, with full documentation and ongoing support."
+    question: "What's included in a 30-45 day sprint?",
+    answer: "Week 1-2: Discovery, process mapping, and AI opportunity assessment. Week 3-4: Build and test production system with real data. Week 5-6: Deploy to production with monitoring, training, and handover. You get a working production system, not a proof of concept, with full documentation and ongoing support."
   },
   {
     id: "5",
@@ -44,7 +44,7 @@ const faqs = [
   {
     id: "7",
     question: "What about data security and compliance?",
-    answer: "Security first, always. We're SOC 2 compliant, support HIPAA/GDPR requirements, and can deploy within your infrastructure. All data stays within your environment. We provide full audit trails, encryption at rest and in transit, and role-based access controls."
+    answer: "Security first, always. We support HIPAA/GDPR requirements and can deploy within your infrastructure. All data stays within your environment. We provide full audit trails, encryption at rest and in transit, and role-based access controls. We follow enterprise-grade security best practices in every engagement."
   },
   {
     id: "8",

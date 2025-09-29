@@ -4,9 +4,9 @@ export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-
 
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "Your AI Operating Partner for Private Equity.",
-  description: "The AI Operating Partner for lower-middle-market PE. Real AI builders with a library of prebuilt solutions delivering value from the first sprint. We ship portfolio wins in 30-45 days—no rewires, no drama.",
-  philosophy: "Make AI boring. Ship portfolio wins in 45 days with battle-tested solutions. Real builders, real products, real results.",
+  tagline: "Your Agentic AI Partner for Private Equity",
+  description: "World-class agentic AI expertise for lower-middle-market and growth equity firms. We put AI to work across your portfolio—custom development, off-the-shelf integrations, and repeatable playbooks. Ship portfolio wins in 30-45 days, no API required.",
+  philosophy: "Make AI boring. We know agentic AI and autonomous systems as well as anyone in the world. Real builders with battle-tested solutions that drive measurable ROI. We ship production systems, not PowerPoints.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",

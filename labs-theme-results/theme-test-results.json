@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-09-26T02:59:24.662Z",
+  "baseUrl": "http://localhost:3005",
+  "screenshots": {
+    "/labs_dark": "labs-theme-results/_labs_dark.png",
+    "/labs_light": "labs-theme-results/_labs_light.png",
+    "/labs/agent-simulator_dark": "labs-theme-results/_labs_agent-simulator_dark.png",
+    "/labs/agent-simulator_light": "labs-theme-results/_labs_agent-simulator_light.png",
+    "/labs/workflow-tool_dark": "labs-theme-results/_labs_workflow-tool_dark.png",
+    "/labs/workflow-tool_light": "labs-theme-results/_labs_workflow-tool_light.png",
+    "/labs/ideation_dark": "labs-theme-results/_labs_ideation_dark.png",
+    "/labs/ideation_light": "labs-theme-results/_labs_ideation_light.png",
+    "/labs/sketch-studio_dark": "labs-theme-results/_labs_sketch-studio_dark.png",
+    "/labs/sketch-studio_light": "labs-theme-results/_labs_sketch-studio_light.png"
+  },
+  "issues": [],
+  "analysis": {
+    "/labs": {
+      "elements": {
+        "Input Fields": 2,
+        "Buttons": 40,
+        "Code Blocks": 2,
+        "Modal/Popup Elements": 1,
+        "Cards/Panels": 39
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/agent-simulator": {
+      "elements": {
+        "Input Fields": 3,
+        "Buttons": 48,
+        "Code Blocks": 2,
+        "Modal/Popup Elements": 1,
+        "Cards/Panels": 11
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/workflow-tool": {
+      "elements": {
+        "Input Fields": 4,
+        "Buttons": 43,
+        "Code Blocks": 2,
+        "Modal/Popup Elements": 1,
+        "Cards/Panels": 12
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/ideation": {
+      "elements": {
+        "Input Fields": 2,
+        "Buttons": 42,
+        "Code Blocks": 2,
+        "Modal/Popup Elements": 1,
+        "Cards/Panels": 9
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/sketch-studio": {
+      "elements": {
+        "Canvas Elements": 1,
+        "Input Fields": 4,
+        "Buttons": 55,
+        "Code Blocks": 2,
+        "Modal/Popup Elements": 1,
+        "Cards/Panels": 24
+      },
+      "issues": [],
+      "warnings": []
+    }
+  }
+}

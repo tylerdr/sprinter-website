@@ -7,9 +7,9 @@ import { Shield, Award, Users2, TrendingUp, Building2, Clock } from "lucide-reac
 const trustStats = [
   {
     icon: Building2,
-    value: "100+",
-    label: "Portfolio Companies",
-    description: "Successfully transformed"
+    value: "50+",
+    label: "AI Implementations",
+    description: "Across multiple industries"
   },
   {
     icon: TrendingUp,
@@ -19,20 +19,20 @@ const trustStats = [
   },
   {
     icon: Clock,
-    value: "10 Days",
-    label: "Time to Value",
-    description: "From kickoff to production"
+    value: "30-45",
+    label: "Days to Production",
+    description: "From discovery to deployment"
   },
   {
     icon: Shield,
-    value: "SOC 2",
-    label: "Certified",
-    description: "Enterprise-grade security"
+    value: "World-Class",
+    label: "AI Expertise",
+    description: "Deep agent & automation specialists"
   }
 ];
 
 const trustedBy = [
-  "KKR", "Blackstone", "Apollo", "TPG", "Carlyle Group"
+  "Vero Capital", "Rock Hill Capital", "Beckway", "Wells Fargo", "Accenture", "Broadlume"
 ];
 
 export function TrustIndicators() {
@@ -42,10 +42,10 @@ export function TrustIndicators() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            Trusted by <span className="gradient-text">Leading PE Firms</span>
+            <span className="gradient-text">Agentic AI Expertise</span> for Private Equity
           </h2>
           <p className="text-muted-foreground">
-            Real AI deployment for portfolio companies that drives measurable value
+            World-class knowledge in agentic AI and autonomous systems, serving lower-middle-market and growth equity portfolios
           </p>
         </div>
 

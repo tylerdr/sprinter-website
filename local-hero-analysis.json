@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-09-21T01:56:32.140Z",
+  "url": "http://localhost:3004/",
+  "status": "success",
+  "headline": {
+    "found": false,
+    "text": ""
+  },
+  "heroContent": "AI Operating Partner for Private EquityStart with one document type your team will love. Expand to end-to-end automation. 30-45 day wins guaranteed. ≥60% touchless processing with fund-level AI governance.self.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports(\"text-wrap\",\"balance\")?1:2);self.__wrap_b=(n, r, e)=>{\n    e = e || document.querySelector(`[data-br=\"${n}\"]`);\n    let t = e == null ? void 0 : e.parentElement;\n    if (!t) return;\n    let l = (u)=>e.style.maxWidth = u + \"px\";\n    e.style.maxWidth = \"\";\n    let i = t.clientWidth, d = t.clientHeight, o = i / 2 - .25, s = i + .5, c;\n    if (i) {\n        for(l(o), o = Math.max(e.scrollWidth, o); o + 1 < s;)c = Math.round((o + s) / 2), l(c), t.clientHeight === d ? s = c : o = c;\n        l(s * r + i * (1 - r));\n    }\n    e.__wrap_o || (typeof ResizeObserver != \"undefined\" ? (e.__wrap_o = new ResizeObserver(()=>{\n        self.__wrap_b(0, +e.dataset.brr, e);\n    })).observe(t) : (\"TURBOPACK compile-time value\", \"development\") === \"develop",
+  "elementChecks": [
+    {
+      "pattern": "AI Operating Partner",
+      "found": false,
+      "visible": false,
+      "count": 0
+    },
+    {
+      "pattern": "Sprinter",
+      "found": false,
+      "visible": false,
+      "count": 0
+    },
+    {
+      "pattern": "Transform",
+      "found": false,
+      "visible": false,
+      "count": 0
+    },
+    {
+      "pattern": "Get Started",
+      "found": true,
+      "visible": true,
+      "count": 1
+    },
+    {
+      "pattern": "Contact",
+      "found": true,
+      "visible": true,
+      "count": 1
+    }
+  ],
+  "backgroundCheck": {
+    "found": true,
+    "backgroundColor": "lab(1.76974 1.32743 -9.28855)",
+    "backgroundImage": "none",
+    "hasCanvas": true,
+    "canvasCount": 1,
+    "hasVideo": false,
+    "videoCount": 0,
+    "classNames": "relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20",
+    "childElementCount": 5,
+    "canvasDetails": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "className": ""
+      }
+    ]
+  },
+  "consoleLogs": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3004/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js",
+        "lineNumber": 14475,
+        "columnNumber": 53
+      }
+    },
+    {
+      "type": "warning",
+      "text": "Image with src \"/logo-no-background.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio.",
+      "location": {
+        "url": "http://localhost:3004/_next/static/chunks/node_modules_next_dist_445d8acf._.js",
+        "lineNumber": 874,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit",
+      "location": {
+        "url": "https://va.vercel-scripts.com/v1/script.debug.js",
+        "lineNumber": 0,
+        "columnNumber": 461
+      }
+    },
+    {
+      "type": "log",
+      "text": "%c[Vercel Web Analytics]%c [pageview] http://localhost:3004/ color: rgb(120, 120, 120) color: inherit {o: http://localhost:3004/, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 1.5.0, ts: 1758419789590}",
+      "location": {
+        "url": "https://va.vercel-scripts.com/v1/script.debug.js",
+        "lineNumber": 0,
+        "columnNumber": 461
+      }
+    },
+    {
+      "type": "log",
+      "text": "%c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit",
+      "location": {
+        "url": "https://va.vercel-scripts.com/v1/speed-insights/script.debug.js",
+        "lineNumber": 0,
+        "columnNumber": 11257
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+      "location": {
+        "url": "https://placeholder.supabase.co/rest/v1/analytics_events",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Analytics tracking error: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch\n    at http://localhost…tatic/chunks/node_modules_52cfafc1._.js:16504:32), hint: , code: }",
+      "location": {
+        "url": "http://localhost:3004/_next/static/chunks/node_modules_next_dist_445d8acf._.js",
+        "lineNumber": 2248,
+        "columnNumber": 31
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+      "location": {
+        "url": "https://placeholder.supabase.co/rest/v1/analytics_events",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Analytics tracking error: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch\n    at http://localhost…tatic/chunks/node_modules_52cfafc1._.js:16504:32), hint: , code: }",
+      "location": {
+        "url": "http://localhost:3004/_next/static/chunks/node_modules_next_dist_445d8acf._.js",
+        "lineNumber": 2248,
+        "columnNumber": 31
+      }
+    }
+  ],
+  "errors": [],
+  "heroHTML": "<div class=\"absolute inset-0 h-full w-full\"><div class=\"opacity-0 w-full h-full\" style=\"opacity: 1;\"><div id=\"hero-sparkles\" class=\"h-full w-full\"><canvas data-generated=\"true\" style=\"width: 100% !important; height: 100% !important; pointer-events: none;\" aria-hidden=\"true\" height=\"1080\" width=\"1920\" pointer-events=\"none\"></canvas></div></div></div><div class=\"absolute inset-0 opacity-20 transition-opacity duration-300\" style=\"background:radial-gradient(800px circle at 0px 0px, color-mix(in oklch, var(--brand-start) 20%, transparent), transparent 40%)\" aria-hidden=\"true\"></div><div class=\"absolute inset-0\" aria-hidden=\"true\"><div class=\"absolute top-20 left-10 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 bg-blue-600\" style=\"transform: translateX(62.7987px) translateY(-41.8658px);\"></div><div class=\"absolute bottom-20 right-10 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 bg-purple-600\" style=\"transform: translateX(-53.2539px) translateY(35.5026px);\"></div></div><div class=\"absolute inset-0 opacity-[0.02]\" style=\"background-image:url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)\"></div><div class=\"container mx-auto px-4 sm:px-6 relative z-10\"><div class=\"text-center max-w-6xl mx-auto\" style=\"opacity: 1; transform: none;\"><div class=\"inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm mb-8\" style=\"transform: none;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-building2 lucide-building-2 "
+}

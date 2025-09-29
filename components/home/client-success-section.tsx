@@ -15,48 +15,48 @@ import {
 const successStories = [
   {
     icon: DollarSign,
-    client: "Financial Services",
-    result: "70% faster processing",
-    timeframe: "in 4 weeks",
-    description: "AI-powered loan processing automation",
+    client: "MortgageQ (FinTech)",
+    result: "95% time reduction",
+    timeframe: "in research time",
+    description: "AI-driven Non-QM guideline intelligence platform",
   },
   {
     icon: Clock,
-    client: "Healthcare Network", 
-    result: "5x capacity increase",
-    timeframe: "in 10 days",
-    description: "Emergency triage system deployment",
+    client: "Cab-O-Matic (B2B SaaS)",
+    result: "≥2 hours saved",
+    timeframe: "per plan",
+    description: "AI-driven SKU mapping for cabinet manufacturers",
   },
   {
     icon: Users,
-    client: "E-commerce Platform",
-    result: "400% traffic growth",
-    timeframe: "in 3 months",
-    description: "AI content generation at scale",
+    client: "RPM Healthcare",
+    result: "5× patient coverage",
+    timeframe: "per nurse",
+    description: "Autonomous AI care coach for chronic patients",
   },
 ];
 
 const testimonials = [
   {
-    quote: "Sprinter delivered a working AI prototype in just 10 days that now saves our team 30+ hours per week on quote processing.",
-    author: "Sarah Chen",
-    role: "COO, TechVentures Portfolio Company",
-    company: "Series B SaaS",
-    impact: "30+ hours/week saved",
+    quote: "The AI doesn't just help us manage Non-QM complexity—it turned it into our competitive advantage. We're closing loans 300% faster with the confidence of having a senior underwriter available 24/7.",
+    author: "VP Operations",
+    role: "Mid-Market Lending Firm",
+    company: "MortgageQ Client",
+    impact: "95% time reduction",
   },
   {
-    quote: "The ROI was immediate. Within 45 days, we had automated 60% of our AP processing with zero API integrations needed.",
-    author: "Michael Rodriguez",
-    role: "CFO, Industrial Co",
-    company: "PE-backed Manufacturing",
-    impact: "60% automation rate",
+    quote: "This isn't just automation—it's transformation. We quote more options, close faster, and our designers focus on design instead of spreadsheets. The ROI was evident within weeks.",
+    author: "Operations Director",
+    role: "Cabinet Manufacturer",
+    company: "Cab-O-Matic Client",
+    impact: "2 hours saved/plan",
   },
   {
-    quote: "What sets Sprinter apart is their operator-first approach. They built WITH our team, not for them.",
-    author: "Jessica Park",
-    role: "Managing Partner",
-    company: "Growth Equity Fund",
-    impact: "5 portfolio deployments",
+    quote: "The AI coach transformed our care model. Nurses now manage 5× more patients with better outcomes because they focus on those who need them most.",
+    author: "Chief Nursing Officer",
+    role: "Regional Health System",
+    company: "RPM Healthcare Client",
+    impact: "5× coverage increase",
   },
 ];
 
@@ -73,10 +73,10 @@ export function ClientSuccessSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Proven <span className="gradient-text">Portfolio Impact</span>
+            Real AI <span className="gradient-text">Success Stories</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real results from portfolio companies across industries
+            Production AI systems that deliver measurable business impact
           </p>
         </motion.div>
 

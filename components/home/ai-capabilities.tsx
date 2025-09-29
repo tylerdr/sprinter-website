@@ -10,7 +10,7 @@ export function AICapabilities() {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <ScrollFloat className="text-center mb-16">
           <SwooshText
-            text="AI That Actually Ships"
+            text="Put Agentic AI to Work"
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
             shadowColors={{
               first: "rgba(99, 102, 241, 0.5)",
@@ -21,8 +21,9 @@ export function AICapabilities() {
             }}
           />
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
-            Production-ready AI integrations with the world's leading models.
-            From concept to deployment in days, not months.
+            World-class expertise in agentic AI and autonomous systems. Custom development when needed,
+            off-the-shelf integrations when smart. Repeatable playbooks proven across portfolios.
+            Ship production systems fast.
           </p>
         </ScrollFloat>
 

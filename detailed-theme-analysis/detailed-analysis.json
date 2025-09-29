@@ -1,0 +1,233 @@
+{
+  "timestamp": "2025-09-26T03:01:37.204Z",
+  "pages": {
+    "/labs": {
+      "url": "/labs",
+      "name": "Labs Overview",
+      "themes": {
+        "dark": {
+          "appliedTheme": {
+            "htmlClass": "dark",
+            "isDark": true,
+            "isLight": false,
+            "colorScheme": "dark"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_dark_detailed.png",
+          "elements": {
+            "cards": 37,
+            "buttons": 23
+          },
+          "interactions": {},
+          "issues": []
+        },
+        "light": {
+          "appliedTheme": {
+            "htmlClass": "light",
+            "isDark": false,
+            "isLight": true,
+            "colorScheme": "light"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_light_detailed.png",
+          "elements": {
+            "cards": 37,
+            "buttons": 23
+          },
+          "interactions": {},
+          "issues": []
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/agent-simulator": {
+      "url": "/labs/agent-simulator",
+      "name": "Agent Simulator",
+      "themes": {
+        "dark": {
+          "appliedTheme": {
+            "htmlClass": "dark",
+            "isDark": true,
+            "isLight": false,
+            "colorScheme": "dark"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_agent-simulator_dark_detailed.png",
+          "elements": {
+            "canvases": 0,
+            "controls": 0,
+            "progressBars": 0,
+            "inputs": 2
+          },
+          "interactions": {},
+          "issues": []
+        },
+        "light": {
+          "appliedTheme": {
+            "htmlClass": "light",
+            "isDark": false,
+            "isLight": true,
+            "colorScheme": "light"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_agent-simulator_light_detailed.png",
+          "elements": {
+            "canvases": 0,
+            "controls": 0,
+            "progressBars": 0,
+            "inputs": 2
+          },
+          "interactions": {},
+          "issues": []
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/workflow-tool": {
+      "url": "/labs/workflow-tool",
+      "name": "Workflow Tool",
+      "themes": {
+        "dark": {
+          "appliedTheme": {
+            "htmlClass": "dark",
+            "isDark": true,
+            "isLight": false,
+            "colorScheme": "dark"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_workflow-tool_dark_detailed.png",
+          "elements": {
+            "canvases": 0,
+            "controls": 0,
+            "modals": 0
+          },
+          "interactions": {},
+          "issues": []
+        },
+        "light": {
+          "appliedTheme": {
+            "htmlClass": "light",
+            "isDark": false,
+            "isLight": true,
+            "colorScheme": "light"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_workflow-tool_light_detailed.png",
+          "elements": {
+            "canvases": 0,
+            "controls": 0,
+            "modals": 0
+          },
+          "interactions": {},
+          "issues": []
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/ideation": {
+      "url": "/labs/ideation",
+      "name": "Ideation Lab",
+      "themes": {
+        "dark": {
+          "appliedTheme": {
+            "htmlClass": "dark",
+            "isDark": true,
+            "isLight": false,
+            "colorScheme": "dark"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_ideation_dark_detailed.png",
+          "elements": {
+            "cards": 7,
+            "inputs": 1
+          },
+          "interactions": {},
+          "issues": []
+        },
+        "light": {
+          "appliedTheme": {
+            "htmlClass": "light",
+            "isDark": false,
+            "isLight": true,
+            "colorScheme": "light"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_ideation_light_detailed.png",
+          "elements": {
+            "cards": 7,
+            "inputs": 1
+          },
+          "interactions": {},
+          "issues": []
+        }
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "/labs/sketch-studio": {
+      "url": "/labs/sketch-studio",
+      "name": "Sketch Studio",
+      "themes": {
+        "dark": {
+          "appliedTheme": {
+            "htmlClass": "dark",
+            "isDark": true,
+            "isLight": false,
+            "colorScheme": "dark"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_sketch-studio_dark_detailed.png",
+          "elements": {
+            "canvases": 1,
+            "colorPickers": 53,
+            "controls": 0
+          },
+          "interactions": {
+            "canvas": {
+              "width": 800,
+              "height": 500,
+              "visible": true,
+              "styles": {
+                "backgroundColor": "lab(1.76974 1.32743 -9.28855)",
+                "border": "1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.05)",
+                "opacity": "1"
+              }
+            },
+            "canvasClickable": true
+          },
+          "issues": []
+        },
+        "light": {
+          "appliedTheme": {
+            "htmlClass": "light",
+            "isDark": false,
+            "isLight": true,
+            "colorScheme": "light"
+          },
+          "screenshot": "detailed-theme-analysis/_labs_sketch-studio_light_detailed.png",
+          "elements": {
+            "canvases": 1,
+            "colorPickers": 53,
+            "controls": 0
+          },
+          "interactions": {
+            "canvas": {
+              "width": 800,
+              "height": 500,
+              "visible": true,
+              "styles": {
+                "backgroundColor": "lab(100 0 0)",
+                "border": "1px solid oklab(0.928998 -0.00326243 -0.0125641 / 0.2)",
+                "opacity": "1"
+              }
+            },
+            "canvasClickable": true
+          },
+          "issues": []
+        }
+      },
+      "issues": [],
+      "warnings": []
+    }
+  },
+  "summary": {
+    "totalIssues": 0,
+    "criticalIssues": [],
+    "warnings": [],
+    "recommendations": []
+  }
+}

@@ -51,7 +51,7 @@ export function FinalCTA() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight"
           >
             <Balancer>
-              Ready to <span className="gradient-text">Transform Your Portfolio</span>?
+              Ready to Work with <span className="gradient-text">AI Experts</span>?
             </Balancer>
           </motion.h2>
 
@@ -66,21 +66,21 @@ export function FinalCTA() {
               <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
                 <ShieldCheck className="w-5 h-5 text-primary" />
               </div>
-              <span className="font-semibold">Fee-offset ready</span>
+              <span className="font-semibold">AI Agent Specialists</span>
             </div>
 
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
                 <Calendar className="w-5 h-5 text-primary" />
               </div>
-              <span className="font-semibold">10 days</span>
+              <span className="font-semibold">30-45 day sprints</span>
             </div>
 
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
                 <ArrowRight className="w-5 h-5 text-primary" />
               </div>
-              <span className="font-semibold">2 live use cases</span>
+              <span className="font-semibold">Production systems</span>
             </div>
           </motion.div>
 
@@ -92,7 +92,8 @@ export function FinalCTA() {
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             <Balancer>
-              Bring two portfolio companies. We run discovery, ship production automation, and capture the metrics your LPs expect.
+              We identify the highest-impact AI opportunities in your portfolio companies and ship production systems fast.
+              No PowerPoints. No proofs-of-concept. Real AI that drives measurable ROI.
             </Balancer>
           </motion.p>
 
@@ -104,14 +105,14 @@ export function FinalCTA() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button asChild size="lg" variant="gradient" className="text-lg px-8">
-              <Link href="/contact?type=pilot" className="group">
-                Start the Pilot
+              <Link href="/contact" className="group">
+                Book a Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link href="/ai-assessment">
-                Get a Portfolio Assessment
+              <Link href="/case-studies">
+                See Our Work
               </Link>
             </Button>
           </motion.div>
@@ -124,7 +125,8 @@ export function FinalCTA() {
             className="mt-12 p-4 bg-gradient-to-r from-green-500/5 to-blue-500/5 rounded-xl border border-border/50 max-w-2xl mx-auto"
           >
             <p className="text-sm text-muted-foreground">
-              <span className="font-semibold text-green-400">Guaranteed adoption</span> — If the sprint doesn&apos;t deliver a live automation with real usage, we refund the entire engagement.
+              <span className="font-semibold text-blue-400">Expert Guidance</span> — We bring world-class AI agent expertise to every engagement.
+              From discovery to deployment, we identify the right AI opportunities and execute them flawlessly.
             </p>
           </motion.div>
         </motion.div>

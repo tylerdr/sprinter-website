@@ -7,10 +7,10 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "AI Operating Partner",
+      line1: "Agentic AI Experts",
       line2: "for Private Equity"
     },
-    subheadline: "Transform portfolio operations with production-ready AI. From pilot to scale in 30-45 days. Measurable ROI, board-ready governance, zero infrastructure required."
+    subheadline: "World-class agentic AI and autonomous systems expertise for lower-middle-market and growth equity portfolios. We put AI to work—custom development, off-the-shelf integrations, repeatable playbooks. Ship portfolio wins in 30-45 days."
   },
   scale: {
     headline: {
@@ -63,8 +63,8 @@ export const ctaVariants = {
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "Portfolio-Wide AI Implementation in 90 Days",
-    description: "Start with one portco, scale to all. AP automation hitting 60%+ touchless. Quote intelligence cutting cycle time by 42%. Full playbooks for replication.",
+    headline: "Agentic AI Expertise Meets Portfolio Execution",
+    description: "Real AI builders with repeatable playbooks proven across portfolios. Custom development when needed, off-the-shelf integrations when smart. From AP automation to quote intelligence—we ship portfolio wins in 45 days with measurable ROI.",
     cta: "Book your AI Scoping Workshop today. Fixed fee, clear deliverables."
   },
   leftBehind: {

@@ -15,46 +15,46 @@ import {
 
 const services = [
   {
-    title: "AI Automation",
-    subtitle: "Streamline operations",
-    description: "Deploy intelligent automation that saves 20+ hours per week.",
-    features: ["Process Mining", "Workflow Automation", "RPA Integration", "AI Orchestration"],
-    icon: Zap,
-  },
-  {
-    title: "Data Intelligence",
-    subtitle: "Unlock insights",
-    description: "Transform raw data into actionable portfolio intelligence.",
-    features: ["Predictive Analytics", "Real-time Dashboards", "Custom ML Models", "Data Pipelines"],
+    title: "Agentic AI Systems",
+    subtitle: "Put AI to work",
+    description: "Deploy autonomous agents that handle complex workflows across your portfolio.",
+    features: ["Agent Architecture", "Multi-Agent Coordination", "Tool Integration", "Repeatable Playbooks"],
     icon: Brain,
   },
   {
-    title: "Rapid Prototypes",
-    subtitle: "Ship fast",
-    description: "From concept to production-ready AI in 10 days.",
-    features: ["MVP Development", "API Integration", "Cloud Deployment", "Performance Testing"],
+    title: "Off-the-Shelf + Custom",
+    subtitle: "Best of both worlds",
+    description: "Integrate proven tools when smart, build custom when needed. Pragmatic AI.",
+    features: ["Tool Evaluation", "API Integration", "Custom Development", "Hybrid Solutions"],
+    icon: Layers,
+  },
+  {
+    title: "No-API Automation",
+    subtitle: "Legacy system specialists",
+    description: "Automate systems without API access. 70%+ of our work requires zero APIs.",
+    features: ["Document Intelligence", "Screen Automation", "Process Mining", "Workflow Orchestration"],
+    icon: Zap,
+  },
+  {
+    title: "Portfolio Playbooks",
+    subtitle: "Scale across portcos",
+    description: "Repeatable frameworks that accelerate each deployment. 2nd portco is 50% faster.",
+    features: ["Proven Templates", "Best Practices", "Knowledge Base", "Cross-Portfolio Learnings"],
+    icon: Globe,
+  },
+  {
+    title: "45-Day Sprints",
+    subtitle: "Ship portfolio wins fast",
+    description: "From discovery to production in 30-45 days. Real systems with measurable ROI.",
+    features: ["Sprint Methodology", "Production Deployment", "Real Data Integration", "User Training"],
     icon: Rocket,
   },
   {
-    title: "Team Enablement",
-    subtitle: "Build capability",
-    description: "Upskill your teams to leverage AI independently.",
-    features: ["Hands-on Training", "Best Practices", "Tool Selection", "Change Management"],
+    title: "Operator Enablement",
+    subtitle: "Build internal capability",
+    description: "Train your operators to sustain and expand AI after we're gone.",
+    features: ["Hands-on Training", "Documentation", "Internal Champions", "Ongoing Support"],
     icon: Users,
-  },
-  {
-    title: "Portfolio Analytics",
-    subtitle: "Track impact",
-    description: "Measure and optimize AI ROI across all companies.",
-    features: ["KPI Tracking", "ROI Analysis", "Benchmarking", "Success Metrics"],
-    icon: BarChart,
-  },
-  {
-    title: "AI Governance",
-    subtitle: "Manage risk",
-    description: "Implement responsible AI with proper controls.",
-    features: ["Risk Assessment", "Compliance", "Security Audits", "Ethical Guidelines"],
-    icon: Shield,
   },
 ];
 
@@ -64,11 +64,11 @@ export function ServicesFlip() {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <ScrollFloat className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            Proven AI <span className="gradient-text">Solutions</span>
+            Agentic AI <span className="gradient-text">Capabilities</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Battle-tested AI implementations designed specifically for PE portfolios.
-            Explore our core capabilities below.
+            Custom development, off-the-shelf integrations, and repeatable playbooks.
+            We identify the highest-ROI AI opportunities and ship portfolio wins in 45 days.
           </p>
         </ScrollFloat>
 

@@ -1,0 +1,122 @@
+[
+  {
+    "url": "http://localhost:3001/use-cases/industries/finance",
+    "path": "/use-cases/industries/finance",
+    "name": "💰Finance & BankingTransform financial operations with AI-powered automation, risk assessment, and customer service120-250% typical ROI in 3-6 months4 use cases availableExplore solutions",
+    "title": "AI for Finance & Banking - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/healthcare",
+    "path": "/use-cases/industries/healthcare",
+    "name": "🏥HealthcareRevolutionize patient care with AI diagnostics, automated monitoring, and predictive analytics2-3x efficiency improvement4 use cases availableExplore solutions",
+    "title": "AI for Healthcare - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/retail",
+    "path": "/use-cases/industries/retail",
+    "name": "🛍️Retail & E-commerceEnhance customer experience and operations with AI-driven personalization and automation50-150% revenue improvement4 use cases availableExplore solutions",
+    "title": "AI for Retail & E-commerce - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/manufacturing",
+    "path": "/use-cases/industries/manufacturing",
+    "name": "🏭ManufacturingOptimize production with predictive maintenance, quality control, and supply chain AI30-50% reduction in downtime4 use cases availableExplore solutions",
+    "title": "AI for Manufacturing - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/legal",
+    "path": "/use-cases/industries/legal",
+    "name": "⚖️LegalAccelerate legal work with contract analysis, research automation, and compliance monitoring40-60% time reduction4 use cases availableExplore solutions",
+    "title": "AI for Legal - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/real-estate",
+    "path": "/use-cases/industries/real-estate",
+    "name": "🏢Real EstateTransform property management with AI valuation, lead generation, and market analysis50-100% more qualified leads4 use cases availableExplore solutions",
+    "title": "AI for Real Estate - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/automation",
+    "path": "/use-cases/automation",
+    "name": "automation",
+    "title": "Use Case Not Found",
+    "category": "use-cases",
+    "subcategory": "specific",
+    "status": "error"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/customer-service",
+    "path": "/use-cases/customer-service",
+    "name": "customer-service",
+    "title": "Use Case Not Found",
+    "category": "use-cases",
+    "subcategory": "specific",
+    "status": "error"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/data-analysis",
+    "path": "/use-cases/data-analysis",
+    "name": "data-analysis",
+    "title": "Use Case Not Found",
+    "category": "use-cases",
+    "subcategory": "specific",
+    "status": "error"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/workflow-optimization",
+    "path": "/use-cases/workflow-optimization",
+    "name": "workflow-optimization",
+    "title": "Use Case Not Found",
+    "category": "use-cases",
+    "subcategory": "specific",
+    "status": "error"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/healthcare",
+    "path": "/use-cases/industries/healthcare",
+    "name": "healthcare",
+    "title": "AI for Healthcare - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries",
+    "status": "ok"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/finance",
+    "path": "/use-cases/industries/finance",
+    "name": "finance",
+    "title": "AI for Finance & Banking - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries",
+    "status": "ok"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/manufacturing",
+    "path": "/use-cases/industries/manufacturing",
+    "name": "manufacturing",
+    "title": "AI for Manufacturing - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries",
+    "status": "ok"
+  },
+  {
+    "url": "http://localhost:3001/use-cases/industries/retail",
+    "path": "/use-cases/industries/retail",
+    "name": "retail",
+    "title": "AI for Retail & E-commerce - Use Cases & Implementation",
+    "category": "use-cases",
+    "subcategory": "industries",
+    "status": "ok"
+  }
+]

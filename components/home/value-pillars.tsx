@@ -3,40 +3,41 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Building2,
+  Brain,
   Zap,
   Users,
-  ShieldCheck,
+  Rocket,
+  Layers,
 } from "lucide-react";
 
 const pillars = [
   {
-    icon: Building2,
-    title: "Portfolio OS",
-    description: "Fund-level visibility",
+    icon: Brain,
+    title: "Agentic AI Mastery",
+    description: "World-class expertise",
     details:
-      "Centralize KPIs, governance, and ROI tracking so partners and LPs see progress without chasing every operator for updates.",
+      "We know agentic AI and autonomous systems as well as anyone in the world. This depth lets us identify the highest-ROI opportunities and architect solutions that actually work.",
   },
   {
-    icon: Zap,
-    title: "Sprint Factory",
-    description: "Prebuilt execution",
+    icon: Layers,
+    title: "Pragmatic Approach",
+    description: "Custom + off-the-shelf",
     details:
-      "Deploy the library of battle-tested automations to ship the first win in 30–45 days, even inside legacy stacks with no APIs.",
+      "Integrate proven tools when smart, build custom when needed. Repeatable playbooks that accelerate each deployment. The 2nd portco implementation is 50% faster, the 3rd is 70% faster.",
+  },
+  {
+    icon: Rocket,
+    title: "Portfolio Wins in 45 Days",
+    description: "Ship real systems fast",
+    details:
+      "We don't deliver PowerPoints or proofs-of-concept. Every engagement ships production systems with real users, real data, and measurable ROI within 30-45 days. Make AI boring.",
   },
   {
     icon: Users,
     title: "Operator Enablement",
-    description: "Hands-on adoption",
+    description: "Build internal capability",
     details:
-      "Train management teams, wire SOPs, and embed change champions so the tech sticks after we hand off.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trust & Governance",
-    description: "Security and compliance",
-    details:
-      "Fee-offset ready documentation, audit trails, and portfolio guardrails designed for regulated PE environments.",
+      "We build WITH your operators, not for them. Full training, documentation, and repeatable playbooks ensure your team can sustain and expand AI capabilities independently.",
   },
 ];
 
@@ -54,10 +55,10 @@ export function ValuePillars() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Four Pillars for PE Value Creation
+            Why <span className="gradient-text">Sprinter</span> for Agentic AI?
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            The operating partner system that keeps every portfolio company moving in the same direction.
+            World-class agentic AI expertise meets battle-tested portfolio execution. Real builders, real products, real results.
           </p>
         </motion.div>
 
