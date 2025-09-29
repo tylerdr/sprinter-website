@@ -51,7 +51,7 @@ export function FinalCTA() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight"
           >
             <Balancer>
-              Run the <span className="gradient-text">10-Day Portfolio Sprint</span>
+              Ready to <span className="gradient-text">Transform Your Portfolio</span>?
             </Balancer>
           </motion.h2>
 

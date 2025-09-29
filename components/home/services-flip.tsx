@@ -2,7 +2,6 @@
 
 import CardFlip from "@/components/kokonutui/card-flip";
 import ScrollFloat from "@/components/ScrollFloat";
-import TrueFocus from "@/components/TrueFocus";
 import {
   Zap,
   Brain,
@@ -64,14 +63,12 @@ export function ServicesFlip() {
     <section className="py-24 sm:py-28 relative overflow-hidden bg-muted/10">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <ScrollFloat className="text-center mb-16">
-          <TrueFocus
-            sentence="Every Engagement"
-            triggerWord="Engagement"
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
-          />
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+            Proven AI <span className="gradient-text">Solutions</span>
+          </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive AI services designed for private equity portfolios.
-            Flip each card to explore our capabilities.
+            Battle-tested AI implementations designed specifically for PE portfolios.
+            Explore our core capabilities below.
           </p>
         </ScrollFloat>
 

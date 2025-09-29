@@ -663,7 +663,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 export default function BentoGrid() {
     return (
-        <section className="relative py-24 sm:py-32 bg-white dark:bg-black overflow-hidden">
+        <section className="relative py-24 sm:py-32 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Bento Grid */}
                 <motion.div

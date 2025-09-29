@@ -35,17 +35,7 @@ export function Footer() {
   return (
     <footer role="contentinfo" className="bg-background border-t border-border/30">
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {/* Newsletter Section - Horizontal */}
-        <div className="border-b border-border/30 pb-8 mb-8">
-          <NewsletterSignup
-            variant="footer"
-            title="AI Insights Newsletter"
-            description="Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox."
-            placeholder="your@company.com"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
@@ -121,6 +111,16 @@ export function Footer() {
                 </ul>
               </nav>
             ))}
+
+          {/* Newsletter Signup */}
+          <div className="sm:col-span-2 lg:col-span-2">
+            <NewsletterSignup
+              variant="footer"
+              title="AI Insights Newsletter"
+              description="Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox."
+              placeholder="your@company.com"
+            />
+          </div>
         </div>
 
         {/* Copyright */}
