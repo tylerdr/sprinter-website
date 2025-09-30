@@ -117,7 +117,7 @@ export const INDUSTRIES = [
     ],
     metrics: {
       avgROI: "4.2x",
-      timeToValue: "45 days",
+      timeToValue: "3 sprints",
       fraudReduction: "65%",
       documentProcessing: "80% straight-through",
     },
@@ -199,7 +199,7 @@ export const INDUSTRIES = [
     ],
     metrics: {
       avgROI: "2.5x",
-      timeToValue: "30 days",
+      timeToValue: "2 sprints",
       conversionIncrease: "35%",
       documentProcessing: "75% automation",
     },
@@ -322,7 +322,7 @@ export const INDUSTRIES = [
     ],
     metrics: {
       avgROI: "2.7x",
-      timeToValue: "45 days",
+      timeToValue: "3 sprints",
       valuationAccuracy: "95%",
       documentProcessing: "70% automation",
     },

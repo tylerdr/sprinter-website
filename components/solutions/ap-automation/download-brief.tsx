@@ -33,7 +33,7 @@ export function DownloadBrief() {
                   <h2 className="text-2xl font-bold">AP Accelerator Brief</h2>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Everything you need to evaluate and implement AP automation in 30-45 days. 
+                  Everything you need to evaluate and implement AP automation in 2-3 sprints. 
                   Includes acceptance criteria, CSV specs for upload-only ERPs, and ROI calculator.
                 </p>
                 <div className="space-y-2 mb-6">

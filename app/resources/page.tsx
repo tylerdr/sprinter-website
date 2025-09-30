@@ -117,7 +117,7 @@ export default function ResourcesPage() {
 
         <div className="text-center p-8 rounded-2xl border border-brand-30 bg-brand-10">
           <h3 className="text-2xl font-bold mb-4">
-            Ready to see ROI in 45 days?
+            Ready to see ROI in 3 sprints?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Let&apos;s run a pilot with one portfolio company and prove the value before scaling.

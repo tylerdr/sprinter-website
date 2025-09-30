@@ -488,7 +488,7 @@ function getMockServices(): ServiceEntity[] {
             "Cut training time by 80%",
             "Saved $3.2M annually"
           ],
-          metric: { value: "45 days", label: "To proficiency" }
+          metric: { value: "3 sprints", label: "To proficiency" }
         },
         {
           title: "Fast-Growing SaaS",

@@ -91,7 +91,7 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
       icon: Sparkles,
       featured: {
         title: "AI Operating Partner Program",
-        description: "Transform your portfolio with battle-tested AI solutions. Get measurable wins in 30-45 days.",
+        description: "Transform your portfolio with battle-tested AI solutions. Get measurable wins in 2-3 sprints.",
         href: "/operating-partner",
         icon: Rocket,
         badge: { text: "Popular", variant: "success" },
