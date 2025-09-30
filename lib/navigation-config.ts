@@ -133,25 +133,6 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           title: "Program Options",
           items: [
             {
-              label: "90-Minute Workshop",
-              href: "/operating-partner#workshop",
-              icon: Clock,
-              description: "Get pilot plan & options memo",
-              badge: { text: "Free", variant: "success" },
-            },
-            {
-              label: "30-45 Day Pilot",
-              href: "/operating-partner#pilot",
-              icon: Zap,
-              description: "Ship measurable value fast",
-            },
-            {
-              label: "Portfolio Scoreboard",
-              href: "/operating-partner#scoreboard",
-              icon: BarChart,
-              description: "Dashboards for LP transparency",
-            },
-            {
               label: "Partnership Program",
               href: "/partnership",
               icon: Users,
@@ -250,6 +231,31 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           href: "/approach#change-playbook",
           icon: Users,
           description: "Turn skeptics into champions",
+        },
+        {
+          label: "AI-Native Design",
+          href: "/approach#ai-native",
+          icon: Cpu,
+          description: "Built for AI-first, not AI-added",
+          badge: { text: "Philosophy", variant: "outline" },
+        },
+        {
+          label: "Agent-Accessible Systems",
+          href: "/approach#agent-accessible",
+          icon: Zap,
+          description: "Every process accessible to AI agents",
+        },
+        {
+          label: "Unlimited Capacity",
+          href: "/approach#unlimited-capacity",
+          icon: TrendingUp,
+          description: "Break free from labor constraints",
+        },
+        {
+          label: "First Principles Thinking",
+          href: "/approach#first-principles",
+          icon: Lightbulb,
+          description: "Reimagine end-to-end from inputs to outputs",
         },
       ],
     },
