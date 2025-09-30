@@ -72,8 +72,8 @@ export default function SketchStudio() {
 
     ctx.lineWidth = brushSize;
     ctx.lineCap = "round";
-    // Use theme-aware colors for drawing
-    ctx.strokeStyle = theme === "dark" ? "#ffffff" : "#000000";
+    // Use theme-aware colors for drawing (default to dark mode during load)
+    ctx.strokeStyle = theme === "light" ? "#000000" : "#ffffff";
     ctx.lineTo(x, y);
     ctx.stroke();
   };
@@ -89,8 +89,8 @@ export default function SketchStudio() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Use theme-aware background color
-    ctx.fillStyle = theme === "dark" ? "#1a1a1a" : "#f5f5f5";
+    // Use theme-aware background color (default to dark mode during load)
+    ctx.fillStyle = theme === "light" ? "#f5f5f5" : "#1a1a1a";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     setGeneratedImage(null);
   };

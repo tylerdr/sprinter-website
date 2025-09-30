@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,11 +10,6 @@ import {
   Database, Cloud, Server, Shield, AlertTriangle, Play,
   Cable, Cpu, Terminal, FileText, TrendingUp, Users
 } from "lucide-react";
-
-const metadata: Metadata = {
-  title: "No-API Integration Layer | Sprinter AI",
-  description: "Enable AI on legacy systems without APIs. Our safe middle layer works with desktop ERPs, upload-only systems, and locked databases. Transform digital laggards into AI leaders.",
-};
 
 const challenges = [
   {

@@ -368,8 +368,11 @@ export function DynamicServiceView({ service }: DynamicServiceViewProps) {
             </div>
 
             <div className={cn(
-              "grid gap-6 max-w-6xl mx-auto",
-              `grid-cols-1 md:grid-cols-${Math.min(service.pricing.tiers.length, 4)}`
+              "grid gap-6 max-w-6xl mx-auto grid-cols-1",
+              service.pricing.tiers.length === 1 && "md:grid-cols-1",
+              service.pricing.tiers.length === 2 && "md:grid-cols-2",
+              service.pricing.tiers.length === 3 && "md:grid-cols-3",
+              service.pricing.tiers.length >= 4 && "md:grid-cols-4"
             )}>
               {service.pricing.tiers.map((tier, i) => (
                 <Card key={i} className={cn(

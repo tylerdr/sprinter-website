@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,11 +11,6 @@ import {
   Zap, Calculator, CreditCard, Package, Send, AlertCircle,
   BarChart3, Target, Users, Brain, Play, DollarSign, RefreshCw
 } from "lucide-react";
-
-const metadata: Metadata = {
-  title: "Quote-to-Cash Intelligence | Sprinter AI",
-  description: "Accelerate revenue velocity with AI-powered quote generation, pricing optimization, and order processing. Cut quote cycles by 80% while improving win rates.",
-};
 
 const stages = [
   {
