@@ -160,13 +160,37 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
             },
           ],
         },
+        {
+          title: "Browse Solutions",
+          items: [
+            {
+              label: "All Use Cases",
+              href: "/use-cases",
+              icon: Settings,
+              description: "Browse all solutions",
+            },
+            {
+              label: "By Industry",
+              href: "/use-cases/industries",
+              icon: TrendingUp,
+              description: "Industry-specific solutions",
+            },
+            {
+              label: "By Role",
+              href: "/use-cases/roles",
+              icon: Layers,
+              description: "Role-based solutions",
+            },
+            {
+              label: "All Services",
+              href: "/pe-services",
+              icon: Settings,
+              description: "20+ prebuilt AI solutions",
+              badge: { text: "View All", variant: "outline" },
+            },
+          ],
+        },
       ],
-    },
-    {
-      label: "Case Studies",
-      href: "/case-studies",
-      type: "link",
-      icon: Trophy,
     },
     {
       label: "Approach",
@@ -175,11 +199,24 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
       icon: UserCheck,
       items: [
         {
+          label: "Portfolio Wins",
+          href: "/case-studies",
+          icon: Trophy,
+          description: "$10M+ value created across 50+ deployments",
+          badge: { text: "Real Results", variant: "success" },
+        },
+        {
           label: "People-First AI",
           href: "/approach",
           icon: Heart,
           description: "Our human-centered methodology",
           badge: { text: "Featured", variant: "success" },
+        },
+        {
+          label: "ROI Calculator",
+          href: "/labs/roi-calculator",
+          icon: Calculator,
+          description: "Quantify AI value for your portfolio in 2 minutes",
         },
         {
           label: "Find Your Wedge",
@@ -199,6 +236,13 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           href: "/approach#change-playbook",
           icon: Users,
           description: "Turn skeptics into champions",
+        },
+        {
+          label: "Implementation Guides",
+          href: "/downloads/no-api-cookbook",
+          icon: BookOpen,
+          description: "Battle-tested playbooks from 100+ deployments",
+          badge: { text: "Download", variant: "outline" },
         },
       ],
     },
@@ -244,13 +288,6 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           title: "Knowledge Base",
           items: [
             {
-              label: "Portfolio Wins",
-              href: "/case-studies",
-              icon: Trophy,
-              description: "$10M+ value created",
-              badge: { text: "Results", variant: "success" },
-            },
-            {
               label: "Downloads",
               href: "/downloads/no-api-cookbook",
               icon: Download,
@@ -261,6 +298,48 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               href: "/blog",
               icon: Lightbulb,
               description: "Private equity AI analysis",
+            },
+          ],
+        },
+        {
+          title: "Industries",
+          items: [
+            {
+              label: "Private Equity",
+              href: "/industries/private-equity",
+              icon: Briefcase,
+              description: "PE-focused solutions",
+              badge: { text: "Featured", variant: "secondary" },
+            },
+            {
+              label: "Healthcare",
+              href: "/industries/healthcare",
+              icon: Heart,
+              description: "Clinical & admin AI",
+            },
+            {
+              label: "Financial Services",
+              href: "/industries/financial-services",
+              icon: Banknote,
+              description: "Fintech & banking AI",
+            },
+            {
+              label: "Manufacturing",
+              href: "/industries/manufacturing",
+              icon: Factory,
+              description: "Quality, scheduling & maintenance",
+            },
+            {
+              label: "Logistics & 3PL",
+              href: "/industries/logistics",
+              icon: Truck,
+              description: "Supply chain & routing automation",
+            },
+            {
+              label: "View All Industries",
+              href: "/industries",
+              icon: Building2,
+              description: "Browse all sectors",
             },
           ],
         },
