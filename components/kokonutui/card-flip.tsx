@@ -68,12 +68,12 @@ export default function CardFlip({
                                             "absolute w-[50px] h-[50px]",
                                             "rounded-[140px]",
                                             "animate-[scale_3s_linear_infinite]",
-                                            "opacity-0",
-                                            "shadow-[0_0_50px_hsl(var(--primary)/0.5)]",
+                                            "opacity-0 bg-primary/50",
                                             "group-hover:animate-[scale_2s_linear_infinite]"
                                         )}
                                         style={{
                                             animationDelay: `${i * 0.3}s`,
+                                            boxShadow: '0 0 50px rgba(99, 102, 241, 0.5)',
                                         }}
                                     />
                                 ))}
@@ -188,17 +188,17 @@ export default function CardFlip({
                     0% {
                         transform: scale(2);
                         opacity: 0;
-                        box-shadow: 0px 0px 50px hsl(var(--primary) / 0.5);
+                        box-shadow: 0px 0px 50px rgba(99, 102, 241, 0.5);
                     }
                     50% {
                         transform: translate(0px, -5px) scale(1);
                         opacity: 1;
-                        box-shadow: 0px 8px 20px hsl(var(--primary) / 0.5);
+                        box-shadow: 0px 8px 20px rgba(99, 102, 241, 0.5);
                     }
                     100% {
                         transform: translate(0px, 5px) scale(0.1);
                         opacity: 0;
-                        box-shadow: 0px 10px 20px hsl(var(--primary) / 0);
+                        box-shadow: 0px 10px 20px rgba(99, 102, 241, 0);
                     }
                 }
             `}</style>

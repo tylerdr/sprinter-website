@@ -52,7 +52,10 @@ export function DynamicServiceView({ service }: DynamicServiceViewProps) {
               {service.hero.stats && service.hero.stats.length > 0 && (
                 <div className={cn(
                   "grid gap-4 mb-8 max-w-3xl mx-auto",
-                  `grid-cols-${Math.min(service.hero.stats.length, 4)}`
+                  service.hero.stats.length === 1 && "grid-cols-1",
+                  service.hero.stats.length === 2 && "grid-cols-2",
+                  service.hero.stats.length === 3 && "grid-cols-3",
+                  service.hero.stats.length >= 4 && "grid-cols-4"
                 )}>
                   {service.hero.stats.map((stat, i) => (
                     <div key={i} className="bg-card/50 backdrop-blur-sm rounded-lg p-3 border">
