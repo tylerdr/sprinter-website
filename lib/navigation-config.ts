@@ -239,8 +239,8 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           description: "Sprint-based wins that compound to full AI-native operations",
         },
         {
-          label: "Agent-First Architecture",
-          href: "/approach#agent-first",
+          label: "AI-Native",
+          href: "/approach#ai-native",
           icon: Cpu,
           description: "Built for AI from day one—agents and people working together",
           badge: { text: "Philosophy", variant: "outline" },
