@@ -26,7 +26,7 @@ export const COPY = {
       line2: "for Private Equity"
     },
     subheadline: {
-      main: "Fund-level orchestration and boringly reliable 30-45 day wins—starting with AP & expense automation, Quote Intelligence, and 3PL Ops.",
+      main: "Fund-level orchestration and boringly reliable 2-3 sprint wins—starting with AP & expense automation, Quote Intelligence, and 3PL Ops.",
       secondary: "No API? No problem. We build the safe middle layer for QBO/Sage/desktop."
     },
     cta: {
@@ -34,7 +34,7 @@ export const COPY = {
       secondary: "Download AP Accelerator Brief"
     },
     trustIndicators: [
-      { icon: "Clock", text: "30-45 day wins" },
+      { icon: "Clock", text: "2-3 sprint delivery" },
       { icon: "Shield", text: "Vendor neutral" },
       { icon: "CheckCircle", text: "Acceptance criteria" },
       { icon: "Building2", text: "Portfolio-wide" }

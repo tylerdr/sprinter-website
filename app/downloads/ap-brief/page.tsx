@@ -70,7 +70,7 @@ export default function APBriefPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Security & Compliance</h3>
                     <p className="text-sm text-muted-foreground">
-                      Audit trail requirements and SOC 2 compliance checklist
+                      Audit trail requirements and vendor security evaluation (SOC 2 providers)
                     </p>
                   </div>
                 </div>
@@ -89,8 +89,8 @@ export default function APBriefPage() {
                   <p className="text-sm text-muted-foreground">Touchless Processing Rate</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-brand-start mb-2">30-45</div>
-                  <p className="text-sm text-muted-foreground">Days to Production</p>
+                  <div className="text-3xl font-bold text-brand-start mb-2">2-3</div>
+                  <p className="text-sm text-muted-foreground">Sprints to Production</p>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-brand-start mb-2">80%</div>

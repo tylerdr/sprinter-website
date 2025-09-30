@@ -48,9 +48,9 @@ export default function GovernancePackPage() {
                 <div className="flex items-start gap-3">
                   <FileCheck className="w-5 h-5 text-green-500 mt-1 shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-1">SOC 2 Compliance Checklist</h3>
+                    <h3 className="font-semibold mb-1">Security & Privacy Framework</h3>
                     <p className="text-sm text-muted-foreground">
-                      Step-by-step guide to achieving SOC 2 compliance for AI systems
+                      Vendor evaluation guide ensuring SOC 2 eligible providers and private data protection
                     </p>
                   </div>
                 </div>

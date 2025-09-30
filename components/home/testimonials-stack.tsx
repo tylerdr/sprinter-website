@@ -14,7 +14,7 @@ const testimonials = [
     impact: "30+ hours/week saved",
   },
   {
-    quote: "The ROI was immediate. Within 45 days, we had automated 60% of our AP processing with zero API integrations needed.",
+    quote: "The ROI was immediate. In just 3 sprints, we had automated 60% of our AP processing with zero API integrations needed.",
     author: "Michael Rodriguez",
     role: "CFO, Industrial Co",
     company: "PE-backed Manufacturing",

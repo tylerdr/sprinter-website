@@ -39,7 +39,7 @@ export function APHero() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight"
           >
             60% Touchless Invoices
-            <span className="gradient-text block mt-2">in 30-45 Days</span>
+            <span className="gradient-text block mt-2">in 2-3 Sprints</span>
           </motion.h1>
 
           {/* Subheadline */}

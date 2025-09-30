@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "passed": true,
+    "issues": []
+  },
+  "sketchStudio": {
+    "passed": true,
+    "issues": []
+  },
+  "pricingGrids": {
+    "passed": true,
+    "issues": []
+  },
+  "visual": {
+    "passed": false,
+    "issues": [
+      "Test error: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"networkidle\"\u001b[22m\n"
+    ]
+  }
+}

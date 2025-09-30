@@ -99,7 +99,7 @@ export function OperatingPartnerHero() {
           >
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <Clock className="w-4 h-4 text-green-400" />
-              <span>30-45 day wins</span>
+              <span>2-3 sprint delivery</span>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <Shield className="w-4 h-4 text-blue-400" />
