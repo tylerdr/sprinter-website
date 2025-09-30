@@ -35,14 +35,6 @@ const tools = [
         status: "live"
       },
       {
-        name: "DSCR Calculator",
-        description: "Debt service coverage ratio analysis",
-        icon: TrendingUp,
-        href: "/tools/dscr-calculator",
-        metrics: "Instant analysis",
-        status: "coming-soon"
-      },
-      {
         name: "Working Capital Optimizer",
         description: "Optimize cash flow and working capital",
         icon: BarChart3,

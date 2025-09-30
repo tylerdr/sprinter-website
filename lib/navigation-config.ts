@@ -160,71 +160,13 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
             },
           ],
         },
-        {
-          title: "Browse Solutions",
-          items: [
-            {
-              label: "All Use Cases",
-              href: "/use-cases",
-              icon: Settings,
-              description: "Browse all solutions",
-            },
-            {
-              label: "By Industry",
-              href: "/use-cases/industries",
-              icon: TrendingUp,
-              description: "Industry-specific solutions",
-            },
-            {
-              label: "By Role",
-              href: "/use-cases/roles",
-              icon: Layers,
-              description: "Role-based solutions",
-            },
-            {
-              label: "All Services",
-              href: "/pe-services",
-              icon: Settings,
-              description: "20+ prebuilt AI solutions",
-              badge: { text: "View All", variant: "outline" },
-            },
-          ],
-        },
       ],
     },
     {
-      label: "Results",
+      label: "Case Studies",
       href: "/case-studies",
-      type: "dropdown",
+      type: "link",
       icon: Trophy,
-      items: [
-        {
-          label: "Portfolio Wins",
-          href: "/case-studies",
-          icon: Trophy,
-          description: "$10M+ value created across 50+ deployments",
-          badge: { text: "Real Results", variant: "success" },
-        },
-        {
-          label: "Impact Dashboard",
-          href: "/operating-partner#scoreboard",
-          icon: BarChart,
-          description: "Track portfolio AI adoption & ROI in real-time",
-        },
-        {
-          label: "ROI Calculator",
-          href: "/labs/roi-calculator",
-          icon: Calculator,
-          description: "Quantify AI value for your portfolio in 2 minutes",
-        },
-        {
-          label: "Implementation Guides",
-          href: "/downloads/no-api-cookbook",
-          icon: BookOpen,
-          description: "Battle-tested playbooks from 100+ deployments",
-          badge: { text: "Download", variant: "outline" },
-        },
-      ],
     },
     {
       label: "Approach",
@@ -257,56 +199,6 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           href: "/approach#change-playbook",
           icon: Users,
           description: "Turn skeptics into champions",
-        },
-      ],
-    },
-    {
-      label: "Industries",
-      href: "/industries",
-      type: "mega",
-      icon: Building2,
-      sections: [
-        {
-          title: "Focus Sectors",
-          items: [
-            {
-              label: "Private Equity",
-              href: "/industries/private-equity",
-              icon: Factory,
-              description: "PE-focused solutions",
-              badge: { text: "Featured", variant: "secondary" },
-            },
-            {
-              label: "Healthcare",
-              href: "/industries/healthcare",
-              icon: Heart,
-              description: "Clinical & admin AI",
-            },
-            {
-              label: "Financial Services",
-              href: "/industries/financial-services",
-              icon: Banknote,
-              description: "Fintech & banking AI",
-            },
-            {
-              label: "Manufacturing",
-              href: "/industries/manufacturing",
-              icon: Factory,
-              description: "Quality, scheduling & maintenance",
-            },
-            {
-              label: "Logistics & 3PL",
-              href: "/industries/logistics",
-              icon: Truck,
-              description: "Supply chain & routing automation",
-            },
-            {
-              label: "View All Industries",
-              href: "/industries",
-              icon: Building2,
-              description: "Browse all sectors",
-            },
-          ],
         },
       ],
     },
@@ -352,6 +244,13 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           title: "Knowledge Base",
           items: [
             {
+              label: "Portfolio Wins",
+              href: "/case-studies",
+              icon: Trophy,
+              description: "$10M+ value created",
+              badge: { text: "Results", variant: "success" },
+            },
+            {
               label: "Downloads",
               href: "/downloads/no-api-cookbook",
               icon: Download,
@@ -362,30 +261,6 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               href: "/blog",
               icon: Lightbulb,
               description: "Private equity AI analysis",
-            },
-          ],
-        },
-        {
-          title: "Training & Education",
-          items: [
-            {
-              label: "AI Education Programs",
-              href: "/education",
-              icon: GraduationCap,
-              description: "Upskill your portfolio",
-              badge: { text: "New", variant: "new" },
-            },
-            {
-              label: "Executive Bootcamp",
-              href: "/education#executive",
-              icon: Trophy,
-              description: "C-suite AI literacy",
-            },
-            {
-              label: "Portfolio AI Day",
-              href: "/education#portfolio",
-              icon: Building2,
-              description: "Fund-wide kickoff event",
             },
           ],
         },

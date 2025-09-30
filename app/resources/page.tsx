@@ -35,8 +35,7 @@ const resources = [
     icon: Calculator,
     items: [
       'ROI Calculator',
-      'AP Automation Calculator',
-      'DSCR Calculator'
+      'AP Automation Calculator'
     ]
   },
   {
