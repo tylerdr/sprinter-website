@@ -39,15 +39,15 @@ export function PEServicesHero() {
 
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Strategic AI implementation for PE-backed companies.
-            From pilot to production in 30-45 days with measurable ROI.
+            From pilot to production in 2-3 sprints with measurable ROI.
           </p>
 
           {/* Key metrics */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
             <div className="bg-card/50 backdrop-blur border rounded-lg p-4">
               <TrendingUp className="w-6 h-6 text-green-500 mx-auto mb-2" />
-              <div className="text-2xl font-bold">30-45</div>
-              <div className="text-sm text-muted-foreground">Days to Value</div>
+              <div className="text-2xl font-bold">2-3</div>
+              <div className="text-sm text-muted-foreground">Sprints to Value</div>
             </div>
             <div className="bg-card/50 backdrop-blur border rounded-lg p-4">
               <Users className="w-6 h-6 text-blue-500 mx-auto mb-2" />

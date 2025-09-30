@@ -11,7 +11,7 @@ import { BookDemoButton } from "@/components/shared/book-demo-button";
 // Note: Metadata must be exported from a server component, so we'll handle it differently
 const pageMetadata = {
   title: "AI Solutions for Private Equity | Sprinter",
-  description: "Battle-tested AI solutions that drive measurable value across your portfolio. From AP automation to quote intelligence, deploy production-ready AI in 30-45 days.",
+  description: "Battle-tested AI solutions that drive measurable value across your portfolio. From AP automation to quote intelligence, deploy production-ready AI in 2-3 sprints.",
 };
 
 const solutions = [
@@ -90,7 +90,7 @@ export default function SolutionsPage() {
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Battle-tested implementations that drive measurable value across your portfolio.
-            From pilot to production in 30-45 days. No infrastructure required.
+            From pilot to production in 2-3 sprints. No infrastructure required.
           </p>
           <div className="flex gap-4 justify-center">
             <BookDemoButton size="lg" text="See Solutions in Action" />
@@ -213,7 +213,7 @@ export default function SolutionsPage() {
               Ready to Transform Your Portfolio?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              See how our AI solutions can drive measurable value across your portfolio companies in just 30-45 days.
+              See how our AI solutions can drive measurable value across your portfolio companies in just 2-3 sprints.
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
