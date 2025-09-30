@@ -193,10 +193,10 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
       ],
     },
     {
-      label: "Approach",
-      href: "/approach",
+      label: "Case Studies",
+      href: "/case-studies",
       type: "dropdown",
-      icon: UserCheck,
+      icon: Trophy,
       items: [
         {
           label: "Portfolio Wins",
@@ -206,24 +206,38 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           badge: { text: "Real Results", variant: "success" },
         },
         {
-          label: "People-First AI",
-          href: "/approach",
-          icon: Heart,
-          description: "Our human-centered methodology",
-          badge: { text: "Featured", variant: "success" },
-        },
-        {
           label: "ROI Calculator",
           href: "/labs/roi-calculator",
           icon: Calculator,
           description: "Quantify AI value for your portfolio in 2 minutes",
         },
         {
-          label: "Find Your Wedge",
-          href: "/approach/wedge",
-          icon: Target,
-          description: "5-minute assessment tool",
-          badge: { text: "Interactive", variant: "new" },
+          label: "Impact Dashboard",
+          href: "/operating-partner#scoreboard",
+          icon: BarChart,
+          description: "Track portfolio AI adoption & ROI in real-time",
+        },
+        {
+          label: "Implementation Guides",
+          href: "/downloads/no-api-cookbook",
+          icon: BookOpen,
+          description: "Battle-tested playbooks from 100+ deployments",
+          badge: { text: "Download", variant: "outline" },
+        },
+      ],
+    },
+    {
+      label: "Approach",
+      href: "/approach",
+      type: "dropdown",
+      icon: UserCheck,
+      items: [
+        {
+          label: "People-First AI",
+          href: "/approach",
+          icon: Heart,
+          description: "Our human-centered methodology",
+          badge: { text: "Featured", variant: "success" },
         },
         {
           label: "The 4 Ps Framework",
@@ -236,13 +250,6 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
           href: "/approach#change-playbook",
           icon: Users,
           description: "Turn skeptics into champions",
-        },
-        {
-          label: "Implementation Guides",
-          href: "/downloads/no-api-cookbook",
-          icon: BookOpen,
-          description: "Battle-tested playbooks from 100+ deployments",
-          badge: { text: "Download", variant: "outline" },
         },
       ],
     },
@@ -260,7 +267,7 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
       },
       sections: [
         {
-          title: "Learn & Explore",
+          title: "Tools & Labs",
           items: [
             {
               label: "AI Labs",
@@ -268,6 +275,13 @@ export const NAVIGATION_CONFIG: NavigationConfig = {
               icon: FlaskConical,
               description: "Interactive demos",
               badge: { text: "Try Now", variant: "new" },
+            },
+            {
+              label: "Find Your Wedge",
+              href: "/approach/wedge",
+              icon: Target,
+              description: "5-minute assessment tool",
+              badge: { text: "Interactive", variant: "new" },
             },
             {
               label: "Tools & Calculators",
