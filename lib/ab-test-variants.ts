@@ -10,7 +10,7 @@ export const heroVariants = {
       line1: "Put AI to Work",
       line2: "Across Your Portfolio"
     },
-    subheadline: "Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage starts here."
+    subheadline: "For lower-middle-market and middle-market PE firms. Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage starts here."
   },
   scale: {
     headline: {

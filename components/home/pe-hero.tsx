@@ -117,7 +117,7 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              For lower-middle-market and growth equity firms
+              For lower-middle-market and middle-market PE firms
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
               <span className="font-semibold">Your AI Advantage</span>
