@@ -59,11 +59,10 @@ export function PEHero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight"
           >
-            <span className="block sm:inline">
+            <span className="block">
               {variants.hero.headline.line1}
             </span>
-            {" "}
-            <span className="relative inline-block">
+            <span className="relative block">
               <span className="gradient-text font-bold">
                 {variants.hero.headline.line2}
               </span>
@@ -118,7 +117,7 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              For lower-middle-market PE, growth equity, and venture-backed portfolio companies
+              For lower-middle-market and growth equity firms
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
               <span className="font-semibold">Your AI Advantage</span>
