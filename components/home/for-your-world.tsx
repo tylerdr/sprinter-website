@@ -10,7 +10,7 @@ const segments = [
   {
     icon: TrendingUp,
     title: "Lower Middle Market PE",
-    description: "Ship value creation in 45 days",
+    description: "Ship value creation in 2-3 sprints",
     details:
       "Embed a sprint factory across your portfolio. We handle legacy ERPs, change management, and fee-offset reporting.",
     href: "/operating-partner",
