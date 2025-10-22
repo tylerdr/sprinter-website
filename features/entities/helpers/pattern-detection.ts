@@ -507,8 +507,16 @@ export function validateDetectedUpdates(
   updates: DetectedUpdate,
   entityType: string
 ): boolean {
-  // TODO: Integrate with entity registry schema validation
-  return updates.confidence >= 0.5;
+  // Basic validation - check confidence threshold
+  if (updates.confidence < 0.5) return false;
+
+  // Validate that patch object exists and is not empty
+  if (!updates.patch || Object.keys(updates.patch).length === 0) return false;
+
+  // Validate source is present
+  if (!updates.source) return false;
+
+  return true;
 }
 
 /**

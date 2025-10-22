@@ -142,7 +142,7 @@ export function normalizeSourceParts(
       metadata: rawMetadata,
       quote,
       label,
-      raw: part // TODO: fix this
+      raw: part as any // Type casting for compatibility
     };
 
     normalized.push(normalizedEntry);
@@ -150,9 +150,9 @@ export function normalizeSourceParts(
 
   normalized.sort((a, b) => {
     if (a.order === b.order) {
-      return (a.streamIndex ?? 0) - (b.streamIndex ?? 0); // TODO: fix this
+      return (a.streamIndex || 0) - (b.streamIndex || 0);
     }
-    return (a.order ?? 0) - (b.order ?? 0); // TODO: fix this
+    return (a.order || 0) - (b.order || 0);
   });
 
   return normalized;

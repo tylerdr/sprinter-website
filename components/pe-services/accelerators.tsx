@@ -39,7 +39,7 @@ const accelerators = [
     title: "Risk & Compliance",
     icon: Shield,
     description: "AI governance, audit automation, regulatory compliance",
-    metrics: ["100% audit trail", "SOC 2 compliant", "LP-defensible governance"],
+    metrics: ["100% audit trail", "SOC 2 eligible providers", "Private data stays private"],
     link: "/governance"
   },
   {

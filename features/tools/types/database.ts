@@ -3,7 +3,7 @@
  * Types for tool-related database operations
  */
 
-import type { Tables } from "@/utils/supabase/generated.types";
+import type { Tables } from "@/lib/supabase/generated.types";
 
 export type ToolRow = Tables<"ai_tools">;
 

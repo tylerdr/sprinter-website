@@ -26,7 +26,7 @@ const strategies = [
     ],
     metrics: {
       "ROI": "250%",
-      "Time to Value": "30 days",
+      "Time to Value": "2 sprints",
       "Success Rate": "95%"
     },
     example: "Portfolio company reduced AP processing from 15 minutes to 3 minutes per invoice, saving $1.2M annually.",
@@ -229,7 +229,7 @@ export default function HowToWinPage() {
             <Card className="glass-card">
               <CardContent className="pt-6 text-center">
                 <Target className="w-8 h-8 text-brand-start mx-auto mb-2" />
-                <div className="text-2xl font-bold">45 days</div>
+                <div className="text-2xl font-bold">3 sprints</div>
                 <p className="text-sm text-muted-foreground">To First Value</p>
               </CardContent>
             </Card>

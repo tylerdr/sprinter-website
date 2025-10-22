@@ -13,7 +13,7 @@ const steps = [
   },
   {
     icon: Zap,
-    title: "Pilot (30-45 days)",
+    title: "Pilot (2-3 sprints)",
     description: "Hit acceptance criteria: ≥60% touchless invoices, exception SLA <48h, full audit trail.",
     highlight: "Clear acceptance criteria",
   },

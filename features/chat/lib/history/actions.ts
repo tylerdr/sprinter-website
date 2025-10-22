@@ -1,8 +1,8 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
-import { Database } from "@/utils/supabase/generated.types";
+import { Database } from "@/lib/supabase/generated.types";
 import { DEFAULT_CHAT_HISTORY_LIMIT } from "@/features/chat/constants";
 
 export type RecentChat = Pick<

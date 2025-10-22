@@ -21,6 +21,18 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+type NavigationItem = (typeof NAVIGATION.main)[number] & {
+  sections?: {
+    title: string;
+    items: { href: string; label: string; description?: string }[];
+  }[];
+  items?: { href: string; label: string; description?: string }[];
+  dropdown?: { href: string; label: string }[];
+  type?: string;
+};
+
+const NAV_ITEMS = NAVIGATION.main as NavigationItem[];
+
 export function NavigationEnhanced() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -65,7 +77,7 @@ export function NavigationEnhanced() {
           <div className="hidden lg:flex items-center gap-6">
             <NavigationMenu>
               <NavigationMenuList>
-                {NAVIGATION.main.map((item) => {
+            {NAV_ITEMS.map((item) => {
                   if (item.type === "mega") {
                     return (
                       <NavigationMenuItem key={item.href}>
@@ -140,8 +152,9 @@ export function NavigationEnhanced() {
                   } else {
                     return (
                       <NavigationMenuItem key={item.href}>
-                        <Link href={item.href} legacyBehavior passHref>
-                          <NavigationMenuLink
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
                             className={cn(
                               navigationMenuTriggerStyle(),
                               "bg-transparent",
@@ -149,8 +162,8 @@ export function NavigationEnhanced() {
                             )}
                           >
                             {item.label}
-                          </NavigationMenuLink>
-                        </Link>
+                          </Link>
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                     );
                   }
@@ -201,8 +214,8 @@ export function NavigationEnhanced() {
             className="lg:hidden absolute top-16 left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-border"
           >
             <div className="container mx-auto px-4 sm:px-6 py-4">
-              <div className="space-y-1">
-                {NAVIGATION.main.map((item) => {
+            <div className="space-y-1">
+                {NAV_ITEMS.map((item) => {
                   if (item.type === "mega" || item.type === "dropdown") {
                     return (
                       <div key={item.href}>

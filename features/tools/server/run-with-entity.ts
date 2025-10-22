@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { sprinterToolRegistry as toolRegistry } from "@/features/tools/registry";
 import { entityRegistry } from "@/features/entities/registry";
 import type { ToolContext } from "@/features/tools/types";

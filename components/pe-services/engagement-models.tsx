@@ -40,7 +40,7 @@ const models = [
   {
     title: "AI Sprint Programs",
     description: "Rapid implementation of specific use cases",
-    duration: "30-45 days",
+    duration: "2-3 sprints",
     ideal: "Quick wins and proof of concepts",
     features: [
       "Pre-built accelerators deployment",

@@ -1,5 +1,9 @@
 # Sprinter AI Growth Engine Documentation
 
+## Status Update (2025-09-18)
+- The growth engine described here is not yet live: nurture workflows now queue via `ai_tool_events`, but require a scheduler/cron to invoke `LeadNurtureService.processNurtureSequences()` and a configured Resend key to deliver emails. Assessment follow-up analytics and growth dashboards remain TODOs.
+- Use this document as a blueprint; keep progress tracked in `IMPLEMENTATION-SUMMARY.md` and update sections as migrations, automations, and analytics land.
+
 ## Overview
 
 The Sprinter AI website has been transformed into an autonomous growth engine targeting Private Equity firms. This document outlines the complete funnel architecture, automation systems, and operational procedures.

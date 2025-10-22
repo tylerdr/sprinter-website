@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             </p>
             <div className="mt-3 text-muted-foreground">
               <p>Email: {COMPANY_INFO.email}</p>
-              <p>Address: {COMPANY_INFO.location.city}, {COMPANY_INFO.location.state}</p>
+              <p>Location: {COMPANY_INFO.location.state}, {COMPANY_INFO.location.country}</p>
             </div>
           </section>
 

@@ -56,11 +56,11 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-neutral-900 to-black">
-      <Card className="w-full max-w-md bg-neutral-900/50 backdrop-blur-xl border-neutral-800">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted">
+      <Card className="w-full max-w-md bg-card/50 backdrop-blur-xl border-border">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">Welcome back</CardTitle>
-          <CardDescription className="text-center text-neutral-400">
+          <CardDescription className="text-center text-muted-foreground">
             Sign in to your account to continue
           </CardDescription>
         </CardHeader>
@@ -76,7 +76,7 @@ export default function SignInPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
-                className="bg-neutral-800/50 border-neutral-700"
+                className="bg-muted/50 border-border"
               />
             </div>
             <div className="space-y-2">
@@ -88,7 +88,7 @@ export default function SignInPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={isLoading}
-                className="bg-neutral-800/50 border-neutral-700"
+                className="bg-muted/50 border-border"
               />
             </div>
             <Button
@@ -112,10 +112,10 @@ export default function SignInPage() {
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <Separator className="w-full bg-neutral-800" />
+              <Separator className="w-full bg-border" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-neutral-900 px-2 text-neutral-400">Or continue with</span>
+              <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
             </div>
           </div>
 
@@ -124,7 +124,7 @@ export default function SignInPage() {
               variant="outline"
               onClick={() => handleOAuthSignIn('github')}
               disabled={isOAuthLoading !== null}
-              className="w-full bg-neutral-800/50 border-neutral-700 hover:bg-neutral-800"
+              className="w-full bg-muted/50 border-border hover:bg-muted"
             >
               {isOAuthLoading === 'github' ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -137,7 +137,7 @@ export default function SignInPage() {
               variant="outline"
               onClick={() => handleOAuthSignIn('google')}
               disabled={isOAuthLoading !== null}
-              className="w-full bg-neutral-800/50 border-neutral-700 hover:bg-neutral-800"
+              className="w-full bg-muted/50 border-border hover:bg-muted"
             >
               {isOAuthLoading === 'google' ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -150,10 +150,10 @@ export default function SignInPage() {
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <Separator className="w-full bg-neutral-800" />
+              <Separator className="w-full bg-border" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-neutral-900 px-2 text-neutral-400">Or</span>
+              <span className="bg-background px-2 text-muted-foreground">Or</span>
             </div>
           </div>
 
@@ -184,7 +184,7 @@ export default function SignInPage() {
               }
             }}
             disabled={isDemoLoading || isLoading || isOAuthLoading !== null}
-            className="w-full bg-blue-600/10 border-blue-600/30 hover:bg-blue-600/20 text-blue-400"
+            className="w-full bg-primary/10 border-primary/30 hover:bg-primary/20 text-primary"
           >
             {isDemoLoading ? (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -195,15 +195,15 @@ export default function SignInPage() {
           </Button>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
-          <div className="text-sm text-neutral-400 text-center">
+          <div className="text-sm text-muted-foreground text-center">
             Don&apos;t have an account?{' '}
-            <Link href="/auth/signup" className="text-blue-400 hover:text-blue-300 underline">
+            <Link href="/auth/signup" className="text-primary hover:text-primary/80 underline">
               Sign up
             </Link>
           </div>
-          <Link 
-            href="/auth/reset-password" 
-            className="text-sm text-neutral-400 hover:text-neutral-300 underline text-center"
+          <Link
+            href="/auth/reset-password"
+            className="text-sm text-muted-foreground hover:text-foreground underline text-center"
           >
             Forgot password?
           </Link>

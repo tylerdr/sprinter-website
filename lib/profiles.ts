@@ -2,7 +2,7 @@
  * User Profile Types and Functions
  */
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 
 export interface UserProfileWithCurrentTenant {
   id: string;

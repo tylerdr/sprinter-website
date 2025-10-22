@@ -18,39 +18,49 @@ export const metadata: Metadata = {
 
 const tiers = [
   {
+    id: "workshop",
+    ...PRICING.workshop,
+    icon: Sparkles,
+    popular: false,
+    cta: "Book Workshop",
+    href: "/contact?type=workshop",
+    color: "blue",
+    badge: "Low Commitment"
+  },
+  {
     id: "assessment",
     ...PRICING.assessment,
-    icon: Sparkles,
+    icon: Target,
     popular: false,
     cta: "Start Assessment",
     href: "/contact?type=assessment",
-    color: "blue"
+    color: "teal"
   },
   {
-    id: "sprint",
-    ...PRICING.sprint,
+    id: "wedgeSprint",
+    ...PRICING.wedgeSprint,
     icon: Zap,
     popular: true,
-    cta: "Book Sprint",
+    cta: "Start 2-Week Sprint",
     href: "/contact?type=sprint",
     color: "purple"
   },
   {
-    id: "surf",
-    ...PRICING.surf,
+    id: "retainer",
+    ...PRICING.retainer,
     icon: Building2,
     popular: false,
-    cta: "Start Partnership",
-    href: "/contact?type=partnership",
+    cta: "Become Operating Partner",
+    href: "/contact?type=retainer",
     color: "green"
   },
   {
-    id: "sail",
-    ...PRICING.sail,
+    id: "transformation",
+    ...PRICING.transformation,
     icon: Trophy,
     popular: false,
-    cta: "Contact Sales",
-    href: "/contact?type=enterprise",
+    cta: "Start Transformation",
+    href: "/contact?type=transformation",
     color: "orange"
   }
 ]
@@ -79,16 +89,16 @@ const guarantees = [
 ]
 
 const comparison = [
-  { feature: "AI Strategy Development", assessment: true, sprint: true, surf: true, sail: true },
-  { feature: "Working Prototype", assessment: false, sprint: true, surf: true, sail: true },
-  { feature: "Production Deployment", assessment: false, sprint: true, surf: true, sail: true },
-  { feature: "Team Training", assessment: false, sprint: true, surf: true, sail: true },
-  { feature: "Ongoing Support", assessment: "30 days", sprint: "90 days", surf: "Continuous", sail: "Continuous" },
-  { feature: "Implementations/Quarter", assessment: "-", sprint: "1", surf: "3", sail: "Unlimited" },
-  { feature: "Dedicated Team", assessment: false, sprint: false, surf: "Strategist", sail: "3+ Experts" },
-  { feature: "Cross-Portfolio Sharing", assessment: false, sprint: false, surf: true, sail: true },
-  { feature: "Custom Platform Development", assessment: false, sprint: false, surf: false, sail: true },
-  { feature: "Board/LP Reporting", assessment: true, sprint: false, surf: true, sail: true },
+  { feature: "Document Intelligence Focus", workshop: true, assessment: true, wedgeSprint: true, retainer: true, transformation: true },
+  { feature: "Working Solution", workshop: false, assessment: false, wedgeSprint: true, retainer: true, transformation: true },
+  { feature: "Production Deployment", workshop: false, assessment: false, wedgeSprint: true, retainer: true, transformation: true },
+  { feature: "Team Training & Enablement", workshop: true, assessment: true, wedgeSprint: true, retainer: true, transformation: true },
+  { feature: "Ongoing Support", workshop: "Credit", assessment: "Roadmap", wedgeSprint: "30 days", retainer: "Continuous", transformation: "Continuous" },
+  { feature: "Implementations/Month", workshop: "-", assessment: "-", wedgeSprint: "1", retainer: "Portfolio-wide", transformation: "2-4" },
+  { feature: "Dedicated Team", workshop: false, assessment: false, wedgeSprint: false, retainer: "AI PMO", transformation: "Full Squad" },
+  { feature: "Cross-Portfolio Sharing", workshop: false, assessment: true, wedgeSprint: false, retainer: true, transformation: true },
+  { feature: "Governance Framework", workshop: false, assessment: true, wedgeSprint: false, retainer: true, transformation: true },
+  { feature: "Board/LP Reporting", workshop: false, assessment: true, wedgeSprint: false, retainer: true, transformation: true },
 ]
 
 export default function PricingPage() {
@@ -103,12 +113,12 @@ export default function PricingPage() {
           </Badge>
           
           <h1 className="text-5xl md:text-6xl font-bold">
-            AI That Pays for <span className="gradient-text">Itself</span>
+            Transparent Pricing for <span className="gradient-text">PE Firms</span>
           </h1>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Clear, value-based pricing for PE firms. Every engagement includes ROI guarantee, 
-            production deployment, and ongoing support. No hidden fees, no surprises.
+            From $1,500 workshops to full transformation partnerships. Start small with a wedge sprint,
+            scale to portfolio-wide implementation. Clear deliverables, guaranteed outcomes, no hidden fees.
           </p>
 
           <div className="flex items-center justify-center gap-8 pt-4">
@@ -130,7 +140,7 @@ export default function PricingPage() {
 
       {/* Pricing Tiers */}
       <section className="container mx-auto px-4 max-w-7xl mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {tiers.map((tier) => (
             <Card 
               key={tier.id}
@@ -144,11 +154,17 @@ export default function PricingPage() {
                   Most Popular
                 </Badge>
               )}
+              {'badge' in tier && tier.badge && (
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2" variant="secondary">
+                  {tier.badge}
+                </Badge>
+              )}
               
               <CardHeader>
                 <div className={cn(
                   "w-12 h-12 rounded-lg flex items-center justify-center mb-4",
                   tier.color === "blue" && "bg-blue-500/10",
+                  tier.color === "teal" && "bg-teal-500/10",
                   tier.color === "purple" && "bg-purple-500/10",
                   tier.color === "green" && "bg-green-500/10",
                   tier.color === "orange" && "bg-orange-500/10"
@@ -156,6 +172,7 @@ export default function PricingPage() {
                   <tier.icon className={cn(
                     "w-6 h-6",
                     tier.color === "blue" && "text-blue-500",
+                    tier.color === "teal" && "text-teal-500",
                     tier.color === "purple" && "text-purple-500",
                     tier.color === "green" && "text-green-500",
                     tier.color === "orange" && "text-orange-500"
@@ -213,16 +230,28 @@ export default function PricingPage() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left p-4">Features</th>
+                    <th className="text-center p-4">Workshop</th>
                     <th className="text-center p-4">Assessment</th>
-                    <th className="text-center p-4">Sprint</th>
-                    <th className="text-center p-4">Surf</th>
-                    <th className="text-center p-4">Sail</th>
+                    <th className="text-center p-4">Wedge Sprint</th>
+                    <th className="text-center p-4">Retainer</th>
+                    <th className="text-center p-4">Transformation</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, i) => (
                     <tr key={i} className="border-b">
                       <td className="p-4 font-medium">{row.feature}</td>
+                      <td className="text-center p-4">
+                        {typeof row.workshop === 'boolean' ? (
+                          row.workshop ? (
+                            <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span className="text-muted-foreground">-</span>
+                          )
+                        ) : (
+                          <span className="text-sm">{row.workshop}</span>
+                        )}
+                      </td>
                       <td className="text-center p-4">
                         {typeof row.assessment === 'boolean' ? (
                           row.assessment ? (
@@ -235,36 +264,36 @@ export default function PricingPage() {
                         )}
                       </td>
                       <td className="text-center p-4">
-                        {typeof row.sprint === 'boolean' ? (
-                          row.sprint ? (
+                        {typeof row.wedgeSprint === 'boolean' ? (
+                          row.wedgeSprint ? (
                             <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />
                           ) : (
                             <span className="text-muted-foreground">-</span>
                           )
                         ) : (
-                          <span className="text-sm">{row.sprint}</span>
+                          <span className="text-sm">{row.wedgeSprint}</span>
                         )}
                       </td>
                       <td className="text-center p-4">
-                        {typeof row.surf === 'boolean' ? (
-                          row.surf ? (
+                        {typeof row.retainer === 'boolean' ? (
+                          row.retainer ? (
                             <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />
                           ) : (
                             <span className="text-muted-foreground">-</span>
                           )
                         ) : (
-                          <span className="text-sm">{row.surf}</span>
+                          <span className="text-sm">{row.retainer}</span>
                         )}
                       </td>
                       <td className="text-center p-4">
-                        {typeof row.sail === 'boolean' ? (
-                          row.sail ? (
+                        {typeof row.transformation === 'boolean' ? (
+                          row.transformation ? (
                             <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />
                           ) : (
                             <span className="text-muted-foreground">-</span>
                           )
                         ) : (
-                          <span className="text-sm">{row.sail}</span>
+                          <span className="text-sm">{row.transformation}</span>
                         )}
                       </td>
                     </tr>

@@ -1,8 +1,8 @@
 "use server";
 
-import { createClient as createAdminClient } from "@/utils/supabase/server";
+import { createClient as createAdminClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
-import type { Database } from "@/utils/supabase/generated.types";
+import type { Database } from "@/lib/supabase/generated.types";
 import {
   getCurrentUserId,
   ensureUserOwnsMessage,

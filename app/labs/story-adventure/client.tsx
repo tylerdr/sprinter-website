@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { 
   BookOpen, 
   Users, 
@@ -23,7 +24,8 @@ import {
   Flame,
   Moon,
   Star,
-  Compass
+  Compass,
+  Plug
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateRoomCode, generatePlayerId } from "@/lib/multiplayer/rooms";
@@ -108,7 +110,7 @@ function StoryAdventureGame() {
     setPlayerId(id);
   }, [roomCode, router]);
 
-  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+  const { trackPlayer, broadcast, isConnected, isConfigured } = useMultiplayerRoom({
     roomCode,
     playerId,
     playerName,
@@ -238,6 +240,15 @@ function StoryAdventureGame() {
 
   return (
     <div className="h-[600px] flex flex-col">
+      {!isConfigured && (
+        <Alert className="mb-4 border-yellow-500/30 bg-yellow-500/5 text-yellow-200">
+          <Plug className="h-4 w-4" />
+          <AlertTitle>Realtime story mode offline</AlertTitle>
+          <AlertDescription>
+            Multiplayer storytelling needs Supabase Realtime credentials. Configure them to enable shared sessions; the experience runs in local preview otherwise.
+          </AlertDescription>
+        </Alert>
+      )}
       {/* Header */}
       <div className="p-4 border-b flex items-center justify-between">
         <div className="flex items-center gap-4">

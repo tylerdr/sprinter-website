@@ -64,6 +64,9 @@ export default function AboutPage() {
             <p className="text-lg text-foreground/80 mb-4">
               I can&apos;t stand the idea of smart people burning hours on tasks that are monotonous for humans and trivial for computers. In 2018 I left Exxon and started Sprinter to fix that. We began with predictive maintenance, analytics and AI, learned fast by building (and breaking) internal SaaS experiments, and ran our first AI workshop in 2019 to help clients find practical use cases. By 2020, a first API call to GPT-3 blew the doors off what was possible. In 2021 we leaned into agentic patterns—if a model can write, it can decide; if it can decide, it can act. In 2022 we formalized our workshops and built Amble Ideation to scale them.
             </p>
+            <p className="text-lg text-foreground/80 mb-4">
+              Today, we work primarily with private equity firms and their portfolio companies. Our 2-3 sprint delivery model ensures you see ROI before committing to scale. We&apos;ve helped portfolio companies achieve 60-80% automation rates, generate millions in new revenue, and create competitive moats through AI-first operations.
+            </p>
             <p className="text-lg text-foreground/80">
               <strong className="text-foreground">Sprinter exists to empower agency—in people and in AI.</strong> Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage.
             </p>

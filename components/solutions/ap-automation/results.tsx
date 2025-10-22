@@ -23,7 +23,7 @@ const results = [
       touchless: "58%",
       time: "60% reduction",
       cost: "$120K/year saved",
-      timeline: "45 days",
+      timeline: "3 sprints",
     },
     quote: "Upload-only Sage worked perfectly. CSV specs made it simple.",
   },

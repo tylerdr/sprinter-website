@@ -6,7 +6,7 @@
 import { z } from "zod";
 import { ToolSpec } from "@/features/tools/types";
 import { logger } from "@/lib/logger";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 
 // Input schema
 export const contactCaptureInputSchema = z.object({

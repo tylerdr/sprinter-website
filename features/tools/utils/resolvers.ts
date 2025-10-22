@@ -5,7 +5,7 @@
  * Handles disambiguation, fuzzy matching, and caching for optimal performance.
  */
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 
 // Custom error types for clean error handling

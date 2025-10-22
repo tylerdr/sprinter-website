@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
+import { getToolHistory } from "@/features/tools/actions/get-tool-history";
 
 interface ToolRun {
   id: string;
@@ -54,10 +55,12 @@ export function ToolHistorySidebar({
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`/api/tools/${toolSlug}/runs`);
-      if (!response.ok) throw new Error("Failed to fetch runs");
-      const data = await response.json();
-      setRuns(data.runs || []);
+      const result = await getToolHistory(toolSlug, 20);
+      if (result.success) {
+        setRuns(result.runs as ToolRun[]);
+      } else {
+        setError(result.error || "Failed to load history");
+      }
     } catch (err) {
       setError("Failed to load history");
       console.error("Error fetching tool runs:", err);

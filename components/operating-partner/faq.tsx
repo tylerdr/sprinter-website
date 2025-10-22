@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     question: "How is this different from hiring consultants?",
-    answer: "We're operators, not advisors. We ship working software in 30-45 days with acceptance criteria. One throat to choke, not a vendor parade.",
+    answer: "We're operators, not advisors. We ship working software in 2-3 sprints with acceptance criteria. One throat to choke, not a vendor parade.",
   },
   {
     question: "What's the minimum commitment?",
-    answer: "One pilot (30-45 days). No annual contracts until you see results. After success, most funds move to quarterly bench arrangements.",
+    answer: "One pilot (2-3 sprints). No annual contracts until you see results. After success, most funds move to quarterly bench arrangements.",
   },
   {
     question: "How do you handle security and compliance?",

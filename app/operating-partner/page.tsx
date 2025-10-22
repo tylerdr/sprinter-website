@@ -9,8 +9,8 @@ import { FAQ } from "@/components/operating-partner/faq";
 
 export const metadata: Metadata = {
   title: "AI Operating Partner for Private Equity | Sprinter AI",
-  description: "Your AI Operating Partner for lower-middle-market PE. Boringly reliable 30-45 day wins with fund-level governance. No API? No problem. We build the safe middle layer for QBO/Sage/desktop.",
-  keywords: "PE operating partner, AI for private equity, portfolio operations, AP automation, QBO automation, Sage automation, no-API solutions, fund governance",
+  description: "Your AI Operating Partner for lower-middle-market PE. Boringly reliable 2-3 sprint wins with fund-level governance. No API? No problem. We build the safe middle layer for QBO/Sage/desktop.",
+  keywords: "PE operating partner, AI for private equity, portfolio operations, AP automation, QBO automation, Sage automation, no-API solutions, fund governance, sprint-based AI",
 };
 
 export default function OperatingPartnerPage() {

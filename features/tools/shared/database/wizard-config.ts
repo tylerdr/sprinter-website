@@ -2,7 +2,7 @@
  * Shared database utilities for loading dynamic wizard configurations
  */
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server";
 import { cache } from "react";
 import {
   getPropertyTypes,

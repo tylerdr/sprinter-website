@@ -1,15 +1,16 @@
 // Centralized constants and configuration for the entire site
 
+export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-0000-000000000000";
+
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "Your AI Operating Partner for Private Equity.",
-  description: "The AI Operating Partner for lower-middle-market PE. Real AI builders with a library of prebuilt solutions delivering value from the first sprint. We ship portfolio wins in 30-45 days—no rewires, no drama.",
-  philosophy: "Make AI boring. Ship portfolio wins in 45 days with battle-tested solutions. Real builders, real products, real results.",
+  tagline: "Put AI to Work Across Your Portfolio",
+  description: "For lower-middle-market and middle-market PE firms. Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage, delivered fast—no API required.",
+  philosophy: "You deserve AI that works. Fast implementations. Real production systems. Measurable ROI. Your operators stay in control while AI handles the repetitive work. That's how you win.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",
   location: {
-    city: "Brentwood",
     state: "TN",
     country: "United States",
   },
@@ -25,125 +26,197 @@ export const SOCIAL_LINKS = {
 export const NAVIGATION = {
   main: [
     {
-      href: "/operating-partner",
-      label: "Operating Partner",
-      type: "mega",
-      sections: [
+      href: "/solutions",
+      label: "Solutions",
+      type: "dropdown",
+      dropdown: [
+        { href: "/ai-scoping-workshop", label: "AI Scoping Workshop" },
+        { href: "/ai-implementation-partner", label: "Implementation Partner" },
+        { href: "/ai-due-diligence-consulting", label: "Due Diligence" },
+        { href: "/operating-partner", label: "AI Operating Partner" },
+        { href: "/solutions/ap-automation", label: "Financial Automation" },
+        { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
+        { href: "/solutions/3pl-ops", label: "3PL Operations" },
+        { href: "/pe-services", label: "All Services" },
+      ],
+      items: [
         {
-          title: "Fund-Level Services",
-          items: [
-            { href: "/operating-partner", label: "AI Operating Partnership", description: "Fund-level orchestration" },
-            { href: "/operating-partner#workshop", label: "90-Minute OP Workshop", description: "Get pilot plan & options memo" },
-            { href: "/operating-partner#roadmap", label: "Day-100 AI Roadmap", description: "Template & checklist" },
-            { href: "/operating-partner#scoreboard", label: "Portfolio Scoreboard", description: "KPIs for LPs" },
-          ],
+          href: "/ai-scoping-workshop",
+          label: "AI Scoping Workshop",
+          description: "2-week diagnostic with options memo, pilot SOW, and ROI model",
+          featured: true,
+          icon: "rocket",
+          badge: "Fixed Fee"
         },
         {
-          title: "Prebuilt Solutions",
-          items: [
-            { href: "/solutions/ap-automation", label: "Financial Process Automation", description: "AP, expense, reconciliation" },
-            { href: "/solutions/quote-intelligence", label: "Quote Intelligence", description: "RFP to quote draft" },
-            { href: "/solutions/3pl-ops", label: "3PL Ops & Billing", description: "Quote to billing accuracy" },
-            { href: "/solutions", label: "View All Solutions", description: "20+ prebuilt AI products" },
-          ],
+          href: "/ai-implementation-partner",
+          label: "Implementation Partner",
+          description: "Your boutique AI consulting firm for portfolio companies",
+          icon: "users",
+          badge: "100+ Portcos"
         },
         {
-          title: "Downloads",
-          items: [
-            { href: "/downloads/ap-brief", label: "AP Accelerator Brief", description: "4-page QBO/Sage guide" },
-            { href: "/downloads/no-api-cookbook", label: "No-API Cookbook", description: "10 patterns for legacy ERPs" },
-            { href: "/downloads/governance-pack", label: "Governance Pack", description: "Security & fee-offset docs" },
-          ],
+          href: "/ai-due-diligence-consulting",
+          label: "Due Diligence",
+          description: "Technical AI & data assessment for M&A transactions",
+          icon: "shield"
+        },
+        {
+          href: "/operating-partner",
+          label: "AI Operating Partner",
+          description: "Transform your portfolio with fund-level AI orchestration",
+          icon: "rocket"
+        },
+        {
+          href: "/solutions/ap-automation",
+          label: "Financial Automation",
+          description: "60%+ touchless AP, expense & reconciliation automation",
+          icon: "calculator"
+        },
+        {
+          href: "/solutions/quote-intelligence",
+          label: "Quote Intelligence",
+          description: "42% faster quote cycles with AI-powered pricing",
+          icon: "zap"
+        },
+        {
+          href: "/solutions/3pl-ops",
+          label: "3PL Operations",
+          description: "End-to-end automation from quote to cash",
+          icon: "truck"
+        },
+        {
+          href: "/pe-services",
+          label: "View All Solutions",
+          description: "20+ battle-tested AI solutions ready to deploy",
+          icon: "grid"
         },
       ],
     },
     {
-      href: "/solutions",
-      label: "Solutions",
+      href: "/case-studies",
+      label: "Results",
       type: "dropdown",
+      dropdown: [
+        { href: "/case-studies", label: "Portfolio Wins" },
+        { href: "/operating-partner#scoreboard", label: "Impact Dashboard" },
+        { href: "/tools/roi-calculator", label: "ROI Calculator" },
+      ],
       items: [
-        { href: "/solutions/ap-automation", label: "Financial Process Automation", description: "30-45 day wins" },
-        { href: "/solutions/quote-intelligence", label: "Quote Intelligence", description: "42% faster cycles" },
-        { href: "/solutions/3pl-ops", label: "3PL Ops & Billing", description: "18pt accuracy gain" },
-        { href: "/use-cases", label: "All Use Cases →", description: "20+ prebuilt solutions" },
+        {
+          href: "/case-studies",
+          label: "Portfolio Wins",
+          description: "$10M+ value created across 50+ deployments",
+          featured: true,
+          icon: "trophy",
+          badge: "Real Results"
+        },
+        {
+          href: "/operating-partner#scoreboard",
+          label: "Live Impact Dashboard",
+          description: "Track portfolio AI adoption & ROI in real-time",
+          icon: "chart"
+        },
+        {
+          href: "/labs/roi-calculator",
+          label: "Calculate Your ROI",
+          description: "Quantify AI value for your portfolio in 2 minutes",
+          icon: "calculator"
+        },
+        {
+          href: "/downloads/no-api-cookbook",
+          label: "Implementation Playbooks",
+          description: "Proven frameworks from 100+ successful sprints",
+          icon: "book"
+        },
       ],
     },
     {
       href: "/resources",
       label: "Resources",
       type: "dropdown",
+      dropdown: [
+        { href: "/labs", label: "Try AI Tools" },
+        { href: "/ai-assessment", label: "Free AI Assessment" },
+        { href: "/blog", label: "PE AI Insights" },
+        { href: "/downloads/governance-pack", label: "Governance Pack" },
+        { href: "/industries", label: "Industries" },
+      ],
       items: [
-        { href: "/case-studies", label: "Case Studies", description: "Anonymized wins" },
-        { href: "/labs", label: "AI Labs", description: "Interactive demos" },
-        { href: "/tools/ap-calculator", label: "AP Hours Calculator", description: "Calculate savings" },
-        { href: "/tools/quote-estimator", label: "Quote Throughput Estimator", description: "RFP capacity" },
+        {
+          href: "/labs",
+          label: "Try AI Tools Live",
+          description: "Interactive demos - no signup required",
+          featured: true,
+          icon: "play",
+          badge: "Try Now"
+        },
+        {
+          href: "/ai-assessment",
+          label: "Free AI Assessment",
+          description: "Get your personalized AI roadmap in 5 minutes",
+          icon: "clipboard"
+        },
+        {
+          href: "/blog",
+          label: "PE AI Insights",
+          description: "Industry analysis, trends & best practices",
+          icon: "newspaper"
+        },
+        {
+          href: "/downloads/governance-pack",
+          label: "Governance Templates",
+          description: "Board-ready security & compliance docs",
+          icon: "shield"
+        },
+        {
+          href: "/industries",
+          label: "Industries",
+          description: "AI solutions tailored for specific sectors",
+          icon: "factory"
+        },
       ],
     },
+  ],
+  ctas: [
     {
-      href: "/insights",
-      label: "Insights",
-      type: "mega",
-      sections: [
-        {
-          title: "AI Strategy",
-          items: [
-            { href: "/insights/ai-models", label: "AI Models", description: "Latest model capabilities" },
-            { href: "/insights/trends", label: "AI Trends", description: "Market trends & analysis" },
-            { href: "/insights/how-to-win", label: "How to Win with AI", description: "Strategic playbooks" },
-            { href: "/insights/software-3", label: "Software 3.0", description: "The AI-native future" },
-          ],
-        },
-        {
-          title: "Industries",
-          items: [
-            { href: "/industries/manufacturing", label: "Manufacturing", description: "AI in production" },
-            { href: "/industries/logistics", label: "Logistics & 3PL", description: "Supply chain AI" },
-            { href: "/industries/healthcare", label: "Healthcare", description: "Medical AI applications" },
-            { href: "/industries/financial-services", label: "Financial Services", description: "Fintech & banking AI" },
-          ],
-        },
-        {
-          title: "Products & Use Cases",
-          items: [
-            { href: "/products", label: "AI Products", description: "Our product portfolio" },
-            { href: "/use-cases", label: "Use Cases", description: "Industry applications" },
-            { href: "/insights/key-terms", label: "AI Glossary", description: "Key terms explained" },
-            { href: "/insights/implementation", label: "Implementation Guide", description: "Best practices" },
-          ],
-        },
-      ],
-    },
-    { href: "/contact", label: "Book Workshop" },
+      href: "/contact",
+      label: "Get Started",
+      variant: "default" as const,
+      icon: "sparkles"
+    }
   ],
   footer: {
     products: [
-      { href: "/operating-partner", label: "AI Operating Partnership" },
-      { href: "/solutions/ap-automation", label: "Financial Process Automation" },
-      { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
-      { href: "/solutions/3pl-ops", label: "3PL Ops & Billing" },
-      { href: "/solutions", label: "All Prebuilt Solutions" },
+      { href: "/ai-scoping-workshop", label: "Scoping Workshop" },
+      { href: "/ai-implementation-partner", label: "Implementation Partner" },
+      { href: "/ai-due-diligence-consulting", label: "Due Diligence" },
+      { href: "/operating-partner", label: "Operating Partner" },
+      { href: "/pe-services", label: "All Services" },
     ],
-    services: [
-      { href: "/operating-partner#workshop", label: "90-Minute OP Workshop" },
-      { href: "/operating-partner#pilot", label: "30-45 Day Pilot" },
-      { href: "/governance", label: "Governance Pack" },
-      { href: "/operating-partner#council", label: "OP Council" },
-      { href: "/contact", label: "Book Workshop" },
+    solutions: [
+      { href: "/solutions/ap-automation", label: "AP Automation" },
+      { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
+      { href: "/solutions/3pl-ops", label: "3PL Operations" },
+      { href: "/solutions", label: "All Solutions" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },
       { href: "/labs", label: "AI Labs" },
-      { href: "/use-cases", label: "Use Cases" },
+      { href: "/tools", label: "Tools & Calculators" },
+      { href: "/downloads/no-api-cookbook", label: "No-API Cookbook" },
       { href: "/blog", label: "Insights" },
     ],
     company: [
       { href: "/about", label: "About" },
+      { href: "/partnership", label: "Partnership" },
       { href: "/contact", label: "Contact" },
+      { href: "/governance", label: "Governance" },
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
     ],
   },
-}
+};
 
 export const METRICS = {
   revenueGenerated: "$10M+",
@@ -158,7 +231,7 @@ export const METRICS = {
 }
 
 export const PRICING = {
-  // PE-focused tiers
+  // PE-focused tiers - updated with competitive positioning
   assessment: {
     name: "AI Readiness Assessment",
     price: "$10,000",
@@ -172,54 +245,90 @@ export const PRICING = {
       "Board-ready presentation"
     ]
   },
-  sprint: {
-    name: "AI Implementation Sprint",
-    price: "$50,000",
-    duration: "5 Days",
-    description: "Rapid prototype to production with guaranteed ROI",
-    includes: [
-      "Working AI prototype in 5 days",
-      "Full production deployment",
-      "Team training and handoff",
-      "90-day support included",
-      "10x ROI guarantee or money back"
-    ]
-  },
-  surf: {
-    name: "AI Operations Partner",
-    price: "$50,000/month",
-    duration: "Quarterly commitment",
-    description: "Ongoing AI expertise for continuous value creation",
-    includes: [
-      "Dedicated AI strategist",
-      "3 implementations per quarter",
-      "Weekly office hours",
-      "Cross-portfolio best practices",
-      "24/7 technical support"
-    ]
-  },
-  sail: {
-    name: "Enterprise Partnership",
-    price: "Custom",
-    duration: "Annual commitment",
-    description: "Full AI transformation partnership for large portfolios",
-    includes: [
-      "Dedicated AI team (3+ experts)",
-      "Unlimited implementations",
-      "Custom AI platform development",
-      "Board and LP reporting",
-      "On-site workshops and training"
-    ]
-  },
-  // Legacy pricing for other services
   workshop: {
-    price: "$5,000",
-    duration: "1 Day",
+    name: "90-Minute OP Workshop",
+    price: "$1,500",
+    duration: "90 minutes",
+    description: "Interactive session to identify high-impact wedges and build buy-in",
+    includes: [
+      "AI Opportunity Roadmap",
+      "Top 3 wedge candidates",
+      "Adoption playbook",
+      "ROI projections",
+      "Applied as credit to any package within 30 days"
+    ]
+  },
+  wedgeSprint: {
+    name: "2-Week Wedge Sprint",
+    price: "$20,000",
+    duration: "2 weeks",
+    description: "Pick one document type, deliver a working solution, prove the value",
+    includes: [
+      "Production-ready automation",
+      "Clear acceptance criteria",
+      "≥60% touchless processing target",
+      "Training & documentation",
+      "30-day support",
+      "If we miss criteria, remedial sprint at our cost"
+    ]
+  },
+  retainer: {
+    name: "AI Operating Partner Retainer",
+    price: "$12k-25k/month",
+    duration: "Monthly (6-month minimum)",
+    description: "Fund-level AI orchestration and portfolio-wide implementation",
+    includes: [
+      "Portfolio AI PMO & prioritization",
+      "Monthly exec enablement",
+      "Governance framework & policies",
+      "Quarterly portfolio reviews",
+      "Diligence support (24hr turnaround)",
+      "Best practices sharing across portcos"
+    ]
   },
   transformation: {
-    price: "$150,000+",
-    duration: "3-6 Months",
+    name: "Transformation Partner",
+    price: "$50k-125k/month",
+    duration: "Monthly (3-month minimum)",
+    description: "Outcome-based execution with dedicated squad",
+    includes: [
+      "Fixed-capacity AI squad (PM + engineers)",
+      "2-4 sprints per month",
+      "Backlog management",
+      "Bi-weekly demos",
+      "Full documentation & enablement",
+      "Pay for outcomes, not hours"
+    ]
   },
+  // Education & Enablement
+  education: {
+    name: "Education & Enablement",
+    executiveBootcamp: {
+      name: "Executive AI Bootcamp",
+      price: "$9,500",
+      duration: "Half-day",
+      description: "For leadership teams (up to 12)"
+    },
+    managerLab: {
+      name: "Manager Enablement Lab",
+      price: "$2,500/person",
+      duration: "Full day",
+      description: "Hands-on training for operators"
+    },
+    portfolioDay: {
+      name: "Portfolio AI Day",
+      price: "$15,000",
+      duration: "1 day onsite",
+      description: "Up to 3 sessions for entire portfolio"
+    },
+    governanceWorkshop: {
+      name: "AI Governance Workshop",
+      price: "$7,500",
+      duration: "Half-day",
+      description: "Develop responsible AI policies"
+    }
+  },
+  // Legacy pricing
   venture: {
     price: "Equity-based",
     duration: "Ongoing",
@@ -298,6 +407,12 @@ export const PAGE_SEO = {
     description: "Interactive demos of AI tools that augment human capabilities. See how AI can be your creative partner, not your replacement.",
     keywords: "AI demos, human-AI collaboration, interactive AI, AI prototypes, autonomous agents demo, AI tools, purposeful technology",
     ogTitle: "AI Labs - Human-AI Collaboration in Action",
+  },
+  resources: {
+    title: "PE AI Resources - Tools, Calculators & Case Studies | Sprinter AI",
+    description: "Everything you need to evaluate, implement, and scale AI across your portfolio. Interactive demos, ROI calculators, and battle-tested playbooks.",
+    keywords: "AI resources, PE tools, ROI calculator, case studies, AI playbooks, portfolio transformation, AI demos",
+    ogTitle: "PE AI Resources Hub - Sprinter AI",
   },
   blog: {
     title: "AI Insights - Building Technology for Human Flourishing | Sprinter AI Blog",

@@ -3,81 +3,34 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Building2, ChartBar, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, TrendingUp, Building2, ChartBar } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "30-45", label: "days to first value" },
-  { value: "60%+", label: "automation rate" },
+  { value: "50+", label: "Portfolio wins" },
+  { value: "10 Days", label: "To production" },
+  { value: "250%", label: "Average ROI" },
   { value: "No API?", label: "No problem" },
-  { value: "10-Day", label: "sprint delivery" },
 ];
 
 export function PEHero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const variants = getCurrentVariants();
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20"
       aria-label="Private Equity AI Hero"
     >
-      {/* Dynamic gradient following mouse */}
-      <div
-        className="absolute inset-0 opacity-20 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, color-mix(in oklch, var(--brand-start) 20%, transparent), transparent 40%)`,
-        }}
-        aria-hidden="true"
-      />
 
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <motion.div 
-          animate={{
-            x: [0, 150, 0],
-            y: [0, -100, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-20 left-10 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 bg-blue-600"
-        />
-        <motion.div 
-          animate={{
-            x: [0, -150, 0],
-            y: [0, 100, 0],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 bg-purple-600"
-        />
+
+      {/* Clean gradient background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 dark:from-blue-600/10 dark:via-transparent dark:to-purple-600/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background" />
       </div>
       
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
@@ -100,17 +53,28 @@ export function PEHero() {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight"
           >
-            <Balancer>
-              {variants.hero.headline.line1}{" "}
-              <span className="gradient-text block mt-2">{variants.hero.headline.line2}</span>
-            </Balancer>
-          </motion.h1>
+            <span className="block">
+              {variants.hero.headline.line1}
+            </span>
+            <span className="relative block">
+              <span className="gradient-text font-bold">
+                {variants.hero.headline.line2}
+              </span>
+              {/* Add subtle shadow for better visibility in dark mode */}
+              <span
+                className="absolute inset-0 text-foreground/5 font-bold blur-xl -z-10"
+                aria-hidden="true"
+              >
+                {variants.hero.headline.line2}
+              </span>
+            </span>
+          </motion.div>
 
           {/* Subheadline */}
           <motion.p
@@ -133,13 +97,13 @@ export function PEHero() {
           >
             <BookDemoButton
               size="lg"
-              text="Get Portfolio AI Assessment"
+              text="Book 90-Minute OP Workshop"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
             />
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/pe-services" className="group">
+              <Link href="/pricing" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                See PE Value Creation Playbook
+                See Transparent Pricing
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
@@ -153,12 +117,12 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              Built for PE-backed companies and operating partners
+              For lower-middle-market and middle-market PE firms
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
-              <span className="font-semibold">Lower Middle Market</span>
-              <span className="font-semibold">Growth Equity</span>
-              <span className="font-semibold">Venture Studios</span>
+              <span className="font-semibold">Your AI Advantage</span>
+              <span className="font-semibold">Your Playbooks</span>
+              <span className="font-semibold">Your Portfolio Wins</span>
             </div>
           </motion.div>
 

@@ -35,20 +35,12 @@ const tools = [
         status: "live"
       },
       {
-        name: "DSCR Calculator",
-        description: "Debt service coverage ratio analysis",
-        icon: TrendingUp,
-        href: "/tools/dscr-calculator",
-        metrics: "Instant analysis",
-        status: "coming-soon"
-      },
-      {
         name: "Working Capital Optimizer",
         description: "Optimize cash flow and working capital",
         icon: BarChart3,
-        href: "/tools/working-capital",
+        href: "/tools/working-capital-optimizer",
         metrics: "31% improvement",
-        status: "coming-soon"
+        status: "live"
       }
     ]
   },
@@ -64,7 +56,7 @@ const tools = [
         icon: Workflow,
         href: "/tools/process-builder",
         metrics: "No-code automation",
-        status: "coming-soon"
+        status: "live"
       },
       {
         name: "Document Processor",
@@ -72,7 +64,7 @@ const tools = [
         icon: FileText,
         href: "/tools/document-processor",
         metrics: "95% accuracy",
-        status: "coming-soon"
+        status: "live"
       },
       {
         name: "Email Automation",
@@ -80,7 +72,7 @@ const tools = [
         icon: Users,
         href: "/tools/email-automation",
         metrics: "24/7 response",
-        status: "coming-soon"
+        status: "live"
       }
     ]
   },
@@ -96,23 +88,23 @@ const tools = [
         icon: ChartBar,
         href: "/tools/data-analyzer",
         metrics: "Real-time insights",
-        status: "coming-soon"
+        status: "live"
       },
       {
         name: "Sentiment Analyzer",
         description: "Analyze customer sentiment from text",
         icon: Target,
-        href: "/tools/sentiment",
+        href: "/tools/sentiment-analyzer",
         metrics: "Multi-language",
-        status: "coming-soon"
+        status: "live"
       },
       {
         name: "Competitive Intelligence",
         description: "Track competitor activities and trends",
         icon: Search,
-        href: "/tools/competitive",
+        href: "/tools/competitive-intelligence",
         metrics: "Daily updates",
-        status: "coming-soon"
+        status: "live"
       }
     ]
   },
@@ -126,9 +118,9 @@ const tools = [
         name: "Proposal Generator",
         description: "Create professional proposals instantly",
         icon: FileText,
-        href: "/tools/proposal-gen",
+        href: "/tools/proposal-generator",
         metrics: "10x faster",
-        status: "coming-soon"
+        status: "live"
       },
       {
         name: "Contract Builder",
@@ -136,7 +128,7 @@ const tools = [
         icon: Shield,
         href: "/tools/contract-builder",
         metrics: "Legal-ready",
-        status: "coming-soon"
+        status: "live"
       },
       {
         name: "Report Builder",
@@ -144,7 +136,7 @@ const tools = [
         icon: BarChart3,
         href: "/tools/report-builder",
         metrics: "Auto-generated",
-        status: "coming-soon"
+        status: "live"
       }
     ]
   }

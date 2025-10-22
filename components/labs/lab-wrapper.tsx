@@ -59,7 +59,7 @@ export function LabWrapper({
   };
 
   return (
-    <main className="max-w-7xl mx-auto px-6 sm:px-8 py-10 md:py-14">
+    <div className="max-w-7xl mx-auto px-6 sm:px-8 py-10 md:py-14">
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground transition-colors">
@@ -204,6 +204,6 @@ export function LabWrapper({
           </Link>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

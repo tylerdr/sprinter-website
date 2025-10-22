@@ -72,13 +72,13 @@ export default function UpdatePasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-neutral-900/50 border-neutral-800">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-card/50 border-border">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Update Password
           </CardTitle>
-          <CardDescription className="text-neutral-400">
+          <CardDescription className="text-muted-foreground">
             {isSuccess 
               ? "Your password has been updated"
               : "Enter your new password below"
@@ -89,7 +89,7 @@ export default function UpdatePasswordPage() {
           {!isSuccess ? (
             <form onSubmit={handleUpdatePassword} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-neutral-200">
+                <Label htmlFor="password" className="text-foreground">
                   New Password
                 </Label>
                 <Input
@@ -100,12 +100,12 @@ export default function UpdatePasswordPage() {
                   placeholder="Enter new password"
                   required
                   disabled={isLoading}
-                  className="bg-neutral-800/50 border-neutral-700 text-white placeholder:text-neutral-500"
+                  className="bg-muted/50 border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="text-neutral-200">
+                <Label htmlFor="confirmPassword" className="text-foreground">
                   Confirm Password
                 </Label>
                 <Input
@@ -116,7 +116,7 @@ export default function UpdatePasswordPage() {
                   placeholder="Confirm new password"
                   required
                   disabled={isLoading}
-                  className="bg-neutral-800/50 border-neutral-700 text-white placeholder:text-neutral-500"
+                  className="bg-muted/50 border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
 
@@ -149,7 +149,7 @@ export default function UpdatePasswordPage() {
                 <p className="text-green-400 font-semibold">
                   Password Updated Successfully!
                 </p>
-                <p className="text-sm text-neutral-400 mt-2">
+                <p className="text-sm text-muted-foreground mt-2">
                   Redirecting you to sign in...
                 </p>
               </div>

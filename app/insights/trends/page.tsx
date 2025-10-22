@@ -75,7 +75,7 @@ const trends = [
     description: "LPs demanding comprehensive AI governance frameworks and audit trails.",
     keyPoints: [
       "EU AI Act enforcement begins March 2025",
-      "SOC 2 for AI becoming standard",
+      "SOC 2 eligible providers becoming baseline requirement",
       "Explainability requirements increasing",
       "Board-level AI committees forming"
     ],

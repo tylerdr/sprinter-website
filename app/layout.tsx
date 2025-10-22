@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NavigationEnhanced } from "@/components/layout/navigation-enhanced";
+import { EnhancedNavigation } from "@/components/layout/enhanced-navigation";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AgentChat } from "@/components/ai/agent-chat";
+import { ChatWidgetWithErrorBoundary as ChatWidget } from "@/components/chat/ChatWidget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalyticsWrapper } from "@/components/analytics/google-analytics-wrapper";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import { Toaster } from "sonner";
+import { ErrorBoundary } from "@/components/error-boundary";
 import {
   generateMetadata as createSEOMetadata,
   generateOrganizationStructuredData,
@@ -75,13 +76,15 @@ export default function RootLayout({
           </a>
 
           <AnalyticsProvider>
-            <NavigationEnhanced />
+            <EnhancedNavigation />
             <main id="main-content" className="flex-1 pt-16">
-              {children}
+              <ErrorBoundary>
+                {children}
+              </ErrorBoundary>
             </main>
             <Footer />
           </AnalyticsProvider>
-          <AgentChat />
+          <ChatWidget />
           <Toaster position="bottom-right" />
           <GoogleAnalyticsWrapper />
           <Analytics />

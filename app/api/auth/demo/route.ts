@@ -1,11 +1,12 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { withRateLimit } from '@/lib/rate-limit'
 
-// Demo credentials are stored server-side only
-const DEMO_EMAIL = process.env.DEMO_EMAIL || 'demo@sprinter.ai'
-const DEMO_PASSWORD = process.env.DEMO_PASSWORD || 'demo123456'
+// Demo credentials must be provided via environment variables
+const DEMO_EMAIL = process.env.DEMO_EMAIL
+const DEMO_PASSWORD = process.env.DEMO_PASSWORD
 
-export async function POST() {
+async function handleDemoLogin(_request: NextRequest) {
   try {
     // Only allow demo login in development or if explicitly enabled
     const isDemoEnabled = process.env.ENABLE_DEMO_LOGIN === 'true' || process.env.NODE_ENV === 'development'
@@ -14,6 +15,14 @@ export async function POST() {
       return NextResponse.json(
         { error: 'Demo login is not available' },
         { status: 403 }
+      )
+    }
+
+    if (!DEMO_EMAIL || !DEMO_PASSWORD) {
+      console.error('Demo login requested but DEMO_EMAIL/DEMO_PASSWORD are not configured')
+      return NextResponse.json(
+        { error: 'Demo login is not configured' },
+        { status: 503 }
       )
     }
 
@@ -44,3 +53,8 @@ export async function POST() {
     )
   }
 }
+
+export const POST = withRateLimit(handleDemoLogin, {
+  interval: 60 * 1000,
+  uniqueTokenPerInterval: 5,
+})

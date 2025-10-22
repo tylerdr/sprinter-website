@@ -99,6 +99,8 @@
   --brand-start: #1d7dff; /* matches Sprinter blue */
   --brand-end: #0a3bcf;   /* deeper Sprinter blue */
   --brand-angle: 90deg;
+  /* RGB values for gradient effects */
+  --primary-rgb: 29, 125, 255; /* Sprinter blue in RGB */
 }
 
 .dark {
@@ -141,9 +143,11 @@
   --info: oklch(0.7 0.06 220);
   --info-foreground: oklch(0.97 0.01 220);
   /* Brand gradient defaults map to primary/accent */
-  --brand-start: #6aa6ff;
-  --brand-end: #1b4ae1;
+  --brand-start: #60a5fa;
+  --brand-end: #a78bfa;
   --brand-angle: 90deg;
+  /* RGB values for gradient effects */
+  --primary-rgb: 106, 166, 255; /* Brighter blue in RGB for dark mode */
 }
 
 @layer base {
@@ -388,6 +392,25 @@
 .animate-scroll {
   animation: scroll 30s linear infinite;
   width: calc(200%);
+}
+
+/* React Bits Animations */
+@keyframes star-movement-bottom {
+  0% { transform: translate(0%, 0%); opacity: 1; }
+  100% { transform: translate(-100%, 0%); opacity: 0; }
+}
+
+@keyframes star-movement-top {
+  0% { transform: translate(0%, 0%); opacity: 1; }
+  100% { transform: translate(100%, 0%); opacity: 0; }
+}
+
+.animate-star-movement-bottom {
+  animation: star-movement-bottom linear infinite alternate;
+}
+
+.animate-star-movement-top {
+  animation: star-movement-top linear infinite alternate;
 }
 
 /* Accordion animations */

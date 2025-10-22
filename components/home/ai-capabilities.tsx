@@ -1,0 +1,47 @@
+"use client";
+
+import BentoGrid from "@/components/kokonutui/bento-grid";
+import { motion } from "framer-motion";
+import SwooshText from "@/components/kokonutui/swoosh-text";
+
+export function AICapabilities() {
+  return (
+    <section className="py-24 sm:py-28 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <SwooshText
+            text="Your AI Portfolio Advantage"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
+            shadowColors={{
+              first: "rgba(99, 102, 241, 0.5)",
+              second: "rgba(168, 85, 247, 0.4)",
+              third: "rgba(236, 72, 153, 0.3)",
+              fourth: "rgba(251, 146, 60, 0.2)",
+              glow: "rgba(168, 85, 247, 0.15)"
+            }}
+          />
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
+            You get agentic AI systems tailored to your needs. Your choice: custom builds or proven tools.
+            Your repeatable playbooks accelerate every deployment. You ship production systems in 10 days.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="max-w-7xl mx-auto"
+        >
+          <BentoGrid />
+        </motion.div>
+      </div>
+    </section>
+  );
+}

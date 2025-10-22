@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 import { openai } from '@ai-sdk/openai'
 import { generateText } from 'ai'
 import type { ProposalGenerationInput, ProposalTemplate } from '@/lib/types/proposal'
 import { populateTemplate } from '@/lib/data/proposal-templates'
+import { withRateLimit } from '@/lib/rate-limit'
 
 // Configuration
 const MODEL_CONFIG = {
@@ -12,7 +13,8 @@ const MODEL_CONFIG = {
   temperature: 0.4
 }
 
-export async function POST(request: Request) {
+async function handlePOST(request: NextRequest) {
+
   try {
     const { input, template, useAI = true } = await request.json() as {
       input: ProposalGenerationInput & { customSections?: Array<{ title: string; content: string }> }
@@ -198,6 +200,12 @@ export async function POST(request: Request) {
     )
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})
 
 interface SectionSchema {
   id: string

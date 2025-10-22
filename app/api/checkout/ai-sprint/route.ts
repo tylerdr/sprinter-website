@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createCheckoutSession } from "@/lib/stripe/config";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
+import { SYSTEM_USER_ID } from "@/lib/constants";
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,30 +27,99 @@ export async function POST(request: NextRequest) {
 
     // Track intent in Supabase before redirect
     if (email) {
-      const supabase = await createClient();
-      await supabase.from("leads").upsert({
-        email,
-        source: "sprint_checkout_intent",
-        source_page: "/ai-sprint",
-        lifecycle_stage: "opportunity",
-        metadata: {
-          checkout_initiated: new Date().toISOString(),
-          ...metadata,
-        },
-      }, {
-        onConflict: "email",
-      });
+      const supabase = await createAdminClient();
+      const timestamp = new Date().toISOString();
 
-      // Add high-value lead scoring event
-      await supabase.from("lead_scoring_events").insert({
-        lead_id: (await supabase.from("leads").select("id").eq("email", email).single()).data?.id,
-        event_type: "checkout_initiated",
-        event_value: 50, // High score for checkout intent
-        event_data: {
-          product: "ai_sprint",
-          value: 50000,
-        },
-      });
+      const { data: leadRecord, error: upsertError } = await supabase
+        .from("leads")
+        .upsert(
+          {
+            email,
+            source: "sprint_checkout_intent",
+            source_page: "/ai-sprint",
+            lifecycle_stage: "opportunity",
+            metadata: {
+              checkout_initiated: timestamp,
+              ...metadata,
+            },
+          },
+          {
+            onConflict: "email",
+          }
+        )
+        .select("id, lead_score")
+        .single();
+
+      if (upsertError) {
+        console.error("Failed to upsert lead for sprint checkout", upsertError);
+      }
+
+      const leadId = leadRecord?.id ?? null;
+      const previousScore = leadRecord?.lead_score ?? 0;
+      const targetScore = Math.max(previousScore, 50);
+
+      if (leadId && targetScore !== previousScore) {
+        const { error: updateError } = await supabase
+          .from("leads")
+          .update({ lead_score: targetScore, updated_at: timestamp })
+          .eq("id", leadId);
+
+        if (updateError) {
+          console.error("Failed to update lead score", updateError);
+        }
+      }
+
+      const toolMetadata = {
+        event: "sprint_checkout_initiated",
+        leadEmail: email,
+        leadId,
+        source: "ai-sprint",
+        previousScore,
+        newScore: targetScore,
+        timestamp,
+        checkoutMetadata: metadata,
+      };
+
+      const { error: toolEventError } = await supabase
+        .from("ai_tool_events")
+        .insert({
+          tool_slug: "lead-scoring.checkout",
+          user_id: SYSTEM_USER_ID,
+          input: {
+            reason: "checkout_initiated",
+            metadata,
+          },
+          output: {
+            score: targetScore,
+            previousScore,
+            delta: targetScore - previousScore,
+          },
+          metadata: toolMetadata,
+        });
+
+      if (toolEventError) {
+        console.error("Failed to track lead scoring tool event", toolEventError);
+      }
+
+      if (leadId) {
+        const { error: activityError } = await supabase
+          .from("lead_activities")
+          .insert({
+            lead_id: leadId,
+            activity_type: "note_added",
+            description: "Lead score updated after sprint checkout intent",
+            metadata: {
+              workflowSlug: "lead-scoring.checkout",
+              previousScore,
+              newScore: targetScore,
+              recordedAt: timestamp,
+            },
+          });
+
+        if (activityError) {
+          console.error("Failed to log lead activity for scoring event", activityError);
+        }
+      }
     }
     
     try {

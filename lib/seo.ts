@@ -146,7 +146,6 @@ export function generateOrganizationStructuredData() {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: COMPANY_INFO.location.city,
       addressRegion: COMPANY_INFO.location.state,
       addressCountry: COMPANY_INFO.location.country,
     },

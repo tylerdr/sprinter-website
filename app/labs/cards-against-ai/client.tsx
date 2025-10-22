@@ -7,13 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { 
   Users, 
   Bot, 
   Copy, 
   Crown,
   Zap,
-  CheckCircle
+  CheckCircle,
+  Plug
 } from "lucide-react";
 import { generateRoomCode, generatePlayerId, AI_PERSONALITIES } from "@/lib/multiplayer/rooms";
 import { useMultiplayerRoom } from "@/lib/hooks/useMultiplayerRoom";
@@ -96,7 +98,7 @@ function CardsAgainstAIGame() {
   const [roomState, setRoomState] = useState<'lobby' | 'playing' | 'finished'>('lobby');
   const [copied, setCopied] = useState(false);
 
-  const { trackPlayer, broadcast, isConnected } = useMultiplayerRoom({
+  const { trackPlayer, broadcast, isConnected, isConfigured } = useMultiplayerRoom({
     roomCode,
     playerId,
     playerName,
@@ -197,6 +199,15 @@ function CardsAgainstAIGame() {
 
   return (
     <div className="h-[600px] flex flex-col">
+      {!isConfigured && (
+        <Alert className="mb-4 border-yellow-500/30 bg-yellow-500/5 text-yellow-200">
+          <Plug className="h-4 w-4" />
+          <AlertTitle>Realtime demo disabled</AlertTitle>
+          <AlertDescription>
+            Configure Supabase Realtime environment variables to enable multiplayer presence. The interface remains available for preview only.
+          </AlertDescription>
+        </Alert>
+      )}
       {/* Game Header */}
       <div className="p-4 border-b flex items-center justify-between">
         <div className="flex items-center gap-4">

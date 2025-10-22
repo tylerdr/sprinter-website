@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { openai } from "@ai-sdk/openai"
 import { generateText } from "ai"
 import { createClient } from "@/lib/supabase/server"
+import { withRateLimit } from '@/lib/rate-limit'
 
 // System prompt for the PE-focused chat assistant
 const SYSTEM_PROMPT = `You are an AI assistant for Sprinter AI, specializing in helping private equity firms leverage AI for competitive advantage.
@@ -30,7 +31,7 @@ Never:
 
 Always end with a clear next step or question to keep engagement.`
 
-export async function POST(request: NextRequest) {
+async function handlePOST(request: NextRequest) {
   try {
     const { messages, email, metadata } = await request.json()
 
@@ -97,6 +98,12 @@ export async function POST(request: NextRequest) {
     )
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})
 
 function detectIntent(userMessage: string, aiResponse: string): {
   score: number

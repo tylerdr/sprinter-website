@@ -1,6 +1,8 @@
 import { openai } from '@ai-sdk/openai'
 import { streamText } from 'ai'
 import { createClient } from '@/lib/supabase/server'
+import { withRateLimit } from '@/lib/rate-limit'
+import { NextRequest } from 'next/server'
 
 // Configuration - same as generate route
 const MODEL_CONFIG = {
@@ -10,7 +12,7 @@ const MODEL_CONFIG = {
   temperature: 0.3
 }
 
-export async function POST(request: Request) {
+async function handlePOST(request: NextRequest) {
   try {
     const { messages, proposalId, proposalContent, sessionId } = await request.json()
     
@@ -100,6 +102,12 @@ Answer questions about this proposal accurately and concisely. If asked about so
     )
   }
 }
+
+// Apply rate limiting with stricter limits for AI endpoints (5 requests per minute)
+export const POST = withRateLimit(handlePOST, {
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 5 // 5 requests per minute
+})
 
 function createProposalContext(proposalContent: Record<string, unknown>): string {
   const sections = []

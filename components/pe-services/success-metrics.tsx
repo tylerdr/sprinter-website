@@ -35,7 +35,7 @@ const metrics = [
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
     stats: [
-      { label: "First Value Delivery", value: "30-45 days" },
+      { label: "First Value Delivery", value: "2-3 sprints" },
       { label: "Full ROI Achievement", value: "6-9 months" },
       { label: "Portfolio-wide Rollout", value: "12-18 months" },
       { label: "Implementation Success Rate", value: "98%" }

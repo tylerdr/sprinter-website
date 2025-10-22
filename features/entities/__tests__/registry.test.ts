@@ -7,7 +7,7 @@ import { entityRegistry } from '../registry';
 import type { EntityType } from '../registry';
 
 // Mock the Supabase client
-vi.mock('@/utils/supabase/server', () => ({
+vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(() => ({
     from: vi.fn(() => ({
       select: vi.fn(() => ({

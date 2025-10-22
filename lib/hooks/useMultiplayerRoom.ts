@@ -31,59 +31,74 @@ export function useMultiplayerRoom({
 }: UseMultiplayerRoomProps) {
   const [channel, setChannel] = useState<RealtimeChannel | null>(null);
   const [isConnected, setIsConnected] = useState(false);
-  const supabase = createClient();
+  const [isConfigured, setIsConfigured] = useState(true);
 
   useEffect(() => {
     if (!roomCode || !playerName) return;
 
-    // Create channel with presence config
-    const roomChannel = supabase.channel(`room:${roomCode}`, {
-      config: {
-        presence: {
-          key: playerId,
+    let isCancelled = false;
+    let roomChannel: RealtimeChannel | null = null;
+
+    try {
+      const supabase = createClient();
+      setIsConfigured(true);
+
+      const channel = supabase.channel(`room:${roomCode}`, {
+        config: {
+          presence: {
+            key: playerId,
+          },
         },
-      },
-    });
-
-    // Set up event listeners
-    roomChannel
-      .on('presence', { event: 'sync' }, () => {
-        const state = roomChannel.presenceState();
-        const playersList = Object.values(state).flat() as unknown as Player[];
-        onPresenceSync?.(playersList);
-      })
-      .on('presence', { event: 'join' }, ({ key, newPresences }: any) => {
-        console.log('Player joined:', key, newPresences);
-      })
-      .on('presence', { event: 'leave' }, ({ key, leftPresences }: any) => {
-        console.log('Player left:', key, leftPresences);
-      })
-      .on('broadcast', { event: '*' }, ({ event, payload }: any) => {
-        onBroadcast?.(event, payload);
-      })
-      .subscribe(async (status: any) => {
-        if (status === 'SUBSCRIBED') {
-          setIsConnected(true);
-          // Track this player's presence after subscription
-          await roomChannel.track({
-            id: playerId,
-            name: playerName,
-            isAI: false,
-            isHost,
-            avatar: '👤',
-          });
-        } else if (status === 'CLOSED') {
-          setIsConnected(false);
-        }
       });
+      roomChannel = channel;
 
-    setChannel(roomChannel);
+      channel
+        .on('presence', { event: 'sync' }, () => {
+          const state = channel.presenceState() ?? {};
+          const playersList = Object.values(state).flat() as unknown as Player[];
+          onPresenceSync?.(playersList);
+        })
+        .on('presence', { event: 'join' }, ({ key, newPresences }: any) => {
+          console.log('Player joined:', key, newPresences);
+        })
+        .on('presence', { event: 'leave' }, ({ key, leftPresences }: any) => {
+          console.log('Player left:', key, leftPresences);
+        })
+        .on('broadcast', { event: '*' }, ({ event, payload }: any) => {
+          onBroadcast?.(event, payload);
+        })
+        .subscribe(async (status: any) => {
+          if (isCancelled) return;
+          if (status === 'SUBSCRIBED') {
+            setIsConnected(true);
+            await channel.track({
+              id: playerId,
+              name: playerName,
+              isAI: false,
+              isHost,
+              avatar: '👤',
+            });
+          } else if (status === 'CLOSED') {
+            setIsConnected(false);
+          }
+        });
+
+      setChannel(roomChannel);
+    } catch (error) {
+      console.warn('Supabase realtime is not configured; multiplayer features disabled.', error);
+      setIsConfigured(false);
+      setIsConnected(false);
+    }
 
     return () => {
-      roomChannel.unsubscribe();
+      isCancelled = true;
+      if (roomChannel) {
+        roomChannel.unsubscribe();
+      }
+      setChannel(null);
       setIsConnected(false);
     };
-  }, [roomCode, playerName, playerId, isHost, supabase, onPresenceSync, onBroadcast]);
+  }, [roomCode, playerName, playerId, isHost, onPresenceSync, onBroadcast]);
 
   const trackPlayer = useCallback(
     async (playerData: Partial<Player>) => {
@@ -116,5 +131,6 @@ export function useMultiplayerRoom({
     isConnected,
     trackPlayer,
     broadcast,
+    isConfigured,
   };
 }

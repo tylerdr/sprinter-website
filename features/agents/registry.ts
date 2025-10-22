@@ -24,6 +24,7 @@ import type {
   DatabaseAgent
 } from "./types";
 import { MORTGAGE_RESEARCHER_AGENT } from "./mortgage-researcher";
+import { pSEOContentGeneratorAgent } from "./pseo-content-generator";
 
 // Re-export types for backward compatibility
 export type { AgentConfig, AgentContext, AgentExecutionResult } from "./types";
@@ -34,7 +35,7 @@ const AGENT_NAMESPACE = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"; // Standard name
 
 // Dynamic import for Supabase client to work in both Node and Next.js contexts
 async function getSupabaseClient() {
-  const { createClient } = await import("@/utils/supabase/server");
+  const { createClient } = await import("@/lib/supabase/server");
   return await createClient();
 }
 
@@ -274,14 +275,45 @@ class AgentRegistry {
       const toolCalls = result.toolCalls;
       if (toolCalls && Array.isArray(toolCalls)) {
         for (const toolCall of toolCalls) {
-          // TODO: Update to use new tool system
-          // Tool execution is temporarily disabled during migration
-          const toolResult = {
-            success: false,
-            error: "Tool execution not yet implemented in new system",
-            data: null
-          };
-          toolResults.push(toolResult);
+          try {
+            // Import tool registry for execution
+            const { sprinterToolRegistry } = await import('@/features/tools/registry');
+
+            // Get the tool from registry
+            const tool = await sprinterToolRegistry.getTool(toolCall.toolName);
+
+            if (!tool || !tool.execute) {
+              toolResults.push({
+                success: false,
+                error: `Tool not found or not executable: ${toolCall.toolName}`,
+                data: null
+              });
+              continue;
+            }
+
+            // Execute the tool with provided arguments
+            const toolContext = {
+              preloaded: {
+                fieldOptions: {},
+                datasets: {}
+              },
+              getOptions: () => [],
+              getDataset: () => []
+            };
+            const toolExecutionResult = await tool.execute(toolCall.args, toolContext);
+
+            toolResults.push({
+              success: true,
+              error: null,
+              data: toolExecutionResult
+            });
+          } catch (toolError) {
+            toolResults.push({
+              success: false,
+              error: toolError instanceof Error ? toolError.message : String(toolError),
+              data: null
+            });
+          }
         }
       }
 
@@ -535,6 +567,7 @@ class AgentRegistry {
    */
   private registerCoreAgents(): void {
     this.register(MORTGAGE_RESEARCHER_AGENT);
+    this.register(pSEOContentGeneratorAgent);
 
     // Marketplace Agent - Primary agent for multi-lender search
     this.register({

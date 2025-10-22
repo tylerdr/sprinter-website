@@ -5,6 +5,9 @@
  */
 
 export const TOOL_UI_IMPORTS: Record<string, () => Promise<any>> = {
+  // Sales Tools
+  "lead-scorer": () => import("./toolset/sales/lead-scorer/ui"),
+
   // Content Tools
   "blog-generator": () => import("./toolset/content/blog-generator/ui"),
   "social-post-generator": () => import("./toolset/content/social-post-generator/ui"),
