@@ -13,10 +13,35 @@ import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Pricing | Sprinter AI",
-  description: "Transparent pricing for PE firms. From assessment to full partnership, choose the AI engagement model that fits your portfolio's needs.",
+  description: "Transparent pricing for family offices, PE firms, and strategic buyers. From advisory counsel to full implementation—flexible engagement models for every need.",
 }
 
-const tiers = [
+// Advisory Services
+const advisoryTiers = [
+  {
+    id: "aiAdvisor",
+    ...PRICING.aiAdvisor,
+    icon: Shield,
+    popular: false,
+    cta: "Get Started",
+    href: "/ai-advisor-retainer",
+    color: "blue",
+    badge: "From $8K/mo"
+  },
+  {
+    id: "fractionalCAIO",
+    ...PRICING.fractionalCAIO,
+    icon: Users,
+    popular: true,
+    cta: "Learn More",
+    href: "/fractional-caio",
+    color: "purple",
+    badge: "For $1B+ AUM"
+  }
+]
+
+// Implementation Services
+const implementationTiers = [
   {
     id: "workshop",
     ...PRICING.workshop,
@@ -26,15 +51,6 @@ const tiers = [
     href: "/contact?type=workshop",
     color: "blue",
     badge: "Low Commitment"
-  },
-  {
-    id: "assessment",
-    ...PRICING.assessment,
-    icon: Target,
-    popular: false,
-    cta: "Start Assessment",
-    href: "/contact?type=assessment",
-    color: "teal"
   },
   {
     id: "wedgeSprint",
@@ -113,12 +129,12 @@ export default function PricingPage() {
           </Badge>
           
           <h1 className="text-5xl md:text-6xl font-bold">
-            Transparent Pricing for <span className="gradient-text">PE Firms</span>
+            Flexible Pricing for <span className="gradient-text">Private Capital</span>
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From $1,500 workshops to full transformation partnerships. Start small with a wedge sprint,
-            scale to portfolio-wide implementation. Clear deliverables, guaranteed outcomes, no hidden fees.
+            Strategic advisory, due diligence, and implementation services for family offices,
+            PE firms, and strategic buyers. Start with counsel, scale to execution.
           </p>
 
           <div className="flex items-center justify-center gap-8 pt-4">
@@ -138,10 +154,104 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Advisory Services */}
       <section className="container mx-auto px-4 max-w-7xl mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {tiers.map((tier) => (
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">
+            Advisory Services
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Strategic counsel without implementation commitments. For principals who need independent perspective.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-6">
+          {advisoryTiers.map((tier) => (
+            <Card
+              key={tier.id}
+              className={cn(
+                "relative flex flex-col",
+                tier.popular && "border-purple-500 shadow-xl shadow-purple-500/20"
+              )}
+            >
+              {tier.popular && (
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  Recommended
+                </Badge>
+              )}
+              {'badge' in tier && tier.badge && !tier.popular && (
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2" variant="secondary">
+                  {tier.badge}
+                </Badge>
+              )}
+
+              <CardHeader>
+                <div className={cn(
+                  "w-12 h-12 rounded-lg flex items-center justify-center mb-4",
+                  tier.color === "blue" && "bg-blue-500/10",
+                  tier.color === "purple" && "bg-purple-500/10"
+                )}>
+                  <tier.icon className={cn(
+                    "w-6 h-6",
+                    tier.color === "blue" && "text-blue-500",
+                    tier.color === "purple" && "text-purple-500"
+                  )} />
+                </div>
+
+                <CardTitle className="text-xl">{tier.name}</CardTitle>
+                <div className="space-y-1">
+                  <p className="text-2xl font-bold">{tier.price}</p>
+                  <p className="text-sm text-muted-foreground">{tier.duration}</p>
+                </div>
+              </CardHeader>
+
+              <CardContent className="flex-1">
+                <p className="text-sm text-muted-foreground mb-4">
+                  {tier.description}
+                </p>
+
+                <ul className="space-y-2">
+                  {tier.includes.slice(0, 5).map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+
+              <CardFooter>
+                <Link href={tier.href} className="w-full">
+                  <Button
+                    className="w-full"
+                    variant={tier.popular ? "default" : "outline"}
+                  >
+                    {tier.cta}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+        <div className="text-center">
+          <Link href="/family-office" className="text-primary hover:underline">
+            View all advisory services →
+          </Link>
+        </div>
+      </section>
+
+      {/* Implementation Services */}
+      <section className="container mx-auto px-4 max-w-7xl mb-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">
+            Implementation Services
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Hands-on AI development and deployment. From quick wins to full transformation.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {implementationTiers.map((tier) => (
             <Card 
               key={tier.id}
               className={cn(
