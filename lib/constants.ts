@@ -4,8 +4,9 @@ export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-
 
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "Put AI to Work Across Your Portfolio",
-  description: "For lower-middle-market and middle-market PE firms. Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage, delivered fast—no API required.",
+  tagline: "Strategic AI Counsel for Private Capital",
+  subTagline: "Advisory, Diligence, and Implementation for Family Offices, PE Firms, and Strategic Buyers",
+  description: "Independent AI advisory and boutique implementation for principals managing permanent capital. From fractional CAIO services to hands-on portfolio transformation. Trusted by family offices, private equity firms, and strategic buyers who need counsel, not vendors.",
   philosophy: "You deserve AI that works. Fast implementations. Real production systems. Measurable ROI. Your operators stay in control while AI handles the repetitive work. That's how you win.",
   founded: "2018",
   email: "hello@sprinter.ai",
@@ -14,6 +15,26 @@ export const COMPANY_INFO = {
     state: "TN",
     country: "United States",
   },
+  // Audience-specific messaging
+  audiences: {
+    familyOffices: {
+      tagline: "Your Trusted AI Counsel for Multi-Generational Wealth",
+      description: "Protect legacy. Capture opportunity. Navigate AI complexity with independent strategic counsel who've built production systems across 100+ companies."
+    },
+    privateEquity: {
+      tagline: "AI Operating Partner for Portfolio Value Creation",
+      description: "Transform portfolio companies with agentic AI deployed in 10-day sprints. Proven across 50+ portcos. No API required."
+    },
+    strategicBuyers: {
+      tagline: "Technical AI Diligence That Informs Better M&A Decisions",
+      description: "Validate synergies. Quantify technical risk. Make confident build-vs-buy decisions with practitioners who've been on both sides of the deal."
+    }
+  },
+  positioning: {
+    primaryRole: "Strategic AI Advisor",
+    secondaryRole: "Boutique Implementation Partner",
+    differentiation: "Independent counsel with practitioner credibility"
+  }
 }
 
 export const SOCIAL_LINKS = {
@@ -26,13 +47,52 @@ export const SOCIAL_LINKS = {
 export const NAVIGATION = {
   main: [
     {
+      href: "/advisory",
+      label: "Advisory",
+      type: "dropdown",
+      dropdown: [
+        { href: "/fractional-caio", label: "Fractional CAIO" },
+        { href: "/ai-advisor-retainer", label: "AI Advisor Retainer" },
+        { href: "/family-office", label: "For Family Offices" },
+        { href: "/governance/family-office", label: "Governance Resources" },
+      ],
+      items: [
+        {
+          href: "/fractional-caio",
+          label: "Fractional Chief AI Officer",
+          description: "C-suite AI leadership for family offices & holding companies",
+          featured: true,
+          icon: "users",
+          badge: "For $1B+ AUM"
+        },
+        {
+          href: "/ai-advisor-retainer",
+          label: "AI Advisor Retainer",
+          description: "Monthly strategic counsel without implementation overhead",
+          icon: "shield",
+          badge: "From $8K/mo"
+        },
+        {
+          href: "/family-office",
+          label: "Family Office Services",
+          description: "Independent AI counsel for multi-generational wealth",
+          icon: "bank"
+        },
+        {
+          href: "/governance/family-office",
+          label: "Governance & Education",
+          description: "Board training, IC education, and governance frameworks",
+          icon: "clipboard"
+        },
+      ],
+    },
+    {
       href: "/solutions",
-      label: "Solutions",
+      label: "Implementation",
       type: "dropdown",
       dropdown: [
         { href: "/ai-scoping-workshop", label: "AI Scoping Workshop" },
         { href: "/ai-implementation-partner", label: "Implementation Partner" },
-        { href: "/ai-due-diligence-consulting", label: "Due Diligence" },
         { href: "/operating-partner", label: "AI Operating Partner" },
         { href: "/solutions/ap-automation", label: "Financial Automation" },
         { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
@@ -49,23 +109,18 @@ export const NAVIGATION = {
           badge: "Fixed Fee"
         },
         {
+          href: "/operating-partner",
+          label: "AI Operating Partner",
+          description: "Portfolio-wide AI orchestration with hands-on implementation",
+          icon: "rocket",
+          badge: "$12-25K/mo"
+        },
+        {
           href: "/ai-implementation-partner",
           label: "Implementation Partner",
           description: "Your boutique AI consulting firm for portfolio companies",
           icon: "users",
           badge: "100+ Portcos"
-        },
-        {
-          href: "/ai-due-diligence-consulting",
-          label: "Due Diligence",
-          description: "Technical AI & data assessment for M&A transactions",
-          icon: "shield"
-        },
-        {
-          href: "/operating-partner",
-          label: "AI Operating Partner",
-          description: "Transform your portfolio with fund-level AI orchestration",
-          icon: "rocket"
         },
         {
           href: "/solutions/ap-automation",
@@ -90,6 +145,39 @@ export const NAVIGATION = {
           label: "View All Solutions",
           description: "20+ battle-tested AI solutions ready to deploy",
           icon: "grid"
+        },
+      ],
+    },
+    {
+      href: "/diligence",
+      label: "Due Diligence",
+      type: "dropdown",
+      dropdown: [
+        { href: "/ai-due-diligence-consulting", label: "M&A Diligence" },
+        { href: "/portfolio-diligence", label: "Portfolio Audits" },
+        { href: "/strategic-buyer-diligence", label: "Build vs. Buy Analysis" },
+      ],
+      items: [
+        {
+          href: "/ai-due-diligence-consulting",
+          label: "M&A Technical Diligence",
+          description: "AI, data, and technology assessment for transactions",
+          featured: true,
+          icon: "shield",
+          badge: "5-10 Days"
+        },
+        {
+          href: "/portfolio-diligence",
+          label: "Portfolio Company Audits",
+          description: "Quarterly AI readiness & risk assessment for holdings",
+          icon: "clipboard",
+          badge: "$5-8K/Co"
+        },
+        {
+          href: "/strategic-buyer-diligence",
+          label: "Strategic Buyer Diligence",
+          description: "Build vs. buy analysis and technical moat assessment",
+          icon: "chart"
         },
       ],
     },
@@ -187,18 +275,22 @@ export const NAVIGATION = {
     }
   ],
   footer: {
-    products: [
+    advisory: [
+      { href: "/fractional-caio", label: "Fractional CAIO" },
+      { href: "/ai-advisor-retainer", label: "AI Advisor" },
+      { href: "/family-office", label: "Family Office Services" },
+      { href: "/governance/family-office", label: "Governance Resources" },
+    ],
+    implementation: [
       { href: "/ai-scoping-workshop", label: "Scoping Workshop" },
+      { href: "/operating-partner", label: "AI Operating Partner" },
       { href: "/ai-implementation-partner", label: "Implementation Partner" },
-      { href: "/ai-due-diligence-consulting", label: "Due Diligence" },
-      { href: "/operating-partner", label: "Operating Partner" },
       { href: "/pe-services", label: "All Services" },
     ],
-    solutions: [
-      { href: "/solutions/ap-automation", label: "AP Automation" },
-      { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
-      { href: "/solutions/3pl-ops", label: "3PL Operations" },
-      { href: "/solutions", label: "All Solutions" },
+    diligence: [
+      { href: "/ai-due-diligence-consulting", label: "M&A Diligence" },
+      { href: "/portfolio-diligence", label: "Portfolio Audits" },
+      { href: "/strategic-buyer-diligence", label: "Strategic Buyer" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },
@@ -231,7 +323,49 @@ export const METRICS = {
 }
 
 export const PRICING = {
-  // PE-focused tiers - updated with competitive positioning
+  // Advisory Services - Strategic Counsel (NEW)
+  aiAdvisor: {
+    name: "AI Advisor Retainer",
+    price: "$8-15K/month",
+    duration: "Monthly (3-month minimum)",
+    description: "Strategic AI counsel without implementation overhead. For principals who need independent perspective on AI strategy, vendor selection, and governance.",
+    audience: "Family Offices, Strategic Buyers, Holding Companies",
+    includes: [
+      "Monthly 90-minute strategy sessions",
+      "Unlimited async advisory via Slack/email",
+      "Quarterly AI landscape briefings",
+      "Vendor evaluation & negotiation support",
+      "Board presentation preparation (2x/year)",
+      "Priority access to implementation capacity",
+      "AI governance policy templates"
+    ],
+    notIncluded: [
+      "Hands-on implementation",
+      "Dedicated engineering resources",
+      "Project management"
+    ]
+  },
+  fractionalCAIO: {
+    name: "Fractional Chief AI Officer",
+    price: "$35-60K/month",
+    duration: "Annually (12-month commitment)",
+    description: "Strategic AI leadership for complex permanent capital structures. Your C-suite AI counsel with board-level access and cross-portfolio orchestration.",
+    audience: "Family Offices ($1B+ AUM), Multi-Holding Structures, PE Firms ($500M+ AUM)",
+    includes: [
+      "20-30 hours/month executive availability",
+      "Board meeting attendance & presentation rights",
+      "LP/investor reporting & communication",
+      "Strategic vendor & partnership negotiations",
+      "Governance framework development & oversight",
+      "Cross-portfolio AI strategy alignment",
+      "Quarterly competitive intelligence briefings",
+      "Annual AI maturity assessment across holdings",
+      "Reserved implementation capacity (up to 1 sprint/quarter)",
+      "Direct access via phone/text for urgent decisions"
+    ]
+  },
+
+  // Assessment & Workshops
   assessment: {
     name: "AI Readiness Assessment",
     price: "$10,000",
@@ -326,6 +460,103 @@ export const PRICING = {
       price: "$7,500",
       duration: "Half-day",
       description: "Develop responsible AI policies"
+    },
+    boardEducation: {
+      name: "Board AI Education Session",
+      price: "$12,000",
+      duration: "2 hours",
+      description: "Interactive session for board members & family principals"
+    },
+    icTraining: {
+      name: "Investment Committee AI Training",
+      price: "$8,000",
+      duration: "90 minutes",
+      description: "AI diligence framework for investment committees"
+    }
+  },
+
+  // Add-On Services (A La Carte)
+  addOns: {
+    portfolioAudit: {
+      name: "Quarterly Portfolio AI Audit",
+      price: "$5-8K per company",
+      duration: "Quarterly",
+      description: "Rolling AI readiness & risk assessment for existing holdings",
+      includes: [
+        "AI capability assessment",
+        "Competitive positioning analysis",
+        "Technology debt quantification",
+        "Opportunity identification",
+        "Executive summary for board"
+      ]
+    },
+    diligenceOnDemand: {
+      name: "On-Demand Technical Diligence",
+      price: "$15K base + $3K/day",
+      duration: "72-hour turnaround",
+      description: "Priority technical diligence for time-sensitive deals",
+      includes: [
+        "Mobilization within 24 hours",
+        "Preliminary findings in 48-72 hours",
+        "Technical risk assessment",
+        "Deal recommendation (go/no-go)",
+        "100-day plan if proceeding"
+      ]
+    },
+    governanceFramework: {
+      name: "AI Governance Framework Development",
+      price: "$18,000",
+      duration: "One-time (2-week delivery)",
+      description: "Custom AI governance policies for family boards and investment committees",
+      includes: [
+        "AI usage policies",
+        "Vendor selection criteria",
+        "Data privacy framework",
+        "Risk management protocols",
+        "Board reporting templates"
+      ]
+    },
+    annualRetainer: {
+      name: "Annual Advisory Retainer (Pre-Paid)",
+      price: "$90K/year (save 25%)",
+      duration: "12-month commitment",
+      description: "AI Advisor tier with annual pre-payment discount",
+      includes: [
+        "All AI Advisor benefits",
+        "2 free portfolio audits/year",
+        "Priority diligence allocation",
+        "Quarterly board attendance option"
+      ]
+    }
+  },
+
+  // Bundled Packages
+  bundles: {
+    caioGovernance: {
+      name: "CAIO + Governance Pack",
+      price: "$45K/month",
+      duration: "12-month commitment",
+      description: "Fractional CAIO with comprehensive governance foundation",
+      includes: [
+        "All Fractional CAIO benefits",
+        "Quarterly board education sessions",
+        "Annual governance framework update",
+        "4 portfolio audits/year included",
+        "Dedicated Slack channel for portfolio CEOs"
+      ]
+    },
+    advisorDiligence: {
+      name: "Advisor + Diligence Reserve",
+      price: "$12K/month + $60K/year diligence bank",
+      duration: "12-month commitment",
+      description: "Strategic advisory with pre-paid diligence capacity",
+      includes: [
+        "AI Advisor base services",
+        "$60K diligence credit (use annually or lose)",
+        "Priority 48-hour turnaround",
+        "Unlimited diligence scope calls",
+        "Annual unused credit converts to implementation hours"
+      ]
     }
   },
   // Legacy pricing
@@ -354,10 +585,10 @@ export const CLIENTS = [
 ]
 
 export const SEO = {
-  title: "Sprinter AI - Build at the pace of AI",
-  description: "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks. Ship AI products in weeks, not months.",
-  keywords: "AI consulting, AI development, autonomous agents, human-centered AI, AI acceleration, venture studio, AI products, purposeful work",
-  ogImage: "/og-image.png", // Add this image later
+  title: "Sprinter AI - Strategic AI Counsel for Private Capital",
+  description: "Independent AI advisory and boutique implementation for family offices, PE firms, and strategic buyers. From fractional CAIO services to hands-on portfolio transformation. Trusted counsel, not vendors.",
+  keywords: "AI consulting, fractional CAIO, family office AI advisor, private equity AI, AI due diligence, strategic AI counsel, AI governance, portfolio AI transformation",
+  ogImage: "/og-image.png",
   siteUrl: "https://sprinter.ai",
   twitterHandle: "@sprinter_hq",
   organizationType: "Organization" as const,
@@ -437,5 +668,41 @@ export const PAGE_SEO = {
     description: "Terms and conditions for Sprinter AI consulting services, venture studio partnerships, and human-centered AI development projects.",
     keywords: "terms of service, AI consulting terms, Sprinter AI terms, venture studio terms, ethical AI",
     ogTitle: "Terms of Service - Sprinter AI",
+  },
+  familyOffice: {
+    title: "Family Office AI Advisory Services | Strategic AI Counsel | Sprinter AI",
+    description: "Independent AI advisory for family offices and multi-generational wealth. Fractional CAIO services, governance frameworks, and portfolio-wide AI strategy. Protect legacy. Capture opportunity.",
+    keywords: "family office AI advisor, fractional CAIO family office, AI governance family office, multi-generational wealth AI, permanent capital AI strategy, family office technology advisor",
+    ogTitle: "AI Advisory for Family Offices - Sprinter AI",
+  },
+  fractionalCAIO: {
+    title: "Fractional Chief AI Officer for Family Offices | Sprinter AI",
+    description: "C-suite AI leadership without full-time overhead. Board-level counsel for $1B+ family offices. Strategic vendor negotiations, governance oversight, and cross-portfolio AI orchestration.",
+    keywords: "fractional CAIO, fractional chief AI officer, family office CAIO, part-time AI executive, AI leadership family office, strategic AI counsel",
+    ogTitle: "Fractional Chief AI Officer Services - Sprinter AI",
+  },
+  aiAdvisor: {
+    title: "AI Advisor Retainer | Strategic AI Counsel | Sprinter AI",
+    description: "Monthly strategic AI counsel without implementation overhead. Independent perspective on AI strategy, vendor selection, and governance. For family offices and strategic buyers.",
+    keywords: "AI advisor retainer, strategic AI counsel, AI strategy consultant, independent AI advisor, AI vendor evaluation, AI governance advisor",
+    ogTitle: "AI Advisor Retainer - Sprinter AI",
+  },
+  portfolioDiligence: {
+    title: "Portfolio Company AI Audits | Quarterly AI Risk Assessment | Sprinter AI",
+    description: "Rolling AI readiness and risk assessment for existing holdings. Identify opportunities, quantify technical debt, and track competitive positioning across your portfolio.",
+    keywords: "portfolio company audit, AI risk assessment, portfolio AI maturity, holding company AI audit, quarterly technology review",
+    ogTitle: "Portfolio Company AI Audits - Sprinter AI",
+  },
+  strategicBuyerDiligence: {
+    title: "Strategic Buyer AI Diligence | Build vs Buy Analysis | Sprinter AI",
+    description: "Technical AI assessment for strategic acquisitions. Validate synergies, quantify integration risk, and make confident build-vs-buy decisions with practitioner-led diligence.",
+    keywords: "strategic buyer diligence, build vs buy AI, technical moat assessment, synergy validation, corporate development AI, M&A AI diligence",
+    ogTitle: "Strategic Buyer AI Diligence - Sprinter AI",
+  },
+  governanceFamilyOffice: {
+    title: "AI Governance for Family Offices | Board Education & Frameworks | Sprinter AI",
+    description: "Board education, investment committee training, and governance frameworks for family offices. Develop responsible AI policies that protect legacy while enabling innovation.",
+    keywords: "AI governance family office, board AI education, investment committee training, family office AI policy, AI risk management, governance framework",
+    ogTitle: "AI Governance Resources for Family Offices - Sprinter AI",
   },
 }

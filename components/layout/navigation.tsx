@@ -100,6 +100,7 @@ export function Navigation() {
                                     case "zap": return Zap;
                                     case "truck": return Truck;
                                     case "handshake": return Users;
+                                    case "users": return Users;
                                     case "grid": return Grid3x3;
                                     case "chart": return BarChart3;
                                     case "book": return BookOpen;
