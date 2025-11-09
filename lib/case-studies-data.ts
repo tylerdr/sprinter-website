@@ -23,8 +23,48 @@ export type CaseStudy = z.infer<typeof CaseStudySchema>;
 // Real clients include: Vero Capital, Rock Hill Capital, Beckway, Wells Fargo, Accenture, Broadlume
 export const peCaseStudies: CaseStudy[] = [];
 
+// Family Office & Strategic Advisory case studies
+export const familyOfficeCaseStudies: CaseStudy[] = [
+  {
+    slug: "family-office-ai-transformation",
+    title: "Multi-Billion Family Office – Portfolio-Wide AI Strategy & Governance",
+    category: "Family Office Advisory",
+    description:
+      "How fractional CAIO engagement transformed 8 portfolio holdings, created $12M in new value, and built board-level AI governance across $2.3B in AUM",
+    challenge:
+      "Multi-generational family office managing $2.3B across 8 diverse holdings (manufacturing, healthcare services, real estate, fintech) lacked cohesive AI strategy. Each portfolio company making independent AI decisions—overpaying vendors, duplicating efforts, missing synergies. Board lacked framework to evaluate AI investments. No shared learnings across holdings. Result: $4M wasted on redundant tools, missed competitive opportunities, and growing governance liability.",
+    solution:
+      "Deployed Fractional Chief AI Officer delivering C-suite AI leadership across the family office structure. Conducted portfolio-wide AI capability audits across all 8 holdings, established board-level governance framework with investment criteria, standardized vendor evaluation reducing cost through negotiation leverage, launched quarterly portfolio CEO AI roundtables for knowledge sharing, implemented technical diligence on 3 potential acquisitions ($50M+), and built centralized AI knowledge base accessible across holdings.",
+    results: [
+      { metric: "$12M", label: "New value created across portfolio" },
+      { metric: "60%", label: "Vendor cost reduction through standardization" },
+      { metric: "3", label: "Acquisition offers declined (poor AI diligence)" },
+      { metric: "45%", label: "Average automation rate across portcos" },
+      { metric: "2.1×", label: "Average EBITDA improvement" },
+      { metric: "8", label: "AI governance policies established" },
+    ],
+    testimonial:
+      "Bringing on a fractional CAIO was the best governance decision we've made in a decade. Tyler brought practitioner credibility our board trusted, saved us from three bad acquisitions, and helped our portfolio companies gain unfair competitive advantage through AI. The ROI is extraordinary—we're now deploying AI strategically instead of reactively.",
+    testimonialAuthor: "Principal, $2.3B Multi-Generational Family Office",
+    features: [
+      "Quarterly board strategy sessions with AI landscape updates",
+      "Portfolio-wide AI capability audits (6-dimension scorecard)",
+      "Standardized vendor evaluation and negotiation",
+      "Technical diligence on 3 potential acquisitions",
+      "CEO roundtables for cross-portfolio knowledge sharing",
+      "Governance framework development (8 policies)",
+      "Investment committee training on AI due diligence",
+      "Centralized AI vendor relationships and volume pricing",
+    ],
+    gradient: "from-violet-500 to-purple-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+];
+
 export const caseStudies: CaseStudy[] = [
   ...peCaseStudies,
+  ...familyOfficeCaseStudies,
   {
     slug: "ai-mortgage-assistant",
     title: "MortgageQ – AI-Driven Non-QM Guideline Intelligence",
