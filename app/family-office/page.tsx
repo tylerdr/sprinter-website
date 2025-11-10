@@ -55,7 +55,6 @@ const engagementModels = [
   },
   {
     tier: "Advisory + Implementation",
-    name: "CAIO + Governance Pack",
     ...PRICING.bundles.caioGovernance,
     ideal: "Family offices ready for both strategic guidance and hands-on portfolio transformation",
     featured: false,
