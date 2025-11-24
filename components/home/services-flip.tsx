@@ -15,46 +15,46 @@ import {
 
 const services = [
   {
-    title: "Agentic AI Systems",
-    subtitle: "Your competitive edge",
-    description: "Get autonomous agents handling your complex workflows. Your team focuses on strategy while AI executes.",
-    features: ["Your Custom Architecture", "Multi-Agent Coordination", "Seamless Tool Integration", "Your Repeatable Playbooks"],
+    title: "AP Automation",
+    subtitle: "65%+ Touchless Processing",
+    description: "Invoice processing that works with any ERP—no API required. $3.2M average savings across portfolio companies.",
+    features: ["Works With Any ERP", "No API Required", "65%+ Touchless Rate", "Board-Ready Reporting"],
     icon: Brain,
   },
   {
-    title: "Your Choice: Build or Buy",
-    subtitle: "Smart flexibility",
-    description: "You choose: proven off-the-shelf tools or custom-built solutions. Your goals drive the decision.",
-    features: ["Expert Tool Recommendations", "Smooth API Integration", "Custom When You Need It", "Hybrid Solutions for You"],
+    title: "Quote Intelligence",
+    subtitle: "38% Higher Win Rates",
+    description: "ML-powered pricing that finds optimal corridors across your portfolio. $4.8M EBITDA improvement case study.",
+    features: ["Cross-Portfolio Data", "Win/Loss Analytics", "Real-Time Scoring", "Margin Optimization"],
+    icon: BarChart,
+  },
+  {
+    title: "Revenue Cycle AI",
+    subtitle: "34% Denial Reduction",
+    description: "Prior auth automation and denial prevention for healthcare portfolios. $8.2M annual collection acceleration.",
+    features: ["Prior Auth Automation", "Denial Prediction", "Payer Rule Engines", "4-Hour Approvals"],
+    icon: Shield,
+  },
+  {
+    title: "Document Intelligence",
+    subtitle: "95% Time Saved",
+    description: "Turn unstructured PDFs into structured decisions. Powers lending, compliance, and due diligence workflows.",
+    features: ["PDF Extraction", "Multi-Doc Analysis", "Compliance Checks", "Decision Automation"],
     icon: Layers,
   },
   {
-    title: "No-API? No Problem.",
-    subtitle: "Your legacy systems work",
-    description: "Your old systems without APIs? We automate them. 70%+ of deployments need zero API access.",
-    features: ["Document Intelligence for You", "Screen Automation", "Your Process Mining", "Workflow Orchestration"],
+    title: "No-API Advantage™",
+    subtitle: "70% Need Zero API",
+    description: "Legacy systems without APIs? We automate them anyway. Screen-level automation for any software.",
+    features: ["Screen Automation", "Process Mining", "Legacy Integration", "Zero IT Burden"],
     icon: Zap,
   },
   {
-    title: "Your Portfolio Playbooks",
-    subtitle: "Scale your wins",
-    description: "Your 2nd deployment is 50% faster. Your 3rd is 70% faster. You compound your advantage.",
-    features: ["Your Proven Templates", "Best Practices Library", "Your Knowledge Base", "Cross-Portfolio Wins"],
+    title: "Portfolio Playbooks",
+    subtitle: "50% Faster Each Rollout",
+    description: "The playbook from your first portco accelerates every subsequent deployment. Knowledge compounds.",
+    features: ["Proven Templates", "Best Practices", "Champion Training", "Cross-Portfolio Wins"],
     icon: Globe,
-  },
-  {
-    title: "10-Day Sprints",
-    subtitle: "You ship fast",
-    description: "Your AI system goes from discovery to production in 10 days. Real results, real ROI.",
-    features: ["Your Sprint Schedule", "Production Deployment", "Your Real Data", "Your Team Training"],
-    icon: Rocket,
-  },
-  {
-    title: "Your Operators, Empowered",
-    subtitle: "Own your AI future",
-    description: "Your operators learn to own and expand the AI. You build lasting capability, not dependency.",
-    features: ["Hands-on Training", "Complete Documentation", "Your Internal Champions", "Ongoing Support"],
-    icon: Users,
   },
 ];
 
@@ -70,11 +70,11 @@ export function ServicesFlip() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            What <span className="gradient-text">You Get</span>
+            Proven <span className="gradient-text">Solutions</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Your choice: custom development or off-the-shelf integrations. Your repeatable playbooks.
-            You identify the opportunities. You ship portfolio wins in 10 days. You own the results.
+            These aren&apos;t concepts—they&apos;re production systems we&apos;ve deployed 50+ times.
+            Each comes with case studies, ROI projections, and our 10-day delivery guarantee.
           </p>
         </motion.div>
 
