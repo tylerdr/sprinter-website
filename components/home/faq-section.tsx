@@ -13,43 +13,43 @@ import { useState } from "react";
 const faqs = [
   {
     id: "1",
-    question: "How is this different from traditional consulting?",
-    answer: "You get specialists who ship production systems in 10 days, not consultants who deliver PowerPoints in 45. Your choice of custom or off-the-shelf. Your repeatable playbooks. Your measurable ROI. No drama, just results."
+    question: "What makes you different from McKinsey or BCG AI practices?",
+    answer: "They sell strategy decks. We ship production systems. In 10 days. We're practitioners who've built 50+ production AI systems, not consultants with vendor partnerships. We have zero conflicts of interest—no commissions from recommending specific tools. And we guarantee results: if we don't deliver measurable ROI, we work free until you see it."
   },
   {
     id: "2",
-    question: "What if our portfolio companies don't have APIs?",
-    answer: "No API? No problem. You get automation that works with your legacy systems. 70%+ of deployments need zero API access. Your old systems become automated using document intelligence, screen automation, and smart workflows. You don't need to replace anything."
+    question: "What's your guarantee exactly?",
+    answer: "Three guarantees: (1) Our free assessment identifies at least $500K in AI opportunities—or it's completely free. (2) If we don't ship your AI system to production in 10 days, we continue at no charge until we do. (3) If you don't see measurable ROI within 90 days on any retainer, we work free until you do. Zero risk."
   },
   {
     id: "3",
-    question: "How do you ensure adoption across our portfolio companies?",
-    answer: "You build WITH your operators, never for them. Your team gets hands-on training, complete documentation, and change management support. Your internal champions learn to identify and implement new opportunities independently. You own the capability."
+    question: "What if our systems don't have APIs?",
+    answer: "That's actually 70% of our deployments. Our No-API Advantage™ approach uses document intelligence, screen automation, and smart workflows to automate legacy systems that were never designed for integration. You don't need to replace anything—we work with what you have."
   },
   {
     id: "4",
-    question: "What's included in a 10-day sprint?",
-    answer: "Day 1-3: Your discovery, process mapping, and opportunity assessment. Day 4-7: Your production system built and tested with your real data. Day 8-10: Your deployment with monitoring, training, and handover. You get a working production system with full documentation and support."
+    question: "How does the 10-day sprint work?",
+    answer: "Days 1-2: Problem definition and reality check. Days 3-4: Data architecture and model design. Days 5-6: Core system build. Days 7-8: Integration and UX. Days 9-10: Testing, deployment, and training. You get a production system with full documentation—not a proof-of-concept that stalls."
   },
   {
     id: "5",
-    question: "How do we measure ROI?",
-    answer: "You establish clear KPIs upfront: your time saved, your accuracy improvements, your cost reduction, your process acceleration. You track these metrics in real-time across all your deployments. Typical results: 20+ hours/week saved per team, 42% faster quote cycles, 60%+ touchless processing."
+    question: "What ROI should we expect?",
+    answer: "Our clients average 250% ROI within 60 days. Specific examples: $3.2M annual savings from AP automation, $4.8M EBITDA improvement from quote intelligence, $8.2M collection acceleration from revenue cycle AI. We'll project your specific ROI during the free assessment."
   },
   {
     id: "6",
-    question: "Can this work with our existing tech stack?",
-    answer: "Yes. You keep your current tools—Salesforce, SAP, Microsoft, custom systems. You don't replace anything. You enhance what you have. Your AI integrates additively. You choose: cloud, on-premise, or hybrid. Your infrastructure, your way."
+    question: "Why do you only take 3 new retainer clients per quarter?",
+    answer: "Quality over quantity. Our senior practitioners work directly on every engagement—no junior consultants learning on your dime. We maintain this capacity constraint to ensure every client gets our A-team. If you want to secure a slot, book your assessment soon."
   },
   {
     id: "7",
-    question: "What about data security and compliance?",
-    answer: "You stay compliant. Your data stays in your environment. You get full audit trails, encryption at rest and in transit, role-based access controls. Your HIPAA/GDPR requirements are met. Your security standards drive every decision."
+    question: "How do wins compound across our portfolio?",
+    answer: "We call it the Portfolio Multiplier Effect™. The playbook from your first portco accelerates the second by 50%. The third by 70%. You build a portfolio-wide AI knowledge base with proven templates, best practices, and trained internal champions who can extend the work independently."
   },
   {
     id: "8",
-    question: "How do we scale across our portfolio?",
-    answer: "You start with one high-impact use case. You prove value. You templatize and deploy across sister companies. Your 2nd deployment is 50% faster. Your 3rd is 70% faster. You maintain a portfolio-wide knowledge base. Your wins compound."
+    question: "What about data security?",
+    answer: "Your data stays in your environment. We don't train models on your data. Full encryption, audit trails, and role-based access. We work within your compliance requirements—HIPAA, GDPR, SOC 2, whatever you need. Security isn't negotiable."
   }
 ];
 
