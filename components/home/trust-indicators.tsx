@@ -7,27 +7,27 @@ import { Shield, Award, Users2, TrendingUp, Building2, Clock } from "lucide-reac
 const trustStats = [
   {
     icon: Building2,
-    value: "50+",
-    label: "AI Implementations",
-    description: "Across multiple industries"
+    value: "$18M+",
+    label: "Value Created",
+    description: "Across 50+ portfolio companies"
   },
   {
     icon: TrendingUp,
     value: "250%",
     label: "Average ROI",
-    description: "Within 60 days"
+    description: "Measurable returns in 60 days"
   },
   {
     icon: Clock,
-    value: "30-45",
-    label: "Days to Production",
-    description: "From discovery to deployment"
+    value: "10 Days",
+    label: "To Production",
+    description: "Guaranteed delivery timeline"
   },
   {
     icon: Shield,
-    value: "World-Class",
-    label: "AI Expertise",
-    description: "Deep agent & automation specialists"
+    value: "Zero",
+    label: "Risk",
+    description: "Results guaranteed or we work free"
   }
 ];
 
@@ -42,10 +42,10 @@ export function TrustIndicators() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            <span className="gradient-text">Agentic AI Expertise</span> for Private Equity
+            <span className="gradient-text">Proven Results</span> Across 50+ Portfolio Companies
           </h2>
           <p className="text-muted-foreground">
-            World-class knowledge in agentic AI and autonomous systems, serving lower-middle-market and growth equity portfolios
+            Independent AI counsel for family offices, PE firms, and strategic buyers. We ship production AI, not decks.
           </p>
         </div>
 

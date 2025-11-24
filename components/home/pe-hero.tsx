@@ -9,10 +9,10 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "50+", label: "Portfolio wins" },
-  { value: "10 Days", label: "To production" },
-  { value: "250%", label: "Average ROI" },
-  { value: "No API?", label: "No problem" },
+  { value: "50+", label: "Portfolio Wins" },
+  { value: "10 Days", label: "To Production" },
+  { value: "250%", label: "Avg ROI in 60 Days" },
+  { value: "$18M+", label: "Value Created" },
 ];
 
 export function PEHero() {
@@ -39,7 +39,7 @@ export function PEHero() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-6xl mx-auto"
         >
-          {/* Industry Badge */}
+          {/* Industry Badge with Scarcity */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -48,7 +48,7 @@ export function PEHero() {
           >
             <Building2 className="w-4 h-4 text-blue-400" aria-hidden="true" />
             <span className="text-sm font-medium text-blue-400">
-              AI Operating Partner for Private Equity
+              Only 3 Retainer Slots Left This Quarter
             </span>
           </motion.div>
 
@@ -93,21 +93,33 @@ export function PEHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
           >
-            <BookDemoButton
-              size="lg"
-              text="Book 90-Minute OP Workshop"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-            />
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6">
+              <Link href="/ai-assessment" className="group">
+                Get Your Free AI Assessment
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
+            </Button>
             <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/pricing" className="group">
+              <Link href="/case-studies" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                See Transparent Pricing
+                See $18M+ in Results
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
           </motion.div>
+
+          {/* Guarantee Badge */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.55, duration: 0.8 }}
+            className="text-sm text-green-400 mb-16 flex items-center justify-center gap-2"
+          >
+            <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            Results guaranteed or we work free until you see ROI
+          </motion.p>
 
           {/* Trust Indicators */}
           <motion.div
@@ -117,12 +129,12 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              For lower-middle-market and middle-market PE firms
+              Trusted by Family Offices, PE Firms & Strategic Buyers
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
-              <span className="font-semibold">Your AI Advantage</span>
-              <span className="font-semibold">Your Playbooks</span>
-              <span className="font-semibold">Your Portfolio Wins</span>
+              <span className="font-semibold">Independent Counsel</span>
+              <span className="font-semibold">No Vendor Lock-in</span>
+              <span className="font-semibold">Practitioners, Not Consultants</span>
             </div>
           </motion.div>
 

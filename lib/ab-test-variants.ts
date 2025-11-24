@@ -1,5 +1,6 @@
 // A/B Test Variants for Hero and CTA Copy
 // This file allows easy switching between different messaging variants for testing
+// Updated with outcome-focused copy following Hormozi's Grand Slam Offer framework
 
 export type HeroVariant = "peoplefirst" | "scale" | "need" | "transform" | "accelerate";
 export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
@@ -7,80 +8,80 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "Put AI to Work",
-      line2: "Across Your Portfolio"
+      line1: "Add Millions to EBITDA",
+      line2: "in 10 Days, Not 10 Months"
     },
-    subheadline: "For lower-middle-market and middle-market PE firms. Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage starts here."
+    subheadline: "Ship production AI that actually works. No vendor lock-in. No failed pilots. Just measurable ROI—250% average in 60 days. Proven across 50+ portfolio companies. Works with your legacy systems. Guaranteed results or we work free."
   },
   scale: {
     headline: {
-      line1: "Your GenAI Implementation Partner",
-      line2: "for Portfolio Companies"
+      line1: "Turn Your Portfolio Into",
+      line2: "an AI-Powered Engine"
     },
-    subheadline: "Deploy production-ready AI across your portfolio. From AP automation to quote intelligence systems. 60%+ touchless processing in 10 days with full governance and audit trails."
+    subheadline: "From AP automation to quote intelligence—60%+ touchless processing in production within 10 days. Full governance and audit trails. Playbooks that multiply across your entire portfolio."
   },
   need: {
     headline: {
-      line1: "AI Due Diligence & Value Creation",
-      line2: "for Private Equity"
+      line1: "Stop Leaving Money",
+      line2: "on the Table"
     },
-    subheadline: "Technical due diligence, AI readiness assessments, and hands-on implementation. We help Operating Partners and Value Creation teams ship real AI wins. Portfolio-wide playbooks included."
+    subheadline: "Your competitors are shipping AI while you're stuck in pilot purgatory. We've helped 50+ portcos add millions to EBITDA with AI that ships in 10 days. No API required. ROI guaranteed."
   },
   transform: {
     headline: {
-      line1: "Boutique AI Consulting",
-      line2: "for PE Portfolio Ops"
+      line1: "Production AI in 10 Days",
+      line2: "Guaranteed"
     },
-    subheadline: "Fixed-fee sprints that deliver working AI in production. No PowerPoints, just pilots. From 3PL operations to portfolio reporting—we've automated it for 100+ portcos."
+    subheadline: "Fixed-fee sprints. Working systems in production. No decks, no delays. If we don't ship in 10 days, we continue at no charge. That's how confident we are in The Sprinter Method™."
   },
   accelerate: {
     headline: {
-      line1: "AI Strategy Workshop",
-      line2: "for Operating Partners"
+      line1: "Your AI Operating Partner",
+      line2: "for Portfolio Value Creation"
     },
-    subheadline: "2-week sprint to assess, scope, and pilot AI across your portfolio. Vendor-neutral recommendations with build vs. buy analysis. Clear acceptance criteria and LP-ready governance docs."
+    subheadline: "Get the AI wins that matter—without hiring a $500K head of AI. Independent counsel. Hands-on execution. Playbooks proven across 50+ implementations. Capacity for just 3 new retainer clients this quarter."
   }
 } as const;
 
 export const ctaVariants = {
   blueprint: {
-    primary: "Book AI Scoping Workshop →",
-    secondary: "Download RFP Template"
+    primary: "Get Your Free Assessment →",
+    secondary: "See How We Guarantee Results"
   },
   assessment: {
-    primary: "Get AI Readiness Assessment",
-    secondary: "View Fixed-Fee Pricing"
+    primary: "Claim Your Free AI Roadmap",
+    secondary: "Only 10 Spots This Month"
   },
   readiness: {
-    primary: "Schedule Discovery Sprint",
-    secondary: "See Portfolio Case Studies"
+    primary: "Book Your Assessment (Free)",
+    secondary: "See $12M Case Study"
   },
   audit: {
-    primary: "Book 2-Week Diagnostic",
-    secondary: "Get Options Memo Template"
+    primary: "Start With Free Assessment",
+    secondary: "View Pricing & Guarantee"
   }
 } as const;
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "Your Portfolio. Powered by AI. In 10 Days.",
-    description: "You get repeatable playbooks proven across 50+ portfolio companies. Choose custom development or off-the-shelf integrations based on your needs. From AP automation to quote intelligence—achieve measurable ROI in your first sprint.",
-    cta: "Book your AI Scoping Workshop today. Fixed fee, clear deliverables."
+    headline: "250% Average ROI in 60 Days. Guaranteed.",
+    description: "We don't charge until you see results. If we don't identify at least $500K in AI opportunities during your assessment, it's free. If we don't ship to production in 10 days, we work free until we do. That's how confident we are.",
+    cta: "Only 3 retainer slots available this quarter. Book your free assessment now."
   },
   leftBehind: {
-    headline: "AI Due Diligence for Tech & Data Risk",
-    description: "5-10 day assessment packages. Model risk, data governance, vendor analysis, TCO projections. Board-ready reports that actually inform deal decisions.",
-    cta: "Schedule Due Diligence Consultation. See sample reports and pricing."
+    headline: "Never Get Blindsided by a Bad Acquisition Again",
+    description: "Our technical AI diligence has saved clients from 3 acquisitions that would have cost millions. 5-day turnaround. Board-ready reports. Build-vs-buy clarity.",
+    cta: "Book a diligence consultation. See what we've helped clients avoid."
   },
   competitive: {
-    headline: "Operating Partner AI Enablement",
-    description: "Equip your OPs with AI playbooks tailored to portfolio verticals. From pricing optimization to procurement analytics. Hands-on workshops, not theory.",
-    cta: "Book Operating Partner Workshop. 90 minutes to transform your approach."
+    headline: "Stop Paying $500K/Year for AI Leadership",
+    description: "Get fractional CAIO services that deliver results, not just advice. Board-level counsel. Vendor negotiations. Implementation oversight. All without the full-time salary.",
+    cta: "See how one family office saved $4M in their first year."
   },
   roi: {
-    headline: "Fixed-Fee Implementation, Clear Acceptance Criteria",
-    description: "No hourly billing surprises. 2-week diagnostic, 30-day pilot, 90-day scale. Every engagement includes SOW, success metrics, and governance framework.",
-    cta: "View pricing and engagement models. Transparent fees, proven results."
+    headline: "Production AI in 10 Days, or We Work Free",
+    description: "Fixed-fee sprints with acceptance criteria. No hourly surprises. No stalled pilots. If we miss our 10-day deadline, we continue at no charge until you're in production. Zero risk.",
+    cta: "Book your assessment. See transparent pricing. Make a decision with confidence."
   }
 } as const;
 

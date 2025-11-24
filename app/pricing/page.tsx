@@ -12,8 +12,8 @@ import {
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Pricing | Sprinter AI",
-  description: "Transparent pricing for family offices, PE firms, and strategic buyers. From advisory counsel to full implementation—flexible engagement models for every need.",
+  title: "Pricing | Sprinter AI - Transparent, Guaranteed Results",
+  description: "Production AI in 10 days. 250% average ROI. Guaranteed results or we work free. Start with a free assessment and see transparent pricing for every engagement model.",
 }
 
 // Advisory Services
@@ -84,23 +84,23 @@ const implementationTiers = [
 const guarantees = [
   {
     icon: Shield,
-    title: "10x ROI Guarantee",
-    description: "We guarantee 10x return on your investment or your money back. Our average client sees 18x ROI."
+    title: "Results Guaranteed",
+    description: "If we don't identify $500K+ in AI opportunities during your assessment, it's free. If we don't ship in 10 days, we work free until we do."
   },
   {
     icon: Clock,
-    title: "Speed to Value",
-    description: "See working AI in 5 days, not months. Full production deployment while others are still planning."
+    title: "10 Days to Production",
+    description: "Working AI in production, not pilots that stall. Our Sprinter Method™ delivers measurable ROI while others are still planning."
   },
   {
     icon: Users,
-    title: "Portfolio-Wide Impact",
-    description: "Every implementation benefits your entire portfolio through shared learnings and reusable components."
+    title: "Portfolio Multiplier Effect™",
+    description: "Every implementation creates playbooks your entire portfolio can use. Knowledge compounds across your holdings."
   },
   {
     icon: HeadphonesIcon,
-    title: "Ongoing Support",
-    description: "We don't disappear after delivery. Every engagement includes post-implementation support."
+    title: "90-Day ROI or Free",
+    description: "If you don't see measurable ROI within 90 days on any retainer, we work free until you do. Zero risk."
   }
 ]
 
@@ -123,33 +123,46 @@ export default function PricingPage() {
       {/* Header */}
       <section className="container mx-auto px-4 max-w-6xl mb-20">
         <div className="text-center space-y-6">
-          <Badge className="mb-4" variant="outline">
-            <DollarSign className="w-3 h-3 mr-1" />
-            Transparent Pricing
+          <Badge className="mb-4 bg-green-500/10 text-green-400 border-green-500/20">
+            <Shield className="w-3 h-3 mr-1" />
+            Results Guaranteed or We Work Free
           </Badge>
-          
+
           <h1 className="text-5xl md:text-6xl font-bold">
-            Flexible Pricing for <span className="gradient-text">Private Capital</span>
+            Production AI. <span className="gradient-text">Guaranteed Results.</span>
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Strategic advisory, due diligence, and implementation services for family offices,
-            PE firms, and strategic buyers. Start with counsel, scale to execution.
+            Start free. Scale when you&apos;re ready. Every engagement comes with our iron-clad guarantee:
+            if we don&apos;t deliver measurable ROI, we work free until you see it.
           </p>
 
           <div className="flex items-center justify-center gap-8 pt-4">
             <div>
-              <p className="text-3xl font-bold text-green-500">18x</p>
-              <p className="text-sm text-muted-foreground">Average ROI</p>
+              <p className="text-3xl font-bold text-green-500">250%</p>
+              <p className="text-sm text-muted-foreground">Average ROI in 60 days</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-blue-500">5 days</p>
+              <p className="text-3xl font-bold text-blue-500">10 Days</p>
               <p className="text-sm text-muted-foreground">To production</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-purple-500">$1.8B</p>
+              <p className="text-3xl font-bold text-purple-500">$18M+</p>
               <p className="text-sm text-muted-foreground">Value created</p>
             </div>
+          </div>
+
+          {/* Start Here CTA */}
+          <div className="pt-6">
+            <Link href="/ai-assessment">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8">
+                Start With Free Assessment
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+            <p className="text-sm text-muted-foreground mt-3">
+              We&apos;ll identify $500K+ in AI opportunities—or it&apos;s free
+            </p>
           </div>
         </div>
       </section>
@@ -498,29 +511,37 @@ export default function PricingPage() {
 
       {/* CTA */}
       <section className="container mx-auto px-4 max-w-4xl">
-        <Card className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border-blue-500/30">
+        <Card className="bg-gradient-to-r from-green-600/10 to-blue-600/10 border-green-500/30">
           <CardContent className="pt-12 pb-12 text-center">
+            <Badge className="mb-4 bg-orange-500/10 text-orange-400 border-orange-500/20">
+              <Clock className="w-3 h-3 mr-1" />
+              Only 3 Retainer Slots Left This Quarter
+            </Badge>
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Transform Your Portfolio?
+              Stop Leaving Money on the Table
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join leading PE firms using AI to drive unprecedented value creation. 
-              Start with a free consultation to discuss your portfolio's specific needs.
+              Every month you wait, your competitors gain ground. Start with a free assessment—
+              we&apos;ll identify at least $500K in AI opportunities or it costs you nothing.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="gap-2">
-                  <HeadphonesIcon className="w-5 h-5" />
-                  Schedule Free Consultation
+              <Link href="/ai-assessment">
+                <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                  Get Your Free Assessment
+                  <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Link href="/labs/ai-playbook">
+              <Link href="/case-studies">
                 <Button size="lg" variant="outline" className="gap-2">
-                  <Sparkles className="w-5 h-5" />
-                  Try AI Playbook Builder
+                  <Trophy className="w-5 h-5" />
+                  See $18M+ in Results
                 </Button>
               </Link>
             </div>
+            <p className="text-sm text-green-400 mt-6 flex items-center justify-center gap-2">
+              <Shield className="w-4 h-4" />
+              Results guaranteed or we work free until you see ROI
+            </p>
           </CardContent>
         </Card>
       </section>

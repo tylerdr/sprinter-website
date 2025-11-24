@@ -4,10 +4,10 @@ export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-
 
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "Strategic AI Counsel for Private Capital",
-  subTagline: "Advisory, Diligence, and Implementation for Family Offices, PE Firms, and Strategic Buyers",
-  description: "Independent AI advisory and boutique implementation for principals managing permanent capital. From fractional CAIO services to hands-on portfolio transformation. Trusted by family offices, private equity firms, and strategic buyers who need counsel, not vendors.",
-  philosophy: "You deserve AI that works. Fast implementations. Real production systems. Measurable ROI. Your operators stay in control while AI handles the repetitive work. That's how you win.",
+  tagline: "Turn Your Portfolio Into an AI-Powered Value Creation Engine",
+  subTagline: "Add Millions to EBITDA in Weeks, Not Years. No Hype. No Vendor Lock-in. Just Results.",
+  description: "The AI advisory and implementation partner for family offices and private capital. We implement production AI systems that deliver measurable ROI—250% average returns in 60 days. Independent counsel, practitioner credibility, and execution that ships.",
+  philosophy: "You deserve AI that actually works. Not decks. Not pilots that stall. Production systems that add millions to your bottom line. We've done it 50+ times. Let us show you how.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",
@@ -15,25 +15,46 @@ export const COMPANY_INFO = {
     state: "TN",
     country: "United States",
   },
-  // Audience-specific messaging
+  // Audience-specific messaging (outcome-focused per Hormozi)
   audiences: {
     familyOffices: {
-      tagline: "Your Trusted AI Counsel for Multi-Generational Wealth",
-      description: "Protect legacy. Capture opportunity. Navigate AI complexity with independent strategic counsel who've built production systems across 100+ companies."
+      tagline: "Protect Your Legacy. Accelerate Your Returns.",
+      description: "Get C-suite AI leadership without the $500K salary. Independent counsel who's built production AI for 100+ companies. Avoid costly vendor mistakes. Capture opportunities your competitors miss."
     },
     privateEquity: {
-      tagline: "AI Operating Partner for Portfolio Value Creation",
-      description: "Transform portfolio companies with agentic AI deployed in 10-day sprints. Proven across 50+ portcos. No API required."
+      tagline: "Add $2M+ to Portfolio EBITDA in 90 Days",
+      description: "Ship production AI in 10 days, not 10 months. No-API implementations that work with your legacy systems. Playbooks proven across 50+ portcos. ROI guaranteed or we work free until you see it."
     },
     strategicBuyers: {
-      tagline: "Technical AI Diligence That Informs Better M&A Decisions",
-      description: "Validate synergies. Quantify technical risk. Make confident build-vs-buy decisions with practitioners who've been on both sides of the deal."
+      tagline: "Never Overpay for an Acquisition Again",
+      description: "Technical AI diligence that finds the landmines before you close. Build-vs-buy analysis from practitioners who've been on both sides. 5-day turnaround. Board-ready reports."
     }
   },
   positioning: {
-    primaryRole: "Strategic AI Advisor",
-    secondaryRole: "Boutique Implementation Partner",
-    differentiation: "Independent counsel with practitioner credibility"
+    primaryRole: "AI Implementation Partner",
+    secondaryRole: "Strategic Advisory Counsel",
+    differentiation: "We ship production AI. Not decks."
+  },
+  // Named frameworks for IP positioning (Hormozi)
+  frameworks: {
+    sprintMethod: "The Sprinter Method™",
+    readinessIndex: "AI Readiness Index™",
+    portfolioMultiplier: "Portfolio Multiplier Effect™",
+    noApiAdvantage: "No-API Advantage™",
+    governanceStack: "Governance Stack™"
+  },
+  // Guarantee language (risk reversal)
+  guarantee: {
+    assessment: "If we don't identify at least $500K in AI opportunities, the assessment is free.",
+    sprint: "If we don't ship to production in 10 days, we continue at no charge until we do.",
+    retainer: "If you don't see measurable ROI within 90 days, we work free until you do."
+  },
+  // Scarcity messaging
+  scarcity: {
+    retainerSlots: 3,
+    sprintCapacity: 4,
+    assessmentSlots: 10,
+    quarterMessage: "We take on only 3 new retainer clients per quarter to ensure white-glove service."
   }
 }
 
@@ -268,8 +289,8 @@ export const NAVIGATION = {
   ],
   ctas: [
     {
-      href: "/contact",
-      label: "Get Started",
+      href: "/ai-assessment",
+      label: "Get Free Assessment",
       variant: "default" as const,
       icon: "sparkles"
     }
@@ -585,9 +606,9 @@ export const CLIENTS = [
 ]
 
 export const SEO = {
-  title: "Sprinter AI - Strategic AI Counsel for Private Capital",
-  description: "Independent AI advisory and boutique implementation for family offices, PE firms, and strategic buyers. From fractional CAIO services to hands-on portfolio transformation. Trusted counsel, not vendors.",
-  keywords: "AI consulting, fractional CAIO, family office AI advisor, private equity AI, AI due diligence, strategic AI counsel, AI governance, portfolio AI transformation",
+  title: "Sprinter AI - Production AI That Adds Millions to Your Portfolio",
+  description: "The AI implementation partner for family offices and PE firms. Ship production AI in 10 days. 250% average ROI in 60 days. Guaranteed results or we work free. 50+ portfolio wins.",
+  keywords: "AI consulting, fractional CAIO, family office AI advisor, private equity AI, AI due diligence, AI implementation partner, AI ROI, portfolio AI transformation, 10-day AI sprint",
   ogImage: "/og-image.png",
   siteUrl: "https://sprinter.ai",
   twitterHandle: "@sprinter_hq",
@@ -598,10 +619,10 @@ export const SEO = {
 // Page-specific SEO metadata
 export const PAGE_SEO = {
   home: {
-    title: "Sprinter AI - Build at the pace of AI | Human-Centered AI Solutions",
-    description: "Transform your business with AI that empowers people. We build AI systems that free humans from repetitive tasks to focus on meaningful work. 250% ROI in 60 days.",
-    keywords: "AI consulting, autonomous agents, human-centered AI, AI development, venture studio, machine learning, AI transformation, purposeful work",
-    ogTitle: "Sprinter AI - Building AI That Helps People",
+    title: "Sprinter AI - Add Millions to EBITDA with Production AI | 10-Day Sprints",
+    description: "Turn your portfolio into an AI-powered value creation engine. Ship production AI in 10 days. 250% average ROI. 50+ portfolio wins. Guaranteed results or we work free.",
+    keywords: "AI consulting, portfolio value creation, AI implementation, private equity AI, family office AI, 10-day AI sprint, AI ROI, production AI",
+    ogTitle: "Sprinter AI - Production AI That Delivers Results",
   },
   about: {
     title: "About Sprinter AI - Building Human-Centered AI Since 2018",

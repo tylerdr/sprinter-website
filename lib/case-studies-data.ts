@@ -19,9 +19,184 @@ export const CaseStudySchema = z.object({
 
 export type CaseStudy = z.infer<typeof CaseStudySchema>;
 
-// Note: PE case studies removed - focusing on real client success stories
-// Real clients include: Vero Capital, Rock Hill Capital, Beckway, Wells Fargo, Accenture, Broadlume
-export const peCaseStudies: CaseStudy[] = [];
+// PE case studies - Portfolio value creation stories
+export const peCaseStudies: CaseStudy[] = [
+  {
+    slug: "pe-portfolio-ap-automation",
+    title: "Lower-Middle-Market PE Firm – Portfolio-Wide AP Automation",
+    category: "Private Equity Implementation",
+    description:
+      "How a 10-day sprint turned into 8 portfolio company rollouts, $3.2M in annual savings, and a repeatable playbook for the fund's value creation playbook",
+    challenge:
+      "Lower-middle-market PE firm with $800M AUM managing 12 portfolio companies across manufacturing, distribution, and services. Each portco running different ERP systems (NetSuite, SAP Business One, QuickBooks Enterprise). AP teams drowning in invoice processing—average 15 days to payment, 8% early payment discount loss, and 2.5 FTEs per portco dedicated to manual entry. Operating partners knew AI could help but had no bandwidth to evaluate vendors or manage implementations across diverse tech stacks.",
+    solution:
+      "Deployed The Sprinter Method™ starting with a single manufacturing portco as proof of concept. 10-day sprint delivered 65% touchless AP processing with existing ERP—no API required. Built repeatable playbook documenting integration patterns for each ERP variant. Rolled out to 7 additional portcos over 6 months using internal champions trained during initial sprint. Established fund-level AI governance framework for future implementations.",
+    results: [
+      { metric: "$3.2M", label: "Annual savings across portfolio" },
+      { metric: "65%", label: "Average touchless processing rate" },
+      { metric: "8", label: "Portfolio companies automated" },
+      { metric: "12 days", label: "Reduced time-to-payment (from 15)" },
+      { metric: "2.1×", label: "ROI in first 90 days" },
+      { metric: "18", label: "FTE hours/week reclaimed per portco" },
+    ],
+    testimonial:
+      "The first sprint paid for itself in 6 weeks. But the real value was the playbook—we've now rolled this out to 8 companies with minimal Sprinter involvement. That portfolio multiplier effect is exactly what we needed as operating partners.",
+    testimonialAuthor: "Operating Partner, $800M PE Fund",
+    features: [
+      "No-API Advantage™ implementation (works with any ERP)",
+      "10-day proof-of-concept sprint at single portco",
+      "Reusable integration playbook for ERP variants",
+      "Internal champion training for self-service rollout",
+      "Fund-level AI governance framework",
+      "Quarterly portfolio AI reviews",
+      "Vendor-neutral technology selection",
+      "Board-ready ROI reporting templates",
+    ],
+    gradient: "from-blue-500 to-indigo-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+  {
+    slug: "pe-due-diligence-save",
+    title: "Growth Equity Fund – Technical Diligence That Saved $15M",
+    category: "PE Due Diligence",
+    description:
+      "How 5-day technical AI diligence uncovered critical data quality issues and saved a fund from a problematic acquisition",
+    challenge:
+      "Growth equity fund evaluating $45M acquisition of a 'AI-powered' SaaS platform in the logistics space. Target claimed proprietary machine learning models driving 40% of revenue. Fund's deal team lacked technical depth to validate AI claims. Previous diligence provider delivered 80-page report that raised more questions than answers. Deal had 30-day exclusivity window ticking.",
+    solution:
+      "Deployed rapid technical diligence team for 5-day deep dive. Examined actual ML model architecture, training data quality, and technical debt. Discovered: models were actually rule-based heuristics marketed as 'AI', core training data had 23% label accuracy issues, and 'proprietary' tech was largely open-source with minimal customization. Provided board-ready report with go/no-go recommendation and specific concerns.",
+    results: [
+      { metric: "$15M+", label: "Avoided overpayment" },
+      { metric: "5 days", label: "Complete diligence turnaround" },
+      { metric: "23%", label: "Data quality issues uncovered" },
+      { metric: "0", label: "Actual proprietary ML (vs claimed)" },
+      { metric: "3", label: "Critical risks identified" },
+      { metric: "$45M", label: "Deal walked away from" },
+    ],
+    testimonial:
+      "Sprinter's diligence literally saved us from a disaster. What the target called 'AI' was smoke and mirrors. The 5-day turnaround let us exit gracefully within our exclusivity window. We've now made them our standard diligence partner for any AI-related acquisition.",
+    testimonialAuthor: "Partner, Growth Equity Fund",
+    features: [
+      "5-day rapid technical diligence",
+      "ML model architecture review",
+      "Training data quality assessment",
+      "Technical debt quantification",
+      "IP and open-source dependency analysis",
+      "Board-ready executive summary",
+      "Go/no-go recommendation with rationale",
+      "100-day integration plan (if proceeding)",
+    ],
+    gradient: "from-red-500 to-orange-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+  {
+    slug: "pe-quote-intelligence",
+    title: "Industrial Services PE – Quote Intelligence Platform",
+    category: "Private Equity Implementation",
+    description:
+      "How AI-powered quote optimization added $4.8M to EBITDA across 5 industrial services portfolio companies",
+    challenge:
+      "Middle-market PE firm with 5 industrial services portfolio companies (HVAC, electrical, plumbing). Collective $180M revenue but leaving money on the table with inconsistent quoting. Each company using different methods—spreadsheets, tribal knowledge, gut feel. Win rates varied 15-45% across companies. No visibility into why deals were won or lost. Operating team suspected pricing optimization could add 2-3% margin but had no data to prove it or tools to implement.",
+    solution:
+      "Built centralized quote intelligence platform using The Sprinter Method™. Aggregated 3 years of historical quote data across all 5 portcos. Trained ML models on win/loss patterns, identifying optimal pricing corridors by job type, customer segment, and competitive context. Deployed AI-assisted quoting tool that suggests pricing with confidence scores. Implemented feedback loop for continuous model improvement.",
+    results: [
+      { metric: "$4.8M", label: "EBITDA improvement (Year 1)" },
+      { metric: "38%", label: "Average win rate (was 28%)" },
+      { metric: "2.7%", label: "Margin improvement" },
+      { metric: "42%", label: "Quote cycle time reduction" },
+      { metric: "5", label: "Portfolio companies on platform" },
+      { metric: "89%", label: "Estimator adoption rate" },
+    ],
+    testimonial:
+      "We knew pricing was an opportunity but couldn't quantify it. Sprinter not only proved the $4.8M opportunity existed—they captured it. The cross-portfolio data advantage is something no individual company could have built alone.",
+    testimonialAuthor: "Managing Director, Industrial Services PE",
+    features: [
+      "Cross-portfolio data aggregation",
+      "ML-powered pricing optimization",
+      "Win/loss pattern analysis",
+      "Competitive intelligence integration",
+      "Real-time confidence scoring",
+      "Estimator training and adoption program",
+      "Continuous model improvement feedback loop",
+      "Executive dashboard with margin analytics",
+    ],
+    gradient: "from-green-500 to-teal-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+  {
+    slug: "pe-fund-ai-strategy",
+    title: "Middle-Market PE – Fund-Level AI Operating Model",
+    category: "PE Advisory",
+    description:
+      "How a $1.2B fund built centralized AI capabilities that drove $18M in portfolio value creation within 18 months",
+    challenge:
+      "Middle-market PE fund with $1.2B AUM and 15 portfolio companies frustrated by AI fragmentation. Each portco making independent AI investments—duplicating vendor relationships, wasting money on failed pilots, and missing opportunities for knowledge sharing. Fund-level operating team had no visibility into AI initiatives. LPs asking about AI strategy with no coherent answer. Estimated $2M annually wasted on redundant tools and failed implementations.",
+    solution:
+      "Established AI Operating Partner engagement at fund level. Conducted portfolio-wide AI maturity assessment using AI Readiness Index™. Built centralized AI roadmap prioritizing highest-ROI opportunities across holdings. Negotiated fund-level vendor relationships (40% cost reduction). Created AI Center of Excellence with playbooks, governance frameworks, and quarterly portfolio reviews. Launched internal AI champions network for knowledge sharing.",
+    results: [
+      { metric: "$18M", label: "Portfolio value created (18 months)" },
+      { metric: "40%", label: "Vendor cost reduction" },
+      { metric: "15", label: "Portfolio companies assessed" },
+      { metric: "8", label: "AI implementations launched" },
+      { metric: "$2M", label: "Annual waste eliminated" },
+      { metric: "12", label: "Internal AI champions trained" },
+    ],
+    testimonial:
+      "Sprinter helped us go from AI chaos to AI strategy. We now have a coherent story for LPs, a playbook that works across our portfolio, and $18M in documented value creation. The fund-level approach was exactly right—no single portco could have achieved this alone.",
+    testimonialAuthor: "Head of Operations, $1.2B PE Fund",
+    features: [
+      "Portfolio-wide AI Readiness Index™ assessment",
+      "Centralized AI roadmap and prioritization",
+      "Fund-level vendor negotiations",
+      "AI Center of Excellence establishment",
+      "Governance Stack™ framework deployment",
+      "Quarterly portfolio AI reviews",
+      "Internal champions training program",
+      "LP-ready AI strategy documentation",
+    ],
+    gradient: "from-purple-500 to-violet-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+  {
+    slug: "pe-healthcare-automation",
+    title: "Healthcare PE – Revenue Cycle AI Transformation",
+    category: "Private Equity Implementation",
+    description:
+      "How AI-powered revenue cycle automation reduced denials by 34% and accelerated collections by $8.2M annually across 4 specialty practices",
+    challenge:
+      "Healthcare-focused PE firm with 4 specialty practice portfolio companies (orthopedics, cardiology, dermatology, pain management). Collective $95M revenue but hemorrhaging money on revenue cycle inefficiencies. Average denial rate of 18%, 45-day average AR, and 4.2 FTEs per practice dedicated to billing follow-up. Staff spending 60% of time on administrative tasks instead of patient care. Payer rule complexity making manual processes unsustainable.",
+    solution:
+      "Implemented AI-powered revenue cycle platform across all 4 practices using The Sprinter Method™. Deployed prior authorization automation reducing approval time from 5 days to 4 hours. Built denial prediction models identifying at-risk claims before submission. Created intelligent claim scrubbing with payer-specific rule engines. Established automated follow-up workflows for outstanding AR.",
+    results: [
+      { metric: "$8.2M", label: "Annual collection acceleration" },
+      { metric: "34%", label: "Denial rate reduction" },
+      { metric: "28 days", label: "Average AR (was 45)" },
+      { metric: "4 hours", label: "Prior auth time (was 5 days)" },
+      { metric: "12.5", label: "FTE hours/week reclaimed per practice" },
+      { metric: "96%", label: "First-pass claim acceptance" },
+    ],
+    testimonial:
+      "Revenue cycle was our biggest operational headache across the portfolio. Sprinter's healthcare AI expertise was evident from day one—they understood payer complexity and built solutions that actually work. The $8.2M impact speaks for itself.",
+    testimonialAuthor: "Operating Partner, Healthcare PE Fund",
+    features: [
+      "Prior authorization automation",
+      "Denial prediction and prevention",
+      "Intelligent claim scrubbing",
+      "Payer-specific rule engines",
+      "Automated AR follow-up workflows",
+      "Real-time eligibility verification",
+      "Cross-practice benchmarking",
+      "Compliance and audit trail documentation",
+    ],
+    gradient: "from-cyan-500 to-blue-600",
+    screenshot: "/images/products/ai-architecture-diagram.svg",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+];
 
 // Family Office & Strategic Advisory case studies
 export const familyOfficeCaseStudies: CaseStudy[] = [
