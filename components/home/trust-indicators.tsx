@@ -7,27 +7,27 @@ import { Shield, Award, Users2, TrendingUp, Building2, Clock } from "lucide-reac
 const trustStats = [
   {
     icon: Building2,
-    value: "$18M+",
-    label: "Value Created",
-    description: "Across 50+ portfolio companies"
+    value: "20+",
+    label: "AI Systems Built",
+    description: "Production deployments"
   },
   {
     icon: TrendingUp,
-    value: "250%",
-    label: "Average ROI",
-    description: "Measurable returns in 60 days"
+    value: "2-4",
+    label: "Week Sprints",
+    description: "From kickoff to production"
   },
   {
     icon: Clock,
-    value: "10 Days",
-    label: "To Production",
-    description: "Guaranteed delivery timeline"
+    value: "Multi-Agent",
+    label: "Architectures",
+    description: "Complex workflows automated"
   },
   {
     icon: Shield,
-    value: "Zero",
-    label: "Risk",
-    description: "Results guaranteed or we work free"
+    value: "Your Stack",
+    label: "We Integrate",
+    description: "No rip-and-replace required"
   }
 ];
 
@@ -42,10 +42,10 @@ export function TrustIndicators() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            <span className="gradient-text">Proven Results</span> Across 50+ Portfolio Companies
+            <span className="gradient-text">Agentic AI</span> That Ships to Production
           </h2>
           <p className="text-muted-foreground">
-            Independent AI counsel for family offices, PE firms, and strategic buyers. We ship production AI, not decks.
+            We build AI agents, automate workflows, and redesign processes. Sprint-based implementations that deliver working systems.
           </p>
         </div>
 

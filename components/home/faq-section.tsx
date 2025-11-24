@@ -13,43 +13,43 @@ import { useState } from "react";
 const faqs = [
   {
     id: "1",
-    question: "What makes you different from McKinsey or BCG AI practices?",
-    answer: "They sell strategy decks. We ship production systems. In 10 days. We're practitioners who've built 50+ production AI systems, not consultants with vendor partnerships. We have zero conflicts of interest—no commissions from recommending specific tools. And we guarantee results: if we don't deliver measurable ROI, we work free until you see it."
+    question: "What makes you different from big consulting firms?",
+    answer: "We ship working systems, not strategy decks. Our sprint-based approach gets AI into production in weeks, not months. We're practitioners who build and deploy—not consultants who advise and leave. You get production code, not PowerPoints."
   },
   {
     id: "2",
-    question: "What's your guarantee exactly?",
-    answer: "Three guarantees: (1) Our free assessment identifies at least $500K in AI opportunities—or it's completely free. (2) If we don't ship your AI system to production in 10 days, we continue at no charge until we do. (3) If you don't see measurable ROI within 90 days on any retainer, we work free until you do. Zero risk."
+    question: "We're not very 'tech-forward'—can AI still work for us?",
+    answer: "Absolutely. Most of our clients say the same thing initially. We specialize in building AI that works with existing systems, messy data, and real-world workflows. You don't need a modern tech stack or clean data to start. We meet you where you are."
   },
   {
     id: "3",
-    question: "What if our systems don't have APIs?",
-    answer: "That's actually 70% of our deployments. Our No-API Advantage™ approach uses document intelligence, screen automation, and smart workflows to automate legacy systems that were never designed for integration. You don't need to replace anything—we work with what you have."
+    question: "How do your sprints work?",
+    answer: "Each sprint is 2-4 weeks with a defined scope and deliverable. We start with problem definition, build the core system, integrate with your workflows, and deploy to production. You validate at each step, we iterate based on feedback. Working systems, not endless planning."
   },
   {
     id: "4",
-    question: "How does the 10-day sprint work?",
-    answer: "Days 1-2: Problem definition and reality check. Days 3-4: Data architecture and model design. Days 5-6: Core system build. Days 7-8: Integration and UX. Days 9-10: Testing, deployment, and training. You get a production system with full documentation—not a proof-of-concept that stalls."
+    question: "What kind of AI systems do you build?",
+    answer: "We focus on agentic AI—multi-agent systems that can handle complex workflows autonomously. Document intelligence that turns PDFs into structured data. Process automation that handles the tedious work. AI that augments your team, not replaces them."
   },
   {
     id: "5",
-    question: "What ROI should we expect?",
-    answer: "Our clients average 250% ROI within 60 days. Specific examples: $3.2M annual savings from AP automation, $4.8M EBITDA improvement from quote intelligence, $8.2M collection acceleration from revenue cycle AI. We'll project your specific ROI during the free assessment."
+    question: "How do wins compound across a portfolio?",
+    answer: "We call it the Portfolio Multiplier Effect™. The playbook from your first implementation makes the second faster. Shared learnings, proven templates, and trained operators who can extend the work. Each deployment builds on the last."
   },
   {
     id: "6",
-    question: "Why do you only take 3 new retainer clients per quarter?",
-    answer: "Quality over quantity. Our senior practitioners work directly on every engagement—no junior consultants learning on your dime. We maintain this capacity constraint to ensure every client gets our A-team. If you want to secure a slot, book your assessment soon."
+    question: "What about data security?",
+    answer: "Your data stays in your environment. We don't train models on your data. We work within your compliance requirements—HIPAA, GDPR, SOC 2, whatever you need. Security architecture is part of every engagement."
   },
   {
     id: "7",
-    question: "How do wins compound across our portfolio?",
-    answer: "We call it the Portfolio Multiplier Effect™. The playbook from your first portco accelerates the second by 50%. The third by 70%. You build a portfolio-wide AI knowledge base with proven templates, best practices, and trained internal champions who can extend the work independently."
+    question: "Do we need to replace our existing systems?",
+    answer: "No. We build AI that integrates with what you have—legacy systems, existing databases, current workflows. No rip-and-replace required. Our approach is additive, not disruptive."
   },
   {
     id: "8",
-    question: "What about data security?",
-    answer: "Your data stays in your environment. We don't train models on your data. Full encryption, audit trails, and role-based access. We work within your compliance requirements—HIPAA, GDPR, SOC 2, whatever you need. Security isn't negotiable."
+    question: "How do we get started?",
+    answer: "Schedule a strategy call and we'll discuss your specific situation—where AI could help, what a sprint might look like, and whether we're a good fit. No pressure, no sales pitch. Just a conversation about what's possible."
   }
 ];
 

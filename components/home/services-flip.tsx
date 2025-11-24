@@ -15,45 +15,45 @@ import {
 
 const services = [
   {
-    title: "AP Automation",
-    subtitle: "65%+ Touchless Processing",
-    description: "Invoice processing that works with any ERP—no API required. $3.2M average savings across portfolio companies.",
-    features: ["Works With Any ERP", "No API Required", "65%+ Touchless Rate", "Board-Ready Reporting"],
+    title: "Multi-Agent Systems",
+    subtitle: "Coordinated AI Workflows",
+    description: "Multiple AI agents working together to handle complex tasks—research, analysis, and execution in parallel.",
+    features: ["Parallel Processing", "Task Orchestration", "Human-in-the-Loop", "Scalable Architecture"],
     icon: Brain,
   },
   {
-    title: "Quote Intelligence",
-    subtitle: "38% Higher Win Rates",
-    description: "ML-powered pricing that finds optimal corridors across your portfolio. $4.8M EBITDA improvement case study.",
-    features: ["Cross-Portfolio Data", "Win/Loss Analytics", "Real-Time Scoring", "Margin Optimization"],
-    icon: BarChart,
-  },
-  {
-    title: "Revenue Cycle AI",
-    subtitle: "34% Denial Reduction",
-    description: "Prior auth automation and denial prevention for healthcare portfolios. $8.2M annual collection acceleration.",
-    features: ["Prior Auth Automation", "Denial Prediction", "Payer Rule Engines", "4-Hour Approvals"],
-    icon: Shield,
-  },
-  {
     title: "Document Intelligence",
-    subtitle: "95% Time Saved",
-    description: "Turn unstructured PDFs into structured decisions. Powers lending, compliance, and due diligence workflows.",
-    features: ["PDF Extraction", "Multi-Doc Analysis", "Compliance Checks", "Decision Automation"],
+    subtitle: "PDFs to Decisions",
+    description: "Turn unstructured documents into structured data and automated workflows. Powers lending, compliance, and operations.",
+    features: ["PDF Extraction", "Multi-Doc Analysis", "Data Normalization", "Decision Automation"],
     icon: Layers,
   },
   {
-    title: "No-API Advantage™",
-    subtitle: "70% Need Zero API",
-    description: "Legacy systems without APIs? We automate them anyway. Screen-level automation for any software.",
-    features: ["Screen Automation", "Process Mining", "Legacy Integration", "Zero IT Burden"],
+    title: "Process Automation",
+    subtitle: "End-to-End Workflows",
+    description: "Redesign and automate complex business processes. From document intake to final decision—fully orchestrated.",
+    features: ["Workflow Design", "Exception Handling", "Audit Trails", "Integration Ready"],
     icon: Zap,
   },
   {
+    title: "Legacy System Integration",
+    subtitle: "Works With What You Have",
+    description: "Think you're not 'tech-forward' enough? We build AI that works with your existing systems—messy data and all.",
+    features: ["Any System", "Existing Data", "No Rip & Replace", "Gradual Adoption"],
+    icon: Shield,
+  },
+  {
+    title: "Sprint Implementations",
+    subtitle: "Production in Weeks",
+    description: "Fixed-scope sprints with clear deliverables. Working systems, not slide decks. You validate, we iterate.",
+    features: ["2-4 Week Sprints", "Clear Deliverables", "Rapid Iteration", "Production Ready"],
+    icon: Rocket,
+  },
+  {
     title: "Portfolio Playbooks",
-    subtitle: "50% Faster Each Rollout",
-    description: "The playbook from your first portco accelerates every subsequent deployment. Knowledge compounds.",
-    features: ["Proven Templates", "Best Practices", "Champion Training", "Cross-Portfolio Wins"],
+    subtitle: "Wins That Compound",
+    description: "The playbook from your first implementation makes the second faster. Shared learnings across your portfolio.",
+    features: ["Proven Templates", "Best Practices", "Team Training", "Knowledge Transfer"],
     icon: Globe,
   },
 ];
@@ -73,8 +73,8 @@ export function ServicesFlip() {
             Proven <span className="gradient-text">Solutions</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            These aren&apos;t concepts—they&apos;re production systems we&apos;ve deployed 50+ times.
-            Each comes with case studies, ROI projections, and our 10-day delivery guarantee.
+            Agentic AI systems that handle the tedious work so your team can focus on
+            strategy and exceptions. Sprint-based implementations that ship fast.
           </p>
         </motion.div>
 

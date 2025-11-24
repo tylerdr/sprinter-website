@@ -12,8 +12,8 @@ import {
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Pricing | Sprinter AI - Transparent, Guaranteed Results",
-  description: "Production AI in 10 days. 250% average ROI. Guaranteed results or we work free. Start with a free assessment and see transparent pricing for every engagement model.",
+  title: "Pricing | Sprinter AI - Sprint-Based AI Implementation",
+  description: "Clear pricing for agentic AI implementations. Sprint-based delivery, from workshops to full implementations. See our engagement models and find the right fit.",
 }
 
 // Advisory Services
@@ -83,24 +83,24 @@ const implementationTiers = [
 
 const guarantees = [
   {
-    icon: Shield,
-    title: "Results Guaranteed",
-    description: "If we don't identify $500K+ in AI opportunities during your assessment, it's free. If we don't ship in 10 days, we work free until we do."
+    icon: Rocket,
+    title: "Sprint-Based Delivery",
+    description: "Fixed-scope sprints with clear deliverables. 2-4 weeks from kickoff to production. You validate, we iterate."
   },
   {
     icon: Clock,
-    title: "10 Days to Production",
-    description: "Working AI in production, not pilots that stall. Our Sprinter Method™ delivers measurable ROI while others are still planning."
+    title: "The Sprinter Method™",
+    description: "Working AI in production, not slide decks that stall. Quick wins that compound into larger transformations."
   },
   {
     icon: Users,
     title: "Portfolio Multiplier Effect™",
-    description: "Every implementation creates playbooks your entire portfolio can use. Knowledge compounds across your holdings."
+    description: "Every implementation creates playbooks your portfolio can use. The second deployment is faster than the first."
   },
   {
-    icon: HeadphonesIcon,
-    title: "90-Day ROI or Free",
-    description: "If you don't see measurable ROI within 90 days on any retainer, we work free until you do. Zero risk."
+    icon: Shield,
+    title: "Works With Your Stack",
+    description: "We integrate with existing systems, messy data, and real-world workflows. No rip-and-replace required."
   }
 ]
 
@@ -123,45 +123,45 @@ export default function PricingPage() {
       {/* Header */}
       <section className="container mx-auto px-4 max-w-6xl mb-20">
         <div className="text-center space-y-6">
-          <Badge className="mb-4 bg-green-500/10 text-green-400 border-green-500/20">
-            <Shield className="w-3 h-3 mr-1" />
-            Results Guaranteed or We Work Free
+          <Badge className="mb-4 bg-blue-500/10 text-blue-400 border-blue-500/20">
+            <Rocket className="w-3 h-3 mr-1" />
+            Sprint-Based AI Implementation
           </Badge>
 
           <h1 className="text-5xl md:text-6xl font-bold">
-            Production AI. <span className="gradient-text">Guaranteed Results.</span>
+            Clear Pricing. <span className="gradient-text">Working Systems.</span>
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Start free. Scale when you&apos;re ready. Every engagement comes with our iron-clad guarantee:
-            if we don&apos;t deliver measurable ROI, we work free until you see it.
+            From workshops to full implementations—find the engagement model that fits.
+            Fixed-scope sprints with clear deliverables. Production systems, not slide decks.
           </p>
 
           <div className="flex items-center justify-center gap-8 pt-4">
             <div>
-              <p className="text-3xl font-bold text-green-500">250%</p>
-              <p className="text-sm text-muted-foreground">Average ROI in 60 days</p>
+              <p className="text-3xl font-bold text-blue-500">2-4</p>
+              <p className="text-sm text-muted-foreground">Week sprints</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-blue-500">10 Days</p>
-              <p className="text-sm text-muted-foreground">To production</p>
+              <p className="text-3xl font-bold text-purple-500">20+</p>
+              <p className="text-sm text-muted-foreground">AI systems built</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-purple-500">$18M+</p>
-              <p className="text-sm text-muted-foreground">Value created</p>
+              <p className="text-3xl font-bold text-green-500">Multi-Agent</p>
+              <p className="text-sm text-muted-foreground">Architectures</p>
             </div>
           </div>
 
           {/* Start Here CTA */}
           <div className="pt-6">
-            <Link href="/ai-assessment">
+            <Link href="/contact">
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8">
-                Start With Free Assessment
+                Schedule a Strategy Call
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
             <p className="text-sm text-muted-foreground mt-3">
-              We&apos;ll identify $500K+ in AI opportunities—or it&apos;s free
+              Let&apos;s discuss what a sprint could look like for your team
             </p>
           </div>
         </div>
@@ -452,57 +452,56 @@ export default function PricingPage() {
         <h2 className="text-3xl font-bold text-center mb-12">
           Common Questions
         </h2>
-        
+
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>How quickly can we see results?</CardTitle>
+              <CardTitle>How do your sprints work?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                You'll have a working AI prototype in 5 days with our Sprint model. 
-                Full production deployment happens within the same sprint. Most clients 
-                see measurable ROI within 30-60 days of deployment.
+                Each sprint is 2-4 weeks with a defined scope and deliverable. We start with
+                problem definition, build the core system, integrate with your workflows, and
+                deploy to production. You validate at each step, we iterate based on feedback.
               </p>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader>
-              <CardTitle>What if it doesn't work for our portfolio?</CardTitle>
+              <CardTitle>We&apos;re not very &apos;tech-forward&apos;—can this work for us?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                We offer a 10x ROI guarantee. If we don't deliver at least 10x return 
-                on your investment within 12 months, we'll refund your money. Our track 
-                record: 100% of clients exceed this threshold, with an average of 18x ROI.
+                Absolutely. Most of our clients say the same thing initially. We specialize
+                in building AI that works with existing systems, messy data, and real-world
+                workflows. No modern tech stack required.
               </p>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader>
               <CardTitle>Can we start small and scale up?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Absolutely. Most PE firms start with an Assessment or Sprint for one 
-                portfolio company, then expand to Surf or Sail partnerships after seeing 
-                results. There's no lock-in, and you can upgrade or downgrade anytime.
+                Yes. Most clients start with a workshop or single sprint to validate fit, then
+                expand based on results. The playbook from your first implementation makes the
+                second faster—that&apos;s the Portfolio Multiplier Effect™.
               </p>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader>
               <CardTitle>How do you work with our existing teams?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                We integrate seamlessly with your investment teams and portfolio company 
-                operators. We provide training, documentation, and ongoing support to ensure 
-                your teams can maintain and extend what we build. Knowledge transfer is 
-                included in every engagement.
+                We integrate with your teams and provide training, documentation, and knowledge
+                transfer. Our goal is to build systems your team can maintain and extend
+                independently. We augment your capabilities, not create dependencies.
               </p>
             </CardContent>
           </Card>
@@ -511,36 +510,36 @@ export default function PricingPage() {
 
       {/* CTA */}
       <section className="container mx-auto px-4 max-w-4xl">
-        <Card className="bg-gradient-to-r from-green-600/10 to-blue-600/10 border-green-500/30">
+        <Card className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border-blue-500/30">
           <CardContent className="pt-12 pb-12 text-center">
-            <Badge className="mb-4 bg-orange-500/10 text-orange-400 border-orange-500/20">
-              <Clock className="w-3 h-3 mr-1" />
-              Only 3 Retainer Slots Left This Quarter
+            <Badge className="mb-4 bg-blue-500/10 text-blue-400 border-blue-500/20">
+              <Rocket className="w-3 h-3 mr-1" />
+              Sprint-Based AI Implementation
             </Badge>
             <h2 className="text-3xl font-bold mb-4">
-              Stop Leaving Money on the Table
+              Ready to Ship AI to Production?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Every month you wait, your competitors gain ground. Start with a free assessment—
-              we&apos;ll identify at least $500K in AI opportunities or it costs you nothing.
+              Let&apos;s talk about what a sprint could look like for your team. Multi-agent systems,
+              document intelligence, workflow automation—working systems, not slide decks.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/ai-assessment">
+              <Link href="/contact">
                 <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  Get Your Free Assessment
+                  Schedule a Strategy Call
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
               <Link href="/case-studies">
                 <Button size="lg" variant="outline" className="gap-2">
-                  <Trophy className="w-5 h-5" />
-                  See $18M+ in Results
+                  <Target className="w-5 h-5" />
+                  See Our Work
                 </Button>
               </Link>
             </div>
-            <p className="text-sm text-green-400 mt-6 flex items-center justify-center gap-2">
+            <p className="text-sm text-blue-400 mt-6 flex items-center justify-center gap-2">
               <Shield className="w-4 h-4" />
-              Results guaranteed or we work free until you see ROI
+              Fixed-scope sprints with clear deliverables
             </p>
           </CardContent>
         </Card>

@@ -13,31 +13,31 @@ import {
 const pillars = [
   {
     icon: Brain,
-    title: "Independent Counsel",
-    description: "No vendor lock-in. Ever.",
+    title: "Agentic AI Systems",
+    description: "Multi-agent workflows that scale",
     details:
-      "Unlike Big 4 consultants with vendor partnerships, we have no conflicts of interest. We recommend what works, not what pays us commissions. Your interests are the only ones we serve.",
+      "We build AI agents that work together to handle complex tasks—document processing, research, analysis, and decision support. Systems that augment your team, not replace them.",
   },
   {
     icon: Layers,
     title: "Portfolio Multiplier Effect™",
     description: "Every win compounds across holdings",
     details:
-      "The playbook from your first portco accelerates the second by 50%. The third by 70%. Your entire portfolio benefits from shared learnings. That's why funds choose us over point solutions.",
+      "The playbook from your first implementation makes the second faster. Shared learnings, proven templates, and trained operators who can extend the work independently.",
   },
   {
     icon: Rocket,
-    title: "Production in 10 Days",
-    description: "Guaranteed delivery, or we work free",
+    title: "The Sprinter Method™",
+    description: "Fixed-scope sprints that ship",
     details:
-      "No 6-month timelines. No stalled pilots. Working AI in production within 10 days—we stake our fee on it. If we miss, we continue at no charge until we deliver.",
+      "2-4 week sprints with clear deliverables. We build, you validate, we iterate. Working systems in production—not slide decks that stall in committee.",
   },
   {
     icon: Users,
-    title: "Practitioners, Not Consultants",
-    description: "We've built 50+ production systems",
+    title: "Works With Your Stack",
+    description: "No rip-and-replace required",
     details:
-      "Our team has shipped AI at scale across 50+ portfolio companies. We don't just advise—we build, deploy, and ensure adoption. Real operators, not PowerPoint jockeys.",
+      "Think you're not 'tech-forward' enough? We build AI that integrates with existing systems, messy data, and real-world workflows. We meet you where you are.",
   },
 ];
 
@@ -58,8 +58,8 @@ export function ValuePillars() {
             Why Choose <span className="gradient-text">Sprinter</span>?
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We&apos;re not another consulting firm selling slides. We&apos;re operators who ship production AI—
-            and we guarantee results or work free until you see them.
+            We&apos;re not another consulting firm selling slides. We&apos;re practitioners who build and deploy
+            agentic AI systems—sprint by sprint, with working code in production.
           </p>
         </motion.div>
 

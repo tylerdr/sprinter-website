@@ -32,16 +32,16 @@ export function FinalCTA() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Scarcity Badge */}
+          {/* Badge */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 backdrop-blur-sm mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 backdrop-blur-sm mb-8"
           >
-            <Clock className="w-4 h-4 text-orange-400" aria-hidden="true" />
-            <span className="text-sm font-medium text-orange-400">Only 3 Retainer Slots Left This Quarter</span>
+            <Rocket className="w-4 h-4 text-blue-400" aria-hidden="true" />
+            <span className="text-sm font-medium text-blue-400">Sprint-Based AI Implementation</span>
           </motion.div>
 
           <motion.h2
@@ -52,7 +52,7 @@ export function FinalCTA() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight"
           >
             <Balancer>
-              Stop Leaving Money <span className="gradient-text">on the Table</span>
+              Ready to Ship <span className="gradient-text">AI to Production?</span>
             </Balancer>
           </motion.h2>
 
@@ -64,8 +64,8 @@ export function FinalCTA() {
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             <Balancer>
-              Every month you wait, your competitors gain ground. We&apos;ve helped 50+ portfolio companies
-              add millions to EBITDA with AI that ships in 10 days. Your turn.
+              Let&apos;s talk about what a sprint could look like for your team. Multi-agent systems,
+              document intelligence, workflow automation—working systems, not slide decks.
             </Balancer>
           </motion.p>
 
@@ -79,15 +79,15 @@ export function FinalCTA() {
           >
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-green-400" />
-              <span>Free Assessment</span>
+              <span>2-4 Week Sprints</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-green-400" />
-              <span>10-Day Sprints</span>
+              <span>Production Ready</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-green-400" />
-              <span>Results Guaranteed</span>
+              <span>Works With Your Stack</span>
             </div>
           </motion.div>
 
@@ -99,34 +99,33 @@ export function FinalCTA() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button asChild size="lg" variant="gradient" className="text-lg px-8 py-6">
-              <Link href="/ai-assessment" className="group">
-                Get Your Free AI Assessment
+              <Link href="/contact" className="group">
+                Schedule a Strategy Call
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
               <Link href="/case-studies">
-                See $18M+ in Results
+                See Our Work
               </Link>
             </Button>
           </motion.div>
 
-          {/* Guarantee Box */}
+          {/* Info Box */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
-            className="mt-12 p-6 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl border border-green-500/20 max-w-2xl mx-auto"
+            className="mt-12 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 max-w-2xl mx-auto"
           >
             <div className="flex items-center justify-center gap-3 mb-3">
-              <ShieldCheck className="w-6 h-6 text-green-400" />
-              <span className="font-bold text-lg text-green-400">Our Guarantee</span>
+              <ShieldCheck className="w-6 h-6 text-blue-400" />
+              <span className="font-bold text-lg text-blue-400">The Sprinter Method™</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              If we don&apos;t identify at least <span className="font-semibold text-foreground">$500K in AI opportunities</span> during your assessment, it&apos;s free.
-              If we don&apos;t ship to production in 10 days, we continue at no charge.
-              <span className="font-semibold text-foreground"> Zero risk.</span>
+              Fixed-scope sprints with clear deliverables. We build, you validate, we iterate.
+              No 6-month roadmaps that never ship. <span className="font-semibold text-foreground">Working systems in production.</span>
             </p>
           </motion.div>
         </motion.div>

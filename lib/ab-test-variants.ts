@@ -1,6 +1,5 @@
 // A/B Test Variants for Hero and CTA Copy
 // This file allows easy switching between different messaging variants for testing
-// Updated with outcome-focused copy following Hormozi's Grand Slam Offer framework
 
 export type HeroVariant = "peoplefirst" | "scale" | "need" | "transform" | "accelerate";
 export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
@@ -8,80 +7,80 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "Add Millions to EBITDA",
-      line2: "in 10 Days, Not 10 Months"
+      line1: "Agentic AI Systems",
+      line2: "That Ship to Production"
     },
-    subheadline: "Ship production AI that actually works. No vendor lock-in. No failed pilots. Just measurable ROI—250% average in 60 days. Proven across 50+ portfolio companies. Works with your legacy systems. Guaranteed results or we work free."
+    subheadline: "We design and implement AI agents, automate complex workflows, and redesign processes so your team can focus on high-value work. Sprint-based implementations. Playbooks that scale across your portfolio."
   },
   scale: {
     headline: {
-      line1: "Turn Your Portfolio Into",
-      line2: "an AI-Powered Engine"
+      line1: "AI That Works With",
+      line2: "Your Existing Systems"
     },
-    subheadline: "From AP automation to quote intelligence—60%+ touchless processing in production within 10 days. Full governance and audit trails. Playbooks that multiply across your entire portfolio."
+    subheadline: "Think you're not 'tech-forward' enough for AI? Most of our clients said the same thing. We specialize in building AI that integrates with legacy systems, messy data, and real-world workflows."
   },
   need: {
     headline: {
-      line1: "Stop Leaving Money",
-      line2: "on the Table"
+      line1: "From Document Chaos",
+      line2: "to Structured Decisions"
     },
-    subheadline: "Your competitors are shipping AI while you're stuck in pilot purgatory. We've helped 50+ portcos add millions to EBITDA with AI that ships in 10 days. No API required. ROI guaranteed."
+    subheadline: "PDFs, emails, spreadsheets—turn unstructured data into automated workflows. Multi-agent systems that handle the tedious work so your operators can focus on exceptions and strategy."
   },
   transform: {
     headline: {
-      line1: "Production AI in 10 Days",
-      line2: "Guaranteed"
+      line1: "AI Sprints",
+      line2: "Not AI Studies"
     },
-    subheadline: "Fixed-fee sprints. Working systems in production. No decks, no delays. If we don't ship in 10 days, we continue at no charge. That's how confident we are in The Sprinter Method™."
+    subheadline: "Fixed-scope sprints with working systems in production. We build, you validate, we iterate. No 6-month roadmaps that never ship. The Sprinter Method™ focuses on quick wins that compound."
   },
   accelerate: {
     headline: {
-      line1: "Your AI Operating Partner",
-      line2: "for Portfolio Value Creation"
+      line1: "Scale AI Wins Across",
+      line2: "Your Entire Portfolio"
     },
-    subheadline: "Get the AI wins that matter—without hiring a $500K head of AI. Independent counsel. Hands-on execution. Playbooks proven across 50+ implementations. Capacity for just 3 new retainer clients this quarter."
+    subheadline: "The playbook from your first implementation makes the second faster. That's the Portfolio Multiplier Effect™—shared learnings, proven templates, and trained operators who can extend the work."
   }
 } as const;
 
 export const ctaVariants = {
   blueprint: {
-    primary: "Get Your Free Assessment →",
-    secondary: "See How We Guarantee Results"
+    primary: "Schedule a Strategy Call →",
+    secondary: "See Our Case Studies"
   },
   assessment: {
-    primary: "Claim Your Free AI Roadmap",
-    secondary: "Only 10 Spots This Month"
+    primary: "Get an AI Assessment",
+    secondary: "See How We Work"
   },
   readiness: {
-    primary: "Book Your Assessment (Free)",
-    secondary: "See $12M Case Study"
+    primary: "Talk to Our Team",
+    secondary: "View Case Studies"
   },
   audit: {
-    primary: "Start With Free Assessment",
-    secondary: "View Pricing & Guarantee"
+    primary: "Explore a Sprint",
+    secondary: "See Pricing"
   }
 } as const;
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "250% Average ROI in 60 Days. Guaranteed.",
-    description: "We don't charge until you see results. If we don't identify at least $500K in AI opportunities during your assessment, it's free. If we don't ship to production in 10 days, we work free until we do. That's how confident we are.",
-    cta: "Only 3 retainer slots available this quarter. Book your free assessment now."
+    headline: "Simple Solutions That Actually Ship",
+    description: "We focus on high-impact automations that can be built and deployed in weeks. No bloated AI projects that stall in committee. Working systems your team can use tomorrow.",
+    cta: "Let's talk about what a sprint could look like for your team."
   },
   leftBehind: {
-    headline: "Never Get Blindsided by a Bad Acquisition Again",
-    description: "Our technical AI diligence has saved clients from 3 acquisitions that would have cost millions. 5-day turnaround. Board-ready reports. Build-vs-buy clarity.",
-    cta: "Book a diligence consultation. See what we've helped clients avoid."
+    headline: "Technical AI Diligence for Acquisitions",
+    description: "Rapid technical assessment of AI capabilities in acquisition targets. We help you understand what's real, what's hype, and what the actual integration effort looks like.",
+    cta: "Schedule a diligence consultation to discuss your next deal."
   },
   competitive: {
-    headline: "Stop Paying $500K/Year for AI Leadership",
-    description: "Get fractional CAIO services that deliver results, not just advice. Board-level counsel. Vendor negotiations. Implementation oversight. All without the full-time salary.",
-    cta: "See how one family office saved $4M in their first year."
+    headline: "AI Leadership Without the Full-Time Hire",
+    description: "Fractional AI advisory for organizations that need strategic guidance and implementation support. Board-level counsel. Vendor evaluation. Hands-on execution.",
+    cta: "Learn how fractional AI leadership works."
   },
   roi: {
-    headline: "Production AI in 10 Days, or We Work Free",
-    description: "Fixed-fee sprints with acceptance criteria. No hourly surprises. No stalled pilots. If we miss our 10-day deadline, we continue at no charge until you're in production. Zero risk.",
-    cta: "Book your assessment. See transparent pricing. Make a decision with confidence."
+    headline: "Fixed-Scope Sprints With Clear Deliverables",
+    description: "Every sprint has acceptance criteria defined upfront. You know what you're getting and what success looks like before we start. No scope creep, no surprise invoices.",
+    cta: "See our sprint packages and pricing."
   }
 } as const;
 
