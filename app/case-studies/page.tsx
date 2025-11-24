@@ -65,9 +65,9 @@ export default function CaseStudiesPage() {
             Case <span className="gradient-text">Studies</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
-            Real AI transformations delivering measurable ROI. See how
-            we&apos;ve helped businesses 10x their efficiency and unlock
-            millions in value.
+            Real AI systems in production. See how we&apos;ve built
+            multi-agent workflows, document intelligence, and process
+            automation for real businesses.
           </p>
         </div>
 
@@ -202,12 +202,11 @@ export default function CaseStudiesPage() {
 
         <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-brand-10 border border-brand-30 max-w-4xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-            Ready to become our next{" "}
-            <span className="gradient-text">success story</span>?
+            Ready to ship <span className="gradient-text">AI to production</span>?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            Join companies that have transformed their operations with AI. Most
-            clients see ROI within 60 days.
+            Let&apos;s talk about what a sprint could look like for your team.
+            Multi-agent systems, document intelligence, workflow automation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link

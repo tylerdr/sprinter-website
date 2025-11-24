@@ -9,10 +9,10 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "50+", label: "Portfolio Wins" },
-  { value: "10 Days", label: "To Production" },
-  { value: "250%", label: "Avg ROI in 60 Days" },
-  { value: "$18M+", label: "Value Created" },
+  { value: "20+", label: "AI Systems Built" },
+  { value: "2-4 Weeks", label: "Sprint Duration" },
+  { value: "Multi-Agent", label: "Architectures" },
+  { value: "Your Stack", label: "We Integrate" },
 ];
 
 export function PEHero() {
@@ -39,7 +39,7 @@ export function PEHero() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-6xl mx-auto"
         >
-          {/* Industry Badge with Scarcity */}
+          {/* Industry Badge */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -48,7 +48,7 @@ export function PEHero() {
           >
             <Building2 className="w-4 h-4 text-blue-400" aria-hidden="true" />
             <span className="text-sm font-medium text-blue-400">
-              Only 3 Retainer Slots Left This Quarter
+              Sprint-Based AI Implementation
             </span>
           </motion.div>
 
@@ -96,29 +96,29 @@ export function PEHero() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
           >
             <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6">
-              <Link href="/ai-assessment" className="group">
-                Get Your Free AI Assessment
+              <Link href="/contact" className="group">
+                Schedule a Strategy Call
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base">
               <Link href="/case-studies" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                See $18M+ in Results
+                See Our Work
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
           </motion.div>
 
-          {/* Guarantee Badge */}
+          {/* Method Badge */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.55, duration: 0.8 }}
-            className="text-sm text-green-400 mb-16 flex items-center justify-center gap-2"
+            className="text-sm text-blue-400 mb-16 flex items-center justify-center gap-2"
           >
-            <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            Results guaranteed or we work free until you see ROI
+            <span className="inline-block w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+            The Sprinter Method™ — Fixed-scope sprints with clear deliverables
           </motion.p>
 
           {/* Trust Indicators */}
