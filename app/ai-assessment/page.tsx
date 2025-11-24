@@ -18,11 +18,11 @@ import {
 import { getThemedFunnel, THEME_HEADLINES } from "@/lib/funnel-themes"
 
 export const metadata: Metadata = {
-  title: "Free AI Readiness Assessment for Private Equity | Sprinter AI",
-  description: "Discover where AI can add millions to your portfolio value. Get a personalized AI opportunity report in 24 hours. No cost, no risk.",
+  title: "Free AI Assessment | Find $500K+ in Opportunities or It's Free | Sprinter AI",
+  description: "We guarantee we'll identify at least $500K in AI opportunities during your free assessment—or it's completely free. 24-hour delivery. No sales call required.",
   openGraph: {
-    title: "Free AI Readiness Assessment for Private Equity",
-    description: "Discover where AI can add millions to your portfolio value. Get a personalized AI opportunity report in 24 hours.",
+    title: "Free AI Assessment – $500K Guarantee",
+    description: "We guarantee we'll identify at least $500K in AI opportunities during your free assessment—or it's completely free. 24-hour delivery.",
     type: "website",
   },
 }
@@ -30,26 +30,26 @@ export const metadata: Metadata = {
 const benefits = [
   {
     icon: ChartBarIcon,
-    title: "AI Readiness Score",
-    description: "Benchmark against 500+ PE firms already using AI",
+    title: "$500K+ Opportunity Guarantee",
+    description: "We identify at least $500K in AI opportunities—or it's completely free",
   },
   {
     icon: DocumentTextIcon,
-    title: "3 Quick Wins",
-    description: "Specific opportunities worth $1M+ in portfolio value",
+    title: "Custom AI Roadmap",
+    description: "Specific recommendations with ROI projections and implementation timeline",
   },
   {
     icon: ClockIcon,
     title: "24-Hour Delivery",
-    description: "Get your custom report the next business day",
+    description: "Get your personalized report within one business day",
   },
 ]
 
 const stats = [
-  { value: "40%", label: "of PE firms have AI strategies" },
-  { value: "65%", label: "faster deal cycles with AI" },
-  { value: "$2.3M", label: "average annual savings" },
-  { value: "3x", label: "more deals sourced" },
+  { value: "$18M+", label: "value created for clients" },
+  { value: "250%", label: "average ROI in 60 days" },
+  { value: "50+", label: "portfolio companies helped" },
+  { value: "10 Days", label: "to production AI" },
 ]
 
 const testimonials = [
@@ -87,16 +87,16 @@ export default function AIAssessmentPage() {
           </div>
 
           <h1 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-            Find $1M+ in AI Opportunities
+            Find $500K+ in AI Opportunities
           </h1>
-          
+
           <p className="mt-6 text-center text-xl leading-8 text-muted-foreground">
-            Get Your Custom PE AI Roadmap in 24 Hours
+            Or Your Assessment Is Completely Free. Guaranteed.
           </p>
 
           <p className="mt-4 text-center text-lg text-muted-foreground/80">
-            See exactly where AI can transform your deal flow, due diligence, and portfolio operations.
-            Takes 2 minutes. 100% free. No sales call required.
+            Get a custom AI roadmap showing exactly where AI can add millions to your portfolio.
+            Takes 2 minutes. 24-hour delivery. No sales call required.
           </p>
 
           {/* Stats Bar */}

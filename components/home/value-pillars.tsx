@@ -13,31 +13,31 @@ import {
 const pillars = [
   {
     icon: Brain,
-    title: "Your AI Advantage",
-    description: "Deep expertise at your service",
+    title: "Independent Counsel",
+    description: "No vendor lock-in. Ever.",
     details:
-      "You get world-class agentic AI expertise to identify your highest-ROI opportunities. Your competitive advantage comes from solutions that actually work in your environment.",
+      "Unlike Big 4 consultants with vendor partnerships, we have no conflicts of interest. We recommend what works, not what pays us commissions. Your interests are the only ones we serve.",
   },
   {
     icon: Layers,
-    title: "Your Choice, Your Way",
-    description: "Build or buy on your terms",
+    title: "Portfolio Multiplier Effect™",
+    description: "Every win compounds across holdings",
     details:
-      "You decide: proven tools or custom builds. Your playbooks accelerate every deployment. Your 2nd portco is 50% faster, your 3rd is 70% faster. You compound your advantages.",
+      "The playbook from your first portco accelerates the second by 50%. The third by 70%. Your entire portfolio benefits from shared learnings. That's why funds choose us over point solutions.",
   },
   {
     icon: Rocket,
-    title: "Your Wins in 10 Days",
-    description: "Real systems, real fast",
+    title: "Production in 10 Days",
+    description: "Guaranteed delivery, or we work free",
     details:
-      "You get production systems, not PowerPoints. Your real users, your real data, your measurable ROI—all within 10 days. That's how you make AI work.",
+      "No 6-month timelines. No stalled pilots. Working AI in production within 10 days—we stake our fee on it. If we miss, we continue at no charge until we deliver.",
   },
   {
     icon: Users,
-    title: "Your Team, Empowered",
-    description: "Own your AI future",
+    title: "Practitioners, Not Consultants",
+    description: "We've built 50+ production systems",
     details:
-      "You build lasting capability. Your operators learn to sustain and expand AI independently. You own the knowledge, not just the system.",
+      "Our team has shipped AI at scale across 50+ portfolio companies. We don't just advise—we build, deploy, and ensure adoption. Real operators, not PowerPoint jockeys.",
   },
 ];
 
@@ -55,10 +55,11 @@ export function ValuePillars() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Why <span className="gradient-text">Your Portfolio</span> Needs This
+            Why Choose <span className="gradient-text">Sprinter</span>?
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Your competitive edge comes from AI that ships fast and works immediately. Here's what you get.
+            We&apos;re not another consulting firm selling slides. We&apos;re operators who ship production AI—
+            and we guarantee results or work free until you see them.
           </p>
         </motion.div>
 
