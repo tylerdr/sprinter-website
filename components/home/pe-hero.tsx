@@ -9,10 +9,9 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "20+", label: "AI Systems Built" },
-  { value: "2-4 Weeks", label: "Sprint Duration" },
-  { value: "Multi-Agent", label: "Architectures" },
-  { value: "Your Stack", label: "We Integrate" },
+  { value: "20+", label: "AI Systems Shipped" },
+  { value: "2-4 Weeks", label: "To Production" },
+  { value: "95%", label: "Time Saved" },
 ];
 
 export function PEHero() {
@@ -97,15 +96,14 @@ export function PEHero() {
           >
             <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6">
               <Link href="/contact" className="group">
-                Schedule a Strategy Call
+                Book a Strategy Call
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base">
               <Link href="/case-studies" className="group">
                 <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                See Our Work
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                See Results
               </Link>
             </Button>
           </motion.div>
@@ -118,7 +116,7 @@ export function PEHero() {
             className="text-sm text-blue-400 mb-16 flex items-center justify-center gap-2"
           >
             <span className="inline-block w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-            The Sprinter Method™ — Fixed-scope sprints with clear deliverables
+            Practitioners who build, not consultants who advise
           </motion.p>
 
           {/* Trust Indicators */}
@@ -129,13 +127,8 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              Trusted by Family Offices, PE Firms & Strategic Buyers
+              Trusted by PE Firms, Family Offices & Portfolio Companies
             </p>
-            <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
-              <span className="font-semibold">Independent Counsel</span>
-              <span className="font-semibold">No Vendor Lock-in</span>
-              <span className="font-semibold">Practitioners, Not Consultants</span>
-            </div>
           </motion.div>
 
           {/* Live Stats */}
@@ -143,7 +136,7 @@ export function PEHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {stats.map((stat, index) => (
               <motion.div

@@ -5,58 +5,53 @@ import Link from "next/link";
 import {
   TrendingUp,
   Clock,
-  Users,
   DollarSign,
   ArrowRight,
-  Building2,
   Quote
 } from "lucide-react";
 
 const successStories = [
   {
     icon: DollarSign,
-    client: "MortgageQ (FinTech)",
+    client: "FinTech Portfolio Company",
     result: "95% time reduction",
     timeframe: "in research time",
-    description: "AI-driven Non-QM guideline intelligence platform",
+    description: "Document intelligence for loan processing",
   },
   {
     icon: Clock,
-    client: "Cab-O-Matic (B2B SaaS)",
-    result: "≥2 hours saved",
-    timeframe: "per plan",
-    description: "AI-driven SKU mapping for cabinet manufacturers",
+    client: "B2B SaaS Portfolio Company",
+    result: "2+ hours saved",
+    timeframe: "per quote",
+    description: "AI-driven product configuration",
   },
   {
-    icon: Users,
-    client: "RPM Healthcare",
-    result: "5× patient coverage",
-    timeframe: "per nurse",
-    description: "Autonomous AI care coach for chronic patients",
+    icon: TrendingUp,
+    client: "Healthcare Portfolio Company",
+    result: "5× coverage",
+    timeframe: "per operator",
+    description: "Autonomous workflow automation",
   },
 ];
 
 const testimonials = [
   {
-    quote: "The AI doesn't just help us manage Non-QM complexity—it turned it into our competitive advantage. We're closing loans 300% faster with the confidence of having a senior underwriter available 24/7.",
+    quote: "They shipped a working system in 3 weeks that our internal team estimated would take 6 months. The ROI was evident immediately.",
     author: "VP Operations",
-    role: "Mid-Market Lending Firm",
-    company: "MortgageQ Client",
+    role: "Portfolio Company",
     impact: "95% time reduction",
   },
   {
-    quote: "This isn't just automation—it's transformation. We quote more options, close faster, and our designers focus on design instead of spreadsheets. The ROI was evident within weeks.",
+    quote: "Not just automation—it's transformation. We quote faster, close more deals, and our team focuses on high-value work instead of data entry.",
     author: "Operations Director",
-    role: "Cabinet Manufacturer",
-    company: "Cab-O-Matic Client",
-    impact: "2 hours saved/plan",
+    role: "Portfolio Company",
+    impact: "2+ hours saved/plan",
   },
   {
-    quote: "The AI coach transformed our care model. Nurses now manage 5× more patients with better outcomes because they focus on those who need them most.",
-    author: "Chief Nursing Officer",
-    role: "Regional Health System",
-    company: "RPM Healthcare Client",
-    impact: "5× coverage increase",
+    quote: "The playbook they built for us is now being rolled out to three other portfolio companies. Real leverage.",
+    author: "Operating Partner",
+    role: "PE Firm",
+    impact: "Portfolio-wide value",
   },
 ];
 
@@ -136,7 +131,6 @@ export function ClientSuccessSection() {
                 <div>
                   <p className="font-semibold text-sm">{testimonial.author}</p>
                   <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.company}</p>
                 </div>
 
                 <div className="text-right">
@@ -155,29 +149,15 @@ export function ClientSuccessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="text-center p-8 rounded-xl border border-border/50 max-w-2xl mx-auto bg-card/30 backdrop-blur-sm"
+          className="text-center"
         >
-          <h3 className="text-xl font-bold mb-4">
-            Ready to Build Something Real?
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Start with a 10-day sprint to validate your AI opportunity
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/labs/opportunity-audit"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-gradient text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
-            >
-              Get AI Opportunity Audit
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border bg-card/50 text-foreground font-medium rounded-lg hover:bg-card/70 transition-colors"
-            >
-              Book Strategy Call
-            </Link>
-          </div>
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center justify-center gap-2 text-primary font-medium hover:underline"
+          >
+            See all case studies
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
       </div>
     </section>

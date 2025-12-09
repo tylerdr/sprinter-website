@@ -7,80 +7,80 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "Agentic AI Systems",
-      line2: "That Ship to Production"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "We design and implement AI agents, automate complex workflows, and redesign processes so your team can focus on high-value work. Sprint-based implementations. Playbooks that scale across your portfolio."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   scale: {
     headline: {
-      line1: "AI That Works With",
-      line2: "Your Existing Systems"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "Think you're not 'tech-forward' enough for AI? Most of our clients said the same thing. We specialize in building AI that integrates with legacy systems, messy data, and real-world workflows."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   need: {
     headline: {
-      line1: "From Document Chaos",
-      line2: "to Structured Decisions"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "PDFs, emails, spreadsheets—turn unstructured data into automated workflows. Multi-agent systems that handle the tedious work so your operators can focus on exceptions and strategy."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   transform: {
     headline: {
-      line1: "AI Sprints",
-      line2: "Not AI Studies"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "Fixed-scope sprints with working systems in production. We build, you validate, we iterate. No 6-month roadmaps that never ship. The Sprinter Method™ focuses on quick wins that compound."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   accelerate: {
     headline: {
-      line1: "Scale AI Wins Across",
-      line2: "Your Entire Portfolio"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "The playbook from your first implementation makes the second faster. That's the Portfolio Multiplier Effect™—shared learnings, proven templates, and trained operators who can extend the work."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   }
 } as const;
 
 export const ctaVariants = {
   blueprint: {
-    primary: "Schedule a Strategy Call →",
-    secondary: "See Our Case Studies"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   },
   assessment: {
-    primary: "Get an AI Assessment",
-    secondary: "See How We Work"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   },
   readiness: {
-    primary: "Talk to Our Team",
-    secondary: "View Case Studies"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   },
   audit: {
-    primary: "Explore a Sprint",
-    secondary: "See Pricing"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   }
 } as const;
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "Simple Solutions That Actually Ship",
-    description: "We focus on high-impact automations that can be built and deployed in weeks. No bloated AI projects that stall in committee. Working systems your team can use tomorrow.",
-    cta: "Let's talk about what a sprint could look like for your team."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   },
   leftBehind: {
-    headline: "Technical AI Diligence for Acquisitions",
-    description: "Rapid technical assessment of AI capabilities in acquisition targets. We help you understand what's real, what's hype, and what the actual integration effort looks like.",
-    cta: "Schedule a diligence consultation to discuss your next deal."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   },
   competitive: {
-    headline: "AI Leadership Without the Full-Time Hire",
-    description: "Fractional AI advisory for organizations that need strategic guidance and implementation support. Board-level counsel. Vendor evaluation. Hands-on execution.",
-    cta: "Learn how fractional AI leadership works."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   },
   roi: {
-    headline: "Fixed-Scope Sprints With Clear Deliverables",
-    description: "Every sprint has acceptance criteria defined upfront. You know what you're getting and what success looks like before we start. No scope creep, no surprise invoices.",
-    cta: "See our sprint packages and pricing."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   }
 } as const;
 

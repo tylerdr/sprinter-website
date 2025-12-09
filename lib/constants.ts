@@ -4,10 +4,10 @@ export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-
 
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "Agentic AI That Ships to Production",
-  subTagline: "We build AI agents, automate workflows, and redesign processes so your team can focus on high-value work.",
-  description: "We design and implement agentic AI systems—multi-agent workflows, document intelligence, and process automation. Our sprint-based approach gets working solutions into production fast, with playbooks that can scale across your portfolio.",
-  philosophy: "AI should amplify your team, not replace them. We focus on automating the tedious work so your people can do the creative, strategic work that matters. Simple solutions that ship fast beat complex ones that never launch.",
+  tagline: "AI That Actually Ships",
+  subTagline: "2-4 week sprints. Working systems in production. No slide decks.",
+  description: "We build AI systems that drive enterprise value for PE firms and portfolio companies. Sprint-based implementations that ship in weeks, not months.",
+  philosophy: "Practitioners who build, not consultants who advise. We ship working systems, not strategy decks.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",
@@ -31,9 +31,9 @@ export const COMPANY_INFO = {
     }
   },
   positioning: {
-    primaryRole: "Agentic AI Implementation",
-    secondaryRole: "Strategic Advisory",
-    differentiation: "We build production systems, not decks. Sprints over studies."
+    primaryRole: "AI Implementation for PE",
+    secondaryRole: "Portfolio Value Creation",
+    differentiation: "Working systems in weeks, not slide decks in months."
   },
   // Named frameworks
   frameworks: {
@@ -586,9 +586,9 @@ export const CLIENTS = [
 ]
 
 export const SEO = {
-  title: "Sprinter AI - Agentic AI Systems That Ship to Production",
-  description: "We build AI agents, automate workflows, and redesign processes. Sprint-based implementations for private capital. From document intelligence to multi-agent systems.",
-  keywords: "AI consulting, agentic AI, AI agents, workflow automation, document intelligence, private equity AI, family office AI, AI implementation",
+  title: "Sprinter AI - AI That Actually Ships",
+  description: "2-4 week sprints. Working systems in production. No slide decks. AI implementation for PE firms and portfolio companies.",
+  keywords: "AI consulting, AI implementation, private equity AI, portfolio company AI, AI sprints, workflow automation, document intelligence",
   ogImage: "/og-image.png",
   siteUrl: "https://sprinter.ai",
   twitterHandle: "@sprinter_hq",
@@ -599,10 +599,10 @@ export const SEO = {
 // Page-specific SEO metadata
 export const PAGE_SEO = {
   home: {
-    title: "Sprinter AI - Agentic AI Systems That Ship to Production",
-    description: "We build AI agents, automate workflows, and redesign processes. Sprint-based implementations that get working solutions into production fast.",
-    keywords: "AI consulting, agentic AI, AI agents, workflow automation, document intelligence, multi-agent systems, AI sprints",
-    ogTitle: "Sprinter AI - Agentic AI That Ships",
+    title: "Sprinter AI - AI That Actually Ships",
+    description: "2-4 week sprints. Working systems in production. No slide decks. AI implementation for PE firms and portfolio companies.",
+    keywords: "AI consulting, AI implementation, private equity AI, portfolio company AI, AI sprints, workflow automation",
+    ogTitle: "Sprinter AI - AI That Actually Ships",
   },
   about: {
     title: "About Sprinter AI - Building Human-Centered AI Since 2018",
