@@ -85,7 +85,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
         >
-          Your team, amplified.
+          AI agents that run your operations 24/7.
         </motion.h1>
         <motion.p
           className="spr-body-lg mt-6 max-w-3xl"
@@ -94,7 +94,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
         >
-          AI agents that work your business 24/7. Built by someone who&apos;s been in your industry - not a vendor who Googled it last week.
+          Custom AI for mid-market operators — quoting, prospecting, scheduling, reporting — deployed in weeks. Built by engineers who have shipped in your industry.
         </motion.p>
         <motion.div
           className="mt-9 flex flex-col gap-4 sm:flex-row"
@@ -109,7 +109,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="spr-button spr-button-primary"
           >
-            Book a Strategy Call
+            See What AI Can Do for Your Business
           </a>
           <a href="#how-it-works" className="spr-button spr-button-secondary">
             See How It Works ↓
