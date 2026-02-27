@@ -122,7 +122,7 @@ const Navbar = class extends React.Component {
                     }`}
                     onClick={() => this.toggleSubNav('our-services')}
                     >
-                    Services <ChevronDown/>
+                    Solutions <ChevronDown/>
                   </span>
                   <div className="Nav--GroupLinks" sx={{backgroundColor: "navbar"}}>
                     <Link to="/our-services" className="Nav--GroupLink navbar-item"
@@ -155,7 +155,7 @@ const Navbar = class extends React.Component {
                 fontWeight: "body",
                 color: "text",
               }}>
-                Services
+                Solutions
               </Link>
               <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('about') ? 'clicked' : '' }`}
@@ -173,7 +173,7 @@ const Navbar = class extends React.Component {
                 fontWeight: "body",
                 color: "text"
               }}>
-                Our Ideas
+                Insights
               </Link>
               <Link className={`navbar-item on-hover ${
                 this.props.location.pathname.includes('contact') ? 'clicked' : '' }`}
@@ -183,7 +183,7 @@ const Navbar = class extends React.Component {
                 color: "text",
                 // backgroundColor: "navbar",
               }}>
-                Contact
+                Book Sprint
               </Link>
               {/* <Link className="navbar-item" to="/contact/examples">
                 Form Examples

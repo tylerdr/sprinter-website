@@ -30,7 +30,7 @@ const Footer = class extends React.Component {
                       fontWeight: "body",
                       fontFamily: "body"
                     }}>
-                    Say Hello
+                    Book a Strategy Sprint
                   </Link>
                 </div>
                 <div className="tile">
@@ -39,7 +39,7 @@ const Footer = class extends React.Component {
                       margin: 2,
                     }}
                     href={`https://www.google.com.au/maps/search/${encodeURI(
-                      "9005 Overlook Blvd"
+                      "Remote-first • Orange County, CA"
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const Footer = class extends React.Component {
                           marginRight: 3,
                         }}
                       />
-                    9005 Overlook Blvd
+                    Remote-first • Orange County, CA
                     </span>
                   </a>
                 </div>
@@ -79,7 +79,7 @@ const Footer = class extends React.Component {
                           marginRight: 3,
                         }}
                       />
-                      +1 (615) 601-0782
+                      By appointment
                         </span>
                   </a>
                 </div>
@@ -120,11 +120,11 @@ const Footer = class extends React.Component {
                     sx={{
                       margin: 1,
                     }} />
-                  <SocialIcon url="https://twitter.com/Sprinter_HQ"
+                  <SocialIcon url="https://www.linkedin.com/company/sprinterconsulting"
                     sx={{
                       margin: 1,
                     }} />
-                  <SocialIcon url="https://facebook.com"
+                  <SocialIcon url="https://www.linkedin.com/in/tyler-dreher"
                     sx={{
                       margin: 1,
                     }} />

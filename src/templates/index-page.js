@@ -79,7 +79,7 @@ export const IndexPageTemplate = ({
             {FirstCallToAction.firstLine}
           </h1>
           <div>
-            <TypeformPopup text={"GET OUT THERE"} url={"https://sprinter.typeform.com/to/Dq6veQ"} />
+            <TypeformPopup text={"BOOK A STRATEGY SPRINT"} url={"https://sprinter.typeform.com/to/Dq6veQ"} />
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ export const IndexPageTemplate = ({
                     fontFamily: "heading",
                     fontWeight: "heading"
                   }}>
-                  Featured Services
+                  How We Help
                       </div>
                 <ServiceRoll location={"home"} />
               </div>
@@ -117,7 +117,7 @@ export const IndexPageTemplate = ({
                     fontFamily: "heading",
                     fontWeight: "heading"
                   }}>
-                  Sprinter's Approach
+                  Why Sprinter
                       </div>
                 <Accordion items={approaches} className={"columns is-multiline"} />
               </div>
@@ -269,7 +269,7 @@ export const IndexPageTemplate = ({
                     fontWeight: "heading",
                   }}
                 >
-                  Latest Stories
+                  Insights
                   </div>
                 <BlogRoll homepage={"homepage"} />
                 <div className="column is-12 has-text-centered">
@@ -279,7 +279,7 @@ export const IndexPageTemplate = ({
                       fontSize: "20px"
                     }}
                   >
-                    READ MORE
+                    VIEW INSIGHTS
                     </Link>
                 </div>
               </div>
