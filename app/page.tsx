@@ -1,34 +1,31 @@
-import type { Metadata } from "next";
-import { PEHero } from "@/components/home/pe-hero";
-import { TrustIndicators } from "@/components/home/trust-indicators";
-import { WhatWeDo } from "@/components/home/what-we-do";
-import { ClientSuccessSection } from "@/components/home/client-success-section";
-import { FAQSection } from "@/components/home/faq-section";
-import { FinalCTA } from "@/components/home/final-cta";
-import { getPageMetadata } from "@/lib/seo";
-
-export const metadata: Metadata = getPageMetadata("home");
+import CTA from "@/components/sprinter-ai/CTA";
+import Footer from "@/components/sprinter-ai/Footer";
+import Founder from "@/components/sprinter-ai/Founder";
+import Header from "@/components/sprinter-ai/Header";
+import Hero from "@/components/sprinter-ai/Hero";
+import HowItWorks from "@/components/sprinter-ai/HowItWorks";
+import Industries from "@/components/sprinter-ai/Industries";
+import Manifesto from "@/components/sprinter-ai/Manifesto";
+import Problem from "@/components/sprinter-ai/Problem";
+import Results from "@/components/sprinter-ai/Results";
+import Solution from "@/components/sprinter-ai/Solution";
 
 export default function Home() {
   return (
     <>
-      {/* Hero - First impression */}
-      <PEHero />
-
-      {/* Trust/Social Proof - Build credibility */}
-      <TrustIndicators />
-
-      {/* What We Do - 3 service pillars */}
-      <WhatWeDo />
-
-      {/* Results/Success - Prove it works */}
-      <ClientSuccessSection />
-
-      {/* Questions - Address concerns */}
-      <FAQSection />
-
-      {/* Final Call to Action */}
-      <FinalCTA />
+      <Header />
+      <main>
+        <Hero />
+        <Problem />
+        <Solution />
+        <HowItWorks />
+        <Results />
+        <Industries />
+        <Founder />
+        <Manifesto />
+        <CTA />
+      </main>
+      <Footer />
     </>
   );
 }
