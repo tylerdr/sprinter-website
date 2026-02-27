@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Footer from "@/components/sprinter-ai/Footer";
-import Header from "@/components/sprinter-ai/Header";
 import StickyCTA from "@/components/sprinter-ai/StickyCTA";
+import TrustedBy from "@/components/sprinter-ai/TrustedBy";
+import { generateServiceStructuredData, getStructuredDataScript } from "@/lib/seo";
 import {
   RocketLaunchIcon,
   ShieldCheckIcon,
@@ -56,11 +56,20 @@ const useCases = [
   },
 ];
 
+const serviceData = generateServiceStructuredData(
+  "AI Readiness Sprint",
+  "A 48-hour AI readiness sprint for mid-market operators and PE-backed teams that identifies automation opportunities and a practical implementation roadmap.",
+  "2500"
+);
+
 export default function AISprintPage() {
   return (
     <div className="spr-theme spr-page">
-      <Header />
-      <main className="pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={getStructuredDataScript(serviceData)}
+      />
+      <main className="overflow-x-hidden pb-36">
         <section className="spr-container relative overflow-hidden px-2 py-20 sm:py-24">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(106,167,255,0.2),_transparent_62%)] blur-2xl" />
@@ -98,13 +107,14 @@ export default function AISprintPage() {
             </div>
 
             <div className="mt-10 flex justify-center">
-              <Link href="#book-sprint" className="spr-button spr-button-primary">
-                Book Your AI Sprint Now
+              <Link href="/contact?product=ai-sprint&intent=book" className="spr-button spr-button-primary">
+                Book Your AI Sprint
                 <ArrowRightIcon className="h-5 w-5" />
               </Link>
             </div>
           </div>
         </section>
+        <TrustedBy />
 
         <section className="spr-container py-16">
           <div className="mx-auto max-w-4xl text-center">
@@ -251,7 +261,7 @@ export default function AISprintPage() {
               </div>
 
               <Link href="/contact?product=ai-sprint&intent=purchase" className="spr-button spr-button-primary w-full">
-                Book Your Sprint Now
+                Book Your AI Sprint
                 <ArrowRightIcon className="h-5 w-5" />
               </Link>
 
@@ -262,12 +272,9 @@ export default function AISprintPage() {
                 <p>✓ 100% money-back guarantee</p>
               </div>
 
-              <div className="mt-8 border-t [border-color:var(--spr-border)] pt-8">
-                <p className="mb-4 text-center text-[color:var(--spr-text-muted)]">Prefer to discuss first?</p>
-                <Link href="/contact" className="spr-button spr-button-secondary w-full">
-                  Schedule a 15-Minute Call
-                </Link>
-              </div>
+              <p className="mt-8 border-t [border-color:var(--spr-border)] pt-6 text-center text-sm text-[color:var(--spr-text-muted)]">
+                Questions first? <Link href="/contact" className="text-[color:var(--spr-primary)] underline-offset-4 hover:underline">Talk with an operator</Link>.
+              </p>
             </div>
           </div>
         </section>
@@ -311,14 +318,13 @@ export default function AISprintPage() {
             <p className="mb-6 text-[color:var(--spr-text-soft)]">
               While competitors debate AI strategy, you&apos;ll have a working solution in 48 hours.
             </p>
-            <Link href="#book-sprint" className="spr-button spr-button-primary">
-              Claim Your Sprint Spot
+            <Link href="/contact?product=ai-sprint&intent=book" className="spr-button spr-button-primary">
+              Book Your AI Sprint
             </Link>
           </div>
         </section>
       </main>
-      <Footer />
-      <StickyCTA />
+      <StickyCTA href="/contact?product=ai-sprint&intent=book" label="Book Your AI Sprint" />
     </div>
   );
 }

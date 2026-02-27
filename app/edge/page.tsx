@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
-import Footer from "@/components/sprinter-ai/Footer";
-import Header from "@/components/sprinter-ai/Header";
 
 export const metadata: Metadata = {
   title: "Sprinter Edge ($8K/mo) | sprinter.ai",
@@ -40,7 +38,6 @@ const faqs = [
 export default function EdgePage() {
   return (
     <div className="spr-theme spr-page">
-      <Header />
       <main>
         <AnimatedSection className="spr-container" delay={0.05}>
           <p className="spr-kicker">SPRINTER EDGE - $8,000/mo</p>
@@ -131,7 +128,6 @@ export default function EdgePage() {
           </div>
         </AnimatedSection>
       </main>
-      <Footer />
     </div>
   );
 }

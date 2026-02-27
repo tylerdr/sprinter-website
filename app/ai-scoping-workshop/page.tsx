@@ -23,8 +23,8 @@ export default function AIScopingWorkshopPage() {
         description="Fixed-fee diagnostic that delivers an options memo, pilot SOW, and ROI model. Built specifically for PE portfolio operations. No PowerPoints, just actionable deliverables."
         primaryCTA="Book Scoping Call"
         primaryCTAHref="/contact?type=workshop"
-        secondaryCTA="Download Sample Deliverables"
-        secondaryCTAHref="/downloads/workshop-samples"
+        secondaryCTA="See Case Studies"
+        secondaryCTAHref="/case-studies"
       />
 
       <WorkshopDetails />
@@ -195,8 +195,8 @@ export default function AIScopingWorkshopPage() {
         description="Join 100+ portfolio companies that have transformed operations with AI. Fixed fee, clear deliverables, proven results."
         primaryCTA="Book Scoping Call"
         primaryCTAHref="/contact?type=workshop"
-        secondaryCTA="Download Workshop Brief"
-        secondaryCTAHref="/downloads/workshop-brief"
+        secondaryCTA="Download Governance Pack"
+        secondaryCTAHref="/downloads/governance-pack"
       />
     </>
   );

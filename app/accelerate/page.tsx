@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import Footer from "@/components/sprinter-ai/Footer";
-import Header from "@/components/sprinter-ai/Header";
+import { CheckCircle2 } from "lucide-react";
 import StickyCTA from "@/components/sprinter-ai/StickyCTA";
+import TrustedBy from "@/components/sprinter-ai/TrustedBy";
+import Guarantee from "@/components/sprinter-ai/Guarantee";
+import { generateServiceStructuredData, getStructuredDataScript } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Sprinter Accelerate | Sprinter AI",
@@ -25,11 +26,20 @@ const outcomes = [
   "Reusable implementation playbooks for repeatability",
 ];
 
+const serviceData = generateServiceStructuredData(
+  "Sprinter Accelerate",
+  "A monthly AI implementation retainer that deploys production AI workflows, trains operators, and tracks measurable business outcomes.",
+  "12000"
+);
+
 export default function AcceleratePage() {
   return (
     <div className="spr-theme spr-page">
-      <Header />
-      <main className="spr-container py-20 pb-32 sm:px-2">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={getStructuredDataScript(serviceData)}
+      />
+      <main className="spr-container overflow-x-hidden py-20 pb-36 sm:px-2">
         <div className="mb-10 inline-flex items-center rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.12)] px-4 py-2 text-sm font-medium text-[color:var(--spr-primary)]">
           Sprinter Accelerate
         </div>
@@ -39,11 +49,11 @@ export default function AcceleratePage() {
         </h1>
 
         <p className="spr-body-lg mb-10 max-w-3xl">
-          Accelerate is our implementation retainer for teams that want consistent AI delivery,
-          measurable outcomes, and portfolio-wide repeatability.
+          Deploy AI agents that run your operations every day, not just in demos.
+          Accelerate gives your team weekly implementation velocity, measurable revenue lift, and portfolio-ready playbooks.
         </p>
 
-        <div className="mb-16 flex flex-col gap-4 sm:flex-row">
+        <div className="mb-16">
           <a
             href="https://cal.com/tyler-dreher"
             target="_blank"
@@ -52,11 +62,9 @@ export default function AcceleratePage() {
           >
             Book Accelerate Call
           </a>
-          <Link href="/pricing" className="spr-button spr-button-secondary group">
-            See Pricing
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
         </div>
+
+        <TrustedBy />
 
         <section className="mb-14">
           <h2 className="spr-heading-lg mb-5">How it runs</h2>
@@ -81,6 +89,27 @@ export default function AcceleratePage() {
           </ul>
         </section>
 
+        <section className="mb-14">
+          <div className="spr-card spr-card-accent p-8">
+            <h2 className="spr-heading-lg mb-4">Proof from operator teams</h2>
+            <p className="spr-body mb-4 italic">
+              "In month one, Sprinter replaced manual quote triage with AI agents, cut cycle time by 41%, and freed two operators for revenue work."
+            </p>
+            <p className="text-sm text-[color:var(--spr-text-muted)]">COO, PE-backed logistics platform</p>
+          </div>
+        </section>
+
+        <section className="mb-14">
+          <div className="spr-card rounded-[var(--spr-radius-md)] p-8">
+            <h2 className="spr-heading-lg mb-3">Execution guarantee</h2>
+            <p className="spr-body">
+              If we do not ship a production workflow with operator handoff in your first 30 days, the next month is on us.
+            </p>
+          </div>
+        </section>
+
+        <Guarantee />
+
         <section className="spr-card spr-card-accent rounded-[var(--spr-radius-md)] p-8">
           <h2 className="spr-heading-lg mb-3">Best fit</h2>
           <p className="spr-body mb-6">
@@ -92,8 +121,7 @@ export default function AcceleratePage() {
           </Link>
         </section>
       </main>
-      <Footer />
-      <StickyCTA />
+      <StickyCTA href="https://cal.com/tyler-dreher" label="Book Accelerate Call" />
     </div>
   );
 }

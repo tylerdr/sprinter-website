@@ -219,8 +219,8 @@ export default function AIImplementationPartnerPage() {
         description="Join leading PE firms who trust us as their AI implementation partner. Fixed fees, proven playbooks, real results."
         primaryCTA="Schedule Partner Discussion"
         primaryCTAHref="/contact?type=partner"
-        secondaryCTA="Download Capability Brief"
-        secondaryCTAHref="/downloads/capability-brief"
+        secondaryCTA="Download No-API Cookbook"
+        secondaryCTAHref="/downloads/no-api-cookbook"
       />
     </>
   );

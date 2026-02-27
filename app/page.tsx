@@ -1,7 +1,5 @@
 import CTA from "@/components/sprinter-ai/CTA";
-import Footer from "@/components/sprinter-ai/Footer";
 import Founder from "@/components/sprinter-ai/Founder";
-import Header from "@/components/sprinter-ai/Header";
 import Hero from "@/components/sprinter-ai/Hero";
 import HowItWorks from "@/components/sprinter-ai/HowItWorks";
 import Industries from "@/components/sprinter-ai/Industries";
@@ -14,7 +12,6 @@ import TrustedBy from "@/components/sprinter-ai/TrustedBy";
 export default function Home() {
   return (
     <div className="spr-theme spr-page">
-      <Header />
       <main>
         <Hero />
         <TrustedBy />
@@ -27,7 +24,6 @@ export default function Home() {
         <Manifesto />
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 }

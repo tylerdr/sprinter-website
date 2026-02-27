@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
-import Footer from "@/components/sprinter-ai/Footer";
-import Header from "@/components/sprinter-ai/Header";
 
 export const metadata: Metadata = {
   title: "AI Readiness Sprint ($2,500) | sprinter.ai",
@@ -41,7 +39,6 @@ const faqs = [
 export default function SprintPage() {
   return (
     <div className="spr-theme spr-page">
-      <Header />
       <main>
         <AnimatedSection className="spr-container" delay={0.05}>
           <p className="spr-kicker">AI READINESS SPRINT ($2,500)</p>
@@ -142,7 +139,6 @@ export default function SprintPage() {
           </ul>
         </AnimatedSection>
       </main>
-      <Footer />
     </div>
   );
 }
