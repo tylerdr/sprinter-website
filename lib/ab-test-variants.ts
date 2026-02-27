@@ -87,7 +87,7 @@ export const valuePropsVariants = {
 // Function to get current variant based on environment variable or random selection
 export function getCurrentVariants() {
   // These could be set via environment variables for controlled A/B testing
-  const heroVariant = (process.env.NEXT_PUBLIC_HERO_VARIANT as HeroVariant) || "peoplefirst";
+  const heroVariant = (process.env.NEXT_PUBLIC_HERO_VARIANT as HeroVariant) || "accelerate";
   const ctaVariant = (process.env.NEXT_PUBLIC_CTA_VARIANT as CTAVariant) || "blueprint";
   const valuePropsVariant = process.env.NEXT_PUBLIC_VALUE_PROP_VARIANT || "offMarket";
   

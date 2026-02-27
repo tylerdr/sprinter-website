@@ -231,6 +231,7 @@ export const NAVIGATION = {
       dropdown: [
         { href: "/labs", label: "Try AI Tools" },
         { href: "/ai-assessment", label: "Free AI Assessment" },
+        { href: "/accelerate", label: "Sprinter Accelerate" },
         { href: "/blog", label: "PE AI Insights" },
         { href: "/downloads/governance-pack", label: "Governance Pack" },
         { href: "/industries", label: "Industries" },
@@ -273,8 +274,8 @@ export const NAVIGATION = {
   ],
   ctas: [
     {
-      href: "/ai-assessment",
-      label: "Get Free Assessment",
+      href: "/accelerate",
+      label: "See Accelerate",
       variant: "default" as const,
       icon: "sparkles"
     }
