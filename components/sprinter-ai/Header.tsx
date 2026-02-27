@@ -11,7 +11,8 @@ const navItems = [
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#results", label: "Results" },
   { href: "/#industries", label: "Industries" },
-  { href: "/sprint", label: "Sprint" },
+  { href: "/fractional-ai-cofounder", label: "Fractional AI" },
+  { href: "/sprint", label: "AI Sprint" },
   { href: "/edge", label: "Edge" },
 ];
 
