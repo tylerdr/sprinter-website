@@ -19,30 +19,35 @@ export default function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <AnimatedSection id="hero" className="relative overflow-hidden border-b border-white/10" delay={0.05}>
+    <AnimatedSection
+      id="hero"
+      className="relative overflow-hidden border-b [border-color:var(--spr-border)]"
+      delay={0.05}
+    >
       <div className="pointer-events-none absolute inset-0">
         <motion.div
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-35"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(59,130,246,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.18) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
+              "linear-gradient(to right, rgba(106,167,255,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(106,167,255,0.18) 1px, transparent 1px)",
+            backgroundSize: "52px 52px",
           }}
           animate={
             reduceMotion
               ? undefined
               : {
-                  backgroundPosition: ["0px 0px", "48px 48px"],
+                  backgroundPosition: ["0px 0px", "52px 52px"],
                 }
           }
-          transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 11, ease: "linear" }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.22),transparent_45%),radial-gradient(circle_at_80%_0%,rgba(249,115,22,0.14),transparent_40%),radial-gradient(circle_at_50%_100%,rgba(59,130,246,0.12),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(106,167,255,0.25),transparent_42%),radial-gradient(circle_at_86%_0%,rgba(255,171,102,0.18),transparent_45%),radial-gradient(circle_at_52%_100%,rgba(43,109,255,0.16),transparent_52%)]" />
+        <div className="absolute inset-0 bg-[url('/images/sprinter-ai/geometric-glow.svg')] bg-cover bg-center opacity-45" />
 
         {particles.map((particle) => (
           <motion.span
             key={particle.id}
-            className="absolute h-1.5 w-1.5 rounded-full bg-[#3B82F6]"
+            className="absolute h-1.5 w-1.5 rounded-full bg-[color:var(--spr-primary)]"
             style={{ left: particle.left, top: particle.top }}
             animate={
               reduceMotion
@@ -63,9 +68,9 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="relative mx-auto flex min-h-[84vh] w-full max-w-6xl flex-col justify-center px-4 py-24 sm:px-6 lg:px-8">
+      <div className="spr-container relative flex min-h-[84vh] flex-col justify-center py-24">
         <motion.p
-          className="mb-5 text-sm uppercase tracking-[0.2em] text-[#A1A1AA]"
+          className="spr-chip mb-6 w-fit"
           initial={reduceMotion ? undefined : { opacity: 0, y: 12 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -74,7 +79,7 @@ export default function Hero() {
           Sprinter Consulting AI Services
         </motion.p>
         <motion.h1
-          className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[#FAFAFA] sm:text-5xl lg:text-6xl"
+          className="spr-heading-xl max-w-4xl"
           initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,13 +88,13 @@ export default function Hero() {
           Your team, amplified.
         </motion.h1>
         <motion.p
-          className="mt-6 max-w-3xl text-lg leading-relaxed text-[#A1A1AA] sm:text-xl"
+          className="spr-body-lg mt-6 max-w-3xl"
           initial={reduceMotion ? undefined : { opacity: 0, y: 18 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
         >
-          AI agents that work your business 24/7. Built by someone who's been in your industry — not a vendor who Googled it last week.
+          AI agents that work your business 24/7. Built by someone who&apos;s been in your industry - not a vendor who Googled it last week.
         </motion.p>
         <motion.div
           className="mt-9 flex flex-col gap-4 sm:flex-row"
@@ -102,14 +107,11 @@ export default function Hero() {
             href="https://cal.com/tyler-dreher"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[#F97316] px-6 py-3 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#fb923c]"
+            className="spr-button spr-button-primary"
           >
             Book a Strategy Call
           </a>
-          <a
-            href="#how-it-works"
-            className="inline-flex items-center justify-center rounded-full border border-[#3B82F6]/60 px-6 py-3 text-sm font-semibold text-[#FAFAFA] transition hover:border-[#3B82F6] hover:text-[#3B82F6]"
-          >
+          <a href="#how-it-works" className="spr-button spr-button-secondary">
             See How It Works ↓
           </a>
         </motion.div>

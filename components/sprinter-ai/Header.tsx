@@ -21,17 +21,20 @@ export default function Header() {
 
   return (
     <motion.header
-      className="sticky top-0 z-50 border-b border-white/10 bg-[#0A0A0A]/90 backdrop-blur"
+      id="navigation"
+      className="sticky top-0 z-50 border-b [border-color:var(--spr-border)] bg-[color:rgba(5,10,22,0.82)] backdrop-blur-xl"
       initial={{ y: -18, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-[#FAFAFA]">
-          sprinter.ai
+      <div className="spr-container flex items-center justify-between py-4">
+        <Link href="/" className="text-lg font-semibold tracking-tight text-[color:var(--spr-text)]">
+          <span className="bg-gradient-to-r from-[#cbe1ff] via-[#f2f7ff] to-[#9cc4ff] bg-clip-text text-transparent">
+            sprinter.ai
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex">
+        <nav className="hidden items-center gap-3 lg:flex">
           {navItems.map((item) => {
             const isActive =
               pathname === item.href ||
@@ -42,8 +45,10 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm transition-colors ${
-                  isActive ? "text-[#FAFAFA]" : "text-[#A1A1AA] hover:text-[#3B82F6]"
+                className={`rounded-full px-3 py-2 text-sm transition-colors ${
+                  isActive
+                    ? "bg-[color:rgba(59,130,246,0.14)] text-[color:var(--spr-text)]"
+                    : "spr-link text-[color:var(--spr-text-muted)] hover:bg-[color:rgba(18,32,66,0.68)]"
                 }`}
               >
                 {item.label}
@@ -54,7 +59,7 @@ export default function Header() {
             href="https://cal.com/tyler-dreher"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#F97316] px-4 py-2 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#fb923c]"
+            className="spr-button spr-button-primary"
           >
             Book a Strategy Call
           </a>
@@ -64,7 +69,7 @@ export default function Header() {
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-md border border-white/20 px-3 py-2 text-sm text-[#FAFAFA] lg:hidden"
+          className="inline-flex items-center justify-center rounded-[12px] border [border-color:var(--spr-border)] bg-[color:rgba(12,20,40,0.8)] px-3 py-2 text-sm text-[color:var(--spr-text)] transition hover:border-[color:var(--spr-border-strong)] lg:hidden"
         >
           {open ? "Close" : "Menu"}
         </button>
@@ -73,18 +78,18 @@ export default function Header() {
       <AnimatePresence>
         {open ? (
           <motion.nav
-            className="border-t border-white/10 px-4 py-3 lg:hidden"
+            className="border-t [border-color:var(--spr-border)] px-4 py-3 lg:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
           >
-            <div className="flex flex-col gap-3">
+            <div className="spr-container flex flex-col gap-2 pb-3">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-[#A1A1AA] transition hover:text-[#3B82F6]"
+                  className="rounded-lg px-3 py-2 text-sm text-[color:var(--spr-text-muted)] transition hover:bg-[color:rgba(18,32,66,0.6)] hover:text-[color:var(--spr-primary)]"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -94,7 +99,7 @@ export default function Header() {
                 href="https://cal.com/tyler-dreher"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex w-fit rounded-full bg-[#F97316] px-4 py-2 text-sm font-semibold text-[#0A0A0A]"
+                className="spr-button spr-button-primary mt-2 w-fit"
               >
                 Book a Strategy Call
               </a>

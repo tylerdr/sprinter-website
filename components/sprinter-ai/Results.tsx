@@ -4,7 +4,7 @@ import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 const outcomes = [
   "63 automation opportunities identified in 48 hours",
-  "Custom AI sales assistant deployed to a new hire — researching prospects, building territory plans, drafting outreach",
+  "Custom AI sales assistant deployed to a new hire - researching prospects, building territory plans, drafting outreach",
   "AI agent managing 6,388 prospect records across California",
 ];
 
@@ -17,22 +17,13 @@ const metrics = [
 
 export default function Results() {
   return (
-    <AnimatedSection
-      id="results"
-      className="mx-auto w-full max-w-6xl border-y border-white/10 px-4 py-20 sm:px-6 lg:px-8"
-      delay={0.05}
-    >
-      <h2 className="text-3xl font-semibold tracking-tight text-[#FAFAFA] sm:text-4xl">
-        Real businesses. Real results.
-      </h2>
-      <p className="mt-5 text-sm uppercase tracking-[0.16em] text-[#3B82F6]">OCI Case Study</p>
+    <AnimatedSection id="results" className="spr-container spr-section-divider" delay={0.05}>
+      <h2 className="spr-heading-lg">Real businesses. Real results.</h2>
+      <p className="spr-kicker mt-5">OCI Case Study</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         {outcomes.map((outcome) => (
-          <blockquote
-            key={outcome}
-            className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-sm leading-relaxed text-[#FAFAFA]"
-          >
+          <blockquote key={outcome} className="spr-card p-5 text-sm leading-relaxed text-[color:var(--spr-text-soft)]">
             &quot;{outcome}&quot;
           </blockquote>
         ))}
@@ -40,7 +31,7 @@ export default function Results() {
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {metrics.map((metric) => (
-          <div key={metric} className="rounded-xl border border-[#3B82F6]/30 bg-[#3B82F6]/10 p-4 text-sm text-[#FAFAFA]">
+          <div key={metric} className="spr-card spr-card-accent spr-card-tight p-4 text-sm text-[color:var(--spr-text)]">
             {metric}
           </div>
         ))}

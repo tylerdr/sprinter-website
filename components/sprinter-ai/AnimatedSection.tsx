@@ -17,15 +17,16 @@ export default function AnimatedSection({
   delay = 0,
 }: AnimatedSectionProps) {
   const reduceMotion = useReducedMotion();
+  const sectionClassName = className ? `spr-section ${className}` : "spr-section";
 
   return (
     <motion.section
       id={id}
-      className={className}
-      initial={reduceMotion ? undefined : { opacity: 0, y: 32 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      className={sectionClassName}
+      initial={reduceMotion ? undefined : { opacity: 0, y: 36, scale: 0.985, filter: "blur(6px)" }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.55, ease: "easeOut", delay }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
     </motion.section>

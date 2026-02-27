@@ -12,7 +12,7 @@ import Solution from "@/components/sprinter-ai/Solution";
 
 export default function Home() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <Header />
       <main>
         <Hero />
@@ -26,6 +26,6 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
