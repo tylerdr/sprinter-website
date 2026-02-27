@@ -57,6 +57,7 @@ export const NAVIGATION = {
       type: "dropdown",
       dropdown: [
         { href: "/fractional-caio", label: "Fractional CAIO" },
+        { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
         { href: "/ai-advisor-retainer", label: "AI Advisor Retainer" },
         { href: "/family-office", label: "For Family Offices" },
         { href: "/governance/family-office", label: "Governance Resources" },
@@ -69,6 +70,13 @@ export const NAVIGATION = {
           featured: true,
           icon: "users",
           badge: "For $1B+ AUM"
+        },
+        {
+          href: "/fractional-ai-cofounder",
+          label: "Fractional AI Co-Founder",
+          description: "Embedded strategy + execution partner to ship AI outcomes in weeks",
+          icon: "rocket",
+          badge: "New Offer"
         },
         {
           href: "/ai-advisor-retainer",
@@ -283,6 +291,7 @@ export const NAVIGATION = {
   footer: {
     advisory: [
       { href: "/fractional-caio", label: "Fractional CAIO" },
+      { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
       { href: "/ai-advisor-retainer", label: "AI Advisor" },
       { href: "/family-office", label: "Family Office Services" },
       { href: "/governance/family-office", label: "Governance Resources" },
