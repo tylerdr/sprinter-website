@@ -1,76 +1,91 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Guarantee from "@/components/sprinter-ai/Guarantee"
+import TrustedBy from "@/components/sprinter-ai/TrustedBy"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { 
-  RocketLaunchIcon, 
-  CurrencyDollarIcon, 
-  ClockIcon, 
-  ShieldCheckIcon,
-  ChartBarIcon,
-  DocumentCheckIcon,
-  UserGroupIcon,
+import {
+  RocketLaunchIcon,
   SparklesIcon,
   CheckIcon,
-  ArrowRightIcon
+  ArrowRightIcon,
 } from "@heroicons/react/24/outline"
 
 export const metadata: Metadata = {
-  title: "AI Opportunity Sprint - 5 Days to Your First AI Win | Sprinter AI",
-  description: "Get a custom AI strategy and working prototype in just 5 days. 100% satisfaction guarantee with proven ROI.",
+  title: "The AI Readiness Sprint | Sprinter AI",
+  description:
+    "Get your full operations map in 48 hours for $2,500. We identify $200K+ in automation value during the AI Readiness Sprint, or it is free.",
   openGraph: {
-    title: "AI Opportunity Sprint - From Strategy to Prototype in 5 Days",
-    description: "Get a custom AI strategy and working prototype for your PE firm. Guaranteed ROI with proven results.",
+    title: "The AI Readiness Sprint - Full Operations Map in 48 Hours",
+    description:
+      "A focused AI Readiness Sprint for operators: process audit, opportunity scoring, implementation roadmap, and a working prototype.",
     type: "website",
   },
 }
 
 const sprintTimeline = [
-  { day: "Day 1", task: "Kickoff & Discovery", description: "Deep dive into your specific use case and data" },
-  { day: "Day 3", task: "Solution Design", description: "Present AI architecture and implementation plan" },
-  { day: "Day 5", task: "Delivery", description: "Receive your AI Blueprint + working prototype or dataset" },
+  {
+    day: "Hour 0-8",
+    task: "Kickoff + Process Capture",
+    description: "We map your current workflows, systems, owners, and operational bottlenecks.",
+  },
+  {
+    day: "Hour 9-24",
+    task: "Opportunity Scoring",
+    description: "Each automation opportunity is scored for value, complexity, and implementation speed.",
+  },
+  {
+    day: "Hour 25-48",
+    task: "Roadmap + Prototype",
+    description: "You get an implementation plan and a working prototype for your highest-value use case.",
+  },
 ]
 
 const deliverables = [
-  "Custom AI Opportunity Blueprint (20+ page strategic document)",
-  "Working prototype or proof-of-concept for your #1 use case",
-  "ROI calculation and implementation roadmap",
-  "Technical architecture and tool recommendations",
-  "60-minute strategy session with our AI experts",
-  "30 days of follow-up support via email",
-  "All code, prompts, and configurations (if applicable)",
-  "Recording of all sessions for your team",
+  "Full operations process audit across your core workflows",
+  "AI opportunity scorecard with value, effort, and confidence ratings",
+  "Prioritized implementation roadmap with quick wins and sequencing",
+  "Working prototype for your #1 use case",
+  "ROI estimate model with assumptions documented",
+  "Recommended tool stack and architecture",
+  "60-minute implementation planning session",
+  "Handoff package your team can execute immediately",
 ]
 
 const useCases = [
   {
-    title: "Deal Flow Accelerator",
-    description: "AI-powered deal sourcing that finds hidden opportunities",
-    outcome: "Get a list of 50+ qualified targets matching your criteria",
+    title: "Quote-to-Cash Automation",
+    description: "Automate quoting, follow-up, and status handoffs across your revenue workflow.",
+    outcome: "Reduce turnaround times while increasing close-rate consistency.",
   },
   {
-    title: "Due Diligence Automation",
-    description: "AI that analyzes documents and surfaces key insights",
-    outcome: "Cut DD time by 80% with automated document summaries",
+    title: "Pipeline Prospecting Engine",
+    description: "Use AI to prioritize leads, personalize outreach, and keep reps focused on high-fit accounts.",
+    outcome: "Build a repeatable outbound motion without adding headcount.",
   },
   {
-    title: "Portfolio Optimization",
-    description: "AI tools for portfolio company operations",
-    outcome: "Identify $100K+ in immediate cost savings opportunities",
+    title: "Scheduling + Reporting Ops",
+    description: "Coordinate calendars, field schedules, and weekly reporting from one automated system.",
+    outcome: "Give operators visibility without manual spreadsheet churn.",
   },
+]
+
+const whatYouGetParagraphs = [
+  "The AI Readiness Sprint starts with a full process audit so you can see your operation as a single system instead of disconnected tasks. We document how work flows today, where handoffs break, and where your team is burning time on repetitive steps.",
+  "From there, we score AI opportunities across value, technical complexity, and time-to-impact. You get a prioritized view of what to automate first, what to defer, and where human oversight should stay in place.",
+  "You also receive an implementation roadmap that turns strategy into execution. It includes sequencing, ownership, tooling recommendations, and measurable milestones so your team can move from planning to delivery without ambiguity.",
+  "To remove guesswork, we ship a working prototype for your highest-leverage use case. You leave the sprint with a live example your team can test, improve, and use as the foundation for broader rollout.",
 ]
 
 export default function AISprintPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
       <section className="relative overflow-hidden px-6 py-20 sm:py-32 lg:px-8">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-pink-600/20 blur-3xl" />
         </div>
-        
+
         <div className="mx-auto max-w-4xl">
-          {/* Limited Availability Badge */}
           <div className="mb-8 flex justify-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-2 text-sm">
               <SparklesIcon className="h-4 w-4 text-red-400" />
@@ -79,38 +94,24 @@ export default function AISprintPage() {
           </div>
 
           <h1 className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-            Build Your First AI Solution in 5 Days
+            The AI Readiness Sprint
           </h1>
-          
+
           <p className="mt-6 text-center text-xl leading-8 text-gray-300">
-            From Concept to Working Prototype - Guaranteed 10× ROI
-          </p>
-          
-          <p className="mt-4 text-center text-lg text-gray-400">
-            Stop talking about AI. Start implementing it. Fixed price: $50,000. If we don't identify 10× that value, you get a full refund.
+            Your Full Operations Map in 48 Hours for $2,500
           </p>
 
-          {/* Guarantee and Price */}
-          <div className="mt-8 space-y-4">
-            <div className="flex justify-center">
-              <div className="flex items-center gap-2">
-                <ShieldCheckIcon className="h-6 w-6 text-green-400" />
-                <span className="text-xl font-semibold">10× ROI Guarantee or Full Refund</span>
-              </div>
-            </div>
-            <div className="text-center">
-              <span className="text-3xl font-bold text-white">$50,000</span>
-              <span className="ml-2 text-lg text-gray-400">fixed investment</span>
-            </div>
-          </div>
-          
+          <p className="mt-4 text-center text-xl font-semibold text-white">
+            We find $200K+ in automation value — or it is free.
+          </p>
+
           <div className="mt-10 flex justify-center">
             <Link href="#book-sprint">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 text-lg hover:from-purple-700 hover:to-blue-700"
               >
-                Book Your AI Sprint Now
+                Book Your AI Readiness Sprint
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -118,41 +119,40 @@ export default function AISprintPage() {
         </div>
       </section>
 
-      {/* Value Proposition */}
+      <TrustedBy />
+
       <section className="bg-gradient-to-b from-gray-900/50 to-background px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-3xl font-bold">Why PE Firms Choose Our Sprint</h2>
+          <h2 className="mb-6 text-3xl font-bold">Why Operators Choose the AI Readiness Sprint</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div>
-              <div className="mb-4 text-4xl font-bold text-purple-400">5 Days</div>
-              <p className="text-gray-400">Not months. We deliver real results before your next partners meeting.</p>
+              <div className="mb-4 text-4xl font-bold text-purple-400">48 Hours</div>
+              <p className="text-gray-400">Fast clarity on where automation will create measurable operational leverage.</p>
             </div>
             <div>
-              <div className="mb-4 text-4xl font-bold text-blue-400">$50,000</div>
-              <p className="text-gray-400">Fixed investment. Guaranteed 10× ROI or your money back. No questions asked.</p>
+              <div className="mb-4 text-4xl font-bold text-blue-400">$2,500</div>
+              <p className="text-gray-400">Fixed investment for a scoped, execution-ready AI Readiness Sprint.</p>
             </div>
             <div>
-              <div className="mb-4 text-4xl font-bold text-green-400">Zero Risk</div>
-              <p className="text-gray-400">Clear deliverables. Proven methodology. Apply sprint learnings to any larger engagement.</p>
+              <div className="mb-4 text-4xl font-bold text-green-400">$200K+ Floor</div>
+              <p className="text-gray-400">If we do not identify at least $200K in value, your AI Readiness Sprint is free.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sprint Timeline */}
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center text-3xl font-bold">Your 5-Day Journey</h2>
-          
+          <h2 className="mb-12 text-center text-3xl font-bold">Your 48-Hour Journey</h2>
+
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 md:left-1/2" />
-            
+
             {sprintTimeline.map((item, idx) => (
-              <div key={idx} className={`relative mb-12 flex items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div key={idx} className={`relative mb-12 flex items-center ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                 <div className="flex-1" />
                 <div className="z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-600 text-white shadow-lg">
-                  <span className="font-bold">{item.day}</span>
+                  <span className="text-xs font-bold uppercase tracking-wide">{item.day}</span>
                 </div>
                 <div className="ml-8 flex-1 md:ml-0 md:px-8">
                   <Card className="border-gray-800 bg-gray-900/50 backdrop-blur">
@@ -168,11 +168,21 @@ export default function AISprintPage() {
         </div>
       </section>
 
-      {/* What's Included */}
       <section className="bg-gradient-to-b from-gray-900/50 to-background px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-4xl">
+          <h2 className="mb-8 text-3xl font-bold">What You Get in the AI Readiness Sprint</h2>
+          <div className="space-y-5 text-lg leading-relaxed text-gray-300">
+            {whatYouGetParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 lg:px-8">
+        <div className="mx-auto max-w-4xl">
           <h2 className="mb-12 text-center text-3xl font-bold">Everything You Get</h2>
-          
+
           <Card className="border-gray-800 bg-gray-900/50 backdrop-blur">
             <CardContent className="p-8">
               <div className="grid gap-4 md:grid-cols-2">
@@ -183,13 +193,11 @@ export default function AISprintPage() {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-8 rounded-lg bg-blue-500/10 p-6">
-                <p className="text-center text-xl font-bold text-white">
-                  Enterprise-Grade Value, Startup Speed
-                </p>
+                <p className="text-center text-xl font-bold text-white">Execution-Ready in 48 Hours</p>
                 <p className="mt-2 text-center text-gray-400">
-                  Sprint learnings can be applied toward any implementation project
+                  Your team leaves with priorities, a prototype, and an implementation path.
                 </p>
               </div>
             </CardContent>
@@ -197,12 +205,11 @@ export default function AISprintPage() {
         </div>
       </section>
 
-      {/* Use Cases */}
-      <section className="px-6 py-16 lg:px-8">
+      <section className="bg-gradient-to-b from-gray-900/50 to-background px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-4 text-center text-3xl font-bold">Choose Your Focus Area</h2>
-          <p className="mb-12 text-center text-gray-400">We'll customize the sprint to your highest-impact opportunity</p>
-          
+          <h2 className="mb-4 text-center text-3xl font-bold">Pick the Highest-Leverage Use Case</h2>
+          <p className="mb-12 text-center text-gray-400">We tailor the AI Readiness Sprint to your most urgent operational bottleneck.</p>
+
           <div className="grid gap-8 md:grid-cols-3">
             {useCases.map((useCase) => (
               <Card key={useCase.title} className="border-gray-800 bg-gray-900/50 backdrop-blur">
@@ -211,7 +218,7 @@ export default function AISprintPage() {
                   <h3 className="mb-2 text-xl font-semibold">{useCase.title}</h3>
                   <p className="mb-4 text-gray-400">{useCase.description}</p>
                   <div className="rounded bg-green-500/10 p-3">
-                    <p className="text-sm font-semibold text-green-400">Deliverable:</p>
+                    <p className="text-sm font-semibold text-green-400">Outcome:</p>
                     <p className="text-sm text-gray-300">{useCase.outcome}</p>
                   </div>
                 </CardContent>
@@ -221,68 +228,45 @@ export default function AISprintPage() {
         </div>
       </section>
 
-      {/* Success Story */}
-      <section className="bg-gradient-to-b from-gray-900/50 to-background px-6 py-16 lg:px-8">
+      <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <Card className="overflow-hidden border-gray-800 bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur">
             <CardContent className="p-8">
-              <h3 className="mb-6 text-2xl font-bold">Recent Sprint Success</h3>
+              <h3 className="mb-6 text-2xl font-bold">Recent AI Readiness Sprint Result</h3>
               <p className="mb-6 text-lg italic text-gray-300">
-                "In just 5 days, Sprinter identified an AI-driven deal sourcing approach that found 47 off-market targets we had completely missed. 
-                The ROI was immediate - we're now evaluating 3 potential acquisitions from that list. 
-                The sprint paid for itself 100x over."
+                "In under 48 hours, Sprinter mapped our workflow, prioritized automation opportunities, and delivered a prototype we could test immediately. We aligned leadership in one week and moved straight into implementation with clear ROI targets."
               </p>
               <div>
-                <p className="font-semibold">Managing Partner</p>
-                <p className="text-gray-500">Mid-Market PE Firm ($2B AUM)</p>
+                <p className="font-semibold">COO</p>
+                <p className="text-gray-500">Mid-Market Operator</p>
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* Guarantee Section */}
-      <section className="px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <ShieldCheckIcon className="mx-auto mb-6 h-16 w-16 text-green-400" />
-          <h2 className="mb-6 text-3xl font-bold">Our Iron-Clad Guarantee</h2>
-          <p className="mb-8 text-lg text-gray-300">
-            If you don't agree that our AI Sprint identified at least 10x the value of your investment 
-            in potential ROI, we'll refund 100% of your money. No questions asked.
-          </p>
-          <p className="text-gray-400">
-            We're so confident because we've done this before. Our AI expertise combined with your 
-            industry knowledge creates breakthrough opportunities every time.
-          </p>
-        </div>
-      </section>
+      <Guarantee />
 
-      {/* Booking Section */}
       <section id="book-sprint" className="bg-gradient-to-t from-gray-900/50 to-background px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <Card className="border-gray-800 bg-gray-900/50 backdrop-blur">
             <CardContent className="p-8">
-              <h2 className="mb-6 text-center text-2xl font-bold">Ready to Start Your AI Sprint?</h2>
-              
+              <h2 className="mb-6 text-center text-2xl font-bold">Ready to Start the AI Readiness Sprint?</h2>
+
               <div className="mb-8 space-y-4 text-center">
-                <p className="text-gray-400">
-                  Limited to 5 sprints per month to ensure quality delivery
-                </p>
+                <p className="text-gray-400">Limited to 5 AI Readiness Sprints per month to protect delivery quality.</p>
                 <p className="text-2xl font-bold">
-                  Investment: <span className="text-green-400">$50,000</span> (guaranteed 10× ROI)
+                  Investment: <span className="text-green-400">$2,500</span>
                 </p>
-                <p className="text-lg">
-                  Only <span className="text-red-400">2 spots</span> remaining this month
-                </p>
+                <p className="text-lg text-gray-300">Delivered in 48 hours with a $200K+ value guarantee.</p>
               </div>
 
-              {/* Contact Form Button (fallback for missing Stripe config) */}
               <Link href="/contact?product=ai-sprint&intent=purchase">
                 <Button
                   size="lg"
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-lg hover:from-purple-700 hover:to-blue-700"
                 >
-                  Book Your Sprint Now
+                  Book Your AI Readiness Sprint
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -290,11 +274,10 @@ export default function AISprintPage() {
               <div className="mt-6 space-y-2 text-center text-sm text-gray-500">
                 <p>✓ Instant confirmation</p>
                 <p>✓ Secure payment via Stripe</p>
-                <p>✓ Start within 48 hours</p>
-                <p>✓ 100% money-back guarantee</p>
+                <p>✓ Kickoff in 48 hours</p>
+                <p>✓ $200K+ value guarantee</p>
               </div>
 
-              {/* Alternative: Schedule a Call */}
               <div className="mt-8 border-t border-gray-800 pt-8">
                 <p className="mb-4 text-center text-gray-400">Prefer to discuss first?</p>
                 <Link href="/contact">
@@ -308,39 +291,34 @@ export default function AISprintPage() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-12 text-center text-3xl font-bold">Common Questions</h2>
-          
+
           <div className="space-y-6">
             <Card className="border-gray-800 bg-gray-900/50">
               <CardContent className="p-6">
-                <h3 className="mb-2 font-semibold">What if we don't have technical staff?</h3>
+                <h3 className="mb-2 font-semibold">What if we do not have technical staff?</h3>
                 <p className="text-gray-400">
-                  No problem. We deliver everything in business terms with clear implementation guides. 
-                  Many clients use our blueprints with their existing vendors or hire us for implementation.
+                  No problem. The AI Readiness Sprint deliverables are written for operators and executives, with clear implementation guides your internal team or external partners can follow.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="border-gray-800 bg-gray-900/50">
               <CardContent className="p-6">
                 <h3 className="mb-2 font-semibold">Is our data secure?</h3>
                 <p className="text-gray-400">
-                  Absolutely. We sign NDAs and follow enterprise security protocols. 
-                  All work can be done with anonymized or sample data if preferred.
+                  Yes. We work under NDA and enterprise-grade security practices. The AI Readiness Sprint can be completed with anonymized or sample data when needed.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="border-gray-800 bg-gray-900/50">
               <CardContent className="p-6">
-                <h3 className="mb-2 font-semibold">What happens after the sprint?</h3>
+                <h3 className="mb-2 font-semibold">What happens after the AI Readiness Sprint?</h3>
                 <p className="text-gray-400">
-                  You'll have everything needed to implement independently. 
-                  Or, engage us for ongoing support through our AI Partnership Program. 
-                  The $50,000 sprint fee is credited toward any continued engagement.
+                  You can implement with your current team, hand off to vendors, or continue with Sprinter for deployment support. The roadmap and prototype are designed for immediate execution.
                 </p>
               </CardContent>
             </Card>
@@ -348,19 +326,18 @@ export default function AISprintPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-2xl rounded-lg bg-gradient-to-r from-purple-600/20 to-blue-600/20 p-8 text-center backdrop-blur">
-          <h2 className="mb-4 text-2xl font-bold">Stop Watching. Start Winning.</h2>
+          <h2 className="mb-4 text-2xl font-bold">Stop Guessing. Start Shipping.</h2>
           <p className="mb-6 text-gray-300">
-            While competitors debate AI strategy, you'll have a working solution in 5 days.
+            In 48 hours, the AI Readiness Sprint gives your team a clear map and a working starting point.
           </p>
           <Link href="#book-sprint">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-black hover:bg-gray-200"
             >
-              Claim Your Sprint Spot
+              Claim Your AI Readiness Sprint Spot
             </Button>
           </Link>
         </div>

@@ -9,6 +9,7 @@ import Manifesto from "@/components/sprinter-ai/Manifesto";
 import Problem from "@/components/sprinter-ai/Problem";
 import Results from "@/components/sprinter-ai/Results";
 import Solution from "@/components/sprinter-ai/Solution";
+import TrustedBy from "@/components/sprinter-ai/TrustedBy";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <TrustedBy />
         <Problem />
         <Solution />
         <HowItWorks />
