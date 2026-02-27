@@ -1,0 +1,30 @@
+"use client";
+
+import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
+
+const bullets = [
+  "They read your emails, triage your inbox, draft responses",
+  "They research prospects, enrich your CRM, prep your sales calls",
+  "They monitor your operations, flag issues, generate reports",
+  "They work nights, weekends, and holidays - on your processes, with your data",
+];
+
+export default function Solution() {
+  return (
+    <AnimatedSection id="solution" className="spr-container spr-section-divider" delay={0.05}>
+      <h2 className="spr-heading-lg">We don&apos;t sell software. We deploy intelligence.</h2>
+      <p className="spr-body-lg mt-6">Custom AI agents that live inside your business:</p>
+      <ul className="mt-8 grid gap-4 md:grid-cols-2">
+        {bullets.map((bullet) => (
+          <li key={bullet} className="spr-card p-5 text-[color:var(--spr-text-soft)]">
+            <span className="mr-3 inline-flex align-middle">
+              <span className="spr-list-dot" aria-hidden />
+            </span>
+            <span className="align-middle">{bullet}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-8 text-xl font-medium text-[color:var(--spr-text)]">Grounded. Practical. Running while you sleep.</p>
+    </AnimatedSection>
+  );
+}

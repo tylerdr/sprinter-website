@@ -16,7 +16,7 @@ export function AICapabilities() {
           className="text-center mb-16"
         >
           <SwooshText
-            text="Your AI Portfolio Advantage"
+            text="What We Build For You"
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
             shadowColors={{
               first: "rgba(99, 102, 241, 0.5)",
@@ -27,8 +27,9 @@ export function AICapabilities() {
             }}
           />
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
-            You get agentic AI systems tailored to your needs. Your choice: custom builds or proven tools.
-            Your repeatable playbooks accelerate every deployment. You ship production systems in 10 days.
+            AI systems that actually ship to production and drive measurable ROI.
+            From AP automation to quote intelligence—we&apos;ve deployed these solutions 50+ times
+            with a 250% average return in 60 days.
           </p>
         </motion.div>
 

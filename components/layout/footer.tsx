@@ -10,14 +10,19 @@ const footerSections: Array<{
   ariaLabel: string;
 }> = [
   {
-    title: "Programs",
-    links: NAVIGATION.footer.products,
-    ariaLabel: "Programs",
+    title: "Advisory",
+    links: NAVIGATION.footer.advisory,
+    ariaLabel: "Advisory Services",
   },
   {
-    title: "Solutions",
-    links: NAVIGATION.footer.solutions,
-    ariaLabel: "Solutions",
+    title: "Implementation",
+    links: NAVIGATION.footer.implementation,
+    ariaLabel: "Implementation Services",
+  },
+  {
+    title: "Due Diligence",
+    links: NAVIGATION.footer.diligence,
+    ariaLabel: "Due Diligence Services",
   },
   {
     title: "Resources",

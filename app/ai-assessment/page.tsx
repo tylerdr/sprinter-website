@@ -18,11 +18,11 @@ import {
 import { getThemedFunnel, THEME_HEADLINES } from "@/lib/funnel-themes"
 
 export const metadata: Metadata = {
-  title: "Free AI Readiness Assessment for Private Equity | Sprinter AI",
-  description: "Discover where AI can add millions to your portfolio value. Get a personalized AI opportunity report in 24 hours. No cost, no risk.",
+  title: "AI Opportunity Assessment | Sprinter AI",
+  description: "Get a custom AI roadmap for your business. We'll identify high-impact automation opportunities and show you what a sprint implementation could look like.",
   openGraph: {
-    title: "Free AI Readiness Assessment for Private Equity",
-    description: "Discover where AI can add millions to your portfolio value. Get a personalized AI opportunity report in 24 hours.",
+    title: "AI Opportunity Assessment | Sprinter AI",
+    description: "Get a custom AI roadmap for your business. We'll identify high-impact automation opportunities.",
     type: "website",
   },
 }
@@ -30,38 +30,38 @@ export const metadata: Metadata = {
 const benefits = [
   {
     icon: ChartBarIcon,
-    title: "AI Readiness Score",
-    description: "Benchmark against 500+ PE firms already using AI",
+    title: "Identify High-Impact Opportunities",
+    description: "We analyze your workflows to find where AI can deliver the most value",
   },
   {
     icon: DocumentTextIcon,
-    title: "3 Quick Wins",
-    description: "Specific opportunities worth $1M+ in portfolio value",
+    title: "Custom AI Roadmap",
+    description: "Specific recommendations with implementation approach and next steps",
   },
   {
     icon: ClockIcon,
-    title: "24-Hour Delivery",
-    description: "Get your custom report the next business day",
+    title: "Sprint-Ready Plan",
+    description: "Clear scope for a 2-4 week sprint implementation",
   },
 ]
 
 const stats = [
-  { value: "40%", label: "of PE firms have AI strategies" },
-  { value: "65%", label: "faster deal cycles with AI" },
-  { value: "$2.3M", label: "average annual savings" },
-  { value: "3x", label: "more deals sourced" },
+  { value: "20+", label: "AI systems built" },
+  { value: "2-4", label: "week sprint duration" },
+  { value: "Multi-Agent", label: "architectures" },
+  { value: "Your Stack", label: "we integrate" },
 ]
 
 const testimonials = [
   {
-    quote: "The assessment showed us $3M in immediate savings opportunities we hadn't considered.",
-    author: "Managing Partner",
-    company: "Mid-Market PE Fund ($2B AUM)",
+    quote: "The assessment helped us understand exactly where AI could help and what a realistic implementation would look like.",
+    author: "Operations Director",
+    company: "B2B Services Company",
   },
   {
-    quote: "We went from zero AI to three implementations in 90 days after the assessment.",
-    author: "Operating Partner",
-    company: "Growth Equity Fund",
+    quote: "Clear, actionable roadmap. No hype, just practical recommendations we could actually implement.",
+    author: "VP Technology",
+    company: "Financial Services Firm",
   },
 ]
 
@@ -87,16 +87,16 @@ export default function AIAssessmentPage() {
           </div>
 
           <h1 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-            Find $1M+ in AI Opportunities
+            AI Opportunity Assessment
           </h1>
-          
+
           <p className="mt-6 text-center text-xl leading-8 text-muted-foreground">
-            Get Your Custom PE AI Roadmap in 24 Hours
+            Find out where AI can help your business
           </p>
 
           <p className="mt-4 text-center text-lg text-muted-foreground/80">
-            See exactly where AI can transform your deal flow, due diligence, and portfolio operations.
-            Takes 2 minutes. 100% free. No sales call required.
+            Get a custom roadmap showing high-impact automation opportunities.
+            We&apos;ll show you what a sprint implementation could look like.
           </p>
 
           {/* Stats Bar */}
@@ -246,41 +246,41 @@ export default function AIAssessmentPage() {
         </div>
       </section>
 
-      {/* Urgency Section */}
+      {/* Why Section */}
       <section className="bg-gradient-to-b from-transparent via-primary/5 to-transparent px-6 py-12 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
-            <BoltIcon className="h-4 w-4 text-orange-500 dark:text-orange-400" />
-            <span className="text-sm font-medium text-orange-500 dark:text-orange-400">Limited Time Offer</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+            <BoltIcon className="h-4 w-4 text-blue-500 dark:text-blue-400" />
+            <span className="text-sm font-medium text-blue-500 dark:text-blue-400">The Sprinter Method™</span>
           </div>
-          
-          <h2 className="mb-4 text-2xl font-bold">Why PE Firms Choose Our Assessment</h2>
-          
+
+          <h2 className="mb-4 text-2xl font-bold">What You&apos;ll Get</h2>
+
           <div className="grid gap-4 text-left max-w-xl mx-auto">
             <div className="flex items-start gap-3">
               <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5" />
               <div>
-                <p className="font-medium">No Generic Advice</p>
+                <p className="font-medium">Workflow Analysis</p>
                 <p className="text-sm text-muted-foreground">
-                  PE-specific recommendations based on 100+ fund implementations
+                  We identify specific processes where AI can help
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5" />
               <div>
-                <p className="font-medium">Actionable Roadmap</p>
+                <p className="font-medium">Implementation Roadmap</p>
                 <p className="text-sm text-muted-foreground">
-                  Step-by-step plan you can implement immediately
+                  Clear next steps and what a sprint would look like
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5" />
               <div>
-                <p className="font-medium">ROI Projections</p>
+                <p className="font-medium">Realistic Expectations</p>
                 <p className="text-sm text-muted-foreground">
-                  See potential returns before investing a dollar
+                  Honest assessment of what AI can and can&apos;t do for you
                 </p>
               </div>
             </div>
@@ -295,24 +295,22 @@ export default function AIAssessmentPage() {
             <CardContent className="p-8">
               <ShieldCheckIcon className="mx-auto h-12 w-12 text-primary mb-4" />
               <h2 className="mb-4 text-2xl font-bold">
-                {funnel.theme === "adventure" && "Begin Your AI Journey"}
-                {funnel.theme === "asap" && "Get Started ASAP"}
-                {funnel.theme === "motion" && "Start Building Momentum"}
+                Ready to explore what AI can do?
               </h2>
               <p className="mb-6 text-gray-400">
-                Join 500+ PE firms using AI to outperform their competition
+                Get a custom roadmap for your business
               </p>
               <a href="#assessment-form">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
                 >
-                  {headlines.cta}
+                  Start Assessment
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Button>
               </a>
               <p className="mt-4 text-sm text-muted-foreground">
-                Average time to complete: 1 minute 47 seconds
+                Takes about 2 minutes to complete
               </p>
             </CardContent>
           </Card>

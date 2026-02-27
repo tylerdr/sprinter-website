@@ -9,10 +9,9 @@ import { getCurrentVariants } from "@/lib/ab-test-variants";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
 
 const stats = [
-  { value: "50+", label: "Portfolio wins" },
-  { value: "10 Days", label: "To production" },
-  { value: "250%", label: "Average ROI" },
-  { value: "No API?", label: "No problem" },
+  { value: "20+", label: "AI Systems Shipped" },
+  { value: "2-4 Weeks", label: "To Production" },
+  { value: "95%", label: "Time Saved" },
 ];
 
 export function PEHero() {
@@ -48,7 +47,7 @@ export function PEHero() {
           >
             <Building2 className="w-4 h-4 text-blue-400" aria-hidden="true" />
             <span className="text-sm font-medium text-blue-400">
-              AI Operating Partner for Private Equity
+              Sprint-Based AI Implementation
             </span>
           </motion.div>
 
@@ -93,21 +92,32 @@ export function PEHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
           >
-            <BookDemoButton
-              size="lg"
-              text="Book 90-Minute OP Workshop"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-            />
-            <Button asChild size="lg" variant="outline" className="text-base">
-              <Link href="/pricing" className="group">
-                <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
-                See Transparent Pricing
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6">
+              <Link href="/contact" className="group">
+                Book a Strategy Call
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
+            <Button asChild size="lg" variant="outline" className="text-base">
+              <Link href="/case-studies" className="group">
+                <ChartBar className="mr-2 w-5 h-5" aria-hidden="true" />
+                See Results
+              </Link>
+            </Button>
           </motion.div>
+
+          {/* Method Badge */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.55, duration: 0.8 }}
+            className="text-sm text-blue-400 mb-16 flex items-center justify-center gap-2"
+          >
+            <span className="inline-block w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+            Practitioners who build, not consultants who advise
+          </motion.p>
 
           {/* Trust Indicators */}
           <motion.div
@@ -117,13 +127,8 @@ export function PEHero() {
             className="mb-12"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              For lower-middle-market and middle-market PE firms
+              Trusted by PE Firms, Family Offices & Portfolio Companies
             </p>
-            <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
-              <span className="font-semibold">Your AI Advantage</span>
-              <span className="font-semibold">Your Playbooks</span>
-              <span className="font-semibold">Your Portfolio Wins</span>
-            </div>
           </motion.div>
 
           {/* Live Stats */}
@@ -131,7 +136,7 @@ export function PEHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {stats.map((stat, index) => (
               <motion.div

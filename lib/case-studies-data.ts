@@ -19,12 +19,16 @@ export const CaseStudySchema = z.object({
 
 export type CaseStudy = z.infer<typeof CaseStudySchema>;
 
-// Note: PE case studies removed - focusing on real client success stories
-// Real clients include: Vero Capital, Rock Hill Capital, Beckway, Wells Fargo, Accenture, Broadlume
+// PE case studies - These are illustrative examples of the types of engagements we pursue
+// Real client work uses anonymized data per NDAs
 export const peCaseStudies: CaseStudy[] = [];
+
+// Family Office case studies - placeholder for future real engagements
+export const familyOfficeCaseStudies: CaseStudy[] = [];
 
 export const caseStudies: CaseStudy[] = [
   ...peCaseStudies,
+  ...familyOfficeCaseStudies,
   {
     slug: "ai-mortgage-assistant",
     title: "MortgageQ – AI-Driven Non-QM Guideline Intelligence",

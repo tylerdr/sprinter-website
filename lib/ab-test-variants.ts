@@ -7,80 +7,80 @@ export type CTAVariant = "blueprint" | "assessment" | "readiness" | "audit";
 export const heroVariants = {
   peoplefirst: {
     headline: {
-      line1: "Put AI to Work",
-      line2: "Across Your Portfolio"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "For lower-middle-market and middle-market PE firms. Transform your portfolio companies with agentic AI systems deployed in 10 days. Get custom solutions, off-the-shelf integrations, and repeatable playbooks proven across 50+ implementations. Your competitive advantage starts here."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   scale: {
     headline: {
-      line1: "Your GenAI Implementation Partner",
-      line2: "for Portfolio Companies"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "Deploy production-ready AI across your portfolio. From AP automation to quote intelligence systems. 60%+ touchless processing in 10 days with full governance and audit trails."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   need: {
     headline: {
-      line1: "AI Due Diligence & Value Creation",
-      line2: "for Private Equity"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "Technical due diligence, AI readiness assessments, and hands-on implementation. We help Operating Partners and Value Creation teams ship real AI wins. Portfolio-wide playbooks included."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   transform: {
     headline: {
-      line1: "Boutique AI Consulting",
-      line2: "for PE Portfolio Ops"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "Fixed-fee sprints that deliver working AI in production. No PowerPoints, just pilots. From 3PL operations to portfolio reporting—we've automated it for 100+ portcos."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   },
   accelerate: {
     headline: {
-      line1: "AI Strategy Workshop",
-      line2: "for Operating Partners"
+      line1: "AI That Actually",
+      line2: "Ships"
     },
-    subheadline: "2-week sprint to assess, scope, and pilot AI across your portfolio. Vendor-neutral recommendations with build vs. buy analysis. Clear acceptance criteria and LP-ready governance docs."
+    subheadline: "2-4 week sprints. Working systems in production. No slide decks."
   }
 } as const;
 
 export const ctaVariants = {
   blueprint: {
-    primary: "Book AI Scoping Workshop →",
-    secondary: "Download RFP Template"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   },
   assessment: {
-    primary: "Get AI Readiness Assessment",
-    secondary: "View Fixed-Fee Pricing"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   },
   readiness: {
-    primary: "Schedule Discovery Sprint",
-    secondary: "See Portfolio Case Studies"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   },
   audit: {
-    primary: "Book 2-Week Diagnostic",
-    secondary: "Get Options Memo Template"
+    primary: "Book a Strategy Call",
+    secondary: "See Results"
   }
 } as const;
 
 export const valuePropsVariants = {
   offMarket: {
-    headline: "Your Portfolio. Powered by AI. In 10 Days.",
-    description: "You get repeatable playbooks proven across 50+ portfolio companies. Choose custom development or off-the-shelf integrations based on your needs. From AP automation to quote intelligence—achieve measurable ROI in your first sprint.",
-    cta: "Book your AI Scoping Workshop today. Fixed fee, clear deliverables."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   },
   leftBehind: {
-    headline: "AI Due Diligence for Tech & Data Risk",
-    description: "5-10 day assessment packages. Model risk, data governance, vendor analysis, TCO projections. Board-ready reports that actually inform deal decisions.",
-    cta: "Schedule Due Diligence Consultation. See sample reports and pricing."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   },
   competitive: {
-    headline: "Operating Partner AI Enablement",
-    description: "Equip your OPs with AI playbooks tailored to portfolio verticals. From pricing optimization to procurement analytics. Hands-on workshops, not theory.",
-    cta: "Book Operating Partner Workshop. 90 minutes to transform your approach."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   },
   roi: {
-    headline: "Fixed-Fee Implementation, Clear Acceptance Criteria",
-    description: "No hourly billing surprises. 2-week diagnostic, 30-day pilot, 90-day scale. Every engagement includes SOW, success metrics, and governance framework.",
-    cta: "View pricing and engagement models. Transparent fees, proven results."
+    headline: "Drive Enterprise Value with AI",
+    description: "We build AI systems that increase EBITDA, accelerate portfolio companies, and create competitive moats. Production-ready in weeks, not months.",
+    cta: "Book a call to discuss your portfolio."
   }
 } as const;
 

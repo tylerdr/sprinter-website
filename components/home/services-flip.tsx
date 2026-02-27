@@ -15,46 +15,46 @@ import {
 
 const services = [
   {
-    title: "Agentic AI Systems",
-    subtitle: "Your competitive edge",
-    description: "Get autonomous agents handling your complex workflows. Your team focuses on strategy while AI executes.",
-    features: ["Your Custom Architecture", "Multi-Agent Coordination", "Seamless Tool Integration", "Your Repeatable Playbooks"],
+    title: "Multi-Agent Systems",
+    subtitle: "Coordinated AI Workflows",
+    description: "Multiple AI agents working together to handle complex tasks—research, analysis, and execution in parallel.",
+    features: ["Parallel Processing", "Task Orchestration", "Human-in-the-Loop", "Scalable Architecture"],
     icon: Brain,
   },
   {
-    title: "Your Choice: Build or Buy",
-    subtitle: "Smart flexibility",
-    description: "You choose: proven off-the-shelf tools or custom-built solutions. Your goals drive the decision.",
-    features: ["Expert Tool Recommendations", "Smooth API Integration", "Custom When You Need It", "Hybrid Solutions for You"],
+    title: "Document Intelligence",
+    subtitle: "PDFs to Decisions",
+    description: "Turn unstructured documents into structured data and automated workflows. Powers lending, compliance, and operations.",
+    features: ["PDF Extraction", "Multi-Doc Analysis", "Data Normalization", "Decision Automation"],
     icon: Layers,
   },
   {
-    title: "No-API? No Problem.",
-    subtitle: "Your legacy systems work",
-    description: "Your old systems without APIs? We automate them. 70%+ of deployments need zero API access.",
-    features: ["Document Intelligence for You", "Screen Automation", "Your Process Mining", "Workflow Orchestration"],
+    title: "Process Automation",
+    subtitle: "End-to-End Workflows",
+    description: "Redesign and automate complex business processes. From document intake to final decision—fully orchestrated.",
+    features: ["Workflow Design", "Exception Handling", "Audit Trails", "Integration Ready"],
     icon: Zap,
   },
   {
-    title: "Your Portfolio Playbooks",
-    subtitle: "Scale your wins",
-    description: "Your 2nd deployment is 50% faster. Your 3rd is 70% faster. You compound your advantage.",
-    features: ["Your Proven Templates", "Best Practices Library", "Your Knowledge Base", "Cross-Portfolio Wins"],
-    icon: Globe,
+    title: "Legacy System Integration",
+    subtitle: "Works With What You Have",
+    description: "Think you're not 'tech-forward' enough? We build AI that works with your existing systems—messy data and all.",
+    features: ["Any System", "Existing Data", "No Rip & Replace", "Gradual Adoption"],
+    icon: Shield,
   },
   {
-    title: "10-Day Sprints",
-    subtitle: "You ship fast",
-    description: "Your AI system goes from discovery to production in 10 days. Real results, real ROI.",
-    features: ["Your Sprint Schedule", "Production Deployment", "Your Real Data", "Your Team Training"],
+    title: "Sprint Implementations",
+    subtitle: "Production in Weeks",
+    description: "Fixed-scope sprints with clear deliverables. Working systems, not slide decks. You validate, we iterate.",
+    features: ["2-4 Week Sprints", "Clear Deliverables", "Rapid Iteration", "Production Ready"],
     icon: Rocket,
   },
   {
-    title: "Your Operators, Empowered",
-    subtitle: "Own your AI future",
-    description: "Your operators learn to own and expand the AI. You build lasting capability, not dependency.",
-    features: ["Hands-on Training", "Complete Documentation", "Your Internal Champions", "Ongoing Support"],
-    icon: Users,
+    title: "Portfolio Playbooks",
+    subtitle: "Wins That Compound",
+    description: "The playbook from your first implementation makes the second faster. Shared learnings across your portfolio.",
+    features: ["Proven Templates", "Best Practices", "Team Training", "Knowledge Transfer"],
+    icon: Globe,
   },
 ];
 
@@ -70,11 +70,11 @@ export function ServicesFlip() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            What <span className="gradient-text">You Get</span>
+            Proven <span className="gradient-text">Solutions</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Your choice: custom development or off-the-shelf integrations. Your repeatable playbooks.
-            You identify the opportunities. You ship portfolio wins in 10 days. You own the results.
+            Agentic AI systems that handle the tedious work so your team can focus on
+            strategy and exceptions. Sprint-based implementations that ship fast.
           </p>
         </motion.div>
 

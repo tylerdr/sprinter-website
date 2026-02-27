@@ -13,31 +13,31 @@ import {
 const pillars = [
   {
     icon: Brain,
-    title: "Your AI Advantage",
-    description: "Deep expertise at your service",
+    title: "Agentic AI Systems",
+    description: "Multi-agent workflows that scale",
     details:
-      "You get world-class agentic AI expertise to identify your highest-ROI opportunities. Your competitive advantage comes from solutions that actually work in your environment.",
+      "We build AI agents that work together to handle complex tasks—document processing, research, analysis, and decision support. Systems that augment your team, not replace them.",
   },
   {
     icon: Layers,
-    title: "Your Choice, Your Way",
-    description: "Build or buy on your terms",
+    title: "Portfolio Multiplier Effect™",
+    description: "Every win compounds across holdings",
     details:
-      "You decide: proven tools or custom builds. Your playbooks accelerate every deployment. Your 2nd portco is 50% faster, your 3rd is 70% faster. You compound your advantages.",
+      "The playbook from your first implementation makes the second faster. Shared learnings, proven templates, and trained operators who can extend the work independently.",
   },
   {
     icon: Rocket,
-    title: "Your Wins in 10 Days",
-    description: "Real systems, real fast",
+    title: "The Sprinter Method™",
+    description: "Fixed-scope sprints that ship",
     details:
-      "You get production systems, not PowerPoints. Your real users, your real data, your measurable ROI—all within 10 days. That's how you make AI work.",
+      "2-4 week sprints with clear deliverables. We build, you validate, we iterate. Working systems in production—not slide decks that stall in committee.",
   },
   {
     icon: Users,
-    title: "Your Team, Empowered",
-    description: "Own your AI future",
+    title: "Works With Your Stack",
+    description: "No rip-and-replace required",
     details:
-      "You build lasting capability. Your operators learn to sustain and expand AI independently. You own the knowledge, not just the system.",
+      "Think you're not 'tech-forward' enough? We build AI that integrates with existing systems, messy data, and real-world workflows. We meet you where you are.",
   },
 ];
 
@@ -55,10 +55,11 @@ export function ValuePillars() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Why <span className="gradient-text">Your Portfolio</span> Needs This
+            Why Choose <span className="gradient-text">Sprinter</span>?
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Your competitive edge comes from AI that ships fast and works immediately. Here's what you get.
+            We&apos;re not another consulting firm selling slides. We&apos;re practitioners who build and deploy
+            agentic AI systems—sprint by sprint, with working code in production.
           </p>
         </motion.div>
 

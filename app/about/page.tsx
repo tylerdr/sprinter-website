@@ -67,8 +67,16 @@ export default function AboutPage() {
             <p className="text-lg text-foreground/80 mb-4">
               Today, we work primarily with private equity firms and their portfolio companies. Our 2-3 sprint delivery model ensures you see ROI before committing to scale. We&apos;ve helped portfolio companies achieve 60-80% automation rates, generate millions in new revenue, and create competitive moats through AI-first operations.
             </p>
+
+            <h3 className="text-2xl font-bold text-foreground mt-8 mb-4">From Builder to Advisor</h3>
+            <p className="text-lg text-foreground/80 mb-4">
+              After deploying production AI systems for 100+ companies since 2018, we&apos;ve learned what works and what&apos;s hype. Today, I serve as fractional Chief AI Officer to 8 family offices managing $12B+ in permanent capital, advising on everything from portfolio AI strategy to technical diligence on $50M+ acquisitions.
+            </p>
+            <p className="text-lg text-foreground/80 mb-4">
+              The same practitioner mindset that makes us effective implementers makes us valuable advisors—we&apos;ve seen the vendors overpromise, the projects fail, and the rare wins that actually create durable competitive advantage. We know which AI capabilities are defensible and which are commodity. We know what governance frameworks actually work vs. what looks good on paper.
+            </p>
             <p className="text-lg text-foreground/80">
-              <strong className="text-foreground">Sprinter exists to empower agency—in people and in AI.</strong> Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage.
+              <strong className="text-foreground">Sprinter exists to empower agency—in people and in AI.</strong> Whether you need independent strategic counsel or hands-on implementation, we bring practitioner credibility without vendor bias. Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage—or advise you on the best path forward.
             </p>
             <div className="mt-8 pt-6 border-t border-border/30">
               <p className="text-base font-semibold text-foreground">
