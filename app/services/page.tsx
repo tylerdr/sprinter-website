@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { getPageMetadata } from "@/lib/seo";
 import { StructuredData } from "@/components/seo-structured-data";
 import { ServicesHero } from "@/components/services/hero";
 import { ServiceTiles } from "@/components/services/service-tiles";
 import { HowWeWork } from "@/components/services/how-we-work";
 import { ServicesCTA } from "@/components/services/cta";
+import { ServicesTestimonials } from "@/components/services/testimonials";
+import { ServicesMetrics } from "@/components/services/metrics";
 
 export const metadata: Metadata = {
   title: "AI Services for Private Equity | Sprinter AI",
@@ -49,11 +50,15 @@ export default function ServicesPage() {
           },
         ]}
       />
-      <div className="flex flex-col">
-        <ServicesHero />
-        <ServiceTiles />
-        <HowWeWork />
-        <ServicesCTA />
+      <div className="spr-theme spr-page">
+        <main className="overflow-x-hidden">
+          <ServicesHero />
+          <ServicesMetrics />
+          <ServiceTiles />
+          <ServicesTestimonials />
+          <HowWeWork />
+          <ServicesCTA />
+        </main>
       </div>
     </>
   );

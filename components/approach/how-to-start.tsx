@@ -1,14 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Presentation, Rocket, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 import Link from "next/link";
-import { BookDemoButton } from "@/components/shared/book-demo-button";
+import { CheckIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const options = [
   {
-    icon: Presentation,
     title: "90-Minute People-First AI Workshop",
     price: "$1,500",
     description: "Interactive session with your team to identify high-impact wedges and build buy-in",
@@ -20,10 +17,9 @@ const options = [
     ],
     note: "Applied as credit to any package within 30 days",
     cta: "Book Workshop",
-    href: "/contact",
+    href: "/contact?product=workshop",
   },
   {
-    icon: Rocket,
     title: "2-Week Wedge Sprint",
     price: "$20,000",
     description: "Pick one document type, deliver a working solution, prove the value",
@@ -35,109 +31,70 @@ const options = [
     ],
     note: "If we miss acceptance criteria, remedial sprint at our cost",
     cta: "Start Your Sprint",
-    href: "/contact",
+    href: "/contact?product=wedge-sprint",
   },
 ];
 
 export function HowToStart() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">How to Start</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Two proven paths to begin your people-first AI journey.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {options.map((option, index) => {
-              const Icon = option.icon;
-              return (
-                <motion.div
-                  key={option.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-card border rounded-lg p-8 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-blue-500" />
-                    </div>
-                    <span className="text-2xl font-bold gradient-text">{option.price}</span>
-                  </div>
-
-                  <h3 className="text-xl font-semibold mb-3">{option.title}</h3>
-                  <p className="text-muted-foreground mb-6">{option.description}</p>
-
-                  <div className="mb-6">
-                    <h4 className="font-medium mb-3">What You Get:</h4>
-                    <ul className="space-y-2">
-                      {option.deliverables.map((item) => (
-                        <li key={item} className="flex items-start gap-2">
-                          <ArrowRight className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {option.note && (
-                    <div className="mb-6 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                      <p className="text-sm text-blue-400">{option.note}</p>
-                    </div>
-                  )}
-
-                  <Button asChild className="w-full">
-                    <Link href={option.href}>{option.cta}</Link>
-                  </Button>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Additional CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="text-center"
-          >
-            <p className="text-muted-foreground mb-6">
-              Want to explore a longer partnership?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" size="lg">
-                <Link href="/pricing">View All Packages & Pricing</Link>
-              </Button>
-              <BookDemoButton text="Talk to an AI Strategist" size="lg" />
-            </div>
-          </motion.div>
-
-          {/* Trust Badge */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.7 }}
-            className="mt-12 text-center"
-          >
-            <div className="inline-flex flex-col items-center gap-2 px-6 py-4 rounded-lg bg-muted/20 border">
-              <p className="text-sm font-medium">Trusted by PE firms managing</p>
-              <p className="text-2xl font-bold gradient-text">$2.3B+ in portfolio value</p>
-            </div>
-          </motion.div>
-        </motion.div>
+    <AnimatedSection id="how-to-start" className="spr-container" delay={0.05}>
+      <div className="mb-8 flex justify-center">
+        <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(255,171,102,0.14)] px-4 py-2 text-sm text-[color:var(--spr-accent)]">
+          <span>Get Started</span>
+        </div>
       </div>
-    </section>
+      <h2 className="spr-heading-lg text-center mb-4">How to Start</h2>
+      <p className="spr-body-lg text-center max-w-3xl mx-auto mb-12">
+        Two proven paths to begin your people-first AI journey.
+      </p>
+
+      <div className="grid gap-8 md:grid-cols-2 mb-12">
+        {options.map((option) => (
+          <article key={option.title} className="spr-card p-8">
+            <div className="flex items-start justify-between mb-6">
+              <h3 className="text-xl font-semibold text-[color:var(--spr-text)] flex-1 mr-4">{option.title}</h3>
+              <span className="text-2xl font-bold text-[color:var(--spr-accent)]">{option.price}</span>
+            </div>
+
+            <p className="text-[color:var(--spr-text-muted)] mb-6">{option.description}</p>
+
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-[color:var(--spr-text)] mb-3 uppercase tracking-wider">What You Get:</h4>
+              <ul className="space-y-2">
+                {option.deliverables.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <CheckIcon className="h-4 w-4 flex-shrink-0 text-[color:var(--spr-primary)] mt-0.5" />
+                    <span className="text-sm text-[color:var(--spr-text-soft)]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {option.note && (
+              <div className="mb-6 rounded border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.1)] p-3">
+                <p className="text-sm text-[color:var(--spr-primary)]">{option.note}</p>
+              </div>
+            )}
+
+            <Link href={option.href} className="spr-button spr-button-primary w-full">
+              {option.cta}
+              <ArrowRightIcon className="h-4 w-4" />
+            </Link>
+          </article>
+        ))}
+      </div>
+
+      <div className="text-center">
+        <p className="text-[color:var(--spr-text-muted)] mb-6">Want to explore a longer partnership?</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/pe-services" className="spr-button spr-button-secondary">
+            View All Packages & Pricing
+          </Link>
+          <a href="https://cal.com/tyler-dreher" target="_blank" rel="noopener noreferrer" className="spr-button spr-button-secondary">
+            Talk to an AI Strategist
+          </a>
+        </div>
+      </div>
+    </AnimatedSection>
   );
 }

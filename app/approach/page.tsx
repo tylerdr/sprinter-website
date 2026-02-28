@@ -6,6 +6,7 @@ import { WorkInSprints } from "@/components/approach/work-in-sprints";
 import { AINative } from "@/components/approach/ai-native";
 import { InfiniteDigitalLabor } from "@/components/approach/infinite-labor";
 import { HowToStart } from "@/components/approach/how-to-start";
+import { ApproachCTA } from "@/components/approach/approach-cta";
 
 export const metadata: Metadata = {
   title: "People-First AI Operating Partner for Private Equity | Sprinter AI",
@@ -19,14 +20,17 @@ export const metadata: Metadata = {
 
 export default function ApproachPage() {
   return (
-    <div className="flex flex-col">
-      <PeopleFirstHero />
-      <FourPillars />
-      <ChangePlaybook />
-      <WorkInSprints />
-      <AINative />
-      <InfiniteDigitalLabor />
-      <HowToStart />
+    <div className="spr-theme spr-page">
+      <main className="overflow-x-hidden">
+        <PeopleFirstHero />
+        <FourPillars />
+        <ChangePlaybook />
+        <WorkInSprints />
+        <AINative />
+        <InfiniteDigitalLabor />
+        <HowToStart />
+        <ApproachCTA />
+      </main>
     </div>
   );
 }

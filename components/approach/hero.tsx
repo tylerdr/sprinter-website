@@ -1,86 +1,69 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Users, Heart, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { motion, useReducedMotion } from "framer-motion";
+import { SparklesIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { BookDemoButton } from "@/components/shared/book-demo-button";
+
+const keyPoints = [
+  {
+    title: "From \"AI done to me\" to \"AI done for me\"",
+    description: "Transform fear into excitement by showing how AI makes work enjoyable again.",
+  },
+  {
+    title: "Lunch breaks are back",
+    description: "Let computers do the paper, so people do the thinking. Work on what matters.",
+  },
+  {
+    title: "Start where it improves someone's day",
+    description: "Begin with one specific use case. Build trust. Then expand.",
+  },
+];
 
 export function PeopleFirstHero() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
-      <div className="max-w-6xl mx-auto">
+    <section className="spr-container relative overflow-hidden px-2 py-20 sm:py-24">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(106,167,255,0.2),_transparent_62%)] blur-2xl" />
+      </div>
+
+      <div className="mx-auto max-w-4xl text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm mb-8">
-            <Heart className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-medium text-blue-400">People-First Approach</span>
+          <div className="mb-8 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(255,171,102,0.14)] px-4 py-2 text-sm text-[color:var(--spr-accent)]">
+              <SparklesIcon className="h-4 w-4" />
+              <span>People-First Approach</span>
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-            Our People-First Approach to AI
-          </h1>
+          <h1 className="spr-heading-xl">Our People-First Approach to AI</h1>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Technology isn't the hard part—adoption is. We start small with a use case that improves everyday work.
+          <p className="spr-body-lg mt-6 max-w-3xl mx-auto">
+            Technology isn&apos;t the hard part — adoption is. We start small with a use case that improves everyday work.
             When employees feel the win, momentum takes care of the rest.
           </p>
 
-          {/* Key Points */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="bg-card/50 backdrop-blur-sm border rounded-lg p-6"
-            >
-              <Users className="w-8 h-8 text-blue-500 mb-3 mx-auto" />
-              <h3 className="font-semibold mb-2">From "AI done to me" to "AI done for me"</h3>
-              <p className="text-sm text-muted-foreground">
-                Transform fear into excitement by showing how AI makes work enjoyable again.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="bg-card/50 backdrop-blur-sm border rounded-lg p-6"
-            >
-              <Heart className="w-8 h-8 text-purple-500 mb-3 mx-auto" />
-              <h3 className="font-semibold mb-2">Lunch breaks are back</h3>
-              <p className="text-sm text-muted-foreground">
-                Let computers do the paper, so people do the thinking. Work on what matters.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              className="bg-card/50 backdrop-blur-sm border rounded-lg p-6"
-            >
-              <TrendingUp className="w-8 h-8 text-green-500 mb-3 mx-auto" />
-              <h3 className="font-semibold mb-2">Start where it improves someone's day</h3>
-              <p className="text-sm text-muted-foreground">
-                Begin with one specific use case. Build trust. Then expand.
-              </p>
-            </motion.div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {keyPoints.map((point) => (
+              <div key={point.title} className="spr-card p-6 text-center">
+                <h3 className="font-semibold text-[color:var(--spr-text)] mb-2">{point.title}</h3>
+                <p className="text-sm text-[color:var(--spr-text-muted)]">{point.description}</p>
+              </div>
+            ))}
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookDemoButton text="Book People-First Workshop" size="lg" />
-            <Button asChild variant="outline" size="lg">
-              <Link href="/approach/wedge">Find Your Wedge →</Link>
-            </Button>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="spr-button spr-button-primary">
+              Book People-First Workshop
+            </Link>
+            <Link href="#four-pillars" className="spr-button spr-button-secondary">
+              See Our Methodology ↓
+            </Link>
           </div>
         </motion.div>
       </div>

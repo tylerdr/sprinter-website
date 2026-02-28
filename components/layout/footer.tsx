@@ -38,7 +38,7 @@ const footerSections: Array<{
 
 export function Footer() {
   return (
-    <footer role="contentinfo" className="bg-background border-t border-border/30">
+    <footer role="contentinfo" className="border-t border-border/30" style={{ background: "linear-gradient(180deg, #050914 0%, #03060f 100%)", color: "#f4f8ff" }}>
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8">
           {/* Company Info */}
