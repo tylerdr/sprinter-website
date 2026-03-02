@@ -4,7 +4,12 @@ import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 export default function Founder() {
   return (
-    <AnimatedSection id="founder" className="spr-container spr-section-divider" delay={0.05}>
+    <AnimatedSection id="founder" className="spr-container" delay={0.05}>
+      <div className="mb-8 flex justify-center">
+        <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.14)] px-4 py-2 text-sm text-[color:var(--spr-primary)]">
+          <span>Who We Are</span>
+        </div>
+      </div>
       <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="spr-card overflow-hidden p-6">
           <div className="relative flex h-72 items-end rounded-[1rem] border [border-color:var(--spr-border)] bg-[color:rgba(8,14,28,0.86)] p-5">

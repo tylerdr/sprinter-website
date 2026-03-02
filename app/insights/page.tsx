@@ -71,7 +71,7 @@ export default function InsightsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="spr-theme spr-page min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden px-6 py-20 sm:py-32 lg:px-8">
         <div className="absolute inset-0 -z-10">

@@ -74,7 +74,7 @@ const products = [
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="spr-theme spr-page min-h-screen">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand/5 to-transparent" />

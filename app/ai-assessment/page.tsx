@@ -70,7 +70,7 @@ export default function AIAssessmentPage() {
   const headlines = THEME_HEADLINES[funnel.theme]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="spr-theme spr-page min-h-screen">
       {/* Hero Section - Simplified */}
       <section className="relative overflow-hidden px-6 py-16 sm:py-24 lg:px-8">
         <div className="absolute inset-0 -z-10">

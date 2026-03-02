@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AIScopingWorkshopPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <HeroSection
         badge="Private Equity & Portfolio Companies"
         headline="AI Scoping Workshop"
@@ -198,6 +198,6 @@ export default function AIScopingWorkshopPage() {
         secondaryCTA="Download Governance Pack"
         secondaryCTAHref="/downloads/governance-pack"
       />
-    </>
+    </div>
   );
 }

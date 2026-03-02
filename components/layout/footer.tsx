@@ -10,19 +10,9 @@ const footerSections: Array<{
   ariaLabel: string;
 }> = [
   {
-    title: "Advisory",
-    links: NAVIGATION.footer.advisory,
-    ariaLabel: "Advisory Services",
-  },
-  {
-    title: "Implementation",
-    links: NAVIGATION.footer.implementation,
-    ariaLabel: "Implementation Services",
-  },
-  {
-    title: "Due Diligence",
-    links: NAVIGATION.footer.diligence,
-    ariaLabel: "Due Diligence Services",
+    title: "Services",
+    links: NAVIGATION.footer.services,
+    ariaLabel: "Services",
   },
   {
     title: "Resources",
@@ -134,7 +124,7 @@ export function Footer() {
             © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built in the USA. Designed for operating partners and PE-backed teams.
+            Built in the USA. AI agents for mid-market operations.
           </p>
         </div>
       </div>

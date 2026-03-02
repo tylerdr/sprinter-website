@@ -64,7 +64,7 @@ const resources = [
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+    <div className="spr-theme spr-page min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">

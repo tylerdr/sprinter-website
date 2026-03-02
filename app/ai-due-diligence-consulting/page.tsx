@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AIDueDiligenceConsultingPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <HeroSection
         badge="M&A Due Diligence"
         headline="AI & Data Due Diligence for Private Equity"
@@ -232,6 +232,6 @@ export default function AIDueDiligenceConsultingPage() {
         secondaryCTA="View Sample Report"
         secondaryCTAHref="/downloads/sample-diligence-report"
       />
-    </>
+    </div>
   );
 }

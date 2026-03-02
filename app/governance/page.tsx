@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 export default function GovernancePage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <GovernanceHero />
       <SecurityFeatures />
       <ComplianceSection />
       <AuditTrail />
       <GovernanceDownload />
-    </>
+    </div>
   );
 }

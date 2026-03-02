@@ -12,7 +12,7 @@ export const metadata: Metadata = getPageMetadata("peServices");
 
 export default function PEServicesPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <PEServicesHero />
       <ValueCreationPlaybook />
       <PortfolioAccelerators />
@@ -20,6 +20,6 @@ export default function PEServicesPage() {
       <EngagementModels />
       <CaseStudiesSection />
       <CTASection />
-    </>
+    </div>
   );
 }

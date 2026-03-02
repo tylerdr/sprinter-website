@@ -289,36 +289,20 @@ export const NAVIGATION = {
     }
   ],
   footer: {
-    advisory: [
-      { href: "/fractional-caio", label: "Fractional CAIO" },
-      { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
-      { href: "/ai-advisor-retainer", label: "AI Advisor" },
-      { href: "/family-office", label: "Family Office Services" },
-      { href: "/governance/family-office", label: "Governance Resources" },
-    ],
-    implementation: [
-      { href: "/ai-scoping-workshop", label: "Scoping Workshop" },
+    services: [
+      { href: "/ai-sprint", label: "AI Readiness Sprint" },
       { href: "/operating-partner", label: "AI Operating Partner" },
-      { href: "/ai-implementation-partner", label: "Implementation Partner" },
-      { href: "/pe-services", label: "All Services" },
-    ],
-    diligence: [
-      { href: "/ai-due-diligence-consulting", label: "M&A Diligence" },
-      { href: "/portfolio-diligence", label: "Portfolio Audits" },
-      { href: "/strategic-buyer-diligence", label: "Strategic Buyer" },
+      { href: "/ai-assessment", label: "Free AI Assessment" },
+      { href: "/fractional-caio", label: "Fractional AI" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },
       { href: "/labs", label: "AI Labs" },
-      { href: "/tools", label: "Tools & Calculators" },
-      { href: "/downloads/no-api-cookbook", label: "No-API Cookbook" },
       { href: "/blog", label: "Insights" },
     ],
     company: [
       { href: "/about", label: "About" },
-      { href: "/partnership", label: "Partnership" },
       { href: "/contact", label: "Contact" },
-      { href: "/governance", label: "Governance" },
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
     ],

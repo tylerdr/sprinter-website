@@ -24,11 +24,19 @@ export default function ApproachPage() {
       <main className="overflow-x-hidden">
         <PeopleFirstHero />
         <FourPillars />
-        <ChangePlaybook />
-        <WorkInSprints />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(106,167,255,0.08),_transparent_70%)]" />
+          <ChangePlaybook />
+          <WorkInSprints />
+        </div>
         <AINative />
-        <InfiniteDigitalLabor />
-        <HowToStart />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(255,171,102,0.06),_transparent_70%)]" />
+          <InfiniteDigitalLabor />
+          <HowToStart />
+        </div>
         <ApproachCTA />
       </main>
     </div>

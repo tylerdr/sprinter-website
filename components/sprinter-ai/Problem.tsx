@@ -11,9 +11,17 @@ const items = [
 export default function Problem() {
   return (
     <AnimatedSection id="problem" className="spr-container" delay={0.05}>
-      <h2 className="spr-heading-lg max-w-4xl">
+      <div className="mb-8 flex justify-center">
+        <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(255,171,102,0.14)] px-4 py-2 text-sm text-[color:var(--spr-accent)]">
+          <span>The Problem</span>
+        </div>
+      </div>
+      <h2 className="spr-heading-lg text-center max-w-4xl mx-auto">
         The gap between what&apos;s possible and what you&apos;re doing is growing every day.
       </h2>
+      <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
+        Most mid-market operators know AI matters. Few are capturing the value. Here&apos;s why that&apos;s costing you.
+      </p>
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {items.map((text, index) => (
@@ -24,7 +32,7 @@ export default function Problem() {
         ))}
       </div>
 
-      <p className="mt-10 text-lg text-[color:var(--spr-text-soft)]">
+      <p className="mt-10 text-lg text-center text-[color:var(--spr-text-soft)]">
         This isn&apos;t about replacing people. It&apos;s about giving your best people superpowers.
       </p>
     </AnimatedSection>

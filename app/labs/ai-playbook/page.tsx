@@ -107,7 +107,7 @@ export default function AIPlaybookBuilder() {
 
   return (
     <AuthGate feature="AI Playbook Builder" requireAuth={true}>
-      <div className="min-h-screen py-24 relative">
+      <div className="spr-theme spr-page min-h-screen py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-purple-500/5" />
         
         <div className="container mx-auto px-4 max-w-7xl relative">

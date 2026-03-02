@@ -12,8 +12,13 @@ const bullets = [
 export default function Solution() {
   return (
     <AnimatedSection id="solution" className="spr-container spr-section-divider" delay={0.05}>
-      <h2 className="spr-heading-lg">We don&apos;t sell software. We deploy intelligence.</h2>
-      <p className="spr-body-lg mt-6">Custom AI agents that live inside your business:</p>
+      <div className="mb-8 flex justify-center">
+        <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.14)] px-4 py-2 text-sm text-[color:var(--spr-primary)]">
+          <span>The Solution</span>
+        </div>
+      </div>
+      <h2 className="spr-heading-lg text-center">We don&apos;t sell software. We deploy intelligence.</h2>
+      <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">Custom AI agents that live inside your business:</p>
       <ul className="mt-8 grid gap-4 md:grid-cols-2">
         {bullets.map((bullet) => (
           <li key={bullet} className="spr-card p-5 text-[color:var(--spr-text-soft)]">
@@ -24,7 +29,7 @@ export default function Solution() {
           </li>
         ))}
       </ul>
-      <p className="mt-8 text-xl font-medium text-[color:var(--spr-text)]">Grounded. Practical. Running while you sleep.</p>
+      <p className="mt-8 text-xl font-medium text-center text-[color:var(--spr-text)]">Grounded. Practical. Running while you sleep.</p>
     </AnimatedSection>
   );
 }

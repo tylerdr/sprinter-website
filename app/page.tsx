@@ -21,11 +21,19 @@ export default function Home() {
         <Problem />
         <Solution />
         <ServicesOverview />
-        <HowItWorks />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(106,167,255,0.08),_transparent_70%)]" />
+          <HowItWorks />
+        </div>
         <Results />
         <CaseStudyHighlights />
-        <Industries />
-        <Testimonials />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(255,171,102,0.06),_transparent_70%)]" />
+          <Industries />
+          <Testimonials />
+        </div>
         <Founder />
         <ProcessSection />
         <FinalCTA />

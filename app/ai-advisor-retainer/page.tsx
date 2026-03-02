@@ -117,7 +117,7 @@ const comparisonTable = [
 
 export default function AIAdvisorRetainerPage() {
   return (
-    <div className="min-h-screen py-24">
+    <div className="spr-theme spr-page min-h-screen py-24">
       {/* Hero Section */}
       <section className="container mx-auto px-4 max-w-6xl mb-20">
         <div className="text-center space-y-6">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/95">
+    <div className="spr-theme spr-page min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6">

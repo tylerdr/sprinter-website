@@ -3,19 +3,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Sparkles, Lightbulb, Wand2, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { LoadingSpinner } from "@/components/ui/loading-states";
 
 interface FormData {
   name: string;
@@ -28,6 +15,14 @@ interface FormData {
   message: string;
   projectType: string;
 }
+
+const inputClass =
+  "w-full rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:var(--spr-surface)] px-4 py-2.5 text-sm text-[color:var(--spr-text)] placeholder:text-[color:var(--spr-text-muted)] outline-none transition-colors focus:border-[color:var(--spr-primary)] focus:ring-1 focus:ring-[color:var(--spr-primary)]";
+
+const selectClass =
+  "w-full appearance-none rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:var(--spr-surface)] px-4 py-2.5 text-sm text-[color:var(--spr-text)] outline-none transition-colors focus:border-[color:var(--spr-primary)] focus:ring-1 focus:ring-[color:var(--spr-primary)]";
+
+const labelClass = "text-sm font-medium text-[color:var(--spr-text)]";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -71,7 +66,6 @@ export default function ContactForm() {
     }
   };
 
-  // Calculate form completion score
   const calculateCompletionScore = useMemo(() => {
     const requiredFields = ['name', 'email', 'message', 'projectType'];
     const optionalFields = ['company', 'role', 'fundSize', 'portfolioCount', 'timeline'];
@@ -83,8 +77,8 @@ export default function ContactForm() {
       formData[field as keyof FormData].trim() !== ''
     ).length;
 
-    const requiredScore = (requiredFilled / requiredFields.length) * 60; // 60% for required
-    const optionalScore = (optionalFilled / optionalFields.length) * 40; // 40% for optional
+    const requiredScore = (requiredFilled / requiredFields.length) * 60;
+    const optionalScore = (optionalFilled / optionalFields.length) * 40;
 
     return Math.round(requiredScore + optionalScore);
   }, [formData]);
@@ -93,7 +87,6 @@ export default function ContactForm() {
     setCompletionScore(calculateCompletionScore);
   }, [calculateCompletionScore]);
 
-  // AI-powered form validation
   const validateField = (name: string, value: string) => {
     const errors: Partial<FormData> = {};
 
@@ -114,14 +107,12 @@ export default function ContactForm() {
     setValidationErrors(prev => ({ ...prev, [name]: errors[name as keyof FormData] }));
   };
 
-  // Generate AI suggestions based on selected project type
   const generateAISuggestions = async (projectType: string) => {
     if (!projectType || projectType === 'other') return;
 
     setIsGeneratingSuggestions(true);
 
     try {
-      // Simulate AI suggestion generation with predefined suggestions
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       const suggestionMap: Record<string, string[]> = {
@@ -181,10 +172,8 @@ export default function ContactForm() {
       [name]: value,
     }));
 
-    // Validate field on change
     validateField(name, value);
 
-    // Generate suggestions when project type changes
     if (name === 'projectType' && value) {
       generateAISuggestions(value);
     }
@@ -204,20 +193,19 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="p-8 rounded-2xl text-center border border-success-30 bg-success-10"
+        className="spr-card spr-card-accent p-8 text-center"
         role="status"
         aria-live="polite"
       >
-        <div className="w-16 h-16 bg-success-10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Sparkles className="w-8 h-8 text-success" aria-hidden="true" />
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[color:rgba(106,167,255,0.18)]">
+          <Sparkles className="h-8 w-8 text-[color:var(--spr-primary)]" aria-hidden="true" />
         </div>
-        <h2 className="text-2xl font-bold mb-2">Message Received!</h2>
-        <p className="text-muted-foreground mb-4">
+        <h2 className="text-2xl font-bold text-[color:var(--spr-text)] mb-2">Message Received!</h2>
+        <p className="text-[color:var(--spr-text-muted)] mb-4">
           Thanks for reaching out. We&apos;ll get back to you within 24 hours to
           discuss your AI project.
         </p>
-        <Button
-          variant="link"
+        <button
           onClick={() => {
             setSubmitted(false);
             setFormData({
@@ -232,10 +220,10 @@ export default function ContactForm() {
               projectType: "",
             });
           }}
-          className="text-info hover:text-foreground"
+          className="text-[color:var(--spr-primary)] underline-offset-4 hover:underline text-sm font-medium"
         >
           Send another message
-        </Button>
+        </button>
       </motion.div>
     );
   }
@@ -243,30 +231,31 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm"
+      className="spr-card p-8"
       noValidate
       aria-label="Contact form"
     >
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold">Start Your AI Journey</h2>
+        <h2 className="text-2xl font-bold text-[color:var(--spr-text)]">Start Your AI Journey</h2>
         <div className="flex items-center gap-2">
-          <div className="text-sm text-muted-foreground">Progress</div>
-          <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
+          <div className="text-sm text-[color:var(--spr-text-muted)]">Progress</div>
+          <div className="w-20 h-2 rounded-full overflow-hidden bg-[color:var(--spr-surface-strong)]">
             <motion.div
-              className="h-full bg-brand-gradient"
+              className="h-full rounded-full"
+              style={{ background: "linear-gradient(90deg, var(--spr-primary), var(--spr-accent))" }}
               initial={{ width: 0 }}
               animate={{ width: `${completionScore}%` }}
               transition={{ duration: 0.3 }}
             />
           </div>
-          <div className="text-sm font-medium text-brand">{completionScore}%</div>
+          <div className="text-sm font-medium text-[color:var(--spr-primary)]">{completionScore}%</div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
-          <Label htmlFor="name">Name *</Label>
-          <Input
+          <label htmlFor="name" className={labelClass}>Name *</label>
+          <input
             type="text"
             id="name"
             name="name"
@@ -275,16 +264,14 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="name-required"
-            className="bg-background/50"
+            className={inputClass}
           />
-          <span id="name-required" className="sr-only">
-            Required field
-          </span>
+          <span id="name-required" className="sr-only">Required field</span>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email *</Label>
-          <Input
+          <label htmlFor="email" className={labelClass}>Email *</label>
+          <input
             type="email"
             id="email"
             name="email"
@@ -293,160 +280,133 @@ export default function ContactForm() {
             required
             aria-required="true"
             aria-describedby="email-required"
-            className={`bg-background/50 ${
-              validationErrors.email ? 'border-destructive' : ''
-            }`}
+            className={`${inputClass} ${validationErrors.email ? 'border-red-500' : ''}`}
           />
           {validationErrors.email && (
-            <p className="text-sm text-destructive">{validationErrors.email}</p>
+            <p className="text-sm text-red-400">{validationErrors.email}</p>
           )}
-          <span id="email-required" className="sr-only">
-            Required field
-          </span>
+          <span id="email-required" className="sr-only">Required field</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
-          <Label htmlFor="company">Company / Fund</Label>
-          <Input
+          <label htmlFor="company" className={labelClass}>Company / Fund</label>
+          <input
             type="text"
             id="company"
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="bg-background/50"
+            className={inputClass}
             placeholder="Vista Equity Partners"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="role">Your Role</Label>
-          <Select
+          <label htmlFor="role" className={labelClass}>Your Role</label>
+          <select
+            id="role"
             name="role"
             value={formData.role}
-            onValueChange={(value) => 
-              setFormData((prev) => ({ ...prev, role: value }))
-            }
+            onChange={handleChange}
+            className={selectClass}
           >
-            <SelectTrigger id="role" className="bg-background/50">
-              <SelectValue placeholder="Select role" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="partner">Partner / Managing Director</SelectItem>
-              <SelectItem value="principal">Principal / VP</SelectItem>
-              <SelectItem value="associate">Associate / Analyst</SelectItem>
-              <SelectItem value="operating">Operating Partner</SelectItem>
-              <SelectItem value="portfolio">Portfolio Company Exec</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
-            </SelectContent>
-          </Select>
+            <option value="">Select role</option>
+            <option value="partner">Partner / Managing Director</option>
+            <option value="principal">Principal / VP</option>
+            <option value="associate">Associate / Analyst</option>
+            <option value="operating">Operating Partner</option>
+            <option value="portfolio">Portfolio Company Exec</option>
+            <option value="other">Other</option>
+          </select>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
-          <Label htmlFor="fundSize">Fund Size (AUM)</Label>
-          <Select
+          <label htmlFor="fundSize" className={labelClass}>Fund Size (AUM)</label>
+          <select
+            id="fundSize"
             name="fundSize"
             value={formData.fundSize}
-            onValueChange={(value) => 
-              setFormData((prev) => ({ ...prev, fundSize: value }))
-            }
+            onChange={handleChange}
+            className={selectClass}
           >
-            <SelectTrigger id="fundSize" className="bg-background/50">
-              <SelectValue placeholder="Select range" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="&lt;500M">&lt; $500M</SelectItem>
-              <SelectItem value="500M-1B">$500M - $1B</SelectItem>
-              <SelectItem value="1B-5B">$1B - $5B</SelectItem>
-              <SelectItem value="5B-10B">$5B - $10B</SelectItem>
-              <SelectItem value="10B+">$10B+</SelectItem>
-              <SelectItem value="not-pe">Not a PE firm</SelectItem>
-            </SelectContent>
-          </Select>
+            <option value="">Select range</option>
+            <option value="<500M">&lt; $500M</option>
+            <option value="500M-1B">$500M - $1B</option>
+            <option value="1B-5B">$1B - $5B</option>
+            <option value="5B-10B">$5B - $10B</option>
+            <option value="10B+">$10B+</option>
+            <option value="not-pe">Not a PE firm</option>
+          </select>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="portfolioCount">Portfolio Companies</Label>
-          <Select
+          <label htmlFor="portfolioCount" className={labelClass}>Portfolio Companies</label>
+          <select
+            id="portfolioCount"
             name="portfolioCount"
             value={formData.portfolioCount}
-            onValueChange={(value) => 
-              setFormData((prev) => ({ ...prev, portfolioCount: value }))
-            }
+            onChange={handleChange}
+            className={selectClass}
           >
-            <SelectTrigger id="portfolioCount" className="bg-background/50">
-              <SelectValue placeholder="Select range" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="1-5">1-5 companies</SelectItem>
-              <SelectItem value="6-15">6-15 companies</SelectItem>
-              <SelectItem value="16-30">16-30 companies</SelectItem>
-              <SelectItem value="30+">30+ companies</SelectItem>
-              <SelectItem value="n/a">Not applicable</SelectItem>
-            </SelectContent>
-          </Select>
+            <option value="">Select range</option>
+            <option value="1-5">1-5 companies</option>
+            <option value="6-15">6-15 companies</option>
+            <option value="16-30">16-30 companies</option>
+            <option value="30+">30+ companies</option>
+            <option value="n/a">Not applicable</option>
+          </select>
         </div>
       </div>
 
       <div className="mb-6 space-y-2">
-        <Label htmlFor="projectType">What can we help you with? *</Label>
-        <Select
+        <label htmlFor="projectType" className={labelClass}>What can we help you with? *</label>
+        <select
+          id="projectType"
           name="projectType"
           value={formData.projectType}
-          onValueChange={(value) => 
-            setFormData((prev) => ({ ...prev, projectType: value }))
-          }
+          onChange={handleChange}
           required
           aria-required="true"
           aria-describedby="projectType-required"
+          className={selectClass}
         >
-          <SelectTrigger id="projectType" className="bg-background/50">
-            <SelectValue placeholder="Select an option" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="portfolio-ai">Portfolio AI Transformation</SelectItem>
-            <SelectItem value="deal-sourcing">Deal Sourcing Automation</SelectItem>
-            <SelectItem value="due-diligence">Due Diligence Acceleration</SelectItem>
-            <SelectItem value="value-creation">Portfolio Value Creation</SelectItem>
-            <SelectItem value="operating-partner">Operating Partnership</SelectItem>
-            <SelectItem value="lp-reporting">LP Reporting Automation</SelectItem>
-            <SelectItem value="discovery">AI Discovery Workshop</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
-          </SelectContent>
-        </Select>
-        <span id="projectType-required" className="sr-only">
-          Required field
-        </span>
+          <option value="">Select an option</option>
+          <option value="portfolio-ai">Portfolio AI Transformation</option>
+          <option value="deal-sourcing">Deal Sourcing Automation</option>
+          <option value="due-diligence">Due Diligence Acceleration</option>
+          <option value="value-creation">Portfolio Value Creation</option>
+          <option value="operating-partner">Operating Partnership</option>
+          <option value="lp-reporting">LP Reporting Automation</option>
+          <option value="discovery">AI Discovery Workshop</option>
+          <option value="other">Other</option>
+        </select>
+        <span id="projectType-required" className="sr-only">Required field</span>
       </div>
 
       <div className="mb-6 space-y-2">
-        <Label htmlFor="timeline">Timeline</Label>
-        <Select
+        <label htmlFor="timeline" className={labelClass}>Timeline</label>
+        <select
+          id="timeline"
           name="timeline"
           value={formData.timeline}
-          onValueChange={(value) => 
-            setFormData((prev) => ({ ...prev, timeline: value }))
-          }
+          onChange={handleChange}
+          className={selectClass}
         >
-          <SelectTrigger id="timeline" className="bg-background/50">
-            <SelectValue placeholder="When do you need this?" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="immediate">Immediate (This quarter)</SelectItem>
-            <SelectItem value="q1-2025">Q1 2025</SelectItem>
-            <SelectItem value="q2-2025">Q2 2025</SelectItem>
-            <SelectItem value="h2-2025">H2 2025</SelectItem>
-            <SelectItem value="exploring">Just exploring</SelectItem>
-          </SelectContent>
-        </Select>
+          <option value="">When do you need this?</option>
+          <option value="immediate">Immediate (This quarter)</option>
+          <option value="next-quarter">Next Quarter</option>
+          <option value="h2">Second Half of Year</option>
+          <option value="exploring">Just exploring</option>
+        </select>
       </div>
 
       <div className="mb-6 space-y-2">
-        <Label htmlFor="message">Tell us about your project *</Label>
-        <Textarea
+        <label htmlFor="message" className={labelClass}>Tell us about your project *</label>
+        <textarea
           id="message"
           name="message"
           value={formData.message}
@@ -455,17 +415,13 @@ export default function ContactForm() {
           aria-required="true"
           aria-describedby="message-required"
           rows={5}
-          className={`bg-background/50 resize-none ${
-            validationErrors.message ? 'border-destructive' : ''
-          }`}
+          className={`${inputClass} resize-none ${validationErrors.message ? 'border-red-500' : ''}`}
           placeholder="Describe your vision, challenges, or ideas..."
         />
         {validationErrors.message && (
-          <p className="text-sm text-destructive">{validationErrors.message}</p>
+          <p className="text-sm text-red-400">{validationErrors.message}</p>
         )}
-        <span id="message-required" className="sr-only">
-          Required field
-        </span>
+        <span id="message-required" className="sr-only">Required field</span>
       </div>
 
       {/* AI Suggestions */}
@@ -475,19 +431,21 @@ export default function ContactForm() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="mb-6 p-4 rounded-lg bg-info/5 border border-info/20"
+            className="mb-6 rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.08)] p-4"
           >
             <div className="flex items-center gap-2 mb-3">
-              <Wand2 className="w-4 h-4 text-info" />
-              <h3 className="text-sm font-medium text-info">AI Suggestions</h3>
-              {isGeneratingSuggestions && <LoadingSpinner size="sm" />}
+              <Wand2 className="w-4 h-4 text-[color:var(--spr-primary)]" />
+              <h3 className="text-sm font-medium text-[color:var(--spr-primary)]">AI Suggestions</h3>
+              {isGeneratingSuggestions && (
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-[color:var(--spr-primary)] border-t-transparent" />
+              )}
             </div>
 
             {isGeneratingSuggestions ? (
-              <p className="text-sm text-muted-foreground">Generating personalized suggestions...</p>
+              <p className="text-sm text-[color:var(--spr-text-muted)]">Generating personalized suggestions...</p>
             ) : (
               <div className="space-y-2">
-                <p className="text-sm text-muted-foreground mb-3">
+                <p className="text-sm text-[color:var(--spr-text-muted)] mb-3">
                   Based on your project type, here are some ideas you might want to include:
                 </p>
                 {aiSuggestions.map((suggestion, index) => (
@@ -498,17 +456,15 @@ export default function ContactForm() {
                     transition={{ delay: index * 0.1 }}
                     type="button"
                     onClick={() => applySuggestion(suggestion)}
-                    className="flex items-start gap-2 p-3 rounded-lg bg-background/50 hover:bg-background/70 transition-colors text-left w-full group"
+                    className="flex items-start gap-2 p-3 rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:var(--spr-surface)] hover:border-[color:var(--spr-primary)] transition-colors text-left w-full group"
                   >
-                    <Lightbulb className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
+                    <Lightbulb className="w-4 h-4 text-[color:var(--spr-accent)] mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
-                      <p className="text-sm group-hover:text-foreground transition-colors">
+                      <p className="text-sm text-[color:var(--spr-text-soft)] group-hover:text-[color:var(--spr-text)] transition-colors">
                         {suggestion}
                       </p>
                     </div>
-                    <Badge variant="outline" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      Add
-                    </Badge>
+                    <span className="spr-chip opacity-0 group-hover:opacity-100 transition-opacity">Add</span>
                   </motion.button>
                 ))}
               </div>
@@ -517,17 +473,15 @@ export default function ContactForm() {
         )}
       </AnimatePresence>
 
-      <Button
+      <button
         type="submit"
         disabled={isSubmitting}
-        variant="gradient"
-        size="lg"
-        className="w-full md:w-auto"
+        className="spr-button spr-button-primary w-full md:w-auto disabled:opacity-50"
       >
         {isSubmitting ? (
           <>
             <div
-              className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin mr-2"
+              className="h-5 w-5 animate-spin rounded-full border-2 border-[#071122]/30 border-t-[#071122]"
               aria-hidden="true"
             />
             <span>Sending...</span>
@@ -535,11 +489,11 @@ export default function ContactForm() {
           </>
         ) : (
           <>
-            <Send className="w-5 h-5 mr-2" aria-hidden="true" />
+            <Send className="w-5 h-5" aria-hidden="true" />
             Send Message
           </>
         )}
-      </Button>
+      </button>
     </form>
   );
 }

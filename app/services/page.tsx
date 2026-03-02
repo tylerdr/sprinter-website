@@ -55,8 +55,12 @@ export default function ServicesPage() {
           <ServicesHero />
           <ServicesMetrics />
           <ServiceTiles />
-          <ServicesTestimonials />
-          <HowWeWork />
+          {/* Gradient band for visual variety */}
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(106,167,255,0.08),_transparent_70%)]" />
+            <ServicesTestimonials />
+            <HowWeWork />
+          </div>
           <ServicesCTA />
         </main>
       </div>

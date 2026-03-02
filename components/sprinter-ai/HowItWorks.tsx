@@ -31,8 +31,16 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <AnimatedSection id="how-it-works" className="spr-container" delay={0.05}>
-      <h2 className="spr-heading-lg">How It Works</h2>
+    <AnimatedSection id="how-it-works" className="spr-container spr-section-divider" delay={0.05}>
+      <div className="mb-8 flex justify-center">
+        <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.14)] px-4 py-2 text-sm text-[color:var(--spr-primary)]">
+          <span>Our Process</span>
+        </div>
+      </div>
+      <h2 className="spr-heading-lg text-center">How It Works</h2>
+      <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
+        Three phases to transform your operations. Start small, prove value, then scale.
+      </p>
       <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {steps.map((step) => (
           <article key={step.title} className="spr-card p-6">

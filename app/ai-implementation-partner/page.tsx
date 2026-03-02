@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AIImplementationPartnerPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <HeroSection
         badge="GenAI Implementation Partner"
         headline="Your AI Implementation Partner for Private Equity"
@@ -222,6 +222,6 @@ export default function AIImplementationPartnerPage() {
         secondaryCTA="Download No-API Cookbook"
         secondaryCTAHref="/downloads/no-api-cookbook"
       />
-    </>
+    </div>
   );
 }
