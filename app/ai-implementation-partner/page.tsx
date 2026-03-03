@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/seo-pages/faq-section";
 import { CTASection } from "@/components/seo-pages/cta-section";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "GenAI Implementation Partner for Private Equity | Sprinter",
   description: "Boutique AI consulting firm specializing in private equity portfolio companies. Fixed-fee implementations, vendor neutral recommendations, 100+ successful deployments.",
   keywords: "ai implementation partner, genai implementation partner, ai consulting partner private equity, boutique ai consulting firm, ai systems integrator, portfolio operations ai consulting",

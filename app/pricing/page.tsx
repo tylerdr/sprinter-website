@@ -12,6 +12,7 @@ import {
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Pricing | Sprinter AI - Sprint-Based AI Implementation",
   description: "Clear pricing for agentic AI implementations. Sprint-based delivery, from workshops to full implementations. See our engagement models and find the right fit.",
 }

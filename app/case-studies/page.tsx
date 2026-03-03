@@ -24,12 +24,16 @@ const iconByCategory: Record<
   React.ComponentType<React.SVGProps<SVGSVGElement>>
 > = {
   "FinTech AI Platform": DollarSign,
+  "FinTech": DollarSign,
   "B2B SaaS": Zap,
+  "B2B SaaS / Manufacturing": Zap,
   "Healthcare Tech": Users,
+  "Healthcare": Heart,
   "Enterprise Software": Brain,
   "Content Automation": Bot,
   "Financial Services": Building2,
   "Healthcare Technology": Heart,
+  "Manufacturing / Wine & Spirits": Building2,
 };
 
 const caseStudies = caseStudyData.map((c) => ({
@@ -65,9 +69,9 @@ export default function CaseStudiesPage() {
             Case <span className="gradient-text">Studies</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
-            Real AI systems in production. See how we&apos;ve built
-            multi-agent workflows, document intelligence, and process
-            automation for real businesses.
+            Real AI systems in production across manufacturing, fintech,
+            healthcare, and more. See how we deploy AI agent systems that
+            empower teams and automate operations.
           </p>
         </div>
 
@@ -205,8 +209,9 @@ export default function CaseStudiesPage() {
             Ready to ship <span className="gradient-text">AI to production</span>?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            Let&apos;s talk about what a sprint could look like for your team.
-            Multi-agent systems, document intelligence, workflow automation.
+            Let&apos;s talk about what AI agents can do for your business.
+            Start with a $2,500 AI Readiness Sprint — we&apos;ll map your
+            operations and show you exactly where AI creates value.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link

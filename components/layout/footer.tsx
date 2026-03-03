@@ -124,7 +124,7 @@ export function Footer() {
             © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built in the USA. AI agents for mid-market operations.
+            Built in the USA. AI agents for businesses that do real work.
           </p>
         </div>
       </div>
