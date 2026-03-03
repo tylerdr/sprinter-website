@@ -110,7 +110,7 @@ export default function PortfolioDiligencePage() {
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
-            <Link href="/downloads/sample-audit-report">
+            <Link href="/contact">
               <Button size="lg" variant="outline" className="gap-2">
                 <FileSearch className="w-5 h-5" />
                 Download Sample Report
@@ -420,7 +420,7 @@ export default function PortfolioDiligencePage() {
                   Schedule First Audit
                 </Button>
               </Link>
-              <Link href="/downloads/sample-audit-report">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="gap-2">
                   <FileSearch className="w-5 h-5" />
                   Download Sample Report

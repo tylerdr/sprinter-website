@@ -69,7 +69,7 @@ const timelineEvents: TimelineEvent[] = [
     description: "Built and shipped production systems and products across finance, healthcare, manufacturing and logistics—turning unstructured data and messy workflows into decisions and outcomes.",
     icon: Trophy,
     highlight: true,
-    metrics: "50+ live systems"
+    metrics: "Production systems across multiple industries"
   }
 ];
 

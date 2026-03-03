@@ -114,6 +114,7 @@ export function Footer() {
               title="AI Insights Newsletter"
               description="Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox."
               placeholder="your@company.com"
+              showLeadMagnet={false}
             />
           </div>
         </div>

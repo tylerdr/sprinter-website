@@ -18,18 +18,18 @@ interface NewsletterSignupProps {
 }
 
 const LEAD_MAGNET = {
-  title: "Free: PE Portfolio AI Readiness Scorecard",
-  description: "Score your portfolio's AI maturity in 5 minutes. Used by 50+ PE firms.",
-  buttonText: "Get Your Free Scorecard",
-  fileName: "PE-Portfolio-AI-Readiness-Scorecard.pdf"
+  title: "Free: AI Operations Opportunity Scorecard",
+  description: "Benchmark your workflows and spot the best AI agent opportunities in 5 minutes.",
+  buttonText: "Get the Scorecard",
+  fileName: "AI-Operations-Opportunity-Scorecard.pdf"
 }
 
 export function NewsletterSignup({
   className = "",
   variant = "default",
   placeholder = "Enter your work email",
-  title = "PE AI Weekly Newsletter",
-  description = "Join 1,200+ PE professionals getting actionable AI insights every Thursday",
+  title = "AI Ops Weekly Newsletter",
+  description = "Join operators getting practical AI implementation insights every Thursday",
   showLeadMagnet = true
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
@@ -57,7 +57,7 @@ export function NewsletterSignup({
       if (existingSubscriptions.includes(email.toLowerCase())) {
         setStatus("success");
         setIsSignedUp(true);
-        toast.success("You're already subscribed! Check your email for the AI Readiness Scorecard.");
+        toast.success("You're already subscribed! Check your email for the AI Operations Opportunity Scorecard.");
         return;
       }
 
@@ -108,8 +108,8 @@ export function NewsletterSignup({
       setIsSignedUp(true);
       toast.success(
         showLeadMagnet
-          ? "Check your email for your PE Portfolio AI Readiness Scorecard!"
-          : "Successfully subscribed to PE AI Weekly!",
+          ? "Check your email for your AI Operations Opportunity Scorecard!"
+          : "Successfully subscribed to AI Ops Weekly!",
         {
           description: "You'll receive actionable AI insights every Thursday."
         }

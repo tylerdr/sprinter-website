@@ -36,7 +36,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "From messy PDFs to instant decisions: How agentic extraction turns Non-QM guidelines into auditable answers",
     challenge:
-      "Non-QM lending runs on sprawling, inconsistent PDFs—tables, footnotes, scanned images—updated frequently across 50+ lenders. Loan officers spend 4+ hours daily hunting for rules and exceptions, while borrowers cool off. Result: missed deals, avoidable declines, and $2.4M in lost revenue annually per mid-sized lender.",
+      "Non-QM lending runs on sprawling, inconsistent PDFs—tables, footnotes, scanned images—updated frequently across 50+ lenders. Loan officers spend hours daily hunting for rules and exceptions while borrowers cool off. Result: slow decisions, avoidable declines, and stalled pipeline velocity.",
     solution:
       "Engineered an AI system that ingests lender PDFs (including image-based content), extracts structured fields from unstructured text, normalizes data across lenders, and returns scenario-specific answers within seconds. Multiple AI agents research all eligible lenders in parallel, backed by guideline references and accessible PDFs.",
     results: [
@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
       { metric: "50+", label: "Lenders searchable in seconds" },
       { metric: "$8,915", label: "Annual savings per LO (5 scenarios/week)" },
       { metric: "2.7", label: "Scenarios/week to break even" },
-      { metric: "$2.4M", label: "Additional revenue captured" },
+      { metric: "Pipeline lift", label: "Faster borrower qualification and lender matching" },
     ],
     testimonial:
       "The AI doesn't just help us manage Non-QM complexity—it turned it into our competitive advantage. We're closing loans 300% faster with the confidence of having a senior underwriter available 24/7.",
@@ -103,9 +103,9 @@ export const caseStudies: CaseStudy[] = [
     title: "RPM Healthcare – Autonomous AI Care Coach",
     category: "Healthcare Technology",
     description:
-      "How AI-driven patient monitoring enabled 5× coverage while reducing readmissions by 40%",
+      "How AI-assisted patient monitoring expanded care capacity and improved escalation speed.",
     challenge:
-      "Healthcare system managing 12,000+ chronic patients with 60 nurses. Each nurse juggling 200+ patients, spending 70% of time on routine check-ins while missing critical health deterioration signals. Manual monitoring led to 30% readmission rates, $8M annual penalties, and nurse burnout with 45% turnover.",
+      "A healthcare system needed to monitor a large chronic-care population with limited nursing capacity. Teams spent most of their time on routine check-ins, making it harder to prioritize high-risk patients quickly.",
     solution:
       "Deployed autonomous AI care coach that conducts intelligent patient check-ins via voice/text/app, analyzes responses using clinical NLP models, triages by acuity with predictive risk scoring, and escalates critical cases to nurses in real-time. System personalizes education based on health literacy and integrates with Epic EHR for seamless documentation.",
     results: [
@@ -113,11 +113,11 @@ export const caseStudies: CaseStudy[] = [
       { metric: "85%", label: "Patient engagement (was 35%)" },
       { metric: "40%", label: "Readmission reduction" },
       { metric: "5×", label: "Patient coverage per nurse" },
-      { metric: "$4.8M", label: "Penalty avoidance annually" },
+      { metric: "Meaningful", label: "Penalty and cost avoidance potential" },
       { metric: "92%", label: "Early deterioration detection" },
     ],
     testimonial:
-      "The AI coach transformed our care model. Nurses now manage 5× more patients with better outcomes because they focus on those who need them most. We've avoided millions in penalties while improving both patient and staff satisfaction.",
+      "The AI coach transformed our care model. Nurses now focus on patients who need intervention most while routine follow-ups are handled automatically.",
     testimonialAuthor: "Chief Nursing Officer, Regional Health System",
     features: [
       "Multi-modal patient engagement (voice, SMS, app)",
@@ -175,8 +175,8 @@ export const caseStudies: CaseStudy[] = [
     solution:
       "Built end-to-end AI content pipeline that scrapes product data from multiple sources, analyzes reviews using sentiment models, generates unique long-form content with E-E-A-T signals, creates comparison tables and buying guides programmatically, and optimizes for featured snippets. Includes quality scoring, plagiarism detection, and human review workflow.",
     results: [
-      { metric: "10K+", label: "Pages generated" },
-      { metric: "400%", label: "Organic traffic growth" },
+      { metric: "At scale", label: "Pages generated programmatically" },
+      { metric: "Strong", label: "Organic traffic growth trend" },
       { metric: "98%+", label: "Uniqueness score" },
       { metric: "<$1", label: "Cost per page (was $200)" },
     ],

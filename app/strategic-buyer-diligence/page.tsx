@@ -165,7 +165,7 @@ export default function StrategicBuyerDiligencePage() {
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
-            <Link href="/downloads/build-vs-buy-framework">
+            <Link href="/contact">
               <Button size="lg" variant="outline" className="gap-2">
                 <GitCompare className="w-5 h-5" />
                 Download Framework
@@ -488,7 +488,7 @@ export default function StrategicBuyerDiligencePage() {
                   Schedule Consultation
                 </Button>
               </Link>
-              <Link href="/downloads/build-vs-buy-framework">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="gap-2">
                   <GitCompare className="w-5 h-5" />
                   Download Framework

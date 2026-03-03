@@ -8,13 +8,11 @@ import {
   Menu, X, ChevronDown, Sparkles, Trophy, Rocket, ArrowRight,
   Calculator, Zap, Truck, Users, Grid3x3, BarChart3, BookOpen,
   Factory, Heart, Building, Play, ClipboardCheck, Newspaper, Shield,
-  LogIn
 } from "lucide-react";
 import { useState } from "react";
 import { NAVIGATION } from "@/lib/constants";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/logo/BrandLogo";
-import { NavigationAuth } from "./navigation-auth";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -201,7 +199,6 @@ export function Navigation() {
 
             <div className="flex items-center gap-2 ml-3 pl-3 border-l border-border/30">
               <ThemeToggle />
-              <NavigationAuth />
               {NAVIGATION.ctas && NAVIGATION.ctas.map((cta) => {
                 const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
                 return (
@@ -363,9 +360,6 @@ export function Navigation() {
                     className="flex flex-col gap-2 pt-4 mt-4 border-t border-border"
                   >
                     <div className="flex gap-2">
-                      <div className="flex-1">
-                        <NavigationAuth />
-                      </div>
                       {NAVIGATION.ctas.map((cta) => {
                         const IconComponent = "icon" in cta && cta.icon === "sparkles" ? Sparkles : ArrowRight;
                         return (

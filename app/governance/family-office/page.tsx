@@ -75,42 +75,42 @@ const downloadableResources = [
     icon: FileText,
     title: "AI Governance Checklist",
     description: "10-point checklist for family office boards. Essential policies and procedures.",
-    href: "/downloads/ai-governance-checklist.pdf",
+    href: "/downloads/governance-pack",
     badge: "PDF"
   },
   {
     icon: Shield,
     title: "Vendor Evaluation Rubric",
     description: "Score AI vendors across 15 criteria. Avoid bad deals before they happen.",
-    href: "/downloads/vendor-evaluation-rubric.xlsx",
+    href: "/downloads/governance-pack",
     badge: "Excel"
   },
   {
     icon: AlertTriangle,
     title: "AI Risk Assessment Template",
     description: "Identify and quantify AI risks across your portfolio holdings.",
-    href: "/downloads/ai-risk-assessment.xlsx",
+    href: "/downloads/governance-pack",
     badge: "Excel"
   },
   {
     icon: BookOpen,
     title: "Board AI Update Template",
     description: "Quarterly board presentation template. Track AI initiatives and ROI.",
-    href: "/downloads/board-ai-update-template.pptx",
+    href: "/downloads/governance-pack",
     badge: "PowerPoint"
   },
   {
     icon: Lock,
     title: "Data Privacy Policy Template",
     description: "GDPR/CCPA-compliant AI data usage policies for family offices.",
-    href: "/downloads/data-privacy-policy.docx",
+    href: "/downloads/governance-pack",
     badge: "Word"
   },
   {
     icon: Briefcase,
     title: "Family Office AI Playbook",
     description: "Complete guide to AI governance for multi-generational wealth (60 pages).",
-    href: "/downloads/family-office-ai-playbook.pdf",
+    href: "/downloads/governance-pack",
     badge: "PDF"
   }
 ];

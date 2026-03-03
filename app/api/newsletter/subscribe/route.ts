@@ -14,10 +14,10 @@ const subscribeSchema = z.object({
 
 // Simulated lead magnet URLs (in production, these would be actual files)
 const LEAD_MAGNETS = {
-  "PE-Portfolio-AI-Readiness-Scorecard.pdf": {
-    url: "/downloads/pe-ai-scorecard.pdf",
-    title: "PE Portfolio AI Readiness Scorecard",
-    description: "Your comprehensive guide to scoring portfolio AI maturity"
+  "AI-Operations-Opportunity-Scorecard.pdf": {
+    url: "/downloads/pe-ai-readiness-checklist.html",
+    title: "AI Operations Opportunity Scorecard",
+    description: "A practical checklist to prioritize AI agent opportunities"
   }
 }
 
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: "Sprinter AI <noreply@sprinterai.com>",
         to: email,
-        subject: "Your PE Portfolio AI Readiness Scorecard is here!",
+        subject: "Your AI Operations Opportunity Scorecard is here!",
         html: `
           <!DOCTYPE html>
           <html>
@@ -62,52 +62,52 @@ export async function POST(req: NextRequest) {
             <body>
               <div class="container">
                 <div class="header">
-                  <h1>Welcome to PE AI Insights!</h1>
-                  <p>Your AI Readiness Scorecard is ready</p>
+                  <h1>Welcome to AI Ops Insights!</h1>
+                  <p>Your AI Operations Opportunity Scorecard is ready</p>
                 </div>
 
                 <div class="content">
-                  <h2>Hello PE Leader,</h2>
+                  <h2>Hello there,</h2>
 
-                  <p>Thank you for joining 1,200+ private equity professionals who receive our weekly AI insights.</p>
+                  <p>Thanks for joining operators and founders getting practical AI implementation insights each week.</p>
 
-                  <p><strong>Your PE Portfolio AI Readiness Scorecard is attached to this email.</strong></p>
+                  <p><strong>Your AI Operations Opportunity Scorecard is attached to this email.</strong></p>
 
                   <div class="benefits">
                     <h3>What you'll find inside:</h3>
                     <ul>
-                      <li>12 AI readiness factors to score each portfolio company</li>
-                      <li>Top 3 AI wedge opportunities for quick wins</li>
-                      <li>Benchmarks from 200+ portfolio implementations</li>
-                      <li>Custom 30-day action plan template</li>
+                      <li>A practical framework to score high-leverage operational workflows</li>
+                      <li>A method to prioritize quick wins and longer-term automation</li>
+                      <li>Examples of measurable outcomes from real deployments</li>
+                      <li>A 30-day action template to move from idea to implementation</li>
                     </ul>
                   </div>
 
                   <p><strong>What happens next:</strong></p>
                   <ul>
-                    <li>Use the scorecard to assess your portfolio companies</li>
+                    <li>Use the scorecard to assess your current workflows</li>
                     <li>Identify your highest-impact AI opportunity</li>
-                    <li>Every Thursday, you'll receive our PE AI Weekly newsletter with:</li>
+                    <li>Every Thursday, you'll receive our AI Ops Weekly newsletter with:</li>
                     <ul>
-                      <li>One actionable AI implementation case study</li>
-                      <li>ROI metrics and timelines from real deployments</li>
-                      <li>Tools and frameworks you can use immediately</li>
+                      <li>One actionable AI implementation breakdown</li>
+                      <li>ROI lessons and rollout timelines from real teams</li>
+                      <li>Templates and frameworks you can apply immediately</li>
                     </ul>
                   </ul>
 
                   <center>
-                    <a href="https://sprinterai.com/approach" class="button">Learn About Our Approach</a>
+                    <a href="https://sprinter.ai/services" class="button">Learn About Our Approach</a>
                   </center>
 
                   <p>Have a specific AI challenge in your portfolio? Simply reply to this email – I personally read every response.</p>
 
-                  <p>To your portfolio's AI transformation,<br>
+                  <p>To your AI transformation,<br>
                   <strong>The Sprinter AI Team</strong></p>
                 </div>
 
                 <div class="footer">
-                  <p>You're receiving this because you requested the PE Portfolio AI Readiness Scorecard.</p>
-                  <p>Sprinter AI | AI Operating Partner for Private Equity</p>
+                  <p>You're receiving this because you requested the AI Operations Opportunity Scorecard.</p>
+                  <p>Sprinter AI | AI Agents That Run Your Operations</p>
                   <p><a href="{unsubscribe_url}">Unsubscribe</a> | <a href="https://sprinterai.com/privacy">Privacy Policy</a></p>
                 </div>
               </div>

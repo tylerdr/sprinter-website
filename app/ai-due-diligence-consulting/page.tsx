@@ -24,7 +24,7 @@ export default function AIDueDiligenceConsultingPage() {
         primaryCTA="Schedule Diligence Consultation"
         primaryCTAHref="/contact?type=diligence"
         secondaryCTA="Download Checklist Template"
-        secondaryCTAHref="/downloads/diligence-checklist"
+        secondaryCTAHref="/contact"
       />
 
       <DeliverablesList
@@ -231,7 +231,7 @@ export default function AIDueDiligenceConsultingPage() {
         primaryCTA="Schedule Diligence Consultation"
         primaryCTAHref="/contact?type=diligence"
         secondaryCTA="View Sample Report"
-        secondaryCTAHref="/downloads/sample-diligence-report"
+        secondaryCTAHref="/contact"
       />
     </div>
   );

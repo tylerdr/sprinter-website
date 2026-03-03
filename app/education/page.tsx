@@ -472,7 +472,7 @@ export default function EducationPage() {
                   Schedule Training Consultation
                 </Button>
               </Link>
-              <Link href="/downloads/training-catalog">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="gap-2">
                   <BookOpen className="w-5 h-5" />
                   Download Training Catalog
