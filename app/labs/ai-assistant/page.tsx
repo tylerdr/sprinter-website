@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AiAssistantPage() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+    <div className="spr-theme spr-page min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">

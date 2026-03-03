@@ -71,7 +71,7 @@ export default function InsightsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="spr-theme spr-page min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden px-6 py-20 sm:py-32 lg:px-8">
         <div className="absolute inset-0 -z-10">
@@ -280,7 +280,7 @@ export default function InsightsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
                 <Input
                   type="email"
-                  placeholder="your@pefirm.com"
+                  placeholder="your@company.com"
                   className="flex-1"
                 />
                 <Button className="bg-gradient-to-r from-blue-600 to-purple-600">

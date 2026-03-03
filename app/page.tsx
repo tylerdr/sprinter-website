@@ -1,50 +1,43 @@
-import type { Metadata } from "next";
-import { PEHero } from "@/components/home/pe-hero";
-import { TrustIndicators } from "@/components/home/trust-indicators";
-import { AICapabilities } from "@/components/home/ai-capabilities";
-import { ServicesFlip } from "@/components/home/services-flip";
-import { ClientSuccessSection } from "@/components/home/client-success-section";
-import { ValuePillars } from "@/components/home/value-pillars";
-import { TechPartners } from "@/components/home/tech-partners";
-import { LabsPreview } from "@/components/home/labs-preview";
-import { FAQSection } from "@/components/home/faq-section";
-import { FinalCTA } from "@/components/home/final-cta";
-import { getPageMetadata } from "@/lib/seo";
-
-export const metadata: Metadata = getPageMetadata("home");
+import CaseStudyHighlights from "@/components/sprinter-ai/CaseStudyHighlights";
+import FinalCTA from "@/components/sprinter-ai/FinalCTA";
+import Founder from "@/components/sprinter-ai/Founder";
+import Hero from "@/components/sprinter-ai/Hero";
+import HowItWorks from "@/components/sprinter-ai/HowItWorks";
+import Industries from "@/components/sprinter-ai/Industries";
+import Problem from "@/components/sprinter-ai/Problem";
+import ProcessSection from "@/components/sprinter-ai/ProcessSection";
+import Results from "@/components/sprinter-ai/Results";
+import ServicesOverview from "@/components/sprinter-ai/ServicesOverview";
+import Solution from "@/components/sprinter-ai/Solution";
+import Testimonials from "@/components/sprinter-ai/Testimonials";
+import TrustedBy from "@/components/sprinter-ai/TrustedBy";
 
 export default function Home() {
   return (
-    <>
-      {/* Hero - First impression */}
-      <PEHero />
-
-      {/* Trust/Social Proof - Build credibility */}
-      <TrustIndicators />
-
-      {/* Core Capabilities - What we do */}
-      <AICapabilities />
-
-      {/* Services - How we help */}
-      <ServicesFlip />
-
-      {/* Results/Success - Prove it works */}
-      <ClientSuccessSection />
-
-      {/* Value Creation - PE specific value */}
-      <ValuePillars />
-
-      {/* Technology Partners - Show expertise */}
-      <TechPartners />
-
-      {/* Interactive Labs - Engage users */}
-      <LabsPreview />
-
-      {/* Questions - Address concerns */}
-      <FAQSection />
-
-      {/* Final Call to Action */}
-      <FinalCTA />
-    </>
+    <div className="spr-theme spr-page">
+      <main>
+        <Hero />
+        <TrustedBy />
+        <Problem />
+        <Solution />
+        <ServicesOverview />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(106,167,255,0.08),_transparent_70%)]" />
+          <HowItWorks />
+        </div>
+        <Results />
+        <CaseStudyHighlights />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(255,171,102,0.06),_transparent_70%)]" />
+          <Industries />
+          <Testimonials />
+        </div>
+        <Founder />
+        <ProcessSection />
+        <FinalCTA />
+      </main>
+    </div>
   );
 }

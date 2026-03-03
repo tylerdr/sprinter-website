@@ -10,33 +10,33 @@ export const metadata: Metadata = getPageMetadata("about");
 const values = [
   {
     icon: Rocket,
-    title: "Prototype in 10 Days",
+    title: "Ship in Weeks",
     description:
-      "First prototype in 10 days. We ship AI solutions at the speed of innovation, not bureaucracy.",
+      "Working AI systems in production in 2-4 weeks. Sprint-based delivery that proves value before you commit to scale.",
   },
   {
     icon: Brain,
-    title: "Human-Centered by Default",
+    title: "Empower Your People",
     description:
-      "We build AI that augments human capability, not replaces it. Technology should enable people to do work they love.",
+      "AI that augments human capability, not replaces it. Your team does their best work while AI handles the operational grind.",
   },
   {
     icon: Users,
-    title: "Create Abundance",
+    title: "Unlimited AI Workforce",
     description:
-      "AI doesn't destroy jobs—it creates opportunities. We've helped create 50+ new roles by automating the mundane.",
+      "AI agents that work 24/7 on your processes. Scale your operations without scaling headcount.",
   },
   {
     icon: Target,
-    title: "Build with Purpose",
+    title: "Value You Can Measure",
     description:
-      "Every AI system we build frees humans from repetitive tasks so they can pursue meaningful, creative work.",
+      "Every implementation tied to real outcomes — hours saved, revenue gained, errors eliminated. No slide decks.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen py-24">
+    <div className="spr-theme spr-page min-h-screen py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-10 border border-brand-30 mb-6">
@@ -45,13 +45,13 @@ export default function AboutPage() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Build an Unfair Advantage with{" "}
-            <span className="gradient-text">Agentic AI</span>
+            Empowering People with{" "}
+            <span className="gradient-text">AI Agents</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            AI is a generational shift—akin to the industrial revolution. We
-            ship production systems that accelerate what you already do well,
-            fill operational gaps, and create durable competitive advantage.
+            AI is the ultimate leverage for individuals and businesses. We deploy
+            AI agent systems that empower your people to do their best work —
+            while an unlimited AI workforce handles the operational grind.
           </p>
         </div>
 
@@ -59,23 +59,26 @@ export default function AboutPage() {
           <div className="p-8 rounded-2xl bg-card/20 border border-border/30 backdrop-blur-sm">
             <h2 className="text-3xl font-bold mb-6">A Note from Our Founder</h2>
             <p className="text-lg text-foreground/80 mb-4">
-              I started my career as an engineer at Exxon. Every day I saw brilliant people slowed by spreadsheets, manual planning, and systems that wouldn&apos;t talk to each other. Later, running a construction/roofing company, I ran into the same thing—critical workflows, no software built for how the work actually gets done. Curiosity and frustration pushed me to build the tools I needed in both worlds: software to plan maintenance, systems to run field ops, and automation that freed my team to focus on real work.
+              I started my career as a mechanical engineer at Exxon. Every day I saw brilliant people slowed by spreadsheets, manual planning, and systems that wouldn&apos;t talk to each other. Later, running a construction business, I ran into the same thing — critical workflows, no software built for how the work actually gets done. Smart people wasting time on tasks that were monotonous for humans and trivial for computers.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
-              I can&apos;t stand the idea of smart people burning hours on tasks that are monotonous for humans and trivial for computers. In 2018 I left Exxon and started Sprinter to fix that. We began with predictive maintenance, analytics and AI, learned fast by building (and breaking) internal SaaS experiments, and ran our first AI workshop in 2019 to help clients find practical use cases. By 2020, a first API call to GPT-3 blew the doors off what was possible. In 2021 we leaned into agentic patterns—if a model can write, it can decide; if it can decide, it can act. In 2022 we formalized our workshops and built Amble Ideation to scale them.
+              That frustration became my mission. In 2018 I started Sprinter to bridge the gap between what technology could do and what businesses were actually doing with it. We began with consulting — process optimization, custom software, helping companies modernize. Along the way we built products: Amble Ideation for innovation workshops, Cab-O-Matic for cabinet quoting automation, MortgageQ for lending intelligence.
             </p>
             <p className="text-lg text-foreground/80 mb-4">
-              Today, we work primarily with private equity firms and their portfolio companies. Our 2-3 sprint delivery model ensures you see ROI before committing to scale. We&apos;ve helped portfolio companies achieve 60-80% automation rates, generate millions in new revenue, and create competitive moats through AI-first operations.
+              Then AI changed everything. Not the chatbot hype — the real thing. AI agents that can read your emails, manage your CRM, process your invoices, draft your follow-ups, and run your reporting. An unlimited workforce that works 24/7 on your processes, with your data, in your tools. I dedicated myself to this because it&apos;s the ultimate form of technology leverage to empower individuals and businesses.
+            </p>
+            <p className="text-lg text-foreground/80 mb-4">
+              Today, Sprinter deploys AI agent systems across manufacturing, fintech, healthcare, wine &amp; spirits, and more. Our sprint-based approach means you see results in weeks, not quarters. We empower your people to do their best work by taking the operational grind off their plates — not replacing them, but unlocking their potential.
             </p>
             <p className="text-lg text-foreground/80">
-              <strong className="text-foreground">Sprinter exists to empower agency—in people and in AI.</strong> Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage.
+              <strong className="text-foreground">Sprinter exists to empower agency — in people and in AI.</strong> Bring us your problem or your dataset. We&apos;ll build the system that turns it into leverage.
             </p>
             <div className="mt-8 pt-6 border-t border-border/30">
               <p className="text-base font-semibold text-foreground">
                 — Tyler Dreher
               </p>
               <p className="text-sm text-muted-foreground">
-                Founder & CEO, Sprinter AI
+                Founder, Sprinter AI
               </p>
             </div>
           </div>
@@ -113,21 +116,21 @@ export default function AboutPage() {
             showAnimation={true}
             metrics={[
               {
-                value: "10",
-                suffix: "M+",
-                label: "Revenue Generated",
+                value: "250",
+                suffix: "K+",
+                label: "Data Points Processed",
                 color: "gradient-text"
               },
               {
-                value: "50",
+                value: "8",
                 suffix: "+",
-                label: "AI Products Deployed",
+                label: "Years Building Software",
                 color: "gradient-text"
               },
               {
-                value: "100",
-                suffix: "%",
-                label: "Client Satisfaction",
+                value: "20",
+                suffix: "×",
+                label: "ROI on Deployed Systems",
                 color: "gradient-text"
               }
             ]}
@@ -136,12 +139,12 @@ export default function AboutPage() {
 
         <div className="text-center p-8 rounded-2xl border border-border/30 bg-brand-10">
           <h3 className="text-3xl font-bold mb-4">
-            Ready to Build AI That{" "}
-            <span className="gradient-text">Empowers People</span>?
+            Ready to{" "}
+            <span className="gradient-text">Empower Your Team</span> with AI?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Join the companies creating abundance through human-centered AI.
-            Let&apos;s build technology that helps people thrive.
+            Your people have better things to do than data entry and manual follow-ups.
+            Let&apos;s deploy AI agents that handle the grind so your team can thrive.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

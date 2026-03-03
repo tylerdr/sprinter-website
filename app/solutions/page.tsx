@@ -74,7 +74,7 @@ const additionalSolutions = [
 
 export default function SolutionsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="spr-theme spr-page min-h-screen">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 text-center">
         <motion.div

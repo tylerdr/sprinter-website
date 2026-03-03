@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { EnhancedNavigation } from "@/components/layout/enhanced-navigation";
-import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ChatWidgetWithErrorBoundary as ChatWidget } from "@/components/chat/ChatWidget";
+import { RouteAwareChatWidget } from "@/components/chat/RouteAwareChatWidget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalyticsWrapper } from "@/components/analytics/google-analytics-wrapper";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import { Toaster } from "sonner";
-import { ErrorBoundary } from "@/components/error-boundary";
+import { SiteChrome } from "@/components/layout/site-chrome";
 import {
   generateMetadata as createSEOMetadata,
   generateOrganizationStructuredData,
@@ -28,12 +26,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Sprinter AI - Build at the pace of AI",
+  title: "Sprinter AI — AI Agents That Run Your Operations",
   description:
-    "AI consulting and venture studio building technology that helps people. We enable humans to pursue purposeful work while AI handles repetitive tasks.",
+    "We deploy AI agent systems that handle quoting, invoicing, follow-ups, reporting, and more. Working systems in weeks. Empower your team with AI.",
   keywords:
-    "AI consulting, human-centered AI, autonomous agents, purposeful work, AI development, venture studio, AI products",
-  ogTitle: "Sprinter AI - Build at the pace of AI",
+    "AI agents, AI automation, business automation, AI agent deployment, workflow automation, AI consulting",
+  ogTitle: "Sprinter AI — AI Agents That Run Your Operations",
   canonical: "https://sprinter.ai",
 });
 
@@ -45,12 +43,50 @@ export default function RootLayout({
   const organizationData = generateOrganizationStructuredData();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={getStructuredDataScript(organizationData)}
         />
+        {/* TODO(retargeting): Google Ads remarketing tag placeholder
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-XXXXXXXXXX');
+        </script>
+        */}
+        {/* TODO(retargeting): Meta Pixel placeholder
+        <script>
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+          n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+          (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '000000000000000');
+          fbq('track', 'PageView');
+        </script>
+        */}
+        {/* TODO(retargeting): LinkedIn Insight Tag placeholder
+        <script type="text/javascript">
+          _linkedin_partner_id = "0000000";
+          window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+          window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        </script>
+        <script type="text/javascript">
+          (function(l) {
+            if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+            window.lintrk.q=[]}
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+          })(window.lintrk);
+        </script>
+        */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -58,7 +94,8 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {/* Skip Navigation Links */}
@@ -76,15 +113,9 @@ export default function RootLayout({
           </a>
 
           <AnalyticsProvider>
-            <EnhancedNavigation />
-            <main id="main-content" className="flex-1 pt-16">
-              <ErrorBoundary>
-                {children}
-              </ErrorBoundary>
-            </main>
-            <Footer />
+            <SiteChrome>{children}</SiteChrome>
           </AnalyticsProvider>
-          <ChatWidget />
+          <RouteAwareChatWidget />
           <Toaster position="bottom-right" />
           <GoogleAnalyticsWrapper />
           <Analytics />

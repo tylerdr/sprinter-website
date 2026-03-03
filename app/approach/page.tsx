@@ -6,6 +6,7 @@ import { WorkInSprints } from "@/components/approach/work-in-sprints";
 import { AINative } from "@/components/approach/ai-native";
 import { InfiniteDigitalLabor } from "@/components/approach/infinite-labor";
 import { HowToStart } from "@/components/approach/how-to-start";
+import { ApproachCTA } from "@/components/approach/approach-cta";
 
 export const metadata: Metadata = {
   title: "People-First AI Operating Partner for Private Equity | Sprinter AI",
@@ -19,14 +20,25 @@ export const metadata: Metadata = {
 
 export default function ApproachPage() {
   return (
-    <div className="flex flex-col">
-      <PeopleFirstHero />
-      <FourPillars />
-      <ChangePlaybook />
-      <WorkInSprints />
-      <AINative />
-      <InfiniteDigitalLabor />
-      <HowToStart />
+    <div className="spr-theme spr-page">
+      <main className="overflow-x-hidden">
+        <PeopleFirstHero />
+        <FourPillars />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(106,167,255,0.08),_transparent_70%)]" />
+          <ChangePlaybook />
+          <WorkInSprints />
+        </div>
+        <AINative />
+        {/* Gradient band for visual variety */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(255,171,102,0.06),_transparent_70%)]" />
+          <InfiniteDigitalLabor />
+          <HowToStart />
+        </div>
+        <ApproachCTA />
+      </main>
     </div>
   );
 }

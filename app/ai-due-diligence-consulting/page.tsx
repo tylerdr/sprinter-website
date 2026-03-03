@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/seo-pages/faq-section";
 import { CTASection } from "@/components/seo-pages/cta-section";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AI Due Diligence Consulting for M&A | Sprinter",
   description: "Technical due diligence for AI, data, and GenAI capabilities. 5-10 day assessment packages for PE deal teams. Model risk, data governance, vendor analysis, TCO projections.",
   keywords: "ai due diligence, tech due diligence, data due diligence, genai due diligence, ai risk assessment m&a, ai vendor analysis, model risk assessment, private equity due diligence",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AIDueDiligenceConsultingPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <HeroSection
         badge="M&A Due Diligence"
         headline="AI & Data Due Diligence for Private Equity"
@@ -232,6 +233,6 @@ export default function AIDueDiligenceConsultingPage() {
         secondaryCTA="View Sample Report"
         secondaryCTAHref="/downloads/sample-diligence-report"
       />
-    </>
+    </div>
   );
 }

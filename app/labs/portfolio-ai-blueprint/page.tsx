@@ -163,7 +163,7 @@ export default function PortfolioAIBlueprintPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background py-12">
+    <div className="spr-theme spr-page min-h-screen py-12">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <motion.div

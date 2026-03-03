@@ -6,51 +6,51 @@
 export const COPY = {
   // Hero Section
   hero: {
-    badge: "Real AI in Production • Not Just Another Deck",
+    badge: "AI Agents Running in Production Today",
     headline: {
-      line1: "Build at the",
-      line2: "pace of AI"
+      line1: "AI agents that run",
+      line2: "your operations 24/7"
     },
-    subheadline: "Ship a working prototype in 10 days. Go live in 4 weeks. Your team stays in control while AI handles the repetitive.",
+    subheadline: "We deploy AI agent systems that handle quoting, invoicing, follow-ups, reporting, and data entry — so your team focuses on what actually matters.",
     cta: {
-      primary: "Get an AI Opportunity Audit",
-      secondary: "Start a 10-Day Sprint"
+      primary: "Book a Strategy Call",
+      secondary: "See How It Works"
     }
   },
 
-  // Operating Partner Hero
+  // Operating Partner Hero (Enterprise Option)
   operatingPartner: {
-    badge: "Fund-Level AI Orchestration",
+    badge: "Enterprise AI Option",
     headline: {
-      line1: "Your AI Operating Partner",
-      line2: "for Private Equity"
+      line1: "AI Operating Partner",
+      line2: "for Portfolio-Scale Execution"
     },
     subheadline: {
-      main: "Fund-level orchestration and boringly reliable 2-3 sprint wins—starting with AP & expense automation, Quote Intelligence, and 3PL Ops.",
-      secondary: "No API? No problem. We build the safe middle layer for QBO/Sage/desktop."
+      main: "For firms that need portfolio-level AI implementation and governance with measurable operational outcomes.",
+      secondary: "Built on the same sprint-based delivery model used for mid-market operators."
     },
     cta: {
-      primary: "Book 90-Minute OP Workshop",
-      secondary: "Download AP Accelerator Brief"
+      primary: "Book Operating Partner Call",
+      secondary: "View Service Details"
     },
     trustIndicators: [
-      { icon: "Clock", text: "2-3 sprint delivery" },
-      { icon: "Shield", text: "Vendor neutral" },
-      { icon: "CheckCircle", text: "Acceptance criteria" },
-      { icon: "Building2", text: "Portfolio-wide" }
+      { icon: "Clock", text: "2-4 week sprints" },
+      { icon: "Shield", text: "Practical governance" },
+      { icon: "CheckCircle", text: "Measurable outcomes" },
+      { icon: "Building2", text: "Portfolio-ready" }
     ]
   },
 
   // Footer
   footer: {
-    cta: "Run the 10-Day Portfolio Sprint",
+    cta: "Book a Strategy Call",
     newsletter: {
       title: "AI Insights Newsletter",
-      description: "Get weekly case studies, AI implementation guides, and industry insights delivered to your inbox.",
+      description: "Get case studies, AI implementation guides, and industry insights delivered to your inbox.",
       placeholder: "your@company.com"
     },
     copyright: {
-      tagline: "Built in the USA. Designed for operating partners and PE-backed teams."
+      tagline: "Built in the USA. AI agents for businesses that do real work."
     }
   },
 
@@ -67,29 +67,29 @@ export const COPY = {
 
   // Trust badges and social proof
   socialProof: {
-    trustedBy: "Trusted by 50+ PE-backed companies",
-    successRate: "94% project success rate",
+    trustedBy: "Deployed in production across multiple industries",
+    successRate: "Production-ready in weeks",
     timeToValue: "Average 21 days to first value",
-    roiMultiple: "3-5x ROI in 90 days"
+    roiMultiple: "Real ROI, measured and verified"
   },
 
   // Value propositions
   valueProps: {
     speed: {
       title: "Ship in Weeks, Not Quarters",
-      description: "Go from idea to production in 4 weeks with our proven sprint methodology"
+      description: "Go from idea to production in 2-4 weeks with sprint-based delivery"
     },
     control: {
       title: "You Own Everything",
       description: "Full source code, documentation, and knowledge transfer. No vendor lock-in."
     },
-    reliability: {
-      title: "Boringly Reliable",
-      description: "Production-ready solutions with 99.9% uptime and enterprise-grade security"
+    empowerment: {
+      title: "Empower Your People",
+      description: "AI handles the repetitive so your team can do their best work. Augment, don't replace."
     },
-    expertise: {
-      title: "PE-Native Team",
-      description: "We speak your language and understand portfolio company dynamics"
+    leverage: {
+      title: "Unlimited AI Workforce",
+      description: "AI agents that work 24/7 on your processes, your data, your tools. Scale without scaling headcount."
     }
   },
 

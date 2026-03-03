@@ -10,14 +10,9 @@ const footerSections: Array<{
   ariaLabel: string;
 }> = [
   {
-    title: "Programs",
-    links: NAVIGATION.footer.products,
-    ariaLabel: "Programs",
-  },
-  {
-    title: "Solutions",
-    links: NAVIGATION.footer.solutions,
-    ariaLabel: "Solutions",
+    title: "Services",
+    links: NAVIGATION.footer.services,
+    ariaLabel: "Services",
   },
   {
     title: "Resources",
@@ -33,7 +28,7 @@ const footerSections: Array<{
 
 export function Footer() {
   return (
-    <footer role="contentinfo" className="bg-background border-t border-border/30">
+    <footer role="contentinfo" className="border-t border-border/30" style={{ background: "linear-gradient(180deg, #050914 0%, #03060f 100%)", color: "#f4f8ff" }}>
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8">
           {/* Company Info */}
@@ -129,7 +124,7 @@ export function Footer() {
             © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built in the USA. Designed for operating partners and PE-backed teams.
+            Built in the USA. AI agents for businesses that do real work.
           </p>
         </div>
       </div>

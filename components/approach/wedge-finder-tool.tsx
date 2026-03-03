@@ -2,18 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
   FileText,
-  Users,
   Clock,
-  AlertTriangle,
   CheckCircle2,
   Download,
   Mail
@@ -73,7 +67,7 @@ const questions = [
   },
 ];
 
-const wedgeRecommendations: Record<string, any> = {
+const wedgeRecommendations: Record<string, { primary: string; documents: string[]; metrics: { touchless: string; timeSaved: string; roi: string }; acceptanceCriteria: string[] }> = {
   "finance-high-slow": {
     primary: "Invoice Processing Automation",
     documents: ["Invoices", "Purchase Orders", "Receipts"],
@@ -107,7 +101,6 @@ const wedgeRecommendations: Record<string, any> = {
       "Exception queue for disputes",
     ],
   },
-  // Default fallback
   default: {
     primary: "Document Intelligence Quick Win",
     documents: ["Your highest-volume document type"],
@@ -123,9 +116,11 @@ const wedgeRecommendations: Record<string, any> = {
 
 export function WedgeFinderTool() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, any>>({});
+  const [answers, setAnswers] = useState<Record<string, string>>({});
   const [email, setEmail] = useState("");
   const [showResults, setShowResults] = useState(false);
+  const [result, setResult] = useState(wedgeRecommendations.default);
+  const [monthlySavings, setMonthlySavings] = useState("0");
 
   const handleAnswer = (value: string) => {
     setAnswers({ ...answers, [questions[currentQuestion].id]: value });
@@ -146,24 +141,15 @@ export function WedgeFinderTool() {
   };
 
   const calculateResults = () => {
-    // Simple logic to determine recommendation
     const key = `${answers.department}-${answers.volume}-${answers.time}`;
     const recommendation = wedgeRecommendations[key] || wedgeRecommendations.default;
 
-    // Add calculated savings based on answers
     const volumeMultiplier = answers.volume === "very-high" ? 4 : answers.volume === "high" ? 2 : 1;
     const timeMultiplier = answers.time === "painful" ? 3 : answers.time === "slow" ? 2 : 1;
-    const monthlySavings = 5000 * volumeMultiplier * timeMultiplier;
+    const savings = (5000 * volumeMultiplier * timeMultiplier).toLocaleString();
 
-    setAnswers({
-      ...answers,
-      recommendation: recommendation.primary,
-      documents: recommendation.documents,
-      metrics: recommendation.metrics,
-      acceptanceCriteria: recommendation.acceptanceCriteria,
-      monthlySavings: monthlySavings.toString(),
-    });
-
+    setResult(recommendation);
+    setMonthlySavings(savings);
     setShowResults(true);
   };
 
@@ -171,7 +157,7 @@ export function WedgeFinderTool() {
 
   if (showResults) {
     return (
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      <div className="spr-container py-20">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -179,28 +165,28 @@ export function WedgeFinderTool() {
             transition={{ duration: 0.8 }}
           >
             <div className="text-center mb-8">
-              <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h1 className="text-3xl font-bold mb-2">Your Perfect Wedge Identified!</h1>
-              <p className="text-xl text-muted-foreground">
-                Based on your answers, here's where we recommend starting:
+              <CheckCircle2 className="w-16 h-16 text-[color:var(--spr-primary)] mx-auto mb-4" />
+              <h1 className="spr-heading-xl mb-2">Your Perfect Wedge Identified!</h1>
+              <p className="spr-body-lg">
+                Based on your answers, here&apos;s where we recommend starting:
               </p>
             </div>
 
-            <Card className="p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6 gradient-text">
-                {answers.recommendation}
+            <div className="spr-card p-8 mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-[color:var(--spr-accent)]">
+                {result.primary}
               </h2>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="font-semibold mb-3 flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-blue-500" />
+                  <h3 className="font-semibold mb-3 flex items-center gap-2 text-[color:var(--spr-text)]">
+                    <FileText className="w-5 h-5 text-[color:var(--spr-primary)]" />
                     Document Types
                   </h3>
                   <ul className="space-y-2">
-                    {(Array.isArray(answers.documents) ? answers.documents : [answers.documents].filter(Boolean)).map((doc) => (
-                      <li key={doc} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-green-500" />
+                    {result.documents.map((doc) => (
+                      <li key={doc} className="flex items-center gap-2 text-[color:var(--spr-text-soft)]">
+                        <CheckCircle2 className="w-4 h-4 text-[color:var(--spr-primary)]" />
                         <span>{doc}</span>
                       </li>
                     ))}
@@ -208,81 +194,82 @@ export function WedgeFinderTool() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold mb-3 flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-purple-500" />
+                  <h3 className="font-semibold mb-3 flex items-center gap-2 text-[color:var(--spr-text)]">
+                    <Clock className="w-5 h-5 text-[color:var(--spr-accent)]" />
                     Expected Metrics
                   </h3>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-[color:var(--spr-text-soft)]">
                     <div className="flex justify-between">
                       <span>Touchless Rate:</span>
-                      <span className="font-bold text-green-500">{answers.metrics?.touchless}</span>
+                      <span className="font-bold text-[color:var(--spr-primary)]">{result.metrics.touchless}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Time Saved:</span>
-                      <span className="font-bold text-blue-500">{answers.metrics?.timeSaved}</span>
+                      <span className="font-bold text-[color:var(--spr-primary)]">{result.metrics.timeSaved}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>ROI Timeline:</span>
-                      <span className="font-bold text-purple-500">{answers.metrics?.roi}</span>
+                      <span className="font-bold text-[color:var(--spr-accent)]">{result.metrics.roi}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="mb-8">
-                <h3 className="font-semibold mb-3">Acceptance Criteria for Success</h3>
-                <div className="bg-muted/20 rounded-lg p-4">
+                <h3 className="font-semibold mb-3 text-[color:var(--spr-text)]">Acceptance Criteria for Success</h3>
+                <div className="rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:var(--spr-surface)] p-4">
                   <ul className="space-y-2">
-                    {(answers.acceptanceCriteria as string[])?.map((criteria: string) => (
+                    {result.acceptanceCriteria.map((criteria) => (
                       <li key={criteria} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{criteria}</span>
+                        <CheckCircle2 className="w-4 h-4 text-[color:var(--spr-primary)] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-[color:var(--spr-text-soft)]">{criteria}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border">
-                <h3 className="font-semibold mb-2">Estimated Monthly Savings</h3>
-                <p className="text-3xl font-bold gradient-text">${answers.monthlySavings}</p>
-                <p className="text-sm text-muted-foreground mt-1">
+              <div className="rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:rgba(106,167,255,0.12)] p-6">
+                <h3 className="font-semibold mb-2 text-[color:var(--spr-text)]">Estimated Monthly Savings</h3>
+                <p className="text-3xl font-bold text-[color:var(--spr-primary)]">${monthlySavings}</p>
+                <p className="text-sm text-[color:var(--spr-text-muted)] mt-1">
                   Based on your volume and current processing time
                 </p>
               </div>
-            </Card>
+            </div>
 
             {/* Email Capture */}
-            <Card className="p-8">
-              <h3 className="text-xl font-semibold mb-4">Get Your Detailed Wedge Report</h3>
-              <p className="text-muted-foreground mb-6">
-                We'll send you a comprehensive report with implementation steps, timeline, and ROI projections.
+            <div className="spr-card p-8">
+              <h3 className="text-xl font-semibold mb-4 text-[color:var(--spr-text)]">Get Your Detailed Wedge Report</h3>
+              <p className="text-[color:var(--spr-text-muted)] mb-6">
+                We&apos;ll send you a comprehensive report with implementation steps, timeline, and ROI projections.
               </p>
 
               <div className="flex gap-4">
-                <Input
+                <input
                   type="email"
                   placeholder="your@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1"
+                  className="flex-1 rounded-[var(--spr-radius-sm)] border [border-color:var(--spr-border)] bg-[color:var(--spr-surface)] px-4 py-2.5 text-sm text-[color:var(--spr-text)] placeholder:text-[color:var(--spr-text-muted)] outline-none focus:border-[color:var(--spr-primary)]"
                 />
-                <Button>
+                <button className="spr-button spr-button-secondary">
                   <Mail className="mr-2 w-4 h-4" />
                   Send Report
-                </Button>
+                </button>
               </div>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                <Button variant="outline" className="flex-1">
+                <button className="spr-button spr-button-secondary flex-1">
                   <Download className="mr-2 w-4 h-4" />
                   Download PDF
-                </Button>
-                <Button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600">
-                  Book 2-Week Sprint →
-                </Button>
+                </button>
+                <Link href="/contact" className="spr-button spr-button-primary flex-1">
+                  Book 2-Week Sprint
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </div>
-            </Card>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -290,7 +277,7 @@ export function WedgeFinderTool() {
   }
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="spr-container py-20">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -298,8 +285,8 @@ export function WedgeFinderTool() {
           transition={{ duration: 0.8 }}
         >
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2">Find Your Perfect AI Wedge</h1>
-            <p className="text-muted-foreground">
+            <h1 className="spr-heading-xl mb-2">Find Your Perfect AI Wedge</h1>
+            <p className="spr-body-lg">
               Answer 5 quick questions to identify your ideal starting point
             </p>
           </div>
@@ -307,14 +294,15 @@ export function WedgeFinderTool() {
           {/* Progress Bar */}
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-[color:var(--spr-text-muted)]">
                 Question {currentQuestion + 1} of {questions.length}
               </span>
-              <span className="text-sm font-medium">{Math.round(progress)}% Complete</span>
+              <span className="text-sm font-medium text-[color:var(--spr-text)]">{Math.round(progress)}% Complete</span>
             </div>
-            <div className="w-full bg-muted rounded-full h-2">
+            <div className="w-full rounded-full h-2 bg-[color:var(--spr-surface-strong)]">
               <motion.div
-                className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                className="h-2 rounded-full"
+                style={{ background: "linear-gradient(90deg, var(--spr-primary), var(--spr-accent))" }}
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.3 }}
@@ -331,51 +319,63 @@ export function WedgeFinderTool() {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="p-8">
-                <h2 className="text-xl font-semibold mb-6">
+              <div className="spr-card p-8">
+                <h2 className="text-xl font-semibold mb-6 text-[color:var(--spr-text)]">
                   {questions[currentQuestion].question}
                 </h2>
 
-                <RadioGroup
-                  value={answers[questions[currentQuestion].id] || ""}
-                  onValueChange={handleAnswer}
-                  className="space-y-3"
-                >
+                <div className="space-y-3" role="radiogroup" aria-label={questions[currentQuestion].question}>
                   {questions[currentQuestion].options.map((option) => (
-                    <div
+                    <label
                       key={option.value}
-                      className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors cursor-pointer"
+                      className={`flex items-center gap-3 p-3 rounded-[var(--spr-radius-sm)] border cursor-pointer transition-colors ${
+                        answers[questions[currentQuestion].id] === option.value
+                          ? "[border-color:var(--spr-primary)] bg-[color:rgba(106,167,255,0.12)]"
+                          : "[border-color:var(--spr-border)] hover:border-[color:var(--spr-primary)] hover:bg-[color:rgba(106,167,255,0.06)]"
+                      }`}
                     >
-                      <RadioGroupItem value={option.value} id={option.value} />
-                      <Label
-                        htmlFor={option.value}
-                        className="flex-1 cursor-pointer flex items-center gap-3"
-                      >
-                        <span className="text-2xl">{option.icon}</span>
-                        <span>{option.label}</span>
-                      </Label>
-                    </div>
+                      <input
+                        type="radio"
+                        name={questions[currentQuestion].id}
+                        value={option.value}
+                        checked={answers[questions[currentQuestion].id] === option.value}
+                        onChange={() => handleAnswer(option.value)}
+                        className="sr-only"
+                      />
+                      <span className={`flex h-5 w-5 items-center justify-center rounded-full border-2 ${
+                        answers[questions[currentQuestion].id] === option.value
+                          ? "[border-color:var(--spr-primary)]"
+                          : "[border-color:var(--spr-border)]"
+                      }`}>
+                        {answers[questions[currentQuestion].id] === option.value && (
+                          <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--spr-primary)]" />
+                        )}
+                      </span>
+                      <span className="text-2xl">{option.icon}</span>
+                      <span className="text-[color:var(--spr-text)]">{option.label}</span>
+                    </label>
                   ))}
-                </RadioGroup>
+                </div>
 
                 <div className="flex justify-between mt-8">
-                  <Button
-                    variant="outline"
+                  <button
                     onClick={handlePrevious}
                     disabled={currentQuestion === 0}
+                    className="spr-button spr-button-secondary disabled:opacity-50"
                   >
                     <ArrowLeft className="mr-2 w-4 h-4" />
                     Previous
-                  </Button>
-                  <Button
+                  </button>
+                  <button
                     onClick={handleNext}
                     disabled={!answers[questions[currentQuestion].id]}
+                    className="spr-button spr-button-primary disabled:opacity-50"
                   >
                     {currentQuestion === questions.length - 1 ? "Get Results" : "Next"}
                     <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
+                  </button>
                 </div>
-              </Card>
+              </div>
             </motion.div>
           </AnimatePresence>
         </motion.div>

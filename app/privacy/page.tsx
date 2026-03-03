@@ -6,7 +6,7 @@ export const metadata: Metadata = getPageMetadata("privacy")
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen py-24">
+    <div className="spr-theme spr-page min-h-screen py-24">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
         <p className="text-muted-foreground mb-8">Last updated: {new Date().toLocaleDateString()}</p>

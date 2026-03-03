@@ -79,7 +79,7 @@ export default async function UseCasePage({
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen py-24">
+    <div className="spr-theme spr-page min-h-screen py-24">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">

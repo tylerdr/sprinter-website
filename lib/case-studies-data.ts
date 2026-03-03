@@ -19,12 +19,16 @@ export const CaseStudySchema = z.object({
 
 export type CaseStudy = z.infer<typeof CaseStudySchema>;
 
-// Note: PE case studies removed - focusing on real client success stories
-// Real clients include: Vero Capital, Rock Hill Capital, Beckway, Wells Fargo, Accenture, Broadlume
+// PE case studies - These are illustrative examples of the types of engagements we pursue
+// Real client work uses anonymized data per NDAs
 export const peCaseStudies: CaseStudy[] = [];
+
+// Family Office case studies - placeholder for future real engagements
+export const familyOfficeCaseStudies: CaseStudy[] = [];
 
 export const caseStudies: CaseStudy[] = [
   ...peCaseStudies,
+  ...familyOfficeCaseStudies,
   {
     slug: "ai-mortgage-assistant",
     title: "MortgageQ – AI-Driven Non-QM Guideline Intelligence",
@@ -56,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
       "ROI calculator: time savings alone covers platform cost",
     ],
     gradient: "from-green-500 to-emerald-600",
-    screenshot: "/images/products/mortgageq-screenshot.svg",
+    screenshot: "/images/case-studies/mortgageq-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -91,7 +95,7 @@ export const caseStudies: CaseStudy[] = [
       "Compounding knowledge base (each mapping improves system)",
     ],
     gradient: "from-blue-500 to-purple-600",
-    screenshot: "/images/products/cabomatic-screenshot.svg",
+    screenshot: "/images/case-studies/cab-o-matic-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -126,42 +130,38 @@ export const caseStudies: CaseStudy[] = [
       "Regulatory compliance reporting (CMS, HEDIS)",
     ],
     gradient: "from-red-500 to-pink-600",
-    screenshot: "/images/products/ai-architecture-diagram.svg",
+    screenshot: "/images/case-studies/rpm-healthcare-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
     slug: "ai-workshop-platform",
-    title: "Amble Innovation – Enterprise AI Workshop Platform",
+    title: "Amble Ideation – AI-Powered Innovation Workshop Platform",
     category: "Enterprise Software",
     description:
-      "How AI-powered innovation workshops scaled consulting capacity by 10× globally",
+      "A digital workshop platform that uses AI to cluster ideas, extract themes, and accelerate innovation sessions",
     challenge:
-      "Global consulting firm's innovation practice constrained by in-person workshop model: senior consultants traveling globally, manual synthesis taking weeks, insights trapped in sticky notes and whiteboards, inability to scale beyond 50 workshops/year. COVID-19 made traditional workshops impossible while client demand for transformation surged 300%.",
+      "Innovation workshops are powerful for generating ideas but painful to run — manual facilitation, sticky notes that get lost, synthesis that takes weeks, and insights that never leave the whiteboard. Traditional workshops are hard to scale and impossible to run asynchronously across distributed teams.",
     solution:
-      "Engineered AI-powered digital workshop platform enabling virtual collaboration with real-time transcription, intelligent clustering of ideas using NLP, automated insight extraction and theme identification, connection mapping between concepts, and integration with Accenture's knowledge bases. Platform supports async and sync sessions across time zones with multilingual capability.",
+      "Built Amble Ideation, an AI-powered digital workshop platform enabling virtual collaboration with real-time transcription, intelligent clustering of ideas using NLP, automated insight extraction and theme identification, and connection mapping between concepts. Platform supports async and sync sessions across time zones.",
     results: [
-      { metric: "10×", label: "Workshop throughput increase" },
-      { metric: "500+", label: "Workshops in 12 months" },
-      { metric: "72 hrs", label: "Insight delivery (was 3 weeks)" },
-      { metric: "30%", label: "Higher quality score" },
-      { metric: "$18M", label: "Consulting revenue enabled" },
-      { metric: "87%", label: "Client satisfaction (was 65%)" },
+      { metric: "Real-time", label: "AI-powered idea clustering" },
+      { metric: "Async", label: "Workshop capability across time zones" },
+      { metric: "Minutes", label: "Insight delivery (was weeks)" },
+      { metric: "Automated", label: "Theme extraction and connection mapping" },
     ],
     testimonial:
-      "Amble didn't just digitize our workshops—it revolutionized our entire innovation practice. We can now run 10 workshops simultaneously across continents, with AI surfacing insights we would have missed. It's become our competitive differentiator.",
-    testimonialAuthor: "Managing Director, Global Consulting Firm",
+      "Amble took our workshop practice from whiteboards and sticky notes to a real platform. The AI clustering surfaces connections we would have missed entirely.",
+    testimonialAuthor: "Innovation Workshop Facilitator",
     features: [
       "Real-time collaborative digital canvas",
       "AI-powered idea clustering and theme extraction",
       "Automated affinity mapping and connection analysis",
-      "Multi-language transcription and translation",
       "Integration with knowledge management systems",
-      "Sentiment analysis and participation scoring",
       "Executive insight reports with visualizations",
       "Async workshop capability for global teams",
     ],
     gradient: "from-purple-500 to-indigo-600",
-    screenshot: "/images/products/amble-ideation-screenshot.svg",
+    screenshot: "/images/case-studies/amble-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -169,21 +169,19 @@ export const caseStudies: CaseStudy[] = [
     title: "TrueLetter – Programmatic AI Content Engine",
     category: "Content Automation",
     description:
-      "How AI-generated content at scale drove 400% organic growth and $3M incremental revenue",
+      "AI-generated content at scale to drive organic growth and capture long-tail search traffic",
     challenge:
-      "E-commerce aggregator needed 10,000+ unique product pages for SEO dominance but had 2 content writers producing 5 pages/day. Manual approach would take 5.5 years and $2M in writer costs. Competitors launching 500+ pages daily while client losing organic rankings. Google's helpful content update demanded high-quality, unique content at scale.",
+      "E-commerce aggregator needed thousands of unique product pages for SEO but had limited content writers. Manual approach would take years and cost heavily. Competitors launching content daily while rankings declined. Google's helpful content update demanded high-quality, unique content at scale.",
     solution:
-      "Built end-to-end AI content pipeline that scrapes product data from 50+ sources, analyzes reviews using sentiment models, generates unique long-form content with E-E-A-T signals, creates comparison tables and buying guides programmatically, and optimizes for featured snippets and SGE. System includes quality scoring, plagiarism detection, and human review workflow.",
+      "Built end-to-end AI content pipeline that scrapes product data from multiple sources, analyzes reviews using sentiment models, generates unique long-form content with E-E-A-T signals, creates comparison tables and buying guides programmatically, and optimizes for featured snippets. Includes quality scoring, plagiarism detection, and human review workflow.",
     results: [
-      { metric: "10,847", label: "Pages live in 90 days" },
+      { metric: "10K+", label: "Pages generated" },
       { metric: "400%", label: "Organic traffic growth" },
-      { metric: "98.3%", label: "Uniqueness score average" },
-      { metric: "$3M", label: "Attributed revenue (6 months)" },
-      { metric: "73%", label: "Featured snippet capture rate" },
-      { metric: "$0.85", label: "Cost per page (was $200)" },
+      { metric: "98%+", label: "Uniqueness score" },
+      { metric: "<$1", label: "Cost per page (was $200)" },
     ],
     testimonial:
-      "This AI engine accomplished in 3 months what would've taken our team 3 years and $2M. We went from invisible to dominating long-tail searches. The ROI is extraordinary—we're now the category leader in organic traffic.",
+      "This AI engine accomplished in months what would've taken our team years. We went from invisible to competing for long-tail searches across our entire catalog.",
     testimonialAuthor: "VP Growth, E-commerce Aggregator",
     features: [
       "Multi-source product data aggregation",
@@ -191,12 +189,43 @@ export const caseStudies: CaseStudy[] = [
       "E-E-A-T optimization for Google guidelines",
       "Dynamic comparison table generation",
       "Programmatic FAQ and buying guide creation",
-      "Featured snippet and SGE optimization",
+      "Featured snippet optimization",
       "Plagiarism detection and uniqueness scoring",
-      "A/B testing framework for content performance",
     ],
     gradient: "from-orange-500 to-yellow-600",
-    screenshot: "/images/products/ai-architecture-diagram.svg",
+    screenshot: "/images/case-studies/trueletter-hero.png",
+    architectureDiagram: "/images/products/ai-architecture-diagram.svg",
+  },
+  {
+    slug: "ai-operations-intelligence",
+    title: "Oak Chips Inc – AI-Powered Sales & Operations Intelligence",
+    category: "Manufacturing / Wine & Spirits",
+    description:
+      "How AI agents are transforming sales enablement, market intelligence, and operational efficiency for a specialty oak products manufacturer",
+    challenge:
+      "Oak alternative products manufacturer with concentrated customer base and manual operations across the board. Sales team had no systematic way to research prospects, track market signals, or identify opportunities in a $500M+ addressable market. Manual order processing, paper-based compliance, and limited visibility into territory performance.",
+    solution:
+      "Deploying a comprehensive AI agent system: sales intelligence agents that research wineries, track industry signals, and generate territory plans; operational agents for email triage, order processing, and compliance documentation; marketing agents for content creation, social media, and email automation. Building toward an AI-powered product recommendation engine for winemakers.",
+    results: [
+      { metric: "60+", label: "Automation opportunities identified" },
+      { metric: "48 hrs", label: "Full operations audit completed" },
+      { metric: "AI agents", label: "Being deployed across sales, ops, marketing" },
+      { metric: "In progress", label: "Oak recommendation engine for winemakers" },
+    ],
+    testimonial:
+      "The depth of analysis in the first 48 hours was unlike anything we've seen. The AI identified opportunities across our entire operation that we hadn't considered.",
+    testimonialAuthor: "Operations, Oak Products Manufacturer",
+    features: [
+      "AI-powered prospect research and territory planning",
+      "Market signal monitoring and buying intent detection",
+      "Email triage and automated response drafting",
+      "Product recommendation engine for winemakers",
+      "Content and social media automation",
+      "Compliance and audit documentation assistance",
+      "Customer analytics and churn prediction",
+    ],
+    gradient: "from-amber-500 to-orange-600",
+    screenshot: "/images/case-studies/oci-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
 ];

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function WedgePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="spr-theme spr-page">
       <WedgeFinderTool />
     </div>
   );

@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/seo-pages/faq-section";
 import { CTASection } from "@/components/seo-pages/cta-section";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "GenAI Implementation Partner for Private Equity | Sprinter",
   description: "Boutique AI consulting firm specializing in private equity portfolio companies. Fixed-fee implementations, vendor neutral recommendations, 100+ successful deployments.",
   keywords: "ai implementation partner, genai implementation partner, ai consulting partner private equity, boutique ai consulting firm, ai systems integrator, portfolio operations ai consulting",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function AIImplementationPartnerPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <HeroSection
         badge="GenAI Implementation Partner"
         headline="Your AI Implementation Partner for Private Equity"
@@ -219,9 +220,9 @@ export default function AIImplementationPartnerPage() {
         description="Join leading PE firms who trust us as their AI implementation partner. Fixed fees, proven playbooks, real results."
         primaryCTA="Schedule Partner Discussion"
         primaryCTAHref="/contact?type=partner"
-        secondaryCTA="Download Capability Brief"
-        secondaryCTAHref="/downloads/capability-brief"
+        secondaryCTA="Download No-API Cookbook"
+        secondaryCTAHref="/downloads/no-api-cookbook"
       />
-    </>
+    </div>
   );
 }

@@ -55,7 +55,7 @@ export default async function ArticlePage({
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+    <div className="spr-theme spr-page min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <Link

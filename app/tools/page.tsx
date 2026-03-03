@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function ToolsPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <ToolsPlatformHero />
       <ToolsDirectory />
-    </>
+    </div>
   );
 }

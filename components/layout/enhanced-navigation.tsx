@@ -8,7 +8,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useCallback } from "react";
 import { BrandLogo } from "@/components/logo/BrandLogo";
 import { NavigationAuth } from "./navigation-auth";
-import { ThemeToggle } from "@/components/theme-toggle";
 import dynamic from "next/dynamic";
 
 const ThemeStudio = dynamic(
@@ -195,7 +194,6 @@ export function EnhancedNavigation() {
               </NavigationMenu>
 
               <div className="flex items-center gap-2 ml-3 pl-3 border-l border-border/30">
-                <ThemeToggle />
                 <NavigationAuth />
                 {config.ctas.map((cta) => (
                   <Link
@@ -219,7 +217,6 @@ export function EnhancedNavigation() {
 
             {/* Mobile Controls */}
             <div className="flex items-center gap-3 md:hidden">
-              <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-foreground hover:bg-card/30 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-start)] focus:ring-offset-2 focus:ring-offset-background"

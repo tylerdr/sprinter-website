@@ -1,0 +1,29 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="440" height="440" fill="transparent"/>
+  <g opacity="0.55" stroke="#6AA7FF" stroke-width="1">
+    <path d="M0 0H440" stroke-opacity="0.08"/>
+    <path d="M0 44H440" stroke-opacity="0.1"/>
+    <path d="M0 88H440" stroke-opacity="0.08"/>
+    <path d="M0 132H440" stroke-opacity="0.1"/>
+    <path d="M0 176H440" stroke-opacity="0.08"/>
+    <path d="M0 220H440" stroke-opacity="0.12"/>
+    <path d="M0 264H440" stroke-opacity="0.08"/>
+    <path d="M0 308H440" stroke-opacity="0.1"/>
+    <path d="M0 352H440" stroke-opacity="0.08"/>
+    <path d="M0 396H440" stroke-opacity="0.1"/>
+    <path d="M0 440H440" stroke-opacity="0.08"/>
+  </g>
+  <g opacity="0.55" stroke="#7DD3FC" stroke-width="1">
+    <path d="M0 0V440" stroke-opacity="0.08"/>
+    <path d="M44 0V440" stroke-opacity="0.1"/>
+    <path d="M88 0V440" stroke-opacity="0.08"/>
+    <path d="M132 0V440" stroke-opacity="0.1"/>
+    <path d="M176 0V440" stroke-opacity="0.08"/>
+    <path d="M220 0V440" stroke-opacity="0.12"/>
+    <path d="M264 0V440" stroke-opacity="0.08"/>
+    <path d="M308 0V440" stroke-opacity="0.1"/>
+    <path d="M352 0V440" stroke-opacity="0.08"/>
+    <path d="M396 0V440" stroke-opacity="0.1"/>
+    <path d="M440 0V440" stroke-opacity="0.08"/>
+  </g>
+</svg>

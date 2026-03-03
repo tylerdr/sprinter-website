@@ -24,7 +24,7 @@ test.describe('Contact', () => {
     // Check contact info is displayed
     await expect(page.locator('text=hello@sprinter.ai')).toBeVisible();
     await expect(page.locator('text=+1 (615) 601-0782')).toBeVisible();
-    await expect(page.locator('text=Brentwood, TN')).toBeVisible();
+    await expect(page.locator('text=Orange County, CA')).toBeVisible();
     
     // Check Book Discovery Call section
     await expect(page.locator('text=Book a Discovery Call')).toBeVisible();

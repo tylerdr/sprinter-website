@@ -1,11 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
-  ArrowRight,
   Clock,
   Users,
   TrendingUp,
@@ -17,6 +15,9 @@ import {
   Calendar
 } from "lucide-react";
 import { BookDemoButton } from "@/components/shared/book-demo-button";
+import TrustedBy from "@/components/sprinter-ai/TrustedBy";
+import StickyCTA from "@/components/sprinter-ai/StickyCTA";
+import { generateServiceStructuredData, getStructuredDataScript } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "AI Operating Partner Retainer | Sprinter AI",
@@ -24,9 +25,19 @@ export const metadata: Metadata = {
   keywords: "AI operating partner, retainer model, PE AI advisory, sprint capacity, portfolio AI, continuous AI capability",
 };
 
+const serviceData = generateServiceStructuredData(
+  "AI Operating Partner Retainer",
+  "A continuous AI operating partner model for PE firms that combines monthly advisory, education, and execution capacity to compound portfolio value.",
+  "15000"
+);
+
 export default function AIOperatingPartnerRetainerPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="spr-theme spr-page min-h-screen overflow-x-hidden bg-background pb-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={getStructuredDataScript(serviceData)}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5" />
@@ -46,26 +57,25 @@ export default function AIOperatingPartnerRetainerPage() {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              AI changes every quarter. New models, new capabilities, new best practices.
-              Get continuous access to AI expertise, education, and sprint capacity to stay ahead.
+              AI agents can now run procurement, reporting, and customer operations 24/7.
+              This retainer gives your firm ongoing advisory plus execution capacity so every quarter compounds EBITDA, not backlog.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <BookDemoButton
                 size="lg"
                 text="Discuss Retainer Options"
                 className="bg-gradient-to-r from-blue-600 to-purple-600"
               />
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/insights/ai-operating-partner-model">
-                  Read Full Guide
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
             </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Prefer to start smaller? Begin with the <Link href="/ai-sprint" className="text-primary hover:underline">AI Readiness Sprint</Link>.
+            </p>
           </div>
         </div>
       </section>
+
+      <TrustedBy />
 
       {/* Why AI Moves Fast */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -113,6 +123,19 @@ export default function AIOperatingPartnerRetainerPage() {
               <p className="text-lg text-center">
                 <strong>You need continuous partnership</strong> that keeps pace with AI's evolution—not
                 one-off projects that become obsolete before they ship.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="border-primary/30 bg-primary/5">
+            <CardContent className="pt-8 text-center">
+              <h2 className="text-2xl font-bold mb-3">Pilot-first guarantee</h2>
+              <p className="text-muted-foreground">
+                If your first retainer-backed sprint does not deliver a production workflow with documented operator handoff, we fund the remediation sprint.
               </p>
             </CardContent>
           </Card>
@@ -459,27 +482,22 @@ export default function AIOperatingPartnerRetainerPage() {
                 Schedule a call to discuss retainer options and how continuous AI partnership
                 can accelerate value creation across your portfolio.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <BookDemoButton
                   size="lg"
                   text="Discuss Retainer Options"
                   className="bg-gradient-to-r from-blue-600 to-purple-600"
                 />
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/insights/ai-operating-partner-model">
-                    Read Full Guide
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                </Button>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">
-                Or start with a <Link href="/ai-sprint" className="text-primary hover:underline">single sprint</Link> ($50K)
+                Or start with a <Link href="/ai-sprint" className="text-primary hover:underline">single sprint</Link> ($2,500)
                 to validate the approach before committing to a retainer.
               </p>
             </CardContent>
           </Card>
         </div>
       </section>
+      <StickyCTA href="https://cal.com/tyler-dreher" label="Discuss Retainer Options" />
     </div>
   );
 }

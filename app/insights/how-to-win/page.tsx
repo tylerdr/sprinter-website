@@ -201,7 +201,7 @@ const playbooks = [
 
 export default function HowToWinPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="spr-theme spr-page min-h-screen">
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-start/5 via-transparent to-brand-end/5" />
         

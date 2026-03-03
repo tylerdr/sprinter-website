@@ -63,9 +63,9 @@ export function Navigation() {
             <NavigationMenu>
               <NavigationMenuList>
                 {NAVIGATION.main.map((item) => {
-                  const hasDropdown = "dropdown" in item && item.dropdown;
-                  const dropdownItems = "items" in item && item.items ? item.items :
-                                       "dropdown" in item && item.dropdown ? item.dropdown : [];
+                  const navItem = item as any;
+                  const dropdownItems = navItem.items ?? navItem.dropdown ?? [];
+                  const hasDropdown = Array.isArray(dropdownItems) && dropdownItems.length > 0;
 
                   return (
                     <NavigationMenuItem key={item.href}>
@@ -100,6 +100,7 @@ export function Navigation() {
                                     case "zap": return Zap;
                                     case "truck": return Truck;
                                     case "handshake": return Users;
+                                    case "users": return Users;
                                     case "grid": return Grid3x3;
                                     case "chart": return BarChart3;
                                     case "book": return BookOpen;
@@ -285,7 +286,12 @@ export function Navigation() {
                     transition={{ delay: index * 0.05 }}
                     role="listitem"
                   >
-                    {"dropdown" in item && item.dropdown ? (
+                    {(() => {
+                      const navItem = item as any;
+                      const mobileDropdownItems = navItem.items ?? navItem.dropdown ?? [];
+                      const hasMobileDropdown = Array.isArray(mobileDropdownItems) && mobileDropdownItems.length > 0;
+
+                      return hasMobileDropdown ? (
                       <div>
                         <button
                           onClick={() => toggleMobileItem(item.href)}
@@ -312,8 +318,7 @@ export function Navigation() {
                             exit={{ opacity: 0, height: 0 }}
                             className="pl-4 space-y-1"
                           >
-                            {(("items" in item && item.items ? item.items :
-                              "dropdown" in item && item.dropdown ? item.dropdown : [])).map((dropdownItem) => (
+                            {mobileDropdownItems.map((dropdownItem: any) => (
                               <Link
                                 key={dropdownItem.href}
                                 href={dropdownItem.href}
@@ -346,7 +351,8 @@ export function Navigation() {
                       >
                         {item.label}
                       </Link>
-                    )}
+                    );
+                    })()}
                   </motion.div>
                 ))}
                 {NAVIGATION.ctas && (

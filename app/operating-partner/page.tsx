@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function OperatingPartnerPage() {
   return (
-    <>
+    <div className="spr-theme spr-page">
       <OperatingPartnerHero />
       <HowWeWork />
       <WhatYouGet />
@@ -23,6 +23,6 @@ export default function OperatingPartnerPage() {
       <ProofPoints />
       <Workshop />
       <FAQ />
-    </>
+    </div>
   );
 }

@@ -13,43 +13,28 @@ import { useState } from "react";
 const faqs = [
   {
     id: "1",
-    question: "How is this different from traditional consulting?",
-    answer: "You get specialists who ship production systems in 10 days, not consultants who deliver PowerPoints in 45. Your choice of custom or off-the-shelf. Your repeatable playbooks. Your measurable ROI. No drama, just results."
+    question: "What makes you different from big consulting firms?",
+    answer: "We ship working systems, not strategy decks. Our sprint-based approach gets AI into production in weeks, not months. We're practitioners who build and deploy—not consultants who advise and leave."
   },
   {
     id: "2",
-    question: "What if our portfolio companies don't have APIs?",
-    answer: "No API? No problem. You get automation that works with your legacy systems. 70%+ of deployments need zero API access. Your old systems become automated using document intelligence, screen automation, and smart workflows. You don't need to replace anything."
+    question: "We're not very 'tech-forward'—can AI still work for us?",
+    answer: "Absolutely. Most of our clients say the same thing initially. We specialize in building AI that works with existing systems, messy data, and real-world workflows. You don't need a modern tech stack or clean data to start."
   },
   {
     id: "3",
-    question: "How do you ensure adoption across our portfolio companies?",
-    answer: "You build WITH your operators, never for them. Your team gets hands-on training, complete documentation, and change management support. Your internal champions learn to identify and implement new opportunities independently. You own the capability."
+    question: "How do your sprints work?",
+    answer: "Each sprint is 2-4 weeks with a defined scope and deliverable. We build, you validate, we iterate. Working systems in production—not endless planning cycles."
   },
   {
     id: "4",
-    question: "What's included in a 10-day sprint?",
-    answer: "Day 1-3: Your discovery, process mapping, and opportunity assessment. Day 4-7: Your production system built and tested with your real data. Day 8-10: Your deployment with monitoring, training, and handover. You get a working production system with full documentation and support."
+    question: "How do wins compound across a portfolio?",
+    answer: "The playbook from your first implementation makes the second faster. Shared learnings, proven templates, and trained operators who can extend the work independently."
   },
   {
     id: "5",
-    question: "How do we measure ROI?",
-    answer: "You establish clear KPIs upfront: your time saved, your accuracy improvements, your cost reduction, your process acceleration. You track these metrics in real-time across all your deployments. Typical results: 20+ hours/week saved per team, 42% faster quote cycles, 60%+ touchless processing."
-  },
-  {
-    id: "6",
-    question: "Can this work with our existing tech stack?",
-    answer: "Yes. You keep your current tools—Salesforce, SAP, Microsoft, custom systems. You don't replace anything. You enhance what you have. Your AI integrates additively. You choose: cloud, on-premise, or hybrid. Your infrastructure, your way."
-  },
-  {
-    id: "7",
-    question: "What about data security and compliance?",
-    answer: "You stay compliant. Your data stays in your environment. You get full audit trails, encryption at rest and in transit, role-based access controls. Your HIPAA/GDPR requirements are met. Your security standards drive every decision."
-  },
-  {
-    id: "8",
-    question: "How do we scale across our portfolio?",
-    answer: "You start with one high-impact use case. You prove value. You templatize and deploy across sister companies. Your 2nd deployment is 50% faster. Your 3rd is 70% faster. You maintain a portfolio-wide knowledge base. Your wins compound."
+    question: "How do we get started?",
+    answer: "Book a strategy call and we'll discuss your specific situation—where AI could help, what a sprint might look like, and whether we're a good fit. No pressure, no sales pitch."
   }
 ];
 

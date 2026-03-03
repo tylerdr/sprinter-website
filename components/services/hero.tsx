@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Sparkles, CheckCircle2 } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { CheckIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 const outcomes = [
   "Document Intelligence that achieves ≥60% touchless processing",
@@ -11,71 +11,64 @@ const outcomes = [
 ];
 
 export function ServicesHero() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
-      <div className="max-w-6xl mx-auto">
+    <section className="spr-container relative overflow-hidden px-2 py-20 sm:py-24">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(106,167,255,0.2),_transparent_62%)] blur-2xl" />
+      </div>
+
+      <div className="mx-auto max-w-4xl text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm mb-8">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-medium text-blue-400">AI Services</span>
+          <div className="mb-8 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(255,171,102,0.14)] px-4 py-2 text-sm text-[color:var(--spr-accent)]">
+              <SparklesIcon className="h-4 w-4" />
+              <span>AI Services</span>
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-            AI Services That{" "}
-            <span className="gradient-text">Actually Ship</span>
+          <h1 className="spr-heading-xl">
+            AI Services That Actually Ship
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+          <p className="spr-body-lg mt-6 max-w-3xl mx-auto">
             From strategy to implementation in weeks. We deliver working AI solutions with clear acceptance criteria, measurable KPIs, and governance you can defend.
           </p>
 
-          {/* Outcome List */}
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
-            {outcomes.map((outcome, index) => (
-              <motion.div
+          <div className="mt-12 grid gap-4 md:grid-cols-2 max-w-3xl mx-auto">
+            {outcomes.map((outcome) => (
+              <div
                 key={outcome}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="flex items-start gap-3 text-left bg-card/50 backdrop-blur-sm border rounded-lg p-4"
+                className="spr-card spr-card-tight flex items-start gap-3 p-4 text-left"
               >
-                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">{outcome}</span>
-              </motion.div>
+                <CheckIcon className="h-5 w-5 flex-shrink-0 text-[color:var(--spr-primary)] mt-0.5" />
+                <span className="text-sm text-[color:var(--spr-text-soft)]">{outcome}</span>
+              </div>
             ))}
           </div>
 
-          {/* Key Differentiators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-6 text-sm"
-          >
+          <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-blue-500" />
-              <span className="font-medium">We Ship, Not Slide</span>
-              <span className="text-muted-foreground">Working code in 10 days, not PowerPoints in 10 weeks</span>
+              <span className="spr-list-dot" aria-hidden />
+              <span className="font-medium text-[color:var(--spr-text)]">We Ship, Not Slide</span>
+              <span className="text-[color:var(--spr-text-muted)]">Working code in 10 days</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-purple-500" />
-              <span className="font-medium">Real Engineers</span>
-              <span className="text-muted-foreground">Shipped AI at scale since 2018</span>
+              <span className="spr-list-dot" aria-hidden />
+              <span className="font-medium text-[color:var(--spr-text)]">Real Engineers</span>
+              <span className="text-[color:var(--spr-text-muted)]">Shipped AI since 2018</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span className="font-medium">ROI Focused</span>
-              <span className="text-muted-foreground">Every project tied to measurable outcomes</span>
+              <span className="spr-list-dot" aria-hidden />
+              <span className="font-medium text-[color:var(--spr-text)]">ROI Focused</span>
+              <span className="text-[color:var(--spr-text-muted)]">Every project tied to outcomes</span>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

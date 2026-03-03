@@ -24,12 +24,16 @@ const iconByCategory: Record<
   React.ComponentType<React.SVGProps<SVGSVGElement>>
 > = {
   "FinTech AI Platform": DollarSign,
+  "FinTech": DollarSign,
   "B2B SaaS": Zap,
+  "B2B SaaS / Manufacturing": Zap,
   "Healthcare Tech": Users,
+  "Healthcare": Heart,
   "Enterprise Software": Brain,
   "Content Automation": Bot,
   "Financial Services": Building2,
   "Healthcare Technology": Heart,
+  "Manufacturing / Wine & Spirits": Building2,
 };
 
 const caseStudies = caseStudyData.map((c) => ({
@@ -51,7 +55,7 @@ const caseStudies = caseStudyData.map((c) => ({
 
 export default function CaseStudiesPage() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+    <div className="spr-theme spr-page min-h-screen py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full bg-success-10 border border-success-30 mb-4 sm:mb-6">
@@ -65,9 +69,9 @@ export default function CaseStudiesPage() {
             Case <span className="gradient-text">Studies</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
-            Real AI transformations delivering measurable ROI. See how
-            we&apos;ve helped businesses 10x their efficiency and unlock
-            millions in value.
+            Real AI systems in production across manufacturing, fintech,
+            healthcare, and more. See how we deploy AI agent systems that
+            empower teams and automate operations.
           </p>
         </div>
 
@@ -202,12 +206,12 @@ export default function CaseStudiesPage() {
 
         <div className="text-center mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-brand-10 border border-brand-30 max-w-4xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-            Ready to become our next{" "}
-            <span className="gradient-text">success story</span>?
+            Ready to ship <span className="gradient-text">AI to production</span>?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            Join companies that have transformed their operations with AI. Most
-            clients see ROI within 60 days.
+            Let&apos;s talk about what AI agents can do for your business.
+            Start with a $2,500 AI Readiness Sprint — we&apos;ll map your
+            operations and show you exactly where AI creates value.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link

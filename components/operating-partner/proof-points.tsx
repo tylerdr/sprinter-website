@@ -47,7 +47,7 @@ export function ProofPoints() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real outcomes from real portcos. Anonymized, CFO-verified, replicable.
+            Representative outcomes from our implementation methodology.
           </p>
         </motion.div>
 
