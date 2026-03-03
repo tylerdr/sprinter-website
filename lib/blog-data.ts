@@ -698,6 +698,164 @@ export const articles: Article[] = [
         ]
       }
     ]
+  },
+  {
+    slug: "ai-agents-for-small-business",
+    title: "AI Agents for Small Business: The $2,500 Test That Changes Everything",
+    excerpt: "Your competitors are already using AI agents to handle quoting, follow-ups, and data entry. Here's why a 48-hour sprint is the fastest way to find out what AI can do for your business.",
+    category: "AI Strategy",
+    readTime: "6 min read",
+    date: "2026-02-28",
+    featured: true,
+    tags: ["AI Agents", "Small Business", "AI Sprint", "ROI"],
+    content: [
+      {
+        heading: "The AI Gap Is Real — And Growing",
+        paragraphs: [
+          "There's a quiet revolution happening in businesses you'd never expect. The hardware store down the street is using AI to manage inventory. The cabinet manufacturer across town is auto-generating quotes in seconds instead of hours. The roofing company is using AI agents to follow up with every lead within minutes.",
+          "These aren't tech companies. They're businesses with warehouses, delivery trucks, and people who'd rather be building things than entering data into spreadsheets. But they figured something out: AI agents can handle the repetitive operational work that eats 40-60% of their team's time.",
+          "The businesses that move first in each vertical are building templates — playbooks that get faster and cheaper to deploy with each new customer in the same industry. The window to be first is closing."
+        ]
+      },
+      {
+        heading: "What AI Agents Actually Do (No Hype)",
+        paragraphs: [
+          "Forget the sci-fi version. AI agents for business are practical, boring, and incredibly effective. Here's what they do day in, day out:",
+          "They read your emails, triage by urgency, draft responses, and flag anything that needs a human decision. Your team opens their inbox to a pre-sorted, pre-drafted workspace instead of chaos.",
+          "They process invoices, match purchase orders, flag discrepancies, and route approvals. What took a bookkeeper 3 hours takes an agent 3 minutes — with fewer errors.",
+          "They follow up with every lead, every time. No more prospects falling through the cracks because someone got busy. The agent sends the right message at the right time, then hands off to a human when the conversation gets real.",
+          "They generate reports, update CRMs, cross-reference catalogs, build quotes, and monitor for anomalies. The work your team hates doing but can't stop doing."
+        ]
+      },
+      {
+        heading: "The $2,500 Test",
+        paragraphs: [
+          "You don't need to commit $100K to find out if AI works for your business. You need 48 hours and $2,500.",
+          "That's what our AI Readiness Sprint costs. In two days, we map your entire operation: every process, every bottleneck, every place where humans are doing work that agents could handle. You get a scored backlog of automation opportunities with ROI estimates for each one.",
+          "Most sprints identify 20-60 opportunities. The average total value identified exceeds $100K in annual savings. And the sprint fee credits toward any continued engagement.",
+          "It's the fastest way to know — with real data, not guesses — what AI can do for your specific business."
+        ]
+      },
+      {
+        heading: "Empowering People, Not Replacing Them",
+        paragraphs: [
+          "Here's what we've learned from deploying AI across multiple industries: the best implementations don't eliminate people. They eliminate the work people shouldn't be doing.",
+          "When you take data entry off a salesperson's plate, they sell more. When you take invoice processing off a bookkeeper's plate, they handle more strategic finance work. When you take follow-up emails off a manager's plate, they manage better.",
+          "AI agents are an unlimited workforce that handles the operational grind 24/7. Your people are still essential — they're just doing their best work instead of their most tedious work.",
+          "That's the real ROI. Not headcount reduction. Headcount leverage."
+        ]
+      },
+      {
+        heading: "Start This Week",
+        paragraphs: [
+          "The businesses winning with AI right now aren't the ones who spent a year on strategy. They're the ones who ran a quick test, proved the value, and scaled what worked.",
+          "Book a free 30-minute strategy call. We'll learn about your business and tell you honestly whether AI agents are a fit. If they are, the $2,500 Sprint is the fastest way to see it. If they're not, we'll tell you that too.",
+          "Either way, you'll know. And knowing beats guessing every time."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "unlimited-ai-workforce",
+    title: "The Unlimited AI Workforce: How AI Agents Scale Your Operations Without Scaling Headcount",
+    excerpt: "AI agents work 24/7 on your processes, your data, your tools. Here's what it means to have an unlimited workforce that never calls in sick.",
+    category: "AI Strategy",
+    readTime: "7 min read",
+    date: "2026-02-25",
+    featured: false,
+    tags: ["AI Agents", "Workforce", "Automation", "Operations"],
+    content: [
+      {
+        heading: "The Old Way: More Work = More People",
+        paragraphs: [
+          "Every growing business hits the same wall. Revenue goes up, complexity goes up, and suddenly you need more people just to keep the machine running. More customer service reps. More data entry clerks. More coordinators, more processors, more people doing work that's repetitive but necessary.",
+          "Hiring is expensive, slow, and fragile. It takes months to find, train, and ramp someone up. They get sick. They quit. They have bad days. And every new hire adds management overhead that eats into the very productivity you're trying to gain.",
+          "What if you could scale operations without scaling headcount?"
+        ]
+      },
+      {
+        heading: "The New Reality: AI Agents as Your Operational Layer",
+        paragraphs: [
+          "AI agents are software that doesn't just follow rules — it pursues goals. Give an agent the objective 'process every incoming invoice within 15 minutes' and it figures out how. It reads the invoice, matches it to the PO, flags discrepancies, routes approvals, and learns from every exception.",
+          "One agent can handle the work of 3-5 people for a specific operational task. And unlike people, agents work 24/7. They don't take breaks. They don't have bad Mondays. They process their 10,000th invoice with the same accuracy as their first.",
+          "This isn't automation in the old sense — rigid rules that break the moment something unexpected happens. AI agents handle edge cases, learn from mistakes, and get better over time."
+        ]
+      },
+      {
+        heading: "What This Looks Like in Practice",
+        paragraphs: [
+          "A cabinet manufacturer we work with deployed AI agents to handle their multi-manufacturer quoting process. Before: designers spent 2+ hours per plan manually cross-referencing catalogs. After: agents generate accurate quotes in minutes, pulling from 14 manufacturer catalogs with 250,000+ price points.",
+          "A mortgage lender deployed an AI guideline intelligence agent. Before: loan officers spent 4+ hours researching lending guidelines across 50+ lenders. After: the agent searches all lenders in seconds and surfaces the best options for each borrower profile.",
+          "In both cases, no one was fired. The designers now design more plans. The loan officers now close more loans. The agents handle the operational grind that was bottlenecking the humans.",
+          "That's the pattern: AI agents don't replace your team. They remove the ceiling on what your team can accomplish."
+        ]
+      },
+      {
+        heading: "The Economics of an Unlimited Workforce",
+        paragraphs: [
+          "Let's do the math on a typical AI agent deployment:",
+          "A data entry clerk costs $35-50K/year fully loaded. They work 2,000 hours. They make errors. They need management. An AI agent handling the same work costs $5-8K/month, works 8,760 hours/year, has near-zero error rates, and needs no management.",
+          "But the real value isn't the cost comparison — it's the scale. You can deploy 5 agents for what one employee costs. Each agent handles a different operational function. Suddenly your small team is operating like a company 5× its size.",
+          "And the margins compound. Once an AI agent is deployed for one type of work, deploying it across similar processes is faster and cheaper. The template model means each deployment gets more profitable."
+        ]
+      },
+      {
+        heading: "Getting Started",
+        paragraphs: [
+          "You don't need to transform your entire operation overnight. Start with one painful, repetitive process that requires some judgment. Deploy an agent. Measure the results. Then scale.",
+          "Our AI Readiness Sprint ($2,500, 48 hours) maps your entire operation and identifies every automation opportunity with ROI estimates. It's the fastest way to see exactly where an unlimited AI workforce creates value for your specific business.",
+          "The companies that win aren't the ones with the biggest teams. They're the ones with the most leverage. AI agents are that leverage."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "ai-readiness-sprint-results",
+    title: "What Happens in a 48-Hour AI Readiness Sprint (Real Example)",
+    excerpt: "A look inside our AI Readiness Sprint: how we map operations, score automation opportunities, and deliver a roadmap that shows exactly where AI creates value.",
+    category: "Implementation",
+    readTime: "5 min read",
+    date: "2026-02-20",
+    featured: false,
+    tags: ["AI Sprint", "Implementation", "Case Study", "Operations"],
+    content: [
+      {
+        heading: "The Fastest Way to Know What AI Can Do for You",
+        paragraphs: [
+          "Most companies approach AI backwards. They start with the technology ('let's use ChatGPT for something') instead of starting with the problem ('where are we losing time and money?').",
+          "Our AI Readiness Sprint flips the script. In 48 hours, we map your entire operation — every process, every handoff, every bottleneck — and tell you exactly where AI agents will create the most value. No guessing. No lengthy discovery phases. Just answers."
+        ]
+      },
+      {
+        heading: "Hour by Hour: What Actually Happens",
+        paragraphs: [
+          "Hours 1-4: Stakeholder interviews. We talk to the people who actually do the work — not just leadership. The frontline team knows where the real pain is. We map every major workflow, noting where time is spent, where errors occur, and where things slow down.",
+          "Hours 5-12: Process mapping and data analysis. We document every workflow in detail, identifying inputs, outputs, decision points, and exceptions. We analyze your existing tools and data to understand what's available for AI agents to work with.",
+          "Hours 13-24: Opportunity scoring. Each automation opportunity gets scored on three dimensions: potential time savings, implementation complexity, and business impact. We estimate ROI for each opportunity and rank them by quick-win potential.",
+          "Hours 25-40: Roadmap development. We build a phased implementation plan that starts with the highest-value, lowest-complexity opportunities. Each phase includes specific agent designs, tool integrations, and success metrics.",
+          "Hours 41-48: Presentation and strategy session. We walk you through everything: the opportunities we found, the ROI we estimate, and the recommended path forward. You leave with a document that could guide your AI strategy for the next 12 months."
+        ]
+      },
+      {
+        heading: "What You Get",
+        paragraphs: [
+          "A scored backlog of 20-60 automation opportunities, each with estimated annual value.",
+          "A phased implementation roadmap prioritized by ROI and feasibility.",
+          "A working prototype for your #1 use case (where applicable in 48 hours).",
+          "A 60-minute strategy session to review findings and plan next steps.",
+          "30 days of follow-up support for questions that come up after.",
+          "And the sprint fee ($2,500) credits toward any continued engagement. So if you move forward, the sprint was essentially free."
+        ]
+      },
+      {
+        heading: "Why 48 Hours?",
+        paragraphs: [
+          "We've found that 48 hours is the sweet spot. Long enough to do rigorous analysis. Short enough that you don't lose momentum or attention. And short enough that the investment ($2,500) makes it an easy yes for any business serious about AI.",
+          "Compare this to the typical consulting approach: 6-8 weeks of discovery, $50-100K in fees, and a PowerPoint deck that sits on a shelf. We'd rather give you a scored, prioritized backlog you can act on immediately.",
+          "The sprint is designed to be the easiest possible way to start. Low risk, high insight, and full credit if you continue. That's it."
+        ]
+      }
+    ]
   }
 ]
 

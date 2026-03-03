@@ -19,10 +19,10 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
-  { icon: TrendingUp, text: "How can AI help our portfolio companies grow?" },
-  { icon: DollarSign, text: "What's the ROI of AI transformation?" },
-  { icon: Users, text: "How do you work with PE firms?" },
-  { icon: BarChart3, text: "Show me PE-specific case studies" },
+  { icon: TrendingUp, text: "What can AI agents do for my business?" },
+  { icon: DollarSign, text: "What does the $2,500 Sprint include?" },
+  { icon: Users, text: "How do you empower teams with AI?" },
+  { icon: BarChart3, text: "Show me real case studies" },
 ]
 
 export function ChatWidget() {
@@ -31,7 +31,7 @@ export function ChatWidget() {
     {
       id: '1',
       role: 'assistant',
-      content: "Hi! I'm your AI advisor. I can help you explore AI opportunities for your portfolio companies. What would you like to know?",
+      content: "Hi! I'm here to help you explore what AI agents can do for your business. What industry are you in, and what's your biggest operational headache?",
       timestamp: new Date()
     }
   ])
@@ -224,7 +224,7 @@ export function ChatWidget() {
                     )}></span>
                   </div>
                   <div>
-                    <h3 className="font-semibold">AI Advisor</h3>
+                    <h3 className="font-semibold">Sprinter AI</h3>
                     <p className="text-xs text-muted-foreground">
                       {isOffline ? 'Offline' : 'Always here to help'}
                     </p>
@@ -389,7 +389,7 @@ export function ChatWidget() {
                     ref={inputRef}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask me anything about AI for PE..."
+                    placeholder="Ask me anything about AI agents..."
                     disabled={isTyping}
                     className="flex-1 bg-neutral-800/50 border-neutral-700"
                   />

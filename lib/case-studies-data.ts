@@ -60,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
       "ROI calculator: time savings alone covers platform cost",
     ],
     gradient: "from-green-500 to-emerald-600",
-    screenshot: "/images/products/mortgageq-screenshot.svg",
+    screenshot: "/images/case-studies/mortgageq-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -95,7 +95,7 @@ export const caseStudies: CaseStudy[] = [
       "Compounding knowledge base (each mapping improves system)",
     ],
     gradient: "from-blue-500 to-purple-600",
-    screenshot: "/images/products/cabomatic-screenshot.svg",
+    screenshot: "/images/case-studies/cab-o-matic-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -130,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
       "Regulatory compliance reporting (CMS, HEDIS)",
     ],
     gradient: "from-red-500 to-pink-600",
-    screenshot: "/images/products/ai-architecture-diagram.svg",
+    screenshot: "/images/case-studies/rpm-healthcare-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -161,7 +161,7 @@ export const caseStudies: CaseStudy[] = [
       "Async workshop capability for global teams",
     ],
     gradient: "from-purple-500 to-indigo-600",
-    screenshot: "/images/products/amble-ideation-screenshot.svg",
+    screenshot: "/images/case-studies/amble-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -193,7 +193,7 @@ export const caseStudies: CaseStudy[] = [
       "Plagiarism detection and uniqueness scoring",
     ],
     gradient: "from-orange-500 to-yellow-600",
-    screenshot: "/images/products/ai-architecture-diagram.svg",
+    screenshot: "/images/case-studies/trueletter-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
   {
@@ -225,7 +225,7 @@ export const caseStudies: CaseStudy[] = [
       "Customer analytics and churn prediction",
     ],
     gradient: "from-amber-500 to-orange-600",
-    screenshot: "/images/products/ai-architecture-diagram.svg",
+    screenshot: "/images/case-studies/oci-hero.png",
     architectureDiagram: "/images/products/ai-architecture-diagram.svg",
   },
 ];

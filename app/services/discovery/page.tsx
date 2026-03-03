@@ -215,7 +215,7 @@ export default function DiscoveryPage() {
             Ready to Transform Your <span className="gradient-text">AI Strategy</span>?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join the 100+ companies who&apos;ve discovered their AI opportunities with us.
+            Join the businesses who&apos;ve discovered their AI opportunities with us.
             Limited workshop dates available each month.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
