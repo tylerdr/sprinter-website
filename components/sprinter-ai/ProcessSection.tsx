@@ -56,7 +56,7 @@ export default function ProcessSection() {
           <Link href="/ai-sprint" className="spr-button spr-button-primary">
             Book Your AI Sprint
           </Link>
-          <Link href="/approach" className="spr-button spr-button-secondary">
+          <Link href="/services" className="spr-button spr-button-secondary">
             See Our Full Methodology
           </Link>
         </div>
