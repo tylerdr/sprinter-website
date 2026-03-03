@@ -76,7 +76,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
-          Sprinter Consulting AI Services
+          AI Agents Running in Production Today
         </motion.p>
         <motion.h1
           className="spr-heading-xl max-w-4xl"
@@ -94,7 +94,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
         >
-          Custom AI for mid-market operators — quoting, prospecting, scheduling, reporting — deployed in weeks. Built by engineers who have shipped in your industry.
+          We deploy AI agent systems that handle quoting, invoicing, follow-ups, reporting, and data entry — so your team focuses on what actually matters. Working systems in weeks, not months.
         </motion.p>
         <motion.div
           className="mt-9 flex flex-col gap-4 sm:flex-row"
@@ -109,7 +109,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="spr-button spr-button-primary"
           >
-            See What AI Can Do for Your Business
+            Book a Strategy Call — Free, 30 min
           </a>
           <a href="#how-it-works" className="spr-button spr-button-secondary">
             See How It Works ↓

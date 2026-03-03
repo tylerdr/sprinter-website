@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-const companies = ["Oak Chips Inc", "ADG", "Amble", "Marbella Interests"];
+const companies = ["Cab-O-Matic / ADG", "MortgageQ", "Oak Chips Inc", "RPM Healthcare"];
 
 export default function TrustedBy() {
   const reduceMotion = useReducedMotion();

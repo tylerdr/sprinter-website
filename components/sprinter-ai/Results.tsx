@@ -3,16 +3,16 @@
 import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 const outcomes = [
-  "63 automation opportunities identified in 48 hours",
-  "Custom AI sales assistant deployed to a new hire - researching prospects, building territory plans, drafting outreach",
-  "AI agent managing 6,388 prospect records across California",
+  "250,000+ prices generated across 12 months — eliminating hours of manual cross-referencing per plan",
+  "AI-powered guideline intelligence searching 50+ lenders in seconds — down from 4+ hours of manual research",
+  "Full operations audit completed in 48 hours with 60+ scored automation opportunities and ROI projections",
 ];
 
 const metrics = [
-  { value: "63", label: "Opportunities identified per engagement" },
-  { value: "48h", label: "Assessment turnaround" },
-  { value: "24/7", label: "Agent uptime" },
-  { value: "2 wks", label: "Time to deploy 3-5 agents" },
+  { value: "250K+", label: "Data points processed in production" },
+  { value: "20×", label: "ROI measured on deployed system" },
+  { value: "2+ hrs", label: "Saved per task with AI agents" },
+  { value: "2-4 wks", label: "From kickoff to production" },
 ];
 
 export default function Results() {
@@ -25,7 +25,7 @@ export default function Results() {
       </div>
       <h2 className="spr-heading-lg text-center">Real businesses. Real results.</h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        A single engagement with OCI produced measurable impact across their entire sales operation.
+        Production systems running today across manufacturing, fintech, healthcare, and more.
       </p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

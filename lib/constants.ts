@@ -4,42 +4,22 @@ export const SYSTEM_USER_ID = process.env.SYSTEM_USER_ID ?? "00000000-0000-0000-
 
 export const COMPANY_INFO = {
   name: "Sprinter AI",
-  tagline: "AI That Actually Ships",
-  subTagline: "2-4 week sprints. Working systems in production. No slide decks.",
-  description: "We build AI systems that drive enterprise value for PE firms and portfolio companies. Sprint-based implementations that ship in weeks, not months.",
-  philosophy: "Practitioners who build, not consultants who advise. We ship working systems, not strategy decks.",
+  tagline: "AI Agents That Run Your Operations",
+  subTagline: "Deploy AI agents that handle quoting, invoicing, follow-ups, reporting, and more. Your team focuses on what matters.",
+  description: "We deploy AI agent systems that automate your operations. Sprint-based implementations that ship working systems in weeks, not months. Empower your people to do their best work while AI agents handle the rest.",
+  philosophy: "We implement AI to implement AI. Practitioners who build and ship, not consultants who advise.",
   founded: "2018",
   email: "hello@sprinter.ai",
   phone: "+1 (615) 601-0782",
   location: {
-    state: "TN",
+    state: "CA",
     country: "United States",
   },
-  // Audience-specific messaging
-  audiences: {
-    familyOffices: {
-      tagline: "AI Strategy Without the Full-Time Hire",
-      description: "Fractional AI leadership to evaluate opportunities, avoid vendor lock-in, and implement solutions that work. We bring practitioner experience across multiple industries and portfolio types."
-    },
-    privateEquity: {
-      tagline: "AI That Works With Your Portfolio Companies",
-      description: "Sprint-based implementations that deliver working AI in weeks, not months. We build playbooks that scale across your portfolio and train your operators to extend the work independently."
-    },
-    strategicBuyers: {
-      tagline: "Technical AI Diligence You Can Trust",
-      description: "Rapid technical assessment of AI capabilities in acquisition targets. We help you understand what's real, what's vaporware, and what the actual integration effort looks like."
-    }
-  },
   positioning: {
-    primaryRole: "AI Implementation for PE",
-    secondaryRole: "Portfolio Value Creation",
-    differentiation: "Working systems in weeks, not slide decks in months."
+    primaryRole: "AI Agent Deployment",
+    secondaryRole: "Operational Automation",
+    differentiation: "Working AI agents in weeks, not slide decks in months."
   },
-  // Named frameworks
-  frameworks: {
-    sprintMethod: "The Sprinter Method™",
-    portfolioMultiplier: "Portfolio Multiplier Effect™"
-  }
 }
 
 export const SOCIAL_LINKS = {
@@ -52,238 +32,97 @@ export const SOCIAL_LINKS = {
 export const NAVIGATION = {
   main: [
     {
-      href: "/advisory",
-      label: "Advisory",
+      href: "/services",
+      label: "Services",
       type: "dropdown",
       dropdown: [
-        { href: "/fractional-caio", label: "Fractional CAIO" },
+        { href: "/ai-sprint", label: "AI Readiness Sprint" },
         { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
-        { href: "/ai-advisor-retainer", label: "AI Advisor Retainer" },
-        { href: "/family-office", label: "For Family Offices" },
-        { href: "/governance/family-office", label: "Governance Resources" },
+        { href: "/services", label: "All Services" },
       ],
       items: [
         {
-          href: "/fractional-caio",
-          label: "Fractional Chief AI Officer",
-          description: "C-suite AI leadership for family offices & holding companies",
+          href: "/ai-sprint",
+          label: "AI Readiness Sprint",
+          description: "48-hour operations audit with scored automation backlog and ROI roadmap",
           featured: true,
-          icon: "users",
-          badge: "For $1B+ AUM"
+          icon: "rocket",
+          badge: "$2,500"
         },
         {
           href: "/fractional-ai-cofounder",
           label: "Fractional AI Co-Founder",
-          description: "Embedded strategy + execution partner to ship AI outcomes in weeks",
-          icon: "rocket",
-          badge: "New Offer"
-        },
-        {
-          href: "/ai-advisor-retainer",
-          label: "AI Advisor Retainer",
-          description: "Monthly strategic counsel without implementation overhead",
-          icon: "shield",
+          description: "Embedded AI strategy + execution partner. Working systems in weeks.",
+          icon: "users",
           badge: "From $8K/mo"
         },
         {
-          href: "/family-office",
-          label: "Family Office Services",
-          description: "Independent AI counsel for multi-generational wealth",
-          icon: "bank"
-        },
-        {
-          href: "/governance/family-office",
-          label: "Governance & Education",
-          description: "Board training, IC education, and governance frameworks",
-          icon: "clipboard"
-        },
-      ],
-    },
-    {
-      href: "/solutions",
-      label: "Implementation",
-      type: "dropdown",
-      dropdown: [
-        { href: "/ai-scoping-workshop", label: "AI Scoping Workshop" },
-        { href: "/ai-implementation-partner", label: "Implementation Partner" },
-        { href: "/operating-partner", label: "AI Operating Partner" },
-        { href: "/solutions/ap-automation", label: "Financial Automation" },
-        { href: "/solutions/quote-intelligence", label: "Quote Intelligence" },
-        { href: "/solutions/3pl-ops", label: "3PL Operations" },
-        { href: "/pe-services", label: "All Services" },
-      ],
-      items: [
-        {
-          href: "/ai-scoping-workshop",
-          label: "AI Scoping Workshop",
-          description: "2-week diagnostic with options memo, pilot SOW, and ROI model",
-          featured: true,
-          icon: "rocket",
-          badge: "Fixed Fee"
-        },
-        {
-          href: "/operating-partner",
-          label: "AI Operating Partner",
-          description: "Portfolio-wide AI orchestration with hands-on implementation",
-          icon: "rocket",
-          badge: "$12-25K/mo"
-        },
-        {
-          href: "/ai-implementation-partner",
-          label: "Implementation Partner",
-          description: "Your boutique AI consulting firm for portfolio companies",
-          icon: "users",
-          badge: "100+ Portcos"
-        },
-        {
-          href: "/solutions/ap-automation",
-          label: "Financial Automation",
-          description: "60%+ touchless AP, expense & reconciliation automation",
-          icon: "calculator"
-        },
-        {
-          href: "/solutions/quote-intelligence",
-          label: "Quote Intelligence",
-          description: "42% faster quote cycles with AI-powered pricing",
-          icon: "zap"
-        },
-        {
-          href: "/solutions/3pl-ops",
-          label: "3PL Operations",
-          description: "End-to-end automation from quote to cash",
-          icon: "truck"
-        },
-        {
-          href: "/pe-services",
-          label: "View All Solutions",
-          description: "20+ battle-tested AI solutions ready to deploy",
+          href: "/services",
+          label: "All Services",
+          description: "AI agent deployment, custom builds, and enterprise options",
           icon: "grid"
         },
       ],
     },
     {
-      href: "/diligence",
-      label: "Due Diligence",
-      type: "dropdown",
-      dropdown: [
-        { href: "/ai-due-diligence-consulting", label: "M&A Diligence" },
-        { href: "/portfolio-diligence", label: "Portfolio Audits" },
-        { href: "/strategic-buyer-diligence", label: "Build vs. Buy Analysis" },
-      ],
-      items: [
-        {
-          href: "/ai-due-diligence-consulting",
-          label: "M&A Technical Diligence",
-          description: "AI, data, and technology assessment for transactions",
-          featured: true,
-          icon: "shield",
-          badge: "5-10 Days"
-        },
-        {
-          href: "/portfolio-diligence",
-          label: "Portfolio Company Audits",
-          description: "Quarterly AI readiness & risk assessment for holdings",
-          icon: "clipboard",
-          badge: "$5-8K/Co"
-        },
-        {
-          href: "/strategic-buyer-diligence",
-          label: "Strategic Buyer Diligence",
-          description: "Build vs. buy analysis and technical moat assessment",
-          icon: "chart"
-        },
-      ],
-    },
-    {
       href: "/case-studies",
-      label: "Results",
+      label: "Case Studies",
       type: "dropdown",
       dropdown: [
-        { href: "/case-studies", label: "Portfolio Wins" },
-        { href: "/operating-partner#scoreboard", label: "Impact Dashboard" },
-        { href: "/tools/roi-calculator", label: "ROI Calculator" },
+        { href: "/case-studies", label: "All Case Studies" },
+        { href: "/labs/roi-calculator", label: "ROI Calculator" },
       ],
       items: [
         {
           href: "/case-studies",
-          label: "Portfolio Wins",
-          description: "$10M+ value created across 50+ deployments",
+          label: "Case Studies",
+          description: "Real implementations with real results across multiple industries",
           featured: true,
           icon: "trophy",
           badge: "Real Results"
         },
         {
-          href: "/operating-partner#scoreboard",
-          label: "Live Impact Dashboard",
-          description: "Track portfolio AI adoption & ROI in real-time",
-          icon: "chart"
-        },
-        {
           href: "/labs/roi-calculator",
           label: "Calculate Your ROI",
-          description: "Quantify AI value for your portfolio in 2 minutes",
+          description: "Quantify AI value for your business in 2 minutes",
           icon: "calculator"
-        },
-        {
-          href: "/downloads/no-api-cookbook",
-          label: "Implementation Playbooks",
-          description: "Proven frameworks from 100+ successful sprints",
-          icon: "book"
         },
       ],
     },
     {
-      href: "/resources",
-      label: "Resources",
+      href: "/labs",
+      label: "Labs",
       type: "dropdown",
       dropdown: [
-        { href: "/labs", label: "Try AI Tools" },
-        { href: "/ai-assessment", label: "Free AI Assessment" },
-        { href: "/accelerate", label: "Sprinter Accelerate" },
-        { href: "/blog", label: "PE AI Insights" },
-        { href: "/downloads/governance-pack", label: "Governance Pack" },
-        { href: "/industries", label: "Industries" },
+        { href: "/labs", label: "AI Labs" },
+        { href: "/blog", label: "Insights" },
       ],
       items: [
         {
           href: "/labs",
           label: "Try AI Tools Live",
-          description: "Interactive demos - no signup required",
+          description: "Interactive demos — see what AI agents can do",
           featured: true,
           icon: "play",
           badge: "Try Now"
         },
         {
-          href: "/ai-assessment",
-          label: "Free AI Assessment",
-          description: "Get your personalized AI roadmap in 5 minutes",
-          icon: "clipboard"
-        },
-        {
           href: "/blog",
-          label: "PE AI Insights",
-          description: "Industry analysis, trends & best practices",
+          label: "Insights",
+          description: "AI trends, case studies, and implementation guides",
           icon: "newspaper"
         },
-        {
-          href: "/downloads/governance-pack",
-          label: "Governance Templates",
-          description: "Board-ready security & compliance docs",
-          icon: "shield"
-        },
-        {
-          href: "/industries",
-          label: "Industries",
-          description: "AI solutions tailored for specific sectors",
-          icon: "factory"
-        },
       ],
+    },
+    {
+      href: "/about",
+      label: "About",
     },
   ],
   ctas: [
     {
-      href: "/accelerate",
-      label: "See Accelerate",
+      href: "https://cal.com/tyler-dreher",
+      label: "Book a Call",
       variant: "default" as const,
       icon: "sparkles"
     }
@@ -291,9 +130,8 @@ export const NAVIGATION = {
   footer: {
     services: [
       { href: "/ai-sprint", label: "AI Readiness Sprint" },
-      { href: "/operating-partner", label: "AI Operating Partner" },
-      { href: "/ai-assessment", label: "Free AI Assessment" },
-      { href: "/fractional-caio", label: "Fractional AI" },
+      { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
+      { href: "/services", label: "All Services" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },
@@ -310,11 +148,10 @@ export const NAVIGATION = {
 };
 
 export const METRICS = {
-  // Use realistic metrics based on actual work
-  projectsCompleted: "20+",
+  projectsCompleted: "Multiple",
   averageSprintDuration: "2-4 weeks",
   clientRetention: "High",
-  focusAreas: ["Document Intelligence", "Workflow Automation", "Multi-Agent Systems"],
+  focusAreas: ["AI Agent Deployment", "Workflow Automation", "Document Intelligence", "Multi-Agent Systems"],
 }
 
 export const PRICING = {
@@ -571,12 +408,10 @@ export const PRICING = {
 }
 
 export const CLIENTS = [
-  "Vero Capital",
-  "Rock Hill Capital",
-  "Beckway",
-  "Wells Fargo",
-  "Accenture",
-  "Broadlume",
+  "ADG / Cab-O-Matic",
+  "Oak Chips Inc",
+  "Amble Ideation",
+  "MortgageQ",
 ]
 
 export const SEO = {

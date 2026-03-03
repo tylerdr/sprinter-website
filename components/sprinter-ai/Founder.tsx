@@ -22,22 +22,24 @@ export default function Founder() {
         </div>
 
         <div>
-          <h2 className="spr-heading-lg">Built by an engineer who ships.</h2>
+          <h2 className="spr-heading-lg">Built by someone who&apos;s been in your shoes.</h2>
           <blockquote className="mt-6 space-y-5 text-base leading-relaxed text-[color:var(--spr-text-muted)] sm:text-lg">
             <p>
-              I&apos;m Tyler Dreher. I&apos;ve spent 8 years building software for companies across manufacturing,
-              construction, fintech, and healthcare. I don&apos;t theorize about AI - I deploy it. Every day.
+              I&apos;m Tyler Dreher. I started my career as a mechanical engineer at Exxon, then ran a
+              construction business. In both worlds, I watched brilliant people burn hours on work that
+              was repetitive for humans and trivial for computers. That frustration became my mission.
             </p>
             <p>
-              When OpenAI drops a new model on Tuesday, I&apos;m building with it by Wednesday. When a client calls
-              with a problem, they have a working solution by Friday.
+              In 2018 I started Sprinter to bridge that gap — first with custom software, then analytics,
+              then AI. Today I deploy AI agent systems that empower people to do their best work by
+              handling the operational grind they shouldn&apos;t have to do. I don&apos;t theorize about AI — I deploy it. Every day.
             </p>
             <p>
-              Sprinter exists because I believe every business deserves the AI advantage that only tech giants had
-              yesterday. The tools exist. The gap is closing. The question is whether you&apos;ll be the one closing it -
-              or the one it closes on.
+              AI is the ultimate leverage for individuals and businesses. The tools exist today to give
+              every company an unlimited AI workforce. The question is whether you&apos;ll be the one
+              using it — or the one watching competitors pull ahead.
             </p>
-            <p className="font-medium text-[color:var(--spr-text)]">- Tyler Dreher, Founder</p>
+            <p className="font-medium text-[color:var(--spr-text)]">— Tyler Dreher, Founder</p>
           </blockquote>
         </div>
       </div>

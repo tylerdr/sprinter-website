@@ -4,34 +4,34 @@ import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 const industries = [
   {
-    tag: "CR",
-    title: "Construction & Roofing",
-    body: "Estimating, job costing, permit tracking, crew scheduling",
+    tag: "KB",
+    title: "Kitchen & Bath",
+    body: "Catalog management, multi-manufacturer quoting, dealer onboarding, order automation",
+  },
+  {
+    tag: "FT",
+    title: "FinTech & Lending",
+    body: "Document intelligence, guideline compliance, loan processing, risk assessment",
+  },
+  {
+    tag: "HC",
+    title: "Healthcare",
+    body: "Patient monitoring, care coordination, clinical workflow automation, compliance",
   },
   {
     tag: "MF",
     title: "Manufacturing",
-    body: "QC, maintenance prediction, order processing, yield optimization",
+    body: "Quality control, order processing, maintenance prediction, yield optimization",
   },
   {
     tag: "WS",
     title: "Wine & Spirits",
-    body: "Sales enablement, territory planning, compliance, customer research",
+    body: "Sales enablement, territory planning, product recommendation, customer research",
   },
   {
-    tag: "KB",
-    title: "Kitchen & Bath",
-    body: "Catalog management, quoting, dealer onboarding, order automation",
-  },
-  {
-    tag: "PE",
-    title: "Investment & PE",
-    body: "Portfolio monitoring, deal flow, due diligence, market intelligence",
-  },
-  {
-    tag: "PS",
-    title: "Professional Services",
-    body: "Client onboarding, billing, project tracking, knowledge management",
+    tag: "CR",
+    title: "Construction & Trades",
+    body: "Estimating, job costing, permit tracking, crew scheduling, invoicing",
   },
 ];
 
@@ -44,10 +44,10 @@ export default function Industries() {
         </div>
       </div>
       <h2 className="spr-heading-lg text-center max-w-4xl mx-auto">
-        We don&apos;t learn your industry on your dime. We already know it.
+        Industries where we&apos;ve deployed AI.
       </h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        Deep domain expertise across six verticals means faster implementations and better outcomes.
+        Real experience in your vertical means faster deployment and systems that actually fit how your business works.
       </p>
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {industries.map((industry) => (

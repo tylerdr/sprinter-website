@@ -4,9 +4,9 @@ import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 const testimonials = [
   {
-    quote: "In just 48 hours, Sprinter identified an AI-driven deal sourcing approach that found 47 off-market targets we had completely missed. The ROI was immediate.",
-    author: "Managing Partner",
-    company: "Mid-Market Operator",
+    quote: "This isn't just automation — it's transformation. We quote more options, close faster, and our designers focus on design instead of spreadsheets. The ROI was evident within weeks.",
+    author: "Operations Director",
+    company: "Cabinet Manufacturer",
   },
   {
     quote: "The AI coach transformed our care model. Nurses now manage 5× more patients with better outcomes because they focus on those who need them most.",
@@ -14,14 +14,9 @@ const testimonials = [
     company: "Regional Health System",
   },
   {
-    quote: "This AI engine accomplished in 3 months what would've taken our team 3 years and $2M. We're now the category leader in organic traffic.",
-    author: "VP Growth",
-    company: "E-commerce Aggregator",
-  },
-  {
-    quote: "Amble didn't just digitize our workshops — it revolutionized our entire innovation practice. We can now run 10 workshops simultaneously across continents.",
-    author: "Managing Director",
-    company: "Global Consulting Firm",
+    quote: "The AI doesn't just help us manage Non-QM complexity — it turned it into our competitive advantage. We're closing loans faster with confidence.",
+    author: "VP Operations",
+    company: "Non-QM Lending Firm",
   },
 ];
 

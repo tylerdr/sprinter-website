@@ -6,31 +6,24 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const services = [
   {
-    tag: "DOC",
-    title: "Document Intelligence",
-    description: "OCR + LLM extraction pipelines that achieve ≥60% touchless processing. BOLs, invoices, work orders, warranty claims — structured, validated, and routed.",
-    outcome: "≥60% touchless processing",
-    href: "/services",
+    tag: "SPRINT",
+    title: "AI Readiness Sprint",
+    description: "48-hour deep dive into your operations. We map every process, score automation opportunities, and deliver a prioritized roadmap with ROI estimates. You see exactly what AI can do for your business.",
+    outcome: "$2,500 · 48 hours",
+    href: "/ai-sprint",
   },
   {
-    tag: "AUTO",
-    title: "Process Automation",
-    description: "End-to-end workflow orchestration that reduces cycle times by 42%. From quoting to billing, scheduling to reporting.",
-    outcome: "42% faster cycle times",
-    href: "/services",
-  },
-  {
-    tag: "AGENT",
+    tag: "DEPLOY",
     title: "AI Agent Deployment",
-    description: "Custom agents that work your processes 24/7. Email triage, prospect research, CRM enrichment, report generation — on your data, in your tools.",
-    outcome: "24/7 autonomous operations",
-    href: "/services",
+    description: "We build and deploy custom AI agents that work your processes 24/7. Email triage, quoting, invoicing, CRM enrichment, reporting — on your data, in your tools. Your team focuses on high-value work.",
+    outcome: "From $5K/mo · 3-month min",
+    href: "/fractional-ai-cofounder",
   },
   {
-    tag: "GOV",
-    title: "AI Governance & Security",
-    description: "Responsible AI policies, audit trails, model registries, and compliance frameworks defensible to LPs, ICs, and auditors.",
-    outcome: "LP-defensible governance",
+    tag: "BUILD",
+    title: "Custom AI Systems",
+    description: "For when you need a full platform, not just agents. We build production AI products — document intelligence, recommendation engines, multi-agent systems — tailored to your industry.",
+    outcome: "Project-based",
     href: "/services",
   },
 ];
@@ -43,12 +36,12 @@ export default function ServicesOverview() {
           <span>What We Build</span>
         </div>
       </div>
-      <h2 className="spr-heading-lg text-center">AI services that ship in weeks, not quarters.</h2>
+      <h2 className="spr-heading-lg text-center">AI that ships in weeks, not quarters.</h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        Outcome-focused implementations with clear acceptance criteria. Every project tied to measurable ROI.
+        Start with a sprint, prove the value, then scale. Every engagement tied to real outcomes for your business.
       </p>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
         {services.map((service) => (
           <article key={service.tag} className="spr-card p-6">
             <div className="flex items-center justify-between mb-4">

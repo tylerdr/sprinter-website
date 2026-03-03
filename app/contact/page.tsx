@@ -67,7 +67,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3 text-[color:var(--spr-text-muted)]">
                     <MapPin className="w-5 h-5 mt-0.5" aria-hidden="true" />
                     <address className="not-italic">
-                      Brentwood, TN
+                      Orange County, CA
                       <br />
                       United States
                     </address>

@@ -12,11 +12,11 @@ import {
 } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
-  title: "The AI Readiness Sprint | Sprinter AI",
-  description: "Your full operations map in 48 hours for $2,500. We find $200K+ in automation value — or it is free.",
+  title: "AI Readiness Sprint | Sprinter AI",
+  description: "Your full operations map in 48 hours for $2,500. Scored automation opportunities with ROI estimates. Working systems in weeks, not months.",
   openGraph: {
-    title: "The AI Readiness Sprint — Your Full Operations Map in 48 Hours",
-    description: "Your full operations map in 48 hours for $2,500. We find $200K+ in automation value — or it is free.",
+    title: "AI Readiness Sprint — Your Full Operations Map in 48 Hours",
+    description: "Your full operations map in 48 hours for $2,500. Scored automation opportunities with ROI estimates and a clear implementation roadmap.",
     type: "website",
   },
 };
@@ -40,25 +40,25 @@ const deliverables = [
 
 const useCases = [
   {
-    title: "Deal Flow Accelerator",
-    description: "AI-powered deal sourcing that finds hidden opportunities",
-    outcome: "Get a list of 50+ qualified targets matching your criteria",
+    title: "Sales & CRM Automation",
+    description: "AI agents that research prospects, enrich your CRM, and draft outreach",
+    outcome: "Turn hours of manual prospecting into minutes of agent-powered intelligence",
   },
   {
-    title: "Due Diligence Automation",
-    description: "AI that analyzes documents and surfaces key insights",
-    outcome: "Cut DD time by 80% with automated document summaries",
+    title: "Operations & Document Processing",
+    description: "AI that reads invoices, BOLs, orders, and routes them automatically",
+    outcome: "Eliminate hours of manual data entry and reduce errors to near zero",
   },
   {
-    title: "Portfolio Optimization",
-    description: "AI tools for portfolio company operations",
-    outcome: "Identify $100K+ in immediate cost savings opportunities",
+    title: "Quoting & Pricing Intelligence",
+    description: "AI-powered quoting that cross-references catalogs and generates multi-option proposals",
+    outcome: "Compress multi-hour quoting processes into minutes",
   },
 ];
 
 const serviceData = generateServiceStructuredData(
   "AI Readiness Sprint",
-  "A 48-hour AI readiness sprint for mid-market operators and PE-backed teams that identifies automation opportunities and a practical implementation roadmap.",
+  "A 48-hour AI readiness sprint that maps your operations, scores automation opportunities, and delivers an implementation roadmap with ROI estimates.",
   "2500"
 );
 

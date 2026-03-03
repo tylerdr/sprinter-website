@@ -8,8 +8,8 @@ import {
 import Link from "next/link";
 
 const guarantees = [
-  "$200K+ value identified or your money back",
-  "Working prototype in 48 hours — not a slide deck",
+  "Scored automation backlog with ROI estimates — not a slide deck",
+  "Working prototype in 48 hours where applicable",
   "Fixed pricing, no surprises, no scope creep",
   "All code, prompts, and configurations are yours",
   "30 days of post-sprint support included",
@@ -29,7 +29,7 @@ export default function ProcessSection() {
         <h2 className="spr-heading-lg text-center">Start with zero risk. See value in 48 hours.</h2>
         <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
           The AI Readiness Sprint is the fastest way to understand what AI can do for your business.
-          $2,500 investment. $200K+ value guarantee.
+          $2,500 investment. Real opportunities identified and scored.
         </p>
 
         <div className="mt-12 spr-card p-8">
@@ -47,7 +47,7 @@ export default function ProcessSection() {
               <span className="text-[color:var(--spr-primary)]">$2,500</span> — 48-hour AI Readiness Sprint
             </p>
             <p className="mt-2 text-[color:var(--spr-text-muted)]">
-              Limited to 5 sprints per month to ensure quality delivery
+              Your full operations map with scored automation opportunities and ROI roadmap
             </p>
           </div>
         </div>
