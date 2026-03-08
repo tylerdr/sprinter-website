@@ -84,85 +84,14 @@ export interface NavigationConfig {
 
 export const NAVIGATION_CONFIG: NavigationConfig = {
   main: [
-    {
-      label: "Services",
-      href: "/services",
-      type: "dropdown",
-      icon: Sparkles,
-      items: [
-        {
-          label: "AI Readiness Sprint",
-          href: "/ai-sprint",
-          icon: Zap,
-          description: "48-hour operations audit with scored automation backlog",
-          badge: { text: "$2,500", variant: "success" },
-        },
-        {
-          label: "Fractional AI Co-Founder",
-          href: "/fractional-ai-cofounder",
-          icon: Rocket,
-          description: "Embedded AI strategy + execution partner",
-          badge: { text: "From $8K/mo", variant: "success" },
-        },
-        {
-          label: "All Services",
-          href: "/services",
-          icon: Settings,
-          description: "AI agent deployment, custom builds, and enterprise options",
-        },
-      ],
-    },
-    {
-      label: "Case Studies",
-      href: "/case-studies",
-      type: "dropdown",
-      icon: Trophy,
-      items: [
-        {
-          label: "Case Studies",
-          href: "/case-studies",
-          icon: Trophy,
-          description: "Real implementations with real results",
-          badge: { text: "Real Results", variant: "success" },
-        },
-        {
-          label: "ROI Calculator",
-          href: "/labs/roi-calculator",
-          icon: Calculator,
-          description: "Quantify AI value for your business in 2 minutes",
-        },
-      ],
-    },
-    {
-      label: "Labs",
-      href: "/labs",
-      type: "dropdown",
-      icon: FlaskConical,
-      items: [
-        {
-          label: "AI Labs",
-          href: "/labs",
-          icon: FlaskConical,
-          description: "Interactive AI demos — see what's possible",
-          badge: { text: "Try Now", variant: "new" },
-        },
-        {
-          label: "Insights",
-          href: "/blog",
-          icon: Lightbulb,
-          description: "AI implementation guides and industry analysis",
-        },
-      ],
-    },
-    {
-      label: "About",
-      href: "/about",
-      icon: UserCheck,
-    },
+    { label: "Services", href: "/services", icon: Sparkles },
+    { label: "Case Studies", href: "/case-studies", icon: Trophy },
+    { label: "About", href: "/about", icon: UserCheck },
+    { label: "Blog", href: "/blog", icon: Lightbulb },
   ],
   ctas: [
     {
-      label: "Book a Call",
+      label: "Book a Free Strategy Call",
       href: "https://cal.com/tyler-dreher",
       variant: "gradient",
       icon: Rocket,

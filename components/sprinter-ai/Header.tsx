@@ -6,14 +6,10 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/#problem", label: "Problem" },
-  { href: "/#solution", label: "Solution" },
-  { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#results", label: "Results" },
-  { href: "/#industries", label: "Industries" },
-  { href: "/fractional-ai-cofounder", label: "Fractional AI" },
-  { href: "/sprint", label: "AI Sprint" },
-  { href: "/edge", label: "Edge" },
+  { href: "/services", label: "Services" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {
@@ -39,8 +35,7 @@ export default function Header() {
           {navItems.map((item) => {
             const isActive =
               pathname === item.href ||
-              (item.href === "/sprint" && pathname === "/sprint") ||
-              (item.href === "/edge" && pathname === "/edge");
+              (item.href !== "/" && pathname.startsWith(item.href));
 
             return (
               <Link
@@ -62,7 +57,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="spr-button spr-button-primary"
           >
-            Book a Strategy Call
+            Book a Free Strategy Call
           </a>
         </nav>
 
@@ -102,7 +97,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="spr-button spr-button-primary mt-2 w-fit"
               >
-                Book a Strategy Call
+                Book a Free Strategy Call
               </a>
             </div>
           </motion.nav>

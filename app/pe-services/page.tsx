@@ -8,7 +8,10 @@ import { SuccessMetrics } from "@/components/pe-services/success-metrics";
 import { CaseStudiesSection } from "@/components/pe-services/case-studies";
 import { CTASection } from "@/components/pe-services/cta-section";
 
-export const metadata: Metadata = getPageMetadata("peServices");
+export const metadata: Metadata = {
+  ...getPageMetadata("peServices"),
+  robots: { index: false, follow: false },
+};
 
 export default function PEServicesPage() {
   return (

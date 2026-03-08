@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, CheckCircle2, FileText, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AP Accelerator Brief | Sprinter AI",
   description: "4-page guide for QuickBooks and Sage AP automation. Learn how to achieve 60% touchless processing in 30-45 days.",
 };

@@ -1,7 +1,7 @@
 "use client";
 
-import { EnhancedNavigation } from "@/components/layout/enhanced-navigation";
-import { Footer } from "@/components/layout/footer";
+import Header from "@/components/sprinter-ai/Header";
+import Footer from "@/components/sprinter-ai/Footer";
 import { ErrorBoundary } from "@/components/error-boundary";
 
 interface SiteChromeProps {
@@ -11,8 +11,8 @@ interface SiteChromeProps {
 export function SiteChrome({ children }: SiteChromeProps) {
   return (
     <>
-      <EnhancedNavigation />
-      <main id="main-content" className="flex-1 pt-16">
+      <Header />
+      <main id="main-content" className="flex-1">
         <ErrorBoundary>{children}</ErrorBoundary>
       </main>
       <Footer />

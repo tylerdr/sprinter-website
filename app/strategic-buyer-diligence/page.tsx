@@ -10,7 +10,10 @@ import {
 } from "lucide-react";
 import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("strategicBuyerDiligence");
+export const metadata: Metadata = {
+  ...getPageMetadata("strategicBuyerDiligence"),
+  robots: { index: false, follow: false },
+};
 
 const buildVsBuyFramework = [
   {

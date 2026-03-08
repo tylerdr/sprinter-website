@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, CheckCircle2, Code2, ArrowRight, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "No-API Cookbook | Sprinter AI",
   description: "10 proven patterns for integrating with legacy ERPs without API access. Battle-tested solutions for real-world constraints.",
 };

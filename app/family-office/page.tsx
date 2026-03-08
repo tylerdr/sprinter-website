@@ -11,7 +11,10 @@ import {
 import { getPageMetadata } from "@/lib/seo";
 import { PRICING } from "@/lib/constants";
 
-export const metadata: Metadata = getPageMetadata("familyOffice");
+export const metadata: Metadata = {
+  ...getPageMetadata("familyOffice"),
+  robots: { index: false, follow: false },
+};
 
 const challenges = [
   {

@@ -31,112 +31,29 @@ export const SOCIAL_LINKS = {
 
 export const NAVIGATION = {
   main: [
-    {
-      href: "/services",
-      label: "Services",
-      type: "dropdown",
-      dropdown: [
-        { href: "/ai-sprint", label: "AI Readiness Sprint" },
-        { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
-        { href: "/services", label: "All Services" },
-      ],
-      items: [
-        {
-          href: "/ai-sprint",
-          label: "AI Readiness Sprint",
-          description: "48-hour operations audit with scored automation backlog and ROI roadmap",
-          featured: true,
-          icon: "rocket",
-          badge: "$2,500"
-        },
-        {
-          href: "/fractional-ai-cofounder",
-          label: "Fractional AI Co-Founder",
-          description: "Embedded AI strategy + execution partner. Working systems in weeks.",
-          icon: "users",
-          badge: "From $8K/mo"
-        },
-        {
-          href: "/services",
-          label: "All Services",
-          description: "AI agent deployment, custom builds, and enterprise options",
-          icon: "grid"
-        },
-      ],
-    },
-    {
-      href: "/case-studies",
-      label: "Case Studies",
-      type: "dropdown",
-      dropdown: [
-        { href: "/case-studies", label: "All Case Studies" },
-        { href: "/labs/roi-calculator", label: "ROI Calculator" },
-      ],
-      items: [
-        {
-          href: "/case-studies",
-          label: "Case Studies",
-          description: "Real implementations with real results across multiple industries",
-          featured: true,
-          icon: "trophy",
-          badge: "Real Results"
-        },
-        {
-          href: "/labs/roi-calculator",
-          label: "Calculate Your ROI",
-          description: "Quantify AI value for your business in 2 minutes",
-          icon: "calculator"
-        },
-      ],
-    },
-    {
-      href: "/labs",
-      label: "Labs",
-      type: "dropdown",
-      dropdown: [
-        { href: "/labs", label: "AI Labs" },
-        { href: "/blog", label: "Insights" },
-      ],
-      items: [
-        {
-          href: "/labs",
-          label: "Try AI Tools Live",
-          description: "Interactive demos — see what AI agents can do",
-          featured: true,
-          icon: "play",
-          badge: "Try Now"
-        },
-        {
-          href: "/blog",
-          label: "Insights",
-          description: "AI trends, case studies, and implementation guides",
-          icon: "newspaper"
-        },
-      ],
-    },
-    {
-      href: "/about",
-      label: "About",
-    },
+    { href: "/services", label: "Services" },
+    { href: "/case-studies", label: "Case Studies" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
   ],
   ctas: [
     {
       href: "https://cal.com/tyler-dreher",
-      label: "Book a Call",
+      label: "Book a Free Strategy Call",
       variant: "default" as const,
       icon: "sparkles"
     }
   ],
   footer: {
     services: [
-      { href: "/ai-sprint", label: "AI Readiness Sprint" },
-      { href: "/fractional-ai-cofounder", label: "Fractional AI Co-Founder" },
+      { href: "/ai-assessment", label: "AI Assessment" },
+      { href: "/services", label: "Agent Deployment" },
       { href: "/services", label: "All Services" },
     ],
     resources: [
       { href: "/case-studies", label: "Case Studies" },
-      { href: "/labs", label: "AI Labs" },
-      { href: "/blog", label: "Insights" },
+      { href: "/blog", label: "Blog" },
+      { href: "/labs", label: "Labs" },
     ],
     company: [
       { href: "/about", label: "About" },
@@ -155,256 +72,74 @@ export const METRICS = {
 }
 
 export const PRICING = {
-  // Advisory Services - Strategic Counsel (NEW)
-  aiAdvisor: {
-    name: "AI Advisor Retainer",
-    price: "$8-15K/month",
-    duration: "Monthly (3-month minimum)",
-    description: "Strategic AI counsel without implementation overhead. For principals who need independent perspective on AI strategy, vendor selection, and governance.",
-    audience: "Family Offices, Strategic Buyers, Holding Companies",
-    includes: [
-      "Monthly 90-minute strategy sessions",
-      "Unlimited async advisory via Slack/email",
-      "Quarterly AI landscape briefings",
-      "Vendor evaluation & negotiation support",
-      "Board presentation preparation (2x/year)",
-      "Priority access to implementation capacity",
-      "AI governance policy templates"
-    ],
-    notIncluded: [
-      "Hands-on implementation",
-      "Dedicated engineering resources",
-      "Project management"
-    ]
-  },
-  fractionalCAIO: {
-    name: "Fractional Chief AI Officer",
-    price: "$35-60K/month",
-    duration: "Annually (12-month commitment)",
-    description: "Strategic AI leadership for organizations that need C-suite AI counsel with board-level access and cross-functional orchestration.",
-    audience: "Family Offices ($1B+ AUM), Multi-Holding Structures, PE Firms ($500M+ AUM)",
-    includes: [
-      "20-30 hours/month executive availability",
-      "Board meeting attendance & presentation rights",
-      "LP/investor reporting & communication",
-      "Strategic vendor & partnership negotiations",
-      "Governance framework development & oversight",
-      "Cross-portfolio AI strategy alignment",
-      "Quarterly competitive intelligence briefings",
-      "Annual AI maturity assessment across holdings",
-      "Reserved implementation capacity (up to 1 sprint/quarter)",
-      "Direct access via phone/text for urgent decisions"
-    ]
-  },
-
-  // Assessment & Workshops
+  // ──── Active Offers ────
   assessment: {
-    name: "AI Readiness Assessment",
-    price: "$10,000",
-    duration: "1 Week",
-    description: "Comprehensive portfolio AI audit with actionable roadmap",
+    name: "AI Assessment",
+    price: "Free — $2,500",
+    duration: "1–2 weeks",
+    description: "Identify your highest-value AI opportunities with a scored automation backlog and ROI roadmap.",
     includes: [
-      "Portfolio-wide AI maturity assessment",
-      "Top 10 AI opportunities with ROI projections",
+      "Operations audit across key workflows",
+      "Top opportunities ranked by ROI",
       "Implementation roadmap and timeline",
-      "Vendor recommendations",
-      "Board-ready presentation"
-    ]
+      "Strategy call to review findings",
+    ],
   },
-  workshop: {
-    name: "90-Minute OP Workshop",
-    price: "$1,500",
-    duration: "90 minutes",
-    description: "Interactive session to identify high-impact wedges and build buy-in",
+  agentDeployment: {
+    name: "Agent Deployment",
+    price: "From $5K/mo",
+    duration: "Monthly retainer",
+    description: "We deploy and manage AI agents that handle your operational workload — quoting, invoicing, follow-ups, reporting, and more.",
     includes: [
-      "AI Opportunity Roadmap",
-      "Top 3 wedge candidates",
-      "Adoption playbook",
-      "ROI projections",
-      "Applied as credit to any package within 30 days"
-    ]
+      "Custom AI agent setup and configuration",
+      "Ongoing management and optimization",
+      "Performance monitoring and reporting",
+      "Dedicated support and iteration",
+    ],
   },
-  wedgeSprint: {
-    name: "2-Week Wedge Sprint",
-    price: "$20,000",
-    duration: "2 weeks",
-    description: "Pick one document type, deliver a working solution, prove the value",
+  customBuild: {
+    name: "Custom Build",
+    price: "Project-based",
+    duration: "Scoped per engagement",
+    description: "Bespoke AI systems built for your specific workflows. From document intelligence to multi-agent orchestration.",
     includes: [
-      "Production-ready automation",
-      "Clear acceptance criteria",
-      "≥60% touchless processing target",
-      "Training & documentation",
-      "30-day support",
-      "If we miss criteria, remedial sprint at our cost"
-    ]
+      "Custom scoping and architecture",
+      "Full build, test, and deploy",
+      "Training and documentation",
+      "Post-launch support",
+    ],
   },
-  retainer: {
-    name: "AI Operating Partner Retainer",
-    price: "$12k-25k/month",
-    duration: "Monthly (6-month minimum)",
-    description: "Fund-level AI orchestration and portfolio-wide implementation",
-    includes: [
-      "Portfolio AI PMO & prioritization",
-      "Monthly exec enablement",
-      "Governance framework & policies",
-      "Quarterly portfolio reviews",
-      "Diligence support (24hr turnaround)",
-      "Best practices sharing across portcos"
-    ]
-  },
-  transformation: {
-    name: "Transformation Partner",
-    price: "$50k-125k/month",
-    duration: "Monthly (3-month minimum)",
-    description: "Outcome-based execution with dedicated squad",
-    includes: [
-      "Fixed-capacity AI squad (PM + engineers)",
-      "2-4 sprints per month",
-      "Backlog management",
-      "Bi-weekly demos",
-      "Full documentation & enablement",
-      "Pay for outcomes, not hours"
-    ]
-  },
-  // Education & Enablement
+
+  // ──── Legacy (noindexed pages still reference these — do not remove until pages are deleted) ────
+  aiAdvisor: { name: "AI Advisor Retainer", price: "Deprecated", duration: "", description: "", audience: "", includes: [] as string[], notIncluded: [] as string[] },
+  fractionalCAIO: { name: "Fractional CAIO", price: "Deprecated", duration: "", description: "", audience: "", includes: [] as string[] },
+  workshop: { name: "Workshop", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+  wedgeSprint: { name: "Wedge Sprint", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+  retainer: { name: "Retainer", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+  transformation: { name: "Transformation", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
   education: {
-    name: "Education & Enablement",
-    executiveBootcamp: {
-      name: "Executive AI Bootcamp",
-      price: "$9,500",
-      duration: "Half-day",
-      description: "For leadership teams (up to 12)"
-    },
-    managerLab: {
-      name: "Manager Enablement Lab",
-      price: "$2,500/person",
-      duration: "Full day",
-      description: "Hands-on training for operators"
-    },
-    portfolioDay: {
-      name: "Portfolio AI Day",
-      price: "$15,000",
-      duration: "1 day onsite",
-      description: "Up to 3 sessions for entire portfolio"
-    },
-    governanceWorkshop: {
-      name: "AI Governance Workshop",
-      price: "$7,500",
-      duration: "Half-day",
-      description: "Develop responsible AI policies"
-    },
-    boardEducation: {
-      name: "Board AI Education Session",
-      price: "$12,000",
-      duration: "2 hours",
-      description: "Interactive session for board members & family principals"
-    },
-    icTraining: {
-      name: "Investment Committee AI Training",
-      price: "$8,000",
-      duration: "90 minutes",
-      description: "AI diligence framework for investment committees"
-    }
+    name: "Education",
+    boardEducation: { name: "Board Education", price: "Deprecated", duration: "", description: "" },
+    icTraining: { name: "IC Training", price: "Deprecated", duration: "", description: "" },
+    executiveBootcamp: { name: "Executive Bootcamp", price: "Deprecated", duration: "", description: "" },
+    managerLab: { name: "Manager Lab", price: "Deprecated", duration: "", description: "" },
+    portfolioDay: { name: "Portfolio Day", price: "Deprecated", duration: "", description: "" },
+    governanceWorkshop: { name: "Governance Workshop", price: "Deprecated", duration: "", description: "" },
   },
-
-  // Add-On Services (A La Carte)
   addOns: {
-    portfolioAudit: {
-      name: "Quarterly Portfolio AI Audit",
-      price: "$5-8K per company",
-      duration: "Quarterly",
-      description: "Rolling AI readiness & risk assessment for existing holdings",
-      includes: [
-        "AI capability assessment",
-        "Competitive positioning analysis",
-        "Technology debt quantification",
-        "Opportunity identification",
-        "Executive summary for board"
-      ]
-    },
-    diligenceOnDemand: {
-      name: "On-Demand Technical Diligence",
-      price: "$15K base + $3K/day",
-      duration: "72-hour turnaround",
-      description: "Priority technical diligence for time-sensitive deals",
-      includes: [
-        "Mobilization within 24 hours",
-        "Preliminary findings in 48-72 hours",
-        "Technical risk assessment",
-        "Deal recommendation (go/no-go)",
-        "100-day plan if proceeding"
-      ]
-    },
-    governanceFramework: {
-      name: "AI Governance Framework Development",
-      price: "$18,000",
-      duration: "One-time (2-week delivery)",
-      description: "Custom AI governance policies for family boards and investment committees",
-      includes: [
-        "AI usage policies",
-        "Vendor selection criteria",
-        "Data privacy framework",
-        "Risk management protocols",
-        "Board reporting templates"
-      ]
-    },
-    annualRetainer: {
-      name: "Annual Advisory Retainer (Pre-Paid)",
-      price: "$90K/year (save 25%)",
-      duration: "12-month commitment",
-      description: "AI Advisor tier with annual pre-payment discount",
-      includes: [
-        "All AI Advisor benefits",
-        "2 free portfolio audits/year",
-        "Priority diligence allocation",
-        "Quarterly board attendance option"
-      ]
-    }
+    portfolioAudit: { name: "Portfolio Audit", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+    diligenceOnDemand: { name: "Diligence On Demand", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+    governanceFramework: { name: "Governance Framework", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+    annualRetainer: { name: "Annual Retainer", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
   },
-
-  // Bundled Packages
   bundles: {
-    caioGovernance: {
-      name: "CAIO + Governance Pack",
-      price: "$45K/month",
-      duration: "12-month commitment",
-      description: "Fractional CAIO with comprehensive governance foundation",
-      includes: [
-        "All Fractional CAIO benefits",
-        "Quarterly board education sessions",
-        "Annual governance framework update",
-        "4 portfolio audits/year included",
-        "Dedicated Slack channel for portfolio CEOs"
-      ]
-    },
-    advisorDiligence: {
-      name: "Advisor + Diligence Reserve",
-      price: "$12K/month + $60K/year diligence bank",
-      duration: "12-month commitment",
-      description: "Strategic advisory with pre-paid diligence capacity",
-      includes: [
-        "AI Advisor base services",
-        "$60K diligence credit (use annually or lose)",
-        "Priority 48-hour turnaround",
-        "Unlimited diligence scope calls",
-        "Annual unused credit converts to implementation hours"
-      ]
-    }
+    caioGovernance: { name: "CAIO + Governance", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
+    advisorDiligence: { name: "Advisor + Diligence", price: "Deprecated", duration: "", description: "", includes: [] as string[] },
   },
-  // Legacy pricing
-  venture: {
-    price: "Equity-based",
-    duration: "Ongoing",
-  },
-  speaking: {
-    price: "$10,000+",
-  },
-  training: {
-    price: "$15,000/day",
-  },
-  consulting: {
-    price: "$20,000/month",
-  },
+  venture: { price: "Deprecated", duration: "" },
+  speaking: { price: "Deprecated" },
+  training: { price: "Deprecated" },
+  consulting: { price: "Deprecated" },
 }
 
 export const CLIENTS = [

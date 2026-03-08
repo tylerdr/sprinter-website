@@ -11,7 +11,10 @@ import {
 import { getPageMetadata } from "@/lib/seo";
 import { PRICING } from "@/lib/constants";
 
-export const metadata: Metadata = getPageMetadata("aiAdvisor");
+export const metadata: Metadata = {
+  ...getPageMetadata("aiAdvisor"),
+  robots: { index: false, follow: false },
+};
 
 const useCases = [
   {

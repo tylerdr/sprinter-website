@@ -1,6 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
+
+const footerLinks = [
+  { href: "/services", label: "Services" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+];
 
 export default function Footer() {
   return (
@@ -15,12 +25,19 @@ export default function Footer() {
         <div className="space-y-2">
           <p className="text-[color:var(--spr-text)]">sprinter.ai</p>
           <p>Orange County, CA</p>
-          <a href="mailto:tyler@sprinterconsulting.com" className="spr-link">
-            tyler@sprinterconsulting.com
+          <a href="mailto:hello@sprinter.ai" className="spr-link">
+            hello@sprinter.ai
           </a>
         </div>
 
         <div className="space-y-3 lg:text-right">
+          <div className="flex flex-wrap gap-4 lg:justify-end">
+            {footerLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="spr-link">
+                {link.label}
+              </Link>
+            ))}
+          </div>
           <div className="flex gap-4 lg:justify-end">
             <a
               href="https://linkedin.com/company/sprinterconsulting"

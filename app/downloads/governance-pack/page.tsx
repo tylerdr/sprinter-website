@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, CheckCircle2, Shield, ArrowRight, Lock, FileCheck } from "lucide-react";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Governance Pack | Sprinter AI",
   description: "Complete AI governance documentation for PE funds. Security frameworks, fee-offset strategies, and LP reporting templates.",
 };
