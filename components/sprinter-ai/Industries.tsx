@@ -24,11 +24,6 @@ const industries = [
     body: "Quality control, order processing, maintenance prediction, yield optimization",
   },
   {
-    tag: "WS",
-    title: "Wine & Spirits",
-    body: "Sales enablement, territory planning, product recommendation, customer research",
-  },
-  {
     tag: "CR",
     title: "Construction & Trades",
     body: "Estimating, job costing, permit tracking, crew scheduling, invoicing",

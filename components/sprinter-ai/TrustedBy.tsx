@@ -15,22 +15,29 @@ export default function TrustedBy() {
       viewport={{ once: true, amount: 0.35 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="spr-container py-6">
-        <p className="text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--spr-text-muted,#9fadc8)]">
-          Trusted by teams at
-        </p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-medium tracking-[0.18em] text-[color:var(--spr-text-muted,#9fadc8)] sm:text-sm">
-          {companies.map((company, index) => (
-            <motion.span
-              key={company}
-              initial={reduceMotion ? undefined : { opacity: 0 }}
-              whileInView={reduceMotion ? undefined : { opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: index * 0.05, ease: "easeOut" }}
-            >
-              {company}
-            </motion.span>
-          ))}
+      <div className="spr-container py-8">
+        <div className="flex flex-col items-center gap-5">
+          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--spr-text-muted,#9fadc8)]">
+            Trusted by teams at
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-3">
+            {companies.map((company, index) => (
+              <motion.span
+                key={company}
+                className="text-base font-semibold tracking-[0.12em] text-[color:var(--spr-text-soft,#c8d6ec)] sm:text-lg"
+                style={{ fontFamily: "var(--font-mono, monospace)" }}
+                initial={reduceMotion ? undefined : { opacity: 0 }}
+                whileInView={reduceMotion ? undefined : { opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.05, ease: "easeOut" }}
+              >
+                {company}
+              </motion.span>
+            ))}
+          </div>
+          <p className="text-center text-xs text-[color:var(--spr-text-muted,#9fadc8)]">
+            4+ production AI systems deployed and running
+          </p>
         </div>
       </div>
     </motion.section>

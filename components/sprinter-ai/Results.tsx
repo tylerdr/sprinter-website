@@ -3,16 +3,16 @@
 import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 const outcomes = [
-  "250,000+ prices generated across 12 months — eliminating hours of manual cross-referencing per plan",
-  "AI-powered guideline intelligence searching 50+ lenders in seconds — down from 4+ hours of manual research",
-  "Full operations audit completed in 48 hours with 60+ scored automation opportunities and ROI projections",
+  "Cab-O-Matic: 250,000+ cabinet prices generated across 12 months — eliminating hours of manual cross-referencing per plan",
+  "MortgageQ: AI-powered guideline search across 50+ lenders in seconds — down from 4+ hours of manual research per loan",
+  "Oak Chips Inc: Full operations audit completed with 60+ scored automation opportunities and ROI projections",
 ];
 
 const metrics = [
-  { value: "250K+", label: "Data points processed in production" },
-  { value: "20×", label: "ROI measured on deployed system" },
-  { value: "2+ hrs", label: "Saved per task with AI agents" },
-  { value: "2-4 wks", label: "From kickoff to production" },
+  { value: "250K+", label: "Prices generated for Cab-O-Matic" },
+  { value: "20\u00D7", label: "Measured ROI on deployed systems" },
+  { value: "4+ hrs", label: "Saved per task with AI agents" },
+  { value: "2\u20134 wks", label: "From kickoff to production" },
 ];
 
 export default function Results() {
@@ -23,9 +23,9 @@ export default function Results() {
           <span>Real Impact</span>
         </div>
       </div>
-      <h2 className="spr-heading-lg text-center">Real businesses. Real results.</h2>
+      <h2 className="spr-heading-lg text-center">Real businesses. Measured results.</h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        Production systems running today across manufacturing, fintech, healthcare, and more.
+        Production systems running today across manufacturing, fintech, and healthcare.
       </p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -39,9 +39,9 @@ export default function Results() {
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         {outcomes.map((outcome) => (
-          <blockquote key={outcome} className="spr-card p-5 text-sm leading-relaxed text-[color:var(--spr-text-soft)]">
-            &quot;{outcome}&quot;
-          </blockquote>
+          <div key={outcome} className="spr-card p-5 text-sm leading-relaxed text-[color:var(--spr-text-soft)]">
+            {outcome}
+          </div>
         ))}
       </div>
     </AnimatedSection>

@@ -6,24 +6,27 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const services = [
   {
-    tag: "SPRINT",
-    title: "AI Readiness Sprint",
-    description: "48-hour deep dive into your operations. We map every process, score automation opportunities, and deliver a prioritized roadmap with ROI estimates. You see exactly what AI can do for your business.",
-    outcome: "$2,500 · 48 hours",
-    href: "/ai-sprint",
+    tag: "ASSESS",
+    title: "Free AI Operations Assessment",
+    description:
+      "We audit your business processes, identify automation opportunities, and deliver a scored roadmap with ROI estimates. See exactly where AI agents can save you time and money — before you commit to anything.",
+    outcome: "Free for qualifying businesses",
+    href: "/contact",
   },
   {
     tag: "DEPLOY",
     title: "AI Agent Deployment",
-    description: "We build and deploy custom AI agents that work your processes 24/7. Email triage, quoting, invoicing, CRM enrichment, reporting — on your data, in your tools. Your team focuses on high-value work.",
-    outcome: "From $5K/mo · 3-month min",
-    href: "/fractional-ai-cofounder",
+    description:
+      "We build and deploy custom AI agents powered by OpenClaw. Email triage, quoting, CRM enrichment, reporting — on your data, in your tools. Production systems running in weeks.",
+    outcome: "From $5K/mo",
+    href: "/services",
   },
   {
-    tag: "BUILD",
-    title: "Custom AI Systems",
-    description: "For when you need a full platform, not just agents. We build production AI products — document intelligence, recommendation engines, multi-agent systems — tailored to your industry.",
-    outcome: "Project-based",
+    tag: "SCALE",
+    title: "Ongoing Optimization",
+    description:
+      "Monthly optimization, new capabilities, expanding AI across your operations. Once agents prove value in one area, we replicate and extend across your business. Your agent workforce grows smarter every month.",
+    outcome: "Continuous improvement",
     href: "/services",
   },
 ];
@@ -33,12 +36,12 @@ export default function ServicesOverview() {
     <AnimatedSection id="services-overview" className="spr-container spr-section-divider" delay={0.05}>
       <div className="mb-8 flex justify-center">
         <div className="inline-flex items-center gap-2 rounded-full border [border-color:var(--spr-border)] bg-[color:rgba(255,171,102,0.14)] px-4 py-2 text-sm text-[color:var(--spr-accent)]">
-          <span>What We Build</span>
+          <span>How We Work</span>
         </div>
       </div>
-      <h2 className="spr-heading-lg text-center">AI that ships in weeks, not quarters.</h2>
+      <h2 className="spr-heading-lg text-center">Assess. Deploy. Scale.</h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        Start with a sprint, prove the value, then scale. Every engagement tied to real outcomes for your business.
+        Start with a free assessment, prove value fast, then expand. Every step tied to real outcomes for your business.
       </p>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">

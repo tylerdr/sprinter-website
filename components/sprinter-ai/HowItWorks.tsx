@@ -4,26 +4,26 @@ import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
 
 const steps = [
   {
-    title: "01 — DISCOVER",
+    title: "01 — ASSESS",
     points: [
-      "We map your operations in 48 hours. Every process, every bottleneck, every opportunity.",
-      "You get a scored backlog of automation opportunities with ROI estimates.",
-      "The AI Readiness Sprint ($2,500) — see exactly what AI can do for your business.",
+      "We audit your operations and identify the highest-value automation opportunities.",
+      "You get a scored backlog with ROI estimates — not a slide deck, but a concrete plan.",
+      "Free for qualifying businesses. See the opportunities before you commit.",
     ],
   },
   {
     title: "02 — DEPLOY",
     points: [
-      "We build and deploy custom AI agents in the first two weeks.",
-      "They integrate with your tools. They learn your business. They start producing value immediately.",
-      "Your people are empowered to focus on the work that matters while AI handles the rest.",
+      "We build and deploy AI agents on the OpenClaw platform — our AI operations system.",
+      "They integrate with your existing tools and start producing value in weeks, not months.",
+      "Your team stays focused on high-value work while agents handle the operational load.",
     ],
   },
   {
     title: "03 — SCALE",
     points: [
       "Monthly optimization. New capabilities. Your AI workforce grows smarter every month.",
-      "Once proven in one area, we templatize and expand across your operations.",
+      "Once proven in one area, we replicate and expand across your operations.",
       "The longer we work together, the more leverage you unlock.",
     ],
   },
@@ -39,7 +39,7 @@ export default function HowItWorks() {
       </div>
       <h2 className="spr-heading-lg text-center">How It Works</h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        Three phases to transform your operations. Start small, prove value, then scale.
+        Three phases to transform your operations. Start with zero risk, prove value, then scale.
       </p>
       <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {steps.map((step) => (

@@ -6,33 +6,30 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const highlights = [
   {
-    title: "Cab-O-Matic — AI SKU Mapping Platform",
+    title: "Cab-O-Matic \u2014 AI SKU Mapping Platform",
     category: "B2B SaaS / Manufacturing",
     metric: "250K+",
     metricLabel: "prices generated in 12 months",
     revenue: "$120K+ direct labor savings/year",
-    quote: "This isn't just automation — it's transformation. We quote more options, close faster, and our designers focus on design instead of spreadsheets.",
-    author: "Operations Director, Cabinet Manufacturer",
+    outcome: "Multi-manufacturer quoting reduced from hours to minutes. Designers focus on design, not spreadsheets.",
     slug: "ai-cabinet-automation",
   },
   {
-    title: "MortgageQ — AI Guideline Intelligence",
+    title: "MortgageQ \u2014 AI Guideline Intelligence",
     category: "FinTech",
     metric: "95%",
     metricLabel: "research time reduction",
     revenue: "50+ lenders searchable in seconds",
-    quote: "The AI doesn't just help us manage Non-QM complexity — it turned it into our competitive advantage.",
-    author: "VP Operations, Non-QM Lender",
+    outcome: "Non-QM complexity turned into a competitive advantage. Loan officers close faster with confidence.",
     slug: "ai-mortgage-assistant",
   },
   {
-    title: "RPM Healthcare — AI Care Coach",
+    title: "RPM Healthcare \u2014 AI Care Coach",
     category: "Healthcare",
-    metric: "5×",
+    metric: "5\u00D7",
     metricLabel: "patient coverage per nurse",
     revenue: "Millions in penalty avoidance",
-    quote: "Nurses now manage 5× more patients with better outcomes because they focus on those who need them most.",
-    author: "Chief Nursing Officer, Regional Health System",
+    outcome: "Nurses manage 5\u00D7 more patients with better outcomes by focusing on those who need hands-on care.",
     slug: "ai-patient-coach",
   },
 ];
@@ -45,9 +42,9 @@ export default function CaseStudyHighlights() {
           <span>Proven Results</span>
         </div>
       </div>
-      <h2 className="spr-heading-lg text-center">Real implementations. Real results.</h2>
+      <h2 className="spr-heading-lg text-center">Real implementations. Measured results.</h2>
       <p className="spr-body-lg mt-4 text-center max-w-3xl mx-auto">
-        Production AI systems running across manufacturing, fintech, and healthcare. Results speak for themselves.
+        Production AI systems running across manufacturing, fintech, and healthcare.
       </p>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-3">
@@ -63,10 +60,9 @@ export default function CaseStudyHighlights() {
                 <span className="text-sm text-[color:var(--spr-text-muted)]">{study.metricLabel}</span>
               </div>
               <p className="text-sm font-semibold text-[color:var(--spr-accent)] mb-4">{study.revenue}</p>
-              <blockquote className="mt-auto border-t [border-color:var(--spr-border)] pt-4">
-                <p className="text-sm italic text-[color:var(--spr-text-soft)]">&ldquo;{study.quote}&rdquo;</p>
-                <cite className="mt-2 block text-xs text-[color:var(--spr-text-muted)] not-italic">{study.author}</cite>
-              </blockquote>
+              <p className="mt-auto border-t [border-color:var(--spr-border)] pt-4 text-sm text-[color:var(--spr-text-soft)]">
+                {study.outcome}
+              </p>
             </article>
           </Link>
         ))}

@@ -6,6 +6,7 @@ import HowItWorks from "@/components/sprinter-ai/HowItWorks";
 import Industries from "@/components/sprinter-ai/Industries";
 import Problem from "@/components/sprinter-ai/Problem";
 import ProcessSection from "@/components/sprinter-ai/ProcessSection";
+import ProofSection from "@/components/sprinter-ai/ProofSection";
 import Results from "@/components/sprinter-ai/Results";
 import ServicesOverview from "@/components/sprinter-ai/ServicesOverview";
 import Solution from "@/components/sprinter-ai/Solution";
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
         <Results />
         <CaseStudyHighlights />
+        <ProofSection />
         {/* Gradient band for visual variety */}
         <div className="relative">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(255,171,102,0.06),_transparent_70%)]" />

@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import AnimatedSection from "@/components/sprinter-ai/AnimatedSection";
+import Link from "next/link";
 
 const particles = Array.from({ length: 28 }, (_, index) => {
   const x = (index * 37) % 100;
@@ -76,7 +77,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
-          AI Agents Running in Production Today
+          Production AI Systems Running Today
         </motion.p>
         <motion.h1
           className="spr-heading-xl max-w-4xl"
@@ -85,7 +86,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
         >
-          AI agents that run your operations 24/7.
+          We deploy the AI agents. You get the results.
         </motion.h1>
         <motion.p
           className="spr-body-lg mt-6 max-w-3xl"
@@ -94,7 +95,8 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
         >
-          We deploy AI agent systems that handle quoting, invoicing, follow-ups, reporting, and data entry — so your team focuses on what actually matters. Working systems in weeks, not months.
+          We analyze your business, identify automation opportunities, then deploy and manage AI agents
+          that handle quoting, email triage, reporting, and data entry. Working systems in weeks, not months.
         </motion.p>
         <motion.div
           className="mt-9 flex flex-col gap-4 sm:flex-row"
@@ -103,17 +105,15 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
         >
-          <a
-            href="https://cal.com/tyler-dreher"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="spr-button spr-button-primary"
           >
-            Book a Strategy Call — Free, 30 min
-          </a>
-          <a href="#how-it-works" className="spr-button spr-button-secondary">
-            See How It Works ↓
-          </a>
+            Get Your Free AI Assessment
+          </Link>
+          <Link href="/case-studies" className="spr-button spr-button-secondary">
+            See Our Work
+          </Link>
         </motion.div>
       </div>
     </AnimatedSection>
