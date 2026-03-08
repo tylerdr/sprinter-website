@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "PE Partnership Program | Sprinter AI",
   description: "Virtual AI Operating Partner for your entire portfolio. Get dedicated AI expertise, implementation support, and portfolio-wide transformation.",
 }

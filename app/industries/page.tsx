@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Building2, TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'AI Solutions by Industry | Sprinter AI',
   description: 'Specialized AI consulting and solutions for every industry. Transform your business with industry-specific AI strategies and proven ROI.',
   keywords: 'AI by industry, industry AI solutions, vertical AI, sector-specific AI, enterprise AI',

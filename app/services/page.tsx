@@ -84,7 +84,7 @@ const enterpriseOptions = [
   {
     icon: Shield,
     title: "AI Operating Partner",
-    description: "Portfolio-wide AI orchestration for PE firms. Implementation across multiple companies with shared playbooks.",
+    description: "AI implementation across multiple business units or locations with shared playbooks and governance.",
     href: "/operating-partner",
     price: "Custom pricing",
   },

@@ -28,17 +28,23 @@ const iconByCategory: Record<
   "How-To": Zap,
 };
 
-const articles = articleData.map((a) => ({
-  id: a.slug,
-  title: a.title,
-  excerpt: a.excerpt,
-  category: a.category,
-  readTime: a.readTime,
-  date: a.date,
-  featured: a.featured ?? false,
-  icon: iconByCategory[a.category] ?? Zap,
-  tags: a.tags,
-}));
+const articles = articleData
+  .map((a) => ({
+    id: a.slug,
+    title: a.title,
+    excerpt: a.excerpt,
+    category: a.category,
+    readTime: a.readTime,
+    date: a.date,
+    featured: a.featured ?? false,
+    icon: iconByCategory[a.category] ?? Zap,
+    tags: a.tags,
+  }))
+  .sort((a, b) => {
+    // Featured first, then by date descending
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
 const counts = articles.reduce<Record<string, number>>((acc, a) => {
   acc[a.category] = (acc[a.category] || 0) + 1;

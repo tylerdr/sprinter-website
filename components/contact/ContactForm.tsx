@@ -2,15 +2,15 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Sparkles, Lightbulb, Wand2, CheckCircle } from "lucide-react";
+import { Send, Sparkles, Lightbulb, Wand2 } from "lucide-react";
 
 interface FormData {
   name: string;
   email: string;
   company: string;
   role: string;
-  fundSize: string;
-  portfolioCount: string;
+  companySize: string;
+  industry: string;
   timeline: string;
   message: string;
   projectType: string;
@@ -30,8 +30,8 @@ export default function ContactForm() {
     email: "",
     company: "",
     role: "",
-    fundSize: "",
-    portfolioCount: "",
+    companySize: "",
+    industry: "",
     timeline: "",
     message: "",
     projectType: "",
@@ -68,7 +68,7 @@ export default function ContactForm() {
 
   const calculateCompletionScore = useMemo(() => {
     const requiredFields = ['name', 'email', 'message', 'projectType'];
-    const optionalFields = ['company', 'role', 'fundSize', 'portfolioCount', 'timeline'];
+    const optionalFields = ['company', 'role', 'companySize', 'industry', 'timeline'];
 
     const requiredFilled = requiredFields.filter(field =>
       formData[field as keyof FormData].trim() !== ''
@@ -116,40 +116,30 @@ export default function ContactForm() {
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       const suggestionMap: Record<string, string[]> = {
-        'portfolio-ai': [
-          'Implement automated data extraction from portfolio company reports',
-          'Create AI-powered performance dashboards for real-time insights',
-          'Develop predictive models for identifying value creation opportunities'
+        'ai-sprint': [
+          'Map our key operational workflows and identify automation opportunities',
+          'Quantify time spent on repetitive tasks across departments',
+          'Identify the top 3 highest-ROI AI agent deployments for our business'
         ],
-        'deal-sourcing': [
-          'Build automated deal screening using market data and criteria',
-          'Create AI-powered market analysis for sector opportunities',
-          'Implement intelligent CRM integration for deal flow management'
+        'ai-deployment': [
+          'Deploy AI agents to handle quoting, follow-ups, or data entry',
+          'Automate invoice processing and approval routing',
+          'Build AI-powered customer communication and lead response'
         ],
-        'due-diligence': [
-          'Automate document review and data room analysis',
-          'Create risk assessment models using historical data',
-          'Implement automated reference checking and verification'
+        'custom-build': [
+          'Build a custom AI platform for our specific industry needs',
+          'Create a multi-source data intelligence system',
+          'Develop AI-powered analytics and reporting dashboards'
         ],
-        'value-creation': [
-          'Develop operational efficiency optimization algorithms',
-          'Create predictive analytics for revenue growth opportunities',
-          'Implement automated benchmarking against industry peers'
-        ],
-        'operating-partner': [
-          'Build portfolio company performance monitoring systems',
-          'Create automated reporting and insights generation',
-          'Implement AI-driven operational improvement recommendations'
-        ],
-        'lp-reporting': [
-          'Automate quarterly report generation and formatting',
-          'Create dynamic performance visualization dashboards',
-          'Implement real-time portfolio valuation tracking'
+        'advisory': [
+          'Get executive-level guidance on AI strategy and roadmap',
+          'Evaluate current AI tools and vendor relationships',
+          'Build an internal AI capability development plan'
         ],
         'discovery': [
-          'Conduct AI readiness assessment across your portfolio',
-          'Identify high-impact automation opportunities',
-          'Create custom AI implementation roadmap'
+          'Understand what AI can do for our specific business',
+          'Get a clear picture of ROI before committing to a project',
+          'Learn how other businesses in our industry use AI agents'
         ]
       };
 
@@ -213,8 +203,8 @@ export default function ContactForm() {
               email: "",
               company: "",
               role: "",
-              fundSize: "",
-              portfolioCount: "",
+              companySize: "",
+              industry: "",
               timeline: "",
               message: "",
               projectType: "",
@@ -263,10 +253,8 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             aria-required="true"
-            aria-describedby="name-required"
             className={inputClass}
           />
-          <span id="name-required" className="sr-only">Required field</span>
         </div>
 
         <div className="space-y-2">
@@ -279,19 +267,17 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             aria-required="true"
-            aria-describedby="email-required"
             className={`${inputClass} ${validationErrors.email ? 'border-red-500' : ''}`}
           />
           {validationErrors.email && (
             <p className="text-sm text-red-400">{validationErrors.email}</p>
           )}
-          <span id="email-required" className="sr-only">Required field</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
-          <label htmlFor="company" className={labelClass}>Company / Fund</label>
+          <label htmlFor="company" className={labelClass}>Company</label>
           <input
             type="text"
             id="company"
@@ -299,7 +285,7 @@ export default function ContactForm() {
             value={formData.company}
             onChange={handleChange}
             className={inputClass}
-            placeholder="Vista Equity Partners"
+            placeholder="Your company name"
           />
         </div>
 
@@ -313,11 +299,11 @@ export default function ContactForm() {
             className={selectClass}
           >
             <option value="">Select role</option>
-            <option value="partner">Partner / Managing Director</option>
-            <option value="principal">Principal / VP</option>
-            <option value="associate">Associate / Analyst</option>
-            <option value="operating">Operating Partner</option>
-            <option value="portfolio">Portfolio Company Exec</option>
+            <option value="owner">Owner / Founder</option>
+            <option value="ceo">CEO / President</option>
+            <option value="cto">CTO / VP Engineering</option>
+            <option value="coo">COO / VP Operations</option>
+            <option value="director">Director / Manager</option>
             <option value="other">Other</option>
           </select>
         </div>
@@ -325,39 +311,43 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
-          <label htmlFor="fundSize" className={labelClass}>Fund Size (AUM)</label>
+          <label htmlFor="companySize" className={labelClass}>Company Size</label>
           <select
-            id="fundSize"
-            name="fundSize"
-            value={formData.fundSize}
+            id="companySize"
+            name="companySize"
+            value={formData.companySize}
             onChange={handleChange}
             className={selectClass}
           >
             <option value="">Select range</option>
-            <option value="<500M">&lt; $500M</option>
-            <option value="500M-1B">$500M - $1B</option>
-            <option value="1B-5B">$1B - $5B</option>
-            <option value="5B-10B">$5B - $10B</option>
-            <option value="10B+">$10B+</option>
-            <option value="not-pe">Not a PE firm</option>
+            <option value="1-10">1-10 employees</option>
+            <option value="11-50">11-50 employees</option>
+            <option value="51-200">51-200 employees</option>
+            <option value="201-500">201-500 employees</option>
+            <option value="500+">500+ employees</option>
           </select>
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="portfolioCount" className={labelClass}>Portfolio Companies</label>
+          <label htmlFor="industry" className={labelClass}>Industry</label>
           <select
-            id="portfolioCount"
-            name="portfolioCount"
-            value={formData.portfolioCount}
+            id="industry"
+            name="industry"
+            value={formData.industry}
             onChange={handleChange}
             className={selectClass}
           >
-            <option value="">Select range</option>
-            <option value="1-5">1-5 companies</option>
-            <option value="6-15">6-15 companies</option>
-            <option value="16-30">16-30 companies</option>
-            <option value="30+">30+ companies</option>
-            <option value="n/a">Not applicable</option>
+            <option value="">Select industry</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="construction">Construction / Trades</option>
+            <option value="kitchen-bath">Kitchen &amp; Bath</option>
+            <option value="wine-spirits">Wine &amp; Spirits</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="financial-services">Financial Services</option>
+            <option value="real-estate">Real Estate</option>
+            <option value="retail">Retail / E-commerce</option>
+            <option value="professional-services">Professional Services</option>
+            <option value="other">Other</option>
           </select>
         </div>
       </div>
@@ -371,20 +361,16 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           aria-required="true"
-          aria-describedby="projectType-required"
           className={selectClass}
         >
           <option value="">Select an option</option>
-          <option value="portfolio-ai">Portfolio AI Transformation</option>
-          <option value="deal-sourcing">Deal Sourcing Automation</option>
-          <option value="due-diligence">Due Diligence Acceleration</option>
-          <option value="value-creation">Portfolio Value Creation</option>
-          <option value="operating-partner">Operating Partnership</option>
-          <option value="lp-reporting">LP Reporting Automation</option>
-          <option value="discovery">AI Discovery Workshop</option>
+          <option value="ai-sprint">AI Readiness Sprint ($2,500)</option>
+          <option value="ai-deployment">AI Agent Deployment (monthly)</option>
+          <option value="custom-build">Custom AI System Build</option>
+          <option value="advisory">AI Strategy / Advisory</option>
+          <option value="discovery">Just exploring what AI can do</option>
           <option value="other">Other</option>
         </select>
-        <span id="projectType-required" className="sr-only">Required field</span>
       </div>
 
       <div className="mb-6 space-y-2">
@@ -397,9 +383,9 @@ export default function ContactForm() {
           className={selectClass}
         >
           <option value="">When do you need this?</option>
-          <option value="immediate">Immediate (This quarter)</option>
-          <option value="next-quarter">Next Quarter</option>
-          <option value="h2">Second Half of Year</option>
+          <option value="asap">ASAP</option>
+          <option value="this-month">This month</option>
+          <option value="this-quarter">This quarter</option>
           <option value="exploring">Just exploring</option>
         </select>
       </div>
@@ -413,15 +399,13 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           aria-required="true"
-          aria-describedby="message-required"
           rows={5}
           className={`${inputClass} resize-none ${validationErrors.message ? 'border-red-500' : ''}`}
-          placeholder="Describe your vision, challenges, or ideas..."
+          placeholder="What processes eat the most time? What would you automate first?"
         />
         {validationErrors.message && (
           <p className="text-sm text-red-400">{validationErrors.message}</p>
         )}
-        <span id="message-required" className="sr-only">Required field</span>
       </div>
 
       {/* AI Suggestions */}
@@ -435,18 +419,18 @@ export default function ContactForm() {
           >
             <div className="flex items-center gap-2 mb-3">
               <Wand2 className="w-4 h-4 text-[color:var(--spr-primary)]" />
-              <h3 className="text-sm font-medium text-[color:var(--spr-primary)]">AI Suggestions</h3>
+              <h3 className="text-sm font-medium text-[color:var(--spr-primary)]">Ideas to Get Started</h3>
               {isGeneratingSuggestions && (
                 <div className="h-4 w-4 animate-spin rounded-full border-2 border-[color:var(--spr-primary)] border-t-transparent" />
               )}
             </div>
 
             {isGeneratingSuggestions ? (
-              <p className="text-sm text-[color:var(--spr-text-muted)]">Generating personalized suggestions...</p>
+              <p className="text-sm text-[color:var(--spr-text-muted)]">Generating suggestions...</p>
             ) : (
               <div className="space-y-2">
                 <p className="text-sm text-[color:var(--spr-text-muted)] mb-3">
-                  Based on your project type, here are some ideas you might want to include:
+                  Click any of these to add to your message:
                 </p>
                 {aiSuggestions.map((suggestion, index) => (
                   <motion.button
@@ -485,7 +469,6 @@ export default function ContactForm() {
               aria-hidden="true"
             />
             <span>Sending...</span>
-            <span className="sr-only">Form is being submitted</span>
           </>
         ) : (
           <>

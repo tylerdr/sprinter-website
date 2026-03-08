@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AI Education & Training for Private Equity | Sprinter AI",
   description: "Upskill your portfolio companies with hands-on AI training. From executive bootcamps to technical enablement, build AI capabilities across your entire fund.",
 };

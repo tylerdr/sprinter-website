@@ -816,7 +816,7 @@ export const articles: Article[] = [
     category: "Implementation",
     readTime: "5 min read",
     date: "2026-02-20",
-    featured: false,
+    featured: true,
     tags: ["AI Sprint", "Implementation", "Case Study", "Operations"],
     content: [
       {

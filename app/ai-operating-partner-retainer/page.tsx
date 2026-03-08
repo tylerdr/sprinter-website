@@ -20,6 +20,7 @@ import StickyCTA from "@/components/sprinter-ai/StickyCTA";
 import { generateServiceStructuredData, getStructuredDataScript } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AI Operating Partner Retainer | Sprinter AI",
   description: "Continuous AI capability for PE firms. Monthly education, advisory hours, and priority sprint capacity. Keep pace with AI's rapid evolution while building portfolio-wide capabilities.",
   keywords: "AI operating partner, retainer model, PE AI advisory, sprint capacity, portfolio AI, continuous AI capability",

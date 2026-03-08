@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline"
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Private Equity AI Success Stories | Sprinter AI",
   description: "See how PE firms are using AI to find more deals, accelerate due diligence, and create portfolio value. Real results from real firms.",
   openGraph: {

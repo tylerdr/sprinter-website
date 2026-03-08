@@ -17,6 +17,7 @@ import {
 } from "@heroicons/react/24/outline"
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AI Partnership Program - Your Dedicated AI Team | Sprinter AI",
   description: "Get an entire AI Center of Excellence for less than one data scientist. Continuous AI innovation for your PE firm and portfolio. Starting at $5K/month.",
   openGraph: {

@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/seo-pages/faq-section";
 import { CTASection } from "@/components/seo-pages/cta-section";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AI Scoping Workshop for Private Equity & Portfolio Companies | Sprinter",
   description: "Fixed-fee AI readiness assessment and implementation roadmap. 2-week diagnostic with clear deliverables: options memo, pilot SOW, and ROI model. Built for PE portfolio operations.",
   keywords: "ai scoping workshop, ai discovery workshop, private equity ai, portfolio company ai, ai readiness assessment, ai pilot scoping, fixed fee ai consulting, operating partner workshop",

@@ -7,6 +7,7 @@ import Guarantee from "@/components/sprinter-ai/Guarantee";
 import { generateServiceStructuredData, getStructuredDataScript } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Sprinter Accelerate | Sprinter AI",
   description:
     "A monthly implementation retainer to deploy AI systems fast, track ROI weekly, and compound wins across your portfolio.",

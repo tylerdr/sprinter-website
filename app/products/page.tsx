@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Stat } from "@/components/ui/stat";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Products - Live AI Systems in Production | Sprinter AI",
   description: "Real products used in the wild. MortgageQ, Cab-O-Matic, and Amble Ideation. See them in action, then build your own.",
   keywords: "AI products, MortgageQ, Cab-O-Matic, Amble Ideation, AI systems, production AI",

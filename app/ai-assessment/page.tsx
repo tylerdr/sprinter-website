@@ -18,6 +18,7 @@ import {
 import { getThemedFunnel, THEME_HEADLINES } from "@/lib/funnel-themes"
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AI Opportunity Assessment | Sprinter AI",
   description: "Get a custom AI roadmap for your business. We'll identify high-impact automation opportunities and show you what a sprint implementation could look like.",
   openGraph: {
